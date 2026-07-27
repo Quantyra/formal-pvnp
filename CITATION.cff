@@ -1,11 +1,11 @@
 cff-version: 1.2.0
-message: "This is a private development surface. Prefer citing the relevant public curated artifact and DOI."
-title: "Formal PvNP private Lean development surface"
+message: "If you use this software, please cite it using the metadata from this file. For narrow mature theorem surfaces, prefer the relevant curated public artifact DOI."
+title: "Formal PvNP: Lean 4 proof-complexity development surface"
 type: software
 authors:
   - family-names: Fredriksen
     given-names: Daniel
-version: 0.1.0-private
+version: 0.1.0
 date-released: 2026-07-26
 url: "https://github.com/Quantyra/formal-pvnp"
 repository-code: "https://github.com/Quantyra/formal-pvnp"

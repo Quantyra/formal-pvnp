@@ -1,21 +1,26 @@
-# Formal PvNP (private Lean development surface)
+# Formal PvNP
 
-Private Lean 4 development repository for the Quantyra proof-complexity / PvNP
-program. This tree contains **only** the Lean proof surface and build metadata.
+Lean 4 development surface for the Quantyra proof-complexity / PvNP program.
 
-It is the active private umbrella for formal work that has not (or not yet) been
-exported into a narrow public artifact.
+This repository is the **umbrella formal workspace**: resolution lower-bound
+infrastructure, Tseitin/BSW width-size material, switching and bounded-depth
+scaffolding, named imported-boundary packets, and related audit pins.
 
-## Scope
+For stable public citation of a **narrow mature theorem surface**, prefer the
+curated artifact repositories and their DOIs (below). This umbrella may contain
+broader in-progress infrastructure than any single curated release.
 
-- Lean library: `lean/PvNP`
-- Toolchain: `leanprover/lean4:v4.13.0` (`lean-toolchain`)
-- Lake package: `formal_pvnp`
-- Default library target: `PvNP`
+## Theorem / infrastructure surface (high level)
 
-## Related public curated artifacts
+- Resolution proof-system models and size/width tradeoffs for explicit Tseitin
+  families (including local DAG width/size kernel pins).
+- Switching-lemma and bounded-depth schedule/collapse scaffolding.
+- Named imported classical boundaries (e.g. expander-Tseitin resolution;
+  bounded-depth Frege/PHP literature bound) with explicit firewalls.
+- Barrier / magnification **maps and skeletons** that encode literature
+  implications as data — not unconditional separations.
 
-Public citation surfaces remain narrow splits (not this umbrella repo):
+## Related curated public artifacts
 
 - [formal-resolution-lower-bounds](https://github.com/Quantyra/formal-resolution-lower-bounds)
 - [formal-switching-lemma](https://github.com/Quantyra/formal-switching-lemma)
@@ -23,11 +28,13 @@ Public citation surfaces remain narrow splits (not this umbrella repo):
 
 ## Build
 
+Toolchain: `leanprover/lean4:v4.13.0` (`lean-toolchain`).
+
 ```bash
 elan run leanprover/lean4:v4.13.0 lake build PvNP.Audit
 ```
 
-Optional module build:
+Optional:
 
 ```bash
 elan run leanprover/lean4:v4.13.0 lake build PvNP.S2238BSWTseitinWidthKernel
@@ -35,19 +42,21 @@ elan run leanprover/lean4:v4.13.0 lake build PvNP.S2238BSWTseitinWidthKernel
 
 ## Non-claims boundary
 
-This repository is a **private research development surface**. It does **not**
-by itself establish, and must not be cited as establishing:
+This repository does **not** establish or imply:
 
 - `P != NP` or `P = NP`
 - an NP or circuit lower bound
-- a Frege/PHP lower bound beyond an exactly scoped theorem
+- a Frege/PHP lower bound beyond an exactly scoped theorem or a **named imported**
+  classical statement clearly labeled as imported
+- a general lower bound for all proof systems
 - a general SAT solver or general CNF recognition claim
 
-Some module comments retain historical research-lane labels; those labels are
-**not** public claims. Public wording must follow the Quantyra claim-boundary
-protocol and the relevant public artifact `INTEGRITY-CLAIMS.md` files.
+Some modules intentionally retain classical literature statements as **data**
+(e.g. magnification “IF weak bound THEN separation” catalogue rows) or as
+**named import axioms**. Those are not local unconditional proofs of the
+imported content and must not be cited as such.
 
-See `INTEGRITY-CLAIMS.md` in this repository for the local integrity posture.
+See `INTEGRITY-CLAIMS.md`.
 
 ## License
 

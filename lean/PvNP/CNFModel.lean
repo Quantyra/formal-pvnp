@@ -37,8 +37,8 @@ S1761 structural-simplification smoke-test vocabulary.
 These computable predicates capture the first cheap, branch-free SAT
 simplifications: empty-clause detection, unit propagation, and pure-literal
 elimination.  A CNF with `noCheapSimplificationSignal = true` is not solved by
-those local tests alone, so any P = NP structural-simplification candidate must
-explain its next non-branching progress measure on such inputs.
+those local tests alone, so any structural-simplification candidate algorithm
+must explain its next non-branching progress measure on such inputs.
 -/
 
 /-- Enumerate all variables of a finite CNF variable domain. -/
@@ -96,8 +96,8 @@ S1763 first structural simplifier surface.
 This branch-free cleanup pass captures two standard polynomial-time CNF
 normalizations: duplicate-literal deletion inside each clause and deletion of
 tautological clauses containing a variable with both polarities.  The pass is
-size non-increasing by construction and gives the P = NP lane a concrete first
-operation surface to test against the S1761 smoke pair.
+size non-increasing by construction and gives the simplification/experiment
+lane a concrete first operation surface to test against the S1761 smoke pair.
 -/
 
 /-- First S1763 branch-free simplifier operations. -/

@@ -1,7 +1,7 @@
 import PvNP.CNFResolution
 
 /-!
-# Bounded-depth Frege lower bound for the Pigeonhole Principle (M-B6c)
+# Named imported boundary: classical bounded-depth Frege PHP size lower bound (M-B6c)
 
 The Pigeonhole Principle `PHP^m_{m-1}` (map `m` pigeons injectively into `m-1` holes) is the canonical
 hard tautology for bounded-depth proof systems. The classical result is:
@@ -194,7 +194,8 @@ def FregePHPImportedTarget.lowerBoundStatement (T : FregePHPImportedTarget) : Pr
 **Packaging theorem (STATEMENT + named import, NOT a local proof).** The bounded-depth Frege PHP
 size lower bound for an imported target, conditional on the named cited Ajtai / PBI / KPW import
 (supplied by the firewalled axiom). This is "unconditional modulo a named cited classical theorem" -
-the honest status of the lane. It is NOT a local proof, NOT an NP lower bound, NOT P != NP.
+the honest status of this import boundary. It is NOT a local proof, NOT an NP
+lower bound, and NOT a complexity-class separation claim.
 -/
 theorem frege_php_lower_bound_modulo_import
     (T : FregePHPImportedTarget) :

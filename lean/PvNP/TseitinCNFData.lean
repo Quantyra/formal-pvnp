@@ -6472,7 +6472,7 @@ S1761 first structural-simplification smoke target.
 The concrete three-cycle Tseitin CNF has no empty clause, no unit clause, and
 no pure literal under the computable `CNFModel` cheap-simplification signal.
 This is a finite candidate-killer test for structural SAT simplification, not
-a hardness or P = NP claim.
+a hardness claim and not a complexity-class separation claim.
 -/
 theorem threeCycle_tseitin_noCheapSimplificationSignal :
     CNFModel.NoCheapSimplificationSignal TseitinCNFFormulaThreeCycleCharge := by
@@ -6482,9 +6482,9 @@ theorem threeCycle_tseitin_noCheapSimplificationSignal :
 /--
 S1761 symmetric finite smoke target for the four-cycle Tseitin CNF.
 
-The same cheap simplification signal is absent here as well, giving the P = NP
-algorithmic lane a second concrete adversarial input before any asymptotic
-claims are considered.
+The same cheap simplification signal is absent here as well, giving the
+simplification/experiment lane a second concrete adversarial input before any
+asymptotic claims are considered.
 -/
 theorem fourCycle_tseitin_noCheapSimplificationSignal :
     CNFModel.NoCheapSimplificationSignal TseitinCNFFormulaFourCycleCharge := by
@@ -9454,9 +9454,10 @@ def certifiedGF2CompressionGain {m : Nat}
 /--
 Checked cancellation-style compression probe.
 
-This records the P = NP-side cancellation hypothesis in the narrow form the
+This records a cancellation-style compression hypothesis in the narrow form the
 current GF(2) lane can actually certify: a residual-free basis change to compact
-parity equations with a positive counted compression gain.
+parity equations with a positive counted compression gain. It is not a
+complexity-class separation claim.
 -/
 structure CertifiedCancellationCompressionProbe (m : Nat) where
   decomposition : CanonicalSemanticCertifiedGF2Decomposition m
@@ -9841,9 +9842,9 @@ theorem s1775_laneClassificationComplete :
   native_decide
 
 /--
-Constructive P = NP probe for S1775: the five-cycle extracted core is not a
+Constructive compression probe for S1775: the five-cycle extracted core is not a
 solver, but it is a checked residual-free compression invariant on a new
-family-prefix instance.
+family-prefix instance. It is not a complexity-class separation claim.
 -/
 theorem fiveCycle_tseitin_familyLiftCertifiedCompressionProbe :
     fiveCycle_tseitin_familyLiftExtractedCertifiedDecomposition.hasEmptyResidual /\

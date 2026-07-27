@@ -1,0 +1,19 @@
+{
+  "title": "Formal PvNP: Lean 4 proof-complexity development surface",
+  "upload_type": "software",
+  "creators": [
+    { "name": "Fredriksen, Daniel" }
+  ],
+  "license": "Apache-2.0",
+  "version": "0.1.0",
+  "keywords": [
+    "Lean 4",
+    "formal verification",
+    "proof complexity",
+    "resolution",
+    "Tseitin formulas",
+    "switching lemma",
+    "bounded-depth formulas"
+  ],
+  "description": "<p>Umbrella Lean 4 development surface for Quantyra proof-complexity infrastructure: resolution size/width models for explicit Tseitin families, switching and bounded-depth scaffolding, and named imported classical boundaries with explicit firewalls.</p><p>For narrow mature theorem surfaces, prefer the curated sibling artifacts <code>formal-resolution-lower-bounds</code>, <code>formal-switching-lemma</code>, and <code>certified-affine-extraction</code>.</p><p><strong>Non-claims:</strong> this repository does not prove P != NP, P = NP, an NP or circuit lower bound, a Frege/PHP lower bound beyond exactly scoped local theorems or clearly labeled named imports, a general proof-system lower bound, or a general SAT solver.</p>"
+}

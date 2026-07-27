@@ -4,7 +4,7 @@ import Mathlib.Data.Nat.Log
 import Mathlib.Tactic.Linarith
 
 /-!
-# Reducing the bounded-depth Frege PHP lower bound to the Hastad switching lemma (M-B6c)
+# Conditional reduction scaffold: Frege/PHP size bound from switching + depth floor (M-B6c)
 
 ## Honest scope
 

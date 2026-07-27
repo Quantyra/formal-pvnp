@@ -104,9 +104,9 @@ The clean audit surface for release remains the TseitinCNFData uniform direct-cy
 
 /-!
 PHP-floor boundary records.  These audit the restricted-PHP view layer added for
-the bounded-depth Frege PHP floor lane.  They are boundary/formula-view artifacts
-only: the actual PHP adversary floor remains an explicit hypothesis, and no Frege
-lower bound is claimed here.
+the bounded-depth Frege PHP floor scaffolding.  They are boundary/formula-view
+artifacts only: the actual PHP adversary floor remains an explicit hypothesis,
+and no Frege lower bound is claimed here.
 -/
 
 /-- info: 'PvNP.FregeSwitching.RestrictedPHPView.depthFloor_pos' does not depend on any axioms -/

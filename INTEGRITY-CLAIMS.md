@@ -1,7 +1,7 @@
-# Integrity & Claims Ledger (private umbrella)
+# Integrity & Claims Ledger
 
-**Scope:** private Lean development surface for the Quantyra PvNP program.
-This file states the default non-claims posture for the umbrella repository.
+**Scope:** umbrella Lean development surface for the Quantyra PvNP /
+proof-complexity program. Primary audit entrypoint: `lean/PvNP/Audit.lean`.
 
 ## Non-claims
 
@@ -9,32 +9,42 @@ This repository does **not** establish or imply:
 
 - `P != NP` or `P = NP`
 - an NP or circuit lower bound
-- a Frege/PHP lower bound beyond an exactly scoped, audited theorem statement
+- a Frege/PHP lower bound beyond an exactly scoped local theorem **or** a named
+  imported classical statement that is explicitly firewalled as imported
 - a general lower bound for all proof systems
 - a general SAT solver or general CNF-to-XOR recognizer
 
-## Public citation rule
+## How to read this umbrella
 
-Do **not** cite this private umbrella as the public archival artifact.
-Cite the relevant public curated repository and DOI instead, for example:
+| Kind of material | How to cite |
+|---|---|
+| Local Lean theorem with standard axioms only | Exact FQN + commit/tag + `#print axioms` |
+| Named imported classical boundary | Conditional wording only; name the import |
+| Magnification / barrier catalogue data | Literature map only; no unconditional separation |
+| Curated public artifact (preferred for papers) | That repo’s DOI / release, not this umbrella alone |
 
-- `formal-resolution-lower-bounds` (resolution / Tseitin DAG size-width line)
-- `formal-switching-lemma` (switching / bounded-depth schedule line)
-- `certified-affine-extraction` (affine extraction line)
+## Named imports (examples)
 
-## Audit surface
+- Expander-Tseitin resolution import boundary in
+  `ResolutionImportedExpanderBound.lean` (named axiom; conditional packaging only).
+- Bounded-depth Frege/PHP literature bound import in `FregePHPLowerBound.lean`
+  (named axiom; conditional packaging only).
 
-Primary axiom-audit entrypoint:
+Local packaging theorems that consume these imports are **not** local proofs of
+the imported combinatorial cores.
+
+## Audit
 
 ```bash
 elan run leanprover/lean4:v4.13.0 lake build PvNP.Audit
 ```
 
-Publication-facing exports must carry their own `Audit.lean` pins and
-`INTEGRITY-CLAIMS.md` in the destination public artifact.
+Publication exports to narrow public artifacts must carry their own Audit pins
+and integrity files in those destinations.
 
 ## Hygiene
 
-- No secrets, tokens, or credentials belong in this repository.
-- No local absolute filesystem paths or Google Drive paths belong in tracked docs.
-- Scratch, planning, and entity-ops material belong outside this Lean-only tree.
+- No secrets, tokens, or credentials.
+- No local absolute filesystem paths or Google Drive paths in tracked docs.
+- Claim-language scrub: affirmative “P=NP lane / probe / claim” research jargon
+  removed from publication-facing comments (2026-07-26).

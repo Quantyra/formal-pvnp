@@ -3,11 +3,11 @@ import PvNP.BoundedDepthFregeSwitchingBridge
 /-!
 # Bottom-layer DNF views for bounded-depth formulas
 
-P-vs-NP-relevant proof-complexity infrastructure under the repository's claims
-boundary: this module exposes an explicit bottom-layer DNF view for real
-`BDFormula` formulas and reuses the faithful switching bridge for one-step
-collapse statements.  It is not a Frege/PHP lower bound yet, and it makes no
-`P ≠ NP` or NP lower-bound claim.
+Proof-complexity infrastructure under the repository's claims boundary: this
+module exposes an explicit bottom-layer DNF view for real `BDFormula` formulas
+and reuses the faithful switching bridge for one-step collapse statements.  It
+is not a Frege/PHP lower bound, and it makes no complexity-class separation or
+NP lower-bound claim.
 -/
 
 namespace PvNP

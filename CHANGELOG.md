@@ -1,8 +1,14 @@
 # Changelog
 
-## 2026-07-26
+## 0.1.0 (publication-prep)
 
-- Renamed private Lean-only surface to `formal-pvnp`.
-- Release-hygiene pass: portable README, `INTEGRITY-CLAIMS.md`, no local absolute
-  path references in tracked docs, Apache-2.0 LICENSE retained.
-- Initial lean-only split from mixed workspace (Lean + Lake metadata only).
+- Claim-language scrub: removed affirmative “P = NP lane / probe / claim”
+  research jargon from CNF/Tseitin/bounded-depth module comments.
+- Softened Frege/PHP module headers to emphasize named-import / conditional
+  reduction scaffold status.
+- Public-facing README, INTEGRITY-CLAIMS, CITATION.cff, `.zenodo.json`.
+- Renamed surface to `formal-pvnp`; Lean-only tree (no planning/ops dirt).
+
+## 2026-07-26 (initial split)
+
+- Initial lean-only private repository split from mixed workspace.

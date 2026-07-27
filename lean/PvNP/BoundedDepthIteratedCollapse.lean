@@ -3,12 +3,13 @@ import PvNP.BoundedDepthLayerView
 /-!
 # Two-layer explicit-view bounded-depth collapse schedules
 
-P-vs-NP-relevant proof-complexity progress under the repository's claims
-boundary: this module advances the one-step DNF-view collapse infrastructure to a
-two-layer explicit-view/schedule collapse certificate.  It records only named
-bottom-layer views, concrete restrictions, semantic compatibility, and explicit
-decision-tree witnesses for two stages.  It is **not** an arbitrary AC0 collapse,
-not a Frege/PHP lower bound, and not a `P ≠ NP` or NP lower-bound claim.
+Proof-complexity infrastructure under the repository's claims boundary: this
+module advances the one-step DNF-view collapse infrastructure to a two-layer
+explicit-view/schedule collapse certificate.  It records only named bottom-layer
+views, concrete restrictions, semantic compatibility, and explicit decision-tree
+witnesses for two stages.  It is **not** an arbitrary AC0 collapse, not a
+Frege/PHP lower bound, and not a complexity-class separation or NP lower-bound
+claim.
 -/
 
 namespace PvNP
