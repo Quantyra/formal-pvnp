@@ -103,11 +103,16 @@ The clean audit surface for release remains the TseitinCNFData uniform direct-cy
 #print axioms PvNP.BoundedDepthIteratedCollapse.oneLitThreeLayerCollapse_example_nonvacuous
 
 /-!
-PHP-floor boundary records.  These audit the restricted-PHP view layer added for
-the bounded-depth Frege PHP floor scaffolding.  They are boundary/formula-view
-artifacts only: the actual PHP adversary floor remains an explicit hypothesis,
-and no Frege lower bound is claimed here.
+PHP-floor boundary records.  These audit the restricted-PHP view layer and the
+semantic `Ac0RefutationData.ForInstance` tie used by the bounded-depth Frege PHP
+floor scaffolding.  They are boundary/formula-view artifacts only: the actual
+PHP adversary floor remains an explicit hypothesis, and no Frege, circuit, NP,
+or `P ≠ NP` lower bound is claimed here.
 -/
+
+/-- info: 'PvNP.FregeSwitching.Ac0RefutationData.ForInstance' does not depend on any axioms -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.Ac0RefutationData.ForInstance
 
 /-- info: 'PvNP.FregeSwitching.RestrictedPHPView.depthFloor_pos' does not depend on any axioms -/
 #guard_msgs in
@@ -144,6 +149,18 @@ and no Frege lower bound is claimed here.
 /-- info: 'PvNP.FregeSwitching.restrictedPHP_floor_le_collapse_of_switchingCore' depends on axioms: [propext] -/
 #guard_msgs in
 #print axioms PvNP.FregeSwitching.restrictedPHP_floor_le_collapse_of_switchingCore
+
+/-- info: 'PvNP.FregeSwitching.frege_php_floor_le_collapse_of_switchingCore' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.frege_php_floor_le_collapse_of_switchingCore
+
+/-- info: 'PvNP.FregeSwitching.frege_php_size_ge_exp_of_switchingCore' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.frege_php_size_ge_exp_of_switchingCore
+
+/-- info: 'PvNP.FregeSwitching.proxy_size_bound_packaged' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.proxy_size_bound_packaged
 
 /-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete

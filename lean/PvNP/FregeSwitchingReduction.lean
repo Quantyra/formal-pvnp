@@ -53,7 +53,7 @@ PROVEN (from the two isolated structural `Prop`s, no new axiom):
   `FregePHPImportedTarget.lowerBoundStatement` shape used by the opaque-axiom packaging, but now
   derived from the switching core instead of the opaque import.
 
-ISOLATED as explicit TRUE structural hypotheses (the genuinely-hard, not-locally-proved parts):
+ISOLATED as explicit structural hypotheses (the genuinely-hard, not-locally-proved parts):
 * `SwitchingLemmaCore` -- THE Hastad switching lemma (see its docstring for why it is true and not
   circular).
 * `PhpSurvivesRestrictionDepthFloor` -- PHP restricted by the switching restriction still contains a
@@ -85,14 +85,20 @@ structure Ac0Line where
   (For an uncollapsed line this would be large; the switching core bounds it.) -/
   restrictedDecisionTreeDepth : Nat
 
-/-- A depth-`d` AC0 refutation-data object for a PHP instance: the list of lines plus the global
-alternation depth budget `d`. This is the faithful proxy for `FregeProofSystem.Refutation` restricted
-to the structural data the switching argument consumes. -/
+/-- A depth-`d` AC0 refutation-data object for a PHP instance: the target PHP instance, the list of
+lines, and the global alternation depth budget `d`. This is the faithful proxy for
+`FregeProofSystem.Refutation` restricted to the structural data the switching argument consumes. -/
 structure Ac0RefutationData where
+  /-- The PHP instance this proxy refutation data is intended to refute. -/
+  targetInstance : PHPInstance
   /-- The alternation depth budget `d` of the proof system. -/
   depthBudget : Nat
   /-- The lines of the refutation. -/
   lines : List Ac0Line
+
+/-- The semantic tie between proxy refutation data and the PHP instance whose floor is being used. -/
+def Ac0RefutationData.ForInstance (R : Ac0RefutationData) (I : PHPInstance) : Prop :=
+  R.targetInstance = I
 
 /-- Size = number of lines. -/
 def Ac0RefutationData.size (R : Ac0RefutationData) : Nat := R.lines.length
@@ -187,23 +193,23 @@ theorem collapse_mono_size (d w : Nat) {S T : Nat} (h : S ≤ T) :
   unfold collapse
   exact Nat.mul_le_mul_left _ (Nat.log_mono_right (by omega))
 
-/-! ## 4. THE TRUE HARD CORE: the Hastad switching lemma (isolated, formula-independent `Prop`).
+/-! ## 4. THE SWITCHING HARD CORE: the Hastad switching lemma (isolated `Prop`).
 
 ### Statement
 
-For every depth-`d` AC0 refutation-data object `R` of any PHP instance `I`, after applying the
-switching restriction, EVERY line of `R` collapses to a decision tree of depth at most
+For every depth-`d` AC0 refutation-data object `R` tied to a PHP instance `I`, after applying the
+switching restriction, every line of `R` collapses to a decision tree of depth at most
 `collapse R.depthBudget (R.maxBottomFanIn) (R.size)`.
 
 ```
 SwitchingLemmaCore :=
-  ∀ I R, R.depthBudget = d →
+  ∀ I R, R.ForInstance I →
     ∀ ln ∈ R.lines, ln.restrictedDecisionTreeDepth ≤ collapse d R.maxBottomFanIn R.size
 ```
 
 i.e. `R.maxRestrictedDepth ≤ collapse d R.maxBottomFanIn R.size`.
 
-### Why this is the TRUE structural lemma and NOT circular
+### Why this is the intended structural lemma and NOT circular
 
 * **It is the genuine switching lemma.** A random `p`-restriction collapses any width-`w` DNF/CNF to
   a decision tree of depth `< t` except with probability `< (5 p w)^t` (Hastad 1986; Beame's primer).
@@ -212,9 +218,9 @@ i.e. `R.maxRestrictedDepth ≤ collapse d R.maxBottomFanIn R.size`.
   Our `collapse d w S` is exactly such a (concrete, monotone) bound. The Prop asserts the EXISTENCE
   of one good restriction outcome (the positive-probability event), packaged in the proxy as the
   `restrictedDecisionTreeDepth` field already collapsing within the bound.
-* **It is formula-independent / universal.** It quantifies over ALL PHP instances `I` and ALL
-  refutation-data `R`; it is a structural fact about depth-`d` AC0 formulas under restrictions, not a
-  statement about PHP at all. (PHP enters only later, via the depth floor.)
+* **It is instance-uniform / universal.** It quantifies over ALL PHP instances `I` and ALL
+  refutation-data `R` semantically tied to `I`; it is a structural fact about depth-`d` AC0 formulas
+  under restrictions, not a PHP floor statement. (PHP enters only later, via the depth floor.)
 * **It is NOT the rejected circular per-proof form.** The rejected resolution form was
   `∀ r, 2^(width r − w0) ≤ size r`, i.e. "the proof is already large", which is the conclusion in
   disguise and is FALSE for caterpillars. Here the core says nothing about size being large; it says
@@ -229,6 +235,7 @@ i.e. `R.maxRestrictedDepth ≤ collapse d R.maxBottomFanIn R.size`.
   neither; the proxy records the existentially-guaranteed good outcome. -/
 def SwitchingLemmaCore : Prop :=
   ∀ (_I : PHPInstance) (R : Ac0RefutationData),
+    R.ForInstance _I →
     R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size
 
 /-! ## 5. The PHP depth floor (the "PHP survives a restriction and still needs depth").
@@ -315,13 +322,14 @@ end RestrictedPHPView
 instance-indexed formulation of the same adversary/bottleneck fact; it remains a
 `Prop`, not an asserted theorem. -/
 def PHPInstanceDepthFloorStatement (I : PHPInstance) : Prop :=
-  ∀ R : Ac0RefutationData, R.maxRestrictedDepth < phpDepthFloor I → False
+  ∀ R : Ac0RefutationData, R.ForInstance I → R.maxRestrictedDepth < phpDepthFloor I → False
 
 /-- Decision-tree depth-floor statement for a restricted PHP view.  This is the
 PHP-specific adversary/bottleneck fact needed later; it is deliberately a `Prop`
 and not asserted true here. -/
 def RestrictedPHPDepthFloorStatement (V : RestrictedPHPView) : Prop :=
-  ∀ R : Ac0RefutationData, R.maxRestrictedDepth < V.depthFloor → False
+  ∀ R : Ac0RefutationData,
+    R.ForInstance V.liveInstance → R.maxRestrictedDepth < V.depthFloor → False
 
 /-- A restricted-view floor statement is exactly the floor statement for its live
 PHP instance. -/
@@ -370,7 +378,7 @@ theorem phpDepthFloorBoundary_statement_eq (V : RestrictedPHPView) :
     (PHPDepthFloorBoundary.forView V).floorStatement =
       RestrictedPHPDepthFloorStatement V := rfl
 
-/-- **PHP survives the restriction and needs depth (isolated TRUE structural `Prop`).**
+/-- **PHP survives the restriction and needs depth (isolated structural `Prop`).**
 
 For any depth-`d` AC0 refutation-data object `R` of `PHP_n` whose lines have ALL collapsed (after the
 switching restriction) to decision trees of depth `< phpDepthFloor (PHP_n n)`, we get a
@@ -379,12 +387,13 @@ floor would be a too-shallow bounded-decision-tree certificate for a sub-PHP, wh
 (PHP_{n'} has no depth-`< n'` decision-tree refutation -- the standard adversary/bottleneck argument
 keeps `≥ n'` pigeons unplaced). We isolate exactly this implication.
 
-WHY TRUE / NOT CIRCULAR: this is the PHP-specific combinatorial bottleneck (a restriction of
+WHY INTENDED / NOT CIRCULAR: this is the PHP-specific combinatorial bottleneck (a restriction of
 `PHP^{n+1}_n` leaves a `PHP^{n'+1}_{n'}` with `n'` linear in `n`, and an adversary keeps a pigeon
 unplaced against any depth-`< n'` tree). It is about decision-tree DEPTH, not Frege size, so it is
 not the conclusion restated. It is the genuine "PHP is hard for shallow trees" fact. -/
 def PhpSurvivesRestrictionDepthFloor : Prop :=
   ∀ (n : Nat) (R : Ac0RefutationData),
+    R.ForInstance (PHP_n n) →
     R.depthBudget ≤ n →                       -- the system is genuinely bounded-depth
     R.maxRestrictedDepth < phpDepthFloor (PHP_n n) →
     False
@@ -394,8 +403,9 @@ assumption used by the switching-to-size reduction. -/
 theorem phpSurvivesRestrictionDepthFloor_of_restrictedViews
     (hviews : ∀ V : RestrictedPHPView, RestrictedPHPDepthFloorStatement V) :
     PhpSurvivesRestrictionDepthFloor := by
-  intro n R _hd hdepth
+  intro n R hR _hd hdepth
   exact hviews (RestrictedPHPView.standard n) R (by
+    simpa [RestrictedPHPView.standard_liveInstance] using hR) (by
     simpa [RestrictedPHPView.standard_depthFloor] using hdepth)
 
 /-- View-indexed live-PHP force step: under the restricted-view depth-floor
@@ -406,13 +416,13 @@ theorem restrictedPHP_floor_le_collapse_of_switchingCore
     (hsw : SwitchingLemmaCore)
     (V : RestrictedPHPView)
     (hfloor : RestrictedPHPDepthFloorStatement V)
-    (R : Ac0RefutationData) :
+    (R : Ac0RefutationData) (hR : R.ForInstance V.liveInstance) :
     V.depthFloor ≤ collapse R.depthBudget R.maxBottomFanIn R.size := by
   have hcollapse : R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size :=
-    hsw V.liveInstance R
+    hsw V.liveInstance R hR
   by_contra hlt
   push_neg at hlt
-  exact hfloor R (lt_of_le_of_lt hcollapse hlt)
+  exact hfloor R hR (lt_of_le_of_lt hcollapse hlt)
 
 /-! ## 6. THE GENUINE NON-CIRCULAR REDUCTION
 
@@ -437,18 +447,18 @@ yields; converting it to the literal `2^(n^{c/d})` form is then pure arithmetic 
 -/
 theorem frege_php_floor_le_collapse_of_switchingCore
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hd : R.depthBudget ≤ n) :
+    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n) :
     phpDepthFloor (PHP_n n) ≤ collapse R.depthBudget R.maxBottomFanIn R.size := by
   -- The switching core collapses every line: maxRestrictedDepth ≤ collapse d w S.
   have hcollapse : R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size :=
-    hsw (PHP_n n) R
+    hsw (PHP_n n) R hR
   -- Suppose for contradiction the floor strictly exceeds the collapse value.
   by_contra hlt
   push_neg at hlt
   -- Then maxRestrictedDepth < phpDepthFloor, so the floor fact gives False.
   have hbelow : R.maxRestrictedDepth < phpDepthFloor (PHP_n n) :=
     lt_of_le_of_lt hcollapse hlt
-  exact hfloor n R hd hbelow
+  exact hfloor n R hR hd hbelow
 
 /--
 **Size lower bound in explicit exponential form (PROVEN from the two isolated structural facts).**
@@ -464,10 +474,10 @@ With `collapse d w S = w·(d+1)·log2 (S+1)`, the previous inequality
 bound for the proxy model. -/
 theorem frege_php_size_ge_exp_of_switchingCore
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hd : R.depthBudget ≤ n)
+    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n)
     (hwpos : 0 < R.maxBottomFanIn) :
     2 ^ (n / (R.maxBottomFanIn * (R.depthBudget + 1))) ≤ R.size + 1 := by
-  have hfl := frege_php_floor_le_collapse_of_switchingCore hsw hfloor n R hd
+  have hfl := frege_php_floor_le_collapse_of_switchingCore hsw hfloor n R hR hd
   -- phpDepthFloor (PHP_n n) = n by definition (pigeons = n+1)... actually PHP_n n has pigeons = n+1.
   -- phpDepthFloor (PHP_n n) = (PHP_n n).pigeons = n + 1 ≥ n. Use n ≤ floor ≤ collapse.
   have hn_le_floor : n ≤ phpDepthFloor (PHP_n n) := by
@@ -528,10 +538,10 @@ proxy-threshold target; constructing a `ProxyInterpretation` for a genuine Frege
 remaining modeling backlog (NOT proved here, NOT faked). -/
 theorem proxy_size_bound_packaged
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hd : R.depthBudget ≤ n)
+    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n)
     (hwpos : 0 < R.maxBottomFanIn) :
     2 ^ (n / (R.maxBottomFanIn * (R.depthBudget + 1))) ≤ R.size + 1 :=
-  frege_php_size_ge_exp_of_switchingCore hsw hfloor n R hd hwpos
+  frege_php_size_ge_exp_of_switchingCore hsw hfloor n R hR hd hwpos
 
 /-! ## 8. Non-vacuity: the bound is about an inhabited situation, and is genuinely growing. -/
 
@@ -539,6 +549,7 @@ theorem proxy_size_bound_packaged
 proxy type and the hypotheses are jointly inhabitable; it makes the per-refutation bound non-vacuous
 (the theorems are not statements over an empty type). -/
 def witnessProxy : Ac0RefutationData where
+  targetInstance := PHP_n 0
   depthBudget := 0
   lines := [{ bottomFanIn := 1, restrictedDecisionTreeDepth := 0 }]
 
