@@ -12,9 +12,9 @@ import Mathlib.Tactic.Linarith
 OPAQUE firewalled cited `axiom` (`bounded_depth_frege_php_lower_bound_imported`). This module does
 for that bound exactly what `ResolutionSizeWidth.lean` did for the exponential tree-resolution size
 bound: it replaces the opaque "it is just true (cited)" status with a GENUINE, NON-CIRCULAR REDUCTION
-to the ONE true hard combinatorial core of the area -- the **Hastad switching lemma** -- isolated as
-a TRUE, formula-independent structural `Prop`, plus a second clearly-true structural fact (PHP
-survives a restriction and still needs decision-tree depth). The reduction chain (switching lemma
+  to the ONE intended combinatorial bottleneck of the area -- the **Hastad switching lemma** -- isolated as
+  an intended combinatorial bottleneck stated as Prop; currently false under tag-only ForInstance (see FregePHPDepthFloorObstruction); requires semantic certificate interface, plus a second clearly-intended structural fact (PHP
+  survives a restriction and still needs decision-tree depth). The reduction chain (switching lemma
 => depth-d Frege/AC0 PHP size lower bound), the classical Ajtai / Pitassi-Beame-Impagliazzo /
 Krajicek-Pudlak-Woods argument, is then PROVEN from those isolated facts.
 
@@ -179,9 +179,9 @@ The Hastad switching lemma, applied `d` times to a depth-`d` AC0 formula of bott
 size `S`, collapses it to a decision tree of depth `O((w · log S)^?)`-ish; the exact polynomial is
 irrelevant to the reduction. We carry an ABSTRACT monotone collapse function `collapse d w S` and
 only use the qualitative facts the argument needs (it is the quantity the core bounds, and the
-reduction forces it `≥` the PHP floor). We pin a concrete TRUE choice
-`collapse d w S = w * (d + 1) * Nat.log 2 (S + 1)` so the statements are non-vacuous and `collapse`
-is genuinely monotone in `S`; the reduction never uses the specific polynomial, only monotonicity. -/
+reduction forces it `≥` the PHP floor). We pin a concrete intended choice
+  `collapse d w S = w * (d + 1) * Nat.log 2 (S + 1)` so the statements are non-vacuous and `collapse`
+  is genuinely monotone in `S`; the reduction never uses the specific polynomial, only monotonicity. -/
 
 /-- The abstract switching-collapse decision-tree depth after restricting a depth-`d`, bottom-fan-in
 `w`, size-`S` AC0 formula. Concrete monotone instantiation `w*(d+1)*log2(S+1)`. -/
@@ -240,7 +240,7 @@ def SwitchingLemmaCore : Prop :=
 
 /-! ## 5. The PHP depth floor (the "PHP survives a restriction and still needs depth").
 
-This is the second genuinely-true structural fact, the analog of the resolution-lane width LOWER
+This is the second intended combinatorial bottleneck stated as Prop; currently false under tag-only ForInstance (see FregePHPDepthFloorObstruction); requires semantic certificate interface, the analog of the resolution-lane width LOWER
 bound (which there was already proven from expansion; here we isolate it rather than fake it). -/
 
 /-- The decision-tree depth floor for refuting `PHP_n` on the surviving variables after a restriction:
@@ -433,7 +433,7 @@ says that residual depth must reach `phpDepthFloor`, which forces `S` large. -/
 /--
 **Per-refutation size lower bound (PROVEN from the two isolated structural facts).**
 
-Assume the TRUE switching lemma core `hsw` and the PHP depth-floor fact `hfloor`. Let `R` be any
+Assume the intended combinatorial bottleneck (switching lemma core) `hsw` and the PHP depth-floor fact `hfloor`. Let `R` be any
 depth-`d` AC0 refutation-data object of `PHP_n` with bounded depth `d ≤ n` and bottom fan-in
 `w := R.maxBottomFanIn`. Then its size `S := R.size` satisfies
 
