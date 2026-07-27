@@ -141,6 +141,10 @@ and no Frege lower bound is claimed here.
 #guard_msgs in
 #print axioms PvNP.FregeSwitching.phpSurvivesRestrictionDepthFloor_of_restrictedViews
 
+/-- info: 'PvNP.FregeSwitching.restrictedPHP_floor_le_collapse_of_switchingCore' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.restrictedPHP_floor_le_collapse_of_switchingCore
+
 /-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete
 DAG-resolution `K_n` Tseitin width/size kernel; they do not assert circuit, NP, or

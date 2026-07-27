@@ -398,6 +398,22 @@ theorem phpSurvivesRestrictionDepthFloor_of_restrictedViews
   exact hviews (RestrictedPHPView.standard n) R (by
     simpa [RestrictedPHPView.standard_depthFloor] using hdepth)
 
+/-- View-indexed live-PHP force step: under the restricted-view depth-floor
+hypothesis and the switching core, the collapse budget for any proxy refutation
+must reach the restricted live-instance floor.  This is conditional on the
+view floor; it proves no PHP/Frege lower bound by itself. -/
+theorem restrictedPHP_floor_le_collapse_of_switchingCore
+    (hsw : SwitchingLemmaCore)
+    (V : RestrictedPHPView)
+    (hfloor : RestrictedPHPDepthFloorStatement V)
+    (R : Ac0RefutationData) :
+    V.depthFloor ≤ collapse R.depthBudget R.maxBottomFanIn R.size := by
+  have hcollapse : R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size :=
+    hsw V.liveInstance R
+  by_contra hlt
+  push_neg at hlt
+  exact hfloor R (lt_of_le_of_lt hcollapse hlt)
+
 /-! ## 6. THE GENUINE NON-CIRCULAR REDUCTION
 
 From the switching core + the PHP depth floor, a depth-`d` AC0 refutation of `PHP_n` must be large.
