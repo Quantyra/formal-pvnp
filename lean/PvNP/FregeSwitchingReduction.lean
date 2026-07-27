@@ -420,12 +420,15 @@ switching restriction) to decision trees of depth `< phpDepthFloor (PHP_n n)`, w
 contradiction: a refutation all of whose lines are decision trees shallower than the surviving-PHP
 floor would be a too-shallow bounded-decision-tree certificate for a sub-PHP, which does not exist
 (PHP_{n'} has no depth-`< n'` decision-tree refutation -- the standard adversary/bottleneck argument
-keeps `≥ n'` pigeons unplaced). We isolate exactly this implication.
+keeps `\geq n'` pigeons unplaced). We isolate exactly this implication.
 
 WHY INTENDED / NOT CIRCULAR: this is the PHP-specific combinatorial bottleneck (a restriction of
 `PHP^{n+1}_n` leaves a `PHP^{n'+1}_{n'}` with `n'` linear in `n`, and an adversary keeps a pigeon
 unplaced against any depth-`< n'` tree). It is about decision-tree DEPTH, not Frege size, so it is
 not the conclusion restated. It is the genuine "PHP is hard for shallow trees" fact. -/
+
+Note: S2245 proves `not_PhpSurvivesRestrictionDepthFloor_semantic`; comments must clearly state the
+CURRENT Prop is refuted under SemanticPhpProxy and the classical bottleneck needs a future PHP eval/refutation semantics interface.
 def PhpSurvivesRestrictionDepthFloor : Prop :=
   ∀ (n : Nat) (P : SemanticPhpProxy (PHP_n n)),
     P.data.depthBudget ≤ n →                  -- the system is genuinely bounded-depth
