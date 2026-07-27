@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "This is a private development surface. Prefer citing the relevant public curated artifact and DOI."
+title: "Formal PvNP private Lean development surface"
+type: software
+authors:
+  - family-names: Fredriksen
+    given-names: Daniel
+version: 0.1.0-private
+date-released: 2026-07-26
+url: "https://github.com/Quantyra/formal-pvnp"
+repository-code: "https://github.com/Quantyra/formal-pvnp"
+license: Apache-2.0

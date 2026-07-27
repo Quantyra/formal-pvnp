@@ -1,8 +1,8 @@
 import Lake
 open Lake DSL
 
-package «pvnp» where
-  -- Private Lean 4 development surface for the Quantyra PvNP proof program.
+package «formal_pvnp» where
+  -- Private Lean 4 umbrella for the Quantyra PvNP proof program.
 
 require mathlib from git
   "https://github.com/leanprover-community/mathlib4" @ "v4.13.0"

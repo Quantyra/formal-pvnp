@@ -2,6 +2,7 @@
 
 ## 2026-07-26
 
-- Initial lean-only private repository split from mixed local `Quantyra` workspace.
-- Includes current `lean/PvNP` surface through private source commit `074b5cf`
-  lineage (S2238 local BSW/Tseitin DAG width-size kernel pin and prior stack).
+- Renamed private Lean-only surface to `formal-pvnp`.
+- Release-hygiene pass: portable README, `INTEGRITY-CLAIMS.md`, no local absolute
+  path references in tracked docs, Apache-2.0 LICENSE retained.
+- Initial lean-only split from mixed workspace (Lean + Lake metadata only).

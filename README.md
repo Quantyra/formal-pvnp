@@ -1,26 +1,25 @@
-# pvnp (private Lean development surface)
+# Formal PvNP (private Lean development surface)
 
-Private Lean 4 development repository for the Quantyra P vs NP / proof-complexity
+Private Lean 4 development repository for the Quantyra proof-complexity / PvNP
 program. This tree contains **only** the Lean proof surface and build metadata.
 
-It is split from the older mixed local workspace
-`C:\Users\Dan\Desktop\Projects\Quantyra` so planning, entity ops, and scratch
-files are not mixed into the proof repo.
+It is the active private umbrella for formal work that has not (or not yet) been
+exported into a narrow public artifact.
 
 ## Scope
 
 - Lean library: `lean/PvNP`
-- Toolchain: `leanprover/lean4:v4.13.0` (see `lean-toolchain`)
-- Package: Lake package `pvnp`, library target `PvNP`
+- Toolchain: `leanprover/lean4:v4.13.0` (`lean-toolchain`)
+- Lake package: `formal_pvnp`
+- Default library target: `PvNP`
 
-## Public curated artifacts
+## Related public curated artifacts
 
-Do **not** treat this private repo as the public citation surface. Public
-Zenodo/GitHub artifacts remain narrow splits, including:
+Public citation surfaces remain narrow splits (not this umbrella repo):
 
-- `https://github.com/Quantyra/formal-resolution-lower-bounds`
-- `https://github.com/Quantyra/formal-switching-lemma`
-- `https://github.com/Quantyra/certified-affine-extraction`
+- [formal-resolution-lower-bounds](https://github.com/Quantyra/formal-resolution-lower-bounds)
+- [formal-switching-lemma](https://github.com/Quantyra/formal-switching-lemma)
+- [certified-affine-extraction](https://github.com/Quantyra/certified-affine-extraction)
 
 ## Build
 
@@ -28,15 +27,28 @@ Zenodo/GitHub artifacts remain narrow splits, including:
 elan run leanprover/lean4:v4.13.0 lake build PvNP.Audit
 ```
 
+Optional module build:
+
+```bash
+elan run leanprover/lean4:v4.13.0 lake build PvNP.S2238BSWTseitinWidthKernel
+```
+
 ## Non-claims boundary
 
-This repository is a private research development surface. Presence of theorem
-scaffolding does **not** by itself establish `P != NP`, `P = NP`, NP/circuit
-lower bounds, Frege/PHP lower bounds, or general SAT-solving claims. Public
-wording must follow the Quantyra claim-boundary protocol and the relevant
-public artifact `INTEGRITY-CLAIMS.md` files.
+This repository is a **private research development surface**. It does **not**
+by itself establish, and must not be cited as establishing:
 
-## Planning / coordination
+- `P != NP` or `P = NP`
+- an NP or circuit lower bound
+- a Frege/PHP lower bound beyond an exactly scoped theorem
+- a general SAT solver or general CNF recognition claim
 
-Entity planning remains in `C:\Users\Dan\Desktop\Projects\IGH\Quantyra-Planning`.
-Active lane tracking: `stories/S008-track-core-quantyra-research-lane.md`.
+Some module comments retain historical research-lane labels; those labels are
+**not** public claims. Public wording must follow the Quantyra claim-boundary
+protocol and the relevant public artifact `INTEGRITY-CLAIMS.md` files.
+
+See `INTEGRITY-CLAIMS.md` in this repository for the local integrity posture.
+
+## License
+
+Apache-2.0 (see `LICENSE`).
