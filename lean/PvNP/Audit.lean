@@ -179,17 +179,21 @@ bound, NP lower bound, or `P ≠ NP` statement.
 #guard_msgs in
 #print axioms PvNP.FregeSwitching.zeroDepthProxyForInstance_maxRestrictedDepth
 
-/-- info: 'PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement' depends on axioms: [propext] -/
+/-- info: 'PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatementTagOnly' depends on axioms: [propext] -/
 #guard_msgs in
-#print axioms PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement
+#print axioms PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatementTagOnly
 
-/-- info: 'PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatement' depends on axioms: [propext] -/
+/-- info: 'PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatementTagOnly' depends on axioms: [propext] -/
 #guard_msgs in
-#print axioms PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatement
+#print axioms PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatementTagOnly
 
-/-- info: 'PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor' depends on axioms: [propext] -/
+/-- info: 'PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloorTagOnly' depends on axioms: [propext] -/
 #guard_msgs in
-#print axioms PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor
+#print axioms PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloorTagOnly
+
+/-- info: 'PvNP.FregeSwitching.zeroDepthProxyForInstance_not_semantic' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.zeroDepthProxyForInstance_not_semantic
 
 /-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete

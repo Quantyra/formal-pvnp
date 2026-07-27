@@ -37,8 +37,8 @@ def zeroDepthProxyForInstance (I : PHPInstance) : Ac0RefutationData where
 proxy is tagged to the target instance, and `ForInstance` alone carries no
 semantic refutation obligation.  This is only an interface obstruction, not a
 Frege/PHP lower-bound statement. -/
-theorem not_PHPInstanceDepthFloorStatement (I : PHPInstance) :
-    ¬ PHPInstanceDepthFloorStatement I := by
+theorem not_PHPInstanceDepthFloorStatementTagOnly (I : PHPInstance) :
+    ¬ PHPInstanceDepthFloorStatementTagOnly I := by
   intro hfloor
   exact hfloor (zeroDepthProxyForInstance I) (by simp) (by
     simpa [phpDepthFloor] using
@@ -47,8 +47,8 @@ theorem not_PHPInstanceDepthFloorStatement (I : PHPInstance) :
 /-- A bare restricted-view floor statement is false for the same interface
 reason: the empty proxy can be tagged to the live instance.  This is only an
 interface obstruction, not a Frege/PHP lower-bound statement. -/
-theorem not_RestrictedPHPDepthFloorStatement (V : RestrictedPHPView) :
-    ¬ RestrictedPHPDepthFloorStatement V := by
+theorem not_RestrictedPHPDepthFloorStatementTagOnly (V : RestrictedPHPView) :
+    ¬ RestrictedPHPDepthFloorStatementTagOnly V := by
   intro hfloor
   exact hfloor (zeroDepthProxyForInstance V.liveInstance) (by simp) (by
     simpa using RestrictedPHPView.depthFloor_pos V)
@@ -57,11 +57,33 @@ theorem not_RestrictedPHPDepthFloorStatement (V : RestrictedPHPView) :
 false under the present proxy interface: the empty zero-depth proxy is tagged to
 `PHP_n n`.  This is an interface obstruction only and proves no Frege/PHP lower
 bound or circuit/NP lower bound. -/
-theorem not_PhpSurvivesRestrictionDepthFloor :
-    ¬ PhpSurvivesRestrictionDepthFloor := by
+def PhpSurvivesRestrictionDepthFloorTagOnly : Prop :=
+  ∀ (n : Nat) (R : Ac0RefutationData),
+    R.ForInstance (PHP_n n) →
+    R.depthBudget ≤ n →
+    R.maxRestrictedDepth < phpDepthFloor (PHP_n n) →
+    False
+
+theorem not_PhpSurvivesRestrictionDepthFloorTagOnly :
+    ¬ PhpSurvivesRestrictionDepthFloorTagOnly := by
   intro hfloor
   exact hfloor 0 (zeroDepthProxyForInstance (PHP_n 0)) (by simp) (by simp) (by
     simpa [phpDepthFloor] using
       (lt_of_lt_of_le (by decide : 0 < 1) (phpInstance_pigeons_pos (PHP_n 0))))
+
+/-- The empty zero-depth tag-only proxy cannot be upgraded to a semantic proxy:
+semantic proxies carry a nonempty list of certified decision-tree residuals. -/
+theorem zeroDepthProxyForInstance_not_semantic (I : PHPInstance) :
+    ¬ ∃ P : SemanticPhpProxy I, P.data = zeroDepthProxyForInstance I := by
+  rintro ⟨P, hP⟩
+  have hlines : P.data.lines = [] := by
+    rw [hP]
+    rfl
+  have hmap : P.certLines.map (·.line) = [] := by
+    rw [← P.lines_eq]
+    exact hlines
+  have hcert : P.certLines = [] := by
+    simpa using hmap
+  exact P.certLines_nonempty hcert
 
 end PvNP.FregeSwitching

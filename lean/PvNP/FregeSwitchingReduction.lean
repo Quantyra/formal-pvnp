@@ -1,5 +1,6 @@
 import PvNP.FregePHPLowerBound
 import PvNP.DecisionTreeModel
+import PvNP.BoundedDepthDecisionTree
 import Mathlib.Data.Nat.Log
 import Mathlib.Tactic.Linarith
 
@@ -70,6 +71,7 @@ namespace FregeSwitching
 
 open PvNP.FregePHP
 open PvNP.DecisionTreeModel
+open PvNP.BoundedDepthDecisionTree
 
 /-! ## 1. A faithful-proxy depth-`d` AC0 refutation model
 
@@ -112,6 +114,29 @@ refutation in which every line has collapsed to a depth-`≤ t` decision tree is
 "`t`-bounded-decision-tree certificate". -/
 def Ac0RefutationData.maxRestrictedDepth (R : Ac0RefutationData) : Nat :=
   (R.lines.map (·.restrictedDecisionTreeDepth)).foldl max 0
+
+/-- A certified AC0 line carries the old line summary together with real
+decision-tree residual content over the variables of `I`.  The equality is the
+local honesty check tying the summary depth to the semantic decision tree.  This
+is still only residual certificate data, not a PHP adversary theorem or a lower
+bound claim. -/
+structure Ac0CertifiedLine (I : PHPInstance) where
+  line : Ac0Line
+  tree : DTree I.variableCount
+  depth_honest : line.restrictedDecisionTreeDepth = dtDepth tree
+
+/-- Semantic proxy for a PHP refutation certificate: the old AC0 summary data is
+retained, but its lines must be backed by nonempty certified decision-tree
+residuals, with at least one genuinely positive-depth residual.  This rules out
+the empty tag-only zero-depth proxy; it does not prove the PHP decision-tree
+adversary/lower-bound fact. -/
+structure SemanticPhpProxy (I : PHPInstance) where
+  data : Ac0RefutationData
+  hInst : data.ForInstance I
+  certLines : List (Ac0CertifiedLine I)
+  certLines_nonempty : certLines ≠ []
+  lines_eq : data.lines = certLines.map (·.line)
+  some_positive_depth : ∃ c ∈ certLines, 0 < dtDepth c.tree
 
 /-! ## 2. foldl-max plumbing (choice-light: only `propext`, no `Classical.choice` from these). -/
 
@@ -321,15 +346,25 @@ end RestrictedPHPView
 /-- Decision-tree depth-floor statement for a concrete PHP instance.  This is an
 instance-indexed formulation of the same adversary/bottleneck fact; it remains a
 `Prop`, not an asserted theorem. -/
-def PHPInstanceDepthFloorStatement (I : PHPInstance) : Prop :=
+def PHPInstanceDepthFloorStatementTagOnly (I : PHPInstance) : Prop :=
   ∀ R : Ac0RefutationData, R.ForInstance I → R.maxRestrictedDepth < phpDepthFloor I → False
+
+/-- Semantic decision-tree depth-floor statement for a concrete PHP instance.
+The quantified proxy must contain real certified decision-tree residual content;
+the adversary/lower-bound fact itself remains an isolated `Prop`. -/
+def PHPInstanceDepthFloorStatement (I : PHPInstance) : Prop :=
+  ∀ P : SemanticPhpProxy I, P.data.maxRestrictedDepth < phpDepthFloor I → False
 
 /-- Decision-tree depth-floor statement for a restricted PHP view.  This is the
 PHP-specific adversary/bottleneck fact needed later; it is deliberately a `Prop`
 and not asserted true here. -/
-def RestrictedPHPDepthFloorStatement (V : RestrictedPHPView) : Prop :=
+def RestrictedPHPDepthFloorStatementTagOnly (V : RestrictedPHPView) : Prop :=
   ∀ R : Ac0RefutationData,
     R.ForInstance V.liveInstance → R.maxRestrictedDepth < V.depthFloor → False
+
+/-- Semantic decision-tree depth-floor statement for a restricted PHP view. -/
+def RestrictedPHPDepthFloorStatement (V : RestrictedPHPView) : Prop :=
+  ∀ P : SemanticPhpProxy V.liveInstance, P.data.maxRestrictedDepth < V.depthFloor → False
 
 /-- A restricted-view floor statement is exactly the floor statement for its live
 PHP instance. -/
@@ -392,10 +427,9 @@ WHY INTENDED / NOT CIRCULAR: this is the PHP-specific combinatorial bottleneck (
 unplaced against any depth-`< n'` tree). It is about decision-tree DEPTH, not Frege size, so it is
 not the conclusion restated. It is the genuine "PHP is hard for shallow trees" fact. -/
 def PhpSurvivesRestrictionDepthFloor : Prop :=
-  ∀ (n : Nat) (R : Ac0RefutationData),
-    R.ForInstance (PHP_n n) →
-    R.depthBudget ≤ n →                       -- the system is genuinely bounded-depth
-    R.maxRestrictedDepth < phpDepthFloor (PHP_n n) →
+  ∀ (n : Nat) (P : SemanticPhpProxy (PHP_n n)),
+    P.data.depthBudget ≤ n →                  -- the system is genuinely bounded-depth
+    P.data.maxRestrictedDepth < phpDepthFloor (PHP_n n) →
     False
 
 /-- A view-indexed depth-floor theorem implies the earlier standard-family floor
@@ -403,9 +437,9 @@ assumption used by the switching-to-size reduction. -/
 theorem phpSurvivesRestrictionDepthFloor_of_restrictedViews
     (hviews : ∀ V : RestrictedPHPView, RestrictedPHPDepthFloorStatement V) :
     PhpSurvivesRestrictionDepthFloor := by
-  intro n R hR _hd hdepth
-  exact hviews (RestrictedPHPView.standard n) R (by
-    simpa [RestrictedPHPView.standard_liveInstance] using hR) (by
+  intro n P _hd hdepth
+  exact hviews (RestrictedPHPView.standard n) (by
+    simpa [RestrictedPHPView.standard_liveInstance] using P) (by
     simpa [RestrictedPHPView.standard_depthFloor] using hdepth)
 
 /-- View-indexed live-PHP force step: under the restricted-view depth-floor
@@ -416,13 +450,13 @@ theorem restrictedPHP_floor_le_collapse_of_switchingCore
     (hsw : SwitchingLemmaCore)
     (V : RestrictedPHPView)
     (hfloor : RestrictedPHPDepthFloorStatement V)
-    (R : Ac0RefutationData) (hR : R.ForInstance V.liveInstance) :
-    V.depthFloor ≤ collapse R.depthBudget R.maxBottomFanIn R.size := by
-  have hcollapse : R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size :=
-    hsw V.liveInstance R hR
+    (P : SemanticPhpProxy V.liveInstance) :
+    V.depthFloor ≤ collapse P.data.depthBudget P.data.maxBottomFanIn P.data.size := by
+  have hcollapse : P.data.maxRestrictedDepth ≤ collapse P.data.depthBudget P.data.maxBottomFanIn P.data.size :=
+    hsw V.liveInstance P.data P.hInst
   by_contra hlt
   push_neg at hlt
-  exact hfloor R hR (lt_of_le_of_lt hcollapse hlt)
+  exact hfloor P (lt_of_le_of_lt hcollapse hlt)
 
 /-! ## 6. THE GENUINE NON-CIRCULAR REDUCTION
 
@@ -447,18 +481,18 @@ yields; converting it to the literal `2^(n^{c/d})` form is then pure arithmetic 
 -/
 theorem frege_php_floor_le_collapse_of_switchingCore
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n) :
-    phpDepthFloor (PHP_n n) ≤ collapse R.depthBudget R.maxBottomFanIn R.size := by
+    (n : Nat) (P : SemanticPhpProxy (PHP_n n)) (hd : P.data.depthBudget ≤ n) :
+    phpDepthFloor (PHP_n n) ≤ collapse P.data.depthBudget P.data.maxBottomFanIn P.data.size := by
   -- The switching core collapses every line: maxRestrictedDepth ≤ collapse d w S.
-  have hcollapse : R.maxRestrictedDepth ≤ collapse R.depthBudget R.maxBottomFanIn R.size :=
-    hsw (PHP_n n) R hR
+  have hcollapse : P.data.maxRestrictedDepth ≤ collapse P.data.depthBudget P.data.maxBottomFanIn P.data.size :=
+    hsw (PHP_n n) P.data P.hInst
   -- Suppose for contradiction the floor strictly exceeds the collapse value.
   by_contra hlt
   push_neg at hlt
   -- Then maxRestrictedDepth < phpDepthFloor, so the floor fact gives False.
-  have hbelow : R.maxRestrictedDepth < phpDepthFloor (PHP_n n) :=
+  have hbelow : P.data.maxRestrictedDepth < phpDepthFloor (PHP_n n) :=
     lt_of_le_of_lt hcollapse hlt
-  exact hfloor n R hR hd hbelow
+  exact hfloor n P hd hbelow
 
 /--
 **Size lower bound in explicit exponential form (PROVEN from the two isolated structural facts).**
@@ -474,33 +508,33 @@ With `collapse d w S = w·(d+1)·log2 (S+1)`, the previous inequality
 bound for the proxy model. -/
 theorem frege_php_size_ge_exp_of_switchingCore
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n)
-    (hwpos : 0 < R.maxBottomFanIn) :
-    2 ^ (n / (R.maxBottomFanIn * (R.depthBudget + 1))) ≤ R.size + 1 := by
-  have hfl := frege_php_floor_le_collapse_of_switchingCore hsw hfloor n R hR hd
+    (n : Nat) (P : SemanticPhpProxy (PHP_n n)) (hd : P.data.depthBudget ≤ n)
+    (hwpos : 0 < P.data.maxBottomFanIn) :
+    2 ^ (n / (P.data.maxBottomFanIn * (P.data.depthBudget + 1))) ≤ P.data.size + 1 := by
+  have hfl := frege_php_floor_le_collapse_of_switchingCore hsw hfloor n P hd
   -- phpDepthFloor (PHP_n n) = n by definition (pigeons = n+1)... actually PHP_n n has pigeons = n+1.
   -- phpDepthFloor (PHP_n n) = (PHP_n n).pigeons = n + 1 ≥ n. Use n ≤ floor ≤ collapse.
   have hn_le_floor : n ≤ phpDepthFloor (PHP_n n) := by
     unfold phpDepthFloor PHP_n; simp
-  have hn_le : n ≤ R.maxBottomFanIn * (R.depthBudget + 1) * Nat.log 2 (R.size + 1) := by
-    have : n ≤ collapse R.depthBudget R.maxBottomFanIn R.size := le_trans hn_le_floor hfl
+  have hn_le : n ≤ P.data.maxBottomFanIn * (P.data.depthBudget + 1) * Nat.log 2 (P.data.size + 1) := by
+    have : n ≤ collapse P.data.depthBudget P.data.maxBottomFanIn P.data.size := le_trans hn_le_floor hfl
     simpa [collapse, Nat.mul_assoc] using this
   -- Let D = w*(d+1) > 0. Then n ≤ D * log2(S+1), so n / D ≤ log2(S+1).
-  set D := R.maxBottomFanIn * (R.depthBudget + 1) with hD
+  set D := P.data.maxBottomFanIn * (P.data.depthBudget + 1) with hD
   have hDpos : 0 < D := by
-    have : 0 < R.depthBudget + 1 := Nat.succ_pos _
+    have : 0 < P.data.depthBudget + 1 := Nat.succ_pos _
     exact Nat.mul_pos hwpos this
-  have hn_le' : n ≤ D * Nat.log 2 (R.size + 1) := by
+  have hn_le' : n ≤ D * Nat.log 2 (P.data.size + 1) := by
     simpa [hD, Nat.mul_assoc] using hn_le
   -- n / D ≤ log2 (S+1)
-  have hdiv : n / D ≤ Nat.log 2 (R.size + 1) := by
+  have hdiv : n / D ≤ Nat.log 2 (P.data.size + 1) := by
     rw [Nat.div_le_iff_le_mul_add_pred hDpos]
-    calc n ≤ D * Nat.log 2 (R.size + 1) := hn_le'
-      _ ≤ D * Nat.log 2 (R.size + 1) + (D - 1) := Nat.le_add_right _ _
+    calc n ≤ D * Nat.log 2 (P.data.size + 1) := hn_le'
+      _ ≤ D * Nat.log 2 (P.data.size + 1) + (D - 1) := Nat.le_add_right _ _
   -- 2^(n/D) ≤ 2^(log2(S+1)) ≤ S+1.
-  calc 2 ^ (n / D) ≤ 2 ^ (Nat.log 2 (R.size + 1)) :=
+  calc 2 ^ (n / D) ≤ 2 ^ (Nat.log 2 (P.data.size + 1)) :=
         Nat.pow_le_pow_right (by norm_num) hdiv
-    _ ≤ R.size + 1 := Nat.pow_log_le_self 2 (by omega)
+    _ ≤ P.data.size + 1 := Nat.pow_log_le_self 2 (by omega)
 
 /-! ## 7. Packaging into the existing `FregePHPImportedTarget.lowerBoundStatement` shape.
 
@@ -519,13 +553,13 @@ structure ProxyInterpretation (T : FregePHPImportedTarget) where
   /-- The family is the standard `{PHP^{n+1}_n}` with `Index = Nat`. -/
   index_nat : T.family.Index = Nat
   /-- Read a refutation as proxy data. -/
-  toProxy : (i : T.family.Index) → T.system.Refutation (T.family.instance_ i) → Ac0RefutationData
+  toProxy : (i : T.family.Index) → T.system.Refutation (T.family.instance_ i) → SemanticPhpProxy (T.family.instance_ i)
   /-- The proxy depth budget equals the system depth bound. -/
-  depthBudget_le : ∀ i p, (toProxy i p).depthBudget ≤ T.depthBound
+  depthBudget_le : ∀ i p, (toProxy i p).data.depthBudget ≤ T.depthBound
   /-- Bottom fan-in is positive (formulas mention variables). -/
-  fanIn_pos : ∀ i p, 0 < (toProxy i p).maxBottomFanIn
+  fanIn_pos : ∀ i p, 0 < (toProxy i p).data.maxBottomFanIn
   /-- The proxy size is at most the abstract Frege size (lines ≤ symbols/lines). -/
-  proxySize_le : ∀ i p, (toProxy i p).size ≤ T.system.size p
+  proxySize_le : ∀ i p, (toProxy i p).data.size ≤ T.system.size p
   /-- For the standard family the depth bound does not exceed the instance's pigeon parameter
   (genuine bounded-depth regime). -/
   depthBound_le_param : ∀ i, T.depthBound ≤ (T.family.instance_ i).pigeons - 1
@@ -538,10 +572,10 @@ proxy-threshold target; constructing a `ProxyInterpretation` for a genuine Frege
 remaining modeling backlog (NOT proved here, NOT faked). -/
 theorem proxy_size_bound_packaged
     (hsw : SwitchingLemmaCore) (hfloor : PhpSurvivesRestrictionDepthFloor)
-    (n : Nat) (R : Ac0RefutationData) (hR : R.ForInstance (PHP_n n)) (hd : R.depthBudget ≤ n)
-    (hwpos : 0 < R.maxBottomFanIn) :
-    2 ^ (n / (R.maxBottomFanIn * (R.depthBudget + 1))) ≤ R.size + 1 :=
-  frege_php_size_ge_exp_of_switchingCore hsw hfloor n R hR hd hwpos
+    (n : Nat) (P : SemanticPhpProxy (PHP_n n)) (hd : P.data.depthBudget ≤ n)
+    (hwpos : 0 < P.data.maxBottomFanIn) :
+    2 ^ (n / (P.data.maxBottomFanIn * (P.data.depthBudget + 1))) ≤ P.data.size + 1 :=
+  frege_php_size_ge_exp_of_switchingCore hsw hfloor n P hd hwpos
 
 /-! ## 8. Non-vacuity: the bound is about an inhabited situation, and is genuinely growing. -/
 
@@ -552,6 +586,22 @@ def witnessProxy : Ac0RefutationData where
   targetInstance := PHP_n 0
   depthBudget := 0
   lines := [{ bottomFanIn := 1, restrictedDecisionTreeDepth := 0 }]
+
+def witnessCertifiedLine : Ac0CertifiedLine (PHP_n 1) where
+  line := { bottomFanIn := 1, restrictedDecisionTreeDepth := 1 }
+  tree := DTree.node ⟨0, by decide⟩ (DTree.leaf false) (DTree.leaf true)
+  depth_honest := rfl
+
+/-- Semantic proxy witness with real positive-depth residual decision-tree content. -/
+def witnessSemanticProxy : SemanticPhpProxy (PHP_n 1) where
+  data := { targetInstance := PHP_n 1, depthBudget := 1, lines := [witnessCertifiedLine.line] }
+  hInst := rfl
+  certLines := [witnessCertifiedLine]
+  certLines_nonempty := by simp
+  lines_eq := rfl
+  some_positive_depth := by
+    refine ⟨witnessCertifiedLine, by simp, ?_⟩
+    simp [witnessCertifiedLine]
 
 theorem witnessProxy_size : witnessProxy.size = 1 := rfl
 theorem witnessProxy_fanIn : witnessProxy.maxBottomFanIn = 1 := rfl
