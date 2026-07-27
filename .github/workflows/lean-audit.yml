@@ -9,6 +9,7 @@ on:
 jobs:
   lean:
     runs-on: ubuntu-latest
+    timeout-minutes: 180
 
     steps:
       - name: Check out repository
@@ -19,8 +20,12 @@ jobs:
           curl -sSf https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh | sh -s -- -y --default-toolchain none
           echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
 
-      - name: Build audited Lean target
-        run: lake build PvNP.TseitinCNFData
+      - name: Get Mathlib cache
+        run: lake exe cache get
+        continue-on-error: true
+
+      - name: Build primary audit target
+        run: lake build PvNP.Audit
 
       - name: Check axiom audit surface
         run: lake env lean lean/PvNP/Audit.lean
