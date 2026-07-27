@@ -86,4 +86,60 @@ theorem zeroDepthProxyForInstance_not_semantic (I : PHPInstance) :
     simpa using hmap
   exact P.certLines_nonempty hcert
 
+/-! ## Semantic-proxy depth-floor boundary checks
+
+These statements use only the structural `SemanticPhpProxy` interface.  The
+`PHP_n 0` fact is degenerate interface content: because semantic proxies must
+carry some positive-depth certified residual, their maximum restricted depth is
+already at least the floor `1`.  This is not a genuine PHP CNF adversary theorem.
+
+Conversely, the concrete `witnessSemanticProxy` for `PHP_n 1` has depth `1`,
+below the floor `2`, so the semantic proxy interface alone still does not force
+the universal floor statement for `PHP_n 1`.
+-/
+
+/-- Any semantic PHP proxy has positive maximum restricted depth, because one
+certified residual has positive decision-tree depth and each certified line is
+accounted for in `maxRestrictedDepth`. -/
+theorem semantic_proxy_maxRestrictedDepth_pos (I : PHPInstance)
+    (P : SemanticPhpProxy I) :
+    0 < P.data.maxRestrictedDepth := by
+  obtain ⟨c, hc, hpos⟩ := P.some_positive_depth
+  have hline : c.line ∈ P.data.lines := by
+    rw [P.lines_eq]
+    exact List.mem_map_of_mem (fun c => c.line) hc
+  have hline_pos : 0 < c.line.restrictedDecisionTreeDepth := by
+    simpa [c.depth_honest] using hpos
+  exact lt_of_lt_of_le hline_pos (restrictedDepth_le_max P.data hline)
+
+/-- Degenerate `PHP_n 0` semantic depth floor at floor `1`, by positive-depth
+content in the semantic proxy interface.  This is structural interface content
+for the degenerate instance, not a genuine PHP CNF adversary theorem. -/
+theorem php_n0_depth_floor_of_semantic_proxy :
+    PHPInstanceDepthFloorStatement (PHP_n 0) := by
+  intro P hbelow
+  have hpos := semantic_proxy_maxRestrictedDepth_pos (PHP_n 0) P
+  have hbelow' : P.data.maxRestrictedDepth < 1 := by
+    simpa [phpDepthFloor, PHP_n] using hbelow
+  omega
+
+/-- The concrete semantic proxy witness for `PHP_n 1` lies below the PHP floor.
+This is an interface obstruction only: `SemanticPhpProxy` content alone does not
+force the universal floor statement. -/
+theorem exists_semantic_proxy_below_floor_PHP_n1 :
+    ∃ P : SemanticPhpProxy (PHP_n 1),
+      P.data.maxRestrictedDepth < phpDepthFloor (PHP_n 1) := by
+  refine ⟨witnessSemanticProxy, ?_⟩
+  norm_num [witnessSemanticProxy, witnessCertifiedLine,
+    Ac0RefutationData.maxRestrictedDepth, phpDepthFloor, PHP_n]
+
+/-- The semantic proxy interface alone does not imply the universal floor
+statement for `PHP_n 1`: the concrete depth-`1` witness is below floor `2`.
+This is an interface obstruction, not a PHP/Frege lower-bound claim. -/
+theorem not_PHPInstanceDepthFloorStatement_semantic_PHP_n1 :
+    ¬ PHPInstanceDepthFloorStatement (PHP_n 1) := by
+  intro hfloor
+  obtain ⟨P, hbelow⟩ := exists_semantic_proxy_below_floor_PHP_n1
+  exact hfloor P hbelow
+
 end PvNP.FregeSwitching

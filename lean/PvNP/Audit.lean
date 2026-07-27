@@ -196,6 +196,34 @@ bound, NP lower bound, or `P ≠ NP` statement.
 #print axioms PvNP.FregeSwitching.zeroDepthProxyForInstance_not_semantic
 
 /-!
+S2245 semantic-proxy floor interface pins.  These audit only structural semantic
+proxy interface content: the `PHP_n 0` floor is degenerate, and the `PHP_n 1`
+witness records an interface obstruction to deriving a universal semantic floor
+from `SemanticPhpProxy` alone.  They are not PHP CNF adversary, Frege lower-bound,
+circuit lower-bound, NP lower-bound, or `P ≠ NP` claims.
+-/
+
+/-- info: 'PvNP.FregeSwitching.semantic_proxy_maxRestrictedDepth_pos' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.semantic_proxy_maxRestrictedDepth_pos
+
+/-- info: 'PvNP.FregeSwitching.php_n0_depth_floor_of_semantic_proxy' depends on axioms: [propext, Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.php_n0_depth_floor_of_semantic_proxy
+
+/-- info: 'PvNP.FregeSwitching.exists_semantic_proxy_below_floor_PHP_n1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.exists_semantic_proxy_below_floor_PHP_n1
+
+/-- info: 'PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement_semantic_PHP_n1' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement_semantic_PHP_n1
+
+/-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete
 DAG-resolution `K_n` Tseitin width/size kernel; they do not assert circuit, NP, or
 `P ≠ NP` lower bounds.
