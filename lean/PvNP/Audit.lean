@@ -223,6 +223,12 @@ circuit lower-bound, NP lower-bound, or `P ≠ NP` claims.
 #guard_msgs in
 #print axioms PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement_semantic_PHP_n1
 
+/-- info: 'PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor_semantic' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor_semantic
+
 /-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete
 DAG-resolution `K_n` Tseitin width/size kernel; they do not assert circuit, NP, or

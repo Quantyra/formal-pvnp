@@ -142,4 +142,15 @@ theorem not_PHPInstanceDepthFloorStatement_semantic_PHP_n1 :
   obtain ⟨P, hbelow⟩ := exists_semantic_proxy_below_floor_PHP_n1
   exact hfloor P hbelow
 
+/-- The standard-family semantic depth-floor hypothesis consumed downstream is
+false for the current semantic proxy interface: the concrete `PHP_n 1` witness
+has depth budget `1` and maximum restricted depth below the floor `2`.  This is
+an interface obstruction only, not a PHP/Frege lower-bound claim. -/
+theorem not_PhpSurvivesRestrictionDepthFloor_semantic :
+    ¬ PhpSurvivesRestrictionDepthFloor := by
+  intro hfloor
+  exact hfloor 1 witnessSemanticProxy (by simp [witnessSemanticProxy]) (by
+    norm_num [witnessSemanticProxy, witnessCertifiedLine,
+      Ac0RefutationData.maxRestrictedDepth, phpDepthFloor, PHP_n])
+
 end PvNP.FregeSwitching
