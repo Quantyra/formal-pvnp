@@ -6,6 +6,7 @@ import PvNP.ResolutionUnconditionalLowerBound
 import PvNP.ResolutionImportedExpanderBound
 import PvNP.ResolutionWidthExpansion
 import PvNP.FregePHPLowerBound
+import PvNP.FregePHPDepthFloorObstruction
 import PvNP.AM2025BarrierAudit
 import PvNP.TreeLikeChain
 import PvNP.ResoplusPDT

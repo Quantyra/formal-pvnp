@@ -2,6 +2,7 @@ import PvNP.TseitinCNFData
 import PvNP.CanonicalExtractor
 import PvNP.BoundedDepthIteratedCollapse
 import PvNP.FregeSwitchingReduction
+import PvNP.FregePHPDepthFloorObstruction
 import PvNP.S2238BSWTseitinWidthKernel
 
 /-!
@@ -161,6 +162,34 @@ or `P ≠ NP` lower bound is claimed here.
 /-- info: 'PvNP.FregeSwitching.proxy_size_bound_packaged' depends on axioms: [propext, Classical.choice, Quot.sound] -/
 #guard_msgs in
 #print axioms PvNP.FregeSwitching.proxy_size_bound_packaged
+
+/-!
+S2243 ForInstance-only depth-floor obstruction pins.  These audit only the
+conditional interface obstruction: the empty zero-depth proxy shows that a bare
+`ForInstance` equality tie cannot imply a PHP decision-tree depth floor.  They
+do not claim a semantic PHP refutation, Frege/PHP lower bound, circuit lower
+bound, NP lower bound, or `P ≠ NP` statement.
+-/
+
+/-- info: 'PvNP.FregeSwitching.zeroDepthProxyForInstance_forInstance' does not depend on any axioms -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.zeroDepthProxyForInstance_forInstance
+
+/-- info: 'PvNP.FregeSwitching.zeroDepthProxyForInstance_maxRestrictedDepth' does not depend on any axioms -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.zeroDepthProxyForInstance_maxRestrictedDepth
+
+/-- info: 'PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.not_PHPInstanceDepthFloorStatement
+
+/-- info: 'PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatement' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.not_RestrictedPHPDepthFloorStatement
+
+/-- info: 'PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor' depends on axioms: [propext] -/
+#guard_msgs in
+#print axioms PvNP.FregeSwitching.not_PhpSurvivesRestrictionDepthFloor
 
 /-!
 S2238 local BSW/Tseitin DAG width-size kernel pins.  These audit only the concrete
