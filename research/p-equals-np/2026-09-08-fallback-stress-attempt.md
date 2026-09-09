@@ -121,7 +121,8 @@ small capped-domain observations establish no polynomial growth law.
 ## Measured fallback mechanism and next testable obligation
 
 Across 288 elimination steps, 61 bucket attempts succeed and 227 fall back.
-There are 32 pair-cap aborts (one initial rejection in each run), 195
+There are 32 pair-cap aborts (one in each run: 31 at the first step and one
+at the second step for n=8, seed=43, ascending), 195
 nonclausal-shape aborts, and zero local work-cap aborts. Only 20 raw candidate
 pairs are actually examined, versus 1798 requested pair candidates including
 pre-enumeration rejected products. Eight examined candidates are tautologies.
@@ -160,3 +161,8 @@ storage, by a polynomial in total input length. No such invariant is proved
 by this experiment. If the offending factors mostly contain x, this candidate
 does not resolve the observed loss of eligibility; another substantive
 representation or progress argument would be needed.
+
+The [support-locality replay](2026-09-08-support-locality-attempt.md) later
+checked exact call outcomes and corrected the initial-step qualifier above:
+the n=8, seed=43 ascending run accepts its first bucket before its sole
+pair-cap rejection. All saved aggregate counts and solver results are unchanged.
