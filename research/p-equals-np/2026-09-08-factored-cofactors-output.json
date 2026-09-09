@@ -1,0 +1,672 @@
+{
+  "benchmarks": [
+    {
+      "allocated_nodes": 10,
+      "boundary": {
+        "allocated_nodes": 10,
+        "counts": {
+          "allocated_edges": 8,
+          "cofactor_calls": 14,
+          "cofactor_edges": 12,
+          "cofactor_unique_visits": 14,
+          "constructor_calls": 10,
+          "intern_key_edges": 8,
+          "intern_lookups": 8,
+          "normalization_child_visits": 18
+        },
+        "reachable": {
+          "edges": 2,
+          "nodes": 3
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 8,
+        "cofactor_calls": 20,
+        "cofactor_edges": 16,
+        "cofactor_unique_visits": 20,
+        "constructor_calls": 13,
+        "intern_key_edges": 8,
+        "intern_lookups": 8,
+        "normalization_child_visits": 22,
+        "witness_eval_calls": 4,
+        "witness_eval_unique_visits": 4
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 0,
+        "nodes": 3
+      },
+      "m": 1,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 4,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 9,
+      "boundary": {
+        "allocated_nodes": 9,
+        "counts": {
+          "allocated_edges": 6,
+          "cofactor_calls": 14,
+          "cofactor_edges": 12,
+          "cofactor_unique_visits": 14,
+          "complement_scans": 12,
+          "constructor_calls": 10,
+          "dedup_entries": 12,
+          "factor_entries": 4,
+          "intern_key_edges": 6,
+          "intern_lookups": 7,
+          "intersection_entries": 4,
+          "normalization_child_visits": 18,
+          "sort_comparisons": 3
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 6,
+        "cofactor_calls": 16,
+        "cofactor_edges": 12,
+        "cofactor_unique_visits": 16,
+        "complement_scans": 12,
+        "constructor_calls": 11,
+        "dedup_entries": 12,
+        "factor_entries": 4,
+        "intern_key_edges": 6,
+        "intern_lookups": 7,
+        "intersection_entries": 4,
+        "normalization_child_visits": 19,
+        "sort_comparisons": 3,
+        "witness_eval_calls": 4,
+        "witness_eval_unique_visits": 4
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 0,
+        "nodes": 3
+      },
+      "m": 1,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 4,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 27,
+      "boundary": {
+        "allocated_nodes": 25,
+        "counts": {
+          "allocated_edges": 34,
+          "cofactor_cache_hits": 4,
+          "cofactor_calls": 52,
+          "cofactor_edges": 48,
+          "cofactor_unique_visits": 48,
+          "constructor_calls": 27,
+          "intern_key_edges": 42,
+          "intern_lookups": 27,
+          "normalization_child_visits": 60
+        },
+        "reachable": {
+          "edges": 14,
+          "nodes": 11
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 38,
+        "cofactor_cache_hits": 14,
+        "cofactor_calls": 92,
+        "cofactor_edges": 84,
+        "cofactor_unique_visits": 78,
+        "constructor_calls": 47,
+        "intern_key_edges": 48,
+        "intern_lookups": 30,
+        "normalization_child_visits": 92,
+        "witness_eval_calls": 38,
+        "witness_eval_edges": 30,
+        "witness_eval_unique_visits": 36
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 24,
+        "nodes": 18
+      },
+      "m": 2,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 8,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 18,
+      "boundary": {
+        "allocated_nodes": 18,
+        "counts": {
+          "allocated_edges": 20,
+          "cofactor_calls": 40,
+          "cofactor_edges": 36,
+          "cofactor_unique_visits": 40,
+          "complement_scans": 42,
+          "constructor_calls": 27,
+          "dedup_entries": 42,
+          "difference_input_entries": 10,
+          "factor_entries": 22,
+          "factor_rewrites": 1,
+          "intern_key_edges": 28,
+          "intern_lookups": 20,
+          "intersection_entries": 22,
+          "normalization_child_visits": 55,
+          "sort_comparisons": 27
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 20,
+        "cofactor_calls": 44,
+        "cofactor_edges": 36,
+        "cofactor_unique_visits": 44,
+        "complement_scans": 42,
+        "constructor_calls": 29,
+        "dedup_entries": 42,
+        "difference_input_entries": 10,
+        "factor_entries": 22,
+        "factor_rewrites": 1,
+        "intern_key_edges": 28,
+        "intern_lookups": 20,
+        "intersection_entries": 22,
+        "normalization_child_visits": 57,
+        "sort_comparisons": 27,
+        "witness_eval_calls": 22,
+        "witness_eval_edges": 14,
+        "witness_eval_unique_visits": 22
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 10,
+        "nodes": 11
+      },
+      "m": 2,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 8,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 112,
+      "boundary": {
+        "allocated_nodes": 83,
+        "counts": {
+          "allocated_edges": 218,
+          "cofactor_cache_hits": 108,
+          "cofactor_calls": 304,
+          "cofactor_edges": 296,
+          "cofactor_unique_visits": 196,
+          "constructor_calls": 105,
+          "intern_key_edges": 266,
+          "intern_lookups": 105,
+          "normalization_child_visits": 320
+        },
+        "reachable": {
+          "edges": 94,
+          "nodes": 39
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 284,
+        "cofactor_cache_hits": 276,
+        "cofactor_calls": 632,
+        "cofactor_edges": 616,
+        "cofactor_unique_visits": 356,
+        "constructor_calls": 229,
+        "intern_key_edges": 392,
+        "intern_lookups": 160,
+        "normalization_child_visits": 572,
+        "witness_eval_calls": 370,
+        "witness_eval_edges": 354,
+        "witness_eval_unique_visits": 234
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 258,
+        "nodes": 99
+      },
+      "m": 4,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 16,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 36,
+      "boundary": {
+        "allocated_nodes": 36,
+        "counts": {
+          "allocated_edges": 66,
+          "cofactor_calls": 128,
+          "cofactor_edges": 120,
+          "cofactor_unique_visits": 128,
+          "complement_scans": 144,
+          "constructor_calls": 73,
+          "dedup_entries": 144,
+          "difference_input_entries": 54,
+          "factor_entries": 94,
+          "factor_rewrites": 3,
+          "intern_key_edges": 114,
+          "intern_lookups": 58,
+          "intersection_entries": 94,
+          "normalization_child_visits": 171,
+          "sort_comparisons": 96
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 66,
+        "cofactor_calls": 136,
+        "cofactor_edges": 120,
+        "cofactor_unique_visits": 136,
+        "complement_scans": 144,
+        "constructor_calls": 77,
+        "dedup_entries": 144,
+        "difference_input_entries": 54,
+        "factor_entries": 94,
+        "factor_rewrites": 3,
+        "intern_key_edges": 114,
+        "intern_lookups": 58,
+        "intersection_entries": 94,
+        "normalization_child_visits": 175,
+        "sort_comparisons": 96,
+        "witness_eval_calls": 94,
+        "witness_eval_edges": 78,
+        "witness_eval_unique_visits": 94
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 42,
+        "nodes": 27
+      },
+      "m": 4,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 16,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 417,
+      "boundary": {
+        "allocated_nodes": 285,
+        "counts": {
+          "allocated_edges": 1146,
+          "cofactor_cache_hits": 852,
+          "cofactor_calls": 1404,
+          "cofactor_edges": 1392,
+          "cofactor_unique_visits": 552,
+          "constructor_calls": 343,
+          "intern_key_edges": 1266,
+          "intern_lookups": 343,
+          "normalization_child_visits": 1428
+        },
+        "reachable": {
+          "edges": 510,
+          "nodes": 139
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 1546,
+        "cofactor_cache_hits": 2082,
+        "cofactor_calls": 3236,
+        "cofactor_edges": 3212,
+        "cofactor_unique_visits": 1154,
+        "constructor_calls": 867,
+        "intern_key_edges": 2056,
+        "intern_lookups": 602,
+        "normalization_child_visits": 2732,
+        "witness_eval_calls": 2022,
+        "witness_eval_edges": 1998,
+        "witness_eval_unique_visits": 808
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 1508,
+        "nodes": 400
+      },
+      "m": 6,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 24,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 54,
+      "boundary": {
+        "allocated_nodes": 54,
+        "counts": {
+          "allocated_edges": 136,
+          "cofactor_calls": 264,
+          "cofactor_edges": 252,
+          "cofactor_unique_visits": 264,
+          "complement_scans": 302,
+          "constructor_calls": 135,
+          "dedup_entries": 302,
+          "difference_input_entries": 130,
+          "factor_entries": 214,
+          "factor_rewrites": 5,
+          "intern_key_edges": 256,
+          "intern_lookups": 112,
+          "intersection_entries": 214,
+          "normalization_child_visits": 343,
+          "sort_comparisons": 385
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 136,
+        "cofactor_calls": 276,
+        "cofactor_edges": 252,
+        "cofactor_unique_visits": 276,
+        "complement_scans": 302,
+        "constructor_calls": 141,
+        "dedup_entries": 302,
+        "difference_input_entries": 130,
+        "factor_entries": 214,
+        "factor_rewrites": 5,
+        "intern_key_edges": 256,
+        "intern_lookups": 112,
+        "intersection_entries": 214,
+        "normalization_child_visits": 349,
+        "sort_comparisons": 385,
+        "witness_eval_calls": 214,
+        "witness_eval_edges": 190,
+        "witness_eval_unique_visits": 214
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 90,
+        "nodes": 43
+      },
+      "m": 6,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 24,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 1590,
+      "boundary": {
+        "allocated_nodes": 1063,
+        "counts": {
+          "allocated_edges": 5626,
+          "cofactor_cache_hits": 4828,
+          "cofactor_calls": 6376,
+          "cofactor_edges": 6360,
+          "cofactor_unique_visits": 1548,
+          "constructor_calls": 1173,
+          "intern_key_edges": 5850,
+          "intern_lookups": 1173,
+          "normalization_child_visits": 6408
+        },
+        "reachable": {
+          "edges": 2558,
+          "nodes": 527
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 7712,
+        "cofactor_cache_hits": 11912,
+        "cofactor_calls": 15680,
+        "cofactor_edges": 15648,
+        "cofactor_unique_visits": 3768,
+        "constructor_calls": 3257,
+        "intern_key_edges": 10008,
+        "intern_lookups": 2220,
+        "normalization_child_visits": 12620,
+        "witness_eval_calls": 9962,
+        "witness_eval_edges": 9930,
+        "witness_eval_unique_visits": 2622
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 7662,
+        "nodes": 1569
+      },
+      "m": 8,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 32,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 72,
+      "boundary": {
+        "allocated_nodes": 72,
+        "counts": {
+          "allocated_edges": 230,
+          "cofactor_calls": 448,
+          "cofactor_edges": 432,
+          "cofactor_unique_visits": 448,
+          "complement_scans": 516,
+          "constructor_calls": 213,
+          "dedup_entries": 516,
+          "difference_input_entries": 238,
+          "factor_entries": 382,
+          "factor_rewrites": 7,
+          "intern_key_edges": 454,
+          "intern_lookups": 182,
+          "intersection_entries": 382,
+          "normalization_child_visits": 571,
+          "sort_comparisons": 656
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 230,
+        "cofactor_calls": 464,
+        "cofactor_edges": 432,
+        "cofactor_unique_visits": 464,
+        "complement_scans": 516,
+        "constructor_calls": 221,
+        "dedup_entries": 516,
+        "difference_input_entries": 238,
+        "factor_entries": 382,
+        "factor_rewrites": 7,
+        "intern_key_edges": 454,
+        "intern_lookups": 182,
+        "intersection_entries": 382,
+        "normalization_child_visits": 579,
+        "sort_comparisons": 656,
+        "witness_eval_calls": 382,
+        "witness_eval_edges": 350,
+        "witness_eval_unique_visits": 382
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 154,
+        "nodes": 59
+      },
+      "m": 8,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 32,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 6223,
+      "boundary": {
+        "allocated_nodes": 4145,
+        "counts": {
+          "allocated_edges": 26618,
+          "cofactor_cache_hits": 24132,
+          "cofactor_calls": 29044,
+          "cofactor_edges": 29024,
+          "cofactor_unique_visits": 4912,
+          "constructor_calls": 4323,
+          "intern_key_edges": 26978,
+          "intern_lookups": 4323,
+          "normalization_child_visits": 29084
+        },
+        "reachable": {
+          "edges": 12286,
+          "nodes": 2067
+        },
+        "root_is_true": false
+      },
+      "counts": {
+        "allocated_edges": 36926,
+        "cofactor_cache_hits": 60870,
+        "cofactor_calls": 74252,
+        "cofactor_edges": 74212,
+        "cofactor_unique_visits": 13382,
+        "constructor_calls": 12583,
+        "intern_key_edges": 47576,
+        "intern_lookups": 8470,
+        "normalization_child_visits": 57884,
+        "witness_eval_calls": 47518,
+        "witness_eval_edges": 47478,
+        "witness_eval_unique_visits": 9132
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 36864,
+        "nodes": 6198
+      },
+      "m": 10,
+      "mode": "plain",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 40,
+      "witness_verified": true
+    },
+    {
+      "allocated_nodes": 90,
+      "boundary": {
+        "allocated_nodes": 90,
+        "counts": {
+          "allocated_edges": 348,
+          "cofactor_calls": 680,
+          "cofactor_edges": 660,
+          "cofactor_unique_visits": 680,
+          "complement_scans": 786,
+          "constructor_calls": 307,
+          "dedup_entries": 786,
+          "difference_input_entries": 378,
+          "factor_entries": 598,
+          "factor_rewrites": 9,
+          "intern_key_edges": 708,
+          "intern_lookups": 268,
+          "intersection_entries": 598,
+          "normalization_child_visits": 855,
+          "sort_comparisons": 913
+        },
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "counts": {
+        "allocated_edges": 348,
+        "cofactor_calls": 700,
+        "cofactor_edges": 660,
+        "cofactor_unique_visits": 700,
+        "complement_scans": 786,
+        "constructor_calls": 317,
+        "dedup_entries": 786,
+        "difference_input_entries": 378,
+        "factor_entries": 598,
+        "factor_rewrites": 9,
+        "intern_key_edges": 708,
+        "intern_lookups": 268,
+        "intersection_entries": 598,
+        "normalization_child_visits": 865,
+        "sort_comparisons": 913,
+        "witness_eval_calls": 598,
+        "witness_eval_edges": 558,
+        "witness_eval_unique_visits": 598
+      },
+      "final_reachable": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_reachable": {
+        "edges": 234,
+        "nodes": 75
+      },
+      "m": 10,
+      "mode": "factor",
+      "sat": true,
+      "semantic_checks": 0,
+      "stored_cofactor_roots": 40,
+      "witness_verified": true
+    }
+  ],
+  "semantic_cases": 18,
+  "semantic_checks": 414,
+  "semantic_sat_cases": 12,
+  "semantic_status": "PASS"
+}
