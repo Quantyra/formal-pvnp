@@ -93,6 +93,14 @@ The latter uses u0=-Y Z/(2L) and ||Y a||<=80||a||. A unit ball about this center
 
 ## What remains before a positive-width certificate
 
+Update: `2026-09-08-pressure-effectivity-attempt.md` now resolves this note's
+pressure-domain and P0/P1 dependency for the actual unbumped Appendix A
+schedule under its stated slope conditions and a rational Pbar>=Pstar:
+P0=16 Pbar^2, P1=128 Pbar^2 on a fixed complex rectangle containing this
+note's tube. This supersedes that portion of item 2 below; outer admissible
+selection, Appendix B separation/contraction, and completed-tail certificates
+remain unresolved. The historical dependency list records the original attempt.
+
 This attempt does **not** produce the requested completed numerical certificate. The following dependencies are still unresolved, in order:
 
 1. Select the outer parameters satisfying all Appendix A smallness inequalities, not merely (A.6)'s order, and compute the resulting pressure datum. No admissible h=1/200 follows from this note.
