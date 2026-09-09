@@ -93,6 +93,15 @@ The latter uses u0=-Y Z/(2L) and ||Y a||<=80||a||. A unit ball about this center
 
 ## What remains before a positive-width certificate
 
+Further update: `2026-09-08-axis-contraction-effectivity-attempt.md` now
+assembles explicit norms N and Lipschitz bounds Lrem for the integrated
+remainders, and gives finite Lambda/C choices proving local leading-profile
+contraction under the stated local inputs. This resolves the unevaluated
+contraction inequalities in item 3 below. Outer admissibility, axis separation,
+continuation endpoint conditions and completed-field tails remain separate
+obligations; a leading analytic coefficient certificate is not a completed
+velocity certificate.
+
 Update: `2026-09-08-pressure-effectivity-attempt.md` now resolves this note's
 pressure-domain and P0/P1 dependency for the actual unbumped Appendix A
 schedule under its stated slope conditions and a rational Pbar>=Pstar:
