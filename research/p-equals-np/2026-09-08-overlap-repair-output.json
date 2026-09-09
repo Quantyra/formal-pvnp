@@ -1,0 +1,1669 @@
+{
+  "benchmarks": [
+    {
+      "allocated_nodes": 60,
+      "boundary": {
+        "reachable": {
+          "edges": 45,
+          "nodes": 30
+        },
+        "root_is_true": false
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 152,
+        "cofactor_cache_hits": 180,
+        "cofactor_calls": 474,
+        "cofactor_edges": 460,
+        "cofactor_unique_visits": 294,
+        "complement_scans": 441,
+        "constructor_calls": 216,
+        "dedup_entries": 444,
+        "difference_input_entries": 72,
+        "factor_entries": 334,
+        "factor_rewrites": 3,
+        "intern_key_edges": 396,
+        "intern_lookups": 190,
+        "intersection_entries": 334,
+        "normalization_child_visits": 541,
+        "sort_comparisons": 388,
+        "witness_eval_calls": 324,
+        "witness_eval_edges": 310,
+        "witness_eval_unique_visits": 212
+      },
+      "history_dag": {
+        "edges": 110,
+        "nodes": 49
+      },
+      "history_records": 7,
+      "hybrid": false,
+      "m": 3,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 7
+      },
+      "witness_verified": true,
+      "work_cap": 1792
+    },
+    {
+      "allocated_nodes": 31,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 60,
+        "complement_scans": 60,
+        "constructor_calls": 20,
+        "dedup_entries": 60,
+        "factor_entries": 36,
+        "intern_key_edges": 60,
+        "intern_lookups": 51,
+        "intersection_entries": 36,
+        "normalization_child_visits": 60,
+        "sort_comparisons": 70
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 7,
+      "hybrid": true,
+      "m": 3,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 7,
+        "bucket_successes": 7,
+        "bucket_ticks": 275,
+        "pair_candidates_examined": 12,
+        "pair_candidates_requested": 12,
+        "stored_bucket_literal_entries": 24,
+        "tautological_candidates": 12,
+        "witness_bucket_literal_visits": 24
+      },
+      "witness_verified": true,
+      "work_cap": 1792
+    },
+    {
+      "allocated_nodes": 57,
+      "boundary": {
+        "reachable": {
+          "edges": 45,
+          "nodes": 28
+        },
+        "root_is_true": false
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 150,
+        "cofactor_cache_hits": 176,
+        "cofactor_calls": 412,
+        "cofactor_edges": 400,
+        "cofactor_unique_visits": 236,
+        "complement_scans": 380,
+        "constructor_calls": 185,
+        "dedup_entries": 382,
+        "difference_input_entries": 72,
+        "factor_entries": 286,
+        "factor_rewrites": 3,
+        "intern_key_edges": 336,
+        "intern_lookups": 160,
+        "intersection_entries": 286,
+        "normalization_child_visits": 481,
+        "sort_comparisons": 372,
+        "witness_eval_calls": 262,
+        "witness_eval_edges": 250,
+        "witness_eval_unique_visits": 158
+      },
+      "history_dag": {
+        "edges": 102,
+        "nodes": 43
+      },
+      "history_records": 6,
+      "hybrid": false,
+      "m": 3,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 6
+      },
+      "witness_verified": true,
+      "work_cap": 1760
+    },
+    {
+      "allocated_nodes": 29,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 60,
+        "complement_scans": 60,
+        "constructor_calls": 19,
+        "dedup_entries": 60,
+        "factor_entries": 36,
+        "intern_key_edges": 60,
+        "intern_lookups": 51,
+        "intersection_entries": 36,
+        "normalization_child_visits": 60,
+        "sort_comparisons": 75
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "m": 3,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 6,
+        "bucket_successes": 6,
+        "bucket_ticks": 273,
+        "pair_candidates_examined": 12,
+        "pair_candidates_requested": 12,
+        "stored_bucket_literal_entries": 24,
+        "tautological_candidates": 12,
+        "witness_bucket_literal_visits": 24
+      },
+      "witness_verified": true,
+      "work_cap": 1760
+    },
+    {
+      "allocated_nodes": 79,
+      "boundary": {
+        "reachable": {
+          "edges": 60,
+          "nodes": 39
+        },
+        "root_is_true": false
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 235,
+        "cofactor_cache_hits": 320,
+        "cofactor_calls": 816,
+        "cofactor_edges": 798,
+        "cofactor_unique_visits": 496,
+        "complement_scans": 782,
+        "constructor_calls": 360,
+        "dedup_entries": 786,
+        "difference_input_entries": 136,
+        "factor_entries": 608,
+        "factor_rewrites": 4,
+        "intern_key_edges": 722,
+        "intern_lookups": 326,
+        "intersection_entries": 608,
+        "normalization_child_visits": 915,
+        "sort_comparisons": 790,
+        "witness_eval_calls": 616,
+        "witness_eval_edges": 598,
+        "witness_eval_unique_visits": 388
+      },
+      "history_dag": {
+        "edges": 173,
+        "nodes": 67
+      },
+      "history_records": 9,
+      "hybrid": false,
+      "m": 4,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 9
+      },
+      "witness_verified": true,
+      "work_cap": 2368
+    },
+    {
+      "allocated_nodes": 40,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 88,
+        "complement_scans": 88,
+        "constructor_calls": 26,
+        "dedup_entries": 88,
+        "factor_entries": 48,
+        "intern_key_edges": 88,
+        "intern_lookups": 68,
+        "intersection_entries": 48,
+        "normalization_child_visits": 88,
+        "sort_comparisons": 159
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 9,
+      "hybrid": true,
+      "m": 4,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 9,
+        "bucket_successes": 9,
+        "bucket_ticks": 422,
+        "pair_candidates_examined": 16,
+        "pair_candidates_requested": 16,
+        "stored_bucket_literal_entries": 32,
+        "tautological_candidates": 16,
+        "witness_bucket_literal_visits": 32
+      },
+      "witness_verified": true,
+      "work_cap": 2368
+    },
+    {
+      "allocated_nodes": 76,
+      "boundary": {
+        "reachable": {
+          "edges": 60,
+          "nodes": 37
+        },
+        "root_is_true": false
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 232,
+        "cofactor_cache_hits": 308,
+        "cofactor_calls": 724,
+        "cofactor_edges": 708,
+        "cofactor_unique_visits": 416,
+        "complement_scans": 691,
+        "constructor_calls": 315,
+        "dedup_entries": 694,
+        "difference_input_entries": 136,
+        "factor_entries": 536,
+        "factor_rewrites": 4,
+        "intern_key_edges": 632,
+        "intern_lookups": 282,
+        "intersection_entries": 536,
+        "normalization_child_visits": 825,
+        "sort_comparisons": 796,
+        "witness_eval_calls": 524,
+        "witness_eval_edges": 508,
+        "witness_eval_unique_visits": 312
+      },
+      "history_dag": {
+        "edges": 164,
+        "nodes": 61
+      },
+      "history_records": 8,
+      "hybrid": false,
+      "m": 4,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 8
+      },
+      "witness_verified": true,
+      "work_cap": 2336
+    },
+    {
+      "allocated_nodes": 38,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 88,
+        "complement_scans": 88,
+        "constructor_calls": 25,
+        "dedup_entries": 88,
+        "factor_entries": 48,
+        "intern_key_edges": 88,
+        "intern_lookups": 68,
+        "intersection_entries": 48,
+        "normalization_child_visits": 88,
+        "sort_comparisons": 166
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 8,
+      "hybrid": true,
+      "m": 4,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 8,
+        "bucket_successes": 8,
+        "bucket_ticks": 420,
+        "pair_candidates_examined": 16,
+        "pair_candidates_requested": 16,
+        "stored_bucket_literal_entries": 32,
+        "tautological_candidates": 16,
+        "witness_bucket_literal_visits": 32
+      },
+      "witness_verified": true,
+      "work_cap": 2336
+    },
+    {
+      "allocated_nodes": 117,
+      "boundary": {
+        "reachable": {
+          "edges": 90,
+          "nodes": 57
+        },
+        "root_is_true": false
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 449,
+        "cofactor_cache_hits": 720,
+        "cofactor_calls": 1776,
+        "cofactor_edges": 1750,
+        "cofactor_unique_visits": 1056,
+        "complement_scans": 1755,
+        "constructor_calls": 756,
+        "dedup_entries": 1761,
+        "difference_input_entries": 324,
+        "factor_entries": 1402,
+        "factor_rewrites": 6,
+        "intern_key_edges": 1665,
+        "intern_lookups": 706,
+        "intersection_entries": 1402,
+        "normalization_child_visits": 1954,
+        "sort_comparisons": 1646,
+        "witness_eval_calls": 1476,
+        "witness_eval_edges": 1450,
+        "witness_eval_unique_visits": 896
+      },
+      "history_dag": {
+        "edges": 332,
+        "nodes": 103
+      },
+      "history_records": 13,
+      "hybrid": false,
+      "m": 6,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 13
+      },
+      "witness_verified": true,
+      "work_cap": 3520
+    },
+    {
+      "allocated_nodes": 58,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 156,
+        "complement_scans": 156,
+        "constructor_calls": 38,
+        "dedup_entries": 156,
+        "factor_entries": 72,
+        "intern_key_edges": 156,
+        "intern_lookups": 102,
+        "intersection_entries": 72,
+        "normalization_child_visits": 156,
+        "sort_comparisons": 188
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 13,
+      "hybrid": true,
+      "m": 6,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 13,
+        "bucket_successes": 13,
+        "bucket_ticks": 800,
+        "pair_candidates_examined": 24,
+        "pair_candidates_requested": 24,
+        "stored_bucket_literal_entries": 48,
+        "tautological_candidates": 24,
+        "witness_bucket_literal_visits": 48
+      },
+      "witness_verified": true,
+      "work_cap": 3520
+    },
+    {
+      "allocated_nodes": 114,
+      "boundary": {
+        "reachable": {
+          "edges": 90,
+          "nodes": 55
+        },
+        "root_is_true": false
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 444,
+        "cofactor_cache_hits": 692,
+        "cofactor_calls": 1624,
+        "cofactor_edges": 1600,
+        "cofactor_unique_visits": 932,
+        "complement_scans": 1604,
+        "constructor_calls": 683,
+        "dedup_entries": 1609,
+        "difference_input_entries": 324,
+        "factor_entries": 1282,
+        "factor_rewrites": 6,
+        "intern_key_edges": 1515,
+        "intern_lookups": 634,
+        "intersection_entries": 1282,
+        "normalization_child_visits": 1804,
+        "sort_comparisons": 1660,
+        "witness_eval_calls": 1324,
+        "witness_eval_edges": 1300,
+        "witness_eval_unique_visits": 776
+      },
+      "history_dag": {
+        "edges": 321,
+        "nodes": 97
+      },
+      "history_records": 12,
+      "hybrid": false,
+      "m": 6,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 12
+      },
+      "witness_verified": true,
+      "work_cap": 3488
+    },
+    {
+      "allocated_nodes": 56,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 156,
+        "complement_scans": 156,
+        "constructor_calls": 37,
+        "dedup_entries": 156,
+        "factor_entries": 72,
+        "intern_key_edges": 156,
+        "intern_lookups": 102,
+        "intersection_entries": 72,
+        "normalization_child_visits": 156,
+        "sort_comparisons": 193
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 12,
+      "hybrid": true,
+      "m": 6,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 12,
+        "bucket_successes": 12,
+        "bucket_ticks": 798,
+        "pair_candidates_examined": 24,
+        "pair_candidates_requested": 24,
+        "stored_bucket_literal_entries": 48,
+        "tautological_candidates": 24,
+        "witness_bucket_literal_visits": 48
+      },
+      "witness_verified": true,
+      "work_cap": 3488
+    },
+    {
+      "allocated_nodes": 155,
+      "boundary": {
+        "reachable": {
+          "edges": 120,
+          "nodes": 75
+        },
+        "root_is_true": false
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 727,
+        "cofactor_cache_hits": 1280,
+        "cofactor_calls": 3104,
+        "cofactor_edges": 3070,
+        "cofactor_unique_visits": 1824,
+        "complement_scans": 3116,
+        "constructor_calls": 1296,
+        "dedup_entries": 3124,
+        "difference_input_entries": 592,
+        "factor_entries": 2524,
+        "factor_rewrites": 8,
+        "intern_key_edges": 2996,
+        "intern_lookups": 1230,
+        "intersection_entries": 2524,
+        "normalization_child_visits": 3381,
+        "sort_comparisons": 2772,
+        "witness_eval_calls": 2704,
+        "witness_eval_edges": 2670,
+        "witness_eval_unique_visits": 1612
+      },
+      "history_dag": {
+        "edges": 535,
+        "nodes": 139
+      },
+      "history_records": 17,
+      "hybrid": false,
+      "m": 8,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 17
+      },
+      "witness_verified": true,
+      "work_cap": 4672
+    },
+    {
+      "allocated_nodes": 76,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": false,
+      "dag_counts": {
+        "allocated_edges": 240,
+        "complement_scans": 240,
+        "constructor_calls": 50,
+        "dedup_entries": 240,
+        "factor_entries": 96,
+        "intern_key_edges": 240,
+        "intern_lookups": 136,
+        "intersection_entries": 96,
+        "normalization_child_visits": 240,
+        "sort_comparisons": 311
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 17,
+      "hybrid": true,
+      "m": 8,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 17,
+        "bucket_successes": 17,
+        "bucket_ticks": 1290,
+        "pair_candidates_examined": 32,
+        "pair_candidates_requested": 32,
+        "stored_bucket_literal_entries": 64,
+        "tautological_candidates": 32,
+        "witness_bucket_literal_visits": 64
+      },
+      "witness_verified": true,
+      "work_cap": 4672
+    },
+    {
+      "allocated_nodes": 152,
+      "boundary": {
+        "reachable": {
+          "edges": 120,
+          "nodes": 73
+        },
+        "root_is_true": false
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 720,
+        "cofactor_cache_hits": 1236,
+        "cofactor_calls": 2892,
+        "cofactor_edges": 2860,
+        "cofactor_unique_visits": 1656,
+        "complement_scans": 2905,
+        "constructor_calls": 1195,
+        "dedup_entries": 2912,
+        "difference_input_entries": 592,
+        "factor_entries": 2356,
+        "factor_rewrites": 8,
+        "intern_key_edges": 2786,
+        "intern_lookups": 1130,
+        "intersection_entries": 2356,
+        "normalization_child_visits": 3171,
+        "sort_comparisons": 2734,
+        "witness_eval_calls": 2492,
+        "witness_eval_edges": 2460,
+        "witness_eval_unique_visits": 1448
+      },
+      "history_dag": {
+        "edges": 522,
+        "nodes": 133
+      },
+      "history_records": 16,
+      "hybrid": false,
+      "m": 8,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "cofactor_fallbacks": 16
+      },
+      "witness_verified": true,
+      "work_cap": 4640
+    },
+    {
+      "allocated_nodes": 74,
+      "boundary": {
+        "reachable": {
+          "edges": 0,
+          "nodes": 1
+        },
+        "root_is_true": true
+      },
+      "cycle": true,
+      "dag_counts": {
+        "allocated_edges": 240,
+        "complement_scans": 240,
+        "constructor_calls": 49,
+        "dedup_entries": 240,
+        "factor_entries": 96,
+        "intern_key_edges": 240,
+        "intern_lookups": 136,
+        "intersection_entries": 96,
+        "normalization_child_visits": 240,
+        "sort_comparisons": 318
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 16,
+      "hybrid": true,
+      "m": 8,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 0,
+      "stats": {
+        "bucket_attempts": 16,
+        "bucket_successes": 16,
+        "bucket_ticks": 1288,
+        "pair_candidates_examined": 32,
+        "pair_candidates_requested": 32,
+        "stored_bucket_literal_entries": 64,
+        "tautological_candidates": 32,
+        "witness_bucket_literal_visits": 64
+      },
+      "witness_verified": true,
+      "work_cap": 4640
+    }
+  ],
+  "semantic_cases": [
+    {
+      "allocated_nodes": 41,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 85,
+        "cofactor_cache_hits": 80,
+        "cofactor_calls": 224,
+        "cofactor_edges": 214,
+        "cofactor_unique_visits": 144,
+        "complement_scans": 197,
+        "constructor_calls": 108,
+        "dedup_entries": 199,
+        "difference_input_entries": 28,
+        "factor_entries": 142,
+        "factor_rewrites": 2,
+        "intern_key_edges": 167,
+        "intern_lookups": 90,
+        "intersection_entries": 142,
+        "normalization_child_visits": 264,
+        "sort_comparisons": 151,
+        "witness_eval_calls": 124,
+        "witness_eval_edges": 114,
+        "witness_eval_unique_visits": 88
+      },
+      "history_dag": {
+        "edges": 58,
+        "nodes": 31
+      },
+      "history_records": 5,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 63,
+      "stats": {
+        "cofactor_fallbacks": 5
+      },
+      "witness_verified": true,
+      "work_cap": 1216
+    },
+    {
+      "allocated_nodes": 22,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 36,
+        "complement_scans": 36,
+        "constructor_calls": 14,
+        "dedup_entries": 36,
+        "factor_entries": 24,
+        "intern_key_edges": 36,
+        "intern_lookups": 34,
+        "intersection_entries": 24,
+        "normalization_child_visits": 36,
+        "sort_comparisons": 46
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 63,
+      "stats": {
+        "bucket_attempts": 5,
+        "bucket_successes": 5,
+        "bucket_ticks": 156,
+        "pair_candidates_examined": 8,
+        "pair_candidates_requested": 8,
+        "stored_bucket_literal_entries": 16,
+        "tautological_candidates": 8,
+        "witness_bucket_literal_visits": 16
+      },
+      "witness_verified": true,
+      "work_cap": 1216
+    },
+    {
+      "allocated_nodes": 41,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 85,
+        "cofactor_cache_hits": 80,
+        "cofactor_calls": 222,
+        "cofactor_edges": 214,
+        "cofactor_unique_visits": 142,
+        "complement_scans": 197,
+        "constructor_calls": 108,
+        "dedup_entries": 199,
+        "difference_input_entries": 28,
+        "factor_entries": 142,
+        "factor_rewrites": 2,
+        "intern_key_edges": 167,
+        "intern_lookups": 90,
+        "intersection_entries": 142,
+        "normalization_child_visits": 263,
+        "sort_comparisons": 151,
+        "witness_eval_calls": 122,
+        "witness_eval_edges": 114,
+        "witness_eval_unique_visits": 86
+      },
+      "history_dag": {
+        "edges": 58,
+        "nodes": 31
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": true,
+      "semantic_checks": 63,
+      "stats": {
+        "abandoned_bucket_ticks": 94,
+        "abort_not_clausal": 3,
+        "abort_pair_cap": 1,
+        "bucket_attempts": 5,
+        "bucket_successes": 1,
+        "bucket_ticks": 96,
+        "cofactor_fallbacks": 4,
+        "pair_candidates_requested": 4,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": true,
+      "work_cap": 1216
+    },
+    {
+      "allocated_nodes": 41,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 85,
+        "cofactor_cache_hits": 80,
+        "cofactor_calls": 224,
+        "cofactor_edges": 214,
+        "cofactor_unique_visits": 144,
+        "complement_scans": 197,
+        "constructor_calls": 108,
+        "dedup_entries": 199,
+        "difference_input_entries": 28,
+        "factor_entries": 142,
+        "factor_rewrites": 2,
+        "intern_key_edges": 167,
+        "intern_lookups": 90,
+        "intersection_entries": 142,
+        "normalization_child_visits": 264,
+        "sort_comparisons": 151,
+        "witness_eval_calls": 124,
+        "witness_eval_edges": 114,
+        "witness_eval_unique_visits": 88
+      },
+      "history_dag": {
+        "edges": 58,
+        "nodes": 31
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 63,
+      "stats": {
+        "abandoned_bucket_ticks": 5,
+        "abort_work_cap": 5,
+        "bucket_attempts": 5,
+        "bucket_ticks": 5,
+        "cofactor_fallbacks": 5
+      },
+      "witness_verified": true,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 36,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 82,
+        "cofactor_cache_hits": 70,
+        "cofactor_calls": 174,
+        "cofactor_edges": 164,
+        "cofactor_unique_visits": 104,
+        "complement_scans": 153,
+        "constructor_calls": 73,
+        "dedup_entries": 153,
+        "difference_input_entries": 20,
+        "factor_entries": 112,
+        "factor_rewrites": 1,
+        "intern_key_edges": 142,
+        "intern_lookups": 77,
+        "intersection_entries": 112,
+        "normalization_child_visits": 203,
+        "sort_comparisons": 140
+      },
+      "history_dag": {
+        "edges": 44,
+        "nodes": 22
+      },
+      "history_records": 5,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 63,
+      "stats": {
+        "cofactor_fallbacks": 5
+      },
+      "witness_verified": false,
+      "work_cap": 1408
+    },
+    {
+      "allocated_nodes": 25,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 51,
+        "complement_scans": 57,
+        "constructor_calls": 20,
+        "dedup_entries": 57,
+        "factor_entries": 28,
+        "intern_key_edges": 51,
+        "intern_lookups": 45,
+        "intersection_entries": 28,
+        "normalization_child_visits": 59,
+        "sort_comparisons": 59
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 63,
+      "stats": {
+        "bucket_attempts": 5,
+        "bucket_successes": 5,
+        "bucket_ticks": 214,
+        "candidate_literal_entries": 5,
+        "pair_candidates_examined": 12,
+        "pair_candidates_requested": 12,
+        "stored_bucket_literal_entries": 18,
+        "tautological_candidates": 9
+      },
+      "witness_verified": false,
+      "work_cap": 1408
+    },
+    {
+      "allocated_nodes": 36,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 82,
+        "cofactor_cache_hits": 70,
+        "cofactor_calls": 170,
+        "cofactor_edges": 164,
+        "cofactor_unique_visits": 100,
+        "complement_scans": 153,
+        "constructor_calls": 73,
+        "dedup_entries": 153,
+        "difference_input_entries": 20,
+        "factor_entries": 112,
+        "factor_rewrites": 1,
+        "intern_key_edges": 142,
+        "intern_lookups": 77,
+        "intersection_entries": 112,
+        "normalization_child_visits": 201,
+        "sort_comparisons": 140
+      },
+      "history_dag": {
+        "edges": 44,
+        "nodes": 22
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": false,
+      "semantic_checks": 63,
+      "stats": {
+        "abandoned_bucket_ticks": 130,
+        "abort_not_clausal": 1,
+        "abort_pair_cap": 2,
+        "bucket_attempts": 5,
+        "bucket_successes": 2,
+        "bucket_ticks": 134,
+        "cofactor_fallbacks": 3,
+        "pair_candidates_requested": 10,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": false,
+      "work_cap": 1408
+    },
+    {
+      "allocated_nodes": 36,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 82,
+        "cofactor_cache_hits": 70,
+        "cofactor_calls": 174,
+        "cofactor_edges": 164,
+        "cofactor_unique_visits": 104,
+        "complement_scans": 153,
+        "constructor_calls": 73,
+        "dedup_entries": 153,
+        "difference_input_entries": 20,
+        "factor_entries": 112,
+        "factor_rewrites": 1,
+        "intern_key_edges": 142,
+        "intern_lookups": 77,
+        "intersection_entries": 112,
+        "normalization_child_visits": 203,
+        "sort_comparisons": 140
+      },
+      "history_dag": {
+        "edges": 44,
+        "nodes": 22
+      },
+      "history_records": 5,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 63,
+      "stats": {
+        "abandoned_bucket_ticks": 5,
+        "abort_work_cap": 5,
+        "bucket_attempts": 5,
+        "bucket_ticks": 5,
+        "cofactor_fallbacks": 5
+      },
+      "witness_verified": false,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 57,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 150,
+        "cofactor_cache_hits": 176,
+        "cofactor_calls": 412,
+        "cofactor_edges": 400,
+        "cofactor_unique_visits": 236,
+        "complement_scans": 380,
+        "constructor_calls": 185,
+        "dedup_entries": 382,
+        "difference_input_entries": 72,
+        "factor_entries": 286,
+        "factor_rewrites": 3,
+        "intern_key_edges": 336,
+        "intern_lookups": 160,
+        "intersection_entries": 286,
+        "normalization_child_visits": 481,
+        "sort_comparisons": 372,
+        "witness_eval_calls": 262,
+        "witness_eval_edges": 250,
+        "witness_eval_unique_visits": 158
+      },
+      "history_dag": {
+        "edges": 102,
+        "nodes": 43
+      },
+      "history_records": 6,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 127,
+      "stats": {
+        "cofactor_fallbacks": 6
+      },
+      "witness_verified": true,
+      "work_cap": 1760
+    },
+    {
+      "allocated_nodes": 29,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 60,
+        "complement_scans": 60,
+        "constructor_calls": 19,
+        "dedup_entries": 60,
+        "factor_entries": 36,
+        "intern_key_edges": 60,
+        "intern_lookups": 51,
+        "intersection_entries": 36,
+        "normalization_child_visits": 60,
+        "sort_comparisons": 75
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 127,
+      "stats": {
+        "bucket_attempts": 6,
+        "bucket_successes": 6,
+        "bucket_ticks": 273,
+        "pair_candidates_examined": 12,
+        "pair_candidates_requested": 12,
+        "stored_bucket_literal_entries": 24,
+        "tautological_candidates": 12,
+        "witness_bucket_literal_visits": 24
+      },
+      "witness_verified": true,
+      "work_cap": 1760
+    },
+    {
+      "allocated_nodes": 57,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 150,
+        "cofactor_cache_hits": 176,
+        "cofactor_calls": 410,
+        "cofactor_edges": 400,
+        "cofactor_unique_visits": 234,
+        "complement_scans": 380,
+        "constructor_calls": 185,
+        "dedup_entries": 382,
+        "difference_input_entries": 72,
+        "factor_entries": 286,
+        "factor_rewrites": 3,
+        "intern_key_edges": 336,
+        "intern_lookups": 160,
+        "intersection_entries": 286,
+        "normalization_child_visits": 480,
+        "sort_comparisons": 372,
+        "witness_eval_calls": 260,
+        "witness_eval_edges": 250,
+        "witness_eval_unique_visits": 156
+      },
+      "history_dag": {
+        "edges": 102,
+        "nodes": 43
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": true,
+      "semantic_checks": 127,
+      "stats": {
+        "abandoned_bucket_ticks": 181,
+        "abort_not_clausal": 4,
+        "abort_pair_cap": 1,
+        "bucket_attempts": 6,
+        "bucket_successes": 1,
+        "bucket_ticks": 183,
+        "cofactor_fallbacks": 5,
+        "pair_candidates_requested": 4,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": true,
+      "work_cap": 1760
+    },
+    {
+      "allocated_nodes": 57,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 150,
+        "cofactor_cache_hits": 176,
+        "cofactor_calls": 412,
+        "cofactor_edges": 400,
+        "cofactor_unique_visits": 236,
+        "complement_scans": 380,
+        "constructor_calls": 185,
+        "dedup_entries": 382,
+        "difference_input_entries": 72,
+        "factor_entries": 286,
+        "factor_rewrites": 3,
+        "intern_key_edges": 336,
+        "intern_lookups": 160,
+        "intersection_entries": 286,
+        "normalization_child_visits": 481,
+        "sort_comparisons": 372,
+        "witness_eval_calls": 262,
+        "witness_eval_edges": 250,
+        "witness_eval_unique_visits": 158
+      },
+      "history_dag": {
+        "edges": 102,
+        "nodes": 43
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 127,
+      "stats": {
+        "abandoned_bucket_ticks": 6,
+        "abort_work_cap": 6,
+        "bucket_attempts": 6,
+        "bucket_ticks": 6,
+        "cofactor_fallbacks": 6
+      },
+      "witness_verified": true,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 48,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 119,
+        "cofactor_cache_hits": 140,
+        "cofactor_calls": 314,
+        "cofactor_edges": 302,
+        "cofactor_unique_visits": 174,
+        "complement_scans": 245,
+        "constructor_calls": 118,
+        "dedup_entries": 245,
+        "difference_input_entries": 12,
+        "factor_entries": 176,
+        "factor_rewrites": 1,
+        "intern_key_edges": 223,
+        "intern_lookups": 113,
+        "intersection_entries": 176,
+        "normalization_child_visits": 335,
+        "sort_comparisons": 268
+      },
+      "history_dag": {
+        "edges": 71,
+        "nodes": 30
+      },
+      "history_records": 6,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 127,
+      "stats": {
+        "cofactor_fallbacks": 6
+      },
+      "witness_verified": false,
+      "work_cap": 1952
+    },
+    {
+      "allocated_nodes": 39,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 98,
+        "complement_scans": 105,
+        "constructor_calls": 32,
+        "dedup_entries": 105,
+        "factor_entries": 52,
+        "intern_key_edges": 98,
+        "intern_lookups": 82,
+        "intersection_entries": 52,
+        "normalization_child_visits": 106,
+        "sort_comparisons": 110
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 127,
+      "stats": {
+        "bucket_attempts": 6,
+        "bucket_successes": 6,
+        "bucket_ticks": 437,
+        "candidate_literal_entries": 18,
+        "pair_candidates_examined": 26,
+        "pair_candidates_requested": 26,
+        "stored_bucket_literal_entries": 32,
+        "tautological_candidates": 16
+      },
+      "witness_verified": false,
+      "work_cap": 1952
+    },
+    {
+      "allocated_nodes": 48,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 119,
+        "cofactor_cache_hits": 140,
+        "cofactor_calls": 312,
+        "cofactor_edges": 302,
+        "cofactor_unique_visits": 172,
+        "complement_scans": 245,
+        "constructor_calls": 118,
+        "dedup_entries": 245,
+        "difference_input_entries": 12,
+        "factor_entries": 176,
+        "factor_rewrites": 1,
+        "intern_key_edges": 223,
+        "intern_lookups": 113,
+        "intersection_entries": 176,
+        "normalization_child_visits": 334,
+        "sort_comparisons": 268
+      },
+      "history_dag": {
+        "edges": 71,
+        "nodes": 30
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": false,
+      "semantic_checks": 127,
+      "stats": {
+        "abandoned_bucket_ticks": 263,
+        "abort_not_clausal": 1,
+        "abort_pair_cap": 4,
+        "bucket_attempts": 6,
+        "bucket_successes": 1,
+        "bucket_ticks": 265,
+        "cofactor_fallbacks": 5,
+        "pair_candidates_requested": 22,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": false,
+      "work_cap": 1952
+    },
+    {
+      "allocated_nodes": 48,
+      "boundary": null,
+      "dag_counts": {
+        "allocated_edges": 119,
+        "cofactor_cache_hits": 140,
+        "cofactor_calls": 314,
+        "cofactor_edges": 302,
+        "cofactor_unique_visits": 174,
+        "complement_scans": 245,
+        "constructor_calls": 118,
+        "dedup_entries": 245,
+        "difference_input_entries": 12,
+        "factor_entries": 176,
+        "factor_rewrites": 1,
+        "intern_key_edges": 223,
+        "intern_lookups": 113,
+        "intersection_entries": 176,
+        "normalization_child_visits": 335,
+        "sort_comparisons": 268
+      },
+      "history_dag": {
+        "edges": 71,
+        "nodes": 30
+      },
+      "history_records": 6,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 127,
+      "stats": {
+        "abandoned_bucket_ticks": 6,
+        "abort_work_cap": 6,
+        "bucket_attempts": 6,
+        "bucket_ticks": 6,
+        "cofactor_fallbacks": 6
+      },
+      "witness_verified": false,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 1,
+        "dedup_entries": 0
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": true,
+      "work_cap": 32
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 1,
+        "dedup_entries": 0
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": true,
+      "work_cap": 32
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 1,
+        "dedup_entries": 0
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": true,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": true,
+      "work_cap": 32
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 1,
+        "dedup_entries": 0
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": true,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": true,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 2,
+        "dedup_entries": 0,
+        "normalization_child_visits": 1
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": false,
+      "work_cap": 64
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 2,
+        "dedup_entries": 0,
+        "normalization_child_visits": 1
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": false,
+      "work_cap": 64
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 2,
+        "dedup_entries": 0,
+        "normalization_child_visits": 1
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": false,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": false,
+      "work_cap": 64
+    },
+    {
+      "allocated_nodes": 2,
+      "boundary": null,
+      "dag_counts": {
+        "constructor_calls": 2,
+        "dedup_entries": 0,
+        "normalization_child_visits": 1
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 0,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 1,
+      "stats": {},
+      "witness_verified": false,
+      "work_cap": 1
+    },
+    {
+      "allocated_nodes": 4,
+      "boundary": null,
+      "dag_counts": {
+        "cofactor_calls": 2,
+        "cofactor_unique_visits": 2,
+        "complement_scans": 4,
+        "constructor_calls": 4,
+        "dedup_entries": 4,
+        "intern_lookups": 2,
+        "normalization_child_visits": 6
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 1,
+      "hybrid": false,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 3,
+      "stats": {
+        "cofactor_fallbacks": 1
+      },
+      "witness_verified": false,
+      "work_cap": 192
+    },
+    {
+      "allocated_nodes": 4,
+      "boundary": null,
+      "dag_counts": {
+        "complement_scans": 4,
+        "constructor_calls": 4,
+        "dedup_entries": 4,
+        "intern_lookups": 2,
+        "normalization_child_visits": 5
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 1,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 3,
+      "stats": {
+        "bucket_attempts": 1,
+        "bucket_successes": 1,
+        "bucket_ticks": 2,
+        "pair_candidates_requested": 0,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": false,
+      "work_cap": 192
+    },
+    {
+      "allocated_nodes": 4,
+      "boundary": null,
+      "dag_counts": {
+        "complement_scans": 4,
+        "constructor_calls": 4,
+        "dedup_entries": 4,
+        "intern_lookups": 2,
+        "normalization_child_visits": 5
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 1,
+      "hybrid": true,
+      "pair_cap": 0,
+      "sat": false,
+      "semantic_checks": 3,
+      "stats": {
+        "bucket_attempts": 1,
+        "bucket_successes": 1,
+        "bucket_ticks": 2,
+        "pair_candidates_requested": 0,
+        "stored_bucket_literal_entries": 0
+      },
+      "witness_verified": false,
+      "work_cap": 192
+    },
+    {
+      "allocated_nodes": 4,
+      "boundary": null,
+      "dag_counts": {
+        "cofactor_calls": 2,
+        "cofactor_unique_visits": 2,
+        "complement_scans": 4,
+        "constructor_calls": 4,
+        "dedup_entries": 4,
+        "intern_lookups": 2,
+        "normalization_child_visits": 6
+      },
+      "history_dag": {
+        "edges": 0,
+        "nodes": 1
+      },
+      "history_records": 1,
+      "hybrid": true,
+      "pair_cap": 16,
+      "sat": false,
+      "semantic_checks": 3,
+      "stats": {
+        "abandoned_bucket_ticks": 1,
+        "abort_work_cap": 1,
+        "bucket_attempts": 1,
+        "bucket_ticks": 1,
+        "cofactor_fallbacks": 1
+      },
+      "witness_verified": false,
+      "work_cap": 1
+    }
+  ],
+  "semantic_status": "PASS"
+}
