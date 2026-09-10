@@ -1,0 +1,43 @@
+{
+  "scope": "Scalar arithmetic audit; fits and architectural assumptions not validated",
+  "eq13_boundary": {
+    "theta": 0.7853981633974483,
+    "theta_a": 0.39269908169872414,
+    "rounds": 0,
+    "success": 0.14644660940672624,
+    "claimed_stage_floor": 0.5
+  },
+  "source_equation_substitution": {
+    "assumptions": {
+      "n": 179,
+      "p": 623,
+      "c": 2112,
+      "n_P": 27,
+      "d": 28,
+      "cycle_seconds": 1e-06,
+      "cores": 46,
+      "warning": "c and n_P are representative; not exact archived crossover inputs"
+    },
+    "assumed_success": 1.806147588617196e-05,
+    "ideal_iterations": 184.80480699569324,
+    "iteration_logical_cycles": 2772099.447743345,
+    "iteration_seconds": 77.61878453681366,
+    "ideal_hours": 3.9845345821017077,
+    "unverified_factor4_hours": 15.938138328406831,
+    "classical_serial_hours": 572.7913734615663,
+    "assumed_parallel_speed": 35.442008841646356,
+    "classical_parallel_hours": 16.16136873112294,
+    "unverified_factor4_classical_success_threshold": 1.7565970176266078e-05
+  },
+  "synthetic_tail_counterexample": {
+    "distribution": "99% at a=.01; 1% at a=1e-12",
+    "mean_success": 0.009900000000010001,
+    "inverse_sqrt_mean": 10.050378152587044,
+    "mean_inverse_sqrt": 10009.9
+  },
+  "schedule_formula_sanity": {
+    "a": 0.1,
+    "j": 1,
+    "success": 0.676
+  }
+}
