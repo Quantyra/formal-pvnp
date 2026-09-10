@@ -1,0 +1,481 @@
+{
+  "protocol": {
+    "seed": 3044001,
+    "paired_seed": 3044002,
+    "bootstrap_reps": 2000,
+    "schedule": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      4,
+      4,
+      4,
+      4,
+      8,
+      8,
+      8,
+      8,
+      16,
+      16,
+      16,
+      16,
+      32,
+      32,
+      32,
+      32
+    ],
+    "numpy_version": "2.4.4",
+    "quantiles": "a linear; inverse-root and bootstrap CI inverted_cdf",
+    "primary_materiality": "Jensen ratio lower 95% formula-bootstrap CI >2 rejects inverse-root-mean proxy for tested configuration; always report continuous results",
+    "conditioning": "Source 2024 III B describes retained SAT evaluation instances; no outcome filtering performed by this inventory",
+    "missingness": "only supplied rows counted; omitted source population not reconstructed"
+  },
+  "rows_received": 2830,
+  "exact_duplicate_rows_removed": 0,
+  "unique_formula_depth_rows": 2830,
+  "strata": {
+    "14": {
+      "rows": 1415,
+      "missing_a": 0,
+      "missing_K": 0,
+      "n_values": [
+        20
+      ],
+      "metrics": {
+        "count": 1415,
+        "zeros": 0,
+        "mean_a": 0.031540557504880454,
+        "a_quantiles_q01_q05_q10_q50_q90": [
+          0.00033628661660716077,
+          0.001545855509264101,
+          0.003496275909228871,
+          0.023648021403449213,
+          0.07160750534625532
+        ],
+        "mean_inverse_sqrt_a": 9.705588529815161,
+        "inverse_sqrt_mean_a": 5.6307379645184135,
+        "jensen_ratio": 1.7236796652541906,
+        "mean_scheduled_attempts": 8.246024167460089,
+        "mean_scheduled_iterations": 8.974742407198343,
+        "mean_symmetric_A_calls": 26.195508981856772,
+        "mean_fallback_probability": 0.001354747262268821,
+        "failure_quantiles_q50_q90_q99": [
+          2.2427059731767353e-13,
+          2.6674711867056414e-09,
+          4.549066249676698e-05
+        ],
+        "inverse_root_quantiles_q50_q90_q99": [
+          6.50283291197638,
+          16.941419018179815,
+          54.90084778458201
+        ]
+      },
+      "formula_bootstrap95": {
+        "mean_a": [
+          0.03000477190539646,
+          0.03308495273718308
+        ],
+        "median_a": [
+          0.021941284615985712,
+          0.025478092210628037
+        ],
+        "mean_inverse_sqrt_a": [
+          9.105438200187239,
+          10.377124892032421
+        ],
+        "jensen_ratio": [
+          1.62805003460846,
+          1.8378407204635794
+        ],
+        "mean_scheduled_attempts": [
+          8.074238214601923,
+          8.424460962950752
+        ],
+        "mean_scheduled_iterations": [
+          8.158030583276503,
+          9.904180988582945
+        ],
+        "mean_fallback_probability": [
+          0.00039230415773302234,
+          0.0026383814875497237
+        ]
+      },
+      "uniform": {
+        "status": "subset with supplied exact K only",
+        "count": 1415,
+        "metrics": {
+          "count": 1415,
+          "zeros": 0,
+          "mean_a": 1.6815670808717978e-06,
+          "a_quantiles_q01_q05_q10_q50_q90": [
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            2.86102294921875e-06
+          ],
+          "mean_inverse_sqrt_a": 848.2745273976369,
+          "inverse_sqrt_mean_a": 771.1571712469067,
+          "jensen_ratio": 1.100002125411136,
+          "mean_scheduled_attempts": 27.888148577930703,
+          "mean_scheduled_iterations": 248.98311200929405,
+          "mean_symmetric_A_calls": 525.8543725965189,
+          "mean_fallback_probability": 0.9624479389977025,
+          "failure_quantiles_q50_q90_q99": [
+            0.97840863410949,
+            0.97840863410949,
+            0.97840863410949
+          ],
+          "inverse_root_quantiles_q50_q90_q99": [
+            1024.0,
+            1024.0,
+            1024.0
+          ]
+        },
+        "matched_qaoa_metrics": {
+          "count": 1415,
+          "zeros": 0,
+          "mean_a": 0.031540557504880454,
+          "a_quantiles_q01_q05_q10_q50_q90": [
+            0.00033628661660716077,
+            0.001545855509264101,
+            0.003496275909228871,
+            0.023648021403449213,
+            0.07160750534625532
+          ],
+          "mean_inverse_sqrt_a": 9.705588529815161,
+          "inverse_sqrt_mean_a": 5.6307379645184135,
+          "jensen_ratio": 1.7236796652541906,
+          "mean_scheduled_attempts": 8.246024167460089,
+          "mean_scheduled_iterations": 8.974742407198343,
+          "mean_symmetric_A_calls": 26.195508981856772,
+          "mean_fallback_probability": 0.001354747262268821,
+          "failure_quantiles_q50_q90_q99": [
+            2.2427059731767353e-13,
+            2.6674711867056414e-09,
+            4.549066249676698e-05
+          ],
+          "inverse_root_quantiles_q50_q90_q99": [
+            6.50283291197638,
+            16.941419018179815,
+            54.90084778458201
+          ]
+        },
+        "zero_K_count": 0,
+        "positive_overlap_with_zero_K": 0,
+        "ideal_allowable_iteration_overhead_quantiles_q10_q50_q90": [
+          56.12323542503322,
+          122.05779927071663,
+          200.35673208000173
+        ],
+        "caveat": "sqrt(a/g) is asymptotic iteration-cost headroom, not a compiled or exact runtime advantage"
+      }
+    },
+    "60": {
+      "rows": 1415,
+      "missing_a": 0,
+      "missing_K": 0,
+      "n_values": [
+        20
+      ],
+      "metrics": {
+        "count": 1415,
+        "zeros": 0,
+        "mean_a": 0.1761390976431838,
+        "a_quantiles_q01_q05_q10_q50_q90": [
+          0.0001988568768344072,
+          0.0029295606877704065,
+          0.007496246609237698,
+          0.11201079931355115,
+          0.44550564627100236
+        ],
+        "mean_inverse_sqrt_a": 6.415077911385848,
+        "inverse_sqrt_mean_a": 2.382715096421986,
+        "jensen_ratio": 2.6923394748365324,
+        "mean_scheduled_attempts": 5.471509830918016,
+        "mean_scheduled_iterations": 5.469430642775484,
+        "mean_symmetric_A_calls": 16.410371116468987,
+        "mean_fallback_probability": 0.0018149593419165746,
+        "failure_quantiles_q50_q90_q99": [
+          4.403192247618146e-15,
+          1.2818482482912799e-08,
+          0.005814746398042629
+        ],
+        "inverse_root_quantiles_q50_q90_q99": [
+          2.9879274751758027,
+          11.558569404013141,
+          71.80562867312209
+        ]
+      },
+      "formula_bootstrap95": {
+        "mean_a": [
+          0.1666927290599161,
+          0.18529426113237463
+        ],
+        "median_a": [
+          0.09959407380915679,
+          0.12346143244745697
+        ],
+        "mean_inverse_sqrt_a": [
+          5.688465078838684,
+          7.241012950665535
+        ],
+        "jensen_ratio": [
+          2.3970337841657336,
+          3.03616516439558
+        ],
+        "mean_scheduled_attempts": [
+          5.275881431421521,
+          5.669336568587133
+        ],
+        "mean_scheduled_iterations": [
+          4.566668272153199,
+          6.454504778966363
+        ],
+        "mean_fallback_probability": [
+          0.0005867330679433989,
+          0.0035066461891194996
+        ]
+      },
+      "uniform": {
+        "status": "subset with supplied exact K only",
+        "count": 1415,
+        "metrics": {
+          "count": 1415,
+          "zeros": 0,
+          "mean_a": 1.6815670808717978e-06,
+          "a_quantiles_q01_q05_q10_q50_q90": [
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            9.5367431640625e-07,
+            2.86102294921875e-06
+          ],
+          "mean_inverse_sqrt_a": 848.2745273976369,
+          "inverse_sqrt_mean_a": 771.1571712469067,
+          "jensen_ratio": 1.100002125411136,
+          "mean_scheduled_attempts": 27.888148577930703,
+          "mean_scheduled_iterations": 248.98311200929405,
+          "mean_symmetric_A_calls": 525.8543725965189,
+          "mean_fallback_probability": 0.9624479389977025,
+          "failure_quantiles_q50_q90_q99": [
+            0.97840863410949,
+            0.97840863410949,
+            0.97840863410949
+          ],
+          "inverse_root_quantiles_q50_q90_q99": [
+            1024.0,
+            1024.0,
+            1024.0
+          ]
+        },
+        "matched_qaoa_metrics": {
+          "count": 1415,
+          "zeros": 0,
+          "mean_a": 0.1761390976431838,
+          "a_quantiles_q01_q05_q10_q50_q90": [
+            0.0001988568768344072,
+            0.0029295606877704065,
+            0.007496246609237698,
+            0.11201079931355115,
+            0.44550564627100236
+          ],
+          "mean_inverse_sqrt_a": 6.415077911385848,
+          "inverse_sqrt_mean_a": 2.382715096421986,
+          "jensen_ratio": 2.6923394748365324,
+          "mean_scheduled_attempts": 5.471509830918016,
+          "mean_scheduled_iterations": 5.469430642775484,
+          "mean_symmetric_A_calls": 16.410371116468987,
+          "mean_fallback_probability": 0.0018149593419165746,
+          "failure_quantiles_q50_q90_q99": [
+            4.403192247618146e-15,
+            1.2818482482912799e-08,
+            0.005814746398042629
+          ],
+          "inverse_root_quantiles_q50_q90_q99": [
+            2.9879274751758027,
+            11.558569404013141,
+            71.80562867312209
+          ]
+        },
+        "zero_K_count": 0,
+        "positive_overlap_with_zero_K": 0,
+        "ideal_allowable_iteration_overhead_quantiles_q10_q50_q90": [
+          79.97648486761341,
+          268.16891472846044,
+          523.3589956677392
+        ],
+        "caveat": "sqrt(a/g) is asymptotic iteration-cost headroom, not a compiled or exact runtime advantage"
+      }
+    }
+  },
+  "paired": {
+    "status": "paired by source IDs; formula bytes not independently compared",
+    "depths": [
+      14,
+      60
+    ],
+    "pairs": 1415,
+    "both_positive": 1415,
+    "zeros_excluded_from_ratio": 0,
+    "fraction_second_overlap_larger": 0.9236749116607774,
+    "mean_overlap_difference_second_minus_first": 0.14459854013830337,
+    "difference_bootstrap95": [
+      0.13628426539180213,
+      0.15327998358612013
+    ],
+    "ideal_amplification_ratio_second_over_first_quantiles_q10_q50_q90": [
+      0.2908438790666431,
+      0.4644188185394819,
+      0.8796125017347078
+    ],
+    "caveat": "ideal inverse-root ratio excludes all preparation/iteration cost; not runtime advantage"
+  },
+  "cost_units": "attempts*A_initial + iterations*(A+A_inverse+S_F+S_0) + attempts*verification + failure*fallback; no compiled costs or seconds inferred",
+  "input_sha256": "7c28c59a61126be539d7816e587f682551e0611e0673970eb10db848175ce7bc",
+  "manifest_sha256": "129ffdac79d9c71fb4aba130dbac23b755b53cecb7470434985614fc16d1706a",
+  "manifest": {
+    "story": "S3044",
+    "config_id": "published-poisson-8sat-r176.54-n20-paired-p14-p60",
+    "frozen_before_analysis": true,
+    "frozen_at_utc": "2026-09-10T23:40:26.252740+00:00",
+    "pairing_verified": true,
+    "pairing_scope": "identical source instance_id, exactly one benchmark per depth; formula bytes not independently compared",
+    "n": 20,
+    "k": 8,
+    "r": 176.54,
+    "depths": [
+      14,
+      60
+    ],
+    "sample_count_per_depth": 1415,
+    "conditioning": "Source 2024 III B describes retained SAT evaluation instances; no outcome filtering performed by this inventory",
+    "heldout_status": "n>12 differs from source-reported 100 size-12 training instances; no individual training-ID manifest located",
+    "angle_status": "benchmark betas/gammas null; explicit p used, no exact per-row angle assertion",
+    "archive": {
+      "doi": "10.5281/zenodo.7764484",
+      "filename": "data_23032023.tar.gz",
+      "bytes": 177713853,
+      "md5": "c40fb21998acec76f92511a1e86258ed",
+      "sha256": "ca74650be3a67446b2d017e8d4eae5f6e2bb06a8a494f3c371872b9df61e1859",
+      "members": 2033188
+    },
+    "inventory_metadata_sha256": "f91bcebd4a11bf270bc7e1ab4f3551e55106b5fda80f4afb038b58b875aae3a5",
+    "inventory_summary_sha256": "67c121895f8624813024b6c10409c602f7df65a2bb8f678955213823024b205d",
+    "selection_rule": "Among source notebook directory data_save_analytic_compare with k8 r176.54 n>12, choose largest n with at least30 unique formula IDs having exactly one p14 and one p60 record; include every such common ID, sorted lexicographically. No probability, K, uniform baseline, or success result used. Reject duplicate-key IDs and absent IDs.",
+    "source_count_validation": "Analyst must check K is integer in[0,2^n], matching across paired rows, source_uniform=K/2^n within recorded numeric precision. K is source-reported num_valid_assignments linked to enumeration filename, not independently enumerated here. Preserve K0/probability0 and nulls rather than filter.",
+    "availability": [
+      {
+        "n": 20,
+        "unique_p14": 1415,
+        "unique_p60": 1415,
+        "common_unique": 1415,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 19,
+        "unique_p14": 1490,
+        "unique_p60": 1490,
+        "common_unique": 1490,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 18,
+        "unique_p14": 1723,
+        "unique_p60": 1723,
+        "common_unique": 1723,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 17,
+        "unique_p14": 3421,
+        "unique_p60": 3421,
+        "common_unique": 3421,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 16,
+        "unique_p14": 3716,
+        "unique_p60": 3716,
+        "common_unique": 3716,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 15,
+        "unique_p14": 5376,
+        "unique_p60": 5376,
+        "common_unique": 5376,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 14,
+        "unique_p14": 5662,
+        "unique_p60": 5662,
+        "common_unique": 5662,
+        "duplicate_keys": 0
+      },
+      {
+        "n": 13,
+        "unique_p14": 6336,
+        "unique_p60": 6336,
+        "common_unique": 6336,
+        "duplicate_keys": 0
+      }
+    ]
+  },
+  "source_consistency": {
+    "source_uniform_records": 2830,
+    "uniform_mismatches": 0,
+    "uniform_tolerance": "relative1e-12 absolute1e-18",
+    "max_uniform_absolute_difference": 2.371692252312041e-20,
+    "paired_K_mismatches": 0,
+    "K_min": 1,
+    "K_max": 8,
+    "K_zero_positive_a": 0,
+    "K_all_assignments_nonunit_a": 0
+  },
+  "cost_contrasts": {
+    "14": {
+      "Q_minus_uniform_coefficients": {
+        "H": -499.65886361466215,
+        "L": 366.73712574599483,
+        "R": -240.0083696020957,
+        "V": -19.642124410470615,
+        "F": -0.9610931917354337
+      },
+      "layer_cost_upper_bound_coefficients": {
+        "H": 1.3624441828688214,
+        "R": 0.6544425223213629,
+        "V": 0.05355913822609526,
+        "F": 0.002620659661277639
+      },
+      "assumption": "common fixed component costs; A=H+pL, symmetric inverse; fallback budget in same unit"
+    },
+    "60": {
+      "Q_minus_uniform_coefficients": {
+        "H": -509.44400148004996,
+        "L": 984.6222669881392,
+        "R": -243.51368136651857,
+        "V": -22.416638747012687,
+        "F": -0.960632979655786
+      },
+      "layer_cost_upper_bound_coefficients": {
+        "H": 0.5174004474207028,
+        "R": 0.24731685391536237,
+        "V": 0.02276673958997793,
+        "F": 0.0009756360503548898
+      },
+      "assumption": "common fixed component costs; A=H+pL, symmetric inverse; fallback budget in same unit"
+    }
+  },
+  "post_freeze_changes": "Integer-valued source K float coercion, consistency/configuration safeguards, derived cost coefficients and compact manifest; metrics/seeds/sample/schedule unchanged."
+}

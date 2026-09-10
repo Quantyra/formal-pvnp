@@ -1,0 +1,9 @@
+{
+  "manifest_file": "2026-09-10-qaoa-selection-manifest.json",
+  "manifest_sha256": "129ffdac79d9c71fb4aba130dbac23b755b53cecb7470434985614fc16d1706a",
+  "selected_data_file": "2026-09-10-qaoa-selected-rows.jsonl",
+  "selected_data_sha256": "7c28c59a61126be539d7816e587f682551e0611e0673970eb10db848175ce7bc",
+  "rows": 2830,
+  "extracted_at_utc": "2026-09-10T23:40:30.365156+00:00",
+  "outcome_statistics_inspected_by_inventory": false
+}
