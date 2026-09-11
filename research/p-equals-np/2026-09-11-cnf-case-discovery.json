@@ -1,0 +1,1340 @@
+{
+  "controls": 5,
+  "cases": [
+    {
+      "family": "ordinary_CNF_Tseitin",
+      "graph": "K4",
+      "budget": 2,
+      "nvars": 6,
+      "cnf": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          -1,
+          -2,
+          3
+        ],
+        [
+          -1,
+          2,
+          -3
+        ],
+        [
+          1,
+          -2,
+          -3
+        ],
+        [
+          -1,
+          4,
+          5
+        ],
+        [
+          1,
+          -4,
+          5
+        ],
+        [
+          1,
+          4,
+          -5
+        ],
+        [
+          -1,
+          -4,
+          -5
+        ],
+        [
+          -2,
+          4,
+          6
+        ],
+        [
+          2,
+          -4,
+          6
+        ],
+        [
+          2,
+          4,
+          -6
+        ],
+        [
+          -2,
+          -4,
+          -6
+        ],
+        [
+          -3,
+          5,
+          6
+        ],
+        [
+          3,
+          -5,
+          6
+        ],
+        [
+          3,
+          5,
+          -6
+        ],
+        [
+          -3,
+          -5,
+          -6
+        ]
+      ],
+      "input_sha256": "d45816e0366c1f4ebd7f75fbf629f68bff5517008d2f8106a8fb5dbf505bb702",
+      "result": {
+        "status": "UNSAT",
+        "rank": 0,
+        "history": [
+          {
+            "budget": 0,
+            "initial_rank": 0,
+            "scopes_available": 1,
+            "case_bound_per_sweep": 1,
+            "scopes_attempted": 1,
+            "cases_attempted": 1,
+            "failed_cases": 0,
+            "unit_steps": 0,
+            "gaussian_calls": 1,
+            "gaussian_input_rows": 0,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 1,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 1,
+            "initial_rank": 0,
+            "scopes_available": 7,
+            "case_bound_per_sweep": 13,
+            "scopes_attempted": 7,
+            "cases_attempted": 13,
+            "failed_cases": 0,
+            "unit_steps": 12,
+            "gaussian_calls": 13,
+            "gaussian_input_rows": 12,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 2,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 2,
+            "initial_rank": 0,
+            "scopes_available": 22,
+            "case_bound_per_sweep": 73,
+            "scopes_attempted": 22,
+            "cases_attempted": 73,
+            "failed_cases": 0,
+            "unit_steps": 180,
+            "gaussian_calls": 121,
+            "gaussian_input_rows": 324,
+            "new_equations": 4,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 4,
+            "cases_attempted_complete": true
+          }
+        ],
+        "learned": [
+          {
+            "budget": 2,
+            "scope": [
+              0,
+              1
+            ],
+            "row": [
+              7,
+              1
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              0,
+              3
+            ],
+            "row": [
+              25,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              1,
+              3
+            ],
+            "row": [
+              42,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              2,
+              4
+            ],
+            "row": [
+              52,
+              0
+            ]
+          }
+        ],
+        "nogoods": [],
+        "final_gaussian_certificate": {
+          "inputs": [
+            [
+              7,
+              1,
+              [
+                "new",
+                0
+              ]
+            ],
+            [
+              25,
+              0,
+              [
+                "new",
+                1
+              ]
+            ],
+            [
+              42,
+              0,
+              [
+                "new",
+                2
+              ]
+            ],
+            [
+              52,
+              0,
+              [
+                "new",
+                3
+              ]
+            ]
+          ],
+          "rows": [
+            [
+              25,
+              0,
+              2
+            ],
+            [
+              42,
+              0,
+              4
+            ],
+            [
+              52,
+              1,
+              7
+            ]
+          ],
+          "contradiction": 15
+        }
+      }
+    },
+    {
+      "family": "ordinary_CNF_Tseitin",
+      "graph": "prism3",
+      "budget": 2,
+      "nvars": 9,
+      "cnf": [
+        [
+          1,
+          3,
+          7
+        ],
+        [
+          -1,
+          -3,
+          7
+        ],
+        [
+          -1,
+          3,
+          -7
+        ],
+        [
+          1,
+          -3,
+          -7
+        ],
+        [
+          -1,
+          2,
+          8
+        ],
+        [
+          1,
+          -2,
+          8
+        ],
+        [
+          1,
+          2,
+          -8
+        ],
+        [
+          -1,
+          -2,
+          -8
+        ],
+        [
+          -2,
+          3,
+          9
+        ],
+        [
+          2,
+          -3,
+          9
+        ],
+        [
+          2,
+          3,
+          -9
+        ],
+        [
+          -2,
+          -3,
+          -9
+        ],
+        [
+          -4,
+          6,
+          7
+        ],
+        [
+          4,
+          -6,
+          7
+        ],
+        [
+          4,
+          6,
+          -7
+        ],
+        [
+          -4,
+          -6,
+          -7
+        ],
+        [
+          -4,
+          5,
+          8
+        ],
+        [
+          4,
+          -5,
+          8
+        ],
+        [
+          4,
+          5,
+          -8
+        ],
+        [
+          -4,
+          -5,
+          -8
+        ],
+        [
+          -5,
+          6,
+          9
+        ],
+        [
+          5,
+          -6,
+          9
+        ],
+        [
+          5,
+          6,
+          -9
+        ],
+        [
+          -5,
+          -6,
+          -9
+        ]
+      ],
+      "input_sha256": "40d4ac03cd4ec940390ac7ef57164b71bf1081d04c450d0487eded6f32642afb",
+      "result": {
+        "status": "UNSAT",
+        "rank": 0,
+        "history": [
+          {
+            "budget": 0,
+            "initial_rank": 0,
+            "scopes_available": 1,
+            "case_bound_per_sweep": 1,
+            "scopes_attempted": 1,
+            "cases_attempted": 1,
+            "failed_cases": 0,
+            "unit_steps": 0,
+            "gaussian_calls": 1,
+            "gaussian_input_rows": 0,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 1,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 1,
+            "initial_rank": 0,
+            "scopes_available": 10,
+            "case_bound_per_sweep": 19,
+            "scopes_attempted": 10,
+            "cases_attempted": 19,
+            "failed_cases": 0,
+            "unit_steps": 18,
+            "gaussian_calls": 19,
+            "gaussian_input_rows": 18,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 2,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 2,
+            "initial_rank": 0,
+            "scopes_available": 46,
+            "case_bound_per_sweep": 163,
+            "scopes_attempted": 46,
+            "cases_attempted": 163,
+            "failed_cases": 0,
+            "unit_steps": 378,
+            "gaussian_calls": 235,
+            "gaussian_input_rows": 594,
+            "new_equations": 6,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 4,
+            "cases_attempted_complete": true
+          }
+        ],
+        "learned": [
+          {
+            "budget": 2,
+            "scope": [
+              0,
+              1
+            ],
+            "row": [
+              131,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              0,
+              2
+            ],
+            "row": [
+              69,
+              1
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              1,
+              2
+            ],
+            "row": [
+              262,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              3,
+              4
+            ],
+            "row": [
+              152,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              3,
+              5
+            ],
+            "row": [
+              104,
+              0
+            ]
+          },
+          {
+            "budget": 2,
+            "scope": [
+              4,
+              5
+            ],
+            "row": [
+              304,
+              0
+            ]
+          }
+        ],
+        "nogoods": [],
+        "final_gaussian_certificate": {
+          "inputs": [
+            [
+              131,
+              0,
+              [
+                "new",
+                0
+              ]
+            ],
+            [
+              69,
+              1,
+              [
+                "new",
+                1
+              ]
+            ],
+            [
+              262,
+              0,
+              [
+                "new",
+                2
+              ]
+            ],
+            [
+              152,
+              0,
+              [
+                "new",
+                3
+              ]
+            ],
+            [
+              104,
+              0,
+              [
+                "new",
+                4
+              ]
+            ],
+            [
+              304,
+              0,
+              [
+                "new",
+                5
+              ]
+            ]
+          ],
+          "rows": [
+            [
+              389,
+              0,
+              5
+            ],
+            [
+              262,
+              0,
+              4
+            ],
+            [
+              424,
+              1,
+              23
+            ],
+            [
+              304,
+              1,
+              31
+            ],
+            [
+              448,
+              1,
+              7
+            ]
+          ],
+          "contradiction": 63
+        }
+      }
+    },
+    {
+      "family": "functional_PHP",
+      "holes": 3,
+      "budget": 1,
+      "nvars": 12,
+      "cnf": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          10,
+          11,
+          12
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          -2,
+          -3
+        ],
+        [
+          -4,
+          -5
+        ],
+        [
+          -4,
+          -6
+        ],
+        [
+          -5,
+          -6
+        ],
+        [
+          -7,
+          -8
+        ],
+        [
+          -7,
+          -9
+        ],
+        [
+          -8,
+          -9
+        ],
+        [
+          -10,
+          -11
+        ],
+        [
+          -10,
+          -12
+        ],
+        [
+          -11,
+          -12
+        ],
+        [
+          -1,
+          -4
+        ],
+        [
+          -1,
+          -7
+        ],
+        [
+          -1,
+          -10
+        ],
+        [
+          -4,
+          -7
+        ],
+        [
+          -4,
+          -10
+        ],
+        [
+          -7,
+          -10
+        ],
+        [
+          -2,
+          -5
+        ],
+        [
+          -2,
+          -8
+        ],
+        [
+          -2,
+          -11
+        ],
+        [
+          -5,
+          -8
+        ],
+        [
+          -5,
+          -11
+        ],
+        [
+          -8,
+          -11
+        ],
+        [
+          -3,
+          -6
+        ],
+        [
+          -3,
+          -9
+        ],
+        [
+          -3,
+          -12
+        ],
+        [
+          -6,
+          -9
+        ],
+        [
+          -6,
+          -12
+        ],
+        [
+          -9,
+          -12
+        ]
+      ],
+      "input_sha256": "f0d06319bf7491acf0255536b73ab599ff4ff3446696afda2058afb44d5e6497",
+      "result": {
+        "status": "OPEN",
+        "rank": 0,
+        "history": [
+          {
+            "budget": 0,
+            "initial_rank": 0,
+            "scopes_available": 1,
+            "case_bound_per_sweep": 1,
+            "scopes_attempted": 1,
+            "cases_attempted": 1,
+            "failed_cases": 0,
+            "unit_steps": 0,
+            "gaussian_calls": 1,
+            "gaussian_input_rows": 0,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 1,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 1,
+            "initial_rank": 0,
+            "scopes_available": 13,
+            "case_bound_per_sweep": 25,
+            "scopes_attempted": 13,
+            "cases_attempted": 25,
+            "failed_cases": 0,
+            "unit_steps": 84,
+            "gaussian_calls": 37,
+            "gaussian_input_rows": 156,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 2,
+            "cases_attempted_complete": true
+          }
+        ],
+        "learned": [],
+        "nogoods": []
+      }
+    },
+    {
+      "family": "functional_PHP",
+      "holes": 4,
+      "budget": 2,
+      "nvars": 20,
+      "cnf": [
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16
+        ],
+        [
+          17,
+          18,
+          19,
+          20
+        ],
+        [
+          -1,
+          -2
+        ],
+        [
+          -1,
+          -3
+        ],
+        [
+          -1,
+          -4
+        ],
+        [
+          -2,
+          -3
+        ],
+        [
+          -2,
+          -4
+        ],
+        [
+          -3,
+          -4
+        ],
+        [
+          -5,
+          -6
+        ],
+        [
+          -5,
+          -7
+        ],
+        [
+          -5,
+          -8
+        ],
+        [
+          -6,
+          -7
+        ],
+        [
+          -6,
+          -8
+        ],
+        [
+          -7,
+          -8
+        ],
+        [
+          -9,
+          -10
+        ],
+        [
+          -9,
+          -11
+        ],
+        [
+          -9,
+          -12
+        ],
+        [
+          -10,
+          -11
+        ],
+        [
+          -10,
+          -12
+        ],
+        [
+          -11,
+          -12
+        ],
+        [
+          -13,
+          -14
+        ],
+        [
+          -13,
+          -15
+        ],
+        [
+          -13,
+          -16
+        ],
+        [
+          -14,
+          -15
+        ],
+        [
+          -14,
+          -16
+        ],
+        [
+          -15,
+          -16
+        ],
+        [
+          -17,
+          -18
+        ],
+        [
+          -17,
+          -19
+        ],
+        [
+          -17,
+          -20
+        ],
+        [
+          -18,
+          -19
+        ],
+        [
+          -18,
+          -20
+        ],
+        [
+          -19,
+          -20
+        ],
+        [
+          -1,
+          -5
+        ],
+        [
+          -1,
+          -9
+        ],
+        [
+          -1,
+          -13
+        ],
+        [
+          -1,
+          -17
+        ],
+        [
+          -5,
+          -9
+        ],
+        [
+          -5,
+          -13
+        ],
+        [
+          -5,
+          -17
+        ],
+        [
+          -9,
+          -13
+        ],
+        [
+          -9,
+          -17
+        ],
+        [
+          -13,
+          -17
+        ],
+        [
+          -2,
+          -6
+        ],
+        [
+          -2,
+          -10
+        ],
+        [
+          -2,
+          -14
+        ],
+        [
+          -2,
+          -18
+        ],
+        [
+          -6,
+          -10
+        ],
+        [
+          -6,
+          -14
+        ],
+        [
+          -6,
+          -18
+        ],
+        [
+          -10,
+          -14
+        ],
+        [
+          -10,
+          -18
+        ],
+        [
+          -14,
+          -18
+        ],
+        [
+          -3,
+          -7
+        ],
+        [
+          -3,
+          -11
+        ],
+        [
+          -3,
+          -15
+        ],
+        [
+          -3,
+          -19
+        ],
+        [
+          -7,
+          -11
+        ],
+        [
+          -7,
+          -15
+        ],
+        [
+          -7,
+          -19
+        ],
+        [
+          -11,
+          -15
+        ],
+        [
+          -11,
+          -19
+        ],
+        [
+          -15,
+          -19
+        ],
+        [
+          -4,
+          -8
+        ],
+        [
+          -4,
+          -12
+        ],
+        [
+          -4,
+          -16
+        ],
+        [
+          -4,
+          -20
+        ],
+        [
+          -8,
+          -12
+        ],
+        [
+          -8,
+          -16
+        ],
+        [
+          -8,
+          -20
+        ],
+        [
+          -12,
+          -16
+        ],
+        [
+          -12,
+          -20
+        ],
+        [
+          -16,
+          -20
+        ]
+      ],
+      "input_sha256": "fb705e63008679172d3573fe74c3621c0a9e6bbb000b6cf63cfdb6d1d2a5624a",
+      "result": {
+        "status": "OPEN",
+        "rank": 0,
+        "history": [
+          {
+            "budget": 0,
+            "initial_rank": 0,
+            "scopes_available": 1,
+            "case_bound_per_sweep": 1,
+            "scopes_attempted": 1,
+            "cases_attempted": 1,
+            "failed_cases": 0,
+            "unit_steps": 0,
+            "gaussian_calls": 1,
+            "gaussian_input_rows": 0,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 1,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 1,
+            "initial_rank": 0,
+            "scopes_available": 21,
+            "case_bound_per_sweep": 41,
+            "scopes_attempted": 21,
+            "cases_attempted": 41,
+            "failed_cases": 0,
+            "unit_steps": 180,
+            "gaussian_calls": 61,
+            "gaussian_input_rows": 340,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 2,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 2,
+            "initial_rank": 0,
+            "scopes_available": 211,
+            "case_bound_per_sweep": 801,
+            "scopes_attempted": 211,
+            "cases_attempted": 801,
+            "failed_cases": 70,
+            "unit_steps": 6020,
+            "gaussian_calls": 1251,
+            "gaussian_input_rows": 10640,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 4,
+            "cases_attempted_complete": true
+          }
+        ],
+        "learned": [],
+        "nogoods": []
+      }
+    },
+    {
+      "family": "functional_PHP_reverse_labels",
+      "holes": 3,
+      "budget": 1,
+      "nvars": 12,
+      "cnf": [
+        [
+          12,
+          11,
+          10
+        ],
+        [
+          9,
+          8,
+          7
+        ],
+        [
+          6,
+          5,
+          4
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          -12,
+          -11
+        ],
+        [
+          -12,
+          -10
+        ],
+        [
+          -11,
+          -10
+        ],
+        [
+          -9,
+          -8
+        ],
+        [
+          -9,
+          -7
+        ],
+        [
+          -8,
+          -7
+        ],
+        [
+          -6,
+          -5
+        ],
+        [
+          -6,
+          -4
+        ],
+        [
+          -5,
+          -4
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -12,
+          -9
+        ],
+        [
+          -12,
+          -6
+        ],
+        [
+          -12,
+          -3
+        ],
+        [
+          -9,
+          -6
+        ],
+        [
+          -9,
+          -3
+        ],
+        [
+          -6,
+          -3
+        ],
+        [
+          -11,
+          -8
+        ],
+        [
+          -11,
+          -5
+        ],
+        [
+          -11,
+          -2
+        ],
+        [
+          -8,
+          -5
+        ],
+        [
+          -8,
+          -2
+        ],
+        [
+          -5,
+          -2
+        ],
+        [
+          -10,
+          -7
+        ],
+        [
+          -10,
+          -4
+        ],
+        [
+          -10,
+          -1
+        ],
+        [
+          -7,
+          -4
+        ],
+        [
+          -7,
+          -1
+        ],
+        [
+          -4,
+          -1
+        ]
+      ],
+      "input_sha256": "2988b2d1f7d0c0fe54e864db5a530cbc3e70b73465aede25039d5d4e37c3c22c",
+      "result": {
+        "status": "OPEN",
+        "rank": 0,
+        "history": [
+          {
+            "budget": 0,
+            "initial_rank": 0,
+            "scopes_available": 1,
+            "case_bound_per_sweep": 1,
+            "scopes_attempted": 1,
+            "cases_attempted": 1,
+            "failed_cases": 0,
+            "unit_steps": 0,
+            "gaussian_calls": 1,
+            "gaussian_input_rows": 0,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 1,
+            "cases_attempted_complete": true
+          },
+          {
+            "budget": 1,
+            "initial_rank": 0,
+            "scopes_available": 13,
+            "case_bound_per_sweep": 25,
+            "scopes_attempted": 13,
+            "cases_attempted": 25,
+            "failed_cases": 0,
+            "unit_steps": 84,
+            "gaussian_calls": 37,
+            "gaussian_input_rows": 156,
+            "new_equations": 0,
+            "new_nogoods": 0,
+            "peak_surviving_bases_per_scope": 2,
+            "cases_attempted_complete": true
+          }
+        ],
+        "learned": [],
+        "nogoods": []
+      }
+    }
+  ],
+  "elapsed_seconds": 0.33623879999504425,
+  "script_sha256_lf": "5c78d364f2fb609b9b7affb2397e7ba5815e77c8fad42a5a5eb867a1e0cbe400",
+  "dependency_sha256_lf": {
+    "2026-09-11-global-parity-learning.py": "af30f9351f8614a5582883f1f92ea876226ce31beb768ee66537b33d84242c2c",
+    "2026-09-11-decomposition-mechanism.py": "0812936a4eee35b8680a20dbc5e2168e279c2b09b1d53f39e0ddb637aac14ef1"
+  }
+}
