@@ -1,0 +1,31 @@
+{
+  "story": "S3045",
+  "status": "BLOCKED_SOURCE_FORMULA",
+  "target_formula_id": "101678_3_1653518225511123992",
+  "target_depths": [
+    14,
+    60
+  ],
+  "target_replays_executed": 0,
+  "target_probabilities_computed": false,
+  "target_execution_manifest_exists": false,
+  "evidence_label_if_unblocked": "paper-defined convention check; original driver not recovered",
+  "preflight": {
+    "synthetic_controls": "PASS",
+    "independent_reviewer_controls": "PASS",
+    "norm_tolerance": 1e-10,
+    "source_probability_absolute_tolerance": 1e-08,
+    "source_probability_relative_tolerance": 1e-06,
+    "dense_amplitude_tolerance": 1e-12,
+    "prospective_wall_seconds": 120,
+    "prospective_peak_memory_bytes": 536870912,
+    "processes": 1,
+    "numerical_threads": 1
+  },
+  "blocker": "Exact source formula clauses unavailable; benchmark metrics and filename references do not define the Hamiltonian.",
+  "required_input": "Exact source CNF/description for the fixed ID, with provenance and literal convention; no replacement instance or sign/angle tuning.",
+  "scope": "Synthetic implementation checks only. No selected-formula simulation, reproduction, quantum advantage or P=NP evidence.",
+  "script_sha256_lf": "f6dc1da104221fc6ccfc41a5a55e439ac91d087c716ab56fa2aaeeab948d0805",
+  "numerical_contract_sha256_lf": "40afde298db1786c6a35cd937aceb9920308f851c373d4cf348f36f537cd51cf",
+  "hash_convention": "SHA256-LF hashes file bytes after CRLF-to-LF replacement only; stable across Git line-ending normalization."
+}

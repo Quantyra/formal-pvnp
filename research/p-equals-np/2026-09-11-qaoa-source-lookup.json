@@ -1,0 +1,167 @@
+{
+  "evidence": {
+    "story": "S3045",
+    "checked_at_utc": "2026-09-11T17:50:25.773750+00:00",
+    "archive": {
+      "doi": "10.5281/zenodo.7764484",
+      "filename": "data_23032023.tar.gz",
+      "sha256": "ca74650be3a67446b2d017e8d4eae5f6e2bb06a8a494f3c371872b9df61e1859",
+      "bytes": 177713853
+    },
+    "filename_lookup": {
+      "target": "101678_3_1653518225511123992",
+      "members": 2033188,
+      "matches": [],
+      "file_kinds": {
+        "instance_benchmark_schoning": 35098,
+        "instance_benchmark_qaoa": 1887082,
+        "instance_benchmark_walksat": 67723,
+        "instance_benchmark_pysat": 35098,
+        "summary.json": 1
+      }
+    },
+    "embedded_check": {
+      "benchmark_sample_schemas": {
+        "instance_benchmark_schoning": {
+          "member": "data/data_save_analytic_compare_8sat_other_solvers/instances_8_sat_schoning_n=16_series=185/instance_benchmark_schoning_iterative_122489_9_1657112207076552773.json",
+          "sha256": "4e9043312cc273eeaf72db6870cb601bffc756d2fd67bcc11bf6e9da6e1b686e",
+          "keys": [
+            "assignment",
+            "benchmark_id",
+            "instance_id",
+            "k",
+            "n",
+            "num_trials",
+            "r"
+          ]
+        },
+        "instance_benchmark_qaoa": {
+          "member": "data/data_save_analytic_compare_8sat_other_solvers/instances_8_sat_schoning_qaoa_n=15_series=83/instance_benchmark_qaoa_schoning_256204_8_1657276260897822252.json",
+          "sha256": "c1f62b1c8055caf81437763adb6f198eec1c9042fb3f5899d5601f236194259a",
+          "keys": [
+            "assignment",
+            "benchmark_id",
+            "instance_id",
+            "k",
+            "n",
+            "num_trials",
+            "r"
+          ]
+        },
+        "instance_benchmark_walksat": {
+          "member": "data/data_save_analytic_compare_8sat_other_solvers/instances8_sat_walksatlm_n=16_series=136/instance_benchmark_walksat_lm_9827_23_1656983576514371749.json",
+          "sha256": "3dba1be1471ff35d728499db47b9fc20924b47708e81d012400859ac2de72174",
+          "keys": [
+            "assignment",
+            "benchmark_id",
+            "instance_id",
+            "k",
+            "n",
+            "num_trials",
+            "p",
+            "r",
+            "w1",
+            "w2"
+          ]
+        },
+        "instance_benchmark_pysat": {
+          "member": "data/data_save_analytic_compare_8sat_other_solvers/instances_8_sat_pysat_n=16_series=14/instance_benchmark_pysat_97479_0_1657063149740681553.json",
+          "sha256": "c4ff85dd40dc3946aa717c88531c945e4f46ca4006b79b5b90ecab6cf4b81f6e",
+          "keys": [
+            "benchmark_id",
+            "cadical_conflicts",
+            "cadical_decisions",
+            "cadical_propagations",
+            "cadical_restarts",
+            "glucose3_conflicts",
+            "glucose3_decisions",
+            "glucose3_propagations",
+            "glucose3_restarts",
+            "glucose4_conflicts",
+            "glucose4_decisions",
+            "glucose4_propagations",
+            "glucose4_restarts",
+            "gluecard3_conflicts",
+            "gluecard3_decisions",
+            "gluecard3_propagations",
+            "gluecard3_restarts",
+            "gluecard4_conflicts",
+            "gluecard4_decisions",
+            "gluecard4_propagations",
+            "gluecard4_restarts",
+            "instance_file",
+            "instance_id",
+            "k",
+            "lingeling_conflicts",
+            "lingeling_decisions",
+            "lingeling_propagations",
+            "lingeling_restarts",
+            "maple_chrono_conflicts",
+            "maple_chrono_decisions",
+            "maple_chrono_propagations",
+            "maple_chrono_restarts",
+            "maple_cm_conflicts",
+            "maple_cm_decisions",
+            "maple_cm_propagations",
+            "maple_cm_restarts",
+            "maplesat_conflicts",
+            "maplesat_decisions",
+            "maplesat_propagations",
+            "maplesat_restarts",
+            "mergesat3_conflicts",
+            "mergesat3_decisions",
+            "mergesat3_propagations",
+            "mergesat3_restarts",
+            "minicard_conflicts",
+            "minicard_decisions",
+            "minicard_propagations",
+            "minicard_restarts",
+            "minisat22_conflicts",
+            "minisat22_decisions",
+            "minisat22_propagations",
+            "minisat22_restarts",
+            "minisatgh_conflicts",
+            "minisatgh_decisions",
+            "minisatgh_propagations",
+            "minisatgh_restarts",
+            "n",
+            "r",
+            "sat"
+          ]
+        }
+      },
+      "summary": {
+        "member": "data/data_save_analytic_compare/summary.json",
+        "sha256": "13b015573881c10fcbba2e48a197074987ab31f12ea2c35f4aa49bcb6b4a63da",
+        "row_count": 33,
+        "key_sets": [
+          "[\"analytic_exponent\", \"betas\", \"empirical_exponent\", \"empirical_exponent_error\", \"empirical_exponent_fit_curve_x\", \"empirical_exponent_fit_curve_y_count\", \"empirical_exponent_fit_curve_y_mean\", \"empirical_exponent_fit_curve_y_std\", \"empirical_exponent_runtime\", \"empirical_exponent_runtime_error\", \"empirical_median_runtime_exponent_fit_curve_x\", \"empirical_median_runtime_exponent_fit_curve_y_median\", \"empirical_runtime_exponent_fit_curve_x\", \"empirical_runtime_exponent_fit_curve_y_count\", \"empirical_runtime_exponent_fit_curve_y_median\", \"empirical_runtime_exponent_fit_curve_y_median_abs_deviation\", \"gammas\", \"k\", \"p\", \"r\"]",
+          "[\"betas\", \"empirical_exponent\", \"empirical_exponent_error\", \"empirical_exponent_fit_curve_x\", \"empirical_exponent_fit_curve_y_count\", \"empirical_exponent_fit_curve_y_mean\", \"empirical_exponent_fit_curve_y_std\", \"empirical_exponent_runtime\", \"empirical_exponent_runtime_error\", \"empirical_median_runtime_exponent_fit_curve_x\", \"empirical_median_runtime_exponent_fit_curve_y_median\", \"empirical_runtime_exponent_fit_curve_x\", \"empirical_runtime_exponent_fit_curve_y_count\", \"empirical_runtime_exponent_fit_curve_y_median\", \"empirical_runtime_exponent_fit_curve_y_median_abs_deviation\", \"gammas\", \"k\", \"p\", \"r\"]"
+        ],
+        "contains_target_id": false,
+        "selected_depth_angles_match": {
+          "14": true,
+          "60": true
+        },
+        "selected_depth_row_counts": {
+          "14": 1,
+          "60": 1
+        }
+      },
+      "members": 2033188
+    },
+    "complete_parsed_k8_qaoa_schemas": {
+      "['benchmark_id', 'betas', 'eval_qaoa_success_probability', 'gammas', 'instance_description_file', 'instance_enumeration_file', 'instance_id', 'k', 'n', 'num_valid_assignments', 'p', 'r', 'random_assignment_success_probability']": 457785
+    },
+    "source_record_files": [
+      "data_23032023.tar.gz"
+    ],
+    "source_record_github_link": "https://github.com/sami-b95/qaoa_ksat_paper_data",
+    "resolved_repository": "PhaseCraft/qaoa_ksat_paper_data",
+    "pinned_commit": "5c7ee19db385e8a2bad075206e6483cbab43eadb",
+    "scope": "Complete filename scan; complete previously parsed k8 QAOA schema inventory; only one representative schema per other benchmark category plus sole summary content. Not an exhaustive search of arbitrary hidden encodings in every classical record.",
+    "decision": "STOP exact selected-formula replay: referenced clause list and enumeration artifact not recovered. Published arrays recovered, original simulation driver absent from pinned tree."
+  },
+  "canonical_evidence_sha256": "671b5ba5ab1352df497480c8a7989cea12af370e0ae113cfb2edbeabd9659652",
+  "hash_semantics": "SHA256 UTF-8 json.dumps(evidence,sort_keys=True,separators=(comma,colon),ensure_ascii=True), no newline; independent of outer-file line endings."
+}
