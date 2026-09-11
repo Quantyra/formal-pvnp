@@ -1,0 +1,20 @@
+{
+  "story": "S3048",
+  "frozen_utc": "2026-09-11T20:55:51.798820+00:00",
+  "files_sha256_lf": {
+    "2026-09-11-qaoa-fixed-batch-formulas.jsonl": "9c6d17cd696213f800f09d827ed968a904e9225fcf12776bf04b0d85c4b66db1",
+    "2026-09-11-qaoa-fixed-batch-results.json": "3ce9a5c62c99e4dac4e6ce5889647e2eba2074ea06d91ec9488b32424b47b042",
+    "2026-09-11-qaoa-independent-cost-screen.py": "9599ef1be388d11d385d5c036117895b167817ce0e4472428b2bed52fb16f0a1",
+    "2026-09-11-qaoa-logical-cost-preregistration.md": "0154d3528a1ed0c2b508b034d2a9b74315fb1db5d47ad986b71427f598c03747",
+    "2026-09-11-qaoa-logical-cost.py": "6aa1924c8144ffdb4288cff7f33c9760142a4afec6aac111bc053b6f03fc7567"
+  },
+  "rho_grid": [
+    0,
+    10,
+    30,
+    60,
+    100
+  ],
+  "target_counts_examined": false,
+  "tests": "PASS preprocessing, repeated clauses, unit/tautology/empty guards, independent small counts and energy"
+}
