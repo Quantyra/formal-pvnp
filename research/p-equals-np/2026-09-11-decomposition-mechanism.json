@@ -1,0 +1,432 @@
+{
+  "scope": "fixed-cut decision decomposition; exhaustive checks are finite controls, not an efficient generic leaf solver",
+  "control_fixtures": 5,
+  "families": [
+    {
+      "family": "star",
+      "m": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 3,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 4,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 5,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 6,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 7,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 8,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 9,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "star",
+      "m": 10,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 2,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 1,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": false,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 1,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 1,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": false,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 0,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 1,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": false,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 1,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 2,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 2,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 2,
+      "pure_affine_minimum_rectangles": 4,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        2
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 3,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 3,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 3,
+      "pure_affine_minimum_rectangles": 8,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        3
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 4,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 4,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 4,
+      "pure_affine_minimum_rectangles": 16,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        4
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 5,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 5,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 5,
+      "pure_affine_minimum_rectangles": 32,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        5
+      ]
+    },
+    {
+      "family": "dense_global_parity",
+      "k": 6,
+      "pure_affine_minimum_rectangles": 2,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        1
+      ]
+    },
+    {
+      "family": "row_mixed_independent",
+      "k": 6,
+      "pure_affine_minimum_rectangles": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 1,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        0
+      ]
+    },
+    {
+      "family": "independent_bridges",
+      "k": 6,
+      "pure_affine_minimum_rectangles": 64,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        6
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 2,
+      "surviving_syndromes": 2,
+      "first_syndrome": 1,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 2,
+      "leaf_assignments": 3,
+      "interface_dimensions": [
+        2
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 3,
+      "surviving_syndromes": 2,
+      "first_syndrome": 2,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 3,
+      "leaf_assignments": 4,
+      "interface_dimensions": [
+        3
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 4,
+      "surviving_syndromes": 2,
+      "first_syndrome": 5,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 6,
+      "leaf_assignments": 7,
+      "interface_dimensions": [
+        4
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 5,
+      "surviving_syndromes": 2,
+      "first_syndrome": 10,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 11,
+      "leaf_assignments": 12,
+      "interface_dimensions": [
+        5
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 6,
+      "surviving_syndromes": 2,
+      "first_syndrome": 21,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 22,
+      "leaf_assignments": 23,
+      "interface_dimensions": [
+        6
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 7,
+      "surviving_syndromes": 2,
+      "first_syndrome": 42,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 43,
+      "leaf_assignments": 44,
+      "interface_dimensions": [
+        7
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 8,
+      "surviving_syndromes": 2,
+      "first_syndrome": 85,
+      "repaired_affine_dimension": 1,
+      "sat": true,
+      "separator_attempts": 1,
+      "syndrome_attempts": 86,
+      "leaf_assignments": 87,
+      "interface_dimensions": [
+        8
+      ]
+    }
+  ],
+  "elapsed_seconds": 0.15843999999924563,
+  "script_sha256_lf": "0812936a4eee35b8680a20dbc5e2168e279c2b09b1d53f39e0ddb637aac14ef1"
+}
