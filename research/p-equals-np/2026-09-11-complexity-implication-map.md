@@ -110,3 +110,7 @@ This would be a bounded classification/novelty gate, not a claim to solve the SA
 The recommended gate is a new choice for review, not execution authorization. All direct implications above remain conditional on their unresolved premises. No local P=NP/P!=NP result, new proof or quantum experiment is reported.
 
 [Independent implication-map review](2026-09-11-complexity-implication-map-review.md).
+
+## Dated gate outcome: S3052, 2026-09-11
+
+The optional scope gate above has now completed: **STOP this transfer**, with no new proof or simulator target recommended. The [reviewed assessment](2026-09-11-restricted-simulation-bridge-assessment.md) accepts the published noisy-simulation theorem but finds no guarantee for prescribed correlated angles or the missing SAT decision signal. Global Pauli observables are allowed; observable support alone is not the obstruction. The earlier proposal remains historical context, and no successor is activated.
