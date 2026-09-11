@@ -1,0 +1,352 @@
+{
+  "scope": "bounded local affine-hull feedback, OPEN is not a SAT verdict",
+  "controls": 8,
+  "cases": [
+    {
+      "family": "paired_paths",
+      "k": 2,
+      "status": "SAT",
+      "witness": 5,
+      "rank_history": [
+        2,
+        3
+      ],
+      "passes": [
+        {
+          "scopes_generated": 3,
+          "groups_tested": 1,
+          "largest_rank": 2,
+          "equations_proposed": 1,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          12,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 3,
+      "status": "SAT",
+      "witness": 18,
+      "rank_history": [
+        3,
+        5
+      ],
+      "passes": [
+        {
+          "scopes_generated": 6,
+          "groups_tested": 2,
+          "largest_rank": 2,
+          "equations_proposed": 2,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          24,
+          1
+        ],
+        [
+          48,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 4,
+      "status": "SAT",
+      "witness": 85,
+      "rank_history": [
+        4,
+        7
+      ],
+      "passes": [
+        {
+          "scopes_generated": 10,
+          "groups_tested": 3,
+          "largest_rank": 2,
+          "equations_proposed": 3,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          48,
+          1
+        ],
+        [
+          96,
+          1
+        ],
+        [
+          192,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 5,
+      "status": "SAT",
+      "witness": 330,
+      "rank_history": [
+        5,
+        9
+      ],
+      "passes": [
+        {
+          "scopes_generated": 15,
+          "groups_tested": 4,
+          "largest_rank": 2,
+          "equations_proposed": 4,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          96,
+          1
+        ],
+        [
+          192,
+          1
+        ],
+        [
+          384,
+          1
+        ],
+        [
+          768,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "paired_paths",
+      "k": 6,
+      "status": "SAT",
+      "witness": 1365,
+      "rank_history": [
+        6,
+        11
+      ],
+      "passes": [
+        {
+          "scopes_generated": 21,
+          "groups_tested": 5,
+          "largest_rank": 2,
+          "equations_proposed": 5,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          192,
+          1
+        ],
+        [
+          384,
+          1
+        ],
+        [
+          768,
+          1
+        ],
+        [
+          1536,
+          1
+        ],
+        [
+          3072,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "two_round_feedback",
+      "status": "SAT",
+      "witness": 3,
+      "rank_history": [
+        0,
+        1,
+        2
+      ],
+      "passes": [
+        {
+          "scopes_generated": 6,
+          "groups_tested": 3,
+          "largest_rank": 2,
+          "equations_proposed": 1,
+          "empty_local_relation": false
+        },
+        {
+          "scopes_generated": 3,
+          "groups_tested": 1,
+          "largest_rank": 2,
+          "equations_proposed": 1,
+          "empty_local_relation": false
+        }
+      ],
+      "learned": [
+        [
+          3,
+          0
+        ],
+        [
+          6,
+          1
+        ]
+      ]
+    },
+    {
+      "family": "bowtie_scope_hierarchy",
+      "w": 2,
+      "n": 5,
+      "checked_coordinate_windows": 15,
+      "scope_w": {
+        "status": "OPEN",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 15,
+            "groups_tested": 6,
+            "largest_rank": 2,
+            "equations_proposed": 0,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": []
+      },
+      "scope_w_plus_one": {
+        "status": "UNSAT",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 25,
+            "groups_tested": 16,
+            "largest_rank": 3,
+            "equations_proposed": 2,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "family": "bowtie_scope_hierarchy",
+      "w": 3,
+      "n": 7,
+      "checked_coordinate_windows": 63,
+      "scope_w": {
+        "status": "OPEN",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 63,
+            "groups_tested": 36,
+            "largest_rank": 3,
+            "equations_proposed": 0,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": []
+      },
+      "scope_w_plus_one": {
+        "status": "UNSAT",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 98,
+            "groups_tested": 70,
+            "largest_rank": 4,
+            "equations_proposed": 2,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "family": "bowtie_scope_hierarchy",
+      "w": 4,
+      "n": 9,
+      "checked_coordinate_windows": 255,
+      "scope_w": {
+        "status": "OPEN",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 255,
+            "groups_tested": 183,
+            "largest_rank": 4,
+            "equations_proposed": 0,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": []
+      },
+      "scope_w_plus_one": {
+        "status": "UNSAT",
+        "rank_history": [
+          0
+        ],
+        "passes": [
+          {
+            "scopes_generated": 381,
+            "groups_tested": 309,
+            "largest_rank": 5,
+            "equations_proposed": 2,
+            "empty_local_relation": false
+          }
+        ],
+        "learned": [
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ]
+      }
+    }
+  ],
+  "elapsed_seconds": 0.08500839999760501,
+  "script_sha256_lf": "7ea5252f2489de80689653e726d4d22f529c04c0f7bb48c80068cb30f818fad4",
+  "helper_file": "2026-09-11-decomposition-mechanism.py",
+  "helper_sha256_lf": "0812936a4eee35b8680a20dbc5e2168e279c2b09b1d53f39e0ddb637aac14ef1"
+}
