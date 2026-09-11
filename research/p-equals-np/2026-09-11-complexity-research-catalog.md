@@ -12,6 +12,8 @@ Both branches link primary sources and distinguish recent results from remaining
 
 The rankings below are the historical S3049 selection record. S3048 is now completed: the [logical block-count report](2026-09-11-qaoa-logical-cost-report.md) rules out a unitary-gate advantage for the single frozen construction on the seven tested SAT formulas, while keeping classical verification work separate. The [S3050 contribution assessment](2026-09-11-qaoa-contribution-assessment.md) recommends **HOLD** for publishing the combined tails/resources candidate: precise finite observations exist, but a substantive difference from nearest work is not established. No new experiment, proof campaign or manuscript follows automatically; the other catalog candidates remain options, not active work.
 
+S3051 adds the [selective proposition-level implication map](2026-09-11-complexity-implication-map.md), with reviewed AND conditions, separation routes and missing bridges. S3048 STOP and S3050 publication HOLD remain in force. Its optional decision-relevant restricted-simulation scope gate is recorded as S3052, proposed and not running; a constant-error estimate of tiny QAOA success alone is not a SAT decision guarantee.
+
 ## Six prioritized concrete projects
 
 | Priority and project | Existing evidence versus proposed contribution | Smallest useful deliverable and decision gate |
