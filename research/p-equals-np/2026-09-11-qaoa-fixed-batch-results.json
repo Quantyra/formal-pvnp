@@ -1,0 +1,2111 @@
+{
+  "story": "S3047",
+  "manifest_sha256_lf": "778db8e233dda99e84276ec355e38bad74d1a1485da7500b4dcb518c403cd6f8",
+  "checks": {
+    "engine": {
+      "status": "PASS",
+      "checks": [
+        "signed/repeated/tautological/empty clauses",
+        "basis-bit order",
+        "small dense Kronecker reference",
+        "zero mixer/phase uniform probabilities",
+        "one-qubit analytic sign example",
+        "norm conservation",
+        "process memory monitor"
+      ],
+      "dense_absolute_tolerance": 1e-12
+    },
+    "cost": "PASS: a0/a1, global optimizer vs10000j independent grid, threshold both sides"
+  },
+  "results": [
+    {
+      "seed": 20260912,
+      "m": 2840,
+      "K": 1,
+      "uniform_success": 1.52587890625e-05,
+      "clause_stats": {
+        "clauses": 2840,
+        "tautological_clauses": 1633,
+        "repeated_literal_occurrences": 2378,
+        "distinct_nontautological_patterns": 1207,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.13296488842089968,
+          "max_norm_drift": 3.1086244689504383e-15
+        },
+        "60": {
+          "success": 0.7042912479716948,
+          "max_norm_drift": 1.0436096431476471e-14
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 148,
+            "success_per_trial": 0.8406444945659154,
+            "expected_cost_R_units": 179.60029593480144,
+            "expected_A_and_inverse_calls": 353.3003569521528,
+            "expected_R_calls": 176.05539673036571,
+            "expected_verifications": 1.18956349142139,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.438891833427659,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.8099845061322811,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 90.44213555613008,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 181.38345914237485,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.10784860933345,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7042912479716948,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 89.81434663880091,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 181.39601492072143,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 211.50353345694458,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 4.045585359341802,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.8099845061322811,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 106.61598079022335,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 213.60128451027902,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.4793347921469104,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7042912479716948,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 105.89375344247448,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 213.61572905723398,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 530.531209621051,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 10.11242999553973,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.8099845061322811,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 268.3520836024935,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.8099845061322811,
+                "expected_cost_R_units": 535.7747921414222,
+                "expected_A_and_inverse_calls": 3.703774550361659,
+                "expected_R_calls": 1.2345915167872197,
+                "expected_verifications": 1.2345915167872197,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 6.194141461865714,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7042912479716948,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 266.68547195054737,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7042912479716948,
+                "expected_cost_R_units": 535.808124374461,
+                "expected_A_and_inverse_calls": 1.4198671400218643,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.4198671400218643,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 2.4792601999943145,
+        "peak_working_set_bytes": 56107008
+      }
+    },
+    {
+      "seed": 20260913,
+      "m": 2777,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2777,
+        "tautological_clauses": 1592,
+        "repeated_literal_occurrences": 2325,
+        "distinct_nontautological_patterns": 1185,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.2882353000022704,
+        "peak_working_set_bytes": 56107008
+      }
+    },
+    {
+      "seed": 20260914,
+      "m": 2776,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2776,
+        "tautological_clauses": 1633,
+        "repeated_literal_occurrences": 2236,
+        "distinct_nontautological_patterns": 1143,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.28286439999646973,
+        "peak_working_set_bytes": 56107008
+      }
+    },
+    {
+      "seed": 20260915,
+      "m": 2864,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2864,
+        "tautological_clauses": 1690,
+        "repeated_literal_occurrences": 2322,
+        "distinct_nontautological_patterns": 1174,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.26004769999417476,
+        "peak_working_set_bytes": 56107008
+      }
+    },
+    {
+      "seed": 20260916,
+      "m": 2761,
+      "K": 5,
+      "uniform_success": 7.62939453125e-05,
+      "clause_stats": {
+        "clauses": 2761,
+        "tautological_clauses": 1605,
+        "repeated_literal_occurrences": 2290,
+        "distinct_nontautological_patterns": 1156,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.09297084754162924,
+          "max_norm_drift": 1.9984014443252818e-15
+        },
+        "60": {
+          "success": 0.3993745735063617,
+          "max_norm_drift": 8.881784197001252e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 66,
+            "success_per_trial": 0.8417867943735584,
+            "expected_cost_R_units": 79.99650321209084,
+            "expected_A_and_inverse_calls": 157.99725166629165,
+            "expected_R_calls": 78.40465120282141,
+            "expected_verifications": 1.1879492606488093,
+            "first_excluded_j": 79,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.1983262645575392,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.6421493571440573,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 40.80803206321614,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 80.78027263506831,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.5321428225388178,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.3993745735063617,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 40.02329075641546,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 80.79596746120434,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 66,
+            "success_per_trial": 0.8417867943735584,
+            "expected_cost_R_units": 94.32317129551545,
+            "expected_A_and_inverse_calls": 157.99725166629165,
+            "expected_R_calls": 78.40465120282141,
+            "expected_verifications": 1.1879492606488093,
+            "first_excluded_j": 79,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.408799138362001,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.6421493571440573,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 48.25167472471831,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 95.24460122693141,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.6245046051318996,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.3993745735063617,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 47.41197715145822,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 95.2613951783966,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 66,
+            "success_per_trial": 0.8417867943735584,
+            "expected_cost_R_units": 237.58985212976185,
+            "expected_A_and_inverse_calls": 157.99725166629165,
+            "expected_R_calls": 78.40465120282141,
+            "expected_verifications": 1.1879492606488093,
+            "first_excluded_j": 79,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.5135278764066236,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.6421493571440573,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 122.68810133974016,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.6421493571440573,
+                "expected_cost_R_units": 239.88788714556227,
+                "expected_A_and_inverse_calls": 4.6718103298310885,
+                "expected_R_calls": 1.5572701099436963,
+                "expected_verifications": 1.5572701099436963,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.5481224310627195,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.3993745735063617,
+              "tested_j_count": 79,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 121.29884110188583,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.3993745735063617,
+                "expected_cost_R_units": 239.91567235031937,
+                "expected_A_and_inverse_calls": 2.5039150370049055,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.5039150370049055,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 2.771757800001069,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260917,
+      "m": 2848,
+      "K": 1,
+      "uniform_success": 1.52587890625e-05,
+      "clause_stats": {
+        "clauses": 2848,
+        "tautological_clauses": 1651,
+        "repeated_literal_occurrences": 2453,
+        "distinct_nontautological_patterns": 1196,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.11035835672024606,
+          "max_norm_drift": 2.4424906541753444e-15
+        },
+        "60": {
+          "success": 0.4128648270143831,
+          "max_norm_drift": 8.43769498715119e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 148,
+            "success_per_trial": 0.8406444945659154,
+            "expected_cost_R_units": 179.60029593480144,
+            "expected_A_and_inverse_calls": 353.3003569521528,
+            "expected_R_calls": 176.05539673036571,
+            "expected_verifications": 1.18956349142139,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.0645120709899887,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.722434817304985,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 90.51993608882577,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 181.38190313172092,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.2355107518808965,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.4128648270143831,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 89.82436896988307,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 181.3958144740998,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 211.50353345694458,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.604702775055394,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.722434817304985,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 106.72071227654448,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 213.59918988055261,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.4520394958938705,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.4128648270143831,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 105.99397675329605,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 213.61372459101756,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 530.531209621051,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 9.006528988028016,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.722434817304985,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 268.726124625069,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.722434817304985,
+                "expected_cost_R_units": 535.7673113209706,
+                "expected_A_and_inverse_calls": 4.152623777452177,
+                "expected_R_calls": 1.3842079258173923,
+                "expected_verifications": 1.3842079258173923,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.61729460143211,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.4128648270143831,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 267.6877050587628,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.4128648270143831,
+                "expected_cost_R_units": 535.7880797122967,
+                "expected_A_and_inverse_calls": 2.422100248237331,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 2.422100248237331,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 1.731292199998279,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260918,
+      "m": 2964,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2964,
+        "tautological_clauses": 1781,
+        "repeated_literal_occurrences": 2430,
+        "distinct_nontautological_patterns": 1183,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.26028190000215545,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260919,
+      "m": 2776,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2776,
+        "tautological_clauses": 1622,
+        "repeated_literal_occurrences": 2248,
+        "distinct_nontautological_patterns": 1154,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.2353753999923356,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260920,
+      "m": 2694,
+      "K": 1,
+      "uniform_success": 1.52587890625e-05,
+      "clause_stats": {
+        "clauses": 2694,
+        "tautological_clauses": 1548,
+        "repeated_literal_occurrences": 2246,
+        "distinct_nontautological_patterns": 1144,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.26074256109400545,
+          "max_norm_drift": 1.887379141862766e-15
+        },
+        "60": {
+          "success": 0.7681993328525453,
+          "max_norm_drift": 9.325873406851315e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 148,
+            "success_per_trial": 0.8406444945659154,
+            "expected_cost_R_units": 179.60029593480144,
+            "expected_A_and_inverse_calls": 353.3003569521528,
+            "expected_R_calls": 176.05539673036571,
+            "expected_verifications": 1.18956349142139,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 4.2455986253612,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9986350040886345,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 90.32085873547017,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 181.38588467878807,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.299147125287236,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7681993328525453,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 89.81316542207995,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 181.3960385450559,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 211.50353345694458,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 4.995591238060392,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9986350040886345,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 106.45272353164265,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 213.60454965545057,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.7046145549596807,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7681993328525453,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 105.8819412752643,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 213.61596530057818,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 530.531209621051,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 12.495405635453963,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9986350040886345,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 267.76902196470536,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9986350040886345,
+                "expected_cost_R_units": 535.7864533741779,
+                "expected_A_and_inverse_calls": 3.0041005850158773,
+                "expected_R_calls": 1.001366861671959,
+                "expected_verifications": 1.001366861671959,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 6.759228688139086,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.7681993328525453,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 266.56735027844553,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.7681993328525453,
+                "expected_cost_R_units": 535.8104868079031,
+                "expected_A_and_inverse_calls": 1.301745467920041,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.301745467920041,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 1.9956129000056535,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260921,
+      "m": 2871,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2871,
+        "tautological_clauses": 1691,
+        "repeated_literal_occurrences": 2312,
+        "distinct_nontautological_patterns": 1180,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.2631236000015633,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260922,
+      "m": 2800,
+      "K": 1,
+      "uniform_success": 1.52587890625e-05,
+      "clause_stats": {
+        "clauses": 2800,
+        "tautological_clauses": 1672,
+        "repeated_literal_occurrences": 2251,
+        "distinct_nontautological_patterns": 1128,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.009926749122777459,
+          "max_norm_drift": 2.3314683517128287e-15
+        },
+        "60": {
+          "success": 0.04593763179828997,
+          "max_norm_drift": 8.659739592076221e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 148,
+            "success_per_trial": 0.8406444945659154,
+            "expected_cost_R_units": 179.60029593480144,
+            "expected_A_and_inverse_calls": 353.3003569521528,
+            "expected_R_calls": 176.05539673036571,
+            "expected_verifications": 1.18956349142139,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.8909448769873473,
+              "threshold_j": 5,
+              "threshold_trial_success": 0.7924569963276594,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 93.03060717447863,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 181.3316897100079,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.4588229208770675,
+              "threshold_j": 2,
+              "threshold_trial_success": 0.7778766484540576,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 91.12426536062368,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 181.369816546285,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 211.50353345694458,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.0481003560777724,
+              "threshold_j": 5,
+              "threshold_trial_success": 0.7924569963276594,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 109.66365092454323,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 213.5403311075926,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.5397455324722622,
+              "threshold_j": 2,
+              "threshold_trial_success": 0.7778766484540576,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 107.42298285584107,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 213.5851444689666,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 530.531209621051,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.619630966456999,
+              "threshold_j": 5,
+              "threshold_trial_success": 0.7924569963276594,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 275.9917388965264,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 5,
+                "success_per_trial": 0.7924569963276594,
+                "expected_cost_R_units": 535.6219990355414,
+                "expected_A_and_inverse_calls": 13.880879405412934,
+                "expected_R_calls": 6.309490638824061,
+                "expected_verifications": 1.261898127764812,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.3489594641343339,
+              "threshold_j": 2,
+              "threshold_trial_success": 0.7778766484540576,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 270.4078082793525,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 2,
+                "success_per_trial": 0.7778766484540576,
+                "expected_cost_R_units": 535.7336776478849,
+                "expected_A_and_inverse_calls": 6.427754336033789,
+                "expected_R_calls": 2.5711017344135154,
+                "expected_verifications": 1.2855508672067577,
+                "first_excluded_j": 3,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 2.1596884000027785,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260923,
+      "m": 2888,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2888,
+        "tautological_clauses": 1666,
+        "repeated_literal_occurrences": 2376,
+        "distinct_nontautological_patterns": 1221,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.32157299999380484,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260924,
+      "m": 2722,
+      "K": 3,
+      "uniform_success": 4.57763671875e-05,
+      "clause_stats": {
+        "clauses": 2722,
+        "tautological_clauses": 1615,
+        "repeated_literal_occurrences": 2269,
+        "distinct_nontautological_patterns": 1107,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.19679244345969824,
+          "max_norm_drift": 3.9968028886505635e-15
+        },
+        "60": {
+          "success": 0.6623239227934765,
+          "max_norm_drift": 8.215650382226158e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 85,
+            "success_per_trial": 0.838299092984219,
+            "expected_cost_R_units": 103.4475651062556,
+            "expected_A_and_inverse_calls": 203.98447455223368,
+            "expected_R_calls": 101.39579144409277,
+            "expected_verifications": 1.1928916640481502,
+            "first_excluded_j": 102,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.3486635224681556,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9636173441228203,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 52.26341584550419,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 104.47124809147061,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.1415966187434792,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.6623239227934765,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 51.73888090554396,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 104.48173879026983,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 85,
+            "success_per_trial": 0.838299092984219,
+            "expected_cost_R_units": 121.91352806572094,
+            "expected_A_and_inverse_calls": 203.98447455223368,
+            "expected_R_calls": 101.39579144409277,
+            "expected_verifications": 1.1928916640481502,
+            "first_excluded_j": 102,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.763761669698403,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9636173441228203,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 61.68319346490563,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 123.11813475773724,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 1.3424374358346818,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.6623239227934765,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 61.10774755702224,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 123.12964367589493,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 86,
+            "success_per_trial": 0.8481381305922162,
+            "expected_cost_R_units": 306.55383907625264,
+            "expected_A_and_inverse_calls": 203.97620830842965,
+            "expected_R_calls": 101.39857754060664,
+            "expected_verifications": 1.1790532272163563,
+            "first_excluded_j": 102,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 6.914299910507452,
+              "threshold_j": 1,
+              "threshold_trial_success": 0.9636173441228203,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 155.871310366859,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 1,
+                "success_per_trial": 0.9636173441228203,
+                "expected_cost_R_units": 309.5674896504405,
+                "expected_A_and_inverse_calls": 3.113268994479231,
+                "expected_R_calls": 1.037756331493077,
+                "expected_verifications": 1.037756331493077,
+                "first_excluded_j": 2,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 3.350632354073063,
+              "threshold_j": 0,
+              "threshold_trial_success": 0.6623239227934765,
+              "tested_j_count": 102,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 154.78675477974392,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 0,
+                "success_per_trial": 0.6623239227934765,
+                "expected_cost_R_units": 309.5891807621828,
+                "expected_A_and_inverse_calls": 1.509835241617592,
+                "expected_R_calls": 0.0,
+                "expected_verifications": 1.509835241617592,
+                "first_excluded_j": 1,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 2.434067199996207,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260925,
+      "m": 2764,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2764,
+        "tautological_clauses": 1618,
+        "repeated_literal_occurrences": 2316,
+        "distinct_nontautological_patterns": 1146,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.27061069999763276,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260926,
+      "m": 2884,
+      "K": 0,
+      "uniform_success": 0.0,
+      "clause_stats": {
+        "clauses": 2884,
+        "tautological_clauses": 1738,
+        "repeated_literal_occurrences": 2340,
+        "distinct_nontautological_patterns": 1146,
+        "empty_clauses": 0
+      },
+      "replays": {},
+      "cost_screen": [],
+      "budget": {
+        "elapsed_seconds": 0.30430459999479353,
+        "peak_working_set_bytes": 59564032
+      }
+    },
+    {
+      "seed": 20260927,
+      "m": 2743,
+      "K": 1,
+      "uniform_success": 1.52587890625e-05,
+      "clause_stats": {
+        "clauses": 2743,
+        "tautological_clauses": 1617,
+        "repeated_literal_occurrences": 2300,
+        "distinct_nontautological_patterns": 1126,
+        "empty_clauses": 0
+      },
+      "replays": {
+        "14": {
+          "success": 0.00857300061845303,
+          "max_norm_drift": 1.5543122344752192e-15
+        },
+        "60": {
+          "success": 0.005291277452100098,
+          "max_norm_drift": 7.549516567451064e-15
+        }
+      },
+      "cost_screen": [
+        {
+          "H_over_R": 0.01,
+          "V_over_R": 0.01,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 148,
+            "success_per_trial": 0.8406444945659154,
+            "expected_cost_R_units": 179.60029593480144,
+            "expected_A_and_inverse_calls": 353.3003569521528,
+            "expected_R_calls": 176.05539673036571,
+            "expected_verifications": 1.18956349142139,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.8270867701898027,
+              "threshold_j": 6,
+              "threshold_trial_success": 0.8723247996841743,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 93.31947930030734,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 181.3259122674913,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.14925702342797736,
+              "threshold_j": 7,
+              "threshold_trial_success": 0.7878122936754173,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 7,
+                "success_per_trial": 0.7878122936754173,
+                "expected_cost_R_units": 94.34437763827582,
+                "expected_A_and_inverse_calls": 19.040068453387295,
+                "expected_R_calls": 8.885365278247404,
+                "expected_verifications": 1.2693378968924864,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 7,
+                "success_per_trial": 0.7878122936754173,
+                "expected_cost_R_units": 181.3054143007319,
+                "expected_A_and_inverse_calls": 19.040068453387295,
+                "expected_R_calls": 8.885365278247404,
+                "expected_verifications": 1.2693378968924864,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 0.1,
+          "V_over_R": 0.1,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 211.50353345694458,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.9730757003039794,
+              "threshold_j": 6,
+              "threshold_trial_success": 0.8723247996841743,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 109.99330611992325,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 213.53373800368496,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.17558342645907876,
+              "threshold_j": 7,
+              "threshold_trial_success": 0.7878122936754173,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 7,
+                "success_per_trial": 0.7878122936754173,
+                "expected_cost_R_units": 111.20991968510998,
+                "expected_A_and_inverse_calls": 19.040068453387295,
+                "expected_R_calls": 8.885365278247404,
+                "expected_verifications": 1.2693378968924864,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 7,
+                "success_per_trial": 0.7878122936754173,
+                "expected_cost_R_units": 213.50940573238128,
+                "expected_A_and_inverse_calls": 19.040068453387295,
+                "expected_R_calls": 8.885365278247404,
+                "expected_verifications": 1.2693378968924864,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        },
+        {
+          "H_over_R": 1.0,
+          "V_over_R": 1.0,
+          "uniform": {
+            "status": "global known-overlap restart optimum",
+            "j": 149,
+            "success_per_trial": 0.8463215581995878,
+            "expected_cost_R_units": 530.531209621051,
+            "expected_A_and_inverse_calls": 353.293611752103,
+            "expected_R_calls": 176.056013883155,
+            "expected_verifications": 1.1815839857929866,
+            "first_excluded_j": 177,
+            "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+          },
+          "QAOA": {
+            "14": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 2.432942478894978,
+              "threshold_j": 6,
+              "threshold_trial_success": 0.8723247996841743,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 276.72922478742,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 6,
+                "success_per_trial": 0.8723247996841743,
+                "expected_cost_R_units": 535.6072493177236,
+                "expected_A_and_inverse_calls": 14.90270596996286,
+                "expected_R_calls": 6.878171986136705,
+                "expected_verifications": 1.1463619976894508,
+                "first_excluded_j": 7,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            },
+            "60": {
+              "status": "conditional positive break-even",
+              "max_L_over_R": 0.43902930813130553,
+              "threshold_j": 8,
+              "threshold_trial_success": 0.8930858085283345,
+              "tested_j_count": 177,
+              "at_half_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 8,
+                "success_per_trial": 0.8930858085283345,
+                "expected_cost_R_units": 279.8218768684389,
+                "expected_A_and_inverse_calls": 19.03512499880984,
+                "expected_R_calls": 8.957705881792867,
+                "expected_verifications": 1.1197132352241084,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "above_threshold": {
+                "status": "global known-overlap restart optimum",
+                "j": 8,
+                "success_per_trial": 0.8930858085283345,
+                "expected_cost_R_units": 535.5453962761032,
+                "expected_A_and_inverse_calls": 19.03512499880984,
+                "expected_R_calls": 8.957705881792867,
+                "expected_verifications": 1.1197132352241084,
+                "first_excluded_j": 10,
+                "exclusion_bound": "trial cost >= incumbent and success <=1; all larger j cannot improve"
+              },
+              "meaning": "A=H+pL, inverse same cost, R=S_F+S_0; advantage exists iff0<=L/R<max in this diagnostic model; no actual layer cost measured"
+            }
+          }
+        }
+      ],
+      "budget": {
+        "elapsed_seconds": 2.22975349999615,
+        "peak_working_set_bytes": 66056192
+      }
+    }
+  ],
+  "pending_seeds": [],
+  "status": "COMPLETE",
+  "nonclaims": "Independent16draws, no source-replay or population/scaling/compiledcost/hardware/classical/P=NP claim",
+  "summary": {
+    "processed": 16,
+    "SAT": 7,
+    "UNSAT": 9,
+    "conditioning": "QAOA/threshold summaries conditional onSAT among thisfixed16; no populationinference",
+    "depths": {
+      "14": {
+        "count": 7,
+        "zero_overlaps": 0,
+        "mean_success": 0.11604697813967273,
+        "median_success": 0.11035835672024606,
+        "min_success": 0.00857300061845303,
+        "max_success": 0.26074256109400545
+      },
+      "60": {
+        "count": 7,
+        "zero_overlaps": 0,
+        "mean_success": 0.4283261161984074,
+        "median_success": 0.4128648270143831,
+        "min_success": 0.005291277452100098,
+        "max_success": 0.7681993328525453
+      }
+    },
+    "cost_thresholds": [
+      {
+        "H_over_R": 0.01,
+        "V_over_R": 0.01,
+        "depths": {
+          "14": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 0.8270867701898027,
+            "positive_median": 2.3486635224681556,
+            "positive_max": 4.2455986253612
+          },
+          "60": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 0.14925702342797736,
+            "positive_median": 1.1415966187434792,
+            "positive_max": 2.299147125287236
+          }
+        }
+      },
+      {
+        "H_over_R": 0.1,
+        "V_over_R": 0.1,
+        "depths": {
+          "14": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 0.9730757003039794,
+            "positive_median": 2.763761669698403,
+            "positive_max": 4.995591238060392
+          },
+          "60": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 0.17558342645907876,
+            "positive_median": 1.3424374358346818,
+            "positive_max": 2.7046145549596807
+          }
+        }
+      },
+      {
+        "H_over_R": 1.0,
+        "V_over_R": 1.0,
+        "depths": {
+          "14": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 2.432942478894978,
+            "positive_median": 6.914299910507452,
+            "positive_max": 12.495405635453963
+          },
+          "60": {
+            "evaluated": 7,
+            "positive_count": 7,
+            "no_positive_count": 0,
+            "positive_min": 0.43902930813130553,
+            "positive_median": 3.350632354073063,
+            "positive_max": 6.759228688139086
+          }
+        }
+      }
+    ],
+    "p60_overlap_greater_count": 6
+  },
+  "elapsed_seconds": 18.334224399994127,
+  "peak_working_set_bytes": 66056192
+}
