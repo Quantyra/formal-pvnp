@@ -8,6 +8,10 @@ S3049 / E014 / E004, 2026-09-11. **There are several defensible research directi
 
 Both branches link primary sources and distinguish recent results from remaining open questions. Their proposed smaller questions are our suggestions, with novelty unverified. An accepted theorem, a conditional implication, a numerical observation and a proposed research question have different evidentiary roles. Catalog inclusion authorizes no proof campaign, experiments or publication.
 
+## Later checkpoint on 2026-09-11
+
+The rankings below are the historical S3049 selection record. S3048 is now completed: the [logical block-count report](2026-09-11-qaoa-logical-cost-report.md) rules out a unitary-gate advantage for the single frozen construction on the seven tested SAT formulas, while keeping classical verification work separate. The [S3050 contribution assessment](2026-09-11-qaoa-contribution-assessment.md) recommends **HOLD** for publishing the combined tails/resources candidate: precise finite observations exist, but a substantive difference from nearest work is not established. No new experiment, proof campaign or manuscript follows automatically; the other catalog candidates remain options, not active work.
+
 ## Six prioritized concrete projects
 
 | Priority and project | Existing evidence versus proposed contribution | Smallest useful deliverable and decision gate |
