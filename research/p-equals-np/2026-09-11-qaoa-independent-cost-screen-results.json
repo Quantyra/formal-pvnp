@@ -1,0 +1,39 @@
+{
+  "story": "S3046",
+  "manifest_sha256_lf": "7b6dc11ea22b020e859bfe9172437438d58ec620a8594ec0af2b69b53263093f",
+  "screen_sha256_lf": "9599ef1be388d11d385d5c036117895b167817ce0e4472428b2bed52fb16f0a1",
+  "engine_tests": {
+    "status": "PASS",
+    "checks": [
+      "signed/repeated/tautological/empty clauses",
+      "basis-bit order",
+      "small dense Kronecker reference",
+      "zero mixer/phase uniform probabilities",
+      "one-qubit analytic sign example",
+      "norm conservation",
+      "process memory monitor"
+    ],
+    "dense_absolute_tolerance": 1e-12
+  },
+  "cost_tests": "PASS: a0/a1, global optimizer vs10000j independent grid, threshold both sides",
+  "n": 16,
+  "m": 2850,
+  "source_preserving_clause_stats": {
+    "clauses": 2850,
+    "tautological_clauses": 1643,
+    "repeated_literal_occurrences": 2366,
+    "distinct_nontautological_patterns": 1207,
+    "empty_clauses": 0
+  },
+  "K": 0,
+  "uniform_success": 0.0,
+  "enumeration_scope": "offline independent diagnostic only, not a free quantumalgorithm operation",
+  "replays": {},
+  "cost_screen": [],
+  "status": "UNSAT generated instance; retained; no QAOA evolution or reselection",
+  "budget_observed": {
+    "elapsed_seconds": 0.7141210999980103,
+    "peak_working_set_bytes": 34336768
+  },
+  "nonclaims": "One independent instance; hypothetical commoncost ratios; no compiledcost/hardware/classicaladvantage/generalSAT/P=NP or S3045 reproduction."
+}
