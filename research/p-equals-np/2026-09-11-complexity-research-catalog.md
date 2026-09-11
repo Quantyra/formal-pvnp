@@ -1,5 +1,11 @@
 # Complexity research catalog and paper-candidate priorities
 
+## Current disposition: 2026-09-11, S3054
+
+The rankings and proposed deliverables below are historical S3049 records, not a current execution queue. S3052 has completed with **STOP** for the [restricted-simulation transfer](2026-09-11-restricted-simulation-bridge-assessment.md). S3053, the amplification-constant question, is **deferred**. The [S3054 classical target assessment](2026-09-11-pvnp-target-selection-assessment.md) selects **NONE** of its three examined mechanisms; the [independent quantum target screen](2026-09-11-pvnp-quantum-target-screen.md) likewise finds no justified quantum bridge target. P versus NP remains the research objective, but no new proof campaign, experiment or automatic successor follows. S3048's construction-specific STOP and S3050's publication HOLD remain in force.
+
+## Historical catalog
+
 S3049 / E014 / E004, 2026-09-11. **There are several defensible research directions, but no demonstrated general P-versus-NP breakthrough and no certified new paper theorem yet.** This is a selective catalog of 26 topic families, not 26 active projects or a claim that all major open questions are near resolution.
 
 - [Classical/algebraic/proof catalog: C01-C14](2026-09-11-complexity-open-questions-classical.md): P/NP, NP/coNP, circuits, derandomization/PIT, VP/VNP, space, fine-grained complexity, average-case hardness, proof systems and meta-complexity.
@@ -12,7 +18,7 @@ Both branches link primary sources and distinguish recent results from remaining
 
 The rankings below are the historical S3049 selection record. S3048 is now completed: the [logical block-count report](2026-09-11-qaoa-logical-cost-report.md) rules out a unitary-gate advantage for the single frozen construction on the seven tested SAT formulas, while keeping classical verification work separate. The [S3050 contribution assessment](2026-09-11-qaoa-contribution-assessment.md) recommends **HOLD** for publishing the combined tails/resources candidate: precise finite observations exist, but a substantive difference from nearest work is not established. No new experiment, proof campaign or manuscript follows automatically; the other catalog candidates remain options, not active work.
 
-S3051 adds the [selective proposition-level implication map](2026-09-11-complexity-implication-map.md), with reviewed AND conditions, separation routes and missing bridges. S3048 STOP and S3050 publication HOLD remain in force. Its optional decision-relevant restricted-simulation scope gate is recorded as S3052, proposed and not running; a constant-error estimate of tiny QAOA success alone is not a SAT decision guarantee.
+S3051 adds the [selective proposition-level implication map](2026-09-11-complexity-implication-map.md), with reviewed AND conditions, separation routes and missing bridges. S3048 STOP and S3050 publication HOLD remain in force. Its optional decision-relevant restricted-simulation scope gate was subsequently completed as S3052 with STOP; a constant-error estimate of tiny QAOA success alone is not a SAT decision guarantee.
 
 ## Six prioritized concrete projects
 
