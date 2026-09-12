@@ -1,0 +1,11 @@
+# Compiled-prefix verifier: independent proof check
+
+2026-09-12, S3081, under [integrity](../../INTEGRITY-CLAIMS.md). **GO for the narrow both-YES diagnostic** in the actual saved [separator-compression note](2026-09-12-separator-compression.md). This independently cross-checks the complexity challenger's contribution; it does not approve a general search-to-decision impossibility or a circuit lower bound.
+
+For each fixed beta>0 and fixed source constant c, L=floor(N^beta/(c n)), N=2^n, eventually grows exponentially in n. Consequently log(n+L)=Theta(n) and the stated padded description length r=Theta(L log(n+L)) is Theta(N^beta), with constants allowed to depend on beta and c. The finite-length rounding exceptions do not affect this asymptotic statement.
+
+For fixed f and prefix p, validity checks and a universal simulation of at most L gates on each of N assignments give a B2 verifier of size polynomial in N,L,r. Scanning predecessor choices preserves this polynomial bound without a random-access assumption. The prefix is tested inside the verifier on all r variables, so this holds for every prefix at the same dimension. Since r is polynomially bounded in N,L, write its size bound as polynomial in N,L; its logarithm is O(log N) for fixed beta.
+
+At the new truth-table length 2^r, the literal same-beta lower promise threshold has logarithm beta r-log2(c r). This is Theta(N^beta), and therefore eventually exceeds the logarithm of that polynomial verifier-size bound. Integer threshold rounding changes nothing once this strict margin holds. Every compiled verifier is thus a YES instance, irrespective of whether any valid description extending p exists. This includes constant-zero unsatisfiable verifiers and verifiers with witnesses. Their explicit tables also have length 2^{Theta(N^beta)}, superpolynomial in the original N.
+
+The conclusion is limited to the specified compilation and fixed-beta reuse with all description variables retained. It does not rule out changing dimensions or thresholds, another reduction, or a reconstruction algorithm using additional primitives. The main accurately states those limits and does not convert this failed construction into separator hardness. No code, experiments, source campaign or commit was performed for this check.
