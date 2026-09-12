@@ -1599,3 +1599,49 @@ from the small failed application. No public action, push, spend, further
 test or automatic successor occurs. Formal build is N/A for informal AI
 research; no human or Lean verification is claimed. The broader objective
 remains ACTIVE and unresolved.
+
+## S3123/S3124: fixed-parameter realizable hardness, source preservation
+
+[Author proof](2026-09-12-source-directed-frontier-design.md),
+[fresh actual-file review](2026-09-12-source-directed-frontier-fresh-review.md)
+GO-WITH-NOTES and [scope GO](2026-09-12-source-directed-frontier-nonclaims.md)
+support internal source-relative preservation. The
+[initial challenge](2026-09-12-source-directed-frontier-challenge.md)
+is PROVISIONAL: its author contributed to the derivation and did not read
+the final proof. It is not final independent verification. The separate
+fresh reviewer read the complete revised argument. No human or Lean
+verification or self-contained proof of imported inputs is claimed.
+
+The reviewed result is randomized polynomial-time many-one NP-hardness
+of realizable CMMSA at gap L^(1-o(1)) and NO threshold o(1), for every
+sufficiently large FIXED leaf bound L, with the source-model GapLearn
+transfer and advice overhead charged. The polynomial exponent can depend
+on L. Zero completeness error is the target promise on successful
+reduction outputs, not elimination of reduction randomness/failure.
+Explicit exception variables, exact final-list sampling and common-
+denominator rounding are included. No growing-parameter uniform theorem,
+linear-gap threshold, one-way function or P-versus-NP result follows.
+
+The changed repetition/parameter-order argument uses named MZ/KMS/HN
+inputs; their full proofs are not reproduced by the review. The source
+numerical discrepancy is scoped to inspected MZ arXiv v1, not a claim
+against an uninspected published version or its main theorem. Fresh notes
+remain: g|_V means restriction to W(Q) intersect V; M,D are least adequate
+powers of two. No author edit or optional deterministic sampling is made.
+
+| Record | Frozen working SHA256 | Git-content SHA256 |
+|---|---|---|
+| 2026-09-12-source-directed-frontier-design.md | `2ac6a5e0d3136e9e57cb7439804a143362920a914a6d5fd7606ebfa57ac3977c` | `15d84f6871704a46fcd896c2fde8631b8806c2e5938f01a3dfa324bd4fe83514` |
+| 2026-09-12-source-directed-frontier-challenge.md | `8e6a2df48e37bf8de0822806faaf30b58cde200d9149a9e0dda8fe899830dd3d` | `8e6a2df48e37bf8de0822806faaf30b58cde200d9149a9e0dda8fe899830dd3d` |
+| 2026-09-12-source-directed-frontier-fresh-review.md | `e44fad8eb668ae0d3303af79a3913fa631fcac6b16675377a7cd37df94a40698` | `e44fad8eb668ae0d3303af79a3913fa631fcac6b16675377a7cd37df94a40698` |
+| 2026-09-12-source-directed-frontier-nonclaims.md | `17fb74e14b810aac47037407ad214076ddd6bf18e7c578555607abdadba102d3` | `17fb74e14b810aac47037407ad214076ddd6bf18e7c578555607abdadba102d3` |
+
+The author working bytes retain four CRLF endings; direct comparison proves
+Git changes only those to LF. Other records match Git bytes exactly.
+Frozen working hashes are not misrepresented as Git-content hashes.
+EOF/cached whitespace checks pass. This local commit preserves only these
+four records and this append, without changing earlier graph bytes.
+S3124 remains IN PROGRESS: separate novelty/significance and dependency
+audits are underway; no conclusions are anticipated and no public candidate
+or metadata is approved. Source preservation is not the publication decision.
+No public destination, push, outreach, paid compute or unrelated extension.
