@@ -1,6 +1,6 @@
 ﻿# Inverse cumulative sampler: exact realization increment
 
-2026-09-12. S3130 under full S3126. Author `sampling_proof_review`, reassigned to implementation after completing the distinct Bernoulli MGF review; this author cannot independently review these new modules. Actual scoped builds are green. Fresh three-lens review is pending.
+2026-09-12. S3130 under full S3126. Author `sampling_proof_review`, reassigned to implementation after completing the distinct Bernoulli MGF review; this author cannot independently review these new modules. Actual scoped builds are green. Fresh three-lens review is complete for this bounded increment.
 
 ## Target and construction
 
@@ -59,17 +59,23 @@ Final compiled working SHA256:
 
 ## Remaining scope and review
 
-This closes the previously missing local inverse-CDF law and bounded-bit semantic realization, subject to fresh review. It does not itself certify an encoded polynomial-time machine: enumeration of the original support, rational arithmetic costs, encoding, choosing precision, and total runtime still require their computational proofs. Having an explicit terminating function and search bound is useful evidence, not a machine-level complexity certificate. Preserve fixed L before the reduction and its polynomial.
+This closes the previously missing local inverse-CDF law and bounded-bit semantic realization, with the independent reviews below. It does not itself certify an encoded polynomial-time machine: enumeration of the original support, rational arithmetic costs, encoding, choosing precision, and total runtime still require their computational proofs. Having an explicit terminating function and search bound is useful evidence, not a machine-level complexity certificate. Preserve fixed L before the reduction and its polynomial.
 
 Finite-product concentration, sample-count threshold, the at-least-2/3 simultaneous guarantee, and composition with actual formula promises/repair/rounding are being implemented separately. No full sampling/reduction/PCP/hardness/learning-transfer theorem is asserted here. S3130 and S3126 remain open.
 
 | Lens | Status |
 |---|---|
 | Author scoped kernel build and 18-profile audit | GO |
-| Independent proof-adversarial | Pending root routing |
-| Independent complexity | Pending root routing |
-| Independent non-claims | Pending root routing |
+| Independent proof-adversarial (`cdf_proof_review`) | GO; independent exports 74394/25328 exit 0, all 18 profiles standard |
+| Independent complexity (`repair_complexity_reviewer`) | GO-WITH-NOTES; encoded runtime and joint-law obligations remain explicit |
+| Independent non-claims (`mgf_nonclaims_review`) | GO; exact single-draw scope |
 
 Own only the two new InverseCDFSampler modules and this receipt. Frozen FiniteSampling, MGF and weight-rounding modules remain untouched, as do other agents' concentration/threshold work and shared records. Only a local candidate commit is prepared; no push, public release or full-certification claim.
 
 The next assembly must also prove the actual joint bit-array pushforward equals the product trialMass law. The one-draw event law here does not by itself certify that multi-draw seed-to-product bridge. This remains explicit alongside threshold and final promise composition.
+
+## Independent review integration
+
+Frozen code candidate `d9f42bfef00ae3d9ebd217c33bfb30a2922493ae` is unchanged. Review receipts are the sibling `2026-09-12-realizable-hardness-inverse-cdf-sampler-proof-review.md`, `2026-09-12-realizable-hardness-inverse-cdf-sampler-complexity-review.md`, and `2026-09-12-realizable-hardness-inverse-cdf-sampler-nonclaims-review.md`. All three lenses actually ran; none is inferred from another. The proof lens independently reran both exact scoped exports and all 18 axiom profiles.
+
+The main module working SHA256 above covers CRLF bytes. Its Git LF SHA256 is `8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6`; independent byte comparison confirms CRLF-to-LF normalization exactly matches the frozen blob. Checks is byte-identical in Git and working state. This evidence-only integration changes no Lean source and does not close S3130 or S3126.
