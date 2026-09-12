@@ -23,27 +23,31 @@ def alternatingBlocks : SeedArray 2 3 :=
 /-- The two rows occupy consecutive addresses, and Fin 2 digit 0 maps to false. -/
 theorem row_major_example :
     List.ofFn (flatten 2 3 alternatingBlocks) =
-      [false, true, false, true, false, true] := by decide
+      [false, true, false, true, false, true] := by
+  norm_num [List.ofFn_succ, flatten, alternatingBlocks, finTwoEquiv,
+    finProdFinEquiv, Fin.divNat, Fin.modNat]
+  rfl
 
 theorem padding_example (x : FlatSeed 3) :
-    Fintype.card {bits : FlatSeed (3 + 4) // prefix 3 4 bits = x} = 16 := by
+    Fintype.card {bits : FlatSeed (3 + 4) // takePrefix 3 4 bits = x} = 16 := by
   rw [prefix_fibre_card]
+  norm_num
 
 theorem no_padding_example (n : Nat) (x : FlatSeed n) :
-    Fintype.card {bits : FlatSeed (n + 0) // prefix n 0 bits = x} = 1 := by
+    Fintype.card {bits : FlatSeed (n + 0) // takePrefix n 0 bits = x} = 1 := by
   rw [prefix_fibre_card]
   rfl
 
 theorem empty_prefix_example (k : Nat) (x : FlatSeed 0) :
-    Fintype.card {bits : FlatSeed (0 + k) // prefix 0 k bits = x} = 2 ^ k :=
+    Fintype.card {bits : FlatSeed (0 + k) // takePrefix 0 k bits = x} = 2 ^ k :=
   prefix_fibre_card 0 k x
 
 /-- A nonrectangular event is transferred without coordinate independence hypotheses. -/
 theorem diagonal_padded_law (p : Nat -> Rat) (S b k : Nat)
     (hn : FiniteSampling.cumulative p S = 1) (hp : forall j, 0 <= p j) :
     uniformProbability (fun bits : FlatSeed (2 * b + k) =>
-      sampleFlat p S b 2 hn (prefix (2 * b) k bits) 0 =
-        sampleFlat p S b 2 hn (prefix (2 * b) k bits) 1) =
+      sampleFlat p S b 2 hn (takePrefix (2 * b) k bits) 0 =
+        sampleFlat p S b 2 hn (takePrefix (2 * b) k bits) 1) =
       FiniteConcentration.probability
         (fun i : Fin S => FiniteSampling.mass p (2 ^ b) i.val) 2
         (fun x => x 0 = x 1) :=
