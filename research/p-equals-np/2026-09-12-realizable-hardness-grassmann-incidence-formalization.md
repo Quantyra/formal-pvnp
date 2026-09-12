@@ -1,7 +1,8 @@
-# Actual advice-incidence law — source draft
+# Actual advice-incidence law — author candidate
 
-Status: UNCOMPILED. No Lean or Lake invocation, downloads, cache changes,
-companion edits, staging, or commits were performed for this draft.
+Status: author main and Checks exports passed; independent review pending.
+The original UNCOMPILED draft was preserved as af45e86 before compilation.
+No downloads, cache changes, or companion edits were performed.
 
 Route: S3133 under S3126; actual posterior section of MANUSCRIPT.md,
 lines 304–423, and the full Lean dependency assessment. Destination is
@@ -36,11 +37,26 @@ Inspected actual pinned mathlib definitions finrank_range_of_inj,
 finrank_le_finrank_of_injective, Module.finrank_pi, mul_inv_cancel₀.
 Checks request seventeen axiom profiles and exercise zero advice dimension,
 zero ambient blocks, beta endpoints, a one-block dimension bound and
-nonincidence support. They remain uncompiled, with no asserted profiles.
+nonincidence support. Main session 35756 and Checks session 34767 both
+returned actual exit 0 using root Lean 4.13 with LEAN_NUM_THREADS=1 and
+explicit -o exports into .lake/build/lib/PvNP/RealizableHardness.
+
+All seventeen requested axiom profiles were printed. selected_kept uses
+only propext; the other sixteen use propext, Classical.choice and Quot.sound.
+No sorry, admit, new axiom or native_decide occurs. The main export has one
+harmless unused Q binder warning in its constant fibre sum; this is retained.
+
+Initial main session 86670 returned exit 1 with local-attribute syntax,
+pointwise map-law reduction, pair reconstruction, Advice unfolding for a
+finite instance, and sum_filter rewrite errors. These were repaired without
+altering theorem targets. Successful exports were not rerun for comments:
+the final source differs from compiled source only in status comments.
+At completion no native Lean/Lake process remained and C free space was
+4,313,624,576 bytes, above the 512 MiB guard.
 
 ## Remaining obligations and claims boundary
 
-Actual compiler elaboration and independent three-lens review are pending.
+Independent three-lens review and independent exports are pending.
 This does not establish the Gaussian-binomial cardinality formula or its
 ratio estimates, dropped-block tails, exceptional advice bounds, KMS
 couplings, the conditioned rank bound, decoder, or any runtime theorem.

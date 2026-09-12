@@ -1,14 +1,14 @@
 import PvNP.RealizableHardness.SubspaceRestriction
 import PvNP.RealizableHardness.PosteriorReweighting
 
-/-! UNCOMPILED source draft. Actual finite advice incidence law. No Gaussian
+/-! Author exports passed; independent review pending. Actual finite advice incidence law. No Gaussian
 binomial estimate, posterior independence, or machine implementation is asserted. -/
 namespace PvNP.RealizableHardness.GrassmannIncidence
 open scoped BigOperators
 open TripleRestrictionRank
 
 noncomputable section
-local attribute [instance] Classical.propDecidable
+attribute [local instance] Classical.propDecidable
 
 /-- Select one coordinate which every block retains. -/
 def selected (d : Draw J) (j : Fin J) : Fin 3 := (d j).getD 0
@@ -22,8 +22,12 @@ def embed (d : Draw J) (a : ℕ) : Coeff a →ₗ[ZMod 2] Vector J := by
   exact {
     toFun := fun v r => if h : r.1.val < a then
       if r.2 = selected d r.1 then v ⟨r.1.val, h⟩ else 0 else 0
-    map_add' := by intro x y; funext r; split_ifs <;> simp_all
-    map_smul' := by intro s x; funext r; split_ifs <;> simp_all }
+    map_add' := by
+      intro x y; funext r
+      by_cases h : r.1.val < a <;> by_cases hs : r.2 = selected d r.1 <;> simp [h, hs]
+    map_smul' := by
+      intro s x; funext r
+      by_cases h : r.1.val < a <;> by_cases hs : r.2 = selected d r.1 <;> simp [h, hs] }
 
 lemma embed_injective (d : Draw J) (ha : a ≤ J) : Function.Injective (embed d a) := by
   classical
@@ -39,7 +43,9 @@ lemma embed_mem (d : Draw J) (v : Coeff a) : embed d a v ∈ retained d := by
   have hs : r.2 ≠ selected d r.1 := by
     intro h
     apply hr
-    simpa [h] using selected_kept d r.1
+    have he : r = (r.1, selected d r.1) := Prod.ext rfl h
+    rw [he]
+    exact selected_kept d r.1
   simp [embed, hs]
 
 lemma retained_finrank_lower (d : Draw J) : J ≤ Module.finrank (ZMod 2) (retained d) := by
@@ -56,6 +62,7 @@ def Advice (J a : ℕ) := {Q : Submodule (ZMod 2) (Vector J) // Module.finrank (
 instance adviceFinite : Finite (Advice J a) := by
   letI : Finite (Submodule (ZMod 2) (Vector J)) :=
     Finite.of_injective (fun Q => (Q : Set (Vector J))) SetLike.coe_injective
+  unfold Advice
   exact inferInstance
 
 instance adviceFintype : Fintype (Advice J a) := Fintype.ofFinite _
@@ -103,7 +110,8 @@ lemma kernel_normalized (d : Draw J) (ha : a ≤ J) : ∑ Q : Advice J a, kernel
     exact_mod_cast (Nat.ne_of_gt (incidenceCount_pos d ha))
   calc
     _ = ∑ Q ∈ fibre d a, (incidenceCount d a : ℚ)⁻¹ := by
-      simp [fibre, kernel, Finset.sum_filter]
+      unfold fibre kernel
+      rw [Finset.sum_filter]
     _ = (incidenceCount d a : ℚ) * (incidenceCount d a : ℚ)⁻¹ := by
       simp [incidenceCount, nsmul_eq_mul]
     _ = 1 := mul_inv_cancel₀ hc

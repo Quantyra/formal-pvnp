@@ -1,6 +1,6 @@
 import PvNP.RealizableHardness.GrassmannIncidence
 
-/-! UNCOMPILED checks for the concrete advice-incidence law. -/
+/-! Author checks passed; independent review pending for the concrete advice-incidence law. -/
 namespace PvNP.RealizableHardness.GrassmannIncidenceChecks
 open scoped BigOperators
 open TripleRestrictionRank GrassmannIncidence
