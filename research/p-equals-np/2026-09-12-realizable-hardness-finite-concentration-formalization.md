@@ -1,6 +1,6 @@
 # Finite rational-product concentration: formal increment
 
-2026-09-12. S3130 under the open full S3126 goal. Author `mgf_nonclaims_review`, explicitly reassigned to implementation after its distinct MGF non-claims review. The author cannot independently review this concentration increment. Both scoped exports are green; fresh three-lens review is pending.
+2026-09-12. S3130 under the open full S3126 goal. Author `mgf_nonclaims_review`, explicitly reassigned to implementation after its distinct MGF non-claims review. The author cannot independently review this concentration increment. Both scoped exports are green; all three independent lenses are complete for this bounded increment.
 
 ## Actual mathematical target
 
@@ -55,8 +55,22 @@ Encoded support enumeration, arithmetic/runtime, randomized reduction semantics,
 | Lens | Status |
 |---|---|
 | Author actual scoped exports and 24-profile audit | GO |
-| Independent proof-adversarial | Pending root routing |
-| Independent complexity | Pending root routing |
-| Independent non-claims | Pending root routing |
+| Independent proof-adversarial | GO; actual sessions 66689 and 66807 exited 0; all 24 standard-foundation profiles |
+| Independent complexity | GO-WITH-NOTES; joint law, sampler/threshold instantiation and encoded runtime remain separate |
+| Independent non-claims | GO; no full-goal certification claim |
 
 Own only these two new modules and this formalization receipt for the implementation candidate. Existing reviewed modules, other agents' CDF/threshold work and shared evidence are unchanged. Local candidate commit only; no push or public release.
+
+## Independent review integration
+
+Frozen code candidate: `a72739e7b192035f9c37370189c1de1d5a811b5c`. Fresh top-level proof reviewer `concentration_proof_review`, complexity reviewer `repair_complexity_reviewer`, and non-claims reviewer `cdf_proof_review` did not author these concentration modules. The independent proof reviewer reran both exact commands above successfully, with 24 profiles each limited to propext, Classical.choice and Quot.sound. No findings require a code change.
+
+Review receipts, relative to this directory:
+
+- `2026-09-12-realizable-hardness-finite-concentration-proof-review.md`
+- `2026-09-12-realizable-hardness-finite-concentration-complexity-review.md`
+- `2026-09-12-realizable-hardness-finite-concentration-nonclaims-review.md`
+
+The main source Git blob SHA256 is `a24c08464c417d446292f3de917a7136d3ae7a7bb40032f1dd8c558238e4f338`; its compiled working SHA256 above differs only by a CRLF newline. Independent byte comparison confirms exact equality after CRLF-to-LF normalization. Checks Git and working bytes are identical at the stated SHA256. This integration changes only three review receipts and this formalization receipt, not the frozen code.
+
+Carry forward the complexity review's obligations: identify the actual joint binary sampler law with trialMass, discharge the rounded-mean approximation premise, apply both confidence thresholds to the actual bad event and complement, and prove output/promise and encoded computation/runtime composition. The finite union over assignments is analysis, not reduction runtime. Full S3130 and S3126 remain open, including upstream hardness/PCP and downstream asymptotic/learning dependencies.
