@@ -1,6 +1,7 @@
 import PvNP.RealizableHardness.TripleRestrictionRank
 
-/-! UNCHECKED until actual Lean exports and axiom audit. No native evaluator. -/
+/-! Author exports and axiom audit passed; independent review is pending.
+No native evaluator. -/
 namespace PvNP.RealizableHardness.TripleRestrictionRank
 open scoped BigOperators
 

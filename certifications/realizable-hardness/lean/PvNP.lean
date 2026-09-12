@@ -32,3 +32,5 @@ import PvNP.RealizableHardness.WeightRounding
 import PvNP.RealizableHardness.WeightRoundingChecks
 import PvNP.RealizableHardness.SeedEncoding
 import PvNP.RealizableHardness.SeedEncodingChecks
+import PvNP.RealizableHardness.SubspaceRestriction
+import PvNP.RealizableHardness.SubspaceRestrictionChecks

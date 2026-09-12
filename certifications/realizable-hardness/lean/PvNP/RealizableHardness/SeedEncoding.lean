@@ -24,7 +24,9 @@ def unflatten (M b : Nat) (bits : FlatSeed (M * b)) : SeedArray M b :=
 @[simp] theorem flatten_unflatten (M b : Nat) (bits : FlatSeed (M * b)) :
     flatten M b (unflatten M b bits) = bits := by
   funext k
-  simp [flatten, unflatten]
+  change finTwoEquiv (finTwoEquiv.symm
+    (bits (finProdFinEquiv (finProdFinEquiv.symm k)))) = bits k
+  rw [Equiv.apply_symm_apply, Equiv.apply_symm_apply]
 
 def seedEquiv (M b : Nat) : Equiv (SeedArray M b) (FlatSeed (M * b)) where
   toFun := flatten M b
@@ -36,14 +38,14 @@ def sampleFlat (p : Nat -> Rat) (S b M : Nat)
     (hn : FiniteSampling.cumulative p S = 1) (bits : FlatSeed (M * b)) :=
   sampleArray p S b M hn (unflatten M b bits)
 
-/-- Split a longer seed into the used prefix and the ignored suffix. -/
-def splitBits (n k : Nat) (bits : FlatSeed (n + k)) : FlatSeed n * FlatSeed k :=
+/-- Split a longer seed into the used takePrefix and the ignored suffix. -/
+def splitBits (n k : Nat) (bits : FlatSeed (n + k)) : FlatSeed n × FlatSeed k :=
   (fun i => bits (Fin.castAdd k i), fun j => bits (Fin.natAdd n j))
 
-def joinBits (n k : Nat) (bits : FlatSeed n * FlatSeed k) : FlatSeed (n + k) :=
+def joinBits (n k : Nat) (bits : FlatSeed n × FlatSeed k) : FlatSeed (n + k) :=
   fun i => Sum.elim bits.1 bits.2 (finSumFinEquiv.symm i)
 
-@[simp] theorem split_join (n k : Nat) (bits : FlatSeed n * FlatSeed k) :
+@[simp] theorem split_join (n k : Nat) (bits : FlatSeed n × FlatSeed k) :
     splitBits n k (joinBits n k bits) = bits := by
   apply Prod.ext <;> funext i <;> simp [splitBits, joinBits]
 
@@ -53,21 +55,21 @@ def joinBits (n k : Nat) (bits : FlatSeed n * FlatSeed k) : FlatSeed (n + k) :=
   obtain ⟨s, rfl⟩ := finSumFinEquiv.surjective i
   cases s <;> simp [joinBits, splitBits]
 
-def splitEquiv (n k : Nat) : Equiv (FlatSeed (n + k)) (FlatSeed n * FlatSeed k) where
+def splitEquiv (n k : Nat) : Equiv (FlatSeed (n + k)) (FlatSeed n × FlatSeed k) where
   toFun := splitBits n k
   invFun := joinBits n k
   left_inv := join_split n k
   right_inv := split_join n k
 
-def prefix (n k : Nat) (bits : FlatSeed (n + k)) : FlatSeed n :=
+def takePrefix (n k : Nat) (bits : FlatSeed (n + k)) : FlatSeed n :=
   (splitBits n k bits).1
 
 /-- Explicit constant-size fibres; the inverse appends the supplied suffix. -/
 def prefixFibreEquiv (n k : Nat) (x : FlatSeed n) :
-    Equiv {bits : FlatSeed (n + k) // prefix n k bits = x} (FlatSeed k) where
+    Equiv {bits : FlatSeed (n + k) // takePrefix n k bits = x} (FlatSeed k) where
   toFun bits := (splitBits n k bits.val).2
-  invFun tail := (show {bits : FlatSeed (n + k) // prefix n k bits = x} from
-    ⟨joinBits n k (x, tail), by simp [prefix]⟩)
+  invFun tail := (show {bits : FlatSeed (n + k) // takePrefix n k bits = x} from
+    ⟨joinBits n k (x, tail), by simp [takePrefix]⟩)
   left_inv bits := by
     apply Subtype.ext
     have h : (x, (splitBits n k bits.val).2) = splitBits n k bits.val := by
@@ -131,36 +133,36 @@ theorem sampleFlat_probability (p : Nat -> Rat) (S b M : Nat)
         (fun i : Fin S => FiniteSampling.mass p (2 ^ b) i.val) M event := by
   change uniformProbability (fun bits =>
     event (sampleArray p S b M hn (unflatten M b bits))) = _
-  rw [flat_probability]
+  rw [flat_probability M b (fun seeds => event (sampleArray p S b M hn seeds))]
   exact sampleArray_probability p S b M hn hp event
 
 theorem prefix_fibre_card (n k : Nat) (x : FlatSeed n) :
-    Fintype.card {bits : FlatSeed (n + k) // prefix n k bits = x} = 2 ^ k := by
+    Fintype.card {bits : FlatSeed (n + k) // takePrefix n k bits = x} = 2 ^ k := by
   rw [Fintype.card_congr (prefixFibreEquiv n k x)]
   simp [FlatSeed]
 
-/-- Every event fibre is its prefix event times all suffixes, without independence assumptions. -/
+/-- Every event fibre is its takePrefix event times all suffixes, without independence assumptions. -/
 def prefixEventEquiv (n k : Nat) (event : FlatSeed n -> Prop) :
-    Equiv {bits : FlatSeed (n + k) // event (prefix n k bits)}
-      ({x : FlatSeed n // event x} * FlatSeed k) where
-  toFun bits := (⟨prefix n k bits.val, bits.property⟩, (splitBits n k bits.val).2)
+    Equiv {bits : FlatSeed (n + k) // event (takePrefix n k bits)}
+      ({x : FlatSeed n // event x} × FlatSeed k) where
+  toFun bits := (⟨takePrefix n k bits.val, bits.property⟩, (splitBits n k bits.val).2)
   invFun pair := ⟨joinBits n k (pair.1.val, pair.2), by
-    simpa [prefix] using pair.1.property⟩
+    simpa [takePrefix] using pair.1.property⟩
   left_inv bits := by apply Subtype.ext; exact join_split n k bits.val
   right_inv pair := by
     apply Prod.ext
     · apply Subtype.ext
-      simp [prefix]
+      simp [takePrefix]
     · simp
 
 theorem prefix_event_card (n k : Nat) (event : FlatSeed n -> Prop) :
-    Fintype.card {bits : FlatSeed (n + k) // event (prefix n k bits)} =
+    Fintype.card {bits : FlatSeed (n + k) // event (takePrefix n k bits)} =
       Fintype.card {bits : FlatSeed n // event bits} * 2 ^ k := by
   rw [Fintype.card_congr (prefixEventEquiv n k event), Fintype.card_prod]
   simp [FlatSeed]
 
 theorem prefix_probability (n k : Nat) (event : FlatSeed n -> Prop) :
-    uniformProbability (fun bits : FlatSeed (n + k) => event (prefix n k bits)) =
+    uniformProbability (fun bits : FlatSeed (n + k) => event (takePrefix n k bits)) =
       uniformProbability event := by
   unfold uniformProbability
   rw [prefix_event_card]
@@ -173,10 +175,10 @@ theorem padded_sampleFlat_probability (p : Nat -> Rat) (S b M k : Nat)
     (hn : FiniteSampling.cumulative p S = 1) (hp : forall j, 0 <= p j)
     (event : (Fin M -> Fin S) -> Prop) :
     uniformProbability (fun bits : FlatSeed (M * b + k) =>
-      event (sampleFlat p S b M hn (prefix (M * b) k bits))) =
+      event (sampleFlat p S b M hn (takePrefix (M * b) k bits))) =
       FiniteConcentration.probability
         (fun i : Fin S => FiniteSampling.mass p (2 ^ b) i.val) M event := by
-  rw [prefix_probability]
+  rw [prefix_probability (M * b) k (fun bits => event (sampleFlat p S b M hn bits))]
   exact sampleFlat_probability p S b M hn hp event
 
 end PvNP.RealizableHardness.SeedEncoding

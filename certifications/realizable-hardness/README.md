@@ -14,7 +14,7 @@ Dependency resolution and creation of a verified manifest are
 pending; no dependencies, caches or compiled artifacts are included here.
 
 `source-map.json` records the source commit, original Git LF and working-byte
-hashes, mirrored hashes and every import-path patch for all 31 mirrored files.
+hashes, mirrored hashes and every import-path patch for all 33 mirrored files.
 Its ordered `transforms` field is the complete byte-reconstruction recipe:
 CRLF normalization, any explicitly listed UTF-8 BOM removal, and listed UTF-8
 literal import replacements. Historical BOM provenance was corrected in
@@ -26,12 +26,20 @@ never reuse root 4.13 oleans or add its build directory to the search path.
 
 The two PosteriorReweighting files are explicitly synchronized from accepted
 bounded source f6126f7213c91741932be465e8041f26e7e8427f, reviewed in
-2b2ccf7145e17085225bfc601b981c0db87ff694. The two SeedEncoding files come from
-UNCOMPILED root draft 2ecc1f668a6cf22336cd9d19f159e4ec49bb2a84 and are not
-accepted proofs. SeedEncoding's split Mathlib import is mapped to
+2b2ccf7145e17085225bfc601b981c0db87ff694. SeedEncoding is synchronized from
+accepted bounded source e629518767cf00e54462abb2c1c7329ecd679187, reviewed in
+a20160f382f54ba8b18902be7aeaf05736f8cd0e. TripleRestrictionRank is synchronized
+from accepted bounded source 4021e7cdff5e41152c07000a3e2e0135c2e181d0,
+reviewed in 20039749e65dcb0eb719fed130aa9860bce855ea.
+SubspaceRestriction is added from accepted bounded source
+f7dcf6730ade00f2d9187d5db7c220d88b9b0ae4, with three independent
+GO-WITH-NOTES reviews integrated in cc8c972300a29736ddc2cab715071bfe3b2fb392.
+SeedEncoding's split Mathlib import is mapped to
 Mathlib.Logic.Equiv.Fin.Basic, inspected in the pinned source only.
-The other 27 mirrors, including the triple-restriction draft, remain frozen at
-their recorded pins. The map's per-entry source_commit is authoritative;
+SubspaceRestriction's direct Mathlib imports exist at the pinned revision and
+needed no path patches; that source inspection is not a compilation result.
+The other 27 mirrors remain frozen at their recorded pins in this synchronization.
+The map's per-entry source_commit is authoritative;
 initial_source_commit describes only the original mirror baseline. None of
 these source synchronization changes supplies companion kernel evidence.
 
