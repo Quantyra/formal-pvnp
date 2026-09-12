@@ -3,26 +3,30 @@ namespace PvNP.RealizableHardness.ComputableSampleCount
 
 theorem concrete_count_small : count 0 1 = 512 := by
   have hu : Nat.clog 2 352 <= 9 :=
-    (Nat.le_pow_iff_clog_le (by norm_num)).mp (by norm_num)
+    (Nat.le_pow_iff_clog_le (b := 2) (x := 352) (y := 9) (by decide)).mp (by decide)
   have hl : 8 < Nat.clog 2 352 :=
-    (Nat.pow_lt_iff_lt_clog (by norm_num)).mp (by norm_num)
+    (Nat.pow_lt_iff_lt_clog (b := 2) (x := 352) (y := 8) (by decide)).mp (by decide)
   have he : Nat.clog 2 352 = 9 := by omega
   change (2 ^ Nat.clog 2 352 : Nat) = 512
   rw [he]
-  norm_num
+  decide
 
 theorem concrete_count_half : count 3 2 = 2048 := by
+  have ht : target 3 2 = 1792 := by norm_num [target]
   have hu : Nat.clog 2 1792 <= 11 :=
-    (Nat.le_pow_iff_clog_le (by norm_num)).mp (by norm_num)
+    (Nat.le_pow_iff_clog_le (b := 2) (x := 1792) (y := 11) (by norm_num)).mp (by norm_num)
   have hl : 10 < Nat.clog 2 1792 :=
-    (Nat.pow_lt_iff_lt_clog (by norm_num)).mp (by norm_num)
-  have he : Nat.clog 2 1792 = 11 := by omega
-  change (2 ^ Nat.clog 2 1792 : Nat) = 2048
-  rw [he]
-  norm_num
+    (Nat.pow_lt_iff_lt_clog (b := 2) (x := 1792) (y := 10) (by norm_num)).mp (by norm_num)
+  have hc : Nat.clog 2 1792 = 11 := by omega
+  have he : exponent 3 2 = 11 := (congrArg (Nat.clog 2) ht).trans hc
+  exact (count_power_two 3 2).trans
+    ((congrArg (fun k : Nat => 2 ^ k) he).trans (by norm_num))
 
 theorem concrete_count_zero : count 0 0 = 1 := by
-  simp [count, exponent, target]
+  have ht : target 0 0 = 0 := by norm_num [target]
+  have he : exponent 0 0 = 0 := (congrArg (Nat.clog 2) ht).trans (Nat.clog_zero_right 2)
+  exact (count_power_two 0 0).trans
+    ((congrArg (fun k : Nat => 2 ^ k) he).trans (by norm_num))
 
 -- Executed evaluations supplement the proved equalities; no native_decide proof.
 #eval count 0 1
