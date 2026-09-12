@@ -1515,3 +1515,43 @@ append-only graph, preserving prior evidence. No experiment, formal build,
 public artifact, push, spend or outreach occurred. The exact preservation
 candidate is resolved negatively; the broader objective remains ACTIVE and
 unresolved. Publication is not authorized by this internal receipt.
+
+## S3121: algorithms-to-lower-bounds, bounded selection NONE
+
+[Selection](2026-09-12-algorithms-lower-bounds-selection.md),
+[independent actual-file challenge](2026-09-12-algorithms-lower-bounds-challenge.md),
+and [scope GO](2026-09-12-algorithms-lower-bounds-nonclaims.md) support NONE
+for the two screened operations. Ordinary polynomial truncation and hashed
+sparse recovery supplied no changed intermediate-generation, tail-control
+or structural mechanism after comparison with known methods. The second
+operation differs from the first, but its step is already established sparse
+transform recovery. This is no unproved-bound veto or general impossibility.
+
+All product-generation, cancellation, coefficient precision, formula-query,
+recovery and refinement costs remain charged. Standard-monomial expectation
+and normalized Fourier constant coefficient are distinguished; rescaling,
+fixed-alpha overhead and worst-case tail requirements are explicit. A
+low-norm approximant is not an efficiently found small exact Fourier tail.
+
+The prospective Gap-Formula-SAT bridge retains every fixed beta, formula-leaf
+size, superpolynomial saved factor and deterministic/zero-error model. No
+required algorithmic premise is achieved. NEXP and E^NP conclusions are
+not P-versus-NP conclusions. The NP-level transfer varies its language and
+time exponent with k and does not give one NP language against all polynomial
+circuit sizes. Current threshold/preprint comparisons are source-labeled,
+not a fully verified or exhaustive frontier ranking. The challenger supplied
+source and interface checks, not an algorithm or proof of global failure.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-algorithms-lower-bounds-selection.md | `9a0c934ff41ebfe59501b6036de343f65eae30a840172769a46235a25e8e40f7` | `5865cf6eb1f67efaca5ee55fc3c15c68fbeaaf4c` |
+| 2026-09-12-algorithms-lower-bounds-challenge.md | `afa82bed6a1eb8f7c0e10c43cd25c952312308ae4acea9e4bb9bb6393a021399` | `2ee04e5f5981d2f87bc38653e35559711c682a72` |
+| 2026-09-12-algorithms-lower-bounds-nonclaims.md | `ffe461392b06b0273b05b8d385cd7580b3b8019f1dcae1fced7db299b91e334e` | `bec1bea73202eb3cfc152bf47d9b12f7c6b62f44` |
+
+The three working records match staged Git bytes; EOF/cached whitespace
+checks pass. Integration preserves prior graph bytes and changes only these
+three prose records plus this append. No experiment, proof campaign, formal
+build, public artifact, push, spend or automatic successor follows. No new
+SAT bound, circuit lower bound, novelty or class separation is established.
+The broader objective remains ACTIVE and unresolved. This is informal AI
+selection review, not human peer review or Lean verification.
