@@ -1,0 +1,41 @@
+# Frontier selection: aggregate FKO packing and pricing
+
+2026-09-11; S3071. Under [integrity](../../INTEGRITY-CLAIMS.md), reusing the S3064 certificate and S3065 sign-blind contract. **Selection: no supported new packing mechanism.** The inspected spectral/SOS and even-cover results do not supply a cheaper tuple-pricing oracle, robust short-cover finder or costed rounding into sufficient FKO mass. This is a bounded selection outcome, not an impossibility theorem or a claim that the literature contains no relevant future improvement. No code, experiment, proof packaging or new campaign is selected.
+
+## Exact aggregate target, without overstrengthening it
+
+For listed inconsistent tuples, rational weights y_T>=0 with clause loads at most one and total mass W>H=(I+nL)/2 give the existing sound certificate. At the target m=Theta(n^(7/5)), the relevant comparison is H=O(n^(6/5)) and tuple lengths O(n^(1/5)), with constants and certified numerical slack retained. [S3064 contract](2026-09-11-fko-discovery.md).
+
+An exact implicit-LP approach has dual clause prices p_c>=0, with sum_(c in T) p_c>=1 for every allowed short inconsistent tuple. It needs violated-constraint discovery at arbitrary queried prices. This is ONE route's separation obligation, not a necessary requirement for every improved FKO finder. A restricted-price or direct load-aware construction could suffice. Approximate pricing would need a proved approximation loss small enough to preserve the actual W>H margin, plus all oracle work and numerical error; naming multiplicative weights or column generation does not provide that oracle.
+
+The weaker sign-blind incidence-only packing contract is already [S3065](2026-09-11-adaptive-fko-sources.md), not a new candidate. Building enough unsigned mass before reading signs avoids the adaptive-sign issue. Its missing part is geometric mass and efficient construction. In contrast, prices or deletions chosen after observing signs cannot automatically retain independent-sign analysis. Neither observation rules out a more carefully analyzed adaptive algorithm.
+
+## Strongest relevant primary comparisons
+
+| Primary result | Verified scope and implication for selection |
+|---|---|
+| [Feige-Kim-Ofek, FOCS 2006, Sections 3-4](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/03/unsat.pdf) | Establishes a bounded-overlap family and fractional packing; its finder enumerates short tuples and solves the LP in 2^O(n^.2 log n) time. Typical-input packing existence is not an efficient weighted separator. Nor does that existence theorem by itself assert that an arbitrary adaptively deleted residual retains a new short cover of the desired size. |
+| [Guruswami-Kothari-Manohar, arXiv:2109.04415v2, Theorem 5.1, Theorem 8.2, Lemma 9.5 and Theorem 9.2](https://arxiv.org/pdf/2109.04415) | The algorithmic spectral/SOS guarantee costs n^O(ell). Section 9's short certificates are nondeterministic existence. Lemma 9.5 already uses repeated deletion to obtain disjoint covers: with m>=2m0, it obtains m0/h covers, h=O(ell log n), with its stated polylogarithmic density threshold. Therefore greedy deletion plus short-cover existence is direct prior art, not a fresh aggregate mechanism. |
+| [The Hypergraph Moore Bound, arXiv:2607.14068v2, Theorem 1.2](https://arxiv.org/pdf/2607.14068v2) | The July 17, 2026 preprint gives an even cover of O(rho log n) at arity-three density m>=c n sqrt(n/rho). At m=C n^(7/5), rho=Theta(n^.2). Removing the older density polylogs does not remove the log in cover length, supply odd signs, or give a polynomial short-cover finder. This reuses the S3065 statement check, not an independent full-proof endorsement. |
+| [Schmidhuber-Hastings, arXiv:2607.29672v1, Theorem 2.5 and Sections 9-10](https://arxiv.org/pdf/2607.29672v1) | July 31, 2026 preprint: the checked sharp refuter uses n^O(ell) work at ell=Theta(n^.2), with pointwise spectral/defect accounting. A spectral upper certificate is already a refutation output; it is not a collection of nonnegative tuple weights or an efficiently separable dual for this distinct LP. No cheaper map from its certificate to enough short priced tuples was found in the inspected statements. |
+| [Tzameret, arXiv:1305.0948, Theorem 1 and the 3XOR principle](https://www.doc.ic.ac.uk/~itzamere/AutFKO.pdf) | The proposed improvement is conditional on short proofs together with an efficient interpolation property. This is a genuine established alternative bridge, but no suitable new interpolation algorithm is supplied here. Short proofs alone, or an SDP description, do not discharge it. Historical open-status remarks in the 2013 paper are not treated as verified 2026 status. |
+
+## Concrete thresholding attempt checked
+
+One natural simplification of weighted pricing is to retain only clauses with p_c<=1/L and seek an even cover of length at most L. Such a cover has total price at most one; strict violation additionally needs slack. If total price is P, fewer than L*P clauses can have price above 1/L, so this elementary argument guarantees only m-L*P surviving clauses.
+
+With the universal Moore guarantee L=Theta(n^.2 log n) and candidate dual total P=Theta(n^(6/5)), the loss bound is Theta(n^(7/5) log n), larger than the original m. Thus this particular threshold guarantee supplies no residual density at the literal fixed-C regime. It does NOT prove there is no affordable tuple: the bound may be loose, other thresholds/rounding may work, and a weighted algorithm may exploit more information. A typical-input O(n^.2)-cover finder with sufficient deletion robustness would avoid this logarithmic loss, but neither its existence in every needed residual nor its efficient construction has been established here.
+
+Original FKO packing cannot silently fill that gap. For example, from a normalized packing, deleting b clauses can destroy at most b units of total tuple weight by the load inequality. Once the deletion budget is much larger than the guaranteed packing mass, that argument alone becomes vacuous. It does not establish a robust property for all large residuals. This is a diagnosis of the proposed transfer, not a new lower bound.
+
+Even when cheap-clause thresholding produces an unsigned cover, random signs cannot be freshly assigned after sign-dependent pricing. The existing sign-blind architecture avoids that issue but leaves the same efficient mass construction missing. No combination of these elementary steps yields a quantitatively improved algorithm.
+
+## What this changes
+
+Do not select another implicit-LP, generic SDP-rounding, greedy-deletion or sign-filtering demonstration. Their relevant identities and sufficient conditions are already present in the literature and our notes. A substantive packing proposal would have to supply an actual lower-cost restricted finder or weighted rounding theorem, its robustness under the generated price/deletion history, and enough verified mass after all losses. No evidence-backed implementation of that missing operation emerged from this focused check. A new mechanism may still be possible; it has not been selected by this artifact.
+
+The global decoding branch is assessed independently. This result should not be combined with walk or holographic diagnostics into an all-method barrier. Any successful random-instance certificate advance would still require a separate worst-case bridge to resolve P versus NP.
+
+## Search and access
+
+On September 11, 2026, focused queries included `Feige Kim Ofek certificate linear programming packing inconsistent tuples separation oracle` and `random 3SAT refutation spectral certificate Feige Kim Ofek witness extraction sum of squares short even covers`. Primary GKM v2 PDF (arXiv September 3, 2023; printed September 6) was reopened at Section 9, especially Lemma 9.5, and Tzameret's primary PDF at Theorem 1. FKO and the July preprints reuse the previously documented primary checks; dates are submission/publication dates, not crawl dates. The scope is relevant theorem/algorithm statements and their transfer conditions, not exhaustive literature coverage or endorsement of every external proof. No new separation oracle or rounding claim is inferred from absence of a search hit.
