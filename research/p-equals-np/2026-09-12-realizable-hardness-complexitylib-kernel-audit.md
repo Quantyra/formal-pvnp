@@ -261,3 +261,67 @@ elan run leanprover/lean4:v4.34.0-rc2 lake build --wfail Complexitylib.Classes.P
 `LEAN_NUM_THREADS=4`; current build session 76229, log
 `S3129-complexitylib-target-build.log` in Temp. The build is still running;
 target success and axiom profiles are not yet claimed.
+
+## Live build handoff for reviewer-slot scheduling
+
+Root requested this handoff to free an independent review slot. The build
+was **not stopped, restarted or declared complete**. The latest direct
+`write_stdin` poll of session **76229** returned still running. Actual
+latest green log entries include:
+
+```text
+[3801/3819] Built Complexitylib.Classes.PCP.Internal.PCPtoSAT
+[3802/3821] Built Complexitylib.SAT.CookLevin.Internal.Emitter
+[3803/3821] Built Complexitylib.SAT.Rename
+[3804/3821] Built Complexitylib.Models.TuringMachine.SingleTape.Internal.Pad
+[3805/3822] Built Complexitylib.Classes.PCP.Internal.FiniteKey
+```
+
+Lake dynamically expands the displayed denominator as dependencies are
+discovered. These are genuine intermediate module successes, not final
+PCP/Cook-Levin target success. No theorem failure or unexpected axiom has
+been observed, and no final axiom profile is claimed.
+
+Exact running command remains:
+
+```text
+elan run leanprover/lean4:v4.34.0-rc2 lake build --wfail Complexitylib.Classes.PCP Complexitylib.SAT.CookLevin.Assembly
+```
+
+Working directory: the operating-system Temp checkout
+`S3129-complexitylib-6c248d`, detached at
+`6c248df7859f2f245e731c1e07057bf69d165fe2`. Toolchain and all ten manifest
+pins remain those recorded above; `LEAN_NUM_THREADS=4`.
+Log in Temp: `S3129-complexitylib-target-build.log`.
+Live Lake PID **33020**, parent PID **31796** (elan). Observed four Lean
+children: **36876**, **19984**, **37636**, **30636**. Child PIDs change
+normally as modules finish; the exec handle is the authoritative polling
+interface. Do not restart merely because a previous child PID disappears.
+
+Latest independent capacity reading: **1,601,667,072 bytes free on C:**.
+Root's explicit guard is to stop only this owned build gracefully if
+free capacity approaches **512 MB**, recording actual terminal/last-green
+evidence. Do not delete artifacts, retry rejected cleanup, start another
+build or download, or attribute unexplained capacity changes to an action.
+No cleanup occurred during this continuation.
+
+Next operator should poll 76229 and inspect the log/capacity. After the
+actual two targets return exit zero, run existing `S3129Audit.lean` in
+this same checkout using the pinned `lake env lean`, with output preserved
+to a new Temp log. It already imports `Complexitylib.Classes.PCP` and
+`Complexitylib.SAT.CookLevin.Assembly`, checks their exact theorem
+signatures, and prints the three required axiom profiles:
+
+```text
+Complexity.PCP_theorem
+Complexity.SAT.NPComplete_language
+Complexity.exists_pcp_of_mem_NP
+```
+
+It also prints NP, NTIME, FP, MapReducesPoly, NPHard, NPComplete, PCP and
+Constructible for hypothesis/definition inspection. All three profiles
+must contain only standard foundations; signatures must not hide an
+assumed PCP or source-hardness contract. Record actual outputs and exits,
+then update the adoption disposition. The advanced MZ, randomized promise
+encoding and learning bridges remain open even if these foundations pass.
+The separate 4.13 umbrella was not upgraded or rebuilt by this audit.
