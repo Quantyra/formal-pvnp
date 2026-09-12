@@ -1151,3 +1151,41 @@ changed. This is editorial hygiene, not a mathematical repair. The two
 assessments and this graph are the only files in this local integration;
 no theorem/review, public/planning file, remote, DOI/profile, outreach or
 spend action is included. The wider research objective remains ACTIVE.
+
+## Dimension-budget addendum publication verified (S3114)
+
+2026-09-12. Following actual whole-extraction mathematical PASS and final
+source/scope GO, the owner's exact PUBLISH decision (planning commit
+6b00cdd) authorized the modest existing-artifact v4.1.0 update. Public main
+and lightweight v4.1.0 now both resolve to
+`da3113429dd69d15a28716b7b8b64dac6358d435`. The
+[public release](https://github.com/Quantyra/weak-rank-positivity-window/releases/tag/v4.1.0)
+is titled `v4.1.0 - Dimension-budget addendum`.
+
+The release asset DIMENSION-NOTE.md is exactly the committed Git blob
+`e37400ab3f45a751e8472f8052ddf5bab6e539e0`: 30,347 bytes, SHA256
+`4b9acce60dd1eb328e711eb894e080b0fdbcee9b5ab1b1b3ee71f564524e2f4b`.
+Release ID is `387610032`; asset ID is `559464864`. The reviewed ASCII
+release body is 2,105 bytes, SHA256
+`00023cb3b895ba8dafb919a4541e5865580719d305534fb83f0fc488940fc0cb`.
+
+Unauthenticated API, release page, raw main and tag, downloaded asset,
+CITATION version 4.1.0, unchanged About, and remote refs were verified.
+All five prior tags/releases and six previous note/license Git blobs were
+preserved. Public local main is clean. The durable execution receipt is
+`bamboo-v4.1-publication-2026-09-12/receipt.json`, with its archival copy
+routed to the planning owner; it records exact prior/final refs and release
+signatures, IDs, byte hashes and verification timestamps.
+
+The mathematical source remains `3d381934744c48f7afa913ac650037a477148a19`;
+the two actual public extraction reviews are committed at
+`0c9822127a676e02018be4adddef29d50d5df686`. See the
+[mathematical review](2026-09-12-bamboo-dimension-public-proof-review.md) and
+[scope review](2026-09-12-bamboo-dimension-public-nonclaims-review.md).
+This publication adds no theorem beyond the reviewed quantitative dimension
+window and indexed consequence. The source-relative parameter re-budgeting,
+credited near-quadratic geometry, explicit monomial/root measure, easy rank
+membership, indexed lengths, unknown novelty, informal AI review and all
+non-claims remain unchanged. No private source/planning push, DOI/profile,
+outreach or spend occurred. Publication work for this exact update is
+complete; the wider research objective remains ACTIVE.
