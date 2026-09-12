@@ -692,3 +692,50 @@ hardness, novelty, human/formal verification or P-versus-NP result follows.
 The broader research objective remains ACTIVE and unresolved. No automatic
 successor is selected. This four-file design/graph integration is local,
 with no domain theorem/public edit, push, experiment, outreach or spend.
+
+
+## S3108: bounded bamboo contribution audit
+
+The [author contribution audit](2026-09-12-bamboo-contribution-audit.md),
+[independent primary-source comparison and final crosscheck](2026-09-12-bamboo-contribution-independent.md),
+and [nonclaims GO](2026-09-12-bamboo-contribution-nonclaims.md) retain a
+bounded conclusion: no exact subsuming theorem was identified among the
+inspected sources. The source-relative delta is the quantitative uniform
+mixed-separator estimate for the unchanged rank-excluded local laws and
+its exact varying-context positivity/explicit-size consequence. Novelty,
+priority, optimality and field-level significance remain uncertified;
+this is not exhaustive citation closure or another proof certification.
+
+The audits distinguish source-specific fiber, normalization and growing-
+support estimates from established Fourier, covariance, hierarchical-
+complement and diagonal-domination machinery. The v3 row-space statement
+is an explicit stronger consequence of all-L2 estimates, not an import
+of the v2 ordinary-degree theorem alone. Its restriction and survival
+mechanism are credited source results; the D/E corrections restore source
+transcription. No new generic SoS method or restriction is claimed.
+
+The source's unpursued SoS direction supports a source-relative extension
+description, not a claim to solve its entire generator program. The
+adopted result remains identity output A=I_m, residual m=q^2, even q>=1024,
+original width N=8q+4 and explicit size
+`sum_i ||f_i|| ||g_i||+sum_j ||h_j|| >= (8/7)^((2D-1)/2)`,
+D=floor(q/(32 log_2 q)). This is exp(Omega(N/log N)), not a linear-
+exponent, other-encoding or unrestricted circuit-size result.
+
+Affine right-hand-side uniformity of local estimates suggests a possible
+fixed-m output-scope extension, but does not itself adopt an arbitrary-A
+theorem. Changing m also changes the global support count and its budget.
+The restriction preserves A and m; a quantified polynomial-m/all-output
+regime, amplification or generator implication would need separate work.
+None is selected or supplied here. Known whole-certificate circuit upper
+bounds remain compatible with the explicit monomial lower bound.
+
+The final author hash is
+`C182520AFB2688AF5C304034E9C383E39F0F89BB9901807CCAC067CF6180A4D6`;
+the independent reviewer reread that final A/m distinction before freeze.
+The root approved only the bounded comparison disposition. No public
+wording or release changes follow from the audit. No general proof-system,
+SAT runtime, circuit lower-bound or P-versus-NP claim is made. The broader
+research objective remains ACTIVE and unresolved. This four-file local
+audit/graph integration includes no theorem/public edit, push, experiment,
+outreach or paid computation.
