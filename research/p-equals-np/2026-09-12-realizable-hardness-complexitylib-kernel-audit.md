@@ -1,7 +1,8 @@
 # S3129 Complexitylib kernel audit: setup checkpoint
 
 2026-09-12; S3129 / S3126 / E004 / S008.
-**Kernel status: PENDING. S3129 is not complete.** Root requested this
+**Kernel status: BLOCKED by disk capacity; no target axiom profiles obtained.
+S3129 is not complete.** Root requested this
 setup increment and handoff while the first 4.13 repair build occupies CPU.
 No successful theorem build or kernel axiom profile is claimed below.
 
@@ -93,13 +94,13 @@ or a blanket build of unrelated Complexitylib branches.
 
 Build exact targets with the pinned toolchain:
 
-    lake build --wfail Complexitylib.Classes.PCP Complexitylib.SAT.CookLevin
+    lake build --wfail Complexitylib.Classes.PCP Complexitylib.SAT.CookLevin.Assembly
 
 Then use a scratch Lean file in the isolated Temp checkout (not the umbrella)
 with these imports and checks:
 
     import Complexitylib.Classes.PCP
-    import Complexitylib.SAT.CookLevin
+    import Complexitylib.SAT.CookLevin.Assembly
     #check Complexity.PCP_theorem
     #check Complexity.SAT.NPComplete_language
     #print axioms Complexity.PCP_theorem
@@ -152,3 +153,75 @@ Verified dependency pins:
 - `Qq 507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3`
 - `batteries 7e23602c91bc04586b2b06de2708a041853e4681`
 - `Cli ab3a82db9fea14cf0fd7f5a2de650f4b534640af`
+
+## Kernel execution continuation
+
+The top-level complexity reviewer resumed after the 4.13 repair modules
+were green. No setup or toolchain installation was repeated. Actual source
+inspection corrected the SAT target above: `SAT/CookLevin.lean` is tableau
+core; `SAT/CookLevin/Assembly.lean` exports `NPComplete_language`.
+
+The cache executable compiled successfully (27/27 tasks) with the pinned
+4.34.0-rc2 toolchain and `LEAN_NUM_THREADS=4`. The first command was
+`lake exe cache get Complexitylib/Classes/PCP.lean
+Complexitylib/SAT/CookLevin/Assembly.lean`. Inspection of Cache/Hashing.lean
+then showed that import traversal filters out downstream Complexitylib
+modules, so these roots would not acquire the whole required dependency
+closure. That still-hashing invocation was deliberately stopped (exit -1),
+not a theorem-build failure. The cache has to hash Mathlib globally even
+when retrieval roots are scoped.
+
+A scratch import traversal found 375 local modules and 88 external roots,
+of which 85 are cacheable Mathlib/Aesop modules and three are toolchain Std
+modules. An intermediate root invocation exited 1 with `unknown module
+prefix 'Std'`; a PowerShell JSON-array filtering mistake retained those
+three roots. Corrected enumeration excludes them. Corrected cache retrieval
+ran as session 35312, with log `S3129-complexitylib-cache-roots2.log`
+in Temp. The prior log names are `S3129-complexitylib-cache.log` and
+`S3129-complexitylib-cache-roots.log`. Scratch root inventory and
+`S3129Audit.lean` are isolated in the Temp checkout, not umbrella sources.
+
+The scratch audit imports the two exact targets and requests signatures,
+three axiom profiles (`PCP_theorem`, `SAT.NPComplete_language`,
+`exists_pcp_of_mem_NP`) and definitions of NP/NTIME/FP, polynomial reduction,
+NP-hardness/completeness, PCP and Constructible. It has not yet been run.
+No theorem kernel success is claimed at this execution checkpoint.
+
+## Actual cache failure and capacity boundary
+
+Corrected retrieval used the pinned official Mathlib cache and attempted
+3,534 dependency artifacts. Download progress passed 2,734 artifacts (77%),
+with decompression active, before the command terminated with exit -1.
+The log contains repeated literal errors:
+
+```text
+There is not enough space on the disk. (os error 112)
+```
+
+These occurred decompressing `.ltar` files into the isolated checkout's
+Mathlib build directory. This is a disk-capacity failure, not a rejected
+Lean proof or evidence of missing upstream theorems. Session 35312 is no
+longer running. No cache/curl/leantar process remained at the follow-up
+inspection. No target-module build or scratch theorem audit was started
+after this failure, to avoid worsening the disk exhaustion.
+
+Read-only capacity inspection reported about 397 MB free on C:; G:, I: and
+K: reported the same backing volume size with similarly low free capacity.
+No distinct higher-capacity alternate filesystem was identified. The
+task-owned partial Mathlib `build/lib` contained 20,499 files totaling
+1,226,932,099 bytes. No shared pre-existing cache, toolchain or user data
+was selected for deletion.
+
+The automatic approval system rejected cleanup of the verified isolated
+partial build directory (`blocked by policy`, no more specific reason).
+A narrower attempt selecting only generated Lean artifact extensions and
+checking every absolute path under that exact isolated build root was
+also rejected before execution. Consequently no cleanup is claimed and
+no recovered-space figure is reported. Root was notified immediately.
+
+Disposition: retain the candidate as **not yet kernel-certified**. Resume
+only after capacity is restored, then finish the exact targeted builds and
+three axiom profiles above. A successful cache utility compilation and
+source-semantic inspection cannot substitute for these target results.
+The manuscript's advanced MZ interfaces, randomized promise-reduction
+bridge and learning transfer remain independent open obligations.
