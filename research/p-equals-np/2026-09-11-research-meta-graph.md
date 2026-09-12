@@ -1189,3 +1189,73 @@ membership, indexed lengths, unknown novelty, informal AI review and all
 non-claims remain unchanged. No private source/planning push, DOI/profile,
 outreach or spend occurred. Publication work for this exact update is
 complete; the wider research objective remains ACTIVE.
+
+## S3115: paired-PPSZ mechanism screen, bounded selection NONE
+
+The [intake](2026-09-12-post-dimension-frontier-intake.md) examined one
+explicit operation after dimension-publication closeout: uniformly pair
+Boolean variables, delete pair assignments contradicted by at most fixed D
+residual clauses through explicit enumeration, then sample uniformly from
+survivors and verify completed witnesses. The same instance groups into
+(4,3)-CSP PPSZ with constant forbidden-tuple overhead. Original-clause versus
+tuple-clause inference budgets require constant rescaling (up to 8D), not
+literal identity at the same D. Fixed D gives polynomial per-run work;
+repetitions, finite-strength errors and growing D remain separately charged.
+
+The [actual challenge](2026-09-12-post-dimension-frontier-challenge.md)
+returned PASS for the corrected intake and NONE for investing in this
+operation as specified. [Nonclaims review](2026-09-12-post-dimension-frontier-nonclaims.md)
+returned GO after reading both final files. The root closes the bounded
+selection with NONE: no additional structural mechanism supporting a better
+worst-case guarantee was supplied beyond known finite-domain PPSZ grouping.
+This is not rejection solely because a speculative final bound is unproved;
+a concrete new transition or structural analysis could remain eligible.
+
+Current primary comparisons and their limitations are recorded in the
+intake/challenge. The reported July2026 PPSZ general-3-SAT base is
+1.307031578, and unique-3-SAT base 1.306969598; these are attributed source
+claims, not independently reproved here. CP2016 finite-domain guarantees,
+Li--Scheder impatient PPSZ and biased PPSZ are existing-method comparators.
+The author corrected impatient PPSZ's improvement to unique-solution
+formulas for d>=3,k>=2 after the final source-scope challenge. No general-
+case improvement or unique-to-general lifting is imported without its
+hypotheses. Search is bounded and priority unverified.
+
+Three comparisons remain carefully limited:
+
+- A three-entry relation refutes the proposed pointwise dominance of joint
+  uniform sampling over sequential guessing with forcing. It is an easy
+  local relation, not a hard family or failure of aggregate improvement.
+- The generic grouped-CSP upper guarantee is weaker than the Boolean PPSZ
+  benchmark. It is not an algorithm runtime lower bound or an upper bound
+  on the grouped subclass's actual success.
+- Ordinary random matching exposes at most 3m/(n-1) expected within-clause
+  pairs. Its O(1) sparse-input diagnostic does not bound the exponentially
+  weighted/tilted success expression or exclude longer inference correlations.
+
+The exact sum-product expression over satisfying assignments and random
+pairing/order is a correct success identity, not a proof of the desired
+improved exponent. A polynomial run cost does not pay for all repetitions.
+Finite failed runs are not UNSAT certificates. Conditional randomized
+polynomial-time SAT would imply NP=RP, not automatically P=NP; deterministic
+polynomial total-bit-time decision would be needed for the stated direct
+P=NP implication. No such guarantee or complexity-class separation is claimed.
+
+Frozen working-file SHA256 pins:
+
+| Evidence | SHA256 |
+|---|---|
+| Final intake | `F033241C2EF0B8C5E2F446D2F29EB46CA6FE374F8639C04BE4F1086113C85347` |
+| Final independent PASS/NONE | `6D3AF7C0127512BB63BF97058EECC55EAB96C3D3E9882D6724EFF97CF63C8163` |
+| Final nonclaims GO | `73355013F462FE185670BE1F5DFD7ADEFE0BD8433050EF99FFD4A107F76C6C1D` |
+
+The challenger supplied substantive source/representation corrections and
+the sparse-pairing diagnostic, not verification-only work. The tilted-measure
+caution and unique-solution qualifier are retained. No outstanding correction
+remains. Only one operation was examined deeply; this neither exhausts the
+frontier nor disproves all pairing analyses. No automatic experiment,
+parameter optimization or successor follows NONE. Public artifacts and
+prior proof records remain unchanged. This is selection completion, not a
+proof campaign or P-versus-NP progress claim. The broader objective remains
+ACTIVE and unresolved. This four-file closeout is a scoped local evidence
+commit with no proof/public edits, experiment, push, outreach or spend.
