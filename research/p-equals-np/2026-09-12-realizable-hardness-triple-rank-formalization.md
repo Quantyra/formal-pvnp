@@ -1,17 +1,18 @@
-# Concrete triple restriction: source draft
+# Concrete triple restriction: author verification
 
-2026-09-12; S3126/S3133. **UNCHECKED.** No Lean command, Lake build, axiom
-audit, or independent review has been run for these sources. This record is
-a source milestone only; the full theorem and S3133 remain open.
+2026-09-12; S3126/S3133. **AUTHOR VERIFIED; INDEPENDENT REVIEW PENDING.**
+Scoped main and Checks exports passed. All 22 printed axiom profiles contain
+only `propext`, `Classical.choice`, and `Quot.sound`. Three fresh independent
+reviews remain required; the full theorem and S3133 remain open.
 
 ## Owned artifacts and source pins
 
 - `lean/PvNP/RealizableHardness/TripleRestrictionRank.lean`
-  SHA256 `1cbb6b609d280ec0b4ec0981bbf782e7731e2e81369d5e18e6e5aaf17d0894b0`
-  (17177 UTF-8 bytes, LF, 386 non-ASCII characters).
+  SHA256 `50d2e5689be0ec37153c1fa37bbaadfaf9d17c07c1a694f64cb35fb4302f9ba9`
+  (18300 UTF-8 bytes, LF, 410 non-ASCII characters).
 - `lean/PvNP/RealizableHardness/TripleRestrictionRankChecks.lean`
-  SHA256 `33e3aded9797d395035077ba02a902c7346816d0d985700006c0427d3aeb8149`
-  (3129 UTF-8 bytes, LF, 16 non-ASCII characters).
+  SHA256 `89e3c004fb206b5f81d3679dd3a9197dfd5c2eae754c32df511814077b39adf3`
+  (3146 UTF-8 bytes, LF, 16 non-ASCII characters).
 
 Destination integrity source: `INTEGRITY-CLAIMS.md`; no destination
 `AGENTS.md` or `INTEGRITY.md` exists. Source contract: the dependency
@@ -62,17 +63,17 @@ The numeric codimension bridge is written, rather than assumed:
 - `intersection_codim_failure_probability` targets
   `Pr[intersectionCodim R d != c] <= (2^c-1)*beta`.
 
-All these statements and their proof scripts await elaboration and kernel
-checking. Their presence in source is not proof acceptance.
+These statements and their proof scripts passed the author exports, including
+the numeric codimension bridge. They await independent three-lens acceptance.
 
 ## Checks and boundaries
 
-The Checks draft includes zero-mass atoms at beta=0 and beta=1, normalization
+The Checks module includes zero-mass atoms at beta=0 and beta=1, normalization
 with J=0, the c=0 empty combination case, and a satisfiable one-row example
 on one triple. The example has an explicit injectivity proof and loses its
 row on a specified singleton draw; its beta=0 and beta=1/2 probability
-conclusions use the main bound. The intended exports have `#print axioms`
-commands, but no output has yet been obtained.
+conclusions use the main bound. All examples compiled successfully; all 22
+`#print axioms` outputs contain only the three standard foundational axioms.
 
 This fixes W as `ambientKernel R` before the unconditional draw. Applying
 the result to an arbitrary decoder-provided W(Q) still requires representing
@@ -92,9 +93,33 @@ not damaged mathematical text. A static scan finds no forbidden proof
 construct in the main source; the word "axiom" in the Checks header is
 descriptive prose. This scan is not a Lean audit.
 
-Compiler permission remains reserved to the foundation audit, followed by
-the independent sample-count check and posterior module. This module must
-receive an explicit compiler slot, actual successful main/Checks exports,
-and actual axiom profiles, then three fresh independent proof, complexity,
-and non-claims reviews. No acceptance verdict is assigned now. No public
+Root explicitly granted this module the exclusive compiler slot after prior
+work released it. Builds use Lean 4.13.0, the existing pinned mathlib checkout,
+`LEAN_NUM_THREADS=1`, and cached dependencies. No download, cleanup, toolchain
+change, or parallel compiler was used. Fresh capacity guards remained above
+7 GB throughout the recorded runs.
+
+Actual terminal history:
+
+| Session | Target | Actual outcome |
+| --- | --- | --- |
+| 10477 | Main | Exit 1: tactic branch composition, marginal normalization/unfolding, union-bound syntax, linear-map coercions, and default 200000-heartbeat elaboration cap. |
+| 59613 | Main | Exit 1: remaining conditional-expression identity, beta reduction, overbroad ext tactic, and 200000-heartbeat cap. |
+| 4917 | Main | Exit 1: conditional-expression identity and the same inference issue at a local 800000-heartbeat cap. |
+| 33524 | Main | Exit 0: explicit event inclusion fixed inference; the default 200000 cap is restored. Two style warnings only. |
+| 39802 | Checks | Exit 0: all examples and 22 standard axiom profiles; one style warning only. |
+| 2377 | Main after status-comment update | Exit 0; exact current main source pin above; two style warnings only. |
+
+No higher cap remains in source. The mathematical statements were not
+weakened: the actual distribution and numeric intersection-codimension
+failure bound are still the exports. After these runs, only the main and
+Checks status comments changed from UNCHECKED to author-verified/review-pending.
+Checks session 39802 used SHA256
+`33e3aded9797d395035077ba02a902c7346816d0d985700006c0427d3aeb8149`;
+the current Checks differs only in that status comment. Root permits this
+comment-only verification without a redundant Checks run. Final main session
+2377 also completed successfully at the current source pin.
+
+Three fresh independent proof, complexity, and non-claims reviews remain
+required. No independent acceptance verdict is assigned here. No public
 push, release, paper publication, or new DOI action was performed.

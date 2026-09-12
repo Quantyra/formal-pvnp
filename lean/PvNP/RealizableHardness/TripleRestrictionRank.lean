@@ -5,8 +5,9 @@ import Mathlib.LinearAlgebra.FiniteDimensional
 import Mathlib.LinearAlgebra.Dual
 import Mathlib.Tactic.FinCases
 
-/-! UNCHECKED source draft. Concrete independent triple restriction and its
-unconditional row-rank failure bound. No posterior independence is asserted. -/
+/-! Concrete independent triple restriction and its unconditional numeric
+codimension failure bound. Author exports passed; independent review is pending.
+No posterior independence is asserted. -/
 namespace PvNP.RealizableHardness.TripleRestrictionRank
 open scoped BigOperators
 
@@ -51,7 +52,9 @@ lemma probability_nonneg (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
   classical
   apply Finset.sum_nonneg
   intro d _
-  split_ifs <;> exacts [drawMass_nonneg β hβ hβ1 d, le_rfl]
+  split_ifs
+  · exact drawMass_nonneg β hβ hβ1 d
+  · exact le_rfl
 
 lemma probability_mono (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
     (E F : Draw J → Prop) (hEF : ∀ d, E d → F d) :
@@ -62,7 +65,9 @@ lemma probability_mono (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
   by_cases he : E d
   · simp [he, hEF d he]
   · simp only [he, if_false]
-    split_ifs <;> exacts [drawMass_nonneg β hβ hβ1 d, le_rfl]
+    split_ifs
+    · exact drawMass_nonneg β hβ hβ1 d
+    · exact le_rfl
 
 /-- A one-block cylinder is derived from the full concrete product law. -/
 lemma block_marginal (β : ℚ) (j : Fin J) (e : BlockChoice → Bool) :
@@ -80,10 +85,24 @@ lemma block_marginal (β : ℚ) (j : Fin J) (e : BlockChoice → Bool) :
       ∏ i : Fin J, if i = j then (∑ a, if e a then blockMass β a else 0) else 1 := by
     apply Finset.prod_congr rfl
     intro i _
-    by_cases hi : i = j <;> simp [events, hi, blockMass_sum]
+    by_cases hi : i = j
+    · simp only [events, if_pos hi]
+    · simp only [events, if_neg hi, Bool.true_eq, if_true]
+      exact blockMass_sum β
   simp only [he] at hc
   rw [hr] at hc
-  simpa only [Fintype.prod_ite_eq'] using hc
+  rw [Fintype.prod_ite_eq'] at hc
+  calc
+    probability β (fun d => e (d j) = true) =
+        ∑ d : Fin J → BlockChoice, if e (d j) = true then
+          FiniteSampling.trialMass (blockMass β) J d else 0 := by
+      unfold probability
+      apply Finset.sum_congr rfl
+      intro d _
+      by_cases hd : e (d j) = true
+      · simp only [if_pos hd]
+      · simp only [if_neg hd]
+    _ = _ := hc
 
 lemma drop_marginal (β : ℚ) (j : Fin J) :
     probability β (fun d : Draw J => (d j).isSome = true) = β := by
@@ -170,16 +189,21 @@ lemma goodRows_rank (R : Coeff c →ₗ[ZMod 2] Vector J) (d : Draw J)
 
 lemma rowVanishes_probability (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
     (R : Coeff c →ₗ[ZMod 2] Vector J) (hR : FullRowRank R)
-    (u : Coeff c) (hu : u ≠ 0) : probability β (rowVanishes R u) ≤ β := by
+    (u : Coeff c) (hu : u ≠ 0) :
+    probability (J := J) β (rowVanishes (J := J) (c := c) R u) ≤ β := by
   classical
-  have hRu : R u ≠ 0 := by intro h; exact hu (hR (by simpa using h))
+  have hRu : R u ≠ 0 := by
+    intro h
+    exact hu (hR (h.trans (map_zero R).symm))
   have hex : ∃ r, R u r ≠ 0 := by
     by_contra h
     apply hRu
     funext r
-    simpa using not_exists.mp h r
+    exact not_ne_iff.mp (not_exists.mp h r)
   obtain ⟨r, hr⟩ := hex
-  apply (probability_mono β hβ hβ1 _ _ (fun d hv hk => hr (hv r hk))).trans
+  have hsub : ∀ d : Draw J, rowVanishes R u d → ¬ kept d r :=
+    fun d hv hk => hr (hv r hk)
+  exact (probability_mono β hβ hβ1 (rowVanishes R u) (fun d => ¬ kept d r) hsub).trans
     (coordinate_removed_bound β hβ hβ1 r)
 
 /-- Finite union bound; no independence assumption about the union's events. -/
@@ -198,12 +222,20 @@ lemma probability_cover {A : Type*} [DecidableEq A] (β : ℚ)
     simp only [if_pos hd]
     calc
       _ = (if F a d then FiniteSampling.trialMass (blockMass β) J d else 0) := by simp [had]
-      _ ≤ _ := Finset.single_le_sum (fun b _ => by split_ifs <;>
-        exacts [drawMass_nonneg β hβ hβ1 d, le_rfl]) ha
+      _ ≤ _ := by
+        apply Finset.single_le_sum (f := fun b => if F b d then
+          FiniteSampling.trialMass (blockMass β) J d else 0) _ ha
+        intro b _
+        dsimp only
+        split_ifs
+        · exact drawMass_nonneg β hβ hβ1 d
+        · exact le_rfl
   · simp only [if_neg hd]
     apply Finset.sum_nonneg
     intro a _
-    split_ifs <;> exacts [drawMass_nonneg β hβ hβ1 d, le_rfl]
+    split_ifs
+    · exact drawMass_nonneg β hβ hβ1 d
+    · exact le_rfl
 
 /-- The exact manuscript unconditional bound, with c=0 allowed. -/
 theorem badRows_probability (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
@@ -275,7 +307,7 @@ noncomputable def rowCombination (A : Fin c → Coord J → ZMod 2) :
   map_smul' := by
     intro a x
     funext r
-    simp only [Pi.smul_apply, smul_eq_mul, mul_assoc, Finset.mul_sum]
+    simp only [Pi.smul_apply, smul_eq_mul, mul_assoc, Finset.mul_sum, RingHom.id_apply]
 
 /-- Matrix-form export of the unconditional rank failure bound. -/
 theorem matrix_restricted_rank_failure_probability (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
@@ -311,11 +343,13 @@ noncomputable def rowFunctionals (R : Coeff c →ₗ[ZMod 2] Vector J) (d : Draw
   map_add' := by
     intro u v
     ext x
-    simp only [map_add, evaluate_add_left, LinearMap.add_apply]
+    change evaluate (R (u + v)) x = evaluate (R u) x + evaluate (R v) x
+    rw [map_add, evaluate_add_left]
   map_smul' := by
     intro a u
     ext x
-    simp only [map_smul, evaluate_smul_left, LinearMap.smul_apply, smul_eq_mul]
+    change evaluate (R (a • u)) x = a * evaluate (R u) x
+    rw [map_smul, evaluate_smul_left]
 
 /-- Joint evaluation of the c row forms on U, with codomain the dual of
 the coefficient space. Its kernel is exactly their common zero subspace W. -/
@@ -323,15 +357,23 @@ noncomputable def ambientEvaluation (R : Coeff c →ₗ[ZMod 2] Vector J) :
     Vector J →ₗ[ZMod 2] Module.Dual (ZMod 2) (Coeff c) where
   toFun := fun x => {
     toFun := fun u => evaluate (R u) x
-    map_add' := by intro u v; rw [map_add, evaluate_add_left]
-    map_smul' := by intro a u; rw [map_smul, evaluate_smul_left]; rfl }
+    map_add' := by
+      intro u v
+      change evaluate (R (u + v)) x = evaluate (R u) x + evaluate (R v) x
+      rw [map_add, evaluate_add_left]
+    map_smul' := by
+      intro a u
+      change evaluate (R (a • u)) x = a * evaluate (R u) x
+      rw [map_smul, evaluate_smul_left] }
   map_add' := by
     intro x y
-    ext u
+    apply LinearMap.ext
+    intro u
     exact evaluate_add_right (R u) x y
   map_smul' := by
     intro a x
-    ext u
+    apply LinearMap.ext
+    intro u
     exact evaluate_smul_right a (R u) x
 
 noncomputable def ambientKernel (R : Coeff c →ₗ[ZMod 2] Vector J) :
