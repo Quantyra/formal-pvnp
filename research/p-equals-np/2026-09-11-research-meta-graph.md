@@ -1,6 +1,6 @@
 ﻿# Research meta-graph: evidence, transformations and open transitions
 
-2026-09-11; S3068 user-directed addition, updated through S3073. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
+2026-09-11; S3068 user-directed addition, updated through S3074. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
 
 ```mermaid
 flowchart TD
@@ -16,6 +16,11 @@ flowchart TD
   HALFLIST[Half-size unions of logarithmically many connected pieces]
   PRICE[Exact minimum-price short odd tuple oracle]
   PACK[Exact feasible approximate short-tuple packing]
+  INDEX[Polynomial-gate padded half-index decoder]
+  CLAW[Dyadic colored threshold claw]
+  QQUERY[Bounded-error quantum price query]
+  QRAG[Fast search with addressed quantum-memory gates]
+  GATE[Ordinary-gate advantage not established]
   LOCAL[Capped maximum-overlap growth]
   ROOT[Rooted Kikuchi operator and defect data]
   WALK[Labeled signed killed walk]
@@ -39,6 +44,12 @@ flowchart TD
   ENUM -->|V16: parity and sign checks| CIRCUITS
   CIRCUITS -. U6: historical packing gap closed by V19 .-> ODD
   CNF -->|V17: charged universal half-list| HALFLIST
+  CNF -->|V21: reversible forest decoder| INDEX
+  INDEX -->|V22: polynomial price-bit expansion| CLAW
+  CLAW -->|V23: bounded-error query search| QQUERY
+  CLAW -->|V24: explicit QRAG model| QRAG
+  QQUERY -->|V25: amplified calls and exact checks| PACK
+  QRAG -. U7: cheaper ordinary-gate implementation unknown .-> GATE
   HALFLIST -->|V18: exact rational price query| PRICE
   PRICE -->|V19: polynomial-call rational packing| PACK
   PACK -->|V20: exact loads and robust-margin verification| ODD
@@ -146,3 +157,20 @@ The [main derivation and three-lens table](2026-09-11-connected-half-pricing.md)
 At M=Theta(n^(7/5)), Delta=O(n^(2/5)) and k=Theta(n^(1/5)), the upper logarithmic runtime is (1/5)k log n+O(k)+O((log n)^2), with constant epsilon. The same-cap full connected-set baseline has upper leading term (2/5)k log n. This comparison is checked only against that explicit baseline. The source's sampling model transfers to iid signed clauses through an O(M^2/n^3) collision exception; the degree event is charged separately. Exact support constants and other refuters' output contracts matter to broader comparisons.
 
 [Source ancestry](2026-09-11-connected-half-sources.md) includes known cluster enumeration, signed syndrome joins and packing methods. No priority, literature-wide fastest result, quantum speedup, publication readiness or P-versus-NP conclusion is established. U4/U5 remain open for their actual walk samplers; V17-V20 do not bound those return distributions. The structural contributor's partition proof was checked by a different reviewer, and the pricing/wrapper received separate proof review. Final independent non-claims inspection of this updated ledger is GO in the [review record](2026-09-11-connected-half-nonclaims-review.md).
+
+## S3074 update: indexed quantum queries and their memory model
+
+The [reviewed quantum construction](2026-09-11-half-list-quantum.md) supplies an explicit padded forest-index decoder; no N-entry half list is supplied as quantum input. Its local evaluation is polynomial in the original input. That fact does not remove the much larger quantum walk working memory.
+
+| Edge | Evidence and exact resource contract |
+|---|---|
+| V21 | Padded plane-forest/root/neighbor encodings cover the required halves with N=M^{O(log k)}2^{O(k)}D^{floor(k/2)} times polynomial factors. Invalid indices and duplicate descriptions count in N. Polynomial bounded decoding retains its index and uncomputes scratch; original-input table scans are charged. |
+| V22 | Dyadic interval/prefix keys reduce summed nonnegative integer price thresholds to true cross-side equality with polynomial price-bit expansion. Same-side duplicates and invalid tags never count as claws. |
+| V23 | Established quantum search gives N^{2/3} times polynomial factors in decoder queries. Threshold bisection and all adaptive packing rounds have an explicit amplified error budget. This is a query statement, not an ordinary circuit-time statement. |
+| V24 | In the explicitly augmented quantum random-access-gate model, generic history-independent data structures give N^{2/3} times polynomial time and coherent-record memory. Setup, updates, extraction, seed lengths and fixed-time cutoffs are charged. The reviewed hybrid uses fixed-input seed tails and seed-independent ideal amplitudes, not a seed good for all subsets. |
+| V25 | On the allocated search-success event, price calls meet the S3073 oracle contract and hence its packing bound. Every final tuple, load, mass and directed spectral inequality is checked exactly. Search failure can withhold a certificate but cannot justify a false refutation. |
+| U7 | The direct ordinary-gate scan simulation has an N^{4/3} times polynomial upper bound at the chosen walk size. No improved ordinary-gate time is proved; this is not a lower bound against other implementations. |
+
+At the FKO scaling, the query bound and separately the QRAG-model time bound have upper leading logarithmic term (2/15)k log n. This does not establish a physical quantum advantage, a fastest-known refuter or a P-versus-NP conclusion. Its gate-model boundary is substantive; polynomial access to one generated half is distinct from addressed access to exponentially many evolving quantum records.
+
+The [novelty assessment](2026-09-11-half-list-novelty.md) retains unverified priority and strongest-algorithm status. Known cluster, syndrome-join and quantum-search ingredients are credited; no paper or implementation is selected by this ledger. Proof and complexity reviews cross-check contributor-owned reductions, and the generic data-structure repair is included. Final independent claims-scope inspection of this graph update is GO in the [non-claims review](2026-09-11-half-list-nonclaims-review.md).
