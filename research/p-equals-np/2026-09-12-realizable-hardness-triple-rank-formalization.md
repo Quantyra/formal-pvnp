@@ -1,9 +1,11 @@
 # Concrete triple restriction: author verification
 
-2026-09-12; S3126/S3133. **AUTHOR VERIFIED; INDEPENDENT REVIEW PENDING.**
+2026-09-12; S3126/S3133. **BOUNDED INDEPENDENT ACCEPTANCE.**
 Scoped main and Checks exports passed. All 22 printed axiom profiles contain
-only `propext`, `Classical.choice`, and `Quot.sound`. Three fresh independent
-reviews remain required; the full theorem and S3133 remain open.
+only `propext`, `Classical.choice`, and `Quot.sound`. The three fresh independent
+reviews passed within the scope recorded in the final table below; the full
+theorem and S3133 remain open. Earlier pending-review statements below record
+the author-stage history and are superseded by that table.
 
 ## Owned artifacts and source pins
 
@@ -123,3 +125,39 @@ comment-only verification without a redundant Checks run. Final main session
 Three fresh independent proof, complexity, and non-claims reviews remain
 required. No independent acceptance verdict is assigned here. No public
 push, release, paper publication, or new DOI action was performed.
+
+## Independent bounded closeout (2026-09-12)
+
+Frozen candidate `4021e7cdff5e41152c07000a3e2e0135c2e181d0` was reviewed by
+three distinct top-level reviewers. The proof reviewer independently exported
+the exact current main and Checks: sessions 90834 and 20714 both terminated
+with exit 0. All 22 actual profiles used only the three standard axioms above.
+Source hashes match the pins in this receipt before and after verification;
+the independent Checks run includes the final author status comment.
+
+| Lens | Verdict | Evidence and scope |
+| --- | --- | --- |
+| Build/audit | GO | Independent main 90834 and Checks 20714 exit 0; 22 standard-only profiles; style warnings only. |
+| Proof-adversarial | GO-WITH-NOTES | `2026-09-12-realizable-hardness-triple-proof-review.md`: actual law, union, dual/kernel bridge and numeric codimension; no blocking vacuity or hypothesis defect. |
+| Complexity | GO-WITH-NOTES | `2026-09-12-realizable-hardness-triple-complexity-review.md`: fixed-R unconditional bound; no adaptive or efficient-algorithm conclusion. |
+| Non-claims | GO-WITH-NOTES | `2026-09-12-realizable-hardness-triple-nonclaims-review.md`: wording bounded to the finite unconditional lemma. |
+
+Accepted theorem namespace:
+`PvNP.RealizableHardness.TripleRestrictionRank`, especially
+`intersection_codim_failure_probability`. Acceptance requires rational
+`0 <= beta <= 1` and a fixed full-row-rank map R, with W defined as the actual
+evaluation kernel. It proves the numeric intersection-codimension failure
+bound `(2^c-1)*beta` under the concrete product restriction law.
+
+The arbitrary W(Q) defining-form representation and its dimension/identity
+proofs remain open. The actual posterior likelihood and tail transfer remain
+open; fixing Q does not justify conditional independence. Concrete Grassmann
+counting, specialized PCP/decoder/hardness/learning work, runtime bounds and
+the companion package build remain required. This closes only the bounded
+triple-restriction increment, not S3133 or the full goal.
+
+Root authorized integration of exactly this receipt and the three independent
+review receipts, preserving source and the author build history. Compiler
+ownership was released after both independent exits; no further compiler run,
+source or companion edit, public push, release, or DOI action was part of this
+closeout.
