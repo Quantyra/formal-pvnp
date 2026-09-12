@@ -1,6 +1,7 @@
-# Actual advice-incidence law — author candidate
+# Actual advice-incidence law — bounded acceptance
 
-Status: author main and Checks exports passed; independent review pending.
+Status: accepted finite incidence-law component after independent exports and
+three-lens review. Full S3126 certification and paper reconciliation remain open.
 The original UNCOMPILED draft was preserved as af45e86 before compilation.
 No downloads, cache changes, or companion edits were performed.
 
@@ -54,9 +55,37 @@ the final source differs from compiled source only in status comments.
 At completion no native Lean/Lake process remained and C free space was
 4,313,624,576 bytes, above the 512 MiB guard.
 
+## Independent verification and three-lens closeout
+
+Frozen source candidate: `3fb16f4508396007d35270b2657c217c75e62de7`.
+Independent proof reviewer main session 48701 and Checks session 27608 both
+returned actual exit 0 under the root Lean 4.13 toolchain, with
+LEAN_NUM_THREADS=1 and explicit exports to the same .lake/build/lib paths.
+The only main warning was the unused Q binder already recorded above.
+All seventeen actual axiom profiles were verified: selected_kept uses
+propext only; the other sixteen use propext, Classical.choice and Quot.sound.
+No source changes or cosmetic recompilations were made for this closeout.
+
+| Lens | Verdict | Evidence |
+|---|---|---|
+| Build/audit | GO | Independent main 48701 and Checks 27608 exited 0; all 17 profiles verified |
+| Proof-adversarial | GO-WITH-NOTES | [Proof review](2026-09-12-realizable-hardness-grassmann-incidence-proof-review.md); no blocking statement defect |
+| Complexity | GO-WITH-NOTES | [Complexity review](2026-09-12-realizable-hardness-grassmann-incidence-complexity-review.md); finite law only, machine and parameter obligations remain |
+| Non-claims | GO-WITH-NOTES | [Non-claims review](2026-09-12-realizable-hardness-grassmann-incidence-nonclaims-review.md); wording bounded to the actual component |
+
+These are independent AI review lenses, not human peer review or novelty
+certification. Source working-file SHA256 values remain:
+
+- Main: `1faa084993341ee4505eeb44d1de96917cbcbc4cad8e454ac7d9033eb29ae49c`.
+- Checks: `5cfe158eac23235603629ffff58fa7f0ec266b4c8a3fe14849de9a441b39cc48`.
+
+The unchanged source headers preserve the historical author-stage status;
+this evidence receipt records the subsequent bounded acceptance.
+
 ## Remaining obligations and claims boundary
 
-Independent three-lens review and independent exports are pending.
+Independent three-lens review and root-toolchain exports are complete for
+this component; combined-toolchain integration remains a separate obligation.
 This does not establish the Gaussian-binomial cardinality formula or its
 ratio estimates, dropped-block tails, exceptional advice bounds, KMS
 couplings, the conditioned rank bound, decoder, or any runtime theorem.
