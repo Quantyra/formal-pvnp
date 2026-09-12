@@ -21,14 +21,14 @@ def family (x : Fin 1 → Bool) (i : ℕ) : Bool := x 0 && decide (i = 0)
 
 theorem chosen_base_example :
     let b := precision 3 (1 / 8)
-    let M := SamplingThreshold.sampleCount 1 (1 / 8)
+    let M := SamplingThreshold.sampleCount 1 ((1 / 8 : ℚ) : ℝ)
     (2 / 3 : ℝ) ≤ seedProbability M b
       (fun seeds => Good atoms 3 1 M family (1 / 8) (sampleArray atoms 3 b M atoms_normalized seeds)) := by
   exact chosen_good_probability atoms 3 1 family (1 / 8) atoms_normalized atoms_nonneg (by norm_num)
 
 theorem chosen_learning_example :
     let b := precision 3 (1 / 8)
-    let M := SamplingThreshold.learningSampleCount 1 (1 / 8)
+    let M := SamplingThreshold.learningSampleCount 1 ((1 / 8 : ℚ) : ℝ)
     (5 / 6 : ℝ) ≤ seedProbability M b
       (fun seeds => Good atoms 3 1 M family (1 / 8) (sampleArray atoms 3 b M atoms_normalized seeds)) := by
   exact chosen_learning_good_probability atoms 3 1 family (1 / 8) atoms_normalized atoms_nonneg (by norm_num)
@@ -40,12 +40,12 @@ theorem explicit_count_example :
   apply good_probability_of_threshold atoms 3 8 1 16384 family (1 / 8)
     atoms_normalized atoms_nonneg (by norm_num) (by norm_num)
   have h := SamplingThreshold.threshold_numeric_upper 1 (1 / 8) (by norm_num)
-  norm_num at h
+  norm_num at h ⊢
   linarith
 
 theorem zero_variable_example :
     let b := precision 3 (1 / 8)
-    let M := SamplingThreshold.sampleCount 0 (1 / 8)
+    let M := SamplingThreshold.sampleCount 0 ((1 / 8 : ℚ) : ℝ)
     (2 / 3 : ℝ) ≤ seedProbability M b
       (fun seeds => Good atoms 3 0 M (fun _ _ => true) (1 / 8)
         (sampleArray atoms 3 b M atoms_normalized seeds)) := by

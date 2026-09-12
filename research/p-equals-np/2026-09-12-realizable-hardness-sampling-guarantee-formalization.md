@@ -78,7 +78,8 @@ The exact sample counts use mathematical real log/ceil definitions.
 These semantic guarantees do not claim a machine computes their exact
 real comparisons. A separate computable-count layer can instantiate the
 general-M theorems after proving its natural/rational count exceeds the
-threshold. That layer is independently implemented and reviewed.
+threshold. That separate layer requires independent implementation and
+review; its main-green draft alone is not accepted complete validation.
 
 The rational precision definition is concrete, but no polynomial
 bit-operation bound, support enumeration algorithm, encoded array/tape
@@ -119,3 +120,42 @@ No cleanup or download is authorized or performed by this increment.
 Fresh independent proof-adversarial, complexity and non-claims review is
 required after final green. Only an authorized local candidate commit
 will be made; no push, publication or full-certification claim.
+
+### Resumed validation: failed first Checks retained
+
+After root independently verified recovered capacity, two immediate
+launches used an incorrect working directory (file not found, then unknown
+module prefix); neither checked this source. Correct repository-root
+launch 56767 terminated with exit 1. Three example applications timed out
+while comparing real rational literals with rational casts inside the
+analytic count, and the explicit-count example needed the same cast
+normalization. The 11 main profiles and three support profiles showed only
+the standard three axioms; the four failed examples showed `sorryAx` from
+elaboration failure and are explicitly rejected. This is not a green
+Checks export. The example types were corrected to match the exact rational
+casts, and the numeric example now normalizes the goal as well as its
+bound. No heartbeat limit was raised and no main theorem was edited.
+Corrected Checks validation remains pending; the compiler slot passed to
+the queued pipeline author after actual terminal exit.
+
+### Final successful author export
+
+After the queued pipeline author completed its exports and the count
+owner confirmed an authorized resource-stop terminal exit, corrected
+SamplingGuarantee Checks session **83651 exited zero** without warnings.
+All **18 profiles** printed exactly `propext`, `Classical.choice`,
+`Quot.sound`; none contained `sorryAx` or a custom theorem axiom. The
+unchanged main was already exported successfully in session **6278**.
+The exact same repository-root commands above were used, pinned 4.13.0,
+threads 1, cached dependencies, fresh capacity/native-process guards.
+No main proof was weakened to resolve the example elaboration issue.
+
+Final compiled working SHA256:
+
+- Main: `d051a6fdf0eaf06696838e266a340d4616bf4b37dd3594f2015bfbec1b139b76`.
+- Checks: `08effac99e531296d8361e56e4cadbf19b183d3a41a6a5fb77b7e9503f053b97`.
+
+These successful terminal results supersede the historical pending and
+failed draft statuses above. The candidate is now **author-build green**;
+fresh independent three-lens review remains required. No self-review,
+full-goal completion or public certification follows from this receipt.
