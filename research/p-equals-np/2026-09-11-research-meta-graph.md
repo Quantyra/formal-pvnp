@@ -1738,3 +1738,45 @@ experiment, optional extension, public repository edit or push is performed.
 The public-math receipt retains its reviewed working bytes; Git normalizes
 its CRLF line endings to LF. The table distinguishes those hashes; direct
 normalized-byte comparison passes. The scope receipt matches Git exactly.
+
+## S3124: published and publicly verified v1.0.0
+
+2026-09-12. Following the root publication decision and the user's focused
+conditional-publication authorization, the complete artifact was published:
+[release v1.0.0](https://github.com/Quantyra/realizable-cmmsa-hardness/releases/tag/v1.0.0).
+Public main and tag both resolve to candidate commit
+`c529ac8ee5a28f17775a47d94620678a9cd88532`. Release ID `387657901`;
+manuscript asset ID `559708663`. The published/downloaded manuscript is
+43,954 bytes with SHA256
+`30cf35ab44e16e32a7fbc70338b5c29558c1ac9f2601bacde5ac5e034ee64958`.
+Release body: 1,459 bytes, SHA256
+`bb301f46cc3d4ec03e6faf8a5bb6da946872cd3f0bcfbaf259f852a6807a1832`.
+
+Root independently verified public access using fresh unauthenticated
+requests without Authorization or cookies: all seven files on main and
+all seven on v1.0.0 returned HTTP 200 and matched the reviewed candidate,
+as did the refs, About description, release page/body and downloaded
+manuscript asset. The release is neither a draft nor a prerelease.
+Verification completed at 2026-09-12T18:06:28.928166+00:00. This source
+append records the inspected root receipt rather than claiming a second
+independent network verification by this integration agent.
+
+Machine-readable root evidence:
+`C:/Users/Dan/Desktop/Projects/IGH/Quantyra-Planning/docs/research/pvnp/realizable-hardness-public-verification-2026-09-12.json`.
+Receipt SHA256 `733c060ca2891088b6131b8b50aa5a85d8e72159cd1335f0aadf3afeca6f8d57`.
+
+The published statement remains randomized polynomial-time many-one
+NP-hardness of realizable weighted CMMSA for every sufficiently large
+fixed leaf bound L, with sigma_L=L^(1-o(1)), gamma_L=o(1), and epsilon=0
+on successful reduction outputs. Its fixed-advice learning corollary
+retains HN's transfer and overhead. The polynomial exponent may depend
+on L; no growing-parameter guarantee is asserted. Earlier realizable
+hardness and imported theorem contracts are credited. Reviews are informal
+AI work, not human peer review, Lean verification or novelty certification.
+No P-versus-NP resolution or one-way-function construction is claimed.
+
+The focused research evaluation and publication task is complete, subject
+to root's remaining planning closeout. No automatic extension, further
+experiment, DOI/profile update, outreach or new research lane is triggered.
+This local integration appends only this graph receipt, preserves the
+proof/review files and prior graph bytes, and performs no push.
