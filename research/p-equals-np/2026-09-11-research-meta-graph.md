@@ -564,3 +564,38 @@ result, SAT runtime lower bound, circuit lower bound, or P-versus-NP
 conclusion is claimed. The broader research goal remains ACTIVE and
 unresolved. This graph-only receipt commit changes no mathematical source
 or public artifact and is local, with no push, outreach or paid computation.
+
+
+## S3105: unrestricted whole-certificate compression selection NONE
+
+The [compression intake](2026-09-12-bamboo-compression-intake.md),
+[independent selection audit](2026-09-12-bamboo-compression-selection-review.md),
+and [nonclaims GO](2026-09-12-bamboo-compression-nonclaims.md) record
+**NONE** for a superpolynomial lower-bound continuation on the same
+simple-bamboo family when both equality multipliers and square roots
+are unrestricted rational/real arithmetic circuits. Existing Boolean
+inversion proofs, the exact prefix-clause applicability mapping and
+Hilbert-like EF-to-IPS simulation supply a polynomial circuit upper-bound
+route, already with no square terms. This is source-specific applicability
+of known results, not a new upper-bound theorem or implemented generator.
+
+The transfer goes through Boolean proofs of GF(2) matrix statements and
+rational arithmetization; it does not transport field operations from
+GF(2) to R. Circuit proof size is not expanded monomial count. The published
+v3 explicit size bound remains unchanged. Shared versus separate multiplier
+circuits differ by at most a polynomial factor here; coefficient-bit costs,
+deterministic verification and arbitrary proof discovery remain separate.
+
+The older general-IPS conversion caveat is not a surviving obstacle: the
+direct Hilbert-like simulation suffices, and the author additionally cites
+the later circuit linearization result under its small-axiom conditions.
+Roots-only compression with sparse multipliers and restricted circuit
+classes are different models not settled or selected by this intake. No
+artificial successor, experiment suite, theorem or public release is opened.
+
+This is a completed candidate-selection veto with independent AI-agent
+applicability and scope review, not novelty certification or human/formal
+verification. It yields no general SAT algorithm, circuit lower bound or
+P-versus-NP conclusion. The broader research objective remains ACTIVE and
+unresolved. This four-file intake/graph integration is local; no mathematical
+source, public artifact, push, outreach or paid computation is involved.
