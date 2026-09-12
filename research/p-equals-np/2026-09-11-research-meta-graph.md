@@ -1,6 +1,6 @@
 ﻿# Research meta-graph: evidence, transformations and open transitions
 
-2026-09-11; S3068 user-directed addition, updated through S3075. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
+2026-09-11; S3068 user-directed addition, updated through S3076. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
 
 ```mermaid
 flowchart TD
@@ -20,7 +20,8 @@ flowchart TD
   CLAW[Dyadic colored threshold claw]
   QQUERY[Bounded-error quantum price query]
   QRAG[Fast search with addressed quantum-memory gates]
-  GATE[Ordinary-gate advantage not established]
+  GATE[Historical direct-scan gate bound]
+  ORDINARY[Explicit ordinary-gate weighted claw search]
   LOCAL[Capped maximum-overlap growth]
   ROOT[Rooted Kikuchi operator and defect data]
   WALK[Labeled signed killed walk]
@@ -49,7 +50,9 @@ flowchart TD
   CLAW -->|V23: bounded-error query search| QQUERY
   CLAW -->|V24: explicit QRAG model| QRAG
   QQUERY -->|V25: amplified calls and exact checks| PACK
-  QRAG -. U7: cheaper ordinary-gate implementation unknown .-> GATE
+  QRAG -. U7: historical scan limitation .-> GATE
+  CLAW -->|V26: dummy buckets plus heavy-pair search| ORDINARY
+  ORDINARY -->|V27: amplified pricing and exact checks| PACK
   HALFLIST -->|V18: exact rational price query| PRICE
   PRICE -->|V19: polynomial-call rational packing| PACK
   PACK -->|V20: exact loads and robust-margin verification| ODD
@@ -182,3 +185,16 @@ The [ordinary-gate selection audit](2026-09-11-quantum-gate-selection.md) identi
 Output hashing preserves equal-key fibers. Canonical descriptions and unique invalid tags might remove encoding artifacts, but do not establish the required semantic multiplicities, retained optimal claw, random-iteration law or charged preparation. A random original formula is not automatically a random function on generated indices. The proposed transfer obligation is recorded in the audit, with no algorithm gain assumed.
 
 U7 therefore remains open. No new verified transformation or theorem is added; the existing query/QRAG result is unchanged. [Independent source/scope review](2026-09-11-quantum-gate-review.md) is GO for this selection, the main note and this ledger update. No novelty, strongest-algorithm claim, implementation or goal completion follows from the selection.
+
+## S3076 update: U7 discharged in the ordinary active-gate model
+
+The [golden-transfer derivation](2026-09-11-golden-transfer.md) provides an explicit alternative to the old addressed-memory implementation. The previous U7 scan bound remains true for that implementation; its general access obligation is now discharged by V26-V27 in the stated theoretical model. Mathematical proof and complexity reviews are GO; [final independent non-claims inspection](2026-09-11-golden-transfer-nonclaims-review.md) is GO for this main/ledger update.
+
+| Edge | Guarantee and conditions |
+|---|---|
+| V26 | On arbitrary fixed weighted colored keys, heavy useful fibers supply enough exact cross pairs for bounded pair search. For light useful fibers, pairwise key hashing and a deterministic dummy reservoir give a sufficiently small target bucket with constant seed probability and a density floor for every bucket. Fixed-point preparation, a product-tuple heat-bath walk, linear coordinate swaps and reversible sorting charge all ordinary gates. No random-function oracle, cheap QRAM, injectivity or independent-key premise is used. |
+| V27 | Bounded-error threshold search costs N^(6/7) times polynomial factors in ordinary active gates, with N^(2/7) times polynomial quantum space. Polynomial adaptive pricing calls have a combined error budget and fresh explicit seeds. Exact original-clause, load, mass and spectral verification prevents false refutations even when search fails. |
+
+At the same FKO support cap, the gate upper logarithmic leading term is (6/35)k log n and the quantum-space term is (2/35)k log n. The previously established robust-witness distributional application and its exceptions remain explicit; this is not a worst-case polynomial SAT algorithm. Active gates count idle memory as free: no physical, fault-tolerant or depth-width advantage is inferred.
+
+SAC 2020 Section 3.5 already supplies the prefix architecture and N^(6/7) exponent. This increment derives a transfer for the indexed arbitrary-fiber query and charges its implementation; novelty and fastest status are unverified. The predecessor-based route itself is not proved, and this result does not provide the unresolved negative-return distributions of U4/U5. It introduces no publication, experiment or claim of completing the continuing goal.
