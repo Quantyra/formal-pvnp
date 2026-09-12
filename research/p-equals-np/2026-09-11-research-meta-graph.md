@@ -739,3 +739,82 @@ SAT runtime, circuit lower-bound or P-versus-NP claim is made. The broader
 research objective remains ACTIVE and unresolved. This four-file local
 audit/graph integration includes no theorem/public edit, push, experiment,
 outreach or paid computation.
+
+## S3109: arbitrary-output positivity and explicit-size extension
+
+The [complete informal proof](2026-09-12-bamboo-output-uniformity.md)
+extends the fixed-parameter statement to every Boolean output matrix A.
+For q even>=1024, m=q^2, N=8q+4, D=floor(q/(32 log_2 q)), B=2D,
+the unchanged restricted prime functional R_A is nonnegative on squares
+whose root monomials each use at most B typed labels. There is no bound
+on ordinary degree or on the total labels across the root polynomial.
+Its ordinary root-degree-D consequence is weaker. Supported affine
+extension counts, actual augmented pairing ranks, all probability
+normalizations and arbitrary output signs are explicitly checked.
+
+For the unrestricted simple-bamboo clause-falsification encoding over R,
+with Boolean equations and the stated optional twins, every identity
+`sum_i f_i g_i + sum_j h_j^2 = -1` has explicit monomial size
+`S=sum_i ||f_i||||g_i||+sum_j ||h_j|| >= (8/7)^((2D-1)/2)`.
+Roots are counted before squaring, monomials before Boolean reduction,
+and repeated occurrences separately. No degree bound or coefficient-bit
+charge is imposed. The exponent is Omega(N/log N), not Omega(N).
+The source restriction preserves A and m and the proof annihilates
+images of original clauses locally; it does not import an SA-to-SoS
+ideal simulation. For rank_F2(A)<=N the original encoding is satisfiable
+and its refutation bound is vacuous; for rank(A)>N it is nonvacuous.
+
+| Review lens | Final result and exact artifact |
+|---|---|
+| Source/model and complexity | [GO](2026-09-12-bamboo-output-source-review.md), arbitrary-A source contract and separately stated generator implication |
+| Initial independent mathematics | [PASS](2026-09-12-bamboo-output-proof-review.md), actual complete author proof |
+| Fresh independent mathematics | [PASS](2026-09-12-bamboo-output-fresh-review.md), proof plus explicit conditional generator derivation |
+| Nonclaims and scientific readiness | [Internal GO](2026-09-12-bamboo-output-nonclaims-review.md); future public preparation remains REVISE, not publication authorization |
+
+The frozen author SHA256 is
+`CADA42936367F0F238BEE5EEEAB873BB9535EE463C1C8F5EA85D5A566170A7D9`.
+Review pins respectively are
+`F95B9530A6ADBC50430003E8331691BD302F9347A17F3A052152B19936CE60F2`,
+`9534EDF20A3922DE61997A1E053E9707DFBD1B472F579C72CF86364C64EB65F2`,
+`9E1AE507443B72D008D91FE86EEBCE858DDEA9E112E0963DECE84B83AF14BFC5`,
+and `7AD4490421005C8169E450BACF4F1B514A923395D4A0BEC30763CABB95DD66E7`.
+No mathematical repair was requested in those actual-file reviews.
+
+### Separately reviewed fixed-parameter generator corollary
+
+With the all-output theorem reviewed, the source review's conditional
+derivation now gives the following internal corollary. Define the indexed
+map G_q(X,Y)=XY over F_2 with X of shape m-by-N and Y of shape N-by-m.
+Its seed length is s_q=2mN=16q^3+8q^2 and output length t_q=m^2=q^4,
+so t_q=Theta(s_q^(4/3)). It is uniformly constructible and evaluable
+using O(q^5) Boolean operations. Prefix variables are uniquely determined
+existential encoding witnesses, not seed or output bits. The oddness
+boundary used inside the proof does not constrain the original map.
+
+Use exactly the simple-bamboo inversion CNF, with 2mN+m^2N variables,
+(6N-2)m^2 clauses and width at most four before optional twins/Boolean
+equations. Binary description length is O(q^5 log q). Its nonrange
+outputs are exactly rank_F2(A)>N. Every such output requires the explicit
+SoS size above, equivalently
+`exp(Omega(s_q^(1/3)/log s_q)) = exp(Omega(t_q^(1/4)/log t_q))`.
+This is an indexed, encoding-specific proof-complexity generator
+corollary, separately assessed in the source and fresh mathematical
+reviews; it is not a new public generator announcement.
+
+Range membership and preimage recovery remain polynomial-time by rank
+testing and factorization. No computational pseudorandomness, inversion
+hardness, general SAT runtime, unrestricted circuit-certificate lower
+bound, other encoding, arbitrary-m theorem, all-length padding,
+amplification, iteration, nearly quadratic stretch, function-generator
+claim or P-versus-NP conclusion follows. Known compressed-certificate
+upper bounds remain compatible. The new source-relative increment is
+output uniformity, not a better exponent or newly invented restriction.
+Novelty and priority remain unknown; all reviews are informal AI work,
+not human peer review or Lean verification.
+
+The public v3.0.0 artifact at 613ceb80a6211097cd8e353c47ad79ba3069ecb5
+remains identity-output in its statement. A public addendum requires its
+own exact extraction, metadata, claim packet and publication decision.
+This six-file integration is local only; no public/planning edit, push,
+experiment, outreach or paid computation is included. The broader
+research objective remains ACTIVE and unresolved.
