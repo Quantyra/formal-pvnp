@@ -24,7 +24,7 @@ The bridge enables concentration transfer, but this module does not yet instanti
 
 Pinned Lean 4.13.0 with cached imports; no dependency build or toolchain change. Actual main export session 78629 exited zero without warnings after repairing initial Unicode transport and local cast-normalization errors. Those failed runs are not verification evidence. Final Checks export session 46802 exited zero without warnings and printed 11 profiles, each exactly [propext, Classical.choice, Quot.sound]. No sorryAx, custom axiom or native-evaluation dependency remains.
 
-Fresh independent proof-adversarial, complexity and non-claims review is required before bounded closeout. Own only JointSamplingLaw.lean, JointSamplingLawChecks.lean and this receipt.
+Fresh root-routed proof-adversarial, complexity and non-claims reviews are complete below. This accepts the bounded joint-law increment; full sampling composition and S3126 remain open. The implementation owns only JointSamplingLaw.lean, JointSamplingLawChecks.lean and this receipt.
 
 
 Exact commands:
@@ -46,6 +46,23 @@ The concrete distribution has masses (1/2,1/2,0) and uses one-bit blocks. The no
 | Lens | Status |
 |---|---|
 | Author scoped exports and 11 profiles | GO |
-| Independent proof-adversarial | Pending root routing |
-| Independent complexity | Pending root routing |
-| Independent non-claims | Pending root routing |
+| Independent proof-adversarial | GO; [review](2026-09-12-realizable-hardness-joint-sampling-law-proof-review.md); independent sequential exports 77333/19467 both exit 0, all 11 profiles standard |
+| Independent complexity | GO-WITH-NOTES; [review](2026-09-12-realizable-hardness-joint-sampling-law-complexity-review.md); actual joint law, encoding/runtime and final composition remain |
+| Independent non-claims | GO; [review](2026-09-12-realizable-hardness-joint-sampling-law-nonclaims-review.md); claims match exact finite pushforward |
+
+## Frozen source and newline identity at review integration
+
+All three lenses reviewed candidate `3538058a63c08de4ed1f1304fc8353cd991bd471`.
+Both source files remain unchanged. Independent reviews verified that CRLF-to-LF
+normalization of the compiled working bytes equals each committed Git blob:
+
+| Module | Git LF SHA256 | Compiled working CRLF SHA256 |
+|---|---|---|
+| JointSamplingLaw.lean | `3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45` | `9fa34f18df84710816148738fb8c553e05207ff48524b0db3866d490e5a9e32f` |
+| JointSamplingLawChecks.lean | `c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644` | `f0147de48192b3748b723978ecb4ec71ed98bdbe76403192807fa5a075039829` |
+
+No source rebuild or source edit was needed for this documentation integration.
+The next bridge must instantiate original-distribution mean approximation,
+the actual bit-array concentration event and both confidence thresholds, then
+compose list YES/NO promises with repair and rounding. Encoded runtime and
+the complete upstream/downstream hardness dependencies remain separate.
