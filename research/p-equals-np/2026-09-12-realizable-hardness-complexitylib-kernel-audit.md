@@ -1,7 +1,7 @@
 # S3129 Complexitylib kernel audit: setup checkpoint
 
 2026-09-12; S3129 / S3126 / E004 / S008.
-**Kernel status: BLOCKED by disk capacity; no target axiom profiles obtained.
+**Kernel status: RESUMED after observed capacity restoration; no target axiom profiles obtained yet.
 S3129 is not complete.** Root requested this
 setup increment and handoff while the first 4.13 repair build occupies CPU.
 No successful theorem build or kernel axiom profile is claimed below.
@@ -225,3 +225,39 @@ three axiom profiles above. A successful cache utility compilation and
 source-semantic inspection cannot substitute for these target results.
 The manuscript's advanced MZ interfaces, randomized promise-reduction
 bridge and learning transfer remain independent open obligations.
+
+## Observed capacity restoration and resumption
+
+After root reported newly available capacity, independent read-only
+inspection measured C: free space of 13,741,813,760 bytes. The cause of the
+capacity change was not observed; this reviewer performed no cleanup and
+does not attribute it to the rejected commands. Root authorized resumption
+on this actual restored state. Historical failure and rejection receipts
+above are retained.
+
+Resumed the same 85 dependency-root cache command in the existing pinned
+Temp checkout with `LEAN_NUM_THREADS=4`, without repeating setup. Current
+handle was 56537. Log: `S3129-complexitylib-cache-resumed.log` in Temp.
+
+This resumed cache command completed with **exit 0**. Literal final output:
+
+```text
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Decompressing 1802 already-cached file(s) (1732 already decompressed)
+No files to download
+Decompressed 1802 already-cached file(s)
+Completed successfully in 110598 ms!
+```
+
+Thus all 3,534 selected dependency artifacts were accounted for on the
+successful retry. Before compilation, a fresh capacity measurement showed
+10,862,567,424 bytes free on C:. Started the exact scoped command:
+
+```text
+elan run leanprover/lean4:v4.34.0-rc2 lake build --wfail Complexitylib.Classes.PCP Complexitylib.SAT.CookLevin.Assembly
+```
+
+`LEAN_NUM_THREADS=4`; current build session 76229, log
+`S3129-complexitylib-target-build.log` in Temp. The build is still running;
+target success and axiom profiles are not yet claimed.
