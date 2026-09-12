@@ -1,0 +1,39 @@
+# Adaptive FKO discovery: existing policy and remaining guarantee
+
+2026-09-11; S3065. Research source consultation under [INTEGRITY-CLAIMS](../../INTEGRITY-CLAIMS.md). Reuse the [S3064 exact contract](2026-09-11-fko-discovery-sources.md): m=ceil(C n^(7/5)), three distinct variables per clause, independent uniform signed clauses, capacity-normalized tuple weight W>(I+n L)/2 with certified L>=lambda_max. No experiment, implementation or novelty claim.
+
+## Closest implemented policy
+
+Wu, Zhou, Alava, Aurell and Orponen Section IV.3 start from an unused clause, repeatedly select a boundary clause maximizing overlap with the current system's variables, randomize ties, and test XOR consistency. At first inconsistency they greedily test clause removals, keeping an inconsistent core and returning removed clauses to availability. The S=1 policy retains disjoint cores; it stops when their count exceeds the spectral bound or growth fails. S=2 and S=4 permit reuse. Figure 7 reports fitted density exponents .589, .582, .577, respectively; the authors explicitly lack an analytic argument for the exponent. These are empirical outcomes, not asymptotic guarantees at density C n^.4. Their conclusion already proposes weighting cores and optimizing loads. [Wu et al., Section IV.3, Figure 7 and conclusion](https://arxiv.org/html/1303.2413).
+
+Careful reconstruction must reserve the seed as used: the printed initialization does not explicitly insert it into U, although the stated disjointness requires this. The overlap-S variants are described less completely than S=1; do not present a locally chosen capacity rule as their fully specified algorithm. A single first inconsistent subsystem has XOR minimum energy one; this does not guarantee a minimum-cardinality core after pruning.
+
+## What the present modification changes
+
+The final author policy retains overlap with **all exposed variables**. Its modification is to stop at the first coefficient dependency, capacity-charge each distinct unsigned tuple, and postpone sign tests until the unsigned construction is finished. This distinguishes it from Wu's sign-dependent XOR-inconsistency stopping. The earlier considered odd-degree-boundary walk is not selected. No short-return or sufficient-coverage theorem for the final modification was found here. Conditional on the completed sign-independent construction, parity analysis can be separate; that does not make the adaptive support exploration fresh or uniform.
+
+Graph cycles, hypergraph 2-cores and parity dependencies are distinct. Leaf removal is a valid simplification for searching dependencies, but minimum degree two does not assert even degree everywhere or odd sign parity. Rank deficiency guarantees some incidence dependency; it does not bound its support or clause price. Finding one dependency does not establish the lower bound on all-assignment XOR failures needed for FKO. These are elementary scope distinctions, not new lower bounds.
+
+**Incidence first, signs later is already FKO's architecture.** Section 3.4 first constructs unsigned even-tuple collections, then filters by inconsistency. Corollary 3.5 uses random polarities and a symmetry argument, with amplification by the stated concentration argument. A conditional pairwise-independence proof for distinct incidence vectors under independent signs is an elementary refinement for our exact model, not a new discovery mechanism or an algorithm to construct the family. [FKO, Section 3.4 and Corollary 3.5](https://www.microsoft.com/en-us/research/wp-content/uploads/2017/03/unsat.pdf).
+
+## Current even-cover results: stronger existence, not this finder
+
+The current v2 (submitted 17 July 2026) of Bandeira, Kunisky, Nizic-Nikolac, Pesenti and Wang proves the full hypergraph Moore bound for every arity k>=3: m>=c_k n(n/rho)^(k/2-1) forces an even cover of size O_k(rho log n). The initial even-only title/abstract still appears in some search results; the current theorem includes odd arity. Its Kikuchi ball-growth proof uses a lifted graph with binom(n,ell) vertices, not one greedy path on the original variables. At arity three and m=C n^1.4, rho of order n^.2 gives an O(n^.2 log n) existence bound. It neither establishes odd-sign parity nor the required capacity packing. [July 2026 preprint, Theorem 1.2 and Sections 2-3](https://arxiv.org/pdf/2607.14068v2).
+
+Thus simply substituting this bound for a finder leaves both an algorithmic gap and a logarithmic mismatch with the desired O(n^.2) tuple scale. This is a limitation of that substitution, not a lower bound on possible finders. The full original random-FKO existence result remains stronger for the particular signed packing target.
+
+## Current spectral algorithm comparison
+
+Schmidhuber and Hastings' v1 (submitted 31 July 2026) preprint Theorem 2.5 states a sharp Kikuchi refuter at m>=C_(k,delta) n^(k/2)/(epsilon^2 ell^(k/2-1)). Arity and epsilon are fixed; for odd k, k-1<=ell<=n/3 and ell log n<=n^(1-delta). The certificate is pointwise sound; success is with probability 1-o(1) over the fixed-sample null model and internal randomness. Odd arity uses randomized rooting. For polynomial m, exact certified evaluation costs n^O_k(ell) bit operations and yields a degree-O_k(ell) SoS proof. [Theorem 2.5, range (2.3), Figure 3](https://arxiv.org/pdf/2607.29672v1).
+
+This updates the older RRS/GKM general-refuter comparison recorded in S3064, without changing its historical source note: the new theorem removes density polylogarithmic losses. Choose ell=A n^.2 with a sufficiently large fixed A to meet the literal m=C n^1.4 threshold for fixed epsilon; its range condition holds for an appropriate fixed delta<4/5. At k=3 and ell=Theta(n^.2), the stated cost remains 2^O(n^.2 log n). It is not polynomial discovery, a short-tuple output theorem, or a guarantee for the author's greedy policy. Its trace-walk/excess analysis is a substantive adjacent tool, but transferring it to one adaptive trajectory requires proof. Preprint theorem statements and relevant definitions were checked; their full proofs were not independently certified here.
+
+## Concrete missing step
+
+To obtain an advance, prove that the specified adaptive procedure finds enough distinct short odd dependencies, in its declared total work, to produce a verified normalized packing above the actual numerical threshold. Charge scans, ties, restarts, failed closures, parity checks, capacity updates and repeated elimination. A polynomial number of cheap unsuccessful trajectories is not sufficient.
+
+Expose the random information explicitly. After inspecting support neighborhoods, unused clauses are not automatically fresh uniform clauses. Postponing all sign tests protects the sign-independent construction contract. If a later variant reacts to parity outcomes, overlapping tests reveal linear information about later signs; repeated one-half claims then require justification. Capacity depletion still changes the unsigned search distribution. Neither an independent-residual assumption nor a weighted sparse-dependency oracle is available for free.
+
+Disposition: the modification has a concrete mathematical obligation, not an established improvement. No source recovered here closes its adaptive short-return and packing gap. Do not replace that gap by another demonstration of Gaussian elimination, core pruning or LP packing. No general SAT complexity or publication conclusion is implied.
+
+Version audit: both cited 2026 versions precede the 2026-09-11 checkpoint, as verified against their arXiv submission histories. The Moore theorem is a statement for a simple k-uniform hypergraph on n vertices with m edges; repeated clause supports require explicit handling rather than silent identification with that input. No full-proof endorsement or automatic transfer to the adaptive finder is made.
