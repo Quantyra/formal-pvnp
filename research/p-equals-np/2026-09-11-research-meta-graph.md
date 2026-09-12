@@ -643,3 +643,52 @@ These are AI-agent selection records, not new theorems, novelty or human/
 formal verification. The broader research objective remains ACTIVE and
 unresolved. This four-file intake/graph closeout is local; it changes no
 domain theorem or public artifact and includes no push, outreach or spend.
+
+
+## S3107: exact carry-transition designs, force selection NONE
+
+The [cofactor design](2026-09-12-carry-transition-design.md) and
+[independent exchange-box design with reciprocal challenge](2026-09-12-carry-transition-independent.md)
+now specify exact transitions, unlike S3106's missing selective rule.
+The [final nonclaims GO](2026-09-12-carry-transition-nonclaims.md) records
+the root's NONE decision for a new frontier force campaign after both
+actual cross-challenges. This is a completed constructive-design screen,
+not a new theorem, implementation or publication.
+
+The first operation fuses next-bit residue refinement into a fixed-order
+ROBDD traversal keyed by cut, old cofactor and prefix residue. Its audited
+two-lift accounting gives at most twice the old nonzero cofactor width;
+iteration permits exponential size. Exact terminal congruence, witnesses,
+skipped variables and deterministic bit/dictionary costs are specified.
+The known canonical-cofactor compilation supplies no additional contraction
+operation, so no duplicate symbolic-frontier campaign is selected.
+
+The second operation uses disjoint original-item option blocks, exact
+complete-sequence progression certificates and a deterministic central
+pair plus two exceptional singleton choices. The actual challenge
+identifies the sum/difference or ordinary branching backbone, without
+claiming identical published saturation scoring or global search-order
+simulation. Both exceptions delete two unsaturated differences and retain
+the parent's maximum absorbed count: `u_exception=u_parent-2` before
+target pruning or terminals. When both exceptions survive nonterminally,
+their one-step load is `2/lambda^2`, preventing strict contraction for
+`lambda<=sqrt(2)` from central absorption alone. This is only a local
+potential diagnostic, not an algorithm runtime lower bound. Larger-lambda
+gains, target pruning, small initial u and multilevel credits are not
+excluded; no hard-family survival argument was supplied.
+
+The final author snapshot is SHA256
+`36C93F665723C35E39AC3E95259F373432C352B4E4D8FB79A21CD2FFB7BF0C6D`,
+with the independent final reread recorded. NONE reflects the established
+compilation/differencing machinery and no additional specified exception-
+pruning or multilevel mechanism for the intended frontier gain. A concrete
+speculative new rule with an unproved invariant remains eligible; lack of
+a proved favorable bound alone is not the rejection criterion.
+
+Existential membership and recoverable witnesses are distinguished from
+counting and short NO certificates. Polynomial local bit-cost does not
+bound diagram or search-tree size. No global lower bound, all-solver
+hardness, novelty, human/formal verification or P-versus-NP result follows.
+The broader research objective remains ACTIVE and unresolved. No automatic
+successor is selected. This four-file design/graph integration is local,
+with no domain theorem/public edit, push, experiment, outreach or spend.
