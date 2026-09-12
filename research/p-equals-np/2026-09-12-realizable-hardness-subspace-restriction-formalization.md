@@ -1,0 +1,96 @@
+# Arbitrary-subspace representation: source draft
+
+2026-09-12; S3126/S3133. **UNCOMPILED; no author or independent proof
+acceptance.** This draft discharges the intended representation interface
+in source only. No Lean or Lake command has run for these files; their
+proof scripts may still require elaboration corrections.
+
+## Scope and sources
+
+The accepted `TripleRestrictionRank` candidate is
+`4021e7cdff5e41152c07000a3e2e0135c2e181d0`, with independent three-lens
+integration `20039749e65dcb0eb719fed130aa9860bce855ea`. All three dated
+triple-review receipts identify arbitrary W representation as a remaining
+interface. This draft implements that interface, using the local S3133
+story and full-goal dependency ledger. Destination integrity source remains
+`INTEGRITY-CLAIMS.md`; no destination `AGENTS.md` exists.
+
+Only these three new files are owned by this increment. The accepted triple
+source, companion package, manuscript, and other modules are unchanged.
+
+- `lean/PvNP/RealizableHardness/SubspaceRestriction.lean`: 6010 UTF-8 bytes,
+  126 lines, SHA256
+  `739b42dcce0d8a385a8c6a25d1086e1d000fb1432df465571c05636291bef2c1`.
+- `lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean`: 3109 UTF-8
+  bytes, 73 lines, SHA256
+  `757724d6c4f0b7ea1a94a4c1e2dea487d4848184de2c1817a65d5f56956e7f68`.
+
+Both are LF files, with actual mathematical Unicode preserved (45 and 32
+non-ASCII characters respectively). Neither contains a literal question
+mark or a forbidden proof construct in the static scan. These facts are
+source hygiene, not proof verification.
+
+## Concrete representation, rather than an assumed interface
+
+For arbitrary `W : Submodule (ZMod 2) (Vector J)`, `codim W` is defined as
+the actual natural-number difference between the ambient and W finranks.
+
+1. `annihilator_finrank` derives the dimension of W's actual dual annihilator
+   from the dual-of-quotient equivalence, dual dimension, and quotient
+   rank-nullity. The number of rows is therefore proved to be `codim W`.
+2. `annihilatorBasis` uses `Module.finBasisOfFinrankEq` on that proved
+   equality. The associated finite-coordinate equivalence enumerates the
+   full annihilator, not a chosen subset assumed to span it.
+3. `coordinateDual` is the standard coordinate-basis dual equivalence.
+   `coordinateDual_apply` identifies its application with the exact dot
+   pairing used by `TripleRestrictionRank.evaluate`, through equality on
+   every coordinate basis vector.
+4. `definingForms W` composes the annihilator coordinate equivalence, actual
+   submodule inclusion, and inverse coordinate-dual equivalence. Its type
+   is exactly `Coeff (codim W) ->linear Vector J`.
+5. `definingForms_full` proves injectivity by composing actual injections.
+   `definingForms_kernel` proves the ambient common-zero subspace is W:
+   every annihilator form is represented, and vanishing of every annihilator
+   form characterizes membership in W. No existence, injectivity, or kernel
+   identity is supplied as a hypothesis or structure field.
+
+`exists_independent_defining_forms` exposes the completed intended
+representation assertion as an existence theorem. It is noncomputable
+mathematical basis choice, not an executable representation algorithm.
+
+## Intended final probability statement
+
+`codimInRetained W d` is the actual dimension difference inside the selected
+coordinate subspace V, with W intersect V represented by comap along V's
+subtype. `represented_codim` identifies this event with the accepted triple
+module's numeric intersection-codimension event.
+
+`arbitrary_subspace_failure_probability` consequently states, for each
+fixed arbitrary W and rational `0 <= beta <= 1`,
+
+`Pr[codimInRetained W d != codim W] <= (2^(codim W)-1)*beta`.
+
+It consumes the actual normalized unconditional triple-deletion law. W is
+fixed before the draw. The theorem does not take an unproved representation
+contract and does not replace numeric codimension with only row-rank failure.
+
+## Boundary checks and remaining work
+
+The Checks source includes top and bottom W, J=0 with arbitrary W,
+representation equality at J=0, zero failure mass for top W, and a genuine
+coordinate hyperplane in one triple. The coordinate evaluation is explicitly
+surjective; rank-nullity derives hyperplane codimension one. Its representation
+and beta=0 and beta=1/2 probability consequences are included. Thirteen
+`#print axioms` commands are prepared; no outputs exist yet.
+
+First required gate: explicit root compiler grant, then actual main/Checks
+exports with standard axiom profiles, fixing any errors without weakening
+arbitrary W representation or numeric codimension. Three fresh independent
+review lenses are required after author verification.
+
+Even successful verification would not supply a posterior law, incidence
+likelihood ratio, tail cutoff, conditional independence, simultaneous success
+over all W, Gaussian-binomial counts, Grassmann/covering/decoder theorem,
+machine runtime, full hardness or learning theorem, or publication readiness.
+For W(Q), Q must first be fixed and the actual posterior transfer still
+applied separately. No new novelty or public-release claim is made.
