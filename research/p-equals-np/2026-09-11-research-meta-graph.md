@@ -430,3 +430,45 @@ algorithm, general proof-system result, circuit lower bound or P-versus-NP
 conclusion follows. The broader objective remains ACTIVE and unresolved.
 The authorized scoped commit is local; no push, release, publication, outreach
 or paid computation is part of S3101 closeout.
+
+## S3102: exact degree addendum published as v2.1.0
+
+The S3101 public-readiness REVISE entry above is a historical checkpoint.
+On 12 September 2026 the reviewed addendum was published as
+[v2.1.0](https://github.com/Quantyra/weak-rank-positivity-window/releases/tag/v2.1.0),
+exact public commit
+`8d22bf56cbe3f81278b436ca10840cbed0d23d63`. Its underlying
+[consequence](2026-09-12-positivity-complexity-consequence.md) is frozen at
+formal-pvnp commit `918e90fd9117b6689c068bac0148e8556149f454`.
+The actual-public-extraction [proof PASS](2026-09-12-degree-addendum-public-proof-review.md)
+and [source/nonclaims/readiness GO](2026-09-12-degree-addendum-public-nonclaims-review.md)
+are frozen at `ba6c15c524bac2bc2eb3c3f871030599227cc9aa`.
+The exact claim packet and PUBLISH decision are recorded in planning commit
+`63ee631` before release.
+
+The initial reviewed candidate was `58e4f7db22e5746722f83e4846e51c5773875f0e`.
+The final public commit removes exactly one trailing LF from COROLLARY.md;
+an exact-byte comparison confirmed that its entire mathematical body and all
+other file blobs were unchanged. Source/nonclaims GO was explicitly extended
+to the final commit, and the complete v2-to-candidate whitespace check passed.
+The historical review-snapshot hashes remain accurate records of their
+inspected bytes. FULL-NOTE.md, NOTE.md and LICENSE remain preserved.
+
+The root verified the live public release, and the publisher verified the
+unauthenticated public bytes. Received receipt: GitHub release ID `387561474`,
+asset ID `559217804`; COROLLARY.md is 11,312 bytes with SHA256
+`a457b90f785938d8c9edd92b6259d4c019c764b888b9144818d97fa8023700c5`.
+These are received publication-verification records, not a new live-service
+verification or mathematical audit by the graph integrator.
+
+The published addition is exactly no raw SoS certificate degree at most 2D+1,
+hence minimum degree at least 2D+2, for the specified restricted simple bamboo
+Boolean encoding, with even n>=1024, m=n^2, A=I_m and
+D=floor(n/(32 log_2 n)), plus the two explicit degree-preserving simple-encoding
+transfers. This is a standard consequence of the preserved full PSD theorem.
+It supplies no SoS size lower bound, general solver or runtime result,
+general proof-system bound, circuit lower bound, P-versus-NP conclusion,
+novelty certification, Lean verification or human peer review. The broader
+user research goal remains ACTIVE and unresolved. This graph-only receipt
+update changes no mathematical source and its own scoped commit is local,
+with no push, outreach or paid computation.
