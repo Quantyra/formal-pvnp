@@ -1,7 +1,7 @@
 # Finite rational weight rounding: formal increment
 
 2026-09-12; S3130, child of the active S3126 full-formalization goal.
-Implementation candidate; fresh independent three-lens review remains pending.
+Bounded rounding increment reviewed; full S3130 sampling and S3126 remain open.
 
 ## Source and ownership
 
@@ -126,9 +126,9 @@ Final compiled source SHA256 pins:
 |---|---|
 | Main source kernel elaboration | GO |
 | Final scoped examples/axiom audit | GO; six examples and 25 standard-foundation-only profiles |
-| Proof-adversarial | Pending fresh root-routed review |
-| Complexity | Pending fresh root-routed review |
-| Non-claims | Pending fresh root-routed review |
+| Proof-adversarial | GO; [independent proof review](2026-09-12-realizable-hardness-weight-rounding-proof-review.md), including fresh sequential exports and all 25 observed standard-foundation-only profiles |
+| Complexity | GO-WITH-NOTES; [independent complexity review](2026-09-12-realizable-hardness-weight-rounding-complexity-review.md) |
+| Non-claims | GO-WITH-NOTES; [independent non-claims review](2026-09-12-realizable-hardness-weight-rounding-nonclaims-review.md) |
 
 This is a finite mathematical rounding increment, not an encoded
 polynomial-time reduction or a full hardness certification. No machine
@@ -138,3 +138,39 @@ has been certified here. The concrete polynomial numeric bound is proved;
 an encoded runtime and upstream inverse-budget bridge are separate work.
 S3130 sampling and the full S3126 goal remain open. No push, release or
 publication is performed by this increment.
+
+## Final three-lens integration
+
+All three independent root-routed AI lenses reviewed the exact code candidate
+`332c92893aef751fd739d646a1b127f2be34a92a`. The proof reviewer reran both
+scoped build/export commands above sequentially, using the freshly exported
+rounding module for Checks; both exited zero without warnings. All 25
+profiles listed above were independently observed. This is scoped kernel
+elaboration on existing pinned dependencies, not a clean-room dependency
+rebuild, human peer review or novelty certification. Neither source file
+changed during evidence integration; both working and Git hashes remain
+exactly the frozen pins above.
+
+No blocking source correction was requested. The accepted increment is the
+finite rounding construction with numerical denominator bounds and
+conditional formula-promise preservation. Retain the two GO-WITH-NOTES
+lenses' composition obligations:
+
+- Restore the complete encoded-instance domain, including nonempty formula
+  indices, the required threshold range, and a sufficiently large original
+  gap for positive floor-half output. The general local sigma=1 case does
+  not supply that positive gap.
+- Instantiate the reciprocal-budget bound from actual upstream outputs.
+  In a family-level polynomial statement, k is fixed independently of input
+  length, although it may depend on fixed L.
+- Prove encoded enumeration, rational input bit lengths and arithmetic cost,
+  dyadic-scale construction time, and total reduction runtime. A polynomial
+  numeric denominator is not by itself that runtime theorem.
+- Bundle the unchanged YES witness and formula semantics with complete
+  valid-instance preservation. Keep sampling/realizability, source hardness,
+  specialized PCP, asymptotic composition and exact learning transfer as
+  separate uncompleted obligations.
+
+The bounded rounding increment is accepted; S3130's finite sampling and the
+full S3126 certification goal remain open. This integration changes only
+the three review notes and this receipt, with no code or public action.
