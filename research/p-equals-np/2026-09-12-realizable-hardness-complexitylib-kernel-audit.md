@@ -1,7 +1,7 @@
 # S3129 Complexitylib kernel audit: setup checkpoint
 
 2026-09-12; S3129 / S3126 / E004 / S008.
-**Kernel status: RESUMED after observed capacity restoration; no target axiom profiles obtained yet.
+**Kernel status: INCOMPLETE; former build handle is unavailable and terminal exit unconfirmed.
 S3129 is not complete.** Root requested this
 setup increment and handoff while the first 4.13 repair build occupies CPU.
 No successful theorem build or kernel axiom profile is claimed below.
@@ -325,3 +325,37 @@ assumed PCP or source-hardness contract. Record actual outputs and exits,
 then update the adoption disposition. The advanced MZ, randomized promise
 encoding and learning bridges remain open even if these foundations pass.
 The separate 4.13 umbrella was not upgraded or rebuilt by this audit.
+
+## Owner-context revalidation after handle loss
+
+Root requested urgent revalidation after its poll could no longer access
+the handoff handle. This original operator's context likewise returned
+`Unknown process id 76229` from `write_stdin`. A fresh native Windows
+process inventory found no `lake.exe`, `lean.exe` or `elan.exe` processes.
+The old parent and child PIDs therefore are historical, not live handles.
+No currently running owned build was observed to stop. No stop command,
+restart, cleanup or download was issued during this revalidation.
+
+The preserved log ends with these additional successful intermediate jobs:
+
+```text
+[3806/3822] Built Complexitylib.Classes.PCP.Internal.AlgKey
+[3807/3823] Built Complexitylib.Classes.PCP.Internal.TowerFin
+[3808/3823] Built Complexitylib.Models.TuringMachine.SingleTape.Internal
+[3809/3823] Built Complexitylib.SAT.CookLevin.Internal.EmitterLoop
+[3810/3825] Built Complexitylib.Models.TuringMachine.SingleTape.Internal.Sim
+[3811/3825] Built Complexitylib.SAT.CookLevin
+```
+
+There is no final successful-build summary, terminal exit code or explicit
+failure message in this log tail. The final line is the Cook-Levin core,
+not `CookLevin.Assembly`. Do not infer successful final targets, kernel
+rejection, a cause of process disappearance, or an exit code from missing
+processes. Final axiom profiles have not been obtained.
+
+Fresh measured C: capacity was **739,557,376 bytes free**, above but close
+to root's 512 MB guard. Do not restart this audit at the current capacity
+without root's renewed capacity assessment/authorization. Preserve the
+existing checkout, cache and intermediate exports for a future resumed
+targeted build; no setup duplication is needed. The candidate remains
+unverified as an imported foundation, not a kernel NO-GO. S3129 is open.
