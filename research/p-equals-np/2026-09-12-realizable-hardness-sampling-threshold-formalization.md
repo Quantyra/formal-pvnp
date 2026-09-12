@@ -116,3 +116,29 @@ introduced to complete a proof.
 Fresh proof-adversarial, complexity and non-claims review must be routed
 by root now that both final exports and axiom profiles are green. S3130 and
 S3126 remain open. No publication, push or release is performed.
+
+## Completed independent three-lens review
+
+Frozen code candidate: `dc660298e98e52ce2fed062791f598b440a63b23`.
+Integration appends this table and preserves the three actual independent
+review receipts; it changes no Lean source or declaration.
+
+| Lens | Reviewer | Verdict | Actual evidence |
+|---|---|---|---|
+| Proof-adversarial | `concentration_proof_review` | GO | Independent main session 14771 and Checks session 28119 both exited 0; all 29 profiles exactly propext, Classical.choice, Quot.sound. |
+| Complexity | `threshold_complexity_review` | GO-WITH-NOTES | Exact least-dyadic thresholds, constants and numeric size bounds sound; encoded count computation and input-size polynomiality remain open. |
+| Non-claims | `cdf_proof_review` | GO | Numeric and noncomputable scope stated accurately; no implied sampler-success or full hardness certification. |
+
+Review evidence:
+
+- `2026-09-12-realizable-hardness-sampling-threshold-proof-review.md`
+- `2026-09-12-realizable-hardness-sampling-threshold-complexity-review.md`
+- `2026-09-12-realizable-hardness-sampling-threshold-nonclaims-review.md`
+
+The exact working and frozen code hashes remain the two SHA256 values
+recorded above. This closes review of this numeric increment only.
+Remaining work includes an encoded computable count (or a proved
+conservative replacement with reconciled manuscript description),
+input-size and arithmetic/runtime bounds, actual joint sampler and
+concentration/mean-approximation bridges, and final promise composition.
+Neither S3130 nor the full S3126 proof-and-paper goal is closed.
