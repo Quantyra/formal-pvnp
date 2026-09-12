@@ -97,3 +97,32 @@ normalization; reproduced here to distinguish source bytes):
 Fresh independent top-level proof-adversarial, complexity-theory, and
 non-claims review remains the orchestrator's next gate. This author
 receipt is not one of those reviews.
+
+## Final bounded integration (2026-09-12)
+
+The earlier pending-review sections above are preserved as historical
+snapshots. They are superseded for this finite increment by the following
+completed independent reviews of candidate
+`f6126f7213c91741932be465e8041f26e7e8427f`.
+
+| Lens | Final verdict | Evidence |
+|---|---|---|
+| Build/axiom audit | GO | Independent main export 44164 exit 0 and Checks export 99953 exit 0; all 13 profiles exactly `[propext, Classical.choice, Quot.sound]` |
+| Proof-adversarial | GO | `2026-09-12-realizable-hardness-posterior-proof-review.md`; actual finite definitions, zero-mass cases, denominator signs, nonvacuity, and all 13 exports inspected |
+| Complexity | GO-WITH-NOTES | `2026-09-12-realizable-hardness-posterior-complexity-review.md`; actual geometric inputs, conditional-law matching and computational obligations remain explicit |
+| Non-claims | GO-WITH-NOTES | `2026-09-12-realizable-hardness-posterior-nonclaims-review.md`; wording bounded to finite algebra and the pinned root toolchain |
+
+Root read all three independent receipts and authorized this exact four-file
+evidence integration. The finite rational posterior and normalized
+reweighting increment is accepted within its stated scope. Both working
+source hashes remain equal to the verified pins above; no Lean source was
+changed by review or integration. The actual thirteenth export is
+`reweighted_normalized`; the normalizer lower bound is a conjunction of
+`normalized_reweighting`, not an additional standalone export.
+
+This acceptance does not close S3133 or S3126. Actual Grassmann counts,
+incidence kernels, tails, rank/transversality, conditioned-law matching,
+covering and decoder application, machine/runtime, specialized hardness,
+learning and final paper reconciliation remain required. The separately
+pinned newer-toolchain companion is not certified by this root 4.13 result.
+There is no new novelty, publication-readiness, or full-goal claim.
