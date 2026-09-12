@@ -395,3 +395,38 @@ The S3099 public-curation status above is a historical checkpoint. On 12 Septemb
 The root verified the live release; the publishing agent verified both the raw public note and release asset against the exact reviewed public bytes: FULL-NOTE.md, 18,051 bytes, SHA256 `32e2ad7d9ecf1a0899da0f5c8f4fed148ad85c6de70f7869252f991c911674b6`. GitHub release ID is `387556245`; asset ID is `559187392`. These are received publication-verification records, not a new mathematical audit by the graph integrator. The v1 note and publication history remain unchanged.
 
 The published result is exactly full source PSD for actual X/Y/U degree-D squares at even n>=1024, m=n^2, A=I_m, D=floor(n/(32 log_2 n)). No SoS degree or size lower bound, efficient solver/evaluation procedure, P-versus-NP conclusion, general proof-system result, novelty certification, Lean verification or human peer review is claimed. The broader research goal remains ACTIVE and unresolved. This graph update records publication evidence only; it changes no frozen theorem or review, and its own scoped commit is local with no push.
+
+
+## S3101: exact SoS degree consequence with two simple-encoding transfers
+
+The [consequence audit](2026-09-12-positivity-complexity-consequence.md) derives
+no SoS certificate of raw degree at most 2D+1, hence minimum degree at least
+2D+2, for the specified restricted simple bamboo Boolean clause encoding,
+with even n>=1024, m=n^2, A=I_m and D=floor(n/(32 log_2 n)). It uses the
+published full-square PSD theorem and credited source local laws, explicitly
+annihilates all axiom multiples, retains boundary prefixes and verifies
+nonvacuity. Two degree-preserving transfers cover precisely the unaugmented
+simple encoding on I_m and the augmented simple encoding on tilde(A). No
+transfer to product-z BTRank or matching-variable PMRank is asserted.
+
+The actual-file [independent proof PASS](2026-09-12-positivity-consequence-proof-review.md),
+[source/model and complexity GO](2026-09-12-positivity-consequence-source-review.md),
+and [independent nonclaims PASS](2026-09-12-positivity-consequence-nonclaims-review.md)
+all cover the final odd-degree refinement. The main records the actual
+three-lens table. The source reviewer authored the earlier PSD theorem and
+discloses that contribution; the distinct proof reviewer verifies the new
+implication under that pinned import. The nonclaims reviewer integrates this
+graph and closeout metadata without altering mathematics. These are analytic
+AI-agent reviews, not Lean verification, human peer review or novelty certification.
+
+This scoped consequence is complete at the analytic review level. Its standard
+positive-functional contradiction is not a newly invented lower-bound method.
+A modest public addendum is worthwhile for the exact encoding/degree
+interpretation absent from v2, but publication readiness is REVISE pending the
+S3102 claim packet, frozen public extraction, actual-candidate reviews, consistent
+metadata and recorded candidate decision. This local closeout does not change
+the published v2 boundary. No size lower bound, general SAT-solver bound,
+algorithm, general proof-system result, circuit lower bound or P-versus-NP
+conclusion follows. The broader objective remains ACTIVE and unresolved.
+The authorized scoped commit is local; no push, release, publication, outreach
+or paid computation is part of S3101 closeout.
