@@ -934,3 +934,71 @@ novelty/priority unknown. Public v4 remains unchanged. The broader research
 objective remains ACTIVE and unresolved. This four-file closeout is a
 scoped local evidence commit, with no proof/public edit, experiment, push,
 outreach or paid computation.
+
+## S3112: dependent random-form design rejected on actual deletion test
+
+The [actual design](2026-09-12-bamboo-dependent-coupling-design.md) allows
+dependent parent columns via X_root=R and
+Y_root=[I_N,I_N,M_0^T,M_1^T,0], giving leaf products R M_l R^T.
+It is a supported subclass of the exact depth-one wiring, not the whole
+root seed space. For context S of k<=N row indices it samples uniform
+independent rows, then each M_l uniformly conditional on
+R_S M_l R_S^T=A_l[S,S]. Forms are uniform at the empty row context.
+This concrete operation differs from the failed S3111 full-rank column
+closure and is not rejected for an unproved PSD estimate.
+
+Every form fiber has exactly 2^(N^2-k^2) points, so nonemptiness and local
+clause satisfaction pass. But root Y column 2N+1 exposes M_0(1,1) as an
+original variable. With one constrained row and diagonal target a its
+expectation is 1/2+(2a-1)/(2(2^N-1)), versus 1/2 with no row. Deleting
+that row while retaining the observed parent column changes a degree-one
+moment. This is an exact nonzero inconsistency, even though exponentially
+small. It is not a square-negativity theorem or an approximate-consistency
+analysis. The first bundled test uses six typed labels and does not request
+N independent parent columns.
+
+The independent designer additionally derived the all-zero-target formula
+E_k[M_0(1,1)]=1/2-(2^k-1)/(2(2^N-1)). Its k=2 to k=1 mismatch rules
+out repairing this exact family merely by calibrating the empty prior to
+one singleton. The zero targets are satisfiable. These tests reject this
+specified row-first/conditionally-uniform-form law, not every dependent
+column distribution, different weighting rule or full-width coupling.
+No consistent common moment functional from this family is available yet
+for a PSD question.
+
+The [independent crosschallenge](2026-09-12-bamboo-dependent-coupling-independent.md)
+returned PASS for the corrected design assessment. Its contributions include
+independent counterchecks, the stronger zero-target test, an explicit
+consistent narrower coordinate-product comparison, and the sampling-endpoint
+correction: at most two expected rejection trials, with exactly two for
+the final vector of a full basis. The author records these contributions;
+this is constructive design review rather than verification-only provenance.
+[Nonclaims review](2026-09-12-bamboo-dependent-coupling-nonclaims.md) returned
+GO after reading the final actual crosschallenge and correction.
+
+The root selected NONE for this sampler. No alternative full-width rule
+is selected. Fixed coordinate forms with w=q provide a consistent product
+of two narrower source laws in the explicitly stated window; this uses
+credited source consistency and elementary coordinate packing. It is not
+new shared-resource amplification. Typed-label conversion, a useful
+restriction/survival law and an explicit real SoS size transfer remain
+separate requirements, not completed by that comparison.
+
+Frozen working-file SHA256 pins:
+
+| Evidence | SHA256 |
+|---|---|
+| Corrected design, 12039 bytes | `642E8429C1057122D48E34BF44986DE450DC3D63E4AD7C7A39C53CEE667B92C3` |
+| Final independent PASS | `05FCEAF3CF0985E6ACC7A997A05A321B36223EFCD8DF565515DAFDBD55E16D33` |
+| Final nonclaims GO | `64F2F48F715B96379706AE605D92661BCBD19B9EAE9FD610824F5E35C4B0F579` |
+
+One-sample polynomial linear-algebra work does not include context
+enumeration, PSD verification, certificate compilation or writing an
+unbounded output. No amplified SoS theorem, arbitrary-m result, compressed-
+certificate bound, computational pseudorandomness, inversion hardness,
+general SAT runtime, circuit lower bound or P-versus-NP result is claimed.
+Novelty and priority remain unknown; all design/review is informal AI work,
+not human peer review or Lean verification. Public v4 is unchanged and the
+broader research objective remains ACTIVE and unresolved. This four-file
+closeout is local evidence integration only, with no proof/public edit,
+experiment, push, outreach or paid computation.
