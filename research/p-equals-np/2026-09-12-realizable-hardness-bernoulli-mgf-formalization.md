@@ -1,8 +1,9 @@
 # Centered Bernoulli MGF: analytic formal increment
 
 2026-09-12; S3130 under the open S3126 full-formalization goal.
-Actual scoped kernel builds are green; fresh independent three-lens review
-is pending. The author does not independently review this increment.
+Actual scoped kernel builds and all three fresh independent review lenses
+are complete for this bounded analytic increment. The author did not
+independently review the increment.
 
 ## Exact theorem and proof
 
@@ -95,12 +96,39 @@ Those are not conclusions already certified by this standalone inequality.
 | Lens | Status |
 |---|---|
 | Author scoped kernel build and 13-profile audit | GO |
-| Independent proof-adversarial | Pending root routing |
-| Independent complexity | Pending root routing |
-| Independent non-claims | Pending root routing |
+| Independent proof-adversarial | GO; `sampling_proof_review`, actual independent exports 69459 and 8196, both exit zero; all 13 standard profiles |
+| Independent complexity | GO-WITH-NOTES; exact constant and quantifiers accepted; finite-probability, tail and encoded-runtime bridges remain open |
+| Independent non-claims | GO; wording matches the standalone inequality and preserves all larger obligations |
 
 Full S3130 concentration/sampling and S3126 remain open. No encoded runtime,
 source hardness, PCP, asymptotic reduction composition or learning transfer
 is certified here. No public release, submission, human review or novelty
 certification is claimed. Only an authorized local candidate commit is
 prepared; no push or release is performed.
+
+## Reviewed evidence integration
+
+Frozen code candidate: `6750bbcf858414cb1b04084dc8b2dff40dc43a8e`.
+The three root-routed independent receipts are:
+
+- [Proof-adversarial review](2026-09-12-realizable-hardness-bernoulli-mgf-proof-review.md).
+- [Complexity review](2026-09-12-realizable-hardness-bernoulli-mgf-complexity-review.md).
+- [Non-claims review](2026-09-12-realizable-hardness-bernoulli-mgf-nonclaims-review.md).
+
+The proof reviewer reran both scoped exports and all 13 axiom profiles.
+Both Git blobs and working files were independently verified byte-identical
+with the source hashes above; this integration changes only evidence.
+No blocking finding remains for this standalone analytic increment.
+
+The next proof bridge must identify actual Boolean-indicator finite sums
+with this centered expression, including rational-to-real casts, then
+factor their product exponential moment under the proved normalized law.
+Exponential Markov, optimization at t=4*delta and negative t, the two-tail
+factor two, and the union bound over 2^N assignments must still be proved.
+The resulting bound `2*2^N*exp(-2*M*delta^2)` must meet 1/3 at the actual
+least-power-of-two M and delta=epsilon/8, with distributional rounding
+composed afterward. Inverse-CDF realization, bounded-bit generation,
+encoding and polynomial runtime remain separate required obligations.
+These are outstanding work, not hypotheses discharging the full theorem.
+S3130 and S3126 remain open; no public release or push is authorized by
+this local review integration.
