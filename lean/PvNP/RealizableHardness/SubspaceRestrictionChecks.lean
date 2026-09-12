@@ -1,7 +1,7 @@
 import PvNP.RealizableHardness.SubspaceRestriction
 
-/-! UNCOMPILED. Concrete boundary and nontrivial hyperplane checks.
-The axiom commands below are intended audits, not obtained results. -/
+/-! Author exports and 13 standard axiom profiles passed; independent review pending.
+Concrete boundary and nontrivial hyperplane checks. -/
 namespace PvNP.RealizableHardness.SubspaceRestriction
 open TripleRestrictionRank
 

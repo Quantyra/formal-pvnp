@@ -1,9 +1,9 @@
-# Arbitrary-subspace representation: source draft
+# Arbitrary-subspace representation: author verification
 
-2026-09-12; S3126/S3133. **UNCOMPILED; no author or independent proof
-acceptance.** This draft discharges the intended representation interface
-in source only. No Lean or Lake command has run for these files; their
-proof scripts may still require elaboration corrections.
+2026-09-12; S3126/S3133. **AUTHOR VERIFIED; INDEPENDENT REVIEW PENDING.**
+Actual main and Checks exports passed, with 13 standard-only axiom profiles
+and all examples successful. Three fresh independent reviews remain required;
+this is not independent acceptance or complete S3133 certification.
 
 ## Scope and sources
 
@@ -18,15 +18,14 @@ story and full-goal dependency ledger. Destination integrity source remains
 Only these three new files are owned by this increment. The accepted triple
 source, companion package, manuscript, and other modules are unchanged.
 
-- `lean/PvNP/RealizableHardness/SubspaceRestriction.lean`: 6010 UTF-8 bytes,
-  126 lines, SHA256
-  `739b42dcce0d8a385a8c6a25d1086e1d000fb1432df465571c05636291bef2c1`.
-- `lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean`: 3109 UTF-8
+- `lean/PvNP/RealizableHardness/SubspaceRestriction.lean`: 6168 UTF-8 bytes,
+  128 lines, SHA256
+  `f6cd2342704fe24a3b3b5f8b0ff22d3f9cc54e11d69c5f3a695cc8af08944506`.
+- `lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean`: 3111 UTF-8
   bytes, 73 lines, SHA256
-  `757724d6c4f0b7ea1a94a4c1e2dea487d4848184de2c1817a65d5f56956e7f68`.
+  `8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf`.
 
-Both are LF files, with actual mathematical Unicode preserved (45 and 32
-non-ASCII characters respectively). Neither contains a literal question
+Both are LF files, with actual mathematical Unicode preserved. Neither contains a literal question
 mark or a forbidden proof construct in the static scan. These facts are
 source hygiene, not proof verification.
 
@@ -58,7 +57,7 @@ the actual natural-number difference between the ambient and W finranks.
 representation assertion as an existence theorem. It is noncomputable
 mathematical basis choice, not an executable representation algorithm.
 
-## Intended final probability statement
+## Verified probability statement
 
 `codimInRetained W d` is the actual dimension difference inside the selected
 coordinate subspace V, with W intersect V represented by comap along V's
@@ -81,12 +80,31 @@ representation equality at J=0, zero failure mass for top W, and a genuine
 coordinate hyperplane in one triple. The coordinate evaluation is explicitly
 surjective; rank-nullity derives hyperplane codimension one. Its representation
 and beta=0 and beta=1/2 probability consequences are included. Thirteen
-`#print axioms` commands are prepared; no outputs exist yet.
+`#print axioms` commands completed successfully. Every output lists exactly
+`propext`, `Classical.choice`, and `Quot.sound`.
 
-First required gate: explicit root compiler grant, then actual main/Checks
-exports with standard axiom profiles, fixing any errors without weakening
-arbitrary W representation or numeric codimension. Three fresh independent
-review lenses are required after author verification.
+The required author gate completed under root's explicit exclusive compiler
+grant, Lean 4.13.0, cached pinned mathlib, and `LEAN_NUM_THREADS=1`. Fresh
+native/capacity checks showed no competing compiler and more than 7 GB free.
+No dependency downloads, cleanup, companion changes, or toolchain changes
+were performed.
+
+| Session | Target | Actual outcome |
+| --- | --- | --- |
+| 92475 | Main | Exit 1: a single inferred module/field ambiguity in the quotient-dual finrank equality. |
+| 67906 | Main | Exit 0, no warnings; the equality now carries its explicit dimension type. |
+| 67608 | Checks | Exit 0, no warnings; all examples and 13 standard axiom profiles. |
+
+The sole proof correction supplies an explicit type to the dimension
+equality; no representation premise was added and no statement weakened.
+The main tested SHA256 was
+`241089689ff57a7b345214c9728d71e7dc3b36080425185e03fbf2f994fa8fac`;
+Checks tested SHA256 was
+`757724d6c4f0b7ea1a94a4c1e2dea487d4848184de2c1817a65d5f56956e7f68`.
+Final files differ from these only in status comments. Exact byte reconstruction
+of both tested pins was verified; per root instruction no redundant build
+was run solely for these comments. Three fresh independent review lenses
+remain required against the final candidate pins above.
 
 Even successful verification would not supply a posterior law, incidence
 likelihood ratio, tail cutoff, conditional independence, simultaneous success

@@ -2,7 +2,7 @@ import PvNP.RealizableHardness.TripleRestrictionRank
 import Mathlib.LinearAlgebra.StdBasis
 import Mathlib.LinearAlgebra.Dimension.Free
 
-/-! UNCOMPILED source draft. Independent defining forms for an arbitrary
+/-! Author exports passed; independent review pending. Defining forms for an arbitrary
 fixed subspace and the actual unconditional restriction-codimension bound.
 Basis choice is mathematical, with no executable representation claim. -/
 namespace PvNP.RealizableHardness.SubspaceRestriction
@@ -36,7 +36,9 @@ lemma coordinateDual_apply (v x : Vector J) : coordinateDual J v x = evaluate v 
 /-- The dimension of the actual annihilator is derived from the quotient. -/
 lemma annihilator_finrank (W : Submodule (ZMod 2) (Vector J)) :
     Module.finrank (ZMod 2) W.dualAnnihilator = codim W := by
-  have he := W.dualQuotEquivDualAnnihilator.finrank_eq
+  have he : Module.finrank (ZMod 2) (Module.Dual (ZMod 2) (Vector J ⧸ W)) =
+      Module.finrank (ZMod 2) W.dualAnnihilator :=
+    LinearEquiv.finrank_eq (Submodule.dualQuotEquivDualAnnihilator W)
   rw [Subspace.dual_finrank_eq] at he
   have hq := W.finrank_quotient_add_finrank
   unfold codim
