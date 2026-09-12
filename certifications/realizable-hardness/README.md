@@ -10,8 +10,11 @@ The root Lean 4.13 umbrella remains separate. This package pins Lean
 4.34.0-rc2 and the candidate complexitylib, mathlib and cslib revisions in
 `lakefile.toml`. The isolated foundation audit passed its exact targets and
 axiom checks (125d0eb); this does not adopt or verify the companion graph.
-Dependency resolution and creation of a verified manifest are
-pending; no dependencies, caches or compiled artifacts are included here.
+Dependency resolution completed successfully; `lake-manifest.json` records
+the eleven resolved package revisions, each checked against its actual checkout
+HEAD and the audited foundation pins. Dependency source clones are local build
+state, not committed sources. No build caches or companion proof artifacts were
+downloaded or produced by this resolution.
 
 `source-map.json` records the source commit, original Git LF and working-byte
 hashes, mirrored hashes and every import-path patch for all 33 mirrored files.
@@ -43,13 +46,21 @@ The map's per-entry source_commit is authoritative;
 initial_source_commit describes only the original mirror baseline. None of
 these source synchronization changes supplies companion kernel evidence.
 
-After the foundation audit and compiler/capacity handoff, resolve the pinned
-dependencies, verify actual revisions and commit the resulting manifest.
-Test package loading and scoped imports, repair API incompatibilities without
+Resolution evidence: session 6318 returned exit 0 for
+`elan run leanprover/lean4:v4.34.0-rc2 lake --no-cache update`, with
+`LEAN_NUM_THREADS=1` and `MATHLIB_NO_CACHE_ON_UPDATE=1`. The latter disabled
+mathlib's automatic cache-get action in its post-update hook. Actual Lake parsed
+the TOML; the toolchain remained unchanged. Manifest SHA256:
+`825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0`.
+All 33 mirror hashes were rechecked after resolution. This is dependency and
+configuration evidence only, not proof compilation or foundation adoption.
+
+After a separate compiler/capacity grant, test scoped imports and repair API
+incompatibilities without
 weakening statements, then build all main and Checks modules and inspect
 actual axiom profiles. Material proof changes require independent proof,
-complexity and non-claims reviews. Source-level TOML inspection is not a Lake
-parse or a build result.
+complexity and non-claims reviews. Successful dependency resolution is not a
+proof build result.
 
 Subsequent accepted ports become this integration package's canonical sources.
 Any later root fixes must be explicitly ported, mapped and rechecked; do not
