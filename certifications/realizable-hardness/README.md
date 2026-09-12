@@ -14,6 +14,11 @@ pending; no dependencies, caches or compiled artifacts are included here.
 
 `source-map.json` records the source commit, original Git LF and working-byte
 hashes, mirrored hashes and every import-path patch for all 29 mirrored files.
+Its ordered `transforms` field is the complete byte-reconstruction recipe:
+CRLF normalization, the explicit UTF-8 BOM removal in PosteriorReweightingChecks,
+and listed UTF-8 literal import replacements. BOM removal preserves the original
+Git hash and records before/after hashes; it was omitted from the initial map
+and is now documented without changing either original or mirrored proof text.
 The companion aggregate `lean/PvNP.lean` explicitly imports every mirrored
 main and Checks file. Original verification status does not transfer to this
 package. Recompile and audit all reused source against the selected toolchain;
