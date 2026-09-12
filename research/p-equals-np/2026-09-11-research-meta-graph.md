@@ -472,3 +472,44 @@ novelty certification, Lean verification or human peer review. The broader
 user research goal remains ACTIVE and unresolved. This graph-only receipt
 update changes no mathematical source and its own scoped commit is local,
 with no push, outreach or paid computation.
+
+
+## S3103: explicit simple-bamboo SoS size consequence
+
+The [size mechanism](2026-09-12-bamboo-size-mechanism.md) proves explicit
+SoS monomial size at least `(8/7)^((2D-1)/2)` for the unaugmented,
+unrestricted simple-bamboo clause encoding at even q>=1024, N=8q+4,
+m=q^2, A=I_m and D=floor(q/(32 log_2 q)). This is
+`exp(Omega(N/log N))`, superpolynomial in the explicit input length,
+without a degree restriction on the explicitly represented roots.
+
+The mathematical advance beyond v2.1's degree consequence is a newly
+proved bounded-row-space square-positivity bridge using the earlier
+complete-row estimates, then the source's published SA random restriction
+with original root/multiplier monomial accounting and local semantic
+annihilation. It is not an import of the ordinary-degree theorem alone.
+The restriction is credited; source Theorem 5.18's stronger-exponent
+SoS size bound for a different perfect-matching encoding remains separate.
+
+The corrected snapshot SHA256
+`BD3DD17A493D9F1F481FBBD3946882F3AFC0904935CF07F5F4F8B80F6C318258`
+received [initial independent proof PASS](2026-09-12-bamboo-size-proof-review.md),
+[fresh independent proof PASS](2026-09-12-bamboo-size-fresh-review.md),
+[source/model and complexity GO](2026-09-12-bamboo-size-source-review.md),
+and [independent nonclaims GO-WITH-NOTES](2026-09-12-bamboo-size-nonclaims-review.md).
+The main record contains the actual-role table. The source reviewer
+contributed methodological guidance and corrected D/E transcription
+defects; both independent proof reviewers visually verified the final
+matrices and supplied no proof repair. Metadata integration preserves
+the reviewed mathematical body. No Lean build was applicable. These are
+AI-agent analytic audits, not human peer review or novelty certification.
+
+S3103 is complete at the bounded analytic level. A public size addendum
+is a substantive worthwhile milestone, but readiness is REVISE pending
+S3104's exact claim packet, public extraction and metadata reviews, frozen
+candidate and recorded publication decision. The current public v2.1
+boundary is unchanged. No linear-exponent size bound, compressed-root
+bound, general SAT runtime bound, circuit lower bound, general proof-system
+result, or P-versus-NP conclusion follows. The broader research objective
+remains ACTIVE and unresolved. This six-file source integration is local
+and authorizes no push, publication, outreach or paid computation.
