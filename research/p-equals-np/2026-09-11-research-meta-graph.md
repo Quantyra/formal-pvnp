@@ -513,3 +513,54 @@ bound, general SAT runtime bound, circuit lower bound, general proof-system
 result, or P-versus-NP conclusion follows. The broader research objective
 remains ACTIVE and unresolved. This six-file source integration is local
 and authorizes no push, publication, outreach or paid computation.
+
+
+## S3104: explicit SoS size addendum published as v3.0.0
+
+The S3103 public-readiness REVISE entry above is a historical checkpoint.
+On 12 September 2026 the reviewed size addendum was published as
+[v3.0.0](https://github.com/Quantyra/weak-rank-positivity-window/releases/tag/v3.0.0),
+exact public commit `613ceb80a6211097cd8e353c47ad79ba3069ecb5`.
+Its [source theorem](2026-09-12-bamboo-size-mechanism.md) and four source
+reviews are frozen at `ea7a89576712fc21ae0127d688f703dfa05b1af1`.
+The actual-public-extraction [mathematical PASS](2026-09-12-bamboo-size-public-proof-review.md)
+and [source/nonclaims/readiness GO](2026-09-12-bamboo-size-public-nonclaims-review.md)
+are frozen at `c60080bcb85958942d00ffb0c75996df93baadd7`. The orchestrator
+recorded the exact claim packet and PUBLISH decision before publication.
+
+The final public candidate preserved the reviewed SIZE-NOTE.md bytes and
+received a separate integrated-metadata recheck. NOTE.md, FULL-NOTE.md,
+COROLLARY.md and LICENSE retain their exact v2.1 Git blobs; prior releases
+and their historical scope remain available. The source's D/E transcription
+corrections and distinct construction, source and verification contributions
+remain disclosed. No extraction repair was requested by either reviewer.
+
+The root reports live publication verification. The received publisher
+receipt records unauthenticated release/API, main/tag raw artifact, asset,
+CFF, About and preserved-history verification: PASS. GitHub release ID
+`387568249`; SIZE-NOTE.md asset ID `559252459`; 13,590 bytes; SHA256
+`6d22e0f1d72fb5fc2dc5446ca56da4c820ea5e24bb33809c8bb2335917c93667`.
+The GitHub About now uses the reviewed wording: "Informal AI-reviewed
+notes on positivity, degree and explicit SoS monomial-size bounds for a
+specified simple bamboo weak-rank family." These are received execution
+evidence, not another independent live-service or mathematical audit by
+this graph integrator.
+
+The exact published size is `S=sum_i ||f_i|| ||g_i||+sum_j ||h_j||`,
+counting explicit ordinary axiom-multiplier and square-root monomials
+before Boolean reduction, with no degree limit and no coefficient-bit
+charge. For even q>=1024, N=8q+4, m=q^2, A=I_m and
+D=floor(q/(32 log_2 q)), every such certificate for the unaugmented,
+unrestricted simple-bamboo Boolean clause encoding has
+`S >= (8/7)^((2D-1)/2) = exp(Omega(N/log N))`, superpolynomial in
+explicit input length. This is not a linear-exponent bound or a bound
+for circuit-compressed roots or other rank encodings. The added
+row-space square-positivity bridge and credited source restriction are
+distinguished from the earlier ordinary-degree theorem.
+
+Novelty and priority remain unknown. The evidence is informal AI-agent
+review, not Lean verification or human peer review. No general proof-system
+result, SAT runtime lower bound, circuit lower bound, or P-versus-NP
+conclusion is claimed. The broader research goal remains ACTIVE and
+unresolved. This graph-only receipt commit changes no mathematical source
+or public artifact and is local, with no push, outreach or paid computation.
