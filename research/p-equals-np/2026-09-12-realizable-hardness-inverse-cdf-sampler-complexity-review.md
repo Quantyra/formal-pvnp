@@ -15,6 +15,10 @@ The author's two exit-zero exports and 18 profiles are supplied build
 evidence; this lens inspected source/semantics and did not duplicate the
 kernel build. No code, shared record or implementation receipt changed.
 
+Independently verified working source SHA256:
+`InverseCDFSampler.lean` = `866f96cbef6b045937cbedbfadc534176aa5376f81a3509205b30806352d2ed4`;
+`InverseCDFSamplerChecks.lean` = `c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd`.
+
 ## Exact construction and correspondence
 
 The sampler is the actual decidable first crossing `Nat.find`, not a
