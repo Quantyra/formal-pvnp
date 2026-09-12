@@ -65,7 +65,8 @@ success probability is an input hypothesis.
 
 Finally `precision_bound` proves the actual chosen dyadic grid meets
 `8*S/eps <= 2^b`. `chosen_good_probability` sets b to this precision and
-M to the reviewed least log-6 `SamplingThreshold.sampleCount`, proving
+M to the reviewed least qualifying power of two for the log-6 threshold,
+`SamplingThreshold.sampleCount`, proving
 success at least 2/3. `chosen_learning_good_probability` uses the exact
 log-12 `learningSampleCount` and proves success at least 5/6. All 2^N
 assignments are covered simultaneously, including the single empty
@@ -159,3 +160,24 @@ These successful terminal results supersede the historical pending and
 failed draft statuses above. The candidate is now **author-build green**;
 fresh independent three-lens review remains required. No self-review,
 full-goal completion or public certification follows from this receipt.
+
+
+## Independent three-lens closeout
+
+Frozen source candidate `00ed4a43d429878f53c27dccf68813255961d36e`.
+Independent proof exports 19510 and 93147 both exited zero; Checks printed
+all 18 profiles with exactly `propext`, `Classical.choice`, `Quot.sound`.
+Both source files match the candidate byte-for-byte and the SHA256 pins above.
+
+| Lens | Verdict | Evidence |
+|---|---|---|
+| Build/audit | GO | Independent scoped exports 19510/93147, exit 0, all 18 standard-only profiles; no source changes |
+| Proof-adversarial | GO | [Independent proof review](2026-09-12-realizable-hardness-sampling-guarantee-proof-review.md); original-law mean, arbitrary joint event transport, strict complement, positive trial count, both confidence constants checked |
+| Complexity | GO-WITH-NOTES | [Independent complexity review](2026-09-12-realizable-hardness-sampling-guarantee-complexity-review.md); finite semantic guarantee; encoded count computation and runtime remain separate |
+| Non-claims | GO-WITH-NOTES | [Independent non-claims review](2026-09-12-realizable-hardness-sampling-guarantee-nonclaims-review.md); least count means least qualifying power of two; no downstream/full-goal certification |
+
+The learning count is likewise the least qualifying power of two for the
+log-12 threshold. Neither count is asserted to be the least unrestricted
+natural number meeting its threshold. This accepts only this bounded
+sampling guarantee; S3130/S3126 and separate SamplingFormulaPromises,
+computable-count, runtime, PCP, hardness and learning obligations remain open.
