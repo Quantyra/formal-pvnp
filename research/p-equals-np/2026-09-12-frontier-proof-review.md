@@ -1,0 +1,39 @@
+# Independent proof-adversarial review of the two frontier tests
+
+2026-09-12; S3090 / E004 / S008; [integrity](../../INTEGRITY-CLAIMS.md).
+
+**Verdict: PASS for the two precisely scoped mathematical rejection tests. Selection NONE; broader objective unresolved; publication HOLD.** This reviewer did not contribute either mechanism or edit either author note. This is an independent mathematical review, not a Lean verification, novelty assessment, general catalytic impossibility, or complexity separation.
+
+Reviewed [constructive note](2026-09-12-frontier-constructive.md) and [structural note](2026-09-12-frontier-structural.md). No destination AGENTS.md was present. The delegated satellite scope and integrity ledger govern this review. Only this review file is authored here; no commit, push, release, outreach, or paid computation.
+
+## Structural test
+
+I checked the downloaded primary text of [Garlik--Gryaznov--Ren--Tzameret, TR26-133](https://eccc.weizmann.ac.il/report/2026/133/download/), equation (35), Definitions 6.3--6.6, Lemma 6.7, and the definition of R in the proof of Lemma 6.4 (printed pages 68--71). The online ECCC fetch timed out; the locally downloaded source text was available. The mathematical source identification is correct: this is the restricted bamboo-tree encoding's functional, not an assertion about every weak-rank encoding or every local distribution. The paper's SoS future-direction sentence is in Section 2.2, printed page 14; the initially reviewed note's Section 3 locator should be corrected. That locator error does not affect the calculation.
+
+For J empty, Definition 6.5 fixes the only column of N to e. Full rank of M requires its chosen X rows together with e to be independent. The product constraint fixes each chosen X row's parity to one; its last entry is n mod 2. There are no further A-dependent constraints in this marginal. Thus the source law really is uniform over the stated row tuples.
+
+For even n, quotienting by e preserves both parity a and the first-two-coordinate functional b. Here a is nonzero and b is outside {0,a}. Every admissible independent frame in the quotient has exactly 2^t independent lifts with the required parities. Uniformity therefore survives quotienting.
+
+The symmetry step is valid, with this explicit justification. The subgroup of GL(V) preserving a preserves the set and uniform measure of admissible frames. Its dual action is transitive on the covectors outside span(a): the ordered independent pairs (a,b) can be completed to dual bases and mapped to each other fixing a. Averaging the frame distribution first or averaging the covector first therefore gives the same expectation. For a fixed independent frame, the restriction map from V* to F_2^t is surjective with fibers of size 2^(d-t). Removing 0 and a removes exactly the all-zero and all-one patterns. The numerator for positive even t is -2 and the denominator 2^(n-1)-2, giving -1/(2^(n-2)-1); for odd t it is zero. The separate t=0 value is one. No transitivity of the stabilizer of the frame is required.
+
+Boolean reduction cancels all repeated row characters in g_S g_T. All distinct k-subsets consequently have the same negative Gram entry, while the diagonal is one. The stated matrix, both eigenvalues, and R(p^2)=M(N-M)/(N-1) follow exactly. This is a polynomial with real coefficients in the source's Boolean quotient, so the nonmultilinear notation p^2 causes no domain problem after reduction.
+
+The parameter estimates also pass. For n>=16, k<=n/log_2(n)+2<=(n-2)/2; the difference in the latter inequality is positive at 16 and has positive derivative thereafter. Hence 2k<=n-2 and k<n. Meanwhile k>=n/log_2(n) and binom(n^2,k)>n^k>=2^n>2^(n-2). Thus the square is negative with m=n^2 throughout the specified even-n family. Row degree is at most 2k; ordinary degree of p is at most 2k and of its unreduced or reduced square at most 4k. The example binom(256,4)=174792640 is correct.
+
+This proves failure of this unchanged R to satisfy positivity through the displayed degree. It does not prove failure below that degree, failure of other functionals, or existence of a short SoS refutation. In particular, this reviewer interprets the obstruction as an incompatibility with a positive extension agreeing on the displayed moments; R's row-degree domain itself is not a full ordinary-degree pseudoexpectation domain. The exponentially many summands are correctly disclosed.
+
+## Constructive test
+
+The [current primary catalytic paper](https://arxiv.org/html/2512.09374v3) was accessed; its abstract and introduction retain weighted-decision oracle access and the CL upper bound ZPP. The note correctly distinguishes that upper bound from a polynomial deterministic total-time SAT algorithm. This review does not independently reprove the source search theorem.
+
+The collision equation has denominator plus or minus one and is exact. With positive weights the tautological formula has a unique empty minimum, while its subset-sum range has at most nW+1 values. The stated strict inequality ensures an arbitrary tie in every legal block, including the n=8, W=16 example. Because the encoding occupies the full Boolean cube, deterministic restoration from a common checkpoint forces injectivity. Charging all distinguishing state gives s<=a; on a restricted domain it instead gives s-a<=B-log_2|R|. These arguments do not assume reversible elementary transitions. They require the completed checkpoint and state accounting explicitly specified in the note. The note properly preserves the possibility of hybrid early exits and smaller reached sets.
+
+I independently substituted both z values into every clause of G_F. For z=0, r=1, y=1 and x=0 are forced and all F clauses are disabled. Its retained minimum is n+2. For z=1, r=0; y=1 forces x=0 and disables F at cost n+1; y=0 leaves exactly F at Hamming-weight cost at most n whenever F is satisfiable. This proves both slices always have the supplied fallback witnesses and establishes the stated B_F and unique positive threshold Delta_F. The reduction works even with an empty clause or no clauses in F; n>=1 can be ensured by an unused variable.
+
+Every erased record produced by the reduction has a semantic completion with w_z=Delta_F. Constructing that completion is unnecessary when the decoder's input is the erased record with that semantic promise. Thus a polynomial-time decoder for all such records decides SAT. Conversely P=NP permits computing the two bounded slice minima by weighted SAT queries and subtracting them. The equivalence is correct for the broad contract specified, without a claim that the actual compressor reaches all those records.
+
+The fallback in the z=1 slice is minimum exactly when F is unsatisfiable. A sound polynomial verifier with polynomial-length certificates covering all these true minimum assertions would put UNSAT in NP, hence NP=coNP. That is a certificate consequence, distinct from P=NP. A deterministic polynomial-time decision or total certificate-finding contract would be stronger. The note's completeness and reached-image caveats are essential and sufficient.
+
+## Closeout boundary
+
+No core mathematical defect was found. The source section locator was the sole identified editorial correction; the author note has now corrected it and explicitly distinguishes the preexisting perfect-matching SoS results from the bamboo-tree target. No mathematical change was needed. The independent evidence supports rejecting universal net compression justified by arbitrary collision existence, rejecting the broad polynomial-time exact minimum-threshold restoration repair unless P=NP, and rejecting unchanged-functional SoS reuse through the explicit degree. It supports none of the corresponding unrestricted impossibility claims. No novelty or priority conclusion follows from this review, and no successor research campaign is authorized by it.
