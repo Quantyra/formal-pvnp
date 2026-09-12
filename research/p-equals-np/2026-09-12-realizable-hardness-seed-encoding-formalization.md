@@ -105,3 +105,20 @@ explicit source-map/provenance port and compilation are required there.
 No toolchain/package/cache edits, release, push, or publication occurred.
 Only these two source files and this receipt belong to this increment's
 authorized commit; independent review receipts are separate work.
+
+## Independent three-lens bounded acceptance (2026-09-12)
+
+The historical author-build status above is superseded, for this finite component only, by independent review of candidate `e629518767cf00e54462abb2c1c7329ecd679187`. Both frozen source hashes remain unchanged.
+
+| Lens | Verdict | Actual evidence and boundary |
+| --- | --- | --- |
+| Build/audit | GO | Independent main63414 exit0 and Checks36123 exit0; all 25 standard-only axiom profiles and both expected evaluation lists |
+| Proof-adversarial | GO-WITH-NOTES | `2026-09-12-realizable-hardness-seed-proof-review.md`; concrete inverses, event bijections, zero-size cases and exact suffix fibres checked |
+| Complexity | GO-WITH-NOTES | `2026-09-12-realizable-hardness-seed-complexity-review.md`; finite computable maps and uniform event laws only; no machine/runtime or polynomial coin envelope |
+| Non-claims | GO-WITH-NOTES | `2026-09-12-realizable-hardness-seed-nonclaims-review.md`; exact dyadic sampler mass and uniform-seed qualifications retained |
+
+All receipt links are in this directory. Independent proof exports used the same two exact scoped commands recorded above, Lean 4.13.0, pinned mathlib, and LEAN_NUM_THREADS=1. Both sessions reached actual terminal success. The axiom split matched the author output: split_join and join_split use propext and Quot.sound; the remaining 23 profiles additionally use Classical.choice. Evaluations were exactly `[false, true, false, true, false, true]` and `[false, false, true]`. No source edits were needed during independent review.
+
+Accepted result: the concrete Boolean/block seed equivalence and arbitrary-event uniform probability transfer, including fixed extra-bit padding and composition with the actual dyadic inverse-CDF array sampler. This is not equality with the original rational mass without discretization error, nor preservation for an arbitrary biased or correlated external seed source. Mathematical event cardinalities are not asserted to be efficiently computable.
+
+S3131 remains open for faithful input/output encoding, actual machine implementation and output correspondence, polynomial time and coin bounds, malformed-input behavior, and randomized reduction composition. Specialized hardness, geometry/decoder, exact learning, Lean 4.34 companion compilation, full certification and final paper reconciliation remain open. This bounded acceptance adds no publication or release claim. The integration preserves all earlier author history and both proof sources; only the three review receipts and this formalization receipt are included.
