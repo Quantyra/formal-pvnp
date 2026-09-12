@@ -1645,3 +1645,52 @@ S3124 remains IN PROGRESS: separate novelty/significance and dependency
 audits are underway; no conclusions are anticipated and no public candidate
 or metadata is approved. Source preservation is not the publication decision.
 No public destination, push, outreach, paid compute or unrelated extension.
+
+## S3124: dependency GO and substantive publication preparation
+
+The final [dependency audit](2026-09-12-realizable-hardness-dependency-audit.md)
+returns source-interface GO for frozen working proof SHA256
+`2ac6a5e0d3136e9e57cb7439804a143362920a914a6d5fd7606ebfa57ac3977c`.
+The final [significance assessment](2026-09-12-realizable-hardness-significance.md)
+returns REVISE to prepare the substantive publication. Its earlier pending
+source-interface condition is discharged to the dependency audit's scope.
+The candidate matches the exact realizable question in HN's June 23, 2026
+revision, rather than a weaker proxy: the proposed improvement is the
+nearlinear exponent L^(1-o(1)) over earlier realizable L^alpha hardness.
+It is not the first realizable hardness result or a certified priority claim.
+
+The dependency audit independently checks the primary imported interfaces,
+including the narrow advice/codimension regime via MZ24's list theorem,
+and distinguishes unconditional KMS covering from the paper's historical
+conjectural headline. The candidate's parameter change, posterior analysis,
+and threshold ladder remain new derivation steps, not source guarantees.
+No complete reproof of the external inputs or formal verification is claimed.
+The source discrepancy remains limited to inspected MZ v1. The inaccessible
+publisher PDF limits camera-ready comparisons; explicit accessible versioned
+inputs support the audit and this preparation decision.
+
+All scope remains fixed-parameter randomized polynomial-time many-one
+hardness, with the source-model learning transfer and advice overhead charged.
+The exponent may depend on L. Exact YES satisfaction on successful reduction
+outputs does not remove reduction randomness or failure. No growing-L
+uniform theorem, linear approximation gap, one-way function or P-versus-NP
+result follows. Full attributed manuscript/extraction and the final
+candidate-specific publication checks remain necessary. REVISE authorizes
+preparation within the separately routed public artifact lane; this source
+receipt does not itself publish or approve a release.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-realizable-hardness-dependency-audit.md | `381271a3b9f4b09acfd5611f06d87eed0d9eaec9dfd6d05c533fadd263edb012` | `11cf42d8976be46133e34615f356fb7d3ae9d17c` |
+| 2026-09-12-realizable-hardness-significance.md | `f3558f783960ae30851c4837f4705d75067b158cfc5e0ec53ee2f00a3b822417` | `55a04519ef883f00f07a18e0c7faaeb4cbcdc33a` |
+
+Source preservation was completed first in commit
+`3e82f1348bee8d7dede5ed86aec5ee8d29abf4f0` (resolve the recorded abbreviated
+source commit `3e82f13` against Git if using this receipt programmatically).
+This integration is exactly the two final audits plus this append-only graph
+update. The frozen proof and prior reviews are untouched. Its Git-content
+SHA256 remains `15d84f6871704a46fcd896c2fde8631b8806c2e5938f01a3dfa324bd4fe83514`;
+the four working CRLF endings and their Git normalization were already
+disclosed in the preceding preservation receipt. Audit EOF and staged
+whitespace checks pass, with exact working/Git byte comparisons. No push,
+public-artifact edit, experiment or theorem extension occurs in this update.
