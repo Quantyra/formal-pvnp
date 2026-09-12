@@ -1555,3 +1555,47 @@ build, public artifact, push, spend or automatic successor follows. No new
 SAT bound, circuit lower bound, novelty or class separation is established.
 The broader objective remains ACTIVE and unresolved. This is informal AI
 selection review, not human peer review or Lean verification.
+
+## S3122: clause-pair weight rule, exact global-isolation failure
+
+[Design](2026-09-12-deterministic-isolation-design.md),
+[independent exact challenge](2026-09-12-deterministic-isolation-challenge.md)
+and [scope GO](2026-09-12-deterministic-isolation-nonclaims.md) record the
+root-authorized selected-and-refuted Screen 3 conjecture. The known greedy
+explicit-family construction received a concrete structural challenge;
+missing proof was not treated as a veto. Its actual global guarantee is
+NO-GO, with no automatic repair. Screens 1/2 retain separate known-operation
+classifications; their exact outputs were not refuted by this computation.
+
+The ten width-two signed-path clauses on six variables force x1=...=x5
+and x5!=x6. Reconstructing the entire clause-pair/prefix family gives 44
+sets and actual weights (1,2,4,8,16,31). All 64 assignments were checked
+independently; only 000001 and 111110 satisfy, both with total31. Every
+exact-total filter therefore has zero or two solutions, refuting the entire
+one-vector list, not only the sufficient minimum criterion. The original
+clauses and embedded exact verification code are preserved in the records.
+The author's bounded discovery sweep is separate from independent final-
+instance verification; incidental timings are not complexity evidence.
+
+Numeric range, explicit list size, construction, arithmetic, unique auxiliary
+extensions and target-size costs remain charged. No optimum or uniqueness
+oracle is supplied. The prospective reduction is robust disjunctive promise
+isolation with a total-runtime solver requirement, not a single many-one
+promise map. Isolation alone would not supply a SAT solver. Input-oblivious
+family bounds and nonuniform existence do not prohibit all formula-aware
+rules. No general isolation impossibility, P-versus-NP result or new algorithm
+follows. Source/verification roles and limited primary coverage are disclosed.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-deterministic-isolation-design.md | `0ad905ffef6c3aa1d407a2bc057788320154f4e11f94ba641c6aadebe837766c` | `b237c3653f3b120705364559ed278c4792cad44f` |
+| 2026-09-12-deterministic-isolation-challenge.md | `06d8c276010afa8a003b33d5cd2fdd7910c42d69820b82689bd934c31b1ed431` | `b9392bfe78b05b3c332b965a04b1d2d85b2b8903` |
+| 2026-09-12-deterministic-isolation-nonclaims.md | `c650aa001c70beb7d65586e11f0b780e3db164d3a2ed4e365e597ae67f095795` | `a9e1b751aea0511e42771e7f5a384c0537d4d298` |
+
+All three working records match staged Git bytes, with EOF/cached whitespace
+checks passing. This exact four-file integration preserves prior evidence.
+Publication HOLD: no established external novelty or significance follows
+from the small failed application. No public action, push, spend, further
+test or automatic successor occurs. Formal build is N/A for informal AI
+research; no human or Lean verification is claimed. The broader objective
+remains ACTIVE and unresolved.
