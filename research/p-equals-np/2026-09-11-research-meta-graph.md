@@ -1378,3 +1378,51 @@ follows. All prior proof/public files are preserved. No experiment, public
 change, push, outreach, spend or automatic successor is authorized by this
 closeout. The broader objective remains ACTIVE and unresolved. Integration
 is confined to these three records and this graph in a local scoped commit.
+
+## S3118: fixed clause-interference schedule, exact first-obligation failure
+
+[Design and embedded reproducer](2026-09-12-clause-interference-design.md),
+[independent source/math challenge](2026-09-12-clause-interference-challenge.md),
+and [nonclaims GO](2026-09-12-clause-interference-nonclaims.md) complete the
+root-authorized finite assessment. **NONE applies to the fixed commutator's
+uniform local-benefit rationale.** This was an explicit changed schedule,
+not a novelty-certified primitive or a successful quantum algorithm.
+
+For the uniform initial state, pi/6 repair rotation, one plain sweep and
+specified correction, all 28 overlap-mask/order cases on at most five
+variables are covered. Nine symmetry classes compress the full enumeration;
+duplicate list clauses remain, and disjoint K=I is a separate analytic
+control. Exact joint success and expected violations were computed
+separately. Twenty-four rows worsen and four tie. One exact witness is
+DeltaP=(100-64sqrt(3))/729<0. Author matrix computation and independent
+vector updates agree, including exact normalization and coverage.
+The separately authorized inverse check reduces to reversed plain sweep
+only for two clauses and supplies no local improvement. No larger-system
+cancellation or tuning result is claimed.
+
+Preparation, gate precision, inverse gates, overlap construction, readout,
+verification and conditional amplification are charged. The polynomial
+budget incomplete protocol returns UNKNOWN on failure, without an all-input
+success floor. Source comparison includes July 2026 general PPSZ and its
+charged coherent trial comparison; short-path dequantization covers its
+specified guarantees, not arbitrary quantum circuits. A source-only PPSZ
+update left the motif calculation unchanged. The challenger substantively
+contributed independent derivation, source/coverage checks and prior art.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-clause-interference-design.md | `9e5cf79c213ef28d8bd6b56a78c84bb5288a4987327b5c52634cc6e6a5ee3f41` | `cb7c4e147a9328799b8a1c8a247a0757a3697a59` |
+| 2026-09-12-clause-interference-challenge.md | `4bed5b8de6f879ea3270dec782a57ee2d722b63aa602c9807152b60619c385b5` | `a955ab61bc8a3a5a4a08aafcd05bd1da948b38c2` |
+| 2026-09-12-clause-interference-nonclaims.md | `d1c6430f410d7ddf911c4c06eafd504ed894db04aeb883d62b5fd9f7771c4dab` | `e62b094ef71b8fb4a075ac58ea4b399c9bc1955e` |
+
+Working and staged Git bytes match exactly for all three records. The
+portable matrix reproducer is embedded in the design; the challenge gives
+its vector recurrence. No separate executable artifact is added. This
+four-file integration preserves prior graph content and all prior proofs.
+The exact finite derivation is not a hard-SAT benchmark or hardware run.
+No global heuristic failure, quantum runtime lower bound, novelty,
+asymptotic advantage or P-versus-NP result follows. A uniform polynomial
+bounded-error quantum SAT guarantee would place NP in BQP, not imply P=NP
+without a suitable deterministic classical algorithm. No such guarantee
+is supplied. No public change, push, spend or automatic successor follows.
+The broader objective remains ACTIVE and unresolved; no formal build applies.
