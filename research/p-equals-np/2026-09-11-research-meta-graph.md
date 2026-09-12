@@ -818,3 +818,51 @@ own exact extraction, metadata, claim packet and publication decision.
 This six-file integration is local only; no public/planning edit, push,
 experiment, outreach or paid computation is included. The broader
 research objective remains ACTIVE and unresolved.
+
+## S3110: verified public output-uniform addendum receipt
+
+On 2026-09-12 the approved v4.0.0 candidate was published at
+[the public release](https://github.com/Quantyra/weak-rank-positivity-window/releases/tag/v4.0.0),
+exact public commit `09aca60184fe7b1d61856cd79ac21aa86ea4caca`.
+This closes the separately gated public-extraction step described above;
+it does not alter the preserved v3 identity theorem or its historical scope.
+The mathematical source is `4b748b22aa87587f761ddd2d99f342f427a9b0c9`;
+actual public extraction mathematics and scope/readiness reviews are in
+`d565b3796cbd3adb38c15b30a4ce83559d67d799`:
+[mathematical PASS](2026-09-12-bamboo-output-public-proof-review.md) and
+[source/scope/readiness GO](2026-09-12-bamboo-output-public-scope-review.md).
+
+Release ID is `387588065`; the exact OUTPUT-NOTE.md asset ID is
+`559353521`, size 22963 bytes, SHA256
+`8b37a7b333bcf2bd0cd4552364486dc3b5fa3e930601fb8168a890c19db28be2`,
+Git blob `069565e25d8d991476f80bdfb6385972a62571d4`.
+The publisher's corrected receipt reports PASS for unauthenticated release,
+asset bytes, raw main/tag artifact and CFF, exact approved About wording,
+four prior releases/tags, five preserved prior file blobs/public bytes,
+atomic exact-commit main/tag publication, and clean local public main.
+The root separately reports web verification. This graph update records
+those completed checks; it is not another independent network audit.
+A copied progress label in the receipt was corrected from SIZE-NOTE to
+OUTPUT-NOTE; actual asset name, ID, bytes, hash and verification concerned
+OUTPUT-NOTE throughout, and no remote action was repeated for the correction.
+Planning owns the archived corrected receipt and publication decision.
+
+The released result remains every Boolean A at q even>=1024, m=q^2,
+N=8q+4, D=floor(q/(32 log_2 q)): the specified local row-space PSD and
+explicit real SoS monomial-size bound `(8/7)^((2D-1)/2)` for the exact
+simple-bamboo encoding. Its separately proved indexed map G_q(X,Y)=XY
+has seed s_q=16q^3+8q^2 and output t_q=q^4=Theta(s_q^(4/3)); the
+expansion ratio is Theta(s_q^(1/3)). Nonrange outputs are rank_F2(A)>N;
+rank<=N outputs are satisfiable and their refutation bound is vacuous.
+The monomial measure counts explicit roots before squaring, not compressed
+circuits, and the exponent remains Omega(N/log N).
+
+Rank testing and preimage factorization are polynomial-time. No arbitrary-m,
+iteration, amplification, all-length padding, other-encoding or compressed-
+certificate hardness, computational pseudorandomness, inversion hardness,
+general SAT runtime, circuit lower bound or P-versus-NP result follows.
+Novelty and priority remain unknown; authorship and review are informal
+AI work, not human peer review or Lean verification. The broader research
+objective remains ACTIVE and unresolved. This source closeout changes
+only this graph, with a scoped local commit; no theorem/public edit, push,
+release, outreach or paid computation is performed by the graph updater.
