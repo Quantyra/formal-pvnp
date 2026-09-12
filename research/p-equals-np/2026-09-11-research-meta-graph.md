@@ -1,6 +1,6 @@
-# Research meta-graph: evidence, transformations and open transitions
+﻿# Research meta-graph: evidence, transformations and open transitions
 
-2026-09-11; S3068 user-directed addition. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
+2026-09-11; S3068 user-directed addition, updated by S3069. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
 
 ```mermaid
 flowchart TD
@@ -13,6 +13,9 @@ flowchart TD
   LOCAL[Capped maximum-overlap growth]
   ROOT[Rooted Kikuchi operator and defect data]
   WALK[Labeled signed killed walk]
+  FREE[Labeled degree-normalized non-killed walk]
+  KILL[Suppressed killed-history output on good random inputs]
+  DIRECT[Direct identity or Walsh planar-matchgate route]
   MOM[Normalized even trace moment]
   UPPER[Certified global spectral upper bound]
   DOUBLE[State plus sign-parity bit]
@@ -25,6 +28,11 @@ flowchart TD
   LOCAL -. F1: restricted failure .-> GEOM
   CNF -->|V4: rooted construction| ROOT
   ROOT -->|V5: row queries| WALK
+  WALK -->|F2: sampler-specific bound| KILL
+  ROOT -->|V9: change normalization| FREE
+  FREE -->|V10: negative return only| ONE
+  FREE -. U5: nontrivial return mass .-> ODD
+  CNF -. F3: direct route fails prerequisites .-> DIRECT
   WALK -->|V6: expectation identity| MOM
   WALK -->|V7: negative return only| ONE
   ONE -. U4: yield and coverage .-> ODD
@@ -46,7 +54,10 @@ ROOTCERT is the complete rooted spectral certificate, distinct from the FKO tupl
 | V4 | Existing rooted operator construction accounts for every input clause. [Operator source](2026-09-11-global-fko-sources.md) | Implicit input is compact; dimension binom(n,ell), diagonal trace and defect sums remain charged. |
 | V5/V6 | Channel-labeled killed walks have polynomial local queries; signed return expectation equals tr(H^(2p))/N. [S3067](2026-09-11-global-fko.md) | Number of walks, length, exact transition probabilities, precision and failures. An expectation identity is not an upper certificate. |
 | V7 | A negative closed 2p-step rooted walk reduces to at most 4p original clause IDs with odd parity. [S3067](2026-09-11-global-fko.md) | Verify original labels; no lower bound on useful return frequency or packing coverage. |
-| U4 | One verified tuple is not yet a useful family. | Enough distinct outputs, support control and verified clause-load capacity. |
+| U4/U5 | One verified tuple is not yet a useful family. Non-killed normalization removes survival loss but does not prove useful return mass. [S3069](2026-09-11-interference-extraction.md) | Bound nonempty parity-return mass at length O(n^(1/5)), then distinct useful weight and verified clause capacities. The random-sign diagnostic also requires a sign-independent start. |
+| F2 | On the specified iid-support, independent uniform-root good event, killed-history output is at most exp(-Omega(n^(1/5) log log n/log n)) per trajectory. [Reviewed S3069](2026-09-11-interference-extraction.md) | Shared input exception is only o(1). Uniform over starts on that fixed operator; standard tagged-sampler amplification is scoped separately. Not an interference or quantum lower bound. |
+| V9/V10 | Normalize by retained degree instead of G+d_*, retaining channel labels; a negative closed L-step return still gives one verified odd tuple of size at most 2L. [S3069](2026-09-11-interference-extraction.md) | Restart isolated rows; charge row queries and readout. This is a different operator, so H_ref trace and spectral bounds do not transfer. |
+| F3 | The direct incidence-network identity/Walsh standard planar-matchgate attempt fails its signature/topology prerequisites. [Holographic companion](2026-09-11-holographic-extraction.md) | Does not exclude arbitrary bases, gadgets, other representations or specialized coefficient methods. Code-enumerator reformulation alone has no cheaper contraction. |
 | U2/U3 | Statistical trace accuracy and complete pointwise refutation are different contracts. [S3067](2026-09-11-global-fko.md) | Dimension-dependent accuracy for the chosen moment route, independently sound upper proof, and every global defect term. |
 | V8 | Familiar signed double cover records cumulative sign as a bit. | Twice as many graph states; does not itself accelerate finding an opposite-sheet return. |
 | S1 | Holographic transformations can preserve tensor contractions under compatible changes of basis. | No simultaneously tractable transformed signatures/topology or cheap certified contraction has been shown for this operator. |
@@ -63,3 +74,11 @@ A sign-basis change separates the unsigned and signed sectors. It makes cancella
 Here 'holographic' has a precise algorithmic meaning, distinct from physical holography. Valiant's Holant theorem preserves the appropriate global sum under compatible local basis descriptions, while matchgate constructions can make that sum a tractable weighted perfect-matching/Pfaffian computation in the required setting. Arbitrary tensor networks do not become easy simply by changing basis. All transformed local constraints must fit a tractable class together, with the required topology, and the basis and contraction must be obtained at charged cost. [Valiant, Theorem 4.1 and matchgrid definitions](https://people.seas.harvard.edu/~valiant/holographic11-07.pdf).
 
 The useful open research question is therefore specific: can a representation change expose a simultaneously tractable global computation while preserving the needed all-input certificate or sufficiently detectable output? No such transformation or interference advantage has been established for these FKO instances. The graph records that obligation; it is not a proposal to run a new experiment or draft a paper.
+
+## S3069 update and live boundary
+
+The reviewed killed-sampler result diagnoses the chosen normalization, not intrinsic witness sparsity. The separate FREE node removes that normalization penalty while preserving original-clause witness verification. V10 still ends at ONE, and U5 remains unproved: return probability must exclude parity-empty backtracking, and enough useful outputs must survive clause-load checks. The extra edge to ODD is an unresolved combined yield-and-coverage obligation, not a demonstrated transformation.
+
+The holographic companion checks a direct coefficient representation of short odd tuples. Its identity/Walsh and direct-planarity failures are F3 only; S1 remains speculative rather than refuted. Neither a changed basis nor the non-killed walk is recorded as an improved FKO finder. An improved random-input finder would still lack the worst-case bridge needed for P versus NP.
+
+Evidence: [main derivation and three-lens table](2026-09-11-interference-extraction.md), [prior quantum output contract](2026-09-11-interference-prior-art.md), and [direct holographic assessment](2026-09-11-holographic-extraction.md). [Final independent claims-scope inspection](2026-09-11-interference-nonclaims-review.md) is GO for this ledger update; no executable graph, experiment or novelty conclusion is added.

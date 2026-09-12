@@ -1,0 +1,19 @@
+# S3069 independent non-claims review
+
+2026-09-11. Independent non-claims lens under [INTEGRITY-CLAIMS](../../INTEGRITY-CLAIMS.md). Reviewed the saved [main derivation](2026-09-11-interference-extraction.md), [holographic companion](2026-09-11-holographic-extraction.md), [prior-art note](2026-09-11-interference-prior-art.md), S3068 novelty audit and existing meta-graph. This is a claims-boundary review, not proof certification, novelty certification, or a new literature survey.
+
+**Status: GO on claims scope for the corrected main, companions and updated meta-graph.**
+
+## Findings
+
+- The new diagonal estimate explicitly uses the joint iid-support and independent uniform-root probability space. It is not asserted for all rootings. The useful-output bound conditions on a fixed good rooted instance and is uniform in its starting state. Shared input exceptions are paid once; their total is only o(1), not automatically exponential.
+- Exponential suppression applies to the specified killed, channel-labeled sampler. The amplification consequence applies to its exact coherent preparation and the standard amplitude-amplification iterate. Neither establishes a lower bound against all quantum walks, interference, guiding states, history-erasing algorithms or the source's spectral refuter.
+- The degree-normalized escape is a different operator. It preserves verifiable clause-label extraction, while nontrivial return mass and capacity-controlled output remain unproved. Eliminating killing is not presented as an improved finder.
+- One inconsistent XOR tuple is not an OR refutation or a sufficient FKO packing. The notes retain support, distinctness and load obligations. A future random-input FKO advance is not represented as settling worst-case P versus NP.
+- The holographic rejection covers the direct incidence network with the identity or Walsh basis and standard planar matchgate prerequisites. Its nonplanarity bound is for that direct graph. Arbitrary bases, gadgets, other topologies and instance-specific coefficient compression remain outside the conclusion. Coding/Fourier reformulations are attributed to existing tools.
+- The prior-art note distinguishes planted detection/recovery from refutation and original-clause witness extraction. It retains lifted-dimension and guide overhead and does not turn a compact index into polynomial total cost. The [July source abstract](https://arxiv.org/abs/2607.29672) independently confirms its quantum output is detection and weak recovery; this reviewer did not independently certify its full proof.
+- Novelty of the new capped-diagonal/survival derivation is unassessed. Standard factorial-moment, union-bound, parity-character and amplification ingredients are identified. No publication readiness, new complexity separation, Lean verification or completion of the continuing research goal is claimed.
+
+Minor wording correction applied: “even-incidence tuple of 3-variable clauses” now makes the intended cardinality-parity argument explicit. The random-sign diagnostic also explicitly requires a sign-independent starting distribution and transition selection.
+
+Final saved-graph inspection: F2 is explicitly limited to the chosen killed sampler and fixed good randomly rooted input; FREE is a separate retained-degree normalization, with no transfer of H_ref spectral bounds. V10 ends at ONE, while U4/U5 retain unproved nontrivial mass, distinct useful weight and clause-capacity obligations before the ODD family node. F3 names only the direct identity/Walsh planar-matchgate attempt; the general compatible-basis route remains speculative. The ledger is explicitly distinct from an executable state graph. No unresolved claims-scope blocker remains. This GO is not proof certification, novelty or publication approval, or achievement of the continuing research goal.
