@@ -1,6 +1,6 @@
 ﻿# Research meta-graph: evidence, transformations and open transitions
 
-2026-09-11; S3068 user-directed addition, updated through S3071. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
+2026-09-11; S3068 user-directed addition, updated through S3072. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
 
 ```mermaid
 flowchart TD
@@ -10,6 +10,9 @@ flowchart TD
   CERT[Sound FKO tuple certificate]
   ROOTCERT[Sound rooted spectral refutation]
   ONE[One verified odd tuple]
+  BASIS[Known full random-order greedy basis]
+  CIRCUITS[List containing all short odd circuits]
+  ENUM[Known connected-subset enumeration baseline]
   LOCAL[Capped maximum-overlap growth]
   ROOT[Rooted Kikuchi operator and defect data]
   WALK[Labeled signed killed walk]
@@ -27,6 +30,11 @@ flowchart TD
   CNF -. U1: geometric discovery .-> GEOM
   GEOM -->|V1: sign filter| ODD
   ODD -->|V2: verify inequality| CERT
+  CNF -->|V13: known basis processing| BASIS
+  BASIS -->|V14: bounded-degree repetition bound| CIRCUITS
+  CNF -->|V15: matching deterministic baseline| ENUM
+  ENUM -->|V16: parity and sign checks| CIRCUITS
+  CIRCUITS -. U6: optimize and verify packing .-> ODD
   CNF -->|V3: declared policy| LOCAL
   LOCAL -. F1: restricted failure .-> GEOM
   CNF -->|V4: rooted construction| ROOT
@@ -104,3 +112,15 @@ V11 closes a classical preparation-cost obligation on the declared random good e
 The [structured-code selection](2026-09-11-frontier-code-selection.md) and [aggregate-packing selection](2026-09-11-frontier-packing-selection.md), checked in the [independent selection review](2026-09-11-frontier-selection-review.md), select no supported new mechanism. Generic decoding exponents, implicit pricing, and short-cover existence have not supplied an applicable aggregate improvement. This is an evidence-limited selection outcome, not an all-method barrier or a claim that no such algorithm exists. U1, U4 and U5 remain open; no extra verified transformation is added.
 
 The code note records one unselected proof question about a known full-matrix random-priority greedy-basis/fundamental-circuit heuristic. Its sparse pivot-survival and aggregate-load estimates are unproved here, and it is distinct in scope from the prior variable-restriction and capped local-growth bounds. Recording it does not select a campaign, confer novelty or count it as progress toward a finder.
+
+## S3072 update: recovered circuits, matching known baseline
+
+The [greedy-basis analysis](2026-09-11-greedy-basis.md) derives a bounded-degree sufficient-event probability and repeats known basis processing to recover every short circuit with stated high probability. V14 concerns that recovery contract only, at (O(Delta))^k times polynomial factors; it is not a polynomial finder. The [source comparison](2026-09-11-greedy-basis-sources.md) identifies an already available deterministic connected-subset algorithm with the same degree-based leading exponent (V15/V16). Thus these are analysis/baseline edges, not a new speedup. [Final independent claims-scope review](2026-09-11-greedy-basis-nonclaims-review.md) is GO for this update.
+
+| New edge | Evidence and exact boundary |
+|---|---|
+| V13/V14 | Full random-priority Gaussian basis processing is known. On a fixed maximum-degree-Delta input, the sufficient isolation event recovers an e-clause circuit with probability at least [exp(-3/4)/(3Delta)]^e. Independent repetition and a union bound recover all circuits of size at most k. The random-input degree event is paid once. |
+| V15/V16 | Minimal circuits are connected in the clause-intersection graph. Patel-Regts Lemma 2.4 lists all connected subsets up to k in O(M k^3 (exp(1) d)^k), d=max(1,3(Delta-1)); exact parity/sign filtering supplies the circuit-containing list. This matches the displayed degree exponent deterministically. |
+| U6 | An odd tuple has an odd minimal component; replacing tuples by components preserves fractional mass without increasing clause loads. Computing a packing, numerical accuracy, strict spectral slack and exact certificate verification are separate obligations. No full end-to-end packing/refutation bit-runtime is established or pursued in this attempt. |
+
+No novelty, strongest-baseline advantage, quantum speedup or achieved P-versus-NP stepping stone is recorded. The numerical-packing caveat is an explicit boundary, not an automatic new work item.

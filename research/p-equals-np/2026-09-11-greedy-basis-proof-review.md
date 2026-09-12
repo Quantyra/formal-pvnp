@@ -1,0 +1,25 @@
+# S3072 independent procedure and baseline review
+
+2026-09-11. Review of [greedy-basis.md](2026-09-11-greedy-basis.md), under [integrity](../../INTEGRITY-CLAIMS.md). **GO for the scoped mathematical items below.** The reviewer originated the coordinate-isolation survival argument in [the audit](2026-09-11-greedy-basis-audit.md), so this is explicitly **not independent approval of that argument or its probabilistic all-circuit recovery corollary**. Those require the separate source/research reviewer. No experiments, implementation, LP numerical audit, novelty determination or general complexity lower bound was performed.
+
+## Procedure
+
+Processing every column in a uniformly random permutation, accepting exactly independent extensions, is a well-defined greedy basis algorithm. Each rejected column has a unique representation in the retained independent columns. Over GF(2), its nonzero coefficients together with the rejected column form a minimal circuit: any proper dependent subset would contradict independence or uniqueness of that representation. Keeping original clause IDs handles repeated supports correctly. Later accepted columns only extend the independent set, so the representation remains the same in the final basis. Polynomial storage and bit work per pass suffice, even when long relations are computed before the size filter. This does not assume a uniform distribution on bases.
+
+## Circuit decomposition and packing transfer
+
+Every nonempty zero-sum set of column IDs contains an inclusion-minimal dependent subset. Removing it leaves another zero-sum set; iteration partitions the original set into circuits with disjoint IDs. If the original sign parity is odd, at least one component has odd parity. Choosing one such component from each weighted odd tuple preserves its assigned weight and decreases or preserves each clause load. Adding weights when components coincide preserves this conclusion. Conversely, every odd circuit is an odd tuple. Thus the optimum unit-capacity fractional mass over all odd tuples of size at most k equals that over all odd circuits of size at most k. This is an existence/optimization reduction, not an implemented LP runtime claim or a complete FKO refutation by itself.
+
+## Deterministic comparison, with an elementary enumeration proof
+
+The clause-intersection graph has one vertex per column ID. A weight-three column has at most 3(Delta-1) neighbors when every original row degree is at most Delta. Overcounting neighbors sharing multiple rows only strengthens this upper bound. A minimal circuit induces a connected subgraph: different connected components have disjoint row supports, so a zero sum of the whole set forces a zero sum in every component, contradicting minimality if more than one component exists.
+
+For completeness, no delicate enumeration theorem is needed for the required cost scale. Let d be the graph's maximum degree and D=max(1,d). For size s, enumerate rooted plane-tree shapes (at most 4^(s-1)), root images (M choices), and, for each tree edge, a neighbor choice (at most D). Reject noninjective maps. Every connected s-vertex set has a spanning tree and therefore occurs among these maps. The number of attempts is at most M(4D)^(s-1); polynomial work per attempt suffices. Duplicates may be kept within this bound or coalesced. If exact circuits are desired, check zero sum and rank s-1; over GF(2), those two conditions make the all-ones relation the unique nonzero kernel vector, hence ensure minimality. Check sign parity separately.
+
+Summing through k gives time M(O(max(1,d)))^k times polynomial factors. Delta=1 causes no issue: no two nonzero columns intersect and no circuit exists. At Delta=O(n^(2/5)), the leading logarithmic cost is at most (2/5)k log n+O(k)+O(log poly(n,M)), matching the displayed greedy-recovery guarantee. Both procedures can provide the same list required by the packing reduction, so unspecified shared packing postprocessing cannot establish an advantage for the greedy route.
+
+## Disposition
+
+The smaller exponent relative to the naive half-list procedure is not an improvement over this deterministic bounded-degree baseline. Stopping this candidate as a frontier-finder campaign is justified by the explicit comparison; it does not show that the full greedy heuristic cannot perform better than the proved sufficient-event bound. Any stronger analysis would need a new success estimate and a comparison against connected enumeration, rather than renewed packaging of the present bound. No general research-exhaustion or P-versus-NP conclusion follows.
+
+Final saved-text check: the author now handles zero degree with a maximum-one convention, cites the matching explicit connected-subset bound, and states that a numerical/end-to-end packing runtime audit is neither established nor pursued after the baseline comparison removes the proposed gain. The requested editorial corrections are resolved. The scoped GO above stands; the separate reviewer owns independent approval of the survival and repetition argument.
