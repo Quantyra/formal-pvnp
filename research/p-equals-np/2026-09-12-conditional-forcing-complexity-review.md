@@ -1,0 +1,37 @@
+# Conditional-forcing source and complexity review
+
+2026-09-12; S3087 / E004 / S008. Independent review of the actual [conditional-forcing draft](2026-09-12-conditional-forcing.md), following the planning integrity/frontier intake and preceding witness-discovery reviews. No author edits, commits, publication, push or paid computation.
+
+**Decision: GO for the bounded conditional-message, conservative full-CCT and isolated signed replacement analysis; INCOMPLETE for an improved forcing-minus-KL guarantee.** The author corrected the independent-occurrence derivative at r=.1 to .01962. I also reviewed the added equations (8)–(10) and root-field diagnostic.
+
+## Source contract
+
+[Scheder, arXiv:2207.11071v1](https://arxiv.org/pdf/2207.11071v1), Section 3, constructs CCTs using a unique assignment, canonical clauses and clauses falsified by flipping the root-to-node labels. Labels cannot repeat on a down-path; incomparable occurrences share placements. Depth-cap leaves are safe; earlier terminal leaves unsafe. Cut keeps the root alive and hits every safe path; sufficient implication strength converts it to forcing.
+
+Section 6 uses a maximum-degree-two subgraph of the canonical sibling multigraph. Sections 7.1–7.3 distinguish TwoCC-free, high-density and low-density edges; TwoCC is defined after the specified closure. Remark 48 retains exact root conditioning. The Markov discussion on printed pages 29–30 already identifies nonneighbor conditional dependence. The published proof instead uses a different component density and decorrelation surgery. Lemma 52 requires an infinite complete binary tree, distinct labels, independent cutoff indicators, finitely many biased nodes, and no biased proper ancestor of the node being repaired. Corollary 53 follows that cleanup. The corrected structural retention is 11/12 with at most 22 edges, not the older coefficients. These facts do not import a forcing estimate into the proposed product measure.
+
+## Independent mathematical checks
+
+The message recurrence is exact under the stated per-label threshold cells and one fixed root value. Its variance identity controls nonneighbor effects uniformly in path length. The point cell resets its message; it does not create another free random label. Whole-cut conditioning is not assumed rectangular. The draft correctly restricts the exposure argument accordingly.
+
+The constants in the threshold remainder have safe slack: the first displayed coefficient is below 2 and the second below 5. The exact vertex normalizer is positive. Vanishing cell means and root value above the half threshold give the claimed independence of cutoff bits there. This checks the analytic inequalities, not a numerical experiment.
+
+The conservative global repair is valid on a finite path forest: every successive distinct-label bit has conditional probability at least p_-(r), hence sequential coupling dominates an independent label law. Cut is monotone. For antichain occurrences of one label, conditioning on the other labels leaves a conjunction of the required occurrences, or a constant; a shared Bernoulli success probability p dominates the product p^k after splitting. Iterating and extending early terminal branches gives the complete-tree recurrence. Integration over the uniform root marginal and summation over roots therefore support equations (6)–(7). No independence between different roots' cut events is required for this expectation bound.
+
+This is substantive full-event accounting, but its inequality cannot certify an improvement: p_- is at most r and entropy is subtracted. The comparison discarded favorable sibling effects. Adding an independently quoted sibling credit afterward would count a benefit that this particular comparison never preserved.
+
+## Counterexample scope
+
+I independently checked the five-clause formula and its height-two CCT. Units force c,d, then a,b, then x, so the all-ones assignment is unique. At the depth cap the repeated leaves produce Cut=AB OR CD. Decreasing shared C success probability by delta changes its probability by exactly delta*r*(1-r^2). Splitting both repeated labels first gives the different per-occurrence derivative stated in the draft, with the decimal correction above.
+
+Thus the example is an actual general CCT witness against transferring clean occurrence derivatives before cleanup. It is not verified as an almost-regular, padded or TwoCC-free instance; it does not establish an adverse aggregate PPSZ gain. In particular, strength five already forces this solution. Its original repeated-label cut probability is 2r^2-r^4, with surplus over the infinite independent baseline at r=.1. A surplus-aware cleanup may spend that credit; the example does not refute such a repair. This distinction preserves the possibility of a stronger mechanism.
+
+## Quantifiers and resources
+
+The signed isolated-triple formulas (8)–(9) are correct with their explicit assumptions. Direct expansion gives E[ABC]=r^3+2*epsilon*r*gamma^2+epsilon^2*gamma^2*M2 and E[AC]=r^2+epsilon^2*m2*gamma^2. These establish the displayed differences while preserving the actual AC marginal. They are local comparisons for a component with no root or external evidence, not signed cleanup theorems for an exposed CCT. The root-field covariance calculation is also exact: with s=epsilon*phi(r), it equals gamma+s*V-s^2*gamma*m2. Its negative leading square-root term near one half dominates the positive d^(3/2) term for every fixed positive epsilon. This diagnoses failure of an assumed conditional covariance sign; it does not show a negative total forcing gain.
+
+Equation (10) correctly differentiates the normalized path product with the root fixed. Uniform root marginals avoid an omitted normalizing derivative. The stated independent-base mixed differences for disjoint nonroot pairs and adjacent pairs are consistent with integrating distinct labels; the adjacent central label contributes phi squared, hence the separate m2 and M2 terms. At positive theta, the residual product weight must remain. The proposed bound on the integrated negative part is an explicit outstanding obligation, not a proved estimate. A positive aggregate first derivative and joint parameter slack are still separately required. These additions sharpen the candidate repair without establishing its global application.
+
+The finite reveal-count remainder grows with the CCT size, up to 2^(h+1)-2 labels. Its epsilon-squared order alone supplies no compatible choice of epsilon and depth that beats the finite-height baseline error. A successful result must bound the actual signed cleanup loss and preserve sibling credit in the same inequality, then exhibit a positive net slack with all parameters jointly admissible. Depth-uniform integrable control would suffice in principle; it remains unproved here. The threshold cancellation is a plausible ingredient, not a reason to close the missing theorem.
+
+The solution-dependent graph remains an auxiliary proof object. Uniform-order PPSZ needs no uncharged graph-discovery oracle. Fixed-strength implication costs n^{O(w)} per run; the available success guarantees still require exponential repetition. Cycle normalization, cyclic conditional messages and credit for removed cycle edges are outside the path-forest result. Neither new SAT complexity, P-versus-NP progress, novelty nor publication readiness is certified. The existing reproduction release should remain unchanged by this increment.

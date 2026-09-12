@@ -1,0 +1,21 @@
+# S3087 non-claims and publication-boundary review
+
+2026-09-12; E004 / S008. Actual review of the [conditional-forcing manuscript](2026-09-12-conditional-forcing.md), [proof-adversarial review](2026-09-12-conditional-forcing-proof-review.md), [source/complexity review](2026-09-12-conditional-forcing-complexity-review.md), and [research graph](2026-09-11-research-meta-graph.md), against the integrity ledger and S3087 planning intake. Both mathematical reviews explicitly cover the final equations (8)-(10), as well as (1)-(7). This is independent AI-agent claims review, not Lean verification or external human peer review.
+
+**Decision: GO for the bounded analytic record; improved forcing INCOMPLETE; publication HOLD for this new incomplete mechanism.** The existing curated corrected-source reproduction and v1.0.0 release remain unchanged.
+
+## Accepted scope and excluded inferences
+
+The threshold-history lemma controls one conditional reveal, uniformly in path length, with a single exact root value and rectangular per-label threshold observations. It does not control an arbitrary cut-conditioned law or prove a favorable aggregate forcing inequality. The conservative full-tree comparison does cover all roots on a path forest, including repeated labels after legitimate antichain splitting. Its lower marginal p_- is no larger than r and it subtracts entropy cost, so the resulting bound loses the favorable sibling benefit. Adding that benefit afterward is unsupported.
+
+The unique five-clause CNF realizes the claimed repeated-label CCT and the exact shared-label versus unfolded-occurrence derivative discrepancy. Its scope is the failure of an unrestricted pre-cleanup derivative transfer. It is not a hard SAT family or a certified regular, padded, TwoCC-free counterexample. At sufficient fixed strength its clauses already force the solution. Its preexisting repeated-label surplus leaves a surplus-aware repair possible.
+
+Equations (8)-(9) are signed comparisons on an isolated unconditioned triple with no root or external evidence, preserving the actual endpoint marginal. They do not establish universal signed replacement under hybrid conditioning. The exact-root field reverses the relevant covariance sign near saturation, which diagnoses an invalid sign assumption without refuting an aggregate forcing improvement. Equation (10) gives an exact mixed second derivative for the normalized path product. An integrated depth-uniform bound on its negative part, a compatible favorable first-order aggregate, and jointly successful finite-height/strength/epsilon choices remain unproved. The finite reveal-count estimate has exponential depth dependence and cannot silently substitute for those obligations. Cycles require cutting with lost edge credit or further normalization analysis.
+
+The source's cleaned independent-tree estimates remain imported and cannot be applied unchanged to the proposed product law. No novelty, priority, optimality, stronger product-measure SAT guarantee, polynomial witness finder, complexity separation, P=NP result, or completed overnight objective is established. The solution-dependent graph is an auxiliary proof object, not supplied free preprocessing for an algorithm. The actual available PPSZ guarantees retain exponential repetition; fixed implication strength only makes each run polynomial.
+
+## Closeout disposition
+
+The actual proof and source/complexity reviews support scoped GO through (1)-(10), including the isolated repair and root-field diagnostic. The main note's opening and selection now reflect those completed reviews and include the three-lens table. The graph records the same bounded outcome and publication HOLD. Scoped review completion is distinct from completion of the missing mechanism; improved forcing remains INCOMPLETE throughout.
+
+Retain this increment as a reviewed local analytic attempt and precise failed-inference record. Do not export it as an established SAT advance. This HOLD applies to the new conditional-forcing mechanism and does not revoke or revise the separate curated arithmetic reproduction. No public repository change, push, publication, paid computation, or outreach is part of this closeout. Planning status and unresolved research obligations remain with the root orchestrator.
