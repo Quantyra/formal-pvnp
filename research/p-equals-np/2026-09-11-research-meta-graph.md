@@ -1259,3 +1259,69 @@ prior proof records remain unchanged. This is selection completion, not a
 proof campaign or P-versus-NP progress claim. The broader objective remains
 ACTIVE and unresolved. This four-file closeout is a scoped local evidence
 commit with no proof/public edits, experiment, push, outreach or spend.
+
+## S3116: deterministic inclusion-exclusion screen, selection NONE
+
+The [intake](2026-09-12-deterministic-search-intake.md) and
+[actual independent challenge](2026-09-12-deterministic-search-challenge.md)
+completed a source/screening-only deterministic-search comparison. The root
+closes the screened operation with NONE after independent PASS and
+[nonclaims GO](2026-09-12-deterministic-search-nonclaims.md). No changed
+cancellation, restriction-selection or construction mechanism emerged.
+This is not a novel mechanism result or a new proof campaign.
+
+The concrete operation uses fixed even-order inclusion-exclusion/Bonferroni
+upper bounds during deterministic fixed-prefix branching. Falsification
+intersections are explicitly enumerated: contradictory literal demands give
+zero, otherwise the intersection is a subcube counted exactly. Prune only
+when the upper bound is zero; positive bounds are inconclusive. Full
+branching and verified witnesses provide completeness, not the truncation
+alone. Zaleski2017 is direct prior machinery; ordinary self-reduction does
+not identify an additional advance.
+
+The strongest applicable deterministic general-3-SAT comparator located
+in the bounded primary search is Liu's reported O*(1.32793^n), not an
+exhaustive 2026 record certification. Full Schoning derandomization,
+partial PPSZ/few-solution guarantees, dense-CNF search and circuit PRGs
+remain distinct comparison contracts. Their solution-density, forcing-
+constant, additive-error, enumeration and uniform stopping hypotheses are
+not erased. No hidden global count or satisfying-assignment oracle is used.
+
+At each node Q=sum_(j<=min(r,m))binom(m,j) intersection evaluations and
+polynomial-bit exact arithmetic are paid. Fixed r gives polynomial local
+work; r=m can require 2^m terms. Streaming controls storage, not term count.
+Zero seed bits remove randomness, not the O(2^n) possible prefix nodes.
+The displayed generic total upper bound is not a runtime lower bound or
+an improved deterministic-SAT guarantee.
+
+The challenger's diagnostic is the even-order identity
+U_r=#SAT+sum_(t>=r+1)N_t binom(t-1,r). N_t is an analysis statistic, not
+an oracle called by the algorithm. Joint falsifiability of r+1 clauses
+prevents this exact-zero test, even with an independent contradiction.
+That local diagnostic does not prove a large search tree or hardness for
+other solvers: easy witnesses, propagation or decomposition can escape.
+No generic pruning identity is promoted to a global runtime theorem.
+
+Frozen working-file SHA256 pins:
+
+| Evidence | SHA256 |
+|---|---|
+| Final intake | `75BE0319C25A89B0B47A312199B2AEE524E31CB0477D17C8A5A5BB9565318837` |
+| Final source/screening PASS | `3C4268BD0F8E03F68C0DE14B7097F88915750DA2FA780925AED40DE1CF262895` |
+| Final nonclaims GO | `74CF396A7032314C2A5E23F072BB36E57087F1E087A25E7025D341E8E2A4426B` |
+
+The challenger contributed direct prior-art identification and diagnostic
+scope, not verification-only work. No correction remains. NONE is based
+on known-operation subsumption without a changed operation or structural
+advance, not merely an unproved final bound. Speculative new constructions
+remain eligible under the protocol. No automatic successor or experiment
+is opened, and the frontier is not declared exhausted.
+
+An improved exponential algorithm would not settle P versus NP. The
+stated deterministic polynomial SAT-search implication needs a known
+uniform total-bit-time guarantee, sound witnesses and a polynomial timeout;
+none is supplied. Failure of this screen proves no separation. This is
+bounded selection evidence, not a new theorem or publication milestone.
+All prior proof/public files remain unchanged. The broader objective is
+ACTIVE and unresolved. This four-file integration is a local scoped
+commit with no proof/public edit, experiment, push, outreach or spend.
