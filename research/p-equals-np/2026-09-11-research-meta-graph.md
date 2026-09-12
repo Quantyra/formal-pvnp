@@ -1002,3 +1002,99 @@ not human peer review or Lean verification. Public v4 is unchanged and the
 broader research objective remains ACTIVE and unresolved. This four-file
 closeout is local evidence integration only, with no proof/public edit,
 experiment, push, outreach or paid computation.
+
+## S3113: reviewed dimension window and indexed near-quadratic output
+
+2026-09-12. The [complete dimension-budget proof](2026-09-12-bamboo-dimension-budget.md)
+extends the stated parameter window of the all-output simple-bamboo argument.
+The original author proof is preserved at its frozen 29436-byte SHA256 below.
+This six-file integration records completed analytic review; the pending-review
+wording in the immutable author draft is superseded by the actual review
+record here for this internal milestone. The separate planning claim packet
+and any exact public extraction remain owner-governed.
+
+For even q>=1024, N=8q+4 and integer m>N, let
+D=floor(q/(32 log_2(2m))) and B=2D. The nontrivial theorem uses D>=1,
+equivalently 8q+4<m<=2^(q/32-1), with the upper endpoint interpreted as
+an inequality on integer m. This is a sufficient window for that choice,
+not an optimality claim. Every fixed Boolean m-by-m A has the stated
+residual complete-row square positivity on arbitrary sums whose individual
+monomials use at most B typed labels. Each pair union remains within the
+source support q-2. Ambient dimension is charged by
+L=sum_(j<=2D)binom(2m,j), with L*epsilon<=2^(6-5q/16)<1/2.
+
+Every explicit real SoS refutation of the original unrestricted
+simple-bamboo clause encoding has
+
+    S=sum_i ||f_i||||g_i||+sum_j ||h_j|| >= (8/7)^(D-1/2).
+
+Monomials are ordinary polynomial monomials before Boolean reduction;
+roots are explicit before squaring, repeated occurrences count separately,
+and there is no degree or coefficient-bit charge. The proof uses the exact
+source literal/constant restriction, counts original multiplier/root
+monomials, and applies local image-clause annihilation. It makes no
+circuit-compressed certificate-size claim. Its all-A statement is vacuous
+for rank_F2(A)<=N, where satisfying assignments exist, and nonvacuous
+for rank(A)>N, including I_m. A global full-row probability law is not
+asserted by the local functional theorem.
+
+D=0 is separately treated as trivial; the nontrivial B>=2 restriction proof
+is not applied there. The general threshold has scale exp(Omega(q/log(2m))).
+It is superpolynomial in actual formula bits under the sufficient growth
+condition q/(log m)^2 tending to infinity, not uniformly across the full
+window where D can stay constant. The older stronger D at m=q^2 remains
+a separate preserved theorem.
+
+The separately proved indexed corollary fixes integer r>=32,
+q=2r^3, m=2^r, N=16r^3+4 and D=floor(r^3/(16(r+1))). It uses the same
+one-copy binary matrix map G_r(X,Y)=XY with
+
+    s_r=2^(r+1)(16r^3+4), t_r=2^(2r),
+    t_r=Theta(s_r^2/(log s_r)^6),
+    t_r/s_r=Theta(s_r/(log s_r)^6),
+    S >= (8/7)^(D-1/2) >= (8/7)^(r^2/64).
+
+Here m>2N is proved separately for genuine expansion; m>N alone would
+not ensure it. Only X/Y entries are seed bits. Prefix witnesses are not
+additional seeds. The exact CNF has 2mN+m^2N variables and (6N-2)m^2
+clauses before Boolean/twin additions, width at most four, and binary
+bit length O(4^r r^4). Evaluation costs O(4^r r^3) Boolean operations.
+Construction is polynomial in actual seed/formula lengths, not in the
+short index r. The lower bound exp(Omega(r^2)) is superpolynomial in
+seed, output and explicit formula lengths. Rank testing and preimage
+factorization remain polynomial-time. This is indexed output length
+near quadratic with a sixth-power logarithmic loss, not all-length
+padding, tree amplification or cryptographic pseudorandomness.
+
+All four actual reviews were read in full before this integration:
+
+| Lens | Actual record | Verdict | Frozen SHA256 |
+|---|---|---|---|
+| Author proof | [Dimension budget](2026-09-12-bamboo-dimension-budget.md) | Exact proof preserved | `DA37598D495EFC1DA7302FBC664F74B45302A8F6EC12A3DE423B9AB1107F5676` |
+| Source and complexity implication | [Source review](2026-09-12-bamboo-dimension-source-review.md) | PASS | `B90F6E5947C8FCBF4446CA238A1C818CD8AD782BEBFC6FFB16D9F088638428DC` |
+| Initial independent mathematics | [Proof review](2026-09-12-bamboo-dimension-proof-review.md) | PASS; no repair | `57F076CABFE1883DE6BA20154C85B3F591063AC3BF8E4467ACB102E5AF1B5CF1` |
+| Fresh independent mathematics | [Fresh review](2026-09-12-bamboo-dimension-fresh-review.md) | PASS; no repair | `4D8D25243713E733DE96C633BBBC580ACB7B5E4151A01F8A505D59D359107C35` |
+| Separate nonclaims/readiness | [Scope review](2026-09-12-bamboo-dimension-nonclaims-review.md) | GO for internal scope | `EC0FD5289903607BE31D70A4B53D6080DED633C24E2E06F6254234FF2B3F7905` |
+
+The source reviewer supplied domain/implication guidance, disclosed in its
+record; both mathematical reviewers report independent actual-file checking
+without author repair. The scope record read initial mathematics and source
+reviews, as it explicitly states. Fresh mathematics is independently recorded
+here; it is not falsely attributed to that earlier scope review. Its future
+public readiness recommendation is REVISE for exact extraction, metadata,
+reviews and owner decision, not a publication authorization.
+
+This is a source-relative quantitative extension using credited rank/Fourier,
+conditional covariance, local Hilbert-space and restriction machinery.
+The source already has arbitrary-m simple-bamboo SA and distinct-encoding
+SoS results. No first-ever rank generator, optimal window, new general
+positivity method, or improved fixed-m exponent is claimed. It neither
+repairs nor reopens the S3111/S3112 tree-coupling failures. There is no
+unbounded-m, function-generator, all-proof-system, compressed-root,
+general SAT runtime, circuit lower bound or P-versus-NP conclusion.
+Novelty and priority remain unknown; reviews are informal AI work, not
+human peer review or Lean verification. Prose proof/build/FQN/axiom fields
+are not Lean certification. Public v4 at 09aca60184fe7b1d61856cd79ac21aa86ea4caca
+is unchanged. The broader research objective remains ACTIVE and unresolved.
+This closeout is local evidence integration only, with no public or planning
+edit, push, experiment, outreach or paid computation.
