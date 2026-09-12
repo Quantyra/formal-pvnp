@@ -136,3 +136,33 @@ Compiled working SHA256:
 The author does not independently review these new files. Fresh three-lens
 review is required before bounded acceptance; source hardness, encoded
 runtime, learning transfer and full S3126 certification remain open.
+
+
+## Independent three-lens closeout
+
+Frozen source candidate `66672972b6577eb7058d1da574bf718b115320d3`.
+Independent main 71485 and Checks 37525 both exited zero. Main retained
+only the documented cosmetic unnecessarySeqFocus warning. Checks printed
+all 15 standard-only profiles: output_leaves and duplicate_positions use
+propext only, and the other 13 use propext, Classical.choice and Quot.sound.
+Both source files remain byte-identical to the frozen candidate and the
+SHA256 pins above.
+
+| Lens | Verdict | Evidence |
+|---|---|---|
+| Build/audit | GO | Independent scoped exports 71485/37525 exit 0; all 15 standard-only profiles; unchanged source pins |
+| Proof-adversarial | GO-WITH-NOTES | [Independent proof review](2026-09-12-realizable-hardness-output-bridge-proof-review.md); actual input-only construction, separate promises, exact casts, probability inclusion and nonvacuous positive-error premises checked |
+| Complexity | GO-WITH-NOTES | [Independent complexity review](2026-09-12-realizable-hardness-sampling-formula-promises-complexity-review.md); conditional finite bridge only, with count validation and runtime boundaries retained |
+| Non-claims | GO-WITH-NOTES | [Independent non-claims review](2026-09-12-realizable-hardness-output-bridge-nonclaims-review.md); input assumptions, conservative count and downstream limits explicitly preserved |
+
+This accepts the bounded bridge relative to its stated imported APIs.
+ComputableSampleCount has an imported main kernel proof, but its own Checks
+and independent three-lens review remain pending. The successful bridge
+profiles do not discharge that dependency review debt. SamplingGuarantee
+is now independently integrated at `1ace0ed8b51e5554efc7cf9bc896357885b5a345`
+and the pipeline at `4ae1c58534f4b45b6e8cfdd5001e6bacfea64d53`; earlier
+pending-review descriptions above record historical stages.
+
+No route-final S3130/S3126 closure follows. Validity/common-denominator
+wrappers, source PCP/hardness, encoded runtime, asymptotic composition,
+learning transfer and manuscript reconciliation remain separate obligations.
