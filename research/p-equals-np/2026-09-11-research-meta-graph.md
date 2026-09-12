@@ -1325,3 +1325,56 @@ bounded selection evidence, not a new theorem or publication milestone.
 All prior proof/public files remain unchanged. The broader objective is
 ACTIVE and unresolved. This four-file integration is a local scoped
 commit with no proof/public edit, experiment, push, outreach or spend.
+
+## S3117: sparse/dense collision schedule, bounded changed-rule assessment
+
+Root-authorized actual design and crosschallenge completed on 2026-09-12.
+[Design](2026-09-12-sparse-dense-search-design.md),
+[challenge PASS](2026-09-12-sparse-dense-search-challenge.md), and
+[nonclaims GO](2026-09-12-sparse-dense-search-nonclaims.md) support **NONE
+for the proposed extra inverse-multiplicity work credit**. The explicit
+logarithmic-block schedule minimizes an exact rational score and orders
+identical residual classes; this is an actual changed-rule attempt, with
+novelty unknown. Ordinary residual caching is prior art.
+
+Caching w identical evaluations leaves one full evaluation. The score does
+not additionally execute that surviving evaluation in 1/w of its cost.
+Free-variable and used-variable diagnostics separate multiplicity from
+density; the latter has multiplicity 3^r but density boost (4/3)^r.
+The exact density identity includes unit-forced dimension changes. These
+examples do not establish global block selection, hard residuals, a global
+runtime lower bound, or failure of every ordering/amortized heuristic.
+
+The complete selector costs N^O(log N) per node. Source algorithm promises,
+finite simulation caps, timeout handling and the entire recursion cost
+remain explicit; no counting oracle or polynomial total runtime is supplied.
+The valid repair charges one full call per visited distinct residual plus
+selection, probes and reconstruction. No concrete further saving emerged.
+NONE rejects the specified double credit, not merely an unproved final bound.
+The challenger substantively contributed source scope, forced-dimension
+bookkeeping, the used-variable diagnostic and small-r correction.
+
+Frozen working-file SHA256 and integrated Git blob identities:
+
+| Record | Working and Git-blob SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-sparse-dense-search-design.md | `46fda9b564bd509ccdc76d29174ab9cb122b3834442a093ec528c778d8d0f87c` | `8ab277852db47c2baea647e196c6fa1aaf556af9` |
+| 2026-09-12-sparse-dense-search-challenge.md | `9b92d21423605b6006fedcdc425b68f417574c92e7c14e6b390c236715b074e1` | `baff12288ba785ad683d09e963b2bff4650c7762` |
+| 2026-09-12-sparse-dense-search-nonclaims.md | `961abdc0a52b7bebf3ddece0dcb2699f3d343ed6d4e08950067d70cdf1667735` | `9d22b307395d9c229de188533b1764f711807a2b` |
+
+The first staging exposed excess EOF whitespace in the design. The author
+removed only the final newline excess; direct comparison verified unchanged
+substantive text, and the challenger updated its receipt accordingly.
+The original working design hash was
+`68cc5a7fadc0a8f20c019a02d3b688271eecc9ada47e844ed8be121cdb02870e`;
+its normalized Git SHA256 was
+`cd34f41aea7e9f6c61ea17a4a0d230a03f4f6f507bab2450316e36dabe0ff1b7`.
+The final three working files now match their staged Git bytes exactly;
+no mathematical or scope correction resulted from this EOF-only cleanup.
+
+This is informal AI bounded design review, not human peer review or Lean
+verification. No novelty, improved SAT runtime, P=NP or separation claim
+follows. All prior proof/public files are preserved. No experiment, public
+change, push, outreach, spend or automatic successor is authorized by this
+closeout. The broader objective remains ACTIVE and unresolved. Integration
+is confined to these three records and this graph in a local scoped commit.
