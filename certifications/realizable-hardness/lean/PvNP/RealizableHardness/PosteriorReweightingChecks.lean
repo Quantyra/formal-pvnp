@@ -1,5 +1,4 @@
 import PvNP.RealizableHardness.PosteriorReweighting
--- UNCHECKED source draft; examples and axiom commands have not yet run.
 namespace PvNP.RealizableHardness.PosteriorReweighting
 open scoped BigOperators
 
@@ -34,11 +33,13 @@ example : let r : Bool → ℚ := fun b => if b then 7 / 8 else 1 / 8
   all_goals norm_num [mass, Fintype.sum_bool]
   all_goals intro b; cases b <;> norm_num
 
+#print axioms marginal_nonneg
 #print axioms marginal_normalized
 #print axioms posterior_normalized
 #print axioms bayes_mass
 #print axioms zero_prior
 #print axioms bayes_ratio
+#print axioms joint_zero_of_marginal_zero
 #print axioms total_probability
 #print axioms posterior_event_cutoff
 #print axioms reweight_error

@@ -30,3 +30,5 @@ import PvNP.RealizableHardness.TripleRestrictionRank
 import PvNP.RealizableHardness.TripleRestrictionRankChecks
 import PvNP.RealizableHardness.WeightRounding
 import PvNP.RealizableHardness.WeightRoundingChecks
+import PvNP.RealizableHardness.SeedEncoding
+import PvNP.RealizableHardness.SeedEncodingChecks

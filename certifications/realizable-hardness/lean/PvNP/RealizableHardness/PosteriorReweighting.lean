@@ -8,8 +8,7 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
 
-/-! UNCHECKED source draft pending compiler capacity and independent review.
-Finite rational Bayes and normalized reweighting. Concrete Grassmann and
+/-! Finite rational Bayes and normalized reweighting. Concrete Grassmann and
 covering instantiations are not supplied by this module. -/
 namespace PvNP.RealizableHardness.PosteriorReweighting
 open scoped BigOperators
@@ -35,7 +34,7 @@ lemma marginal_normalized (p : V → ℚ) (k : V → Q → ℚ)
 
 lemma posterior_normalized (p : V → ℚ) (k : V → Q → ℚ) (q : Q)
     (hq : 0 < marginal p k q) : ∑ v, posterior p k q v = 1 := by
-  simp only [posterior, ← Finset.sum_div, ← marginal]
+  simp only [posterior, ← Finset.sum_div]
   exact div_self (ne_of_gt hq)
 
 lemma bayes_mass (p : V → ℚ) (k : V → Q → ℚ) (q : Q) (v : V)
@@ -49,7 +48,10 @@ lemma zero_prior (p : V → ℚ) (k : V → Q → ℚ) (q : Q) (v : V)
 lemma bayes_ratio (p : V → ℚ) (k : V → Q → ℚ) (q : Q) (v : V)
     (hv : 0 < p v) : posterior p k q v / p v = k v q / marginal p k q := by
   unfold posterior
-  field_simp [ne_of_gt hv]
+  by_cases hm : marginal p k q = 0
+  · simp [hm]
+  · field_simp [ne_of_gt hv, hm]
+    ring
 
 lemma joint_zero_of_marginal_zero (p : V → ℚ) (k : V → Q → ℚ)
     (hp : ∀ v, 0 ≤ p v) (hk : ∀ v q, 0 ≤ k v q)
@@ -105,9 +107,11 @@ lemma reweight_error (r w : V → ℚ) (g : V → Bool) (p0 eta zeta : ℚ)
     cases hg : g v
     · have habs : |w v - p0| ≤ 1 := abs_le.mpr ⟨by linarith [(hw v).1], by linarith [(hw v).2]⟩
       simp only [hg, Bool.not_false, Bool.true_eq, ite_true]
-      nlinarith [mul_le_mul_of_nonneg_left habs (hr v)]
+      have hbound := mul_le_mul_of_nonneg_left habs (hr v)
+      have hn : 0 ≤ r v * (p0 * eta) := mul_nonneg (hr v) (mul_nonneg (le_of_lt hp0) he)
+      linarith
     · have hs := hgood v hg
-      have hid : w v - p0 = p0 * (w v / p0 - 1) := by field_simp; ring
+      have hid : w v - p0 = p0 * (w v / p0 - 1) := by field_simp
       rw [hid, abs_mul, abs_of_pos hp0]
       simp only [hg, Bool.not_true, Bool.false_eq_true, ite_false, add_zero]
       exact mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_left hs (le_of_lt hp0)) (hr v)
@@ -155,7 +159,7 @@ theorem normalized_reweighting (r w : V → ℚ) (g : V → Bool) (p0 eta zeta :
       apply Finset.sum_le_sum
       intro v _
       split
-      · nlinarith [(hw v).2, hr v]
+      · exact mul_le_of_le_one_right (hr v) (hw v).2
       · rfl
     have hid : mass (fun v => r v * w v / normalizer r w) (fun v => !(g v)) =
         mass (fun v => r v * w v) (fun v => !(g v)) / normalizer r w := by
