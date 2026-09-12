@@ -866,3 +866,71 @@ AI work, not human peer review or Lean verification. The broader research
 objective remains ACTIVE and unresolved. This source closeout changes
 only this graph, with a scoped local commit; no theorem/public edit, push,
 release, outreach or paid computation is performed by the graph updater.
+
+## S3111: bounded amplification intake closed with no recipe selected
+
+Following the v4 publication, the [mechanism intake](2026-09-12-bamboo-amplification-intake.md)
+and [independent crosschallenge](2026-09-12-bamboo-amplification-independent.md)
+examined actual PCR iteration contracts and one explicit row-aligned binary
+tree of the fixed-q map. The root selected NONE for the two concrete
+transfer recipes after final independent PASS and
+[nonclaims GO](2026-09-12-bamboo-amplification-nonclaims.md).
+This is not a general impossibility conclusion or a prohibition on a
+subsequently specified coupling operation.
+
+The tree wires the first 4N parent-output columns into two child X and
+transposed-Y seeds. At depth d it has V=2^(d+1)-1 copies, one root seed
+s=2mN, and leaf output T=2^d m^2. Intermediate seeds/prefixes remain
+witnesses. Its explicit encoding/construction costs depend on V and output
+length; individual-bit access is a separate contract. No amplified SoS
+hardness follows just from defining or evaluating this map.
+
+Two proposed transfer operations have concrete failed contracts:
+
+- Parallel Definition 6.8 source restrictions cease to give literal images
+  when an internal output is a surviving child input bit. The displayed
+  first D/E row types yield an XOR offset at block 7. Direct reuse of v4's
+  literal-survival argument fails; another shrinkage proof is not ruled out.
+- Closing a complete child row under parent dependencies, sampling full-rank
+  source frames, and conditioning on wiring requests N+1 independent vectors
+  at width N (or q+1 at residual width q). That specified sampler has an
+  empty source fiber before any PSD or asymptotic estimate is considered.
+  A distribution allowing dependent frames would be a different operation.
+
+The independent reviewer also supplied a depth-one semantic counterexample:
+one off-diagonal rank-N identity-block leaf and one zero leaf are individually
+base-inrange, yet jointly tree-nonrange since their required common row/column
+span exceeds N. This rejects nonrange-leaf detection, not possible coupled
+tree hardness, and does not supply a short SoS refutation.
+
+Two actual intake corrections are retained and credited to that reviewer.
+Single-copy coordinate projection with retained gates DOES inherit the
+all-output size bound: a partial-output certificate remains the identical
+certificate after completing output units, with zero new multipliers.
+Projection is not a blocker. Also complemented two-bit XOR has four terms,
+so uniform K-image expansion is at most 4^K, with 3^K only for uncomplemented
+images. Neither upper bound supplies degree-free original-size control.
+These corrections concern this intake, not the published v4 theorem.
+The reviewer is credited as a mathematical contributor to S3111 rather
+than described as verification-only.
+
+Frozen working-file SHA256 pins:
+
+| Evidence | SHA256 |
+|---|---|
+| Corrected intake | `2DB5661AE7727780D341B83FB99AC7648C3D8EAC7325CFEB995D564D49AF9453` |
+| Final independent PASS | `8B74F694543867700AD7A2DEFE57028F6FEB56CCA8EC322DA1DD70E7797502FC` |
+| Final nonclaims GO | `7972BD0D35A57463CAB32F91147608AA3677384FD28C5D45CB916E48973D88D5` |
+
+The source PCR degree endpoints and other encodings do not automatically
+transfer to real explicit SoS monomial size; all fixed-output laws do not
+provide cross-node joint consistency. Failed operations are not vetoed
+merely for lacking an unproved bound. No substitute coupling or named
+residual is selected. No amplified theorem, arbitrary-m result, compressed-
+certificate bound, computational pseudorandomness, inversion hardness,
+general SAT runtime, circuit lower bound or P-versus-NP conclusion is made.
+Literature comparison and review remain bounded informal AI work, with
+novelty/priority unknown. Public v4 remains unchanged. The broader research
+objective remains ACTIVE and unresolved. This four-file closeout is a
+scoped local evidence commit, with no proof/public edit, experiment, push,
+outreach or paid computation.
