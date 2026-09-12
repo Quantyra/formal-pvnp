@@ -599,3 +599,47 @@ verification. It yields no general SAT algorithm, circuit lower bound or
 P-versus-NP conclusion. The broader research objective remains ACTIVE and
 unresolved. This four-file intake/graph integration is local; no mathematical
 source, public artifact, push, outreach or paid computation is involved.
+
+
+## S3106: post-bamboo frontier selection NONE
+
+The [author intake](2026-09-12-post-bamboo-frontier-intake.md),
+[independent scouts and actual-file challenge](2026-09-12-post-bamboo-frontier-independent.md),
+and [final nonclaims GO](2026-09-12-post-bamboo-frontier-nonclaims.md)
+record NONE for three screened proposals, for different reasons. The
+author's target-directed modular Subset Sum lifting specifies the exact
+carry-fiber intersection query but no selective transition, progression-
+certificate construction or local exception-update law. Its polynomial
+total-work target is not yet a proposed structural potential. The only
+specified update is known exhaustive pseudopolynomial recomputation.
+No concrete selective operation was falsified: the selection stops this
+implementation/force intake for missing design, not merely missing proof.
+
+The orchestrator requested that distinction; the author clarified its
+record, and the independent reviewer reread final author SHA256
+`F9CD527DCC9EE297331C1F5E5F3FAFAC02F7A4356E4EBFCC8D997CBBC2451073`.
+A concrete speculative transition with an unproved invariant remains
+eligible for future derivation work, without requiring prior literature
+support or a proved polynomial bound before exploration.
+
+The independent scout's universal merge-to-small-residual proposal meets
+merge-free families; its exact coefficient-factor-first threshold proposal
+meets full-rank coefficient matrices. These are failures of those proposed
+operations, not all-solver hardness or a probabilistic-rank lower bound
+for thresholded functions. No automatic successor or weakened class is
+selected. This bounded screen does not exhaust any research area.
+
+The Subset Sum costs distinguish numeric target/modulus/universe and
+reachable-output size from binary input length. Logarithmically many
+doubling levels, short residue descriptions and polynomial space do not
+imply polynomial total bit-time. The exact carry compatibility, item
+disjointness, regularity-certificate construction and witness/NO costs
+remain charged. A complete polynomial bit-time algorithm on the SAT
+images would imply P=NP; none is supplied. An improved exponential #SAT
+algorithm for a specified circuit class would require its own analysis
+and does not itself imply a complexity-class separation.
+
+These are AI-agent selection records, not new theorems, novelty or human/
+formal verification. The broader research objective remains ACTIVE and
+unresolved. This four-file intake/graph closeout is local; it changes no
+domain theorem or public artifact and includes no push, outreach or spend.
