@@ -73,3 +73,39 @@ Final compiled working SHA256:
 All 17 audited names are under `PvNP.RealizableHardness.ComputableSampleCount`: concrete_count_small, concrete_count_half, concrete_count_zero, count_pos, count_power_two, target_le_count, target_gt_one, count_upper, learningThreshold_le_target, learningThreshold_le_count, threshold_le_count, inverse_bound_pos, count_upper_of_inverse, learning_budget, base_budget, concrete_half_error, concrete_small_error.
 
 The candidate is now author-build green. Fresh independent proof-adversarial, complexity and non-claims review remains required. This author cannot supply those lenses. Encoded runtime, upstream inverse-budget bounds, manuscript reconciliation and the full proof/paper goal remain open.
+
+
+## Independent three-lens closeout
+
+Frozen candidate `287b4e02997e94eb44572e228d8223f11ba045f4`.
+Independent main export **88106 exited zero**, no warnings. Independent
+Checks export **46674 exited zero**, no warnings, with executable outputs
+**512, 2048, 1** and all **17 standard-only profiles**. The two profiles
+concrete_count_zero and count_power_two use propext and Quot.sound;
+the other 15 use propext, Classical.choice and Quot.sound.
+
+The working SHA256 pins above were independently rechecked unchanged.
+Both source files equal the candidate Git blobs after CRLF-to-LF
+normalization (main 82 CRLF sequences; Checks 61); exact Git LF pins are
+recorded in the proof review. No source or theorem changes were made.
+
+| Lens | Verdict | Evidence |
+|---|---|---|
+| Build/audit | GO | Independent exports 88106/46674 exit 0; 17 standard-only profiles; evaluations 512, 2048, 1; unchanged normalized source pins |
+| Proof-adversarial | GO | [Independent proof review](2026-09-12-realizable-hardness-computable-count-proof-review.md); all-Nat constructor, positive-error inverse bound, strict target doubling, both thresholds/budgets and zero cases checked |
+| Complexity | GO-WITH-NOTES | [Independent complexity review](2026-09-12-realizable-hardness-computable-count-complexity-review.md); numeric bound in N and P only; encoded-runtime and upstream size obligations retained |
+| Non-claims | GO-WITH-NOTES | [Independent non-claims review](2026-09-12-realizable-hardness-computable-count-nonclaims-review.md); finite numeric theorem boundaries and historical-success provenance retained |
+
+This accepts the bounded computable-count increment and resolves its own
+pending Checks/independent-review debt; it does not certify a complete
+encoded reduction or full S3130/S3131/S3126. Earlier pending statements
+and the other reviews' compiler-wait descriptions are historical snapshots.
+Final author Checks7491 remains a successful export; no historical
+resource-stop result has been relabeled as a success.
+
+The separate submission-paper count correction is recorded in paper-repo
+commits `0bd5dc9`, `a6d712d` and `d946504` as reported by the orchestrator.
+That separate reconciliation is not a full-theorem certification from
+this count review. Preserve the published source/archive and the fixed-L
+quantifier order. Upstream parameter bounds, encoded machine runtime,
+PCP/hardness and learning-transfer obligations remain open.
