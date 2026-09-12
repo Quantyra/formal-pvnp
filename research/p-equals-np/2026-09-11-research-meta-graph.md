@@ -1,6 +1,6 @@
 ﻿# Research meta-graph: evidence, transformations and open transitions
 
-2026-09-11; S3068 user-directed addition, updated through S3072. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
+2026-09-11; S3068 user-directed addition, updated through S3073. This is a persistent research ledger, not an executable quantum walk, a discovered holographic algorithm or a new complexity result. Nodes record a representation and its required query; edges record an established transformation, a restricted failure, or an unproved step. This small ledger is a different level from the exponentially large lifted-state graph inside the rooted-operator node. Double covers and quantum interference would act on that internal graph, not automatically on ledger arrows that may be lossy or noninvertible. The [novelty assessment](2026-09-11-fko-novelty.md) supplies the claim-level conclusion.
 
 ```mermaid
 flowchart TD
@@ -13,6 +13,9 @@ flowchart TD
   BASIS[Known full random-order greedy basis]
   CIRCUITS[List containing all short odd circuits]
   ENUM[Known connected-subset enumeration baseline]
+  HALFLIST[Half-size unions of logarithmically many connected pieces]
+  PRICE[Exact minimum-price short odd tuple oracle]
+  PACK[Exact feasible approximate short-tuple packing]
   LOCAL[Capped maximum-overlap growth]
   ROOT[Rooted Kikuchi operator and defect data]
   WALK[Labeled signed killed walk]
@@ -34,7 +37,11 @@ flowchart TD
   BASIS -->|V14: bounded-degree repetition bound| CIRCUITS
   CNF -->|V15: matching deterministic baseline| ENUM
   ENUM -->|V16: parity and sign checks| CIRCUITS
-  CIRCUITS -. U6: optimize and verify packing .-> ODD
+  CIRCUITS -. U6: historical packing gap closed by V19 .-> ODD
+  CNF -->|V17: charged universal half-list| HALFLIST
+  HALFLIST -->|V18: exact rational price query| PRICE
+  PRICE -->|V19: polynomial-call rational packing| PACK
+  PACK -->|V20: exact loads and robust-margin verification| ODD
   CNF -->|V3: declared policy| LOCAL
   LOCAL -. F1: restricted failure .-> GEOM
   CNF -->|V4: rooted construction| ROOT
@@ -65,7 +72,7 @@ ROOTCERT is the complete rooted spectral certificate, distinct from the FKO tupl
 | V1 | Conditional sign filtering for a sign-blind selected family; FKO already uses this architecture. [S3065](2026-09-11-adaptive-fko.md) | Distinct tuple IDs, sign access, load checks; the probability theorem does not discover the family. |
 | V2 | Given tuples and a certified spectral bound, the strict FKO inequality is pointwise sound. [S3064](2026-09-11-fko-discovery.md) | Compute imbalance, loads and a directed numerical upper enclosure; reject if the inequality is not established. |
 | V3/F1 | Exact capped, maximum-overlap, uniform-tie, sign-blind policy is defined; its fresh-restart failure at K=Theta(n^(1/5)) is restricted to that policy and random model. [S3066](2026-09-11-focused-growth.md) | Charges failed attempts; does not cover larger exploration followed by pruning or history-based priorities. |
-| U1 | Short useful tuple families exist at the FKO scale; our efficient finder is missing. | Support, distinctness, sufficient normalized mass and full construction time. |
+| U1 | Historical geometric-discovery gap; S3073 supplies a charged subexponential pricing/packing route V17-V20. | Polynomial discovery and a worst-case P-versus-NP bridge remain unproved; this does not resolve walk-specific U4/U5. |
 | V4 | Existing rooted operator construction accounts for every input clause. [Operator source](2026-09-11-global-fko-sources.md) | Implicit input is compact; dimension binom(n,ell), diagonal trace and defect sums remain charged. |
 | V5/V6 | Channel-labeled killed walks have polynomial local queries; signed return expectation equals tr(H^(2p))/N. [S3067](2026-09-11-global-fko.md) | Number of walks, length, exact transition probabilities, precision and failures. An expectation identity is not an upper certificate. |
 | V7 | A negative closed 2p-step rooted walk reduces to at most 4p original clause IDs with odd parity. [S3067](2026-09-11-global-fko.md) | Verify original labels; no lower bound on useful return frequency or packing coverage. |
@@ -124,3 +131,18 @@ The [greedy-basis analysis](2026-09-11-greedy-basis.md) derives a bounded-degree
 | U6 | An odd tuple has an odd minimal component; replacing tuples by components preserves fractional mass without increasing clause loads. Computing a packing, numerical accuracy, strict spectral slack and exact certificate verification are separate obligations. No full end-to-end packing/refutation bit-runtime is established or pursued in this attempt. |
 
 No novelty, strongest-baseline advantage, quantum speedup or achieved P-versus-NP stepping stone is recorded. The numerical-packing caveat is an explicit boundary, not an automatic new work item.
+
+## S3073 update: reviewed deterministic pricing and packing
+
+The [main derivation and three-lens table](2026-09-11-connected-half-pricing.md) adds an actual discovery mechanism, not merely an unproved arrow. Every short minimal weight-three circuit has balanced halves with O(log k) connected pieces. Enumerating all such possible halves, retaining exact incidence/sign/cardinality keys and recomputing price minima supplies an exact minimum-price oracle for all nonempty odd even-incidence supports of size at most k. Nonnegative rational prices and symmetric-difference verification are essential. The list need not enumerate every output tuple.
+
+| Edge | Reviewed guarantee and charged conditions |
+|---|---|
+| V17 | Universal half coverage via the independently cross-checked cubic-pairing/tree partition. List preparation costs M^{O(log k)} 2^{O(k)} max(1,Delta)^{floor(k/2)} times polynomial original-input factors; no unknown witness tree or full-input decomposition is supplied free. |
+| V18 | Exact minimum nonnegative rational price over all short odd tuples, or correct absence report. Syndrome/sign/cardinality bucket scans are linear in list length times polynomial factors, including bit costs; no quadratic list join. |
+| V19 | Polynomially many adaptive price calls produce exactly feasible rational packing mass at least W_all/(1+epsilon). All original-clause loads, weight lengths and output sizes are charged, with polynomial inverse-epsilon dependence. This closes the former numerical-packing gap U6 through the new list route. |
+| V20 | Source FKO robust witnesses give W_0>2H and W_0>=1. Epsilon=1/2 and a directed H enclosure of additive error at most 1/8 retain strict margin. Exact rational matrix bisection and certificate checks are polynomial bit work. Success is with high probability for sufficiently large fixed density constant and source-dependent k; verification is sound on every input. |
+
+At M=Theta(n^(7/5)), Delta=O(n^(2/5)) and k=Theta(n^(1/5)), the upper logarithmic runtime is (1/5)k log n+O(k)+O((log n)^2), with constant epsilon. The same-cap full connected-set baseline has upper leading term (2/5)k log n. This comparison is checked only against that explicit baseline. The source's sampling model transfers to iid signed clauses through an O(M^2/n^3) collision exception; the degree event is charged separately. Exact support constants and other refuters' output contracts matter to broader comparisons.
+
+[Source ancestry](2026-09-11-connected-half-sources.md) includes known cluster enumeration, signed syndrome joins and packing methods. No priority, literature-wide fastest result, quantum speedup, publication readiness or P-versus-NP conclusion is established. U4/U5 remain open for their actual walk samplers; V17-V20 do not bound those return distributions. The structural contributor's partition proof was checked by a different reviewer, and the pricing/wrapper received separate proof review. Final independent non-claims inspection of this updated ledger is GO in the [review record](2026-09-11-connected-half-nonclaims-review.md).
