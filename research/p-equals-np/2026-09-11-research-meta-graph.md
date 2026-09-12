@@ -1098,3 +1098,56 @@ are not Lean certification. Public v4 at 09aca60184fe7b1d61856cd79ac21aa86ea4cac
 is unchanged. The broader research objective remains ACTIVE and unresolved.
 This closeout is local evidence integration only, with no public or planning
 edit, push, experiment, outreach or paid computation.
+
+## S3114: proportionate publication assessment and local addendum preparation
+
+2026-09-12. Both the [significance assessment](2026-09-12-bamboo-dimension-significance.md) and
+[independent adversarial assessment](2026-09-12-bamboo-dimension-significance-challenge.md) recommend REVISE for a
+modest versioned addendum to the existing artifact, not a standalone new
+methodological advance. The checked dimension theorem remains at source
+3d381934744c48f7afa913ac650037a477148a19, author SHA256
+DA37598D495EFC1DA7302FBC664F74B45302A8F6EC12A3DE423B9AB1107F5676.
+Its proof and all four correctness/scope reviews are unchanged.
+
+The useful delta is an explicit wider m window and an indexed near-quadratic
+output-length consequence for the same simple-bamboo real explicit SoS
+encoding. The inherited conditional estimates and symbolic support count
+already provide the mechanism; the increment checks their quantitative
+budget. Larger output comes with a weaker seed-normalized hardness scale,
+not simultaneous improvement of every parameter. The older stronger D at
+m=q^2 is preserved. Neither assessment treats correctness as novelty or
+priority certification; specialists may regard this parameter extension
+as immediate from the earlier proof.
+
+The primary source already gives arbitrary-m simple-bamboo SA and
+perfect-matching SoS bounds and advertises near-quadratic rank-map geometry.
+No exact explicit-monomial transfer from the latter encoding was identified;
+that absence is not evidence of priority. The assessments support a citable
+encoding-specific update, not a new generator map, general positivity method,
+function-generator or P-versus-NP advance. The full-window versus
+superpolynomial-subfamily distinction, exact coefficient/root measure,
+indexed lengths and polynomial-time rank membership remain essential.
+
+Root accepted REVISE for local v4.1.0 candidate preparation in the isolated
+public artifact from v4 commit09aca60184fe7b1d61856cd79ac21aa86ea4caca.
+Only DIMENSION-NOTE plus README/SOURCES/REVIEW/CITATION preparation is
+commissioned there. Earlier proof/license Git blobs must remain exact;
+actual whole-extraction and metadata reviews and an exact owner PUBLISH
+decision are required before any push, tag or release. This graph record
+is not publication authorization or a claim that a candidate is already live.
+
+Frozen assessment SHA256 pins:
+
+| Record | SHA256 |
+|---|---|
+| Significance | `81fdf5ebea5438768a0696aa39e782db827d701136f23885143b126128c55947` |
+| Independent challenge, locator-only hygiene cleanup | `d2aa7cb3b9aff87df787e4518fe4382a4abab0a00047c5227c1aefa2c2cc853b` |
+
+The challenge's initial SHA256 was `82eb61a87dbeab3a4a1f479d1fb8af0709f2e7b2e110256809584b7465144d12`.
+With explicit root authorization, its one absolute cached-text locator was
+replaced by a non-filesystem source description before integration, to
+satisfy the integrity ledger. No assessment argument, verdict or comparison
+changed. This is editorial hygiene, not a mathematical repair. The two
+assessments and this graph are the only files in this local integration;
+no theorem/review, public/planning file, remote, DOI/profile, outreach or
+spend action is included. The wider research objective remains ACTIVE.
