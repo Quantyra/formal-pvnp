@@ -34,3 +34,22 @@ Status: DRAFT, NOT BUILD GREEN, NOT INDEPENDENTLY ACCEPTED. The final corrected 
 Compiler coordination paused all new launches after the other author's count Checks session 15144 was intentionally interrupted and reported terminal exit 1. The coordinator reported no native Lean process remaining and C free capacity 275,013,632 bytes, below the 512 MiB guard. That was not this pipeline's process and supplies no pipeline test evidence. No deletion or cleanup was attempted here.
 
 Root explicitly requested a scoped draft preservation commit of exactly these three owned paths. Fresh main export, Checks/axiom audit, any necessary correction and all three independent reviews remain required before accepting this increment. No build-success or full-goal claim follows from this preservation commit.
+
+
+## Capacity recovery and final successful scoped exports
+
+Capacity was independently observed restored; no cleanup was performed by this author. Coordinator granted one compiler slot, threads=1, guarded by at least 512 MiB free and absence of another Lean process. Pipeline main session 66312 exited zero with two cosmetic tactic-sequencing warnings. Only those delimiters were simplified. Final main session 71982 exited zero without output or warnings. Final Checks session 92725 exited zero and printed all 18 audited profiles: output_leaves and concrete_repaired_leaf_count use propext only; the other 16 use exactly propext, Classical.choice, Quot.sound. There is no sorryAx or custom theorem axiom. Two unused-variable warnings occur in the concrete Parameters witnesses; they do not affect elaboration or profiles.
+
+These terminal results supersede the historical draft verification status above. The main and Checks are now author-build green; independent three-lens review is still REQUIRED and has not been performed by this author. No full S3130/S3126 completion follows.
+
+Actual pinned commands:
+
+```text
+elan run leanprover/lean4:v4.13.0 lake env lean -o .lake/build/lib/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.olean lean/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.lean
+elan run leanprover/lean4:v4.13.0 lake env lean -o .lake/build/lib/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.olean lean/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.lean
+```
+
+Final compiled source SHA256:
+
+- `FiniteRepairRoundingPipeline.lean`: `d6377773387719ba05e19a590f2c19f2f6d7f7ab15cd9c10f1cbc4b54c9187d6`.
+- `FiniteRepairRoundingPipelineChecks.lean`: `d4bb968301839f234e3387172776b4f91167d4fb2ceca3c6110cbfe5e3278ed2`.

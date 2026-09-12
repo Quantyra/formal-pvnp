@@ -129,7 +129,7 @@ theorem reciprocal_budget (p : Parameters w) :
     _ <= (1 + lam p) / p.s := he
     _ = _ := by
       unfold lam
-      field_simp [ne_of_gt hs, ne_of_gt hg] <;> ring_nf <;> simp
+      field_simp [ne_of_gt hs, ne_of_gt hg]; ring_nf; simp
 
 theorem denominator_bound (p : Parameters w) (P Q : Nat)
     (hP : 1 / p.s <= (P : Rat)) (hQ : (p.sig : Rat) / p.gam <= (Q : Rat)) :
