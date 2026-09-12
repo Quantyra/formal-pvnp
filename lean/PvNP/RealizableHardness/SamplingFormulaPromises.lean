@@ -1,7 +1,8 @@
 import PvNP.RealizableHardness.SamplingGuarantee
 import PvNP.RealizableHardness.FiniteRepairRoundingPipeline
+import PvNP.RealizableHardness.ComputableSampleCount
 
-/-! SOURCE-ONLY DRAFT: not yet elaborated; no kernel acceptance claimed. -/
+/-! Actual finite sampled-formula promises and probabilities. No encoded runtime claim. -/
 namespace PvNP.RealizableHardness.SamplingFormulaPromises
 open scoped BigOperators
 open SamplingGuarantee JointSamplingLaw FiniteConcentration
@@ -22,7 +23,7 @@ theorem empirical_eq_average (F : Nat → Formula (Fin N))
       (average (fun i => Formula.eval x (sampled F draws i)) : Real) := by
   unfold empirical average indicator sampled events
   simp only [Fintype.card_fin]
-  push_cast <;> rfl
+  push_cast <;> simp only [apply_ite, Rat.cast_one, Rat.cast_zero]
 
 theorem good_yes_average (p : Nat → Rat) (F : Nat → Formula (Fin N))
     (draws : Fin M → Fin S) (eps : Rat) (heps : 0 ≤ eps)
@@ -109,5 +110,91 @@ def fromSeeds (p : Nat → Rat) (S b M : Nat)
     (draws : Fin M → Fin S) (i : Fin M) :
     Formula.leaves (output F draws i) = Formula.leaves (F (draws i).val) + 1 :=
   FiniteRepairRoundingPipeline.output_leaves (sampled F draws) i
+
+/-- Monotonicity for the actual uniform seed count, without an assumed law. -/
+theorem seedProbability_mono (M b : Nat) (E H : SeedArray M b → Prop)
+    (h : ∀ seeds, E seeds → H seeds) :
+    seedProbability M b E ≤ seedProbability M b H := by
+  classical
+  unfold seedProbability
+  apply div_le_div_of_nonneg_right _ (by positivity)
+  apply Finset.sum_le_sum
+  intro seeds _
+  by_cases he : E seeds
+  · simp [he, h seeds he]
+  · simp only [he, if_false]
+    split <;> norm_num
+
+/-- The repaired and rounded YES event on the actual indexed sampled list. -/
+def YesOutput {w : Fin N → Rat} (a : FiniteRepairRoundingPipeline.Parameters w)
+    (F : Nat → Formula (Fin N)) (draws : Fin M → Fin S) : Prop :=
+  ∃ y : Fin N ⊕ Fin M → Bool,
+    weight (FiniteRepairRoundingPipeline.outputWeights a) y ≤
+      FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a ∧
+    ∀ i, Formula.eval y (output F draws i) = true
+
+/-- The NO event quantifies over every output assignment in the floor-gap budget. -/
+def NoOutput {w : Fin N → Rat} (a : FiniteRepairRoundingPipeline.Parameters w)
+    (F : Nat → Formula (Fin N)) (draws : Fin M → Fin S) : Prop :=
+  ∀ y : Fin N ⊕ Fin M → Bool,
+    weight (FiniteRepairRoundingPipeline.outputWeights a) y ≤
+      (FiniteRepairRoundingPipeline.gap a : Rat) *
+        FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a →
+    average (fun i => Formula.eval y (output F draws i)) < 2 * a.gam
+
+/-- A concrete natural count and actual dyadic precision, then genuine event inclusion. -/
+theorem computed_event_probability (p : Nat → Rat) (S N P : Nat)
+    (F : Nat → Formula (Fin N)) (eps : Rat)
+    (hn : FiniteSampling.cumulative p S = 1) (hp : ∀ i, 0 ≤ p i)
+    (heps : 0 < eps) (hInv : 1 / eps ≤ (P : Rat))
+    (E : (Fin (ComputableSampleCount.count N P) → Fin S) → Prop)
+    (hE : ∀ draws, Good p S N (ComputableSampleCount.count N P) (events F) eps draws →
+      E draws) :
+    (5 / 6 : Real) ≤ seedProbability (ComputableSampleCount.count N P) (precision S eps)
+      (fun seeds => E (sampleArray p S (precision S eps)
+        (ComputableSampleCount.count N P) hn seeds)) := by
+  have hepsR : (0 : Real) < eps := by exact_mod_cast heps
+  have hInvR : 1 / (eps : Real) ≤ (P : Real) := by exact_mod_cast hInv
+  have hg := good_probability_of_learningThreshold p S (precision S eps) N
+    (ComputableSampleCount.count N P) (events F) eps hn hp heps (precision_bound S eps)
+    (ComputableSampleCount.learningThreshold_le_count N P eps hepsR hInvR)
+  apply hg.trans
+  apply seedProbability_mono
+  intro seeds hs
+  exact hE _ hs
+
+/-- Separate YES implication: both requested confidence bounds for the same output event. -/
+theorem computed_yes_probability {w : Fin N → Rat}
+    (a : FiniteRepairRoundingPipeline.Parameters w) (p : Nat → Rat) (S P : Nat)
+    (F : Nat → Formula (Fin N)) (hn : FiniteSampling.cumulative p S = 1)
+    (hp : ∀ i, 0 ≤ p i) (heps : 0 < a.eps) (hInv : 1 / a.eps ≤ (P : Rat))
+    (x : Fin N → Bool) (hx : weight w x ≤ a.s)
+    (hyes : 1 - (a.eps : Real) / 4 ≤ originalMean p S (events F x)) :
+    let prob := seedProbability (ComputableSampleCount.count N P) (precision S a.eps)
+      (fun seeds => YesOutput a F (sampleArray p S (precision S a.eps)
+        (ComputableSampleCount.count N P) hn seeds))
+    (5 / 6 : Real) ≤ prob ∧ (2 / 3 : Real) ≤ prob := by
+  dsimp only
+  have h := computed_event_probability p S N P F a.eps hn hp heps hInv (YesOutput a F)
+    (fun draws hg => good_yes_output a p F draws (ComputableSampleCount.count_pos N P)
+      hg x hx hyes)
+  exact ⟨h, (by norm_num : (2 / 3 : Real) ≤ 5 / 6).trans h⟩
+
+/-- Separate NO implication with universal source and output quantifiers. -/
+theorem computed_no_probability {w : Fin N → Rat}
+    (a : FiniteRepairRoundingPipeline.Parameters w) (p : Nat → Rat) (S P : Nat)
+    (F : Nat → Formula (Fin N)) (hn : FiniteSampling.cumulative p S = 1)
+    (hp : ∀ i, 0 ≤ p i) (heps : 0 < a.eps) (hInv : 1 / a.eps ≤ (P : Rat))
+    (hno : ∀ x, weight w x ≤ (a.sig : Rat) * a.s →
+      originalMean p S (events F x) ≤ (a.gam : Real) / 2) :
+    let prob := seedProbability (ComputableSampleCount.count N P) (precision S a.eps)
+      (fun seeds => NoOutput a F (sampleArray p S (precision S a.eps)
+        (ComputableSampleCount.count N P) hn seeds))
+    (5 / 6 : Real) ≤ prob ∧ (2 / 3 : Real) ≤ prob := by
+  dsimp only
+  have h := computed_event_probability p S N P F a.eps hn hp heps hInv (NoOutput a F)
+    (fun draws hg y hy => good_no_output a p F draws (ComputableSampleCount.count_pos N P)
+      hg hno y hy)
+  exact ⟨h, (by norm_num : (2 / 3 : Real) ≤ 5 / 6).trans h⟩
 
 end PvNP.RealizableHardness.SamplingFormulaPromises

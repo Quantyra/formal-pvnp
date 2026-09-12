@@ -1,6 +1,6 @@
 import PvNP.RealizableHardness.SamplingFormulaPromises
 
-/-! SOURCE-ONLY DRAFT: these profiles/examples have not been run. -/
+/-! Scoped proof profiles, duplicate positions and zero-trial identity examples. -/
 namespace PvNP.RealizableHardness.SamplingFormulaPromisesChecks
 open SamplingFormulaPromises
 
@@ -29,6 +29,10 @@ theorem empty_trials (F : Nat → Formula (Fin 1)) (x : Fin 1 → Bool)
 #print axioms SamplingFormulaPromises.good_no_output
 #print axioms SamplingFormulaPromises.fromSeeds_eval
 #print axioms SamplingFormulaPromises.output_leaves
+#print axioms SamplingFormulaPromises.seedProbability_mono
+#print axioms SamplingFormulaPromises.computed_event_probability
+#print axioms SamplingFormulaPromises.computed_yes_probability
+#print axioms SamplingFormulaPromises.computed_no_probability
 #print axioms duplicate_positions
 #print axioms duplicate_empirical
 #print axioms empty_trials
