@@ -1694,3 +1694,47 @@ the four working CRLF endings and their Git normalization were already
 disclosed in the preceding preservation receipt. Audit EOF and staged
 whitespace checks pass, with exact working/Git byte comparisons. No push,
 public-artifact edit, experiment or theorem extension occurs in this update.
+
+## S3124: complete public candidate extraction and metadata GO
+
+The [independent extraction review](2026-09-12-realizable-hardness-public-math-review.md)
+returns GO for complete standalone preservation of the frozen argument at
+public candidate `4155d527ce89fabd1963b93ffd25690970c4c413`, relative to its
+audited imported theorem contracts. The full new proof is present, including
+posterior and maximal-extension steps, exact-list repair, common denominator
+and learning/asymptotic conclusions. MANUSCRIPT SHA256 is
+`30cf35ab44e16e32a7fbc70338b5c29558c1ac9f2601bacde5ac5e034ee64958`.
+
+The [actual public scope review](2026-09-12-realizable-hardness-public-scope-review.md)
+returns final GO at `c529ac8ee5a28f17775a47d94620678a9cd88532`. Its sole
+intervening change is public REVIEW's accurate actual AI review disclosures;
+all six other tracked files, including the manuscript, remain byte-identical.
+Official CFF 1.2.0 schema and Apache normative license checks pass. Two
+bibliographic titles were corrected before the initial candidate freeze.
+All final working/public Git bytes match; no private evidence link or
+absolute private path appears in public content. The release draft SHA256 is
+`bb301f46cc3d4ec03e6faf8a5bb6da946872cd3f0bcfbaf259f852a6807a1832`.
+
+The result remains sufficiently-large fixed-L randomized many-one hardness
+with nearlinear gap, vanishing NO satisfaction threshold, exact YES promise
+on successful outputs, and fixed-advice learning transfer. Earlier realizable
+hardness, source versions, external theorem imports, priority uncertainty and
+AI-only review are disclosed. No P-versus-NP/circuit/proof-collapse claim is
+made; an additional designated-human gate for such claims is inapplicable.
+These review receipts are not the five-check publication decision. Root must
+record that decision against the final candidate before using the user's
+existing conditional publication authorization. No public action is taken
+by this source evidence integration.
+
+| Receipt | Working SHA256 | Git-content SHA256 |
+|---|---|---|
+| 2026-09-12-realizable-hardness-public-math-review.md | `d3de78cdccab5d59fd88c24055e6ad8cca82a2fd5b6e31aa9fcf5c83e064d919` | `108440c77a83ee134b6ac34d1587885000f9f2c282f25205edae6ed89fe5bca5` |
+| 2026-09-12-realizable-hardness-public-scope-review.md | `79752e634c600b8458dde35ea4958a750c73ec12dce37b09d78c23ba13a6eaa9` | `79752e634c600b8458dde35ea4958a750c73ec12dce37b09d78c23ba13a6eaa9` |
+
+This integration changes only the two receipts and this append. All earlier
+graph bytes and the frozen source proof are preserved. No implementation,
+experiment, optional extension, public repository edit or push is performed.
+
+The public-math receipt retains its reviewed working bytes; Git normalizes
+its CRLF line endings to LF. The table distinguishes those hashes; direct
+normalized-byte comparison passes. The scope receipt matches Git exactly.
