@@ -1,0 +1,28 @@
+# Tensor-basis construction: bounded design failure
+
+2026-09-12; S3119 / S008 / E004. Under [INTEGRITY-CLAIMS](../../INTEGRITY-CLAIMS.md). **Selection NONE.** No new selector or structural savings mechanism survived. This is a design assessment, not an implemented algorithm, computed instance result, or impossibility theorem. No derivation campaign or experiment was launched.
+
+The [SAT contract](2026-09-09-holographic-sat-contract.md), [short-tuple assessment](2026-09-11-holographic-extraction.md), [representation-cost assessment](2026-09-11-representation-cost.md), and [meta-graph](2026-09-11-research-meta-graph.md) remain in force. Invertible edge gauges preserve fixed-cut flattening ranks and the network graph. Neither fact rules out every tractable algebraic contraction; neither supplies a new rank-drop or planarity experiment.
+
+## Operation screened and its complete accounting
+
+The attempt was **fuse connected blocks, condition exceptional edges, then choose a tractable basis for each residual component**. Fusion changes the representation before gauging. The hoped-for addition was a formula-dependent synchronization rule leaving few exceptional edges. No such rule emerged: the computable replacement was exhaustive blocking/backdoor search.
+
+Here is a fully finite version to make the failure concrete rather than hide an oracle. Start with the exact Boolean SAT network in the prior contract, with N vertices and E=O(N) edges. Enumerate connected vertex partitions, retaining only blocks incident with at most b distinct edges (internal plus boundary). Assemble their explicit tables by summing internal indices. Enumerate edge sets S of size at most k. For every assignment to S, pin both endpoint occurrences to the same bit and sum that branch exactly once. On each residual component, test the identity and rational Walsh matrix H=[[1,1],[1,-1]], with inverse H/2 at the other endpoint of each oriented edge. Include the conditioned signatures in the tests. Select the first partition/set for which every branch passes, or report failure. This finite screen is deliberately narrower than general algebraic basis recognition and makes no completeness claim for holographic algorithms.
+
+The target is the rational real-affine subclass: each signature must have form lambda times the indicator of affine GF(2) equations times (-1)^q, where lambda is rational and q is a quadratic Boolean polynomial. Test the support, common nonzero magnitude, and quadratic sign representation against the complete table. A connected component must lie wholly in this class. Multiplication combines equations and quadratic phases; exact elimination evaluates the resulting quadratic sum on a general graph. No planarity assumption is required. Separate bases are allowed only on disconnected components. Ordinary pins are not presumed to remain affine under an arbitrary gauge.
+
+For explicit table size D=O(N 2^b), let P(D,N) cover these direct tests, transformations and exact quadratic elimination. It is polynomial in its arguments; arithmetic is rational, with numerator/denominator lengths O(N+b) for these integer input tensors and fixed H,H/2 transforms. There is no numerical tolerance or unrestricted algebraic-number oracle. A conservative total search-and-evaluation bound is
+
+    N^N * [O(N 2^b poly(N))
+           + (sum_{j=0}^k binom(E,j) 2^j) * P(D,N)].
+
+The partition bound overcounts but charges construction. A supplied successful partition/set still costs its table assembly plus all 2^|S| branch contractions. Enlarging the basis family would require its own search and coefficient bounds. Merely asserting small b and k would not pay the partition search. If every chord is conditioned, the residual forest was already contractible with arbitrary tensors; basis recognition adds no benefit there.
+
+## Closest known comparison and decision
+
+[Cai–Guo–Williams, Theorems 1.1–1.2](https://arxiv.org/pdf/1307.7430) already decide affine/product holographic transformability in polynomial time and construct a transformation, including succinct symmetric inputs. Applying recognition to formula-specific signatures is not the missing advance. [Yang–Fu](https://journal.hep.com.cn/fcs/EN/10.1007/s11704-022-1231-5) also establish local/global holographic tractable classes; changing the adjective to local does not create novelty.
+
+[Ganian–Ramanujan–Szeider](https://arxiv.org/abs/1507.02479) already study strong backdoors to scattered tractable components, with parameterized discovery for finite conservative constraint languages. Their [backdoor-treewidth work](https://arxiv.org/abs/1610.03298) combines structural and language tractability. Those hypotheses are not automatically a theorem for arbitrary complex weighted gauges, but the composition strategy is already established. The screen above contributes neither a new operation beyond that strategy nor a proposed structural law explaining a better total bound.
+
+The initial synchronization/chord idea and nearest-known comparison were sent to the independent challenger before any derivation. The challenger exposed the forest redundancy and transformed-pin issue; the finite formulation above addresses correctness, not novelty. **The failure is absence of a distinct mechanism, not absence of an already-proved performance bound.** No successor experiment is selected. Exact polynomial counting on all CNFs would yield FP=#P and hence P=NP, a stronger result than SAT decision. Approximate contraction has no supplied exact zero-detection guarantee here. The separate short-odd-tuple query has not been solved by this SAT-oriented screen.

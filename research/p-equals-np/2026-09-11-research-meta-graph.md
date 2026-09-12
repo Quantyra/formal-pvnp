@@ -1426,3 +1426,40 @@ bounded-error quantum SAT guarantee would place NP in BQP, not imply P=NP
 without a suitable deterministic classical algorithm. No such guarantee
 is supplied. No public change, push, spend or automatic successor follows.
 The broader objective remains ACTIVE and unresolved; no formal build applies.
+
+## S3119: tensor-basis construction, bounded design failure
+
+[Design](2026-09-12-tensor-basis-design.md),
+[independent challenge](2026-09-12-tensor-basis-challenge.md), and
+[scope GO](2026-09-12-tensor-basis-nonclaims.md) complete the source/design
+screen. **Selection NONE:** no distinct synchronization/discovery rule or
+structural saving emerged beyond known blocking, conditioning and tractable
+component tests. This does not reject a proposal merely for lacking a
+proved global bound and does not establish a new algorithm or impossibility.
+
+The final finite operation restricts bases to rational I and H with H/2
+inverse maps and the rational real-affine target. General algebraic A/P
+recognition is a nearest-known comparison, not its claimed implementation.
+All N^N partition search, exponential boundary tables, cut subsets and
+2^|S| branches are paid. Pins are included in component tests; mixed local
+tractable signatures are not assumed to make a cyclic component tractable.
+Conditioning every chord leaves a forest already contractible. Rank and
+topology invariance of local gauges do not prohibit every algebraic method
+or transfer without review to blocking. The challenger substantively
+identified missing transport, forest redundancy and closure/cost obligations.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-tensor-basis-design.md | `f1dac5d85b9d26e80573b9f7eeb0a38614987fac863c678953ab4bb94f108d6b` | `ab5f05e8007e82ce70ae22d101d8f2c509865214` |
+| 2026-09-12-tensor-basis-challenge.md | `2f6fc7918d0a476332c6f79caa12ffa714f4e313a565f640b87a55fd0f9c6939` | `0dfddb11bd3a378756bfd5dde160bfa6f8786c85` |
+| 2026-09-12-tensor-basis-nonclaims.md | `909398504c26e605fbbee2d71f2e3380265fa4b5d3b849d76353c8a6ec9fa2ea` | `11643974dddbc3f0b7f7d6a07fc147c7dee0e3eb` |
+
+All three working files match staged Git bytes exactly; EOF and cached
+whitespace checks pass. This is three prose records plus an append-only
+graph update, preserving prior evidence. No toy computation, experiment,
+implementation, formal build or proof campaign was run. Exact polynomial
+#SAT would be stronger than polynomial SAT decision; approximate contraction
+has no certified zero-test contract here. Neither consequence is achieved.
+No novelty, publication result, global lower bound, public change, push,
+spend or automatic successor follows. The broader objective remains ACTIVE
+and unresolved; these are informal AI assessments, not human or Lean proofs.
