@@ -1463,3 +1463,55 @@ has no certified zero-test contract here. Neither consequence is achieved.
 No novelty, publication result, global lower bound, public change, push,
 spend or automatic successor follows. The broader objective remains ACTIVE
 and unresolved; these are informal AI assessments, not human or Lean proofs.
+
+## S3120: canonical completion, existential failure of polynomial preservation
+
+The root-authorized second bounded derivation supersedes the initial
+unresolved assessment for this exact rule. The degree-first, fixed-order
+RREF/free-zero completion H is polynomial in table length N=2^n, but for
+every sufficiently large n some partial p satisfies
+C*(p)<=floor(n/2)-1 and C(H(p))>floor(2^(n/3)) in the counted AND/OR/NOT
+circuit model. Thus no bound polynomial in n+C*(p) holds for this rule.
+The polynomial-in-N implementation and upper bound remain valid.
+
+[Design](2026-09-12-partial-total-circuit-design.md) and
+[constructive challenge](2026-09-12-partial-total-circuit-challenge.md)
+control the actual selected output via minimal-support Reed-Muller words,
+two-member fibers, degree-drop/free-column selection and bounded preimages.
+The disjoint decomposition/minimum-weight count exceeds all circuits at the
+stated threshold. This is existential bad-mask counting, not an explicit
+uniform hard-function family or a lower bound inferred from dense ANF.
+Finding a suitable hard word is not claimed efficient. Other completion
+rules and general partial-to-total reductions are not excluded.
+
+[Fresh independent mathematical review](2026-09-12-partial-total-circuit-fresh-review.md)
+is GO-WITH-NOTES; [scope review](2026-09-12-partial-total-circuit-nonclaims.md)
+is GO for internal integration. The nonblocking directional wording note
+is retained: the cubic paragraph's "below free column" means indices to its
+right, not preceding coordinates. The equivalent dependency argument and
+fresh review state the correct proof. No frozen author edit is made.
+
+[Significance assessment](2026-09-12-partial-total-circuit-significance.md)
+recommends HOLD public preparation. Its author contributed to the derivation
+and is not an independent novelty reviewer. Known tools and a potentially
+distinctive exact-rule application do not establish publication significance
+or priority. The initial challenger is also a contributor, separate from
+the fresh independent mathematical lens. No human or Lean verification is
+claimed. All source gaps/reduction models retain their conditions; the
+refuted preservation target supplies no total-MCSP hardness reduction or
+P-versus-NP result. No next mechanism is selected.
+
+| Record | Working and committed Git-byte SHA256 | Git blob |
+|---|---|---|
+| 2026-09-12-partial-total-circuit-design.md | `d2d2e55113ec6b1995fdcf295009b95108a652111170f5ca4bfa638f330803c8` | `1a90533ae6f51e584961d556f20a90dbb1d8ba44` |
+| 2026-09-12-partial-total-circuit-challenge.md | `20b3db4f68986059059b76c04180fea55469aefbe1c22388373f52e2fb7497d5` | `d8cef338510e7e0fc9fbc8368540bdba1535c435` |
+| 2026-09-12-partial-total-circuit-fresh-review.md | `2f68580a4e87929b161eb5a49f9c0ddb9584b7784467d998478c3f7f781cd5fc` | `a479b49a1b2b9e88a3eaac6611d58104f6ef4a6e` |
+| 2026-09-12-partial-total-circuit-significance.md | `00b43a403139f255d69bec096a7bbd152eec981c507e46f21033e19f99e0d7d7` | `6e9398263ae0553002253bdffd7515357b0dee15` |
+| 2026-09-12-partial-total-circuit-nonclaims.md | `5ce43f6fec7725c2218d1719753623ee75370e1d86f421021a882912f3c90577` | `fbffacdc58b55fbf92d48395616d308c5a818058` |
+
+All five record working bytes equal staged Git bytes. EOF/cached whitespace
+checks pass. Integration is exactly these five prose records plus this
+append-only graph, preserving prior evidence. No experiment, formal build,
+public artifact, push, spend or outreach occurred. The exact preservation
+candidate is resolved negatively; the broader objective remains ACTIVE and
+unresolved. Publication is not authorized by this internal receipt.
