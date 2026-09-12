@@ -1780,3 +1780,31 @@ to root's remaining planning closeout. No automatic extension, further
 experiment, DOI/profile update, outreach or new research lane is triggered.
 This local integration appends only this graph receipt, preserves the
 proof/review files and prior graph bytes, and performs no push.
+
+## S3127: bounded finite repair formally checked and reviewed
+
+2026-09-12. The first S3126 formal increment is complete at reviewed code
+commit `1693d167b1e3e23b229ac4c70418c0fead54798a`: finite indexed rational
+weighted exception repair, genuine positive AND/OR syntax and evaluation,
+exactly one additional leaf, and strict NO preservation at natural
+floor(sigma/4). Actual coordinate weights, normalization, positivity and
+budget lemmas accompany the semantic promise transformation.
+
+The [implementation receipt](2026-09-12-realizable-hardness-repair-formalization.md)
+now records all actual three-lens outcomes: kernel/build GO,
+[proof-adversarial GO](2026-09-12-realizable-hardness-repair-proof-review.md),
+[complexity GO-WITH-NOTES](2026-09-12-realizable-hardness-repair-complexity-review.md),
+and [non-claims GO](2026-09-12-realizable-hardness-repair-nonclaims-review.md).
+The [full dependency ledger](2026-09-12-realizable-hardness-lean-dependency-assessment.md)
+retains the valid-instance, encoding/runtime, sampling/rounding, specialized
+PCP, compilation, asymptotic and learning obligations under S3130-S3137.
+Full S3126 remains open; this is not full CMMSA/learning certification,
+human review, novelty certification or a complexity-class separation.
+
+S3128 separately produced a local 14-page paper candidate at isolated paper
+commit `419736bb99fac4c6fb71e9fc12cd3bab66fe307a`, PDF SHA256
+`7282701f19d0427819f51f2afc1ac438ee5dcc02a64adb62b21cb61687ee37b9`,
+with independent AI content/visual GO and byte-identical rebuild. That
+candidate is not published or submitted and does not change existing tags
+or DOI archives. This source closeout changes only scoped evidence records;
+all three reviewed Lean files remain byte-pinned and no push is performed.

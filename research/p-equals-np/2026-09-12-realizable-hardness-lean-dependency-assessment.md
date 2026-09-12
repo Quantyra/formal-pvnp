@@ -225,3 +225,39 @@ of global absence.
 No impossibility or fixed completion-time estimate is asserted. The critical
 path is now concrete and partly reusable. This audit wrote only this ledger;
 no code, proof manuscript, dependencies, commits, pushes or releases changed.
+
+## First completed formal increment: S3127
+
+2026-09-12 integration update. The preliminary inventory above is preserved
+as historical assessment. `ExceptionRepair.lean`, `Formula.lean` and
+`Checks.lean` now provide an actual kernel-checked finite indexed rational
+repair construction and its positive AND/OR syntax bridge at commit
+`1693d167b1e3e23b229ac4c70418c0fead54798a`. This includes witness repair,
+universal strict NO preservation with natural floor(sigma/4), exact coordinate
+weights, normalization/positivity and budget lemmas, and precisely one added
+leaf occurrence. The three sources were not altered during evidence closeout.
+
+The [implementation receipt and final three-lens table](2026-09-12-realizable-hardness-repair-formalization.md)
+record build/audit GO, [proof GO](2026-09-12-realizable-hardness-repair-proof-review.md),
+[complexity GO-WITH-NOTES](2026-09-12-realizable-hardness-repair-complexity-review.md),
+and [non-claims GO](2026-09-12-realizable-hardness-repair-nonclaims-review.md).
+S3127 is complete only for this bounded semantic/formula increment; full
+S3126 remains open. Reviewers are AI agents, not human peers.
+
+The remaining complexity notes have explicit owners: S3131 must assemble
+valid encoded instances and certify enumeration, construction, input/output
+length and runtime; S3130 must prove sampling, rounding and numeric common
+denominator bounds; S3132-S3135 must discharge the specialized outer-game,
+Grassmann, decoding, modified-PCP and compilation obligations; S3136 owns
+the exact learning transfer; S3137 owns fixed-parameter asymptotics and final
+assembly. The weaker local algebraic hypotheses do not replace the complete
+promise-domain conditions. Finite/noncomputable sums do not certify a machine,
+and input NO promises do not assert source NP-hardness. Preserve fixed L
+before selecting the reduction machine and polynomial bound.
+
+Separately, S3128 has a local 14-page typeset paper at the isolated paper
+repository commit `419736bb99fac4c6fb71e9fc12cd3bab66fe307a`, PDF SHA256
+`7282701f19d0427819f51f2afc1ac438ee5dcc02a64adb62b21cb61687ee37b9`.
+Its separate AI content/visual review reported GO and an identical independent
+rebuild. It is a local draft, not a new public archive or formal certificate.
+Neither that paper nor this repaired subset closes the full formalization goal.

@@ -70,3 +70,31 @@ Git normalizes these working CRLF files to LF. Independently checked that replac
 - ExceptionRepair.lean: `fe61a92953532bafc86f07dbb3f24fc43bc43bda6389518819da804b12189d4e`.
 - Formula.lean: `ab893de33e2e52b337195add1bb317a9f69ccce9ba1bd972df934005257b5a00`.
 - Checks.lean: `213d25d9ee18a5edae005fbd1b25afba15f94ef36f6347d403d5cfcf340e851b`.
+
+## Completed bounded closeout: S3127
+
+2026-09-12. The handoff status above is historical. All three independent
+top-level lenses have now reviewed the exact implementation commit
+`1693d167b1e3e23b229ac4c70418c0fead54798a`:
+
+| Lens | Actual verdict | Evidence |
+|---|---|---|
+| Kernel build / scoped axiom audit | GO | Implementation commands above; proof reviewer independently re-elaborated all three sources and observed all 13 axiom profiles |
+| Proof-adversarial | GO | [Full proof review](2026-09-12-realizable-hardness-repair-proof-review.md); no source correction requested |
+| Complexity | GO-WITH-NOTES | [Full complexity review](2026-09-12-realizable-hardness-repair-complexity-review.md); future valid-instance assembly, encoding/runtime, bit-size/denominator and hardness obligations retained |
+| Non-claims | GO | [Full non-claims review](2026-09-12-realizable-hardness-repair-nonclaims-review.md); wording bounded by the actual finite repair declarations |
+
+S3127 is completed as the bounded finite indexed rational weighted semantic
+repair and positive AND/OR formula increment. The source files retain every
+compiled working and committed normalized hash listed above. These are AI
+reviews, not human peer review or novelty certification. The proof review is
+a scoped elaboration and axiom audit, not a clean-room rebuild of dependencies.
+
+Full S3126 remains open. In particular, a bundled encoded valid-instance
+constructor, polynomial runtime and output size, rational bit bounds and
+polynomial-magnitude denominator, sampling, NP-hardness semantics, specialized
+PCP and compilation proofs, asymptotics and the exact learning transfer are
+not certified by this closeout. The complexity notes are retained in the
+[full dependency ledger](2026-09-12-realizable-hardness-lean-dependency-assessment.md).
+This evidence integration makes no code change, public claim expansion,
+push, release or submission.
