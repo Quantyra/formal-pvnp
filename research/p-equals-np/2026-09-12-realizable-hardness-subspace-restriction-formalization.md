@@ -112,3 +112,30 @@ over all W, Gaussian-binomial counts, Grassmann/covering/decoder theorem,
 machine runtime, full hardness or learning theorem, or publication readiness.
 For W(Q), Q must first be fixed and the actual posterior transfer still
 applied separately. No new novelty or public-release claim is made.
+
+## Independent three-lens bounded acceptance
+
+The author-pending history above is preserved. Candidate
+`f7dcf6730ade00f2d9187d5db7c220d88b9b0ae4` is now **ACCEPTED IN BOUNDED
+SCOPE**, after three distinct top-level reviews. The main and Checks hashes
+recorded above remain unchanged. No Lean source or companion package was
+changed during evidence integration.
+
+| Lens | Verdict | Actual evidence |
+| --- | --- | --- |
+| Independent build/audit | GO | Main session 64782 exit 0; Checks session 17088 exit 0; all examples and 13 profiles exactly propext, Classical.choice, Quot.sound. |
+| Proof-adversarial | GO-WITH-NOTES | `2026-09-12-realizable-hardness-subspace-proof-review.md`; actual arbitrary-W representation, injection, kernel identity and numeric event checked. |
+| Complexity | GO-WITH-NOTES | `2026-09-12-realizable-hardness-subspace-complexity-review.md`; fixed-W quantifiers and noncomputable basis boundary retained. |
+| Non-claims | GO-WITH-NOTES | `2026-09-12-realizable-hardness-subspace-nonclaims-review.md`; wording confined to unconditional finite-dimensional result. |
+
+Independent compilation used cached Lean 4.13.0 and LEAN_NUM_THREADS=1,
+with no competing compiler at launch or release, no downloads and no source
+changes. Both actual terminal exits were observed before compiler release.
+
+Acceptance discharges the arbitrary fixed-W defining-forms interface and
+its unconditional numeric intersection-codimension bound. It does not close
+S3133 or the full goal. Actual posterior likelihood and tail transfer, the
+Grassmann/incidence/covering/decoder dependencies, runtime and full hardness
+and learning statements, single-toolchain package verification, and final
+paper reconciliation remain open. No simultaneous-all-W, adaptive-W,
+efficient basis algorithm, novelty or publication-readiness claim follows.
