@@ -34,7 +34,7 @@ theorem scanBefore_eq_filtered_idxOf {A : Type*} [DecidableEq A]
     by_cases h : a = target
     · subst a
       simp [scanBefore, ht]
-    · cases hk : keep a <;> simp [scanBefore, h, hk, ih, Ne.symm h, Nat.add_comm]
+    · cases hk : keep a <;> simp [scanBefore, h, hk, ih, Nat.add_comm]
 
 /-- Direct computation from the explicit ordered source triples and the queried slot.
 No occurrence equivalence or complexity certificate is supplied as input. -/
@@ -44,8 +44,10 @@ def scanOrdinal {N m : Nat} (vars : Fin m -> Fin 3 -> Fin N) (o : Slot m) : Nat 
 theorem scanOrdinal_eq_prefix_count {N m : Nat}
     (vars : Fin m -> Fin 3 -> Fin N) (o : Slot m) :
     scanOrdinal vars o = ((slotList m).takeWhile (fun a => a != o)).countP
-      (fun a => decide (vars a.1 a.2 = vars o.1 o.2)) :=
-  scanBefore_eq_prefix_count _ _ _
+      (fun a => decide (vars a.1 a.2 = vars o.1 o.2)) := by
+  simpa only [scanOrdinal, bne_eq, Bool.beq_eq_decide_eq] using
+    (scanBefore_eq_prefix_count
+      (fun a : Slot m => decide (vars a.1 a.2 = vars o.1 o.2)) o (slotList m))
 
 /-- The existing getEquiv-based canonical ordinal is exactly this executable scan. -/
 theorem scanOrdinal_eq_ordinal {N m : Nat} (I : Instance N m) (o : Slot m) :
@@ -67,7 +69,7 @@ theorem scanBefore_le_length {A : Type*} [DecidableEq A]
   | cons a tail ih =>
     by_cases h : a = target
     · simp [scanBefore, h]
-    · cases hk : keep a <;> simp only [scanBefore, if_neg h, hk, List.length_cons] <;>
+    · cases hk : keep a <;> simp only [scanBefore, ite_eq_right h, hk, List.length_cons] <;>
         simp_all <;> omega
 
 /-- An output-size bound for the direct unary answer, not an FP runtime claim. -/
@@ -78,7 +80,7 @@ theorem scanOrdinal_le_slots {N m : Nat} (vars : Fin m -> Fin 3 -> Fin N) (o : S
     scanOrdinal vars o <= 3*m := by
   have h := scanBefore_le_length
     (fun a : Slot m => decide (vars a.1 a.2 = vars o.1 o.2)) o (slotList m)
-  simpa [scanOrdinal, slotList, Nat.mul_comm] using h
+  simpa [scanOrdinal, slotList, List.product, Nat.mul_comm] using h
 
 theorem unaryAnswer_length_le {N m : Nat} (vars : Fin m -> Fin 3 -> Fin N) (o : Slot m) :
     (unaryAnswer vars o).length <= 3*m := by

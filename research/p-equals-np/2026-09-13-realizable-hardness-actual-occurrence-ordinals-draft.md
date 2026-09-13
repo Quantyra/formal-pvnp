@@ -66,3 +66,32 @@ occurrenceMembership with getEquiv.symm; getEquiv.invFun is idxOf on the exact
 owner-filtered list. scanBefore_eq_filtered_idxOf proves the direct recursive
 scan equals that index. The final rfl performs only this unfolding and no
 assumed ordinal equality is introduced. Elaboration remains unverified.
+
+## Author verification update
+
+The valid source draft freeze is 5a2bc6002f1c4dc4e511b241ba38afdbe0185361.
+Earlier corrupt transport hashes above remain failed transmissions. Sessions
+75317 and 15034 exited 1; session 86350 completed actual main/Checks pair exit 0.
+All four attempts [1,1,0,0] preserve raw UTF-8 metadata, logs and exact source
+snapshots. No source changed during an attempt and no memory guard fired.
+
+Repairs normalize generic/Prod lawful BEq through Bool.beq_eq_decide_eq and
+unfold List.product for its length; an omitted Bool namespace was corrected
+on the third attempt. Unused/deprecated simp arguments were corrected. These
+are proof-body changes only: the executable definitions and mathematical
+targets are unchanged from the valid draft. In particular the canonical
+ordinal equality's final rfl compiled without modification or assumption.
+
+Final main and Checks are clean: eight profiles (two propext-only, six using
+propext/Classical.choice/Quot.sound), four examples, three signatures.
+308 original accepted artifacts, copies and receipts were rehashed after the
+run, together with six current direct package exports and eleven pins. Current
+package identity is not historical per-export certification. One thread;
+768 MiB preflight, 640 MiB owned-child stop. Minimum available RAM: 2032685056 bytes.
+Compiler released; independent review and final source freeze remain pending.
+
+Portable packet: certifications/realizable-hardness/.lake/build/actual-occurrence-ordinals-author-20260913/author-verification.json
+SHA256 5b313fc113cba1f9506308f64c1ae2be584ee3ed8aca53842300396beb13f591. Raw embeddings use byte.decode UTF-8 with no newline normalization.
+Encoded lookup is being implemented separately on the exact unary triple
+format above. Prefix enumeration and countOver semantic/FP joins remain open;
+this author milestone does not certify the full encoded constructor or paper.
