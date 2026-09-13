@@ -130,9 +130,14 @@ lemma intersection_finrank (s : Draw J)
     (W : Submodule (ZMod 2) (TripleRestrictionRank.Vector J)) :
     Module.finrank (ZMod 2) (W.comap (retained s).subtype) =
       Module.finrank (ZMod 2) ↥(retained s ⊓ W) := by
-  have he := (Submodule.comapSubtypeEquivOfLe
-    (show retained s ⊓ W ≤ retained s from inf_le_left)).finrank_eq
-  simpa only [Submodule.comap_inf, Submodule.comap_subtype_self, top_inf_eq] using he
+  let e : ↥(W.comap (retained s).subtype) ≃ₗ[ZMod 2] ↥(retained s ⊓ W) :=
+    { toFun := fun x => ⟨x.val.val, ⟨x.val.property, x.property⟩⟩
+      invFun := fun x => ⟨⟨x.val, x.property.1⟩, x.property.2⟩
+      left_inv := by intro x; rfl
+      right_inv := by intro x; rfl
+      map_add' := by intro x y; rfl
+      map_smul' := by intro k x; rfl }
+  exact e.finrank_eq
 
 lemma stable_dimension (s : Draw J)
     (W : Submodule (ZMod 2) (TripleRestrictionRank.Vector J))
@@ -230,7 +235,10 @@ theorem ready_comparison {A r h a : ℕ} (hr : SamplerProximity.Ready A r h)
     (by have := GoodAdvice.zeta_pos h; positivity) hn.1 hg hb
   refine ⟨hm.1, hm.2.1, ?_, ?_, ?_, hn.2⟩
   · exact reweighted_normalized _ _ hm.2.1
-  · convert hm.2.2.1 using 1 <;> simp only [reweighted] <;> ring
+  · have hfour : (2 : ℚ)*(2*GoodAdvice.zeta h) = 4*GoodAdvice.zeta h := by ring
+    change mass (reweighted A h Q W) (fun s => !(goodDraw Q W s)) ≤ _
+    unfold reweighted
+    simpa only [hfour] using hm.2.2.1
   · intro f hf
     have hmean : mean (reweighted A h Q W) f =
         (∑ s, conditional (beta A h) Q s * retainedZoomMass s Q W (2*h) * f s) /
