@@ -1,0 +1,25 @@
+# WireBridge author verification - 2026-09-13
+
+Status: AUTHOR PAIR GREEN; independent proof review and final source freeze pending. This is the author build, not independent acceptance or a complete hardness proof.
+
+The actual compact-source producer is proved equal to the complete finite-instance wire, including the entire ordered RHS list. The identical raw composed originalRowsFromSourceFn has FP membership, exact ordered original-row encoding correctness on Valid Source, and a raw output polynomial bound. The gadget rows and whole regularized constructor remain separate stages. Empty source and repeated owners with mixed RHS are covered by checks.
+
+## Actual compiler evidence
+
+The isolated root is certifications/realizable-hardness/.lake/build/actual-source-wire-bridge-author-20260913. Original session 37567 ended with main exit 1. Repair session 45017 ended with main exit 0 and Checks exit 0, retrieved through the same actual handle. The compiler was explicitly released after that terminal result. All attempts retain raw logs, metadata, and source snapshots; every recorded source remained unchanged during its attempt and no memory guard fired. The successful pair has 9 axiom profiles, all using only propext, Classical.choice, Quot.sound; 6 examples, 3 signature checks, and zero warnings. No new axiom, sorry, native_decide, or assumed runtime was introduced.
+
+The only normalized proof repair explicitly unfolds ActualSourceNormalization.Valid in the rhsList_instanceOf length proof. Functions, theorem targets, and assumptions are unchanged. Initial archive main raw SHA256 is 9001a61ea5e779099e86b527f1d7641d4c5d9e7bf85ace4d4f7c1799672510e6; repaired isolated main is 5cf63f6558a2f2b3e739ee482e6ec5e396b500f648c92eacc90167a423949d0b. Checks remains 3668b7a4d645a3c469c56aeb5ea2bdfe49520c76fdc2ea47b6c9a7aa22727f1d.
+
+Raw newline identity must not be confused with frozen LF identity: the initial archive main is 3660 bytes with one CRLF and remaining LF; the repaired isolated main is 3769 bytes with 77 CRLF. After CRLF-to-LF normalization the diff is exactly the single Valid unfolding line. Original archive freeze 913441d1bff4fd7fa192fd24a0f315d46037409f and its initial receipt remain preserved. No final archive copy or Git freeze has yet been performed. The immutable author packet deliberately retains final_source_freeze=null; any later freeze is linked separately.
+
+## Dependency and evidence boundary
+
+The accepted preparation and postflight retain 2641 original dependency records, 16 lower receipts, 15 current-only package export exceptions, 180 source pins, 11 package revision pins, and 1620 checked-absent fallback paths. Original independently accepted FiniteBridge33913 and OriginalRows13632 exports are used. Overlapping dependency paths require identical hashes. The current package exceptions remain current-only evidence, not retrospective original-build provenance. Source/manifest/pin checks, original and copied export hashes, lower receipt hashes, and absent fallbacks passed the compact collector's postflight. Lower receipts and plans are path/hash references, never recursively embedded or regenerated.
+
+The compact author packet is certifications/realizable-hardness/.lake/build/actual-source-wire-bridge-author-20260913/author-verification.json, SHA256 5c7779f6f8786173e88931a06e470d7c0a1092445baeb7075517097f78558dd2, 2546740 bytes. It includes raw own logs and snapshots, actual metadata, repair diff, provenance records, and immutable references to preparation and lower receipts. The collector finalize-evidence.py completed actual noncompiler session 74731 with exit 0. Accepted pregrant plan SHA256 ad79547581351af9668efdd57d8a878e12a7d374be31a969998ff7921b49fbe6 and unchanged runner SHA256 97f4f01907dc9541666f2a29c32162bb42ba2299b67c627709c7eb8d1b2b7189 are preserved.
+
+The source header's historical description of uncompiled draft dependencies is stale; dependency acceptance is established by the accepted preparation records, not that comment. I authored this module and earlier Normalization, CompactLookup, FiniteBridge, OriginalRows and downstream draft work; this record therefore supplies author evidence only. Independent reviewers must establish their own bounded acceptance. There is no claim here of upstream hardness, a complete reduction, learning hardness, novelty, or a P versus NP result.
+
+## Authorized final archival copy
+
+After root review of the compact packet and raw compiler records, the root authorized the exact main/unchanged Checks/dated receipt scope. The repaired isolated main was copied byte-for-byte into the archival draft directory on 2026-09-13. Checks and the initial receipt were preserved unchanged; no live Lean source was inserted. The earlier no-copy paragraph records the pre-freeze author evidence state. This receipt accompanies the final source freeze; its actual commit is reported separately to avoid self-referential commit metadata. The immutable author packet remains unchanged with final_source_freeze=null.

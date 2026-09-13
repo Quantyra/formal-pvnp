@@ -28,7 +28,7 @@ theorem instance_rhs_roundtrip (S : Source) (h : Valid S) (r : Fin S.1.length) :
 theorem rhsList_instanceOf (S : Source) (h : Valid S) :
     ActualOriginalRowProducer.rhsList (instanceOf S h) = S.2 := by
   apply List.ext_getElem
-  case hl => simpa [ActualOriginalRowProducer.rhsList] using h
+  case hl => simpa [ActualOriginalRowProducer.rhsList, ActualSourceNormalization.Valid] using h
   case h =>
     intro k hk hj
     have hk' : k < S.1.length := by
