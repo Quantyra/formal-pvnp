@@ -84,7 +84,7 @@ theorem changedRow_card_le (x : I.GlobalVar → ZMod 2) :
 
 private theorem finite_countP (k : Nat) (p : Fin k → Bool) :
     (List.finRange k).countP p = ∑ r : Fin k, if p r then 1 else 0 := by
-  have hl {A : Type*} (l : List A) (q : A → Bool) :
+  have hl (l : List (Fin k)) (q : Fin k → Bool) :
       l.countP q = (l.map (fun a => if q a then 1 else 0)).sum := by
     induction l with
     | nil => rfl
@@ -137,6 +137,7 @@ theorem violations_lower_decoded (x : I.GlobalVar → ZMod 2) :
   have hminor := mul_le_mul_of_nonneg_right hk (Nat.cast_nonneg (I.totalMinority x))
   have hscale := mul_le_mul_of_nonneg_left hc hnon
   rw [I.violations_eq_original_add_clouds]
+  push_cast at hg
   push_cast
   nlinarith
 
