@@ -41,8 +41,10 @@ theorem bad_mass_le (A h a : ℕ) (had : a ≤ 2 * h) (hdJ : 2 * h ≤ blocks A 
     (fun Q => (ambientMass_pos Q ha).le)
     (exceptional (beta A h) (zeta h) (h ^ 4)) (badZoom (d := 2 * h) (beta A h))
   have hu' : (mass (ambientMass : Advice (blocks A h) a → ℚ) (bad A h) : ℝ) ≤
-      (mass ambientMass (exceptional (beta A h) (zeta h) (h ^ 4)) : ℝ) +
-      (mass ambientMass (badZoom (d := 2 * h) (beta A h)) : ℝ) := by
+      (mass (ambientMass : Advice (blocks A h) a → ℚ)
+        (exceptional (beta A h) (zeta h) (h ^ 4)) : ℝ) +
+      (mass (ambientMass : Advice (blocks A h) a → ℚ)
+        (badZoom (d := 2 * h) (beta A h)) : ℝ) := by
     exact_mod_cast hu
   have he := exceptional_ambient_mass_le_real (beta A h) (beta_nonneg A h)
     (beta_le_one A h) ha (h ^ 4) (zeta h) (zeta_pos h)
@@ -117,7 +119,7 @@ theorem ready_fixed_rank_failure {A r h a : ℕ} (hr : SamplerProximity.Ready A 
           (tailMass (beta A h) Q (h ^ 4) : ℝ) := by
     have htcast := (Rat.cast_le (K := ℝ)).mpr ht
     simp only [Rat.cast_add, Rat.cast_mul, Rat.cast_pow, Rat.cast_ofNat] at htcast
-    convert htcast using 1 <;> ring
+    simpa only [mul_assoc] using htcast
   rw [hcount] at ht'
   have hd := SamplerProximity.ready_density hr ha hc
   have htail : (tailMass (beta A h) Q (h ^ 4) : ℝ) ≤ decay 30 h := by
