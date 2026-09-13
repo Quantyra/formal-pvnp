@@ -52,3 +52,40 @@ four, global row counts across variables, FP/encoding, majority gap, source
 NP-hardness, specialized PCP/learning, or final paper certification. Those
 claims require their actual constructions and composition. Independent
 compilation and three-lens review remain prerequisites to accepting this pair.
+
+## Author verification update
+
+The source-only status above is preserved as draft history, superseded for
+author compilation by actual session 18000: main and Checks both exited 0.
+Eleven profiles contain only propext, Classical.choice and Quot.sound; five
+examples and three signatures compiled. Main has two deprecated if_pos/if_neg
+warnings; Checks is clean. Compiler ownership was released at terminal exit.
+
+Draft freeze eddfd82cdcc8562ef8036351b1faad76e60abf04 preceded all compilation.
+Attempt 95225 exited 1 because local_count needed explicit unfolding of the
+ActualEqualityCloud.row alias before the relabeledSupport rewrite. Attempt
+10082 exited 1 because that rewrite closed the goal, leaving a redundant
+rfl. Final repair removes that rfl. All mathematical targets and definitions
+are unchanged. Failed sources, logs and metadata remain in the packet.
+
+Final compiled main SHA256:
+2c8320823c096a52420e6c6566da5c31f77946d10e733802cec851a484678b96.
+Checks remains 06a7227eb506c77a197ae7e3bb2741c94dd4304aabd24912d73f2c21433843ab.
+Source headers remain historical; no green compilation was repeated for a
+status-comment edit, and no source edit followed the successful run.
+
+Fresh author root used 308 artifacts copied from original accepted locations,
+merging the actual cloud/incidence closures and their independent main
+exports. Overlapping paths required identical hashes. Original, copy and
+assigned receipt hashes were verified before and after compilation. Runner
+checks the pinned Lean commit, manifest and all eleven package revisions,
+uses one thread, and enforces physical-memory preflight 768 MiB / owned-child
+stop 640 MiB. No guard stop, cache download or whole-dependency rebuild ran.
+Existing package-artifact provenance limits remain explicit.
+
+Portable packet at
+certifications/realizable-hardness/.lake/build/actual-equality-cloud-degree-author-20260913/author-verification.json
+has SHA256 d90dbf6d6a89969fa11ebe0bd6e1ebea21b688310e78fa35c23c9491058f8d1b.
+It contains runner, plan, original-copy provenance, all attempt metadata,
+raw logs and source snapshots. Independent exports and three lenses remain
+pending. No global source-plus-cloud degree, FP, gap or hardness claim follows.

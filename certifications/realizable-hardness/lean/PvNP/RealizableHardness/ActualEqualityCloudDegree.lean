@@ -32,8 +32,8 @@ theorem local_count {n : Nat} (v : GlobalVar n) (e : Edge n) :
   apply Finset.sum_congr rfl
   intro r _
   simp only [Function.comp_def, containsVar, decide_eq_true_eq]
+  unfold ActualEqualityCloud.row
   rw [← EqualityGadget.relabeledSupport_eq]
-  rfl
 
 theorem degree_eq_sum {n : Nat} (v : GlobalVar n) :
     degree v = ∑ e : Edge n, EqualityGadget.relabeledDegree (embedding e) v := by
