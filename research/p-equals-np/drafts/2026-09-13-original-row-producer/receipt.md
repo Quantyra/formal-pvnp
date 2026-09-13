@@ -1,0 +1,22 @@
+# Original-row encoded producer draft
+
+2026-09-13. S3131/S3132/S3137. SOURCE ONLY / UNCOMPILED. Owned draft files are ActualOriginalRowProducer.lean and ActualOriginalRowProducerChecks.lean in this archival directory. No live module insertion, compiler invocation, Git mutation, or accepted-component increment.
+
+The module implements the constructor audit's anchor and original-row slice. It imports the structural Code draft frozen at 331d3a0cc9bbbb4b47033a1ec7aefb0e3fa29065, the accepted generalized Lookup/Scan APIs, and the separately authored NormalizedTable module for dataPair and slotArg. Code was not authored or edited by this producer author. Its codeVar/codeRow definitions are used directly, without an assumed serializer law. NormalizedTable compilation/acceptance was in progress while this draft was written; this source is conditional on those imported interfaces and requires a later isolated dependency build.
+
+anchorCodeFn consumes the existing machine pair of unary source table and unary occurrence ordinal. It combines actual ownerLookup and ordinalScan with a false port tag, port index zero and empty dart/internal fields. Every unary leaf is serialized by encUnary; each already encoded nested product is combined with dataPair. No encTriple call is used on nested VarCode values. The correctness script targets the complete DataEncode(codeVar I (I.anchor o)) bitstring, and the FP script concerns that same total raw anchorCodeFn.
+
+The canonical input is DataEncode(sourceTriples I, rhsList I), with rhsList = List.ofFn (rhsBool composed with I.rhs). This is a DATA product, distinct from the machine pair used for rowRule arguments. rowRule requests anchors at 3r, 3r+1 and 3r+2 through the existing slotArg. Its RHS is the actual encoded Bool selected by posAt from the RHS table. It creates the complete nested RowCode structural encoding, including that RHS.
+
+rowClock derives exactly m marks from posCount(fstEnc wire). originalRowsFn invokes the actual listEncFn/materialize loop with that clock and rowRule. The final equality is exactly DataEncode(I.originalRows.map (codeRow I)); I.originalRows is the existing List.ofFn of originalRow/rhs in increasing Fin row order. The source retains every row, repeated owner and parity summand. Empty m=0 yields the empty encoded row list. Checks includes the unrestricted all-positions-same-owner instance and an empty-carrier identity. There is no externally supplied clock, runtime certificate or assumed lookup/correctness premise. An output polynomial is obtained from FP for the exact raw originalRowsFn, not inferred from a finite cardinality estimate.
+
+This is the generic unary-instance interface. It does not yet compose compact SourceNormalization.wire through NormalizedTable.sourceFn and the finite-carrier bridge. That join must establish equality of the entire pair, including rhsList(instanceOf S h)=S.2 (using the actual GF(2)/Bool conversion), as well as the existing table identity. No graph representative-dart enumeration, gadget rows, cloud loop, complete constructor, source hardness, novelty, or P versus NP conclusion is asserted.
+
+Elaboration-sensitive obligations remain untested: nested codeVar reduction in anchorCodeFn_correct; dependent List.ofFn indexing in RHS/originalCodes; materialize_eq rewrite alignment. All have explicit proof scripts with no sorry/admit/new axiom or assumed runtime fields. No compiler acceptance is claimed. The imported Code structural draft must itself be verified before this module can be accepted.
+
+Dependency raw SHA256 identities at drafting:
+- Code main: dae60a33b4b4cc6a1f3a09538c95c98d6ee38f1a7af26852803d7fca7931854f.
+- NormalizedTable main (current author state, not frozen acceptance): a4a112c753e7f917663dc1287e7889986bc1d086ab21dfe34cbfa39da8c4e809.
+- Constructor audit: 93765bd1731bf36ae4024546f458c7688d4a61e90a3839af7d079542cf42d0cd.
+
+Scoped pre-freeze proof-only adjustment: initial uncompiled main SHA accb176ffe5498a0bb29e71d928fbc460d5e6dcd0096bd7cce39eb6516dddb51 was revised to 567b2ea90e7a7f7c773516ea7e96ef59e2d5b5be323aa15b690e0a6d1794e30e. Following observed NormalizedTable elaboration patterns, the two FP composition scripts explicitly unfold their functions and normalize Function.comp_def/id_eq; rowRule_correct uses three explicitly Nat-indexed local equalities before rewriting, avoiding coerced Fin-numeral matching. Functions and public targets are unchanged. This adjustment was not compiled. Source is paused during independent NormalizedTable dependency review.
