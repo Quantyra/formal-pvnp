@@ -48,18 +48,43 @@ The loop clock is constructed, not supplied by the caller. -/
 def tableFn (z : List Bool) : List Bool :=
   listEncFn rowRule (pair (mulC (FixedPortCycleFamily.degree * 3) (marks z)) (marks z))
 
-theorem rowRule_mem_FP : rowRule ∈ FP := by
-  have hn := marks_mem_FP Cobham.fstBlock_mem_FP
-  have hq := Cobham.sndBlock_mem_FP
-  have hd := divC_mem_FP hq 3
-  have hv := divC_mem_FP hd FixedPortCycleFamily.degree
-  have hj := modC_mem_FP hd FixedPortCycleFamily.degree
-  have hi := modC_mem_FP hq 3
-  have hp := Cobham.pairFn_mem_FP (Cobham.pairFn_mem_FP hv hj) hi
-  have hr := mem_FP_comp (Cobham.pairFn_mem_FP hn hp) rotationFn_mem_FP
-  have hw := Cobham.pairFn_mem_FP hp hr
-  exact mem_FP_of_eq (mem_FP_comp
-    (Cobham.pairFn_mem_FP (constFn_mem_FP []) hw) encodeListFn_mem_FP) (fun _ => rfl)
+private def stageN (z : List Bool) : List Bool := marks (pairFst z)
+private def stageV (z : List Bool) : List Bool :=
+  divC FixedPortCycleFamily.degree (divC 3 (pairSnd z))
+private def stageJ (z : List Bool) : List Bool :=
+  modC FixedPortCycleFamily.degree (divC 3 (pairSnd z))
+private def stageI (z : List Bool) : List Bool := modC 3 (pairSnd z)
+private def stageP (z : List Bool) : List Bool := pair (pair (stageV z) (stageJ z)) (stageI z)
+private def stageInput (z : List Bool) : List Bool := pair (stageN z) (stageP z)
+private def stageR : List Bool → List Bool := rotationFn ∘ stageInput
+private def stageW (z : List Bool) : List Bool := pair (stageP z) (stageR z)
+private def stageE (z : List Bool) : List Bool := encodeListFn (pair [] (stageW z))
+
+private theorem stageN_mem_FP : stageN ∈ FP := marks_mem_FP Cobham.fstBlock_mem_FP
+private theorem stageV_mem_FP : stageV ∈ FP :=
+  divC_mem_FP (divC_mem_FP Cobham.sndBlock_mem_FP 3) FixedPortCycleFamily.degree
+private theorem stageJ_mem_FP : stageJ ∈ FP :=
+  modC_mem_FP (divC_mem_FP Cobham.sndBlock_mem_FP 3) FixedPortCycleFamily.degree
+private theorem stageI_mem_FP : stageI ∈ FP := modC_mem_FP Cobham.sndBlock_mem_FP 3
+private theorem stageP_mem_FP : stageP ∈ FP :=
+  Cobham.pairFn_mem_FP (Cobham.pairFn_mem_FP stageV_mem_FP stageJ_mem_FP) stageI_mem_FP
+private theorem stageInput_mem_FP : stageInput ∈ FP :=
+  Cobham.pairFn_mem_FP stageN_mem_FP stageP_mem_FP
+private theorem stageComposition_mem_FP : (rotationFn ∘ stageInput) ∈ FP :=
+  @mem_FP_comp stageInput rotationFn stageInput_mem_FP rotationFn_mem_FP
+
+private theorem stageR_mem_FP : stageR ∈ FP :=
+  stageComposition_mem_FP
+private theorem stageW_mem_FP : stageW ∈ FP := Cobham.pairFn_mem_FP stageP_mem_FP stageR_mem_FP
+private theorem stageE_mem_FP : stageE ∈ FP :=
+  mem_FP_comp (Cobham.pairFn_mem_FP (constFn_mem_FP []) stageW_mem_FP) encodeListFn_mem_FP
+
+private theorem rowRule_eq_stage (z : List Bool) : rowRule z = stageE z := by
+  simp only [rowRule, stageE, stageW, stageR, Function.comp_def,
+    stageInput, stageN, stageP, stageV, stageJ, stageI]
+
+theorem rowRule_mem_FP : rowRule ∈ FP :=
+  mem_FP_of_eq stageE_mem_FP (fun z => (rowRule_eq_stage z).symm)
 
 theorem tableFn_mem_FP : tableFn ∈ FP := by
   have hn := marks_mem_FP id_mem_FP
@@ -173,7 +198,14 @@ theorem rows_eq_actual_table (n : Nat) :
     intro i hi
     exact (numericRow_agrees n v j i).symm
   rw [hfinite, rows_canonical_order]
-  simp only [finRange_map_value, finRange_flatMap_value, ← FixedPortCycleFamily.degree_eq]
+  simp only [finRange_map_value]
+  have hj (v : Nat) := finRange_flatMap_value (FixedPortCycleFamily.predecessor + 1)
+    (fun j => (List.range 3).map (numericRow n v j))
+  simp only [← FixedPortCycleFamily.degree_eq] at hj
+  simp_rw [hj]
+  exact (finRange_flatMap_value n (fun v =>
+    (List.range FixedPortCycleFamily.degree).flatMap fun j =>
+      (List.range 3).map (numericRow n v j))).symm
 
 /-- Exact serialized equality, including list order, duplicates and both endpoints. -/
 theorem tableFn_eq (z : List Bool) : tableFn z = serializedTable z.length := by
@@ -224,8 +256,8 @@ theorem rowAt_length_le (n q : Nat) (hq : q < rowCount n) :
 theorem bitList_encode_length_le (s : List Bool) :
     (DataEncode.bitstringEncode s).length ≤ 4*s.length+2 := by
   have h := length_flatMap_boolBits s
-  rw [← encodeListFn_eq (pair [] s)]
-  simp only [encodeListFn, flatBitsFn_eq, pairSnd_pair, List.length_append,
+  rw [bitstringEncode_list]
+  simp only [List.length_append,
     List.length_cons, List.length_nil]
   omega
 
