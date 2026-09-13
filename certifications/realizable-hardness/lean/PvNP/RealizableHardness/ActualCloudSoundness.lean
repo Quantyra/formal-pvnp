@@ -46,9 +46,12 @@ theorem minorityBool_eq_min (S : X → Bool) :
     ext p
     cases S p <;> simp
   by_cases h : trueCount S ≤ falseCount S
-  · simp only [minorityBool, majorityBool, if_pos h, hf, min_eq_left h, trueCount]
-  · simp only [minorityBool, majorityBool, if_neg h, ht,
-      min_eq_right (Nat.le_of_lt (Nat.lt_of_not_ge h)), falseCount]
+  · unfold minorityBool majorityBool
+    rw [if_pos h, hf, min_eq_left h]
+    rfl
+  · unfold minorityBool majorityBool
+    rw [if_neg h, ht, min_eq_right (Nat.le_of_lt (Nat.lt_of_not_ge h))]
+    rfl
 
 theorem trueCount_real (S : X → Bool) :
     (trueCount S : Real) = PortCycleReplacement.count S := by
