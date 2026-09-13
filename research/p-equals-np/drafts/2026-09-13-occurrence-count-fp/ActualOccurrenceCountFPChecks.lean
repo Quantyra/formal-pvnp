@@ -29,8 +29,9 @@ example : repeatedSource.size 0 = 3 := by decide
 example : repeatedSource.size 1 = 0 := by decide
 example : occurrenceCountFn (lookupInput (serializedSource repeatedSource) 0) =
     [true,true,true] := by
-  rw [occurrenceCountFn_correct repeatedSource (0 : Fin 2)]
-  decide
+  have hs : repeatedSource.size (0 : Fin 2) = 3 := by decide
+  simpa only [Fin.val_zero, hs, List.replicate_succ, List.replicate_zero] using
+    occurrenceCountFn_correct repeatedSource (0 : Fin 2)
 example : occurrenceCountFn (lookupInput (serializedSource repeatedSource) 1) = [] := by
   apply occurrenceCountFn_unused repeatedSource (1 : Fin 2)
   decide

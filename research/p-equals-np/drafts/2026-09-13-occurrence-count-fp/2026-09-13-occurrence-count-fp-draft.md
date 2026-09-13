@@ -1,6 +1,6 @@
 # ActualOccurrenceCountFP isolated draft
 
-2026-09-13. S3131/S3132/S3137. SOURCE ONLY, UNCOMPILED. No compiler or source
+2026-09-13. S3131/S3132/S3137. Initial status: SOURCE ONLY, UNCOMPILED. No compiler or source
 Git action was performed. Files are archived here, outside the live consumer
 closure, pending source review and generalized Allocation dependency acceptance.
 
@@ -41,3 +41,70 @@ instance. NormalizedTable and FiniteBridge remain independently assigned work.
 No full constructor FP, source hardness, PvsNP, learning, novelty or publication
 claim follows from this draft. Author verification and all required independent
 lenses must precede acceptance.
+
+## Author verification update; final archive copy pending
+
+This dated update supersedes the initial uncompiled status for the isolated
+author pair only. Initial archival freeze is
+`f27abe7be8ddeadb88fec6d778f8732c6b29ccde`; its original receipt is also preserved
+byte-for-byte at the author root as initial-archive-receipt.md, SHA-256
+`cc790bdf9ce99a7ed8289b7da6aef6df74109298f185664104a28d3824c8404c`.
+
+The main is unchanged in both archive and isolated source, SHA-256
+`24600f651bbb3f35423718a5ce0e48e39a73923fb1c9a5417383518a3a8aa79f`.
+The archive Checks still has its original SHA-256
+`2398fc36543278f2502a4a0bf81182096697dcfb5666d4b431567bf325811b46`.
+Final author-green Checks exists ONLY in the isolated author source directory,
+SHA-256 `276ee189946266738c345e3abdda6b574b5ceda3f2d8e713dd11af341a63be13`.
+Its sole difference is one repeated-owner example proof: replace rw/decide by
+the concrete size=3 fact and simpa only [Fin.val_zero, hs, List.replicate_succ,
+List.replicate_zero] using the same occurrenceCountFn_correct theorem. No
+definition, theorem statement, example target or assumption changes.
+
+Author root: `certifications/realizable-hardness/.lake/build/actual-occurrence-count-fp-author-20260913`.
+Session99102 returned actual main0/Checks1, then Checks-only95475 returned1 and
+Checks-only30573 returned0. Main was compiled once. Outcomes [0,1,1,0], all
+four raw logs/terminal metadata/source snapshots and pregrant/attempt plans
+are preserved. The first example failure was Nat/Fin zero rewrite matching;
+the second needed explicit replicate expansion. No semantic repair or heartbeat
+escalation. Final Checks printed14 standard-subset profiles (13 standard three,
+count_wire_length propext/Quot.sound),7 examples,3 signatures. All logs are
+warning-free. No guard fired; minimum available memory1416314880 bytes.
+
+Fresh dependency scope is original independently accepted generalized5164 mains
+Allocation/Lookup/Ordinals/Prefix, verified against promotiond12ed5b9, plus2624
+original lower records. All2628 originals/copies,9receipts,9current-only package
+exports,178source records and11package pins were verified; current-only package
+provenance is not upgraded. Restricted old consumer exports were excluded and
+fallback exclusions rechecked immediately before every launch and afterward.
+The runner used isolated cwd/source copies, one thread and768/640MiB guards.
+
+Portable author packet `author-verification.json` in that root:
+`ecc6fff0f6aaf50e029c2fe28140d13dcdddd317d5870b00cc0e903c5318b811`.
+Companion narrative `author-verification.md`:
+`0ce646efb90caf31b2bfe7b5d09983f24e3d81dd4fbf529ead4fe32375f0985e`.
+Packet embeds raw bytes decoded as UTF-8, including all attempts, exact repair
+diff, dependency records/receipts and archive-versus-final hashes. Its
+final_source_freeze is null; initial_archive_freeze does not identify the
+repaired Checks. Preserve that immutable prefreeze distinction and record the
+eventual actual commit separately.
+
+Proposed final archival scope is exactly this directory's main, Checks and
+dated receipt. The main needs no change; copying final isolated Checks into
+the archive and committing remain pending explicit root grant. No live source
+insertion, independent acceptance, full constructor FP, source hardness,
+publication or complete theorem is claimed. Table source reviews are unchanged.
+
+## Authorized final archival copy
+
+Root reviewed the exact repair and all four actual outcomes, then authorized
+the final archival copy and exact-three-file freeze. The isolated final Checks
+was copied byte-for-byte into this archive: SHA-256
+`276ee189946266738c345e3abdda6b574b5ceda3f2d8e713dd11af341a63be13`.
+Main remains `24600f651bbb3f35423718a5ce0e48e39a73923fb1c9a5417383518a3a8aa79f`.
+This paragraph supersedes pending-copy wording above, while preserving the
+chronology. Original Checks2398fc36 remains available in f27abe7b and the raw
+failed snapshot. The immutable ecc6fff0 author packet retains its explicit
+prefreeze/null-final-freeze status; the actual archive commit is reported
+separately after freezing. This copy is not live insertion or independent
+acceptance. No further compiler or public action was performed.
