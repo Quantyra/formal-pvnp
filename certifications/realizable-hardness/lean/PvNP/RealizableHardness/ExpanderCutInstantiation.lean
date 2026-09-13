@@ -63,14 +63,14 @@ lemma product_over_sum_ge_half_min (a b : ℝ) (ha : 0 ≤ a) (hb : 0 ≤ b)
 
 /-- Exact min-side expansion from the normalized spectral convention.
 This also covers the empty graph without division by its order. -/
-theorem boundary_expansion (G : Complexity.RegGraph) (λ : ℝ)
-    (hλ₀ : 0 ≤ λ) (hλ₁ : λ < 1) (hspec : G.SpectralBound λ)
+theorem boundary_expansion (G : Complexity.RegGraph) (lam : ℝ)
+    (hlam₀ : 0 ≤ lam) (hlam₁ : lam < 1) (hspec : G.SpectralBound lam)
     (S : G.V → Bool) :
-    ((G.deg : ℝ) * (1 - λ) / 2) * smallSide S ≤ boundary G S := by
+    ((G.deg : ℝ) * (1 - lam) / 2) * smallSide S ≤ boundary G S := by
   classical
   rw [boundary_eq_outgoing]
   by_cases hn : 0 < G.order
-  · have he := G.card_dartsBetween_compl_ge hλ₀ hspec hn (support G S)
+  · have he := G.card_dartsBetween_compl_ge hlam₀ hspec hn (support G S)
     rw [support_card, support_compl_card] at he
     have hab : count S + count (fun v => !(S v)) = (G.order : ℝ) :=
       count_complement S
@@ -78,7 +78,7 @@ theorem boundary_expansion (G : Complexity.RegGraph) (λ : ℝ)
     have hprod := product_over_sum_ge_half_min (count S) (count (fun v => !(S v)))
       (count_nonneg S) (count_nonneg _) (by rw [hab]; exact hnR)
     rw [hab] at hprod
-    have hc : 0 ≤ (1 - λ) * (G.deg : ℝ) :=
+    have hc : 0 ≤ (1 - lam) * (G.deg : ℝ) :=
       mul_nonneg (by linarith) (Nat.cast_nonneg _)
     have hm := mul_le_mul_of_nonneg_left hprod hc
     unfold smallSide
@@ -118,20 +118,23 @@ theorem actual_family_expansion (n : ℕ)
 /-- Direct application to the actual rotation, using the same cut convention
 as the source replacement module. The remaining family integration is only
 transport of its positive degree to successor form; no spectral lemma is left. -/
-theorem port_cut_of_spectral {n d : ?} (R : Port n d ? Port n d)
-    (hR : Function.Involutive R) (? : ?) (h?? : 0 ? ?) (h?? : ? < 1)
-    (hspec : (Complexity.RegGraph.ofRot (d + 1) (by omega) n R hR).SpectralBound ?)
-    (S : Port n d ? Bool) :
-    let h : ? := (d + 1 : ?) * (1 - ?) / 2
-    (h / ((d + 1 : ?) * (1 + h + (d + 1)))) * smallSide S ? cut R S := by
+theorem port_cut_of_spectral {n d : Nat} (R : Port n d → Port n d)
+    (hR : Function.Involutive R) (lam : Real) (hlam0 : 0 ≤ lam) (hlam1 : lam < 1)
+    (hspec : (Complexity.RegGraph.ofRot (d + 1) (by omega) n R hR).SpectralBound lam)
+    (S : Port n d → Bool) :
+    let h : Real := (d + 1 : Real) * (1 - lam) / 2
+    (h / ((d + 1 : Real) * (1 + h + (d + 1)))) * smallSide S ≤ cut R S := by
   dsimp only
-  have hgap : 0 < 1 - ? := sub_pos.mpr h??
+  have hgap : 0 < 1 - lam := sub_pos.mpr hlam1
   apply cut_expansion R hR _ (by positivity)
   intro A
   have he := boundary_expansion
-    (Complexity.RegGraph.ofRot (d + 1) (by omega) n R hR) ? h?? h?? hspec A
-  simpa [boundary, external, lift, Complexity.RegGraph.deg,
-    Complexity.RegGraph.ofRot, Complexity.RegGraph.nbr] using he
+    (Complexity.RegGraph.ofRot (d + 1) (by omega) n R hR) lam hlam0 hlam1 hspec A
+  rw [Complexity.RegGraph.deg_ofRot] at he
+  change ((d + 1 : Nat) : Real) * (1 - lam) / 2 * smallSide A ≤
+    external R (lift A) at he
+  simpa only [Nat.cast_add, Nat.cast_one] using he
+
 
 end
 end PvNP.RealizableHardness.ExpanderCutInstantiation

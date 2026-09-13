@@ -58,7 +58,8 @@ def rotation {n d : ℕ} (R : Port n d → Port n d) :
 theorem rotation_involutive {n d : ℕ} (R : Port n d → Port n d)
     (hR : Function.Involutive R) : Function.Involutive (rotation R) := by
   rintro ⟨⟨v,j⟩,i⟩
-  fin_cases i <;> simp [rotation, hR]
+  fin_cases i <;> simp [rotation]
+  exact hR (v,j)
 
 def graph {n d : ℕ} (R : Port n d → Port n d)
     (hR : Function.Involutive R) : Complexity.RegGraph where
@@ -74,11 +75,13 @@ def graph {n d : ℕ} (R : Port n d → Port n d)
 
 @[simp] theorem graph_degree {n d : ℕ} (R : Port n d → Port n d)
     (hR : Function.Involutive R) : (graph R hR).deg = 3 := by
-  simp [graph, Complexity.RegGraph.deg]
+  change Fintype.card (Fin 3) = 3
+  exact Fintype.card_fin 3
 
 @[simp] theorem graph_order {n d : ℕ} (R : Port n d → Port n d)
     (hR : Function.Involutive R) : (graph R hR).order = n*(d+1) := by
-  simp [graph, Complexity.RegGraph.order, Port]
+  change Fintype.card (Fin n × Fin (d+1)) = n*(d+1)
+  rw [Fintype.card_prod, Fintype.card_fin, Fintype.card_fin]
 
 noncomputable section
 attribute [local instance] Classical.propDecidable
@@ -107,7 +110,7 @@ lemma cycle_nonneg {d : ℕ} (s : Fin (d+1) → Bool) : 0 ≤ cycle s :=
 
 lemma backward_eq_forward {d : ℕ} (s : Fin (d+1) → Bool) :
     (∑ j, distance (s j) (s ((finRotate (d+1)).symm j))) = cycle s := by
-  have he := (finRotate (d+1)).sum_comp
+  have he := Equiv.sum_comp (finRotate (d+1))
     (fun j => distance (s j) (s ((finRotate (d+1)).symm j)))
   simpa [cycle, distance_symm] using he.symm
 
@@ -121,7 +124,9 @@ theorem cut_decomposition {n d : ℕ} (R : Port n d → Port n d)
       distance (S p) (S (p.1, finRotate (d+1) p.2))) = cycles S := by
     simp only [cycles, cycle, Fintype.sum_prod_type]
   unfold cut
-  simp only [Fin.sum_univ_three, rotation, ↓reduceIte, Prod.fst]
+  simp only [Fin.sum_univ_three, rotation]
+  simp only [show (1 : Fin 3) ≠ 0 by decide, show (2 : Fin 3) ≠ 0 by decide,
+    show (2 : Fin 3) ≠ 1 by decide, ite_eq_left, ite_false]
   rw [Finset.sum_add_distrib, Finset.sum_add_distrib, hf, hb]
   unfold external
   ring
@@ -140,7 +145,7 @@ lemma minority_le_degree {d : ℕ} (s : Fin (d+1) → Bool) : minority s ≤ d+1
     _ = d+1 := by simp
 
 lemma majority_constant {d : ℕ} (b : Bool) : majority (fun _ : Fin (d+1) => b) = b := by
-  cases b <;> simp [majority] <;> omega
+  cases b <;> simp [majority]
 
 lemma minority_constant {d : ℕ} (b : Bool) : minority (fun _ : Fin (d+1) => b) = 0 := by
   simp [minority, majority_constant, distance]
@@ -153,7 +158,9 @@ lemma constant_of_adjacent {d : ℕ} (s : Fin (d+1) → Bool)
   | zero => rfl
   | succ j ih =>
       have hj := hs j.castSucc
-      rw [finRotate_of_lt j.isLt] at hj
+      have hr : finRotate (d+1) j.castSucc = j.succ := by
+        exact finRotate_of_lt j.isLt
+      rw [hr] at hj
       exact hj.symm.trans ih
 
 /-- Weak but uniform bound, obtained from one actual crossing in every nonconstant cloud. -/
@@ -163,11 +170,14 @@ theorem minority_le_cycle {d : ℕ} (s : Fin (d+1) → Bool) :
   · have hc : s = fun _ => s 0 := funext (constant_of_adjacent s hs)
     rw [hc, minority_constant]
     exact mul_nonneg (by positivity) (cycle_nonneg _)
-  · push_neg at hs
+  · push Not at hs
     obtain ⟨j,hj⟩ := hs
     have hl := Finset.single_le_sum (f := fun j => distance (s j) (s (finRotate (d+1) j)))
       (fun j _ => distance_nonneg _ _) (Finset.mem_univ j)
-    have hone : (1 : ℝ) ≤ cycle s := by simpa [distance, hj, cycle] using hl
+    have hone : (1 : ℝ) ≤ cycle s := by
+      change distance (s j) (s (finRotate (d+1) j)) ≤ cycle s at hl
+      rw [distance, ite_eq_right hj] at hl
+      exact hl
     have hd : (0 : ℝ) ≤ d+1 := by positivity
     exact (minority_le_degree s).trans (by nlinarith)
 
@@ -208,7 +218,7 @@ theorem smallSide_transport {n d : ℕ} (S : Port n d → Bool) :
         distance (S p) (lift (rounded S) p) := by
       cases S p <;> cases lift (rounded S) p <;> rfl
     simp only [Finset.sum_add_distrib, hd] at hh
-    change _ ≤ count (lift (fun v => !(rounded S v))) + discrepancy S at hh
+    change count (fun p => !(S p)) ≤ count (lift (fun v => !(rounded S v))) + discrepancy S at hh
     simpa [count_lift] using hh
   unfold smallSide
   by_cases h : count (rounded S) ≤ count (fun v => !(rounded S v))
@@ -220,8 +230,8 @@ theorem smallSide_transport {n d : ℕ} (S : Port n d → Bool) :
 theorem external_transport {n d : ℕ} (R : Port n d → Port n d)
     (hR : Function.Involutive R) (S : Port n d → Bool) :
     external R (lift (rounded S)) ≤ external R S + discrepancy S := by
-  let e : Port n d ≃ Port n d := Equiv.ofInvolutive R hR
-  have he := e.sum_comp (fun p => distance (S p) (lift (rounded S) p))
+  let e : Port n d ≃ Port n d := hR.toPerm
+  have he := Equiv.sum_comp e (fun p => distance (S p) (lift (rounded S) p))
   have hh := Finset.sum_le_sum (fun p (_ : p ∈ Finset.univ) =>
     distance_perturb (lift (rounded S) p) (lift (rounded S) (R p)) (S p) (S (R p)))
   simp only [Finset.sum_add_distrib] at hh
