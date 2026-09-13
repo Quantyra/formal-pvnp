@@ -25,6 +25,7 @@ theorem slotList_nodup (m : Nat) : (slotList m).Nodup :=
   rcases o with ⟨r,i⟩
   simp [slotList, List.product]
 
+namespace Instance
 variable {N m : Nat} (I : Instance N m)
 
 def owner (o : Slot m) : Fin N := I.vars o.1 o.2
@@ -266,7 +267,11 @@ theorem zero_size (J : Instance N 0) (v : Fin N) : J.size v = 0 := by
   simp [size, occurrenceList, slotList, List.product]
 
 theorem zero_rows (J : Instance N 0) : J.rows = [] := by
-  simp [rows, originalRows, zero_size, ActualEqualityCloud.rows_zero]
+  simp [rows, originalRows]
+  intro v
+  rw [zero_size J v]
+  exact ActualEqualityCloud.rows_zero
 
+end Instance
 end
 end PvNP.RealizableHardness.ActualOccurrenceAllocation

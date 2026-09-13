@@ -63,3 +63,32 @@ correspondence alone is not advertised as the full list multiplicity theorem.
 Encoded variable numbering, allocation/serialization FP, Håstad source
 hardness, and final paper/proof consolidation remain open. The separately
 owned ActualGraphIncidence source is untouched.
+
+## Actual author verification update
+
+Scoped author session 16835 completed with actual exit 0 for main and Checks,
+with 25 standard-only profiles, eight examples and four printed signatures.
+Final logs are clean. Main attempts were [1,1,0]; Checks passed first attempt.
+The first failure was cascading unresolved dotted-method notation: instance
+methods needed the Instance namespace. Definitions/theorems were placed in
+that namespace, Checks opens it, and the intended dotted API now elaborates.
+The second failure was only empty-instance simplification, repaired with
+explicit zero_size and cloud empty-row rewrites. Mathematical constructions
+and quantified statements are unchanged; qualified API names now include
+Instance. Failed compiler placeholders in diagnostics are not source axioms
+or accepted proof results; final profiles contain only standard axioms.
+
+Portable author packet (relative to companion):
+`.lake/build/actual-occurrence-allocation-author-20260913/author-verification.json`,
+SHA256 `d47bbc3a461412c673798e4aeeccf841d53bd8a857bde5dbb18a33106d82cf95`.
+It embeds all four module attempts, raw logs, terminal metadata, exact source
+snapshots, runner, preparation and dependency-copy evidence. The 307 original
+accepted exports and their receipt identities, and six additional current
+package exports, were rehashed. Eleven pinned revisions, toolchain and manifest
+are checked by the one-thread runner under the 768/640 MiB physical-memory
+thresholds; observed minimum available memory was 1939374080 bytes.
+Current package hashes do not retroactively claim historical per-export byte
+identity absent from older acceptance inventories. No broad build, package
+change, download or public operation occurred. Independent review remains
+pending. The exact multiplicity/count/degree/YES/gap/FP obligations above
+remain separate; this result does not complete the source-hardness theorem.

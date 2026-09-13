@@ -2,6 +2,7 @@ import PvNP.RealizableHardness.ActualOccurrenceAllocation
 
 namespace PvNP.RealizableHardness.ActualOccurrenceAllocationChecks
 open ActualOccurrenceAllocation
+open ActualOccurrenceAllocation.Instance
 open scoped BigOperators
 
 #print axioms slotList_nodup
