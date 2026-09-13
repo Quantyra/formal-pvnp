@@ -11,6 +11,7 @@ open PosteriorReweighting (mass)
 
 noncomputable section
 attribute [local instance] Classical.propDecidable
+variable {J a : ℕ}
 
 /-- Standard finite total variation: half the L1 distance. -/
 def tv {A : Type*} [Fintype A] (p q : A → ℚ) : ℚ :=
@@ -156,7 +157,8 @@ theorem ambient_event_transfer (β : ℚ) (ha : a ≤ J) (b : Advice J a → Boo
 theorem lowMarginal_ambient_mass_le (β : ℚ) (ha : a ≤ J) :
     mass (ambientMass : Advice J a → ℚ) (lowMarginal β) ≤ 2 * adviceTV β J a := by
   have hs : mass (ambientMass : Advice J a → ℚ) (lowMarginal β) ≤
-      2 * (mass ambientMass (lowMarginal β) - mass (adviceMarginal β) (lowMarginal β)) := by
+      2 * (mass (ambientMass : Advice J a → ℚ) (lowMarginal β) -
+        mass (adviceMarginal β : Advice J a → ℚ) (lowMarginal β)) := by
     unfold mass
     rw [← Finset.sum_sub_distrib, Finset.mul_sum]
     apply Finset.sum_le_sum

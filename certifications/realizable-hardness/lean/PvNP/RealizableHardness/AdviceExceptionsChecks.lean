@@ -4,7 +4,8 @@ import PvNP.RealizableHardness.AdviceExceptions
 namespace PvNP.RealizableHardness.AdviceExceptionsChecks
 open scoped BigOperators
 open TripleRestrictionRank TripleRestrictionDimension GrassmannIncidence PosteriorDensity
-open AdviceExceptions PosteriorReweighting (mass)
+open AdviceExceptions
+open PosteriorReweighting (mass)
 noncomputable section
 attribute [local instance] Classical.propDecidable
 
@@ -39,7 +40,7 @@ example : tv (fun _ : Bool => (1 / 2 : ℚ)) (fun _ : Bool => (1 / 2 : ℚ)) = 0
 -- Empty event transfer needs no probability-range hypothesis on beta.
 example (β : ℚ) (ha : a ≤ J) :
     mass (ambientMass : Advice J a → ℚ) (fun _ => false) ≤
-      mass (adviceMarginal β) (fun _ => false) + adviceTV β J a :=
+      mass (adviceMarginal β : Advice J a → ℚ) (fun _ => false) + adviceTV β J a :=
   ambient_event_transfer β ha _
 
 -- Null advice has a zero posterior tail, including beta endpoints.
