@@ -105,9 +105,12 @@ def liftArray {d k : ℕ} (f : Frame V d) (W : Grass V (d+k))
     (hf : ∀ i, f.val i ∈ W.val) (B : RankArray (anchorIn f W.val hf) k) : RankArray f k :=
   ⟨fun i => (B.val i).val, by
     have hi := B.property.map' W.val.subtype W.val.ker_subtype
-    convert hi using 1
-    funext i
-    cases i <;> rfl⟩
+    have he : concatenate f.val (fun i => (B.val i).val) =
+        W.val.subtype ∘ concatenate (anchorIn f W.val hf).val B.val := by
+      funext i
+      cases i <;> rfl
+    rw [he]
+    exact hi⟩
 
 theorem liftArray_span {d k : ℕ} (f : Frame V d) (W : Grass V (d+k))
     (hf : ∀ i, f.val i ∈ W.val) (B : RankArray (anchorIn f W.val hf) k) :

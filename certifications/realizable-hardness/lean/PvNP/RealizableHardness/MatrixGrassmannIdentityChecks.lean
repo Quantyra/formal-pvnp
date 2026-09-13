@@ -30,7 +30,7 @@ attribute [local instance] Classical.propDecidable
 #print axioms matrixExperiment_eq
 #print axioms above_card_pos
 #print axioms grassmannExperiment_all
-#print axioms prod_indicator
+#print axioms PvNP.RealizableHardness.MatrixGrassmannIdentity.prod_indicator
 #print axioms rankEventProbability_eq_experiment
 #print axioms rankEventProbability_eq_alpha
 #print axioms rankProbability_zero_width

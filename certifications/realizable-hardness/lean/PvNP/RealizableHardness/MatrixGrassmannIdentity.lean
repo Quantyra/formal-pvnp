@@ -71,7 +71,7 @@ theorem containing_count {d w : ℕ} (f : Frame V d) :
     (Fintype.card (Containing f w) : ℝ) *
       ((∏ i ∈ Finset.range w, (2^(d+w)-2^(d+i)) : ℕ) : ℝ) =
         (Fintype.card (RankArray f w) : ℝ) := by
-  have he := sum_over_rankArrays f (fun _ => (1:ℝ))
+  have he := sum_over_rankArrays (k := w) f (fun _ => (1:ℝ))
   simpa [mul_comm] using he.symm
 
 theorem containing_card_pos {d w : ℕ} (f : Frame V d)
@@ -81,7 +81,7 @@ theorem containing_card_pos {d w : ℕ} (f : Frame V d)
   have hr : (0:ℝ) < Fintype.card (RankArray f w) :=
     (div_pos_iff.mp hp).elim And.left (fun hh =>
       False.elim ((not_lt_of_ge (Nat.cast_nonneg _)) hh.2))
-  have hc := containing_count f
+  have hc := containing_count (w := w) f
   by_contra hn
   have hz : Fintype.card (Containing f w) = 0 := by omega
   rw [hz] at hc
@@ -108,12 +108,12 @@ theorem normalized_extension_law {d w : ℕ} (f : Frame V d)
     (h : d+w ≤ Module.finrank (ZMod 2) V) (g : Grass V (d+w) → ℝ) :
     (∑ B : Fin w → V, extensionTest f g B) / (Fintype.card (Fin w → V) : ℝ) =
       rankProbability (Module.finrank (ZMod 2) V) d w * aboveMean (spanFrame f) g := by
-  have hc := containing_count f
+  have hc := containing_count (w := w) f
   have hn : (Fintype.card (Containing f w) : ℝ) ≠ 0 := by
     exact_mod_cast Nat.ne_of_gt (containing_card_pos f h)
   have ha : (Fintype.card (Fin w → V) : ℝ) ≠ 0 := by rw [array_card]; positivity
   have he := (aboveEquiv f).sum_comp (fun W => g W.val)
-  have hcard := Fintype.card_congr (aboveEquiv f)
+  have hcard := Fintype.card_congr (aboveEquiv (w := w) f)
   rw [uniform_extension_law, ← rankArray_ratio f h]
   unfold aboveMean
   rw [← he, ← hcard]
@@ -151,12 +151,7 @@ theorem rawTF_frame {d w : ℕ} (f : Frame V d)
   have he : rawTF Lset f.val =
       (∑ B : Fin w → V, extensionTest f (fun W => if Lset W then 1 else 0) B) /
         (Fintype.card (Fin w → V) : ℝ) := by
-    unfold rawTF
-    congr 1
-    apply Finset.sum_congr rfl
-    intro B _
-    unfold rawF extensionTest
-    split <;> rfl
+    rfl
   rw [he, normalized_extension_law f h]
 
 def alpha (n d w t : ℕ) : ℝ := rankProbability n 0 d * (rankProbability n d w)^t
@@ -190,7 +185,11 @@ theorem base_rank_ratio {d : ℕ} (h : d ≤ Module.finrank (ZMod 2) V) :
     (Fintype.card (Grass V d) : ℝ) * (frameProduct d d : ℝ) /
       (Fintype.card (Fin d → V) : ℝ) = rankProbability (Module.finrank (ZMod 2) V) 0 d := by
   rw [← Nat.cast_mul, card_grass_mul h, array_card, rankProbability_count (by omega)]
-  simp [frameProduct, Fin.prod_univ_eq_prod_range]
+  congr 1
+  unfold frameProduct
+  apply congrArg (fun x : ℕ => (x : ℝ))
+  simpa only [zero_add] using
+    (Fin.prod_univ_eq_prod_range (fun i => 2^Module.finrank (ZMod 2) V-2^i) d)
 
 /-- Exact MZ4.4 incidence moment with actual rank indicators and actual finite laws. -/
 theorem matrix_grassmann_identity {d w : ℕ}
@@ -204,7 +203,13 @@ theorem matrix_grassmann_identity {d w : ℕ}
       rawG Rset f.val * (rawTF Lset f.val)^t =
         (rankProbability (Module.finrank (ZMod 2) V) d w)^t * g (spanFrame f) := by
     rw [rawTF_frame f h]
-    simp only [rawG, f.property, dite_true, mul_pow, g]
+    have hG : rawG Rset f.val = if Rset (spanFrame f) then (1:ℝ) else 0 := by
+      unfold rawG
+      rw [dif_pos f.property]
+      exact congrArg (fun ff : Frame V d => if Rset (spanFrame ff) then (1:ℝ) else 0)
+        (Subtype.ext rfl)
+    rw [hG]
+    simp only [mul_pow, g]
     ring
   have hbad (M : BadArray V d) : rawG Rset M.val * (rawTF Lset M.val)^t = 0 := by
     simp [rawG,M.property]
@@ -218,7 +223,6 @@ theorem matrix_grassmann_identity {d w : ℕ}
   rw [hs, grassmannExperiment_eq, ← base_rank_ratio (by omega : d ≤ Module.finrank (ZMod 2) V)]
   change _ = _ * ((∑ R : Grass V d, g R) / _)
   field_simp
-  ring
 
 theorem product_failure_le {X : Type*} [DecidableEq X] (s : Finset X) (p : X → ℝ)
     (hp : ∀ x ∈ s, 0 ≤ p x ∧ p x ≤ 1) :
@@ -278,6 +282,7 @@ theorem alpha_loss_bound {n d w t : ℕ} (h : d+w ≤ n) (hD : 0 < d+w) :
   have hm := mul_nonneg (sub_nonneg.mpr hb.2) (sub_nonneg.mpr ht1)
   have hh := mul_le_mul_of_nonneg_left hel (Nat.cast_nonneg t : (0:ℝ) ≤ t)
   push_cast
+  ring_nf at hbl hh ⊢
   nlinarith
 
 @[simp] theorem alpha_zero_dimension (n t : ℕ) : alpha n 0 0 t = 1 := by
@@ -372,11 +377,11 @@ theorem rankEventProbability_eq_experiment (d w t : ℕ) :
   apply Finset.sum_congr rfl
   intro M _
   by_cases hM : LinearIndependent (ZMod 2) M
-  · simp only [rawG,hM,dite_true,Bool.true_eq_true,ite_true,one_mul]
+  · simp only [rawG,hM,dite_true,ite_true,one_mul]
     congr 1
     apply Finset.sum_congr rfl
     intro Bs _
-    simp only [rawF,Bool.true_eq_true,ite_true]
+    simp only [rawF,ite_true,dite_eq_ite]
     rw [prod_indicator]
     simp [rankEvent,hM]
   · simp [rawG,rankEvent,hM]
