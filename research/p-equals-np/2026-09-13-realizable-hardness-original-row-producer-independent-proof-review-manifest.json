@@ -1,0 +1,149 @@
+{
+  "schema": "compact-independent-review-identity-v1",
+  "date": "2026-09-13",
+  "scope": "ActualOriginalRowProducer only; original-row FP and exact canonical unary-wire semantics",
+  "review_status": "GO-WITH-NOTES",
+  "root_acceptance": "Bounded mathematics/provenance accepted by root after verifier69139; evidence freeze pending",
+  "full_raw_evidence": {
+    "path": "research\\p-equals-np\\2026-09-13-realizable-hardness-original-row-producer-independent-proof-review.json",
+    "sha256": "8aad389cdbc2899dbbee04c7bdca1cdf57b1d47c18f66d2f7ba28f92fa332535",
+    "bytes": 170183315
+  },
+  "reviewer_md": {
+    "path": "research\\p-equals-np\\2026-09-13-realizable-hardness-original-row-producer-independent-proof-review.md",
+    "sha256": "2659995ad2c404ef71511888c62fc4049735628e16709693cce912365b925c96",
+    "bytes": 5362
+  },
+  "readonly_verifier": {
+    "path": "research\\p-equals-np\\2026-09-13-realizable-hardness-original-row-producer-independent-proof-review-verifier.py",
+    "sha256": "2207236e51817a816a9c882fe32257effb792d86b8d34f8df142bfd3dfbced8d",
+    "bytes": 5668
+  },
+  "original_verifier": {
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-original-row-producer-independent-review-20260913\\readonly-final-verifier.py",
+    "sha256": "2207236e51817a816a9c882fe32257effb792d86b8d34f8df142bfd3dfbced8d"
+  },
+  "source_freeze": "7597c119c6c4b948963c2bdcdea6d5e3ca08c115",
+  "source_identities": [
+    {
+      "module": "ActualOriginalRowProducer",
+      "archive_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\drafts\\2026-09-13-original-row-producer\\ActualOriginalRowProducer.lean",
+      "sha256": "11e0ccedcb1e68e801493571f650c19a55fbc3843d1547f3d2f75d0ee100388a",
+      "final_source_freeze": "7597c119c6c4b948963c2bdcdea6d5e3ca08c115",
+      "final_frozen_sha256": "a1fb0f51fbcc80340abe21da3c311c280d38bd1c973bdee4b7e6a4419df19010",
+      "final_raw_equals_frozen": false,
+      "final_normalized_equals_frozen": true
+    },
+    {
+      "module": "ActualOriginalRowProducerChecks",
+      "archive_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\drafts\\2026-09-13-original-row-producer\\ActualOriginalRowProducerChecks.lean",
+      "sha256": "427eda8c9c3c34e5cd345dde190eb7d2eb395917abb3012a6113957631f033c6",
+      "final_source_freeze": "7597c119c6c4b948963c2bdcdea6d5e3ca08c115",
+      "final_frozen_sha256": "5e490eb96b756f3d956ff23c228b3b5b9571830c5f6f064d61cba36f880398d0",
+      "final_raw_equals_frozen": false,
+      "final_normalized_equals_frozen": true
+    }
+  ],
+  "final_author_receipt": {
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-original-row-producer-author-verification.md",
+    "sha256": "6335e817cc7ad82efb80bdf2a4997554f7e7023783851187418fe4a38848b58e",
+    "frozen_sha256": "2a695611b7ce117f7b248f05708b85ce122ea59b5b4681ca3c4e0a6f55765bab",
+    "raw_equals_frozen": false,
+    "normalized_equals_frozen": true
+  },
+  "independent_result": {
+    "session": 13632,
+    "terminal_exit": 0,
+    "pair_exit_codes": [
+      0,
+      0
+    ],
+    "sources_unchanged": true,
+    "guard_stopped": false,
+    "profiles": 19,
+    "examples": 5,
+    "signatures": 3,
+    "warnings": 1,
+    "warning_kind": "stylistic simp instead of simpa"
+  },
+  "reviewer_full_verification": {
+    "session": 51061,
+    "terminal_exit": 0,
+    "verdict": "READONLY_VERIFIED"
+  },
+  "root_full_verification": {
+    "session": 69139,
+    "terminal_exit": 0,
+    "verdict": "READONLY_VERIFIED",
+    "source": "Root explicit terminal notification; separate verification from reviewer51061"
+  },
+  "dependency_counts": {
+    "originals_and_copies": 2639,
+    "unique_receipts": 14,
+    "current_exports": 15,
+    "source_pins": 180,
+    "package_pins": 11,
+    "fallback_exclusions": 1440
+  },
+  "dependency_receipt_identities": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-cloud-soundness-independent-proof-review.json",
+      "sha256": "9bf98ebb59f5feb89f398cdb59ffc0260b1360c58b3bb1f2420a73a9e45046f4"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-compact-source-lookup-independent-proof-review.json",
+      "sha256": "6a18a673bacc31303fc3771564a65275d771e366fbce24eb8e86b8fd6d5c4be4"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-equality-cloud-degree-independent-proof-review.json",
+      "sha256": "75cd1a920c7aab403f0f11240e2b4b0692c7fd3b379fcf5293d0d5b99a006fbc"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-equality-cloud-independent-proof-review.json",
+      "sha256": "df4693dfeb1bfe070d33d4f1d8c785ff4221ac3b2247b7c24b77080a42d71bf5"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-graph-edges-independent-proof-review.json",
+      "sha256": "fbbbee10144dbeba480b72c2d226a485fb182f86a339e88f6ac99f489baa94e3"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-graph-incidence-independent-proof-review.json",
+      "sha256": "2d0fec9b8ec592d15d9547f3abe70535969bc9d501eb81695c14e3e73dec2d34"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-source-first-occurrence-independent-proof-review.json",
+      "sha256": "0643fad1472c3c2ea9d2cb90b708802e11ce85e10e7ca85a4d40c081f2c3bfe4"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-source-normalization-independent-proof-review.json",
+      "sha256": "0a9681ed7e30e65cb2aa36902fb55b7f923695b2adc8f4fdbf088bdcc8c4286e"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-actual-source-normalized-table-independent-proof-review.json",
+      "sha256": "3491d4dd234815cee71c3cd73ba4fbf9c89356c19d73d57879a9a3e797160e5f"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-allocation-generalization-independent-proof-review.json",
+      "sha256": "061ebe5e13d8674812d92979df6c2c4c7f84873b5b9049e08b99667338eda0bc"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-equality-gadget-independent-proof-review.json",
+      "sha256": "fbaebea44fdb996f09e82e16fddd400ab7be51b3e6909f230304176d5483e097"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-port-table-independent-proof-review.json",
+      "sha256": "fa0dd8fe0d7b485c96c207c83c7c92af1cc0d30739ef96aa8b51a05631aa5bfe"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-fixed-port-cycle-family-independent-proof-review.json",
+      "sha256": "e21b87eb9f126b88132e97e38e7f416b3f874074b125176f1caeceb3422f0c48"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-occurrence-code-independent-proof-review.json",
+      "sha256": "d25484be97a9d4dbe19cf3e7c1111cd004796a78c9da24606b5dd7ad37ef5b5d"
+    }
+  ],
+  "manifest_is_self_contained_reproduction": false,
+  "retention_requirement": "The immutable full raw evidence JSON must be retained, with all referenced original artifacts, source snapshots, metadata/logs, receipts and pinned dependency evidence, for eventual consolidated artifact reproduction. This compact manifest identifies evidence; it neither embeds it nor substitutes for it. The copied unchanged verifier expects the full JSON at its recorded repository path.",
+  "claims_boundary": "No complete regularized constructor, gadget-row emission, compact-source composition, upstream source-hardness, full-paper, novelty or P-vs-NP conclusion."
+}
