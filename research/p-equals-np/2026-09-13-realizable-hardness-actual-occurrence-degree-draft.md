@@ -91,7 +91,7 @@ certification claim is involved; package-artifact provenance limits persist.
 
 Portable packet:
 certifications/realizable-hardness/.lake/build/actual-occurrence-degree-author-20260913/author-verification.json
-SHA256 6600a4c3ea7823f5f15000cf8f2ab68490c65fcd2c0fa28d3668192e48e4fc85.
+SHA256 839c4b2ba7753315b0b8f2f92754cec1aefd063e35c058eee0ada351072e136d.
 It embeds runner, plan, 310 original-copy provenance entries, all five
 terminal records [1,1,1,0,0], raw logs and source snapshots. This author
 milestone does not establish FP, source gap/hardness, or full certification.
@@ -101,3 +101,11 @@ source files were verified byte-for-byte against this commit, separately
 from their recorded SHA256. Packet plan explicitly distinguishes draft_freeze
 91eb42e from final_source_freeze fc16c7a; final_freeze_verified refers only to
 the latter. Repaired main bytes are not claimed equal to the draft baseline.
+
+Packet normalization correction: the initial packet used read_text, which
+normalized the runner's 57 CRLF pairs to LF. The runner file itself remained
+unchanged at its prelaunch raw SHA256
+4595c4ac279e1eaf6f7381b53ee5a3d36bb9f876c7e37e7b379023dd67259d38.
+The final packet embeds raw UTF-8 decoded runner, log and snapshot bytes,
+preserving line endings, and records runner_raw_sha256. This is evidence
+serialization correction, not a postbuild executable change or new build.
