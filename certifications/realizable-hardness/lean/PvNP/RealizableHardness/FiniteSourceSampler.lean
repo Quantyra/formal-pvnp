@@ -85,7 +85,8 @@ theorem select_not_zero_mass {N : Nat} (t : Table N) (D : Nat) (seed : Fin D)
   intro he
   have hs := (select_interval t D seed i).mp he
   have hc : cut (probability t) D (i.val+1) = cut (probability t) D i.val := by
-    simp [cut,cumulative_succ,hi]
+    have hz : probability t i.val = 0 := (probability_at t i).trans hi
+    simp only [cut, cumulative_succ, hz, add_zero]
   rw [hc] at hs
   omega
 
