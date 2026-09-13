@@ -1,6 +1,6 @@
 # S3133 geometry companion source draft
 
-2026-09-12. All six new companion sources are **UNCOMPILED**. This is source synchronization, not a compiler, axiom-audit, independent-review or acceptance result.
+2026-09-12. Initial source-only snapshot: all six companion sources were **UNCOMPILED**. Current author status is recorded in the appended checkpoints. This is source synchronization, not a compiler, axiom-audit, independent-review or acceptance result.
 
 ## Exact source scope
 
@@ -36,3 +36,102 @@ Before acceptance: grant a bounded same-toolchain build; compile exact main/Chec
 | Companion compile/axiom audit | INCOMPLETE; not run |
 | Independent three-lens review | INCOMPLETE; not run |
 | Full geometry and hardness assembly | INCOMPLETE; obligations remain |
+
+## Two-module author checkpoint
+
+Initial geometry export failed because the newly added module-doc comment before imports was parsed as a command. All six banners were changed to ordinary comments through declared exact transforms. No theorem/import bytes changed. Retry27400 incidence main/Checks exited0;17 selected profiles are standard-axiom subsets. Counting then exited1 only for missing pinned Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Card. Its direct dependencies have artifacts; scoped Card export47511 actually exited0 before this checkpoint was committed. The other four geometry modules remain uncompiled. Source banners preserve their original historical status; the separate map and this checkpoint give current verification evidence. No independent companion geometry reviews have run.
+
+### GrassmannIncidence-1789262911577990800.log
+
+SHA256 `ebfc696168874cd2d17907c9fdfe2c8a1548911d9eaf945872664e1c384f3e0e`.
+
+```text
+lean\PvNP\RealizableHardness\GrassmannIncidence.lean:2:0: error: invalid 'import' command, it must be used in the beginning of the file
+
+EXIT 1
+```
+
+### GrassmannIncidence-1789262939470968700.log
+
+SHA256 `e04461105a2e034eda158663c5821b27c3864a7c81861a7b7c7576e9b80a5cb0`.
+
+```text
+lean\PvNP\RealizableHardness\GrassmannIncidence.lean:64:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\GrassmannIncidence.lean:79:17: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Coeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### GrassmannIncidenceChecks-1789262939470968700.log
+
+SHA256 `68cb4a347ff8b731bb626cb863fcc9040ce16af0804a091427de7568a13c5ec8`.
+
+```text
+'PvNP.RealizableHardness.GrassmannIncidence.selected_kept' depends on axioms: [propext]
+'PvNP.RealizableHardness.GrassmannIncidence.embed_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.embed_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.retained_finrank_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.fibre_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.incidenceCount_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.kernel_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.joint_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.kernel_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.prior_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.joint_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.adviceMarginal_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.conditional_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.conditional_formula' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.conditional_support' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.conditional_ratio' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannIncidence.bayes_joint' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 0
+```
+
+### GrassmannCounting-1789262939470968700.log
+
+SHA256 `55c99115338b494ef73377e7436ff4b28f542a54c4a8900b8bb6d2efd26eaae5`.
+
+```text
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:2:0: error: object file 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\mathlib\.lake\build\lib\lean\Mathlib\LinearAlgebra\Matrix\GeneralLinearGroup\Card.olean' of module Mathlib.LinearAlgebra.Matrix.GeneralLinearGroup.Card does not exist
+
+EXIT 1
+```
+
+### Mathlib-Card-1789263038214200400.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```

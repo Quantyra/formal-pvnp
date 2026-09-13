@@ -1,4 +1,4 @@
-/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/
+/- UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/
 import PvNP.RealizableHardness.GrassmannIncidence
 
 /-! Author checks passed; independent review pending for the concrete advice-incidence law. -/
