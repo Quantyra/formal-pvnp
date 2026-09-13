@@ -1,0 +1,774 @@
+{
+  "candidate_commit": "046703c2a1e7ab150c0bd3d7f80fc3a12b0d1eda",
+  "source_map_sha256": "4271e2b6257c57d75173a0969a4b6dc9736e9276b3d0d94995e943b1c38d7301",
+  "source_reconstruction": [
+    {
+      "path": "lean/PvNP/RealizableHardness/GrassmannIncidence.lean",
+      "sha256": "274ba972115642cc39f94ff6456a2260f4656c9092fcb70d72612a454430d60b",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/GrassmannIncidenceChecks.lean",
+      "sha256": "04cd971c23b8340916f3206b8818e149b1d65362d6b114134cafd5de9c656d73",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/GrassmannCounting.lean",
+      "sha256": "84d730695a3f4fc2de11f6683f6aef4fe4efc8eaea7cd23c3135d84ee944b887",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/GrassmannCountingChecks.lean",
+      "sha256": "ff505d1a5f0ee537441231418ecdddae70bb2374ae7493c112c99ef2aa391f11",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionDimension.lean",
+      "sha256": "18dcb7a132df2dc5b8e84dbc1cdbfad230394fc4d7602e29ea7016bd57945925",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionDimensionChecks.lean",
+      "sha256": "5344221c38378beab52aa17f477694609ed12ab4e66221016f1892b95d2808ff",
+      "reconstruction": "PASS",
+      "candidate_match": true
+    }
+  ],
+  "environment": {
+    "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;c:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "LEAN_NUM_THREADS": "1",
+    "toolchain": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)"
+  },
+  "exports": [
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean",
+      "source_sha256": "274ba972115642cc39f94ff6456a2260f4656c9092fcb70d72612a454430d60b",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\GrassmannIncidence-1789264094708061300.log",
+      "log_sha256": "b4c8eca821d35f85c2a273e3d45f61d3616b9ae8a067dc10fe0d99d6cdc61ed5",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean:64:2: warning: Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean:79:17: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Coeff]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "output_sha256": "c09f08906d53b79221a422bb70a383d83838da226bf5568fa2eeea9c9ddfc8bf",
+      "query_order": [],
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.lean",
+      "source_sha256": "04cd971c23b8340916f3206b8818e149b1d65362d6b114134cafd5de9c656d73",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\GrassmannIncidenceChecks-1789264114927292500.log",
+      "log_sha256": "302dfc33ff2f3a0dbc255c355e48ce99d25485c59956a206997725c2ecfbe417",
+      "raw_log_utf8": "'PvNP.RealizableHardness.GrassmannIncidence.selected_kept' depends on axioms: [propext]\n'PvNP.RealizableHardness.GrassmannIncidence.embed_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.embed_mem' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.retained_finrank_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.fibre_nonempty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.incidenceCount_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.kernel_pos_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.joint_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.kernel_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.prior_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.joint_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.adviceMarginal_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.conditional_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.conditional_formula' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.conditional_support' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.conditional_ratio' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannIncidence.bayes_joint' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "output_sha256": "fb993c7a5071d4940f98d322fa12d3389fec8203c79f4fdb7f3e78dd4cc4dcf3",
+      "query_order": [
+        "selected_kept",
+        "embed_injective",
+        "embed_mem",
+        "retained_finrank_lower",
+        "fibre_nonempty",
+        "incidenceCount_pos",
+        "kernel_pos_iff",
+        "joint_nonneg",
+        "kernel_normalized",
+        "prior_normalized",
+        "joint_normalized",
+        "adviceMarginal_normalized",
+        "conditional_normalized",
+        "conditional_formula",
+        "conditional_support",
+        "conditional_ratio",
+        "bayes_joint"
+      ],
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.selected_kept",
+          "depends on axioms: [propext]",
+          "propext"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.embed_injective",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.embed_mem",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.retained_finrank_lower",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.fibre_nonempty",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.incidenceCount_pos",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.kernel_pos_iff",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.joint_nonneg",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.kernel_normalized",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.prior_normalized",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.joint_normalized",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.adviceMarginal_normalized",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.conditional_normalized",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.conditional_formula",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.conditional_support",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.conditional_ratio",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannIncidence.bayes_joint",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCounting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean",
+      "source_sha256": "84d730695a3f4fc2de11f6683f6aef4fe4efc8eaea7cd23c3135d84ee944b887",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\GrassmannCounting-1789264134023449100.log",
+      "log_sha256": "08520e8ded97ed13f9dedac0ba98c2c41fb1f05113cfc8f5203fd726c8450467",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:28:2: warning: Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:60:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.flatten_surjective`:\n  [Finite V]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite V] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:111:2: warning: Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:119:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:120:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:135:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.include_injective`:\n  [Finite V]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite V] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.lean:144:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.include_surjective`:\n  [Finite V]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Finite V] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "output_sha256": "92c4c4aea2239f28674df9bfe702b333f2c1ffe14d1920d1d153677d221b9e95",
+      "query_order": [],
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCountingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.lean",
+      "source_sha256": "ff505d1a5f0ee537441231418ecdddae70bb2374ae7493c112c99ef2aa391f11",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\GrassmannCountingChecks-1789264163597302000.log",
+      "log_sha256": "71e8651da5dbac3bd2f2c4196562c14695a067e4f4c6598456345fbaa0ed87b0",
+      "raw_log_utf8": "'PvNP.RealizableHardness.GrassmannCounting.span_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.flatten_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.flatten_surjective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.frameEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_frame' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_internal_frame' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_grass_mul' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.frameProduct_self_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_grass_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_grass_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_grass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.gaussian_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.gaussian_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.gaussian_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.include_injective' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.include_surjective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.containedEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.card_contained' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_eq' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_of_lt' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.lean:50:8: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "output_sha256": "228500444a443b35ac73a1649ab4f99614c70df103774b1ab151e68df88d14e5",
+      "query_order": [
+        "span_flatten",
+        "flatten_injective",
+        "flatten_surjective",
+        "frameEquiv",
+        "card_frame",
+        "card_internal_frame",
+        "card_grass_mul",
+        "frameProduct_self_pos",
+        "card_grass_of_le",
+        "card_grass_of_lt",
+        "card_grass",
+        "gaussian_zero",
+        "gaussian_of_lt",
+        "gaussian_self",
+        "include_injective",
+        "include_surjective",
+        "containedEquiv",
+        "card_contained",
+        "incidenceCount_eq",
+        "incidenceCount_zero",
+        "incidenceCount_of_lt"
+      ],
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.span_flatten",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.flatten_injective",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.flatten_surjective",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.frameEquiv",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_frame",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_internal_frame",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_grass_mul",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.frameProduct_self_pos",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_grass_of_le",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_grass_of_lt",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_grass",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.gaussian_zero",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.gaussian_of_lt",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.gaussian_self",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.include_injective",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.include_surjective",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.containedEquiv",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.card_contained",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.incidenceCount_eq",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.incidenceCount_zero",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.GrassmannCounting.incidenceCount_of_lt",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimension",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.lean",
+      "source_sha256": "18dcb7a132df2dc5b8e84dbc1cdbfad230394fc4d7602e29ea7016bd57945925",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\TripleRestrictionDimension-1789264183950718900.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "raw_log_utf8": "",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "output_sha256": "eb01f16a95e318b70e4dd3e3c5d78c73c9daac44a07a2f6c0ebfefd6124fe4d7",
+      "query_order": [],
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimensionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.lean",
+      "source_sha256": "5344221c38378beab52aa17f477694609ed12ab4e66221016f1892b95d2808ff",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\TripleRestrictionDimensionChecks-1789264203078214400.log",
+      "log_sha256": "09db548dc97b66adf49e0fcf4dd1b07995aa7870ed47dbc85f61119ee6ac6b68",
+      "raw_log_utf8": "'PvNP.RealizableHardness.TripleRestrictionDimension.retainedEquiv' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq_card' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.keptEquiv' does not depend on any axioms\n'PvNP.RealizableHardness.TripleRestrictionDimension.keptBlock_card' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.keptCoord_card_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_add_twice_dropCount' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.twice_dropCount_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_none' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_some' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_none' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_some' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_empty' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "output_sha256": "a7dbd1db16e4c3a7a26b5a714b6d188b644f0fbb8fe6a1b6350b7d1314fbd80c",
+      "query_order": [
+        "retainedEquiv",
+        "retained_finrank_eq_card",
+        "keptEquiv",
+        "keptBlock_card",
+        "keptCoord_card_sum",
+        "dropCount_sum",
+        "retained_finrank_add_twice_dropCount",
+        "twice_dropCount_le",
+        "retained_finrank_eq",
+        "dropCount_le",
+        "dropCount_none",
+        "dropCount_some",
+        "retained_finrank_none",
+        "retained_finrank_some",
+        "retained_finrank_empty"
+      ],
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retainedEquiv",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq_card",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.keptEquiv",
+          "does not depend on any axioms",
+          ""
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.keptBlock_card",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.keptCoord_card_sum",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_sum",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_add_twice_dropCount",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.twice_dropCount_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_none",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_some",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_none",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_some",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_empty",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ]
+    }
+  ],
+  "runner_source": "import pathlib,json,subprocess,hashlib,os,time,shutil,re\nrepo=pathlib.Path(r'C:/Users/Dan/Desktop/Projects/formal-pvnp'); pkg=repo/'certifications/realizable-hardness'\nout=pkg/'.lake/build/geometry-independent-review-20260912'; out.mkdir(exist_ok=True)\nhash=lambda b:hashlib.sha256(b).hexdigest()\ncandidate='046703c2a1e7ab150c0bd3d7f80fc3a12b0d1eda'\nmp=pkg/'geometry-draft-source-map.json'; assert hash(mp.read_bytes())=='4271e2b6257c57d75173a0969a4b6dc9736e9276b3d0d94995e943b1c38d7301'\nm=json.loads(mp.read_text()); recon=[]\nfor e in m['entries']:\n b=subprocess.check_output(['git','show',e['source_commit']+':'+e['source_path']],cwd=repo)\n assert hash(b)==e['source_git_bytes_sha256']\n for t in e['transforms']:\n  if t['operation']=='normalize_crlf_to_lf': b=b.replace(b'\\r\\n',b'\\n')\n  elif t['operation']=='remove_utf8_bom':\n   assert b.startswith(b'\\xef\\xbb\\xbf'); b=b[3:]\n  elif t['operation']=='replace_utf8_literal':\n   x=t['before'].encode(); assert b.count(x)==1; b=b.replace(x,t['after'].encode())\n  else: raise Exception(t)\n assert hash(b)==e['mirror_sha256']; assert b==(pkg/e['mirror_path']).read_bytes()\n frozen=subprocess.check_output(['git','show',candidate+':certifications/realizable-hardness/'+e['mirror_path']],cwd=repo)\n assert frozen==b\n recon.append({'path':e['mirror_path'],'sha256':hash(b),'reconstruction':'PASS','candidate_match':True})\nbase=json.loads((repo/'research/p-equals-np/2026-09-12-realizable-hardness-companion-proof-verification.json').read_text())\n# Validate accepted independent dependencies rather than accepting author artifacts.\nfor e in base['exports']:\n assert hash(pathlib.Path(e['output']).read_bytes())==e['output_sha256']\nenv=os.environ.copy(); env['LEAN_PATH']=str(out/'lib/lean')+';'+base['environment']['LEAN_PATH']; env['LEAN_NUM_THREADS']='1'; env['PYTHONIOENCODING']='utf-8'; env['PYTHONUTF8']='1'\nassert str(pkg/'.lake/build/lib/lean').lower() not in env['LEAN_PATH'].lower()\nversion=subprocess.check_output(['lean','--version'],cwd=pkg,env=env,text=True).strip(); assert version==base['environment']['toolchain']\nresult={'candidate_commit':candidate,'source_map_sha256':hash(mp.read_bytes()),'source_reconstruction':recon,'environment':{'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','toolchain':version},'exports':[],'runner_source':pathlib.Path(__file__).read_text()}\n(out/'results.json').write_text(json.dumps(result,indent=2))\nprint('PASS strict reconstruction 6; accepted independent outputs 34; pinned toolchain',flush=True)\nfor e in m['entries']:\n source=pkg/e['mirror_path']; mod='.'.join(pathlib.PurePosixPath(e['mirror_path']).with_suffix('').parts[1:]); dest=out/'lib/lean'/pathlib.Path(*mod.split('.')).with_suffix('.olean'); dest.parent.mkdir(parents=True,exist_ok=True)\n assert shutil.disk_usage('C:/').free>=768*1024**2\n log=out/(mod.split('.')[-1]+'-'+str(time.time_ns())+'.log'); command=['lean','-o',str(dest),str(source)]\n print('START',mod,flush=True)\n with log.open('wb') as f:\n  child=subprocess.Popen(command,cwd=pkg,env=env,stdout=f,stderr=subprocess.STDOUT)\n  print('PID',child.pid,flush=True)\n  while True:\n   try: code=child.wait(timeout=10); break\n   except subprocess.TimeoutExpired:\n    if shutil.disk_usage('C:/').free<640*1024**2:\n     subprocess.run(['taskkill','/PID',str(child.pid),'/T','/F'],stdout=subprocess.DEVNULL);code=child.wait();break\n (out/(log.stem+'.exit.json')).write_text(json.dumps({'exit_code':code,'command':command})); raw=log.read_bytes(); s=raw.decode('utf-8'); profiles=re.findall(r\"'([^']+)' (depends on axioms: \\[([^\\]]*)\\]|does not depend on any axioms)\",s)\n queries=re.findall(r'^#print axioms (\\S+)',source.read_text(),re.M)\n row={'module':mod,'source':str(source),'source_sha256':hash(source.read_bytes()),'command':command,'exit_code':code,'log':str(log),'log_sha256':hash(raw),'raw_log_utf8':s,'output':str(dest),'output_sha256':hash(dest.read_bytes()) if dest.exists() else None,'query_order':queries,'axiom_profiles':profiles}\n result['exports'].append(row); (out/'results.json').write_text(json.dumps(result,indent=2))\n print('END',mod,'EXIT',code,'PROFILES',len(profiles),flush=True)\n assert code==0; assert len(profiles)==len(queries); assert 'sorryAx' not in s\n for q,p in zip(queries,profiles):\n  assert p[0].split('.')[-1]==q\n  assert set(x.strip() for x in p[2].split(',') if x.strip())<={'propext','Classical.choice','Quot.sound'}\nassert sum(len(e['axiom_profiles']) for e in result['exports'])==53\nprint('ALL6 EXIT0; 53 STANDARD-SUBSET PROFILES',flush=True)\n",
+  "schema": 1,
+  "session_id": 53710,
+  "total_axiom_profiles": 53,
+  "scope": "Independent bounded geometry6 proof/build review; not full hardness certification",
+  "proof_verdict": "GO-WITH-NOTES",
+  "accepted_dependency_copies": [
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "sha256": "ce5c74ada383b2bcd58865fbe407bda4009b0e1df4fe27faa7d1daf0524e2760"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "sha256": "d1678afee60528ef8f8ca853635e14d6ce3cef32b4e0dadf061adb7f0e62b6ca"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "sha256": "4af2b61dd8037498fa244b67372f31005f27361ab1188fb5a59a45c21fef5573"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "sha256": "9007bdc721473a1e8c924165669b553b21b7033a8afed3ed214d5be5b4412139"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "sha256": "26f12774632065cb37d8d6d55523a0bf453d8c22efb52d8a85ebb91b496e4198"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "sha256": "bfb1a563e85a17376d799fef8aa497f17975e8687bffae2611a9c115ba645dbe"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "sha256": "d9f6e2401786d5dcf940f6d7db982ba50d7b13282d2983cabb5d1b9487c120b0"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "sha256": "b606d7d702d9ad1c87704039c979449d8be80be27c91d582362002ccff8771e8"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "sha256": "744015f91d67d8b701fcf9309137b49f72bd369e27d58172fe692119dff6e555"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "sha256": "de9b4d55fd5001bfed4332ff93f39fe71c45a0181830088aec3989590a066d02"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "sha256": "61d7faef060d73087454277f8fdecb30872b4322c64d9d76cb6670540e23d0bb"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "sha256": "95f5ec7e2e40de8c0934f1c0cc75103ed46e848ce9fdaa60d70c3f1e47c7a142"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "sha256": "487d712a6f3052d88e28b40fefdfc265204e3e82f0fdac45e9545b787b73efd4"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "sha256": "524b8bbfbdb41a2dc2df054730971fd2415f36110ea3b38fd647de996a9f437a"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "sha256": "0fbad23000b59f2d6dd319a01c8fd6b972bd64592557602a7e2123902f089c92"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "sha256": "be2018d7d01a19b86c1c36e305726c67d648a0d70dac6805f6b40296b3435826"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "sha256": "24c8b6b9d53c41c89aa3bfff3205304a50cfdca0cdbb450b793438c95cbd5f19"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "sha256": "194bec5d3fc7f71ae0ed604fa093bf99ba67ef6fc7a9fda30e8e817aa8b16e05"
+    },
+    {
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "destination": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "sha256": "9d7a4ff6c2417d80b7741ff9c3d807c7ff6dd6c866c3a4e3c0c5c50536b91a2b"
+    }
+  ],
+  "source_token_audit": [
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidence",
+      "forbidden_tokens": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidenceChecks",
+      "forbidden_tokens": [],
+      "examples": 7
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCounting",
+      "forbidden_tokens": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCountingChecks",
+      "forbidden_tokens": [],
+      "examples": 12
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimension",
+      "forbidden_tokens": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimensionChecks",
+      "forbidden_tokens": [],
+      "examples": 5
+    }
+  ],
+  "rejected_setup_runs": {
+    "description": "First harness terminated on cp1252 source decode after child termination; no accepted result. Second actual Lean EXIT1 due namespace prefix import shadowing. Fixed only runner UTF8 and imported accepted independent33 output copies; no Lean source edits.",
+    "durable_import_failure": [
+      {
+        "module": "PvNP.RealizableHardness.GrassmannIncidence",
+        "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean",
+        "source_sha256": "274ba972115642cc39f94ff6456a2260f4656c9092fcb70d72612a454430d60b",
+        "command": [
+          "lean",
+          "-o",
+          "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+          "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean"
+        ],
+        "exit_code": 1,
+        "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\GrassmannIncidence-1789264062089795700.log",
+        "log_sha256": "a11640716e87aa02bb4bed61adb769f1e40db106ffea087dfdbb262fa28af026",
+        "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.lean:2:0: error: object file 'C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean' of module PvNP.RealizableHardness.SubspaceRestriction does not exist\n",
+        "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+        "output_sha256": null,
+        "query_order": [],
+        "axiom_profiles": []
+      }
+    ]
+  },
+  "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "dependency_pins": [
+    {
+      "name": "cslib",
+      "revision": "d9be64196bf145edd019f1ccfeaee0c11166ba6b"
+    },
+    {
+      "name": "mathlib",
+      "revision": "e06eff5f95374108acfaf19f1ff7473aa7771df2"
+    },
+    {
+      "name": "complexitylib",
+      "revision": "6c248df7859f2f245e731c1e07057bf69d165fe2"
+    },
+    {
+      "name": "plausible",
+      "revision": "d9598f07b1bc701f1e3aae163d2681c1fd978793"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ba67e212be1197b84c1f1f6299488a10a3002713"
+    },
+    {
+      "name": "importGraph",
+      "revision": "d8823026ac7ef130c253089d95685f9877b95323"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f"
+    },
+    {
+      "name": "aesop",
+      "revision": "18889deb9e83ea7420ef51c160d6f88552e744e3"
+    },
+    {
+      "name": "Qq",
+      "revision": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3"
+    },
+    {
+      "name": "batteries",
+      "revision": "7e23602c91bc04586b2b06de2708a041853e4681"
+    },
+    {
+      "name": "Cli",
+      "revision": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+    }
+  ],
+  "proof_notes": [
+    "Actual frames and actual submodules, explicit span bijection; no cardinality oracle.",
+    "Natural denominator strictly positive, including a=0; out-of-range count is zero.",
+    "Containing-subspace map/comap equivalence identifies actual sampler fibre cardinality.",
+    "Retained coordinate restriction and zero extension yield finrank+2D=3J for every Draw J, including J=0.",
+    "Kernel normalization requires a<=J; probability nonnegativity needs beta in [0,1], though algebraic normalization holds for signed beta.",
+    "Posterior normalization needs positive marginal; no conditional independence asserted.",
+    "Classical noncomputable finite enumeration is not a machine sampler or polynomial-time proof.",
+    "Stale UNCOMPILED banners are conservative historical status; this evidence supersedes them for exact candidate only.",
+    "Gaussian estimates, tails, posterior transfer, PCP, machine reductions, learning and final theorem remain outside this result."
+  ]
+}
