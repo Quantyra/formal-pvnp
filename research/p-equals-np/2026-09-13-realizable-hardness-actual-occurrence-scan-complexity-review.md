@@ -1,0 +1,23 @@
+# ActualOccurrenceScan complexity review
+
+GO-WITH-NOTES for the exact unary-table scanner claim.
+
+2026-09-13. S3131/S3132/S3137. Reviewer: compact_source_encoding_audit. I authored ActualSourceNormalization and the uncompiled ActualCompactSourceLookup draft; neither is imported by ActualOccurrenceScan. I did not author Scan, Lookup, Prefix or Ordinals. These are two review lenses by one reviewer, not two independent people. No compiler or Git action was performed in this review. A separate independent proof build remains required.
+
+Reviewed full final Scan main/Checks against freeze633f4df6ee66e76a3cc441bccc3b703980b61a67. Current main SHA25681eaec6d57e29ab0118e866ae92adc64cce5fe8212d10583a77a4809d75410ee and Checks fca991e39a87fcd06929df74cc857956753e5bd63ee1305d81a8b71824e7f18c match the packet and normalize to frozen Git bytes. Author packet SHA256f0a7192fca19e05c1fca646a08f8fc9a18b629940958727d41dab6b5b61ca1db was rehashed. Every embedded raw log, terminal metadata file and source snapshot was compared byte-for-byte against its file and hash. Recorded attempts are [1,1,0,0], all source-unchanged; final main/Checks actual exit0. Re-parsed final Checks log:13 axiom profiles, all standard-only. Main has two warnings, Checks none. Five examples and three signatures are present in the inspected Checks source. This verifies bounded author evidence; it is not my independent re-export or a complete re-audit of the imported dependency closure.
+
+## Exact algorithm and complexity claim
+
+ordinalScan z is literally countOver sameOwnerMark (pair (pairSnd z) z). The same named function has Membership.mem FP, by Cobham pairing/composition and Materialize.countOver_mem_FP. sameOwnerMark compares ownerLookup outputs for current index and original query using ifEqLen, with [true] versus [] as output. That is valid because the imported lookup returns unary owner labels on the specified serializedSource; this is not a claim that length comparison detects equality of arbitrary binary labels. No input-dependent oracle or caller-supplied runtime certificate occurs.
+
+The counting clock is exactly the length of the input's unary query, generated from pairSnd. On valid occurrence queries it is rank(o)<3m. Thus it counts indices strictly earlier than o, including indexzero's empty prefix. The loop sum is equated to the actual mixed-radix prefix through decode/rank_decode, then prefix_count_eq_ordinal identifies the existing Allocation ordinal. countOver_eq_replicate upgrades length correctness to exact output-string correctness for the same FP function. Empty m permits no valid occurrence query, while the raw function remains total. Duplicate occurrences preserve list multiplicity and only earlier same-owner positions count.
+
+Inspected relevant pinned Materialize definitions: countOver is marks applied to listEncFn output, its FP follows materialize_mem_FP's actual state bound; length_countOver counts record-output lengths; countOver_eq_replicate returns marks. Imported Lookup/Prefix source interfaces agree with the exact same table and ordering used here. There is no assumed prefix/equality certificate.
+
+The proved wire lengths are 2*|table|+2+q externally and 2*|table|+3*q+4 for the internal countOver argument. Output length is the canonical ordinal, strictly below its owner's occurrence count and bounded by3m. These are input/output bounds, not assertions of a particular runtime exponent. Membership.mem FP supplies polynomial machine runtime relative to the encoded input via imported library machinery; the noncomputable Lean definitions do not promise direct native evaluation.
+
+## Remaining complexity boundary
+
+The input is an already serialized unary owner table. An arbitrary binary numeric label can make that table exponentially larger than its original encoding. Neither Scan nor its wire bound proves compact source -> unary table is polynomial. The separate finite normalization theorem and compact lookup draft are not imported here and do not silently discharge that gap. A full same-function table normalizer/materializer and the rest of the actual regularization constructor FP remain required. Existing Instance still carries per-row distinct owner assumptions; Scan's theorem does not by itself remove that source-interface restriction. The separate planned generalization needs fresh build/review evidence.
+
+No complexity objection to accepting this bounded pair once its independent proof build and final review freeze are complete. Do not promote it to a complete randomized reduction, specialized source-hardness theorem, or full paper certification.
