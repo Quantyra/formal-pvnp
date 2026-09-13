@@ -34,7 +34,6 @@ theorem baseDimension_exact {a b : ℕ} (hab : a ≤ b) (hb : 0 < b) (q : ℕ) :
   rw [Nat.cast_mul, Nat.cast_mul, Nat.cast_sub hab]
   push_cast
   field_simp
-  <;> ring
 
 theorem extensionWidth_exact {a b : ℕ} (hb : 0 < b) (q : ℕ) :
     (extensionWidth a q : ℚ) = 2*slack a b*(scale b q : ℚ) := by
@@ -42,7 +41,6 @@ theorem extensionWidth_exact {a b : ℕ} (hb : 0 < b) (q : ℕ) :
   unfold extensionWidth slack scale
   push_cast
   field_simp
-  <;> ring
 
 /-- A direct numerical consequence of actual ambient growth and fixed copy count.
 The final half-error inequality is proved, never supplied as a hypothesis. -/
@@ -73,7 +71,7 @@ theorem half_error_of_growth {J h d w m : ℕ} (hh : 0 < h)
   have he : 3*J = (3*J-1)+1 := by omega
   calc
     _ ≤ (2:ℝ)^(3*J-1) := hnum
-    _ = 1/2*(2:ℝ)^(3*J) := by rw [he,pow_add]; norm_num
+    _ = 1/2*(2:ℝ)^(3*J) := by rw [he,pow_add]; norm_num; ring
 
 /-- A and the paper's actual copy count m are fixed before the threshold for h. -/
 theorem eventual_actual_half_error (A m : ℕ) (hA : 0 < A) :
