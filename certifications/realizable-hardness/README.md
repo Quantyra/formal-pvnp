@@ -1,6 +1,6 @@
 # Realizable hardness companion package
 
-**ALL 33 MAPPED MODULES AND AGGREGATE AUTHOR-COMPILED. Independent companion port reviews remain pending.**
+**BOUNDED 33-MODULE INTEGRATION ACCEPTED: three independent AI review lenses returned GO-WITH-NOTES.**
 All 33 of 33 modules passed author exports: BernoulliMGF and its Checks,
 ExceptionRepair, Formula and Checks, SamplingThreshold and its Checks,
 ComputableSampleCount and its Checks, WeightRounding and its Checks,
@@ -14,8 +14,12 @@ SubspaceRestriction and its Checks. The Checks groups printed
 count evaluation printed
 512, 2048 and 1.
 The original aggregate also exported successfully, importing the two pinned foundation
-headlines and all 33 mapped modules. Unmapped drafts are excluded. These author
-exports do not constitute independent companion review or full-theorem certification.
+headlines and all 33 mapped modules. Independent session36677 then re-exported
+all33 plus the aggregate (34 actual exit0 results) and checked298 selected axiom
+profiles, each a subset of propext, Classical.choice and Quot.sound. The three
+review lenses accepted only this finite integration, with documented notes.
+This is not human peer review or full-theorem certification. The six geometry
+ports and RandomizedReduction main/Checks remain UNCOMPILED and excluded.
 The full randomized NP-hardness theorem and learning corollary are absent.
 This package prepares their eventual single-kernel assembly; its current
 aggregate imports the candidate foundation headlines and finite proof components.

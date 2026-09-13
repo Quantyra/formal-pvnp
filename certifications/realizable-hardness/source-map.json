@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "AUTHOR_COMPILED_33_AND_AGGREGATE; independent companion port reviews pending",
+  "status": "BOUNDED_FINITE_33_INTEGRATION_ACCEPTED_GO_WITH_NOTES; full hardness/learning absent",
   "source_repository": "Quantyra/formal-pvnp",
   "source_count": 33,
   "entries": [
@@ -12,7 +12,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/BernoulliMGF.lean",
       "mirror_sha256": "bba0f91c80fb8c3162965a9c6132fb9ae397763446534c795dea8196c3ba818c",
       "patches": [],
-      "companion_verification": "Author main83985 and Checks93663 both exit0; 13 standard-only axiom profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -99,7 +99,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/BernoulliMGFChecks.lean",
       "mirror_sha256": "f370c56951ed923db58da67d1cdbc93e3a4cadf8b994c62abbc588e604be450f",
       "patches": [],
-      "companion_verification": "Author main83985 and Checks93663 both exit0; 13 standard-only axiom profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -114,7 +114,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/Checks.lean",
       "mirror_sha256": "213d25d9ee18a5edae005fbd1b25afba15f94ef36f6347d403d5cfcf340e851b",
       "patches": [],
-      "companion_verification": "Author Checks16632 exit0 with 13 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -129,7 +129,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/ComputableSampleCount.lean",
       "mirror_sha256": "d611b5fe4b3770b27aeb05deb690fcc160948b96e6268fea681288cf6c26fac9",
       "patches": [],
-      "companion_verification": "Author main9712 exit0 and Checks59199 exit0, 17 standard-only profiles and eval512/2048/1; independent port review pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -144,7 +144,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/ComputableSampleCountChecks.lean",
       "mirror_sha256": "10c47487135dc1538f95cec00e82d54bd4a64276dedfe08d29214f99c5636310",
       "patches": [],
-      "companion_verification": "Author main9712 exit0 and Checks59199 exit0, 17 standard-only profiles and eval512/2048/1; independent port review pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -189,7 +189,7 @@
           "reason": "Direct import path absent in pinned mathlib; replacement modules found by source inspection; elaboration untested."
         }
       ],
-      "companion_verification": "Author main75063 exit0; downstream Formula/Checks16632 exit0 with13 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -234,7 +234,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteConcentration.lean",
       "mirror_sha256": "368902b5aae4ff087a078922fa79fd87762c78ebf881c8ed86ed9ee716c011e2",
       "patches": [],
-      "companion_verification": "Author main53347/Checks25908 exit0,24 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -273,7 +273,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteConcentrationChecks.lean",
       "mirror_sha256": "8f260a72a5a6770e589c5380bff89368ff4c837aaa5e4f39f6d87250cc0abb8d",
       "patches": [],
-      "companion_verification": "Author main53347/Checks25908 exit0,24 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -288,7 +288,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.lean",
       "mirror_sha256": "6e04ac94f0e932d58bf636df9fa48ff16e1ac9bdb898edc526f77cfba5f14af3",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -309,7 +309,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.lean",
       "mirror_sha256": "0e2e5e87f8cd79585c7acc6699e809087cb8c4ed1951b15cf91038c37e62f594",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -324,7 +324,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteSampling.lean",
       "mirror_sha256": "7b1cf53b512e705d08d4eb20a1db69b4015d5fb561f5495e11316c0cfc49ab57",
       "patches": [],
-      "companion_verification": "Author main/Checks21452 exit0,19 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -339,7 +339,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteSamplingChecks.lean",
       "mirror_sha256": "9281576cae367164b01ec09649245ab7e3d91b17e51c531e5be591661a56461b",
       "patches": [],
-      "companion_verification": "Author main/Checks21452 exit0,19 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -354,7 +354,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/Formula.lean",
       "mirror_sha256": "ab893de33e2e52b337195add1bb317a9f69ccce9ba1bd972df934005257b5a00",
       "patches": [],
-      "companion_verification": "Author main16632 exit0, Checks16632 exit0; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -369,7 +369,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/InverseCDFSampler.lean",
       "mirror_sha256": "8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -384,7 +384,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/InverseCDFSamplerChecks.lean",
       "mirror_sha256": "c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -399,7 +399,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/JointSamplingLaw.lean",
       "mirror_sha256": "3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -414,7 +414,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/JointSamplingLawChecks.lean",
       "mirror_sha256": "c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644",
       "patches": [],
-      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -435,7 +435,7 @@
           "reason": "Original direct import absent at pinned mathlib; replacement source exists; elaboration untested."
         }
       ],
-      "companion_verification": "Author batch19744 main and Checks EXIT0;13 standard-only profiles; independent companion port reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -476,7 +476,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/PosteriorReweightingChecks.lean",
       "mirror_sha256": "48ca57c80a389efa3d8460010acb8875b25e06d598749cbb623ee8b443b321aa",
       "patches": [],
-      "companion_verification": "Author batch19744 main and Checks EXIT0;13 standard-only profiles; independent companion port reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -493,7 +493,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingFormulaPromises.lean",
       "mirror_sha256": "5b3be5d6cc5b66c9907855153b7e11c11c43e28fca5feff952ea649de278e941",
       "patches": [],
-      "companion_verification": "Author exports EXIT0 (batch7356 and SeedChecks58810); FormulaPromises15 and Seed25 standard-subset profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -508,7 +508,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingFormulaPromisesChecks.lean",
       "mirror_sha256": "ef50b659f0275a622c0a918c543b0ae6e58fbf47d4da9f6b9edacc225512af06",
       "patches": [],
-      "companion_verification": "Author exports EXIT0 (batch7356 and SeedChecks58810); FormulaPromises15 and Seed25 standard-subset profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -523,7 +523,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingGuarantee.lean",
       "mirror_sha256": "ed1303659b170bb560eb415623e8298344820aa4313b56b2578d0ea82aa76fe0",
       "patches": [],
-      "companion_verification": "Author batch7356 main/Checks EXIT0;18 standard-only profiles; independent companion port reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -550,7 +550,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingGuaranteeChecks.lean",
       "mirror_sha256": "08effac99e531296d8361e56e4cadbf19b183d3a41a6a5fb77b7e9503f053b97",
       "patches": [],
-      "companion_verification": "Author batch7356 main/Checks EXIT0;18 standard-only profiles; independent companion port reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -565,7 +565,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingThreshold.lean",
       "mirror_sha256": "f21c368aa168b6283dfc21aca606801e376c2537888367485fe9404954b86f8d",
       "patches": [],
-      "companion_verification": "Author main26835 exit0 and Checks9712 exit0 with29 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -616,7 +616,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingThresholdChecks.lean",
       "mirror_sha256": "559bb713fae0f334e7eee2d467bc8d00d7264fe9913ee8913219017ad1e603cc",
       "patches": [],
-      "companion_verification": "Author main26835 exit0 and Checks9712 exit0 with29 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -637,7 +637,7 @@
           "reason": "Original direct import absent at pinned mathlib; replacement source exists; elaboration untested."
         }
       ],
-      "companion_verification": "Author exports EXIT0 (batch7356 and SeedChecks58810); FormulaPromises15 and Seed25 standard-subset profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -660,7 +660,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SeedEncodingChecks.lean",
       "mirror_sha256": "f2692f38794aad6d955cc1b8bac946e3bf7e53d909a4a8a5c6370a018599acd4",
       "patches": [],
-      "companion_verification": "Author exports EXIT0 (batch7356 and SeedChecks58810); FormulaPromises15 and Seed25 standard-subset profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -683,7 +683,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SubspaceRestriction.lean",
       "mirror_sha256": "9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41",
       "patches": [],
-      "companion_verification": "Author batch18032 main/Checks EXIT0;13 standard-only profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -724,7 +724,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean",
       "mirror_sha256": "8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf",
       "patches": [],
-      "companion_verification": "Author batch18032 main/Checks EXIT0;13 standard-only profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -752,7 +752,7 @@
           "reason": "Original direct import absent at pinned mathlib; replacement source exists; elaboration untested."
         }
       ],
-      "companion_verification": "Author batch15557 main/Checks EXIT0;22 standard-only profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -793,7 +793,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/TripleRestrictionRankChecks.lean",
       "mirror_sha256": "89e3c004fb206b5f81d3679dd3a9197dfd5c2eae754c32df511814077b39adf3",
       "patches": [],
-      "companion_verification": "Author batch15557 main/Checks EXIT0;22 standard-only profiles; independent companion reviews pending.",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -810,7 +810,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/WeightRounding.lean",
       "mirror_sha256": "f99379cadbffe016a48b20b52d91777c09c42b900ea3f526862bee36e6cbf357",
       "patches": [],
-      "companion_verification": "Author main89265 and Checks84250 exit0 with25 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -849,7 +849,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/WeightRoundingChecks.lean",
       "mirror_sha256": "9e63050f4813401ff857c98188401d98bd18aec3f2c1e6a4b223a45b56f70260",
       "patches": [],
-      "companion_verification": "Author main89265 and Checks84250 exit0 with25 standard-only profiles; independent port reviews pending",
+      "companion_verification": "Independent session36677 export EXIT0; selected Checks profiles standard-axiom subsets; bounded three-lens GO-WITH-NOTES at candidate6d77189. See bounded_acceptance evidence; no full hardness theorem.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -878,5 +878,36 @@
   "initial_source_commit": "4aff259c9da28f558be716c40d9acb9b72e2fc0e",
   "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline.",
   "author_exported_module_count": 33,
-  "aggregate_verification": "Original35-import aggregate exported EXIT0 in18032; foundation and33 mapped modules import together; no final hardness theorem present."
+  "aggregate_verification": "Author and independent aggregate exports EXIT0 at candidate6d77189; three-lens bounded GO-WITH-NOTES; no full hardness/learning theorem. Subsequent first-comment-only status correction, imports unchanged.",
+  "bounded_acceptance": {
+    "candidate_commit": "6d7718919d681f57e28559bd0ee584c450cb2446",
+    "candidate_source_map_sha256": "b60506d4a969d19e9f3d87615a1fd09274b6a07f9459381b657b9c2b8d93f297",
+    "proof_review_commit": "9195c23744058350a0a7ea89271e23510a43ba15",
+    "complexity_review_commit": "6db6a6971150f8772a3e1ae6a482c016f5efd2cf",
+    "nonclaims_review_commit": "498727e2996e7090ef78b75aad52d21f57624d65",
+    "verdict": "GO-WITH-NOTES; bounded finite33 integration only",
+    "independent_session": 36677,
+    "independent_exit0_exports": 34,
+    "selected_axiom_profiles": 298,
+    "verification_json_sha256": "bbb5ca413cbeb1d691e8b4291aa640512a722615a8512b8de4f62b3b999f59c4",
+    "full_hardness_and_learning_theorems": "ABSENT",
+    "excluded_uncompiled_drafts": [
+      "GrassmannIncidence",
+      "GrassmannIncidenceChecks",
+      "GrassmannCounting",
+      "GrassmannCountingChecks",
+      "TripleRestrictionDimension",
+      "TripleRestrictionDimensionChecks",
+      "RandomizedReduction",
+      "RandomizedReductionChecks"
+    ]
+  },
+  "aggregate_comment_update": {
+    "before_sha256": "f6bde30681dcf7a14c1ac6adee16d18374a5c58e0090716bfb8c28a03100333b",
+    "after_sha256": "fdf05fd19bce347adc2c7943a5f176e65ff431e151e9dd778dfff8286e2e0b7b",
+    "before": "-- UNCOMPILED companion aggregate. This does not declare the full hardness theorem.",
+    "after": "-- Bounded 33-module integration reviewed GO-WITH-NOTES; no full hardness theorem is declared.",
+    "recompiled": false,
+    "reason": "Comment-only acceptance status correction; all35 imports unchanged."
+  }
 }

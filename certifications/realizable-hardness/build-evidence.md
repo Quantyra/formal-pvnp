@@ -2096,3 +2096,17 @@ SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
 
 EXIT 0
 ```
+
+## Bounded finite integration acceptance
+
+Frozen reviewed candidate: `6d7718919d681f57e28559bd0ee584c450cb2446`; candidate map SHA256 `b60506d4a969d19e9f3d87615a1fd09274b6a07f9459381b657b9c2b8d93f297`. Independent session36677 actually exited0 after33 mapped exports and the original aggregate (34 exits0). Its298 selected axiom profiles are subsets of propext, Classical.choice and Quot.sound. The durable verification JSON contains the34 raw logs and profiles; SHA256 `bbb5ca413cbeb1d691e8b4291aa640512a722615a8512b8de4f62b3b999f59c4`. This covers selected profile commands, not an assertion that every imported declaration was individually printed. Historical failed attempts and earlier pending-status checkpoints remain unchanged.
+
+| Lens | Verdict | Evidence commit |
+|---|---|---|
+| [Proof-adversarial and independent build](../../research/p-equals-np/2026-09-12-realizable-hardness-companion-proof-review.md) | GO-WITH-NOTES | 9195c23744058350a0a7ea89271e23510a43ba15 |
+| [Complexity](../../research/p-equals-np/2026-09-12-realizable-hardness-companion-complexity-review.md) | GO-WITH-NOTES | 6db6a6971150f8772a3e1ae6a482c016f5efd2cf |
+| [Non-claims](../../research/p-equals-np/2026-09-12-realizable-hardness-companion-nonclaims-review.md) | GO-WITH-NOTES | 498727e2996e7090ef78b75aad52d21f57624d65 |
+
+[Independent raw verification data](../../research/p-equals-np/2026-09-12-realizable-hardness-companion-proof-verification.json). Acceptance is restricted to the finite33 integration and original aggregate imports. Full randomized hardness and learning theorems remain absent; runtime, specialized source/decoder and outstanding geometry/covering bridges remain required. Six new geometry ports and RandomizedReduction main/Checks are UNCOMPILED and excluded. The separate geometry provenance map is unchanged. No public action or new compiler run occurred for this metadata integration.
+
+The aggregate first comment alone was corrected from stale UNCOMPILED wording to bounded reviewed status. All35 imports and all33 proof bytes are unchanged. Original aggregate SHA256 `f6bde30681dcf7a14c1ac6adee16d18374a5c58e0090716bfb8c28a03100333b`; comment-updated aggregate SHA256 `fdf05fd19bce347adc2c7943a5f176e65ff431e151e9dd778dfff8286e2e0b7b`. No cosmetic recompilation was performed.

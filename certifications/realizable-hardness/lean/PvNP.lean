@@ -1,4 +1,4 @@
--- UNCOMPILED companion aggregate. This does not declare the full hardness theorem.
+-- Bounded 33-module integration reviewed GO-WITH-NOTES; no full hardness theorem is declared.
 import Complexitylib.Classes.PCP
 import Complexitylib.SAT.CookLevin.Assembly
 import PvNP.RealizableHardness.BernoulliMGF
