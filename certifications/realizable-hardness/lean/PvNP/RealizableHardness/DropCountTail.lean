@@ -34,6 +34,7 @@ lemma tail_sum (β : ℚ) (J T : ℕ) :
 
 lemma tail_nonneg (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1) (J T : ℕ) :
     0 ≤ tail β J T := by
+  unfold tail
   exact_mod_cast TripleRestrictionRank.probability_nonneg β hβ hβ1
     (fun d : Draw J => T < dropCount d)
 
@@ -42,6 +43,7 @@ lemma tail_le_one (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1) (J T : ℕ) :
   have h := TripleRestrictionRank.probability_mono β hβ hβ1
     (fun d : Draw J => T < dropCount d) (fun _ => True) (fun _ _ => trivial)
   rw [TripleRestrictionRank.probability_univ] at h
+  unfold tail
   exact_mod_cast h
 
 /-- The three singleton outcomes combine to one Bernoulli exponential factor. -/
@@ -65,7 +67,7 @@ theorem moment_identity (β : ℚ) (J : ℕ) (t : ℝ) :
     _ = ∏ _j : Fin J, ∑ b : BlockChoice,
         (blockMass β b : ℝ) * Real.exp (t * dropped b) := by
       rw [Fintype.prod_sum]
-    _ = _ := by simp [block_moment]
+    _ = _ := by simp only [block_moment, Finset.prod_const, Finset.card_univ, Fintype.card_fin]
 
 /-- Poisson exponential envelope for the exact product moment. -/
 theorem moment_bound (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1) (J : ℕ) (t : ℝ) :
@@ -122,7 +124,8 @@ theorem optimized_tail (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
       Real.log ((T : ℝ) / ((J : ℝ) * (β : ℝ))) * T =
       (T : ℝ) - (J : ℝ) * (β : ℝ) -
         (T : ℝ) * Real.log ((T : ℝ) / ((J : ℝ) * (β : ℝ))) := by
-    field_simp [ne_of_gt hμ]
+    field_simp [(mul_ne_zero_iff.mp (ne_of_gt hμ)).1,
+      (mul_ne_zero_iff.mp (ne_of_gt hμ)).2]
     <;> ring
   rwa [hid] at h
 

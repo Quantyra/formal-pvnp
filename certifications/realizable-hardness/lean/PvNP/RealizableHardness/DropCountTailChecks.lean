@@ -35,12 +35,14 @@ example (β : ℚ) (J : ℕ) :
   simpa using moment_identity β J 0
 
 example : tail (1 / 2) 4 3 ≤ (Real.exp 1 * 2 / 3) ^ 3 := by
-  simpa using chernoff_tail (1 / 2) (by norm_num) (by norm_num) 4 3
+  convert chernoff_tail (1 / 2) (by norm_num) (by norm_num) 4 3
     (by norm_num) (by norm_num)
+    using 1 <;> norm_num
 
 example : tail (1 / 2) 4 2 ≤ (Real.exp 1 * 2 / 2) ^ 2 := by
-  simpa using chernoff_tail (1 / 2) (by norm_num) (by norm_num) 4 2
+  convert chernoff_tail (1 / 2) (by norm_num) (by norm_num) 4 2
     (by norm_num) (by norm_num)
+    using 1 <;> norm_num
 
 example : tail 0 4 2 ≤ (Real.exp 1 * (4 * (0 : ℝ)) / 2) ^ 2 := by
   simpa using chernoff_tail_allow_zero 0 (by norm_num) (by norm_num) 4 2
