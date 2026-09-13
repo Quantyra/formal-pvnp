@@ -68,3 +68,52 @@ four-row gadget emission, whole output materialization, size/runtime bridge to
 the compact input, independent reviews and final theorem composition remain.
 There is no full constructor FP, source-hardness, learning, PvsNP, novelty,
 publication or complete-paper claim.
+
+## Author build update, 2026-09-13
+
+The earlier source-only status above is historical. Author85503 main1 followed
+by3273 main0/Checks0 establishes an author-green isolated pair; independent
+acceptance remains pending. Actual outcomes[1,0,0], all raw attempts/snapshots
+preserved. Final isolated main dd20ce025431950d6d348d7744b120c70ad3bdea14502009d6313990493f18e9;
+Checks df3c3933cd9cc269d51d57c8a4a63e7e6d2d1b099bd71ca1c8556b5898a27cdc unchanged.
+Repairs only reverse the Bool contradiction, simplify the explicit mapped-list
+length, apply propext to proposition equality, and replace a deprecated lemma
+spelling. Mathematical definitions, targets, assumptions and full dart identity
+are unchanged. Successful pair warning-free;26profiles(25standard3,unary injection
+propext only),7examples,4signatures. No new axiom/sorry/native_decide/heartbeat
+escalation. Compiler explicitly released after3273 actual terminal0.
+
+The original331 archive and original receipt are preserved in Git and raw build
+snapshots. Portable immutable author packet at
+certifications/realizable-hardness/.lake/build/actual-occurrence-code-author-20260913/author-verification.json
+SHA2567648d6d61f784a1b4df9da3b071bc2518e8154658697de3bbe2e0c20a593114e
+(39920045bytes) retains final_source_freeze=null as prefreeze metadata. It records
+2630 original/copy artifacts,9receipts,9current exceptions,178source pins,11package
+pins,264fallback exclusions, all raw logs/metadata and the exact proof-only diff.
+Its author-verification.md companion SHA256
+cd4eca062ccd1848c60877d370cce6b59daaca72f8771249219eca2aeae9292c
+states the full provenance and nonclaims boundary. Two noncompiler Unicode
+console-display failures are distinguished from actual Lean outcomes.
+
+This proposed receipt is prepared outside the archive for root review. Final
+copy of the repaired main and this receipt into the archive is pending an exact
+root grant; no final source commit is inferred from the old331 baseline. The
+later actual final commit must be recorded separately from the immutable packet.
+The current increment is structural code/semantic assignment and row transport
+only, not executable producer FP. Independent lenses, full constructor and
+upstream hardness/final theorem/paper remain open.
+
+## Final archival copy completed, 2026-09-13
+
+Under the root exact3 archival grant, final isolated main dd20ce025431950d6d348d7744b120c70ad3bdea14502009d6313990493f18e9
+was copied byte-for-byte into this archive; Checks df3c3933 remained unchanged.
+This paragraph supersedes the pending-copy wording above. The proposed receipt
+preserved the original331 receipt as an exact byte prefix; the original source
+and receipt remain available at331d3a0c and in the raw author evidence. The
+immutable7648d6d6 author packet remains prefreeze with final_source_freeze=null;
+the actual final archival commit is supplied separately. Root verified20 raw
+packet records, successful outputs, the exact proof-only repair and26profiles;
+that root check is not claimed to be a fresh full2630-dependency rehash.
+Independent preparation/review remains separate. No new compilation, live
+insertion, independent acceptance, executable-producer FP or public action is
+claimed by this archival preservation.

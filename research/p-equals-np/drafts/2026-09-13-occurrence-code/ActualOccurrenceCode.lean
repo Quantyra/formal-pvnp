@@ -55,7 +55,7 @@ theorem codeVar_injective : Function.Injective (codeVar I) := by
     cases y with
     | inl q =>
       have ht := congrArg (fun c : VarCode => c.2.1) he
-      exact (Bool.true_ne_false ht).elim
+      exact (Bool.false_ne_true ht.symm).elim
     | inr q =>
       apply congrArg Sum.inr
       apply Prod.ext
@@ -125,7 +125,8 @@ theorem codeRows_ordered : codeRows I = I.rowIndices.map
   rw [codeRows, I.rows_eq_map, List.map_map]
   rfl
 
-theorem codeRows_length : (codeRows I).length = I.rows.length := List.length_map
+theorem codeRows_length : (codeRows I).length = I.rows.length := by
+  simp only [codeRows, List.length_map]
 
 def restrictAssignment (a : VarCode → ZMod 2) : I.GlobalVar → ZMod 2 :=
   fun v => a (codeVar I v)
@@ -137,7 +138,7 @@ def extendAssignment (a : I.GlobalVar → ZMod 2) (c : VarCode) : ZMod 2 :=
 theorem extendAssignment_codeVar (a : I.GlobalVar → ZMod 2) (v : I.GlobalVar) :
     extendAssignment I a (codeVar I v) = a v := by
   have h : ∃ w : I.GlobalVar, codeVar I w = codeVar I v := ⟨v,rfl⟩
-  rw [extendAssignment, dif_pos h]
+  rw [extendAssignment, dite_eq_left h]
   exact congrArg a (codeVar_injective I (Classical.choose_spec h))
 
 theorem restrict_extend (a : I.GlobalVar → ZMod 2) :
@@ -214,6 +215,7 @@ theorem containsCode_codeRow (v : I.GlobalVar)
   rw [rowSupport_codeRow]
   congr 1
   simp only [Finset.mem_map, codeEmbedding]
+  apply propext
   constructor
   · rintro ⟨w,hw,he⟩
     have he' := codeVar_injective I he
