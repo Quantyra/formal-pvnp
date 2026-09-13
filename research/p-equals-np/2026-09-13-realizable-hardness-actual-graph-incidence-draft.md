@@ -30,3 +30,11 @@ Source identities:
 ```
 
 Remaining to-do list: authorized scoped compilation/repair and three independent lenses for this pair; actual occurrence allocation/cloud degree and gap construction under S3132; source hardness, source-size/FP, decoder, sampling runtime, learning and finalized paper/proof consolidation remain full-goal obligations.
+
+## Author verification update
+
+The earlier source-only status is superseded for author compilation. Actual session 28599 returned terminal EXIT 0 after both main and Checks passed without repairs or retries. Both sources remained raw-identical to freeze a5a7562d9852ec100c399de5b560a95c95ea1109. Nine emitted profiles contain only propext, Classical.choice and Quot.sound; five examples and two signatures compiled. Main retained two deprecated if_pos/if_neg warnings; Checks was clean. Compiler ownership was released immediately after terminal completion.
+
+The fresh actual-graph-incidence-author-20260913 root copied 305 artifacts directly from original accepted locations: the 304-entry GraphEdges closure plus its independent main export. All original/copy and assigned acceptance-receipt hashes were rechecked before and after. Runner verified the pinned Lean commit, manifest and all eleven package revisions, used one thread, and enforced physical-memory preflight 768 MiB and owned-child stop 640 MiB. No guard stop, package download or broad rebuild occurred. Source snapshots and raw logs/terminal metadata were saved before display. Existing package-cache provenance limits remain; this does not claim a fresh whole-dependency build.
+
+Portable packet: certifications/realizable-hardness/.lake/build/actual-graph-incidence-author-20260913/author-verification.json, SHA256 6d0691dec192bd52ea790ae11382fc6c7a4c7554fbd91390c1916c609da36dd2. It embeds exact runner, plan, copies, logs, metadata and source snapshots. Independent proof, complexity and non-claims review remain required. No full cloud-degree, encoded FP, gap/source-hardness or final-paper acceptance follows from this author build.
