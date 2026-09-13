@@ -45,7 +45,9 @@ lemma beta_pos {A h : ℕ} (hA : 0 < A) (hh : 0 < h) : 0 < beta A h := by
 lemma mean_rat (A h : ℕ) :
     (blocks A h : ℚ) * beta A h = (A : ℚ) * (h : ℚ) ^ 2 := by
   have hz : (blocks A h : ℚ) ≠ 0 := ne_of_gt (by exact_mod_cast blocks_pos A h)
-  simp [beta, hz]
+  unfold beta
+  push_cast
+  field_simp [hz]
 
 lemma mean_real (A h : ℕ) :
     (blocks A h : ℝ) * (beta A h : ℝ) = (A : ℝ) * (h : ℝ) ^ 2 := by
