@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "UNCOMPILED",
+  "status": "PARTIALLY_COMPILED; independent companion port reviews pending",
   "source_repository": "Quantyra/formal-pvnp",
   "source_count": 33,
   "entries": [
@@ -10,12 +10,84 @@
       "source_git_lf_sha256": "d923ad4b96435ba3e7d4c9e1c4f0b040d7747317a5de865b6f31bded97abbe32",
       "source_working_sha256": "d923ad4b96435ba3e7d4c9e1c4f0b040d7747317a5de865b6f31bded97abbe32",
       "mirror_path": "lean/PvNP/RealizableHardness/BernoulliMGF.lean",
-      "mirror_sha256": "d923ad4b96435ba3e7d4c9e1c4f0b040d7747317a5de865b6f31bded97abbe32",
+      "mirror_sha256": "bba0f91c80fb8c3162965a9c6132fb9ae397763446534c795dea8196c3ba818c",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main83985 and Checks93663 both exit0; 13 standard-only axiom profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simpa [partition] using ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p)",
+          "after": "  simpa only [partition] using ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p)",
+          "reason": "Lean 4.34 derivative simplification/convert compatibility repair after batch30341; statement unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simp only [gap, gapSlope, id_eq]\n  ring",
+          "after": "  try simp only [gap, gapSlope, id_eq]\n  ring",
+          "reason": "Lean 4.34 derivative simplification/convert compatibility repair after batch30341; statement unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  dsimp [gapCurvature]\n  have hz := (partition_pos p t hp hp1).ne'\n  field_simp\n  dsimp [partition]\n  ring",
+          "after": "  try dsimp [gapSlope, gapCurvature]\n  have hz := (partition_pos p t hp hp1).ne'\n  field_simp [hz]\n  try dsimp [partition]\n  ring",
+          "reason": "Lean 4.34 derivative simplification/convert compatibility repair after batch30341; statement unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "lemma partition_deriv ",
+          "after": "set_option backward.isDefEq.respectTransparency false in\nlemma partition_deriv ",
+          "reason": "Local Lean 4.34 elaboration transparency for Real normed/algebra instance defeq mismatch shown by63597; kernel trust and theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "lemma gap_deriv ",
+          "after": "set_option backward.isDefEq.respectTransparency false in\nlemma gap_deriv ",
+          "reason": "Local Lean 4.34 elaboration transparency for Real normed/algebra instance defeq mismatch shown by63597; kernel trust and theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "lemma gapSlope_deriv ",
+          "after": "set_option backward.isDefEq.respectTransparency false in\nlemma gapSlope_deriv ",
+          "reason": "Local Lean 4.34 elaboration transparency for Real normed/algebra instance defeq mismatch shown by63597; kernel trust and theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "set_option backward.isDefEq.respectTransparency false in\nlemma partition_deriv ",
+          "after": "lemma partition_deriv ",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "set_option backward.isDefEq.respectTransparency false in\nlemma gap_deriv ",
+          "after": "lemma gap_deriv ",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "set_option backward.isDefEq.respectTransparency false in\nlemma gapSlope_deriv ",
+          "after": "lemma gapSlope_deriv ",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simpa only [partition] using ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p)",
+          "after": "  convert! ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p) using 1",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  convert h.sub",
+          "after": "  convert! h.sub",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  convert h using 1",
+          "after": "  convert! h using 1",
+          "reason": "Attempt3715 local backward option ineffective; use documented convert! default-transparency alignment for instance diamonds. Statements unchanged; verification pending."
         }
       ]
     },
@@ -27,7 +99,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/BernoulliMGFChecks.lean",
       "mirror_sha256": "f370c56951ed923db58da67d1cdbc93e3a4cadf8b994c62abbc588e604be450f",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main83985 and Checks93663 both exit0; 13 standard-only axiom profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -85,7 +157,7 @@
       "source_git_lf_sha256": "fe61a92953532bafc86f07dbb3f24fc43bc43bda6389518819da804b12189d4e",
       "source_working_sha256": "0e19aecf40ebbb828a7558e9411c1a485c698a009979ce9c359788e4d143bded",
       "mirror_path": "lean/PvNP/RealizableHardness/ExceptionRepair.lean",
-      "mirror_sha256": "d1e71ce101374cc007c5f7acc5dc9833fc50c3aa666e6ec7ce8ee593fb1cbbdd",
+      "mirror_sha256": "e5306b32322afb5ec012d8a44ee81ea70b4b4f7bb2b12e5837290a867b3c5405",
       "patches": [
         {
           "before": "import Mathlib.Algebra.BigOperators.Ring",
@@ -93,7 +165,7 @@
           "reason": "Direct import path absent in pinned mathlib; replacement modules found by source inspection; elaboration untested."
         }
       ],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main75063 exit0 with two standard-only headline profiles; downstream Formula/Checks and independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -103,6 +175,30 @@
           "before": "import Mathlib.Algebra.BigOperators.Ring\n",
           "after": "import Mathlib.Algebra.BigOperators.Ring.Finset\n",
           "reason": "Direct import path absent in pinned mathlib; replacement modules found by source inspection; elaboration untested."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import Mathlib.Algebra.BigOperators.Ring.Finset\n",
+          "after": "import Mathlib.Algebra.BigOperators.Ring.Finset\nimport Mathlib.Algebra.BigOperators.Field\n",
+          "reason": "Lean4.34 import split and ordered-field API names diagnosed in30840; theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "div_le_div_right (",
+          "after": "div_le_div_iff_of_pos_right (",
+          "reason": "Lean4.34 import split and ordered-field API names diagnosed in30840; theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "mul_le_mul_left hlam",
+          "after": "mul_le_mul_iff_left\u2080 hlam",
+          "reason": "Lean4.34 import split and ordered-field API names diagnosed in30840; theorem statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  cases e i <;> simp",
+          "after": "  by_cases h : e i = true <;> simp [h]",
+          "reason": "Actual18035 failure generalizing e i in Boolean conditional; explicit predicate case split proves identical finite identity."
         }
       ]
     },

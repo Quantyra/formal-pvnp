@@ -22,14 +22,14 @@ lemma partition_pos (p t : ℝ) (hp : 0 ≤ p) (hp1 : p ≤ 1) : 0 < partition p
 
 lemma partition_deriv (p t : ℝ) :
     HasDerivAt (partition p) (p * Real.exp t) t := by
-  simpa [partition] using ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p)
+  convert! ((Real.hasDerivAt_exp t).const_mul p).const_add (1 - p) using 1
 
 lemma gap_deriv (p t : ℝ) (hp : 0 ≤ p) (hp1 : p ≤ 1) :
     HasDerivAt (gap p) (gapSlope p t) t := by
   have h := (((hasDerivAt_id t).pow 2).div_const 8).add
     ((hasDerivAt_id t).const_mul p)
-  convert h.sub ((partition_deriv p t).log (partition_pos p t hp hp1).ne') using 1
-  simp only [gap, gapSlope, id_eq]
+  convert! h.sub ((partition_deriv p t).log (partition_pos p t hp hp1).ne') using 1
+  try simp only [gap, gapSlope, id_eq]
   ring
 
 lemma gapSlope_deriv (p t : ℝ) (hp : 0 ≤ p) (hp1 : p ≤ 1) :
@@ -38,11 +38,11 @@ lemma gapSlope_deriv (p t : ℝ) (hp : 0 ≤ p) (hp1 : p ≤ 1) :
   have hd := partition_deriv p t
   have h := (((hasDerivAt_id t).div_const 4).add_const p).sub
     (hn.div hd (partition_pos p t hp hp1).ne')
-  convert h using 1
-  dsimp [gapCurvature]
+  convert! h using 1
+  try dsimp [gapSlope, gapCurvature]
   have hz := (partition_pos p t hp hp1).ne'
-  field_simp
-  dsimp [partition]
+  field_simp [hz]
+  try dsimp [partition]
   ring
 
 lemma gapCurvature_nonneg (p t : ℝ) (hp : 0 ≤ p) (hp1 : p ≤ 1) :

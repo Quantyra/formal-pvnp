@@ -1,6 +1,7 @@
 import Mathlib.Data.Rat.Cast.Order
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -98,7 +99,7 @@ theorem repairedWeight_eq_sum {V I : Type*} [Fintype V] [Fintype I]
   rw [← mul_div_assoc, Finset.mul_sum, Finset.sum_div]
   apply Finset.sum_congr rfl
   intro i _
-  cases e i <;> simp
+  by_cases h : e i = true <;> simp [h]
 
 lemma repairedWeights_pos {V I : Type*} [Fintype I] [Nonempty I]
     (w : V → ℚ) (lam : ℚ) (hw : ∀ v, 0 < w v) (hlam : 0 < lam) :
@@ -178,7 +179,7 @@ theorem exception_soundness {V I : Type*} [Fintype V] [Fintype I]
     have hb : (weight w x + lam * average e) / (1 + lam) ≤
         (k * (s + lam * eps)) / (1 + lam) := by
       simpa only [repairedWeight, lam, mul_div_assoc] using hbudget
-    exact (div_le_div_right (by linarith : 0 < 1 + lam)).1 hb
+    exact (div_le_div_iff_of_pos_right (by linarith : 0 < 1 + lam)).1 hb
   have htotal : weight w x + lam * average e ≤ 3 * sig * s / 8 := by
     have hbase : 0 ≤ s + lam * eps := by positivity
     have hm := mul_le_mul_of_nonneg_right hkle hbase
@@ -189,7 +190,7 @@ theorem exception_soundness {V I : Type*} [Fintype V] [Fintype I]
   have hecost : lam * average e ≤ 3 * sig * s / 8 := by linarith
   have hidentity : lam * gam = sig * s := by dsimp [lam]; field_simp
   have hebound : average e ≤ 3 * gam / 8 := by
-    apply (mul_le_mul_left hlam).mp
+    apply (mul_le_mul_iff_left₀ hlam).mp
     nlinarith only [hecost, hidentity]
   have ho := hno x hold
   have hu := average_or_le (fun i => F i x) e

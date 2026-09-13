@@ -1,6 +1,9 @@
 # Realizable hardness companion package
 
-**UNCOMPILED. All companion Lean files are unverified on this toolchain.**
+**PARTIALLY COMPILED. Independent companion port reviews remain pending.**
+BernoulliMGF main and Checks passed author exports on this toolchain, with
+13 standard-only axiom profiles. Other modules remain pending unless explicitly
+recorded in `build-evidence.md`; successful source ports do not certify the whole graph.
 The full randomized NP-hardness theorem and learning corollary are absent.
 This package prepares their eventual single-kernel assembly; its current
 aggregate imports the candidate foundation headlines and finite proof components.
@@ -20,7 +23,7 @@ downloaded or produced by this resolution.
 hashes, mirrored hashes and every import-path patch for all 33 mirrored files.
 Its ordered `transforms` field is the complete byte-reconstruction recipe:
 CRLF normalization, any explicitly listed UTF-8 BOM removal, and listed UTF-8
-literal import replacements. Historical BOM provenance was corrected in
+literal import and proof-tactic replacements. Historical BOM provenance was corrected in
 e10ca87; current per-entry transforms describe the selected source bytes.
 The companion aggregate `lean/PvNP.lean` explicitly imports every mirrored
 main and Checks file. Original verification status does not transfer to this
