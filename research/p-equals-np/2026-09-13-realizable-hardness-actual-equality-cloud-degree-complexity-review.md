@@ -1,0 +1,23 @@
+# Complexity review: actual equality-cloud degree
+
+2026-09-13. S3132/S3137 under S3126. Reviewer specialization_complexity_review did not author ActualEqualityCloudDegree; its author is incidence_complexity_review. This reviewer authored the earlier imported ActualGraphIncidence component, whose independent acceptance is relied on rather than repeated here. Complexity and non-claims are separate passes by the same reviewer, not two independent agents. Read full current main/Checks and dated draft/author receipt; applied the planning three-lens protocol already read in this review sequence. No compiler, Git, source, package or public actions.
+
+Raw main/Checks equal freeze `cb167a49a8eb32db01a7b6fd4094f10c00b70944`: main SHA256 `2c8320823c096a52420e6c6566da5c31f77946d10e733802cec851a484678b96`, Checks `06a7227eb506c77a197ae7e3bb2741c94dd4304aabd24912d73f2c21433843ab`. Author receipt records session 18000 pair EXIT 0, eleven standard-only profiles, five examples and three signatures. Independent review was starting at assignment; author success does not replace its terminal evidence. Existing package provenance limitations remain unchanged.
+
+**GO-WITH-NOTES for actual generated-row incidence degree and exact cloud list length.**
+
+The public degree is List.countP of containsVar on the actual ActualEqualityCloud.rows. containsVar tests membership in the triple's actual support. It counts row occurrences, not distinct row values or a generic graph degree. Since cloud rows have three distinct variables, this also matches literal occurrence degree without ambiguity from repeated names within one row.
+
+local_count bridges each actual four-row local list to EqualityGadget.relabeledDegree under the real embedding. degree_eq_sum expands the actual flatMap and converts its list sum to the finite Edge sum using the proved nodup and complete edgeList. This justifies exactly one contribution per retained edge occurrence; merely knowing row membership would not suffice. Parallel reversal orbits remain different Edge terms even with identical terminal endpoints.
+
+For each port, local_port_degree is exactly one when the representative edge is incident, and zero otherwise. The positive branch uses either actual terminal image; distinct endpoints of retained edges make them exclusive. The negative branch proves the port outside the embedding range, rather than assuming it cannot occur. Summing the indicator yields exact equality to incidentEdges.card, then the accepted actual incidence theorem gives at most three. No degree-three premise or simple-graph assumption is supplied to the new theorem.
+
+For internal (e,i), internal_outside excludes every other edge's embedding via fresh sum/product tags. local_internal_degree uses the actual local gadget's degree two for each of five indices. The finite sum isolates the unique own-edge contribution, proving exact internal degree two. This is a global one-cloud statement, not just a local degree bound, and no freshness oracle is assumed.
+
+localRows_length is exactly four. rows_length inducts over the actual edgeList flatMap, then uses its exact length to obtain rows.length=4*card(Edge). This is equality for the generated list, preserving occurrences, rather than a count of a deduplicated row family. At n=0 the actual list is empty; endpoint/internal statements quantify over their typed domain and do not fabricate a variable in the empty cloud.
+
+The new source has no original occurrence-allocation import and contains no original source equations. Therefore it does not establish total source-plus-cloud degree four, global T=m+4E across all source variables, or cross-source row multiplicity/violation identities. The next join must prove the at-most-one original-row contribution at an anchor and add these actual countP degrees, using the real concatenated global row list. The exact list length can feed that join once tagging and concatenation are explicitly accounted for.
+
+All statements quantify over arbitrary n and actual ports/edge identities; fixed family constants precede n. These typed finite definitions do not supply binary allocation/serialization, runtime or an FP theorem. Degree and row counts are not a global gap proof, original-source polynomial bound, NP-hardness or full-paper result. Majority decoding, compatible YES extension and specialized source hardness remain separate actual constructions.
+
+Remaining to-do list: S3137 independent pair and other-lens verification; S3132 global original-plus-cloud count/degree/YES/majority-gap, encoded FP/source-size and full H?stad hardness; S3131 sampling runtime; S3134/S3135 decoder/parameters; S3136 learning; S3128 final paper/proof reconciliation/consolidation. Full S3126 remains open.
