@@ -93,7 +93,7 @@ theorem execute_malformed (f g ruler : Bits → Bits) (z : Bits)
     execute f g ruler z = g (pair (f (pairFst z)) []) := by
   simp [execute, firstOutput, secondCoins, pairSnd, hz]
 
-def pairEnvelope (a : Polynomial ℕ) : Polynomial ℕ :=
+noncomputable def pairEnvelope (a : Polynomial ℕ) : Polynomial ℕ :=
   Polynomial.C 2 * Polynomial.X + Polynomial.C 2 + a
 
 /-- A fixed polynomial amount of second-stage padding suffices for every

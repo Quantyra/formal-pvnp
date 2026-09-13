@@ -40,7 +40,16 @@ theorem block_disintegration (n B : ℕ)
 
 lemma ofFn_blocks (n B : ℕ) (w : Fin (n+B) → Bool) :
     List.ofFn w = List.ofFn (blockFst n B w) ++ List.ofFn (blockSnd n B w) := by
-  simpa only [blockFst, blockSnd, blockEquiv] using (List.ofFn_add (f := w))
+  have hf : blockFst n B w = fun i : Fin n => w (Fin.castLE (by omega) i) := by
+    funext i
+    simp only [blockFst, blockEquiv, Equiv.trans_apply,
+      Equiv.sumArrowEquivProdArrow_apply_fst]
+    congr 1
+  have hs : blockSnd n B w = fun i : Fin B => w (Fin.natAdd n i) := by
+    funext i
+    exact blockSnd_apply n B w i
+  rw [hf, hs]
+  exact List.ofFn_add
 
 /-- List.take is exactly the finite prefix, including zero and full width. -/
 lemma ofFn_prefix {k B : ℕ} (hk : k ≤ B) (w : Fin B → Bool) :
@@ -76,7 +85,9 @@ theorem execute_disintegration (R S : SeededMap) (x : Bits) (B : ℕ)
       (∑ u : Fin (R.coinCount x.length) → Bool,
         successProbability S (R.apply x (List.ofFn u)) T) / 2^(R.coinCount x.length) := by
   simp_rw [execute_pair]
-  rw [block_disintegration]
+  rw [block_disintegration (R.coinCount x.length) B
+    (fun u v => S.run (pair (R.run (pair x (List.ofFn u)))
+      ((List.ofFn v).take (S.ruler (R.run (pair x (List.ofFn u)))).length)) ∈ T)]
   congr 1
   apply Finset.sum_congr rfl
   intro u _
@@ -169,8 +180,10 @@ theorem compose_success_lower (R S : SeededMap) (P : Padding R S)
         successProbability S (R.apply x (List.ofFn u)) T := by
     by_cases hu : R.apply x (List.ofFn u) ∈ M
     · simpa [hu] using hS _ hu
-    · simpa [hu] using eventProb_nonneg
-        (Finset.univ.filter (fun v => S.apply (R.apply x (List.ofFn u)) (List.ofFn v) ∈ T))
+    · have hn : 0 ≤ successProbability S (R.apply x (List.ofFn u)) T := by
+        unfold successProbability
+        exact eventProb_nonneg _
+      simpa only [hu, ite_false, mul_zero] using hn
   have hs := Finset.sum_le_sum (fun u (_ : u ∈ Finset.univ) => hpoint u)
   have hd := div_le_div_of_nonneg_right hs
     (show (0 : ℚ) ≤ 2^(R.coinCount x.length) by positivity)
