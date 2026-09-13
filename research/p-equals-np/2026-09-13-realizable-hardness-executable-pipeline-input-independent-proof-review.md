@@ -1,0 +1,35 @@
+# Independent proof review: binary pipeline input and coin framing
+
+2026-09-13. S3131/S3126. Reviewer `/root/matrix_identity_independent_proof` is not the author. **GO-WITH-NOTES for the bounded parser and same-function executor.** Full source audit found no blocker within the concrete parser and same-function execution scope.
+
+Reviewed main/Checks and author receipt at freeze `3f2c0ff655d22db052110c9cd226528cdc8a27cc`, all raw-identical to current files. Main SHA256 `b0c513dd5680d6504ee94d480998dbccf691f7f132bed993755f4c202364e24c`; Checks `c363195b1e446cd109dddd273b57d208fc1bee1843f06f3ac34f10b160685778`; receipt `caf0cf69679ddfaa2caa0fc46179719cc6e3f0a63d0cdc1bdc87df23af7a83f0`. Inspected actual FiniteSourceSampler.readTable/ValidRows and Complexity.Pairing pair/projection definitions in addition to the previously reviewed Pipeline and codec.
+
+## Proof assessment
+
+The Input structure has deterministic weights, source rows, raw scalar values, precision and trial count. Its source table carries only input normalization/nonemptiness proofs. readInput reconstructs those proofs by executing readTable on parsed rows; it takes no desired output, equality certificate, or arithmetic-validity oracle from the caller.
+
+signedTree records a sign tag and unsigned absolute numerator/positive denominator. read_ratTree_abs explicitly derives the absolute rational value from the numerator/denominator identity, and read_signedTree restores the sign in separate negative/nonnegative cases. Negative zero or unreduced fractions may decode to the same rational; no parser-to-canonical-byte inverse is claimed or needed. Zero denominators are rejected. readRow parses formulas against the actual decoded weight count, rejecting out-of-range variable indices before constructing the dependent table.
+
+readInput preserves source-row ordering and duplicates. readTable requires a nonempty list, all masses nonnegative, and exact total mass one; zero masses and duplicate formulas remain permitted. Complete typed roundtrip uses the existing readTable_valid identity, whose proof irrelevance recovers the same Table. It does not assume equality of the whole decoded Input as a premise. Raw negative weights/scalars and arithmetic-invalid scalar choices are representable: parsing does not assert the stronger FiniteRepairRoundingPipeline.Parameters promise.
+
+decodeInput runs the actual tree parser with fuel length+1 and requires an empty remainder. The valid-input theorem supplies sufficient fuel using depth<=encoded length. Malformed fields and trailing remainders have explicit rejection theorems; empty input, zero denominator, bad variable and empty row cases are covered. The bad-fields/trailing theorems take actual parser-result premises; they are not a general converse canonicality theorem.
+
+coinBits uses the actual Fin product equivalence to flatten an M-by-b array. seedsOf indexes the same equivalence forward, with its bound derived from the checked exact coin length. The inverse theorem composes the product equivalence with its inverse and proves the Bool/Fin2 digit inverse; thus the same seeds are recovered, including ordering. M=0 and b=0 each yield the empty tape. A positive M with b=0 still has its typed family of empty rows and no randomized concentration conclusion. Wrong length rejects instead of truncating or padding.
+
+runOption executes decodeInput, coin-length comparison and the accepted Pipeline.checkedBits with the decoded fields and reconstructed seeds. run uses the exact Complexity.pairFst/pairSnd convention, and run_pair follows the canonical pairing identities. run_valid concludes equality to the actual Pipeline.bits byte function, not merely equality after decoding; this stronger equality is justified because it reaches that same constructor. It does not equate that constructor's unreduced fraction bytes to a different canonical semantic encoder.
+
+The malformed outer-pair policy is deliberately limited: pairFst returns a decoded prefix on malformed input and pairSnd returns empty on unpair failure. Consequently run does not independently reject every malformed outer pair. For zero required coins, an interpretable first projection can still reach execution. The author receipt explicitly disclaims a canonical outer-pair validator. No theorem contradicts this policy. Actual input-decoding, coin-length or checked-output failures become the empty tape through getD.
+
+Validity for run_valid remains conditional on input Parameters, M>0 and the stored formula leaf bound. These are source-input promises, not output correctness assumptions. Acceptance of a parsed raw Input does not establish those promises for an arbitrary source complexity instance. No hypothesis hides FP or a coin-ruler certificate. The current exact M*b coin requirement is not yet a uniform input-length ruler; same-length deterministic inputs can request different coin counts. Polynomial runtime and the eventual machine/ruler bridge remain separate obligations.
+
+## Prepared independent verification
+
+Fresh root: companion `.lake/build/executable-pipeline-input-independent-review-20260913`. Exactly 43 files were copied from original accepted locations: 19 paper exports and 24 Pairing/Delimit artifact files, including required server companions. Their hashes and the cited original Pipeline/machine receipt hashes were checked, and artifact hashes were found in those receipts. No Input author output was reused.
+
+Runner source was inspected and syntax-parsed without execution. It will verify exact pair hashes, no preexisting target outputs, original/copied dependency hashes, receipt hashes, pinned manifest and eleven package commits, and Lean 4.34.0-rc2 identity. It enforces one thread, physical-memory preflight 768 MiB and owned-child stop below 640 MiB. Source snapshots, raw logs and actual terminal metadata are written before display; changed sources or failing commands stop the run. Embedded runner text is byte.decode UTF-8 with no newline conversion. Expected coverage is 22 profiles and 10 examples; these are not independent results yet.
+
+No compiler launched, source edited, Git operation performed or package downloaded. Independent build authorization remains pending after the current compiler queue. Full-hardness, FP, learning, paper readiness and consolidation are not established by this review.
+
+## Independent build completed
+
+Authorized session 61200 compiled both unchanged sources with actual EXIT 0, then terminated EXIT 0. All 22 emitted profiles were parsed and contain only propext, Classical.choice and Quot.sound; ten examples compiled. Main log is empty and Checks has no diagnostic warnings. All source/output/log/metadata hashes and 43 original/copied dependency files were rechecked. Raw logs in the JSON use byte.decode UTF-8 without newline normalization. No retry or source repair occurred. Compiler ownership was immediately released. The pending-build statements above describe preparation and are superseded by this result; full runtime/hardness and final paper requirements remain open.
