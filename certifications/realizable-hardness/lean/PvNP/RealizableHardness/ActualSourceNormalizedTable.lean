@@ -20,7 +20,7 @@ def unarySource (S : Source) : Prod (List UnaryTriple) (List Bool) :=
   (unaryRows S, S.2)
 
 theorem unaryRows_length (S : Source) : (unaryRows S).length = S.1.length := by
-  simp [unaryRows, normalize]
+  simp [unaryRows, ActualSourceNormalization.normalize]
 
 /-- Machine pair of table and exact all-true mixed-radix occurrence counter. -/
 def slotArg (i : Nat) (z : List Bool) : List Bool :=
@@ -39,7 +39,8 @@ theorem slotArg_correct (T : List Bool) (r i : Nat) :
 def renamedField (i : Nat) (z : List Bool) : List Bool := firstFn (slotArg i z)
 
 theorem renamedField_mem_FP (i : Nat) : Membership.mem FP (renamedField i) := by
-  simpa only [renamedField, Function.comp_def] using
+  unfold renamedField
+  simpa only [Function.comp_def] using
     mem_FP_comp (slotArg_mem_FP i) firstFn_mem_FP
 
 theorem renamedField_correct (S : Source) (r : Fin S.1.length) (i : Fin 3) :
@@ -59,16 +60,25 @@ theorem rowRule_correct (S : Source) (r : Fin S.1.length) :
     rowRule (pair (table S) (List.replicate r.val true)) =
       DataEncode.bitstringEncode (unaryTriple (renameTriple S S.1[r.val])) := by
   unfold rowRule
-  rw [renamedField_correct S r (0 : Fin 3),
-    renamedField_correct S r (1 : Fin 3), renamedField_correct S r (2 : Fin 3)]
+  have h0 : renamedField 0 (pair (table S) (List.replicate r.val true)) =
+      List.replicate (first S S.1[r.val].1) true :=
+    renamedField_correct S r (Fin.mk 0 (by decide))
+  have h1 : renamedField 1 (pair (table S) (List.replicate r.val true)) =
+      List.replicate (first S S.1[r.val].2.1) true :=
+    renamedField_correct S r (Fin.mk 1 (by decide))
+  have h2 : renamedField 2 (pair (table S) (List.replicate r.val true)) =
+      List.replicate (first S S.1[r.val].2.2) true :=
+    renamedField_correct S r (Fin.mk 2 (by decide))
+  rw [h0, h1, h2]
   exact encTriple_eq _ _ _
 
 /-- The actual library list loop, clocked by the supplied table's row count. -/
 def tableFn (T : List Bool) : List Bool := listEncFn rowRule (pair (posCount T) T)
 
 theorem tableFn_mem_FP : Membership.mem FP tableFn := by
+  unfold tableFn
   have ha := Cobham.pairFn_mem_FP (posCount_mem_FP id_mem_FP) id_mem_FP
-  simpa only [tableFn, Function.comp_def] using
+  simpa only [Function.comp_def, id_eq] using
     mem_FP_comp ha (materialize_mem_FP rowRule_mem_FP)
 
 theorem tableFn_correct (S : Source) :
@@ -81,7 +91,7 @@ theorem tableFn_correct (S : Source) :
   apply materialize_eq (unaryRows S) (table S)
   intro i hi
   have hr : i < S.1.length := by simpa only [unaryRows_length] using hi
-  simpa [unaryRows, normalize] using rowRule_correct S (Fin.mk i hr)
+  simpa [unaryRows, ActualSourceNormalization.normalize] using rowRule_correct S (Fin.mk i hr)
 
 /-- DATA pairing, intentionally different from the machine argument pair. -/
 def dataPair (a b : List Bool) : List Bool := false :: (a ++ b) ++ [true]
@@ -165,7 +175,7 @@ theorem tableFn_length_bound (S : Source) :
   have hs := sum_map_bound S.1
     (fun t => (DataEncode.bitstringEncode (unaryTriple (renameTriple S t))).length)
     (36*S.1.length+10) hb
-  simpa only [unaryRows, normalize, List.map_map, Function.comp_def] using Nat.add_le_add_left hs 2
+  simpa only [unaryRows, ActualSourceNormalization.normalize, List.map_map, Function.comp_def] using Nat.add_le_add_left hs 2
 
 theorem sourceFn_length_bound (S : Source) :
     (sourceFn (wire S)).length <= 4+S.1.length*(36*S.1.length+10)+
