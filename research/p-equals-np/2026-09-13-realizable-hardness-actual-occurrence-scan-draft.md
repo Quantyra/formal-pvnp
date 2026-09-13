@@ -66,3 +66,50 @@ Checks remains fca991e39a87fcd06929df74cc857956753e5bd63ee1305d81a8b71824e7f18c.
 Runner preparation waits for independent acceptance of Lookup and adequate
 accepted Prefix exports/receipts; an uncompiled dependency will not be labeled
 accepted or used to claim a successful combined build.
+
+## Actual author verification update
+
+Historical source-only wording is superseded for author compilation. Lookup
+and Prefix were independently accepted before the fresh runner was prepared.
+Author session43352 completed main and Checks actual EXIT0. Thirteen profiles
+contain foundational axioms only: scan_wire_length and countOver_wire_length
+use propext/Quot.sound; the other eleven use propext/Classical.choice/Quot.sound.
+Five examples and three signatures compiled. Main has two deprecated-if
+warnings; Checks is clean. Compiler was released at actual terminal success.
+
+Earlier sessions75367 and68780 exited1. The errors were implicit FP composition
+conversion hitting default200k heartbeats and a Fin-value inequality bridge.
+Repairs unfold sameOwnerMark/ordinalScan at the FP goals, give intermediate
+FP functions explicit types, normalize Function.comp_def before applying
+composition, and prove the value inequality with Fin.ext. The successful
+source uses default heartbeats. No executable definition, theorem target,
+wire format or canonical-ordinal premise was changed. Checks is unchanged.
+All four attempts [1,1,0,0], plans, raw logs, metadata and source snapshots
+are preserved. No source edit followed the successful run.
+
+Final compiled main SHA256:
+81eaec6d57e29ab0118e866ae92adc64cce5fe8212d10583a77a4809d75410ee.
+Checks SHA256:
+fca991e39a87fcd06929df74cc857956753e5bd63ee1305d81a8b71824e7f18c.
+Draft freeze008ce03 is identified separately from repaired successful bytes;
+the final repaired Git freeze is still pending at this receipt update.
+
+Fresh .lake/build/actual-occurrence-scan-author-20260913 reused2625 artifacts
+directly from original accepted Lookup/Prefix dependency locations and their
+independent main exports. Duplicate paths required identical hashes. All
+originals/copies/receipts, six current direct package records,178 Materialize
+source records and eleven package pins were verified before/after. Current
+package identities do not establish missing historical per-export identity.
+One thread,768MiB preflight/640MiB owned-child stop; no guard fired, broad build
+or package download occurred. Runner identity stayed unchanged across attempts;
+pregrant and changed preparation records are separately preserved.
+
+Portable raw packet:
+.lake/build/actual-occurrence-scan-author-20260913/author-verification.json,
+SHA256 f0a7192fca19e05c1fca646a08f8fc9a18b629940958727d41dab6b5b61ca1db.
+Text embeddings decode actual UTF-8 bytes without newline normalization.
+The prefreeze packet has final_source_freeze=null explicitly; it must be
+linked separately to the final commit, not treated as a completed freeze pin.
+Independent exports and three-lens acceptance remain required. Compact-label
+normalization/table-producer FP, full reduction/source hardness and final
+theorem/paper certification remain open.

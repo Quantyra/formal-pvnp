@@ -19,17 +19,25 @@ def ordinalScan (z : List Bool) : List Bool :=
   countOver sameOwnerMark (pair (pairSnd z) z)
 
 theorem sameOwnerMark_mem_FP : Membership.mem FP sameOwnerMark := by
+  unfold sameOwnerMark
   have hf : Membership.mem FP (fun w : List Bool => pairFst w) := Cobham.fstBlock_mem_FP
   have hs : Membership.mem FP (fun w : List Bool => pairSnd w) := Cobham.sndBlock_mem_FP
   have hff : Membership.mem FP (fun w : List Bool => pairFst (pairFst w)) :=
-    mem_FP_comp hf hf
-  have hi := Cobham.pairFn_mem_FP hff hs
-  exact ifEqLen_mem_FP (mem_FP_comp hi ownerLookup_mem_FP)
-    (mem_FP_comp hf ownerLookup_mem_FP) (constFn_mem_FP [true]) (constFn_mem_FP [])
+    by simpa only [Function.comp_def] using (mem_FP_comp hf hf)
+  have hi : Membership.mem FP (fun w : List Bool => pair (pairFst (pairFst w)) (pairSnd w)) :=
+    Cobham.pairFn_mem_FP hff hs
+  have ha : Membership.mem FP (fun w : List Bool =>
+      ownerLookup (pair (pairFst (pairFst w)) (pairSnd w))) :=
+    by simpa only [Function.comp_def] using (mem_FP_comp hi ownerLookup_mem_FP)
+  have hb : Membership.mem FP (fun w : List Bool => ownerLookup (pairFst w)) :=
+    by simpa only [Function.comp_def] using (mem_FP_comp hf ownerLookup_mem_FP)
+  exact ifEqLen_mem_FP ha hb (constFn_mem_FP [true]) (constFn_mem_FP [])
 
 theorem ordinalScan_mem_FP : Membership.mem FP ordinalScan := by
+  unfold ordinalScan
   have harg := Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP id_mem_FP
-  exact mem_FP_comp harg (countOver_mem_FP sameOwnerMark_mem_FP)
+  simpa only [Function.comp_def, id_eq] using
+    (mem_FP_comp harg (countOver_mem_FP sameOwnerMark_mem_FP))
 
 theorem ownerLookup_rank {N m : Nat} (I : Instance N m) (o : Slot m) :
     ownerLookup (lookupInput (serializedSource I) (rank o)) =
@@ -50,7 +58,9 @@ theorem sameOwnerMark_correct {N m : Nat} (I : Instance N m) (o a : Slot m) :
     simp [h]
   · rw [if_neg h]
     apply ifEqLen_neg
-    simpa only [List.length_replicate, Fin.val_inj] using h
+    simp only [List.length_replicate]
+    intro he
+    exact h (Fin.ext he)
 
 theorem sameOwnerMark_length {N m : Nat} (I : Instance N m) (o a : Slot m) :
     (sameOwnerMark (pair (lookupInput (serializedSource I) (rank o))
