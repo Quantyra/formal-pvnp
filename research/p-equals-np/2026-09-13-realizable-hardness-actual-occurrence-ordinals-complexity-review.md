@@ -1,0 +1,17 @@
+# ActualOccurrenceOrdinals complexity review
+
+2026-09-13. S3131/S3132/S3137. Reviewer `/root/counts_complexity_nonclaims_review` is independent of Ordinals and Allocation authors. Prior related authorship: CloudSoundness, OccurrenceSoundness and Regularization. Those are not imported by this pair. Complexity and nonclaims are separate passes by this same reviewer, not two reviewers; proof/build is separately owned. No compiler or Git grant used.
+
+Full main/Checks and dated receipt were read, along with the previously inspected Allocation ordinal construction, actual mathlib Nodup.getEquiv inverse, and current S3131 status. Frozen commit d3d21e6df2d427e754b4a8194658c6da3c08c32a matches current raw bytes. Main SHA256 c46ac18ebea1dc5a7fc94ddb30fa674321f5d387c59db699c9f3425968743f55; Checks663c3a0a72f1aa80c56889af7fb6f0972da96c91c2f19c0a9f1714a29ea92d10. Author packet hash5b313fc113cba1f9506308f64c1ae2be584ee3ed8aca53842300396beb13f591 verified. Its reported green author pair is not an independent build result supplied by this review. Independent acceptance remains a separate gate.
+
+## Verdict: GO-WITH-NOTES
+
+The pair establishes an exact semantic prerequisite for encoded ordinal computation. No blocking quantifier, vacuity or indexing defect was found.
+
+scanBefore stops before the first target and counts retained preceding entries. The takeWhile/countP equality holds for arbitrary lists, including repeated or absent targets. The filtered idxOf equality requires keep(target)=true; this is essential and present. If the target is absent, idxOf is the filtered length and the scan counts all retained entries, consistently. No nodup premise is silently needed for these generic first-occurrence statements.
+
+scanOrdinal uses the actual lexicographic slotList and compares each owner against the query slot's owner. The retained-target premise is reflexive owner equality. The bridge to Instance.ordinal uses the same owner-filtered list: Allocation.ordinal is occurrenceMembership followed by getEquiv.symm, whose actual invFun is idxOf. Thus the final rfl is definitional agreement with the existing canonical construction, not an assumed equivalence or arbitrary substitute order. Allocation's unique slot enumeration makes this the intended occurrence ordinal.
+
+The strict range follows from that canonical Fin ordinal. It is quantified over actual valid Slots; Slot0 is empty, so the theorem does not manufacture a value for an impossible query. Unused owners cannot own a queried slot. The generic non-strict bound scanBefore<=list.length yields scanOrdinal<=3m and bounds the actual unaryAnswer length. Counting equation occurrences preserves repeated source rows; this is not deduplication by row or owner.
+
+The function definitions are directly recursive and do not require an externally supplied ordinal or complexity certificate. This is not an encoded FP proof. The vars argument is a finite function, not yet a decoded input tape with proved lookup cost. Neither 3m nor the size of a unary answer is automatically polynomial in a binary encoding of m. The intended explicit source table must be connected to its own encoding length, and unary variable-label lengths also contribute to that input. Lookup, mixed-radix prefix enumeration, countOver semantic composition, runtime and final serialized constructor remain required. No source hardness, regularization runtime or complete-paper conclusion follows from this pair.
