@@ -41,12 +41,13 @@ def firstFn (z : List Bool) : List Bool :=
     (pair (pairFst z) (ownerLookup z)))
 
 theorem firstFn_mem_FP : Membership.mem FP firstFn := by
+  unfold firstFn
   have hc : Membership.mem FP (fun z : List Bool => tableClock (pairFst z)) := by
     simpa only [Function.comp_def] using
       mem_FP_comp Cobham.fstBlock_mem_FP tableClock_mem_FP
   have hp := Cobham.pairFn_mem_FP Cobham.fstBlock_mem_FP ownerLookup_mem_FP
   have ha := Cobham.pairFn_mem_FP hc hp
-  simpa only [firstFn, Function.comp_def] using
+  simpa only [Function.comp_def] using
     mem_FP_comp ha (findFirst_mem_FP hit_mem_FP)
 
 /-- Rows and columns belong to the normalization source, with repetitions. -/
@@ -72,8 +73,10 @@ theorem flatten_get_row (ts : List BinaryTriple) (r : Nat) (hr : r < ts.length)
     | succ r =>
       have hr' : r < ts.length := by simpa using hr
       have he : 3*(r+1)+i.val = (3*r+i.val)+3 := by omega
-      simpa [he, tripleLabels, List.flatMap_cons, Nat.add_assoc,
-        Nat.add_comm, Nat.add_left_comm] using ih r hr' i
+      change (t.1 :: t.2.1 :: t.2.2 :: ts.flatMap tripleLabels)[3*(r+1)+i.val]? =
+        some (tripleLabel ts[r] i)
+      rw [he]
+      simpa only [List.getElem?_cons_succ] using ih r hr'
 
 theorem ownerLookup_flatten (S : Source) (q : Fin (3*S.1.length)) :
     ownerLookup (lookupInput (table S) q.val) =
@@ -82,10 +85,12 @@ theorem ownerLookup_flatten (S : Source) (q : Fin (3*S.1.length)) :
   have hf := flatten_get_row S.1 (decodeRow S q).val (decodeRow S q).isLt
     (decodeCol S q)
   rw [rank_decode] at hf
+  have hq : q.val < (flatten S).length := by rw [flatten_length]; exact q.isLt
   have hget : (flatten S)[q.val] =
       tripleLabel S.1[(decodeRow S q).val] (decodeCol S q) := by
-    apply Option.some.inj
-    simpa only [flatten, List.getElem?_eq_getElem] using hf
+    change (flatten S)[q.val]? = some _ at hf
+    rw [List.getElem?_eq_getElem hq] at hf
+    exact Option.some.inj hf
   rw [hget, ← rank_decode S q]
   exact ownerLookup_correct S (decodeRow S q) (decodeCol S q)
 
@@ -110,9 +115,12 @@ theorem hit_first (S : Source) (v : Nat) (hv : v ∈ flatten S) :
       (List.replicate (first S v) true)) = [true] := by
   rw [hit_at S v ⟨first S v, first_lt hv⟩]
   have hg := get_first hv
+  have hc : first S v < (flatten S).length := by
+    rw [flatten_length]
+    exact first_lt hv
   have he : (flatten S)[first S v] = v := by
-    apply Option.some.inj
-    simpa only [List.getElem?_eq_getElem] using hg
+    rw [List.getElem?_eq_getElem hc] at hg
+    exact Option.some.inj hg
   simp only [he, if_true]
 
 theorem hit_before_first (S : Source) (v : Nat) (hv : v ∈ flatten S)
