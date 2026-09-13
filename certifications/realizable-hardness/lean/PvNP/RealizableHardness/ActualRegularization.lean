@@ -33,8 +33,8 @@ theorem cloud_variable_card (n : Nat) :
       n * FixedPortCycleFamily.degree + 5 * Fintype.card (ActualGraphEdges.Edge n) := by
   simp only [ActualEqualityCloud.GlobalVar, ActualGraphEdges.Vertex,
     PortCycleReplacement.Port, Fintype.card_sum, Fintype.card_prod, Fintype.card_fin]
-  rw [← FixedPortCycleFamily.degree_eq]
-  ring
+  have hd := FixedPortCycleFamily.degree_eq
+  nlinarith
 
 theorem global_variable_card : Fintype.card I.GlobalVar =
     3 * FixedPortCycleFamily.degree * m + 5 * I.edgeCount := by
