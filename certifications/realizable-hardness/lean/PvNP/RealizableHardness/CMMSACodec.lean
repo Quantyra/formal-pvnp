@@ -1,5 +1,4 @@
 import PvNP.RealizableHardness.Formula
-import Mathlib.Data.List.GetD
 
 /-! Source draft: not compiled. Concrete binary syntax and validated CMMSA semantics.
 No polynomial-time or full reduction theorem is asserted. -/
@@ -47,7 +46,9 @@ theorem parse_encode (t : Tree) (tail : Bits) (fuel : Nat)
           have hq : depth q ≤ fuel := by simp only [depth] at hf; omega
           simp only [encode, List.cons_append, List.append_assoc, parse]
           rw [ihp (encode q ++ tail) fuel hp]
-          simp only [Option.bind_some]
+          change (do
+            let v ← parse fuel (encode q ++ tail)
+            pure (Tree.node p v.1, v.2)) = some (Tree.node p q, tail)
           rw [ihq tail fuel hq]
           rfl
 
@@ -194,6 +195,7 @@ def decode (L : Nat) (bs : Bits) : Option (Instance L) := do
   have hp := Tree.parse_encode i.val [] ((encode i).length + 1)
     (Nat.le_trans (Tree.depth_le_length i.val) (Nat.le_succ _))
   simp only [List.append_nil] at hp
+  change Tree.parse ((encode i).length + 1) (encode i) = some (i.val, []) at hp
   unfold decode
   rw [hp]
   simp [i.property]

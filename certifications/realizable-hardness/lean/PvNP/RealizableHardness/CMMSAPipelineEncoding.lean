@@ -4,8 +4,10 @@ import PvNP.RealizableHardness.CMMSAEncoding
 namespace PvNP.RealizableHardness.CMMSAPipelineEncoding
 open CMMSACodec CMMSAEncoding
 open scoped BigOperators
+set_option backward.isDefEq.respectTransparency false
+set_option maxHeartbeats 1000000
 
-def lengthEquiv {N : Nat} (xs : List Rat) (h : N = xs.length) : Fin N ≃ Fin xs.length where
+def lengthEquiv {α : Type*} {N : Nat} (xs : List α) (h : N = xs.length) : Fin N ≃ Fin xs.length where
   toFun := Fin.cast h
   invFun := Fin.cast h.symm
   left_inv := by intro x; apply Fin.ext; rfl
@@ -24,7 +26,13 @@ theorem indexed_satisfaction {N M : Nat} (w : Fin N → Rat)
     (x : Fin (indexedData w F s).weights.length → Bool) :
     (indexedData w F s).satisfaction x =
       average (fun i => Formula.eval (fun v => x (Fin.cast (by simp [indexedData]) v)) (F i)) := by
-  simp [Data.satisfaction, Data.indexedFormulas, indexedData, average]
+  let fs := (indexedData w F s).formulas
+  let e := lengthEquiv fs (by simp [fs, indexedData] : M = fs.length)
+  have he := e.sum_comp (fun j => if Formula.eval x (fs.get j) then (1 : Rat) else 0)
+  have hd := congrArg (fun z : Rat => z / M) he.symm
+  simpa only [Data.satisfaction, Data.indexedFormulas, indexedData, average,
+    Fintype.card_fin, List.length_ofFn, e, lengthEquiv, fs, Equiv.coe_fn_mk,
+    List.get_ofFn, Fin.val_cast, Formula.eval_rename, Fin.cast_cast, Fin.cast_refl, id_eq] using hd
 
 theorem weight_equiv {V W : Type*} [Fintype V] [Fintype W]
     (e : V ≃ W) (w : V → Rat) (x : W → Bool) :
@@ -39,6 +47,10 @@ noncomputable def flatWeights (a : FiniteRepairRoundingPipeline.Parameters w) : 
 
 noncomputable def outputData (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M → Formula (Fin N)) : Data :=
   indexedData (flatWeights a) (repairedFamily F) (FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a)
+
+@[simp] theorem output_budget (a : FiniteRepairRoundingPipeline.Parameters w)
+    (F : Fin M → Formula (Fin N)) : (outputData a F).budget =
+      FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a := rfl
 
 theorem outputData_valid (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M → Formula (Fin N))
     (hM : 0 < M) (hF : ∀ i, Formula.leaves (F i)+1 ≤ L) : Valid L (outputData a F) := by
@@ -79,16 +91,17 @@ theorem output_cost (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M �
     (outputData a F).cost x =
       weight (FiniteRepairRoundingPipeline.outputWeights a) (fun v => x (coordinates a F v)) := by
   rw [show (outputData a F).cost x = _ from indexed_cost _ _ _ x]
-  simpa [flatWeights, coordinates, lengthEquiv] using
-    weight_equiv finSumFinEquiv (FiniteRepairRoundingPipeline.outputWeights (I := Fin M) a)
-      (fun v => x (Fin.cast (by simp [outputData, indexedData]) v))
+  convert weight_equiv finSumFinEquiv (FiniteRepairRoundingPipeline.outputWeights (I := Fin M) a)
+      (fun v => x (Fin.cast (by simp [outputData, indexedData]) v)) using 1 <;> rfl
 
 theorem output_satisfaction (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M → Formula (Fin N))
     (x : Fin (outputData a F).weights.length → Bool) :
     (outputData a F).satisfaction x =
       average (fun i => Formula.eval (fun v => x (coordinates a F v)) (FiniteRepairRoundingPipeline.outputFormula F i)) := by
   rw [show (outputData a F).satisfaction x = _ from indexed_satisfaction _ _ _ x]
-  simp [repairedFamily, coordinates, lengthEquiv, FiniteRepairRoundingPipeline.outputFormula]
+  simp only [repairedFamily, coordinates, lengthEquiv, Equiv.trans_apply, Equiv.coe_fn_mk,
+    FiniteRepairRoundingPipeline.outputFormula, Formula.eval_rename]
+  rfl
 
 theorem average_one_iff {I : Type*} [Fintype I] [Nonempty I] (f : I → Bool) :
     1 ≤ average f ↔ ∀ i, f i = true := by
@@ -102,7 +115,8 @@ theorem average_one_iff {I : Type*} [Fintype I] [Nonempty I] (f : I → Bool) :
       exact (div_eq_zero_iff.mp hz).resolve_right hc
     have hi : (if !(f i) then (1 : Rat) else 0) ≤
         ∑ j, if !(f j) then (1 : Rat) else 0 :=
-      Finset.single_le_sum (fun j _ => by split <;> norm_num) (Finset.mem_univ i)
+      Finset.single_le_sum (f := fun j => if !(f j) then (1 : Rat) else 0)
+        (fun j _ => by split <;> norm_num) (Finset.mem_univ i)
     rw [hsum] at hi
     cases hf : f i <;> simp_all
   · intro h
@@ -116,16 +130,17 @@ theorem output_yes_iff (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin 
         weight (FiniteRepairRoundingPipeline.outputWeights a) y ≤ FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a ∧
         ∀ i, Formula.eval y (FiniteRepairRoundingPipeline.outputFormula F i) = true := by
   letI : Nonempty (Fin M) := ⟨⟨0,hM⟩⟩
-  simp only [Yes, outputInstance_data]
+  unfold Yes
+  rw [outputInstance_data]
   constructor
   · rintro ⟨x,hx,hf⟩
     refine ⟨fun v => x (coordinates a F v), ?_, ?_⟩
-    · simpa [outputData, indexedData, output_cost] using hx
+    · simpa [output_cost, output_budget] using hx
     · apply (average_one_iff _).mp
       simpa [output_satisfaction] using hf
   · rintro ⟨y,hy,hf⟩
     refine ⟨fun v => y ((coordinates a F).symm v), ?_, ?_⟩
-    · simpa [output_cost, outputData, indexedData] using hy
+    · simpa [output_cost, output_budget] using hy
     · simpa [output_satisfaction] using (average_one_iff _).mpr hf
 
 theorem output_no_iff (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M → Formula (Fin N))
@@ -134,17 +149,18 @@ theorem output_no_iff (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M
       ∀ y : Fin N ⊕ Fin M → Bool,
         weight (FiniteRepairRoundingPipeline.outputWeights a) y ≤ (FiniteRepairRoundingPipeline.gap a : Rat)*FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a →
         average (fun i => Formula.eval y (FiniteRepairRoundingPipeline.outputFormula F i)) < 2*a.gam := by
-  simp only [No, outputInstance_data]
+  unfold No
+  rw [outputInstance_data]
   constructor
   · intro h y hy
     have ht : (outputData a F).satisfaction (fun v => y ((coordinates a F).symm v)) <
-        2*a.gam := h _ (by simpa [output_cost, outputData, indexedData] using hy)
+        2*a.gam := h _ (by simpa [output_cost, output_budget] using hy)
     simpa [output_satisfaction] using ht
   · intro h x hx
     have hb : weight (FiniteRepairRoundingPipeline.outputWeights a)
         (fun v => x (coordinates a F v)) ≤
         (FiniteRepairRoundingPipeline.gap a : Rat)*FiniteRepairRoundingPipeline.outputBudget (I := Fin M) a := by
-      simpa [output_cost, outputData, indexedData] using hx
+      simpa [output_cost, output_budget] using hx
     simpa [output_satisfaction] using h _ hb
 
 theorem yes_preserved (a : FiniteRepairRoundingPipeline.Parameters w) (F : Fin M → Formula (Fin N))
