@@ -135,3 +135,188 @@ SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
 
 EXIT 0
 ```
+
+## Four-module author checkpoint
+
+GrassmannCounting54461 failed on cardinality/cast, natural division orientation/positivity and subtype-map argument inference. Five exact recorded proof-tactic replacements resolved these diagnostics without changing the frame bijection or any theorem statement. Retry19811 main/Checks exited0;21 standard-only selected profiles and all examples passed, including the GF(2)^3 counts of seven lines and seven planes. Incidence and counting pairs are author-green, not independently accepted. TripleRestrictionDimension is next and excluded from this count.
+
+### GrassmannCounting-1789263091501840100.log
+
+SHA256 `45ca140e5f1cb5352e96dc2ea673d15001ae35420e3430532ec0aa41891bdb55`.
+
+```text
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:28:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:60:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.flatten_surjective`:
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:78:2: error: Type mismatch: After simplification, term
+  card_linearIndependent ha
+ has type
+  Nat.card { s // LinearIndependent (ZMod 2) s } = ∏ x, (2 ^ Module.finrank (ZMod 2) V - 2 ^ ↑x)
+but is expected to have type
+  Fintype.card { v // LinearIndependent (ZMod 2) v } = ∏ i, (2 ^ Module.finrank (ZMod 2) V - 2 ^ ↑i)
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:91:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @Eq ℕ (↑(Fintype.card (Grass V a)) * frameProduct a a) (frameProduct (Module.finrank (ZMod 2) V) a)
+but is expected to have type
+  @Eq ℕ (Fintype.card (Grass V a) * frameProduct a a) (frameProduct (Module.finrank (ZMod 2) V) a)
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:105:27: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  frameProduct a a * ?m.33 / frameProduct a a
+in the target expression
+  Fintype.card (Grass V a) = Fintype.card (Grass V a) * frameProduct a a / frameProduct a a
+
+V : Type u_1
+inst✝² : AddCommGroup V
+inst✝¹ : Module (ZMod 2) V
+inst✝ : Finite V
+a : ℕ
+ha : a ≤ Module.finrank (ZMod 2) V
+⊢ Fintype.card (Grass V a) = Fintype.card (Grass V a) * frameProduct a a / frameProduct a a
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:109:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:117:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:118:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:123:50: error: unsolved goals
+n : ℕ
+⊢ frameProduct n n / frameProduct n n = 1
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:124:18: warning: This simp argument is unused:
+  Nat.ne_of_gt (frameProduct_self_pos n)
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [gaussian]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:139:50: error: Application type mismatch: The argument
+  Subtype.val_injective
+has type
+  Function.Injective Subtype.val
+but is expected to have type
+  Function.Injective ⇑?m.124
+in the application
+  Submodule.comap_map_eq_of_injective Subtype.val_injective
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:139:2: error: Type mismatch: After simplification, term
+  hc
+ has type
+  Submodule.comap W.subtype (Submodule.map W.subtype ↑Q) = Submodule.comap W.subtype (Submodule.map W.subtype ↑R)
+but is expected to have type
+  ↑Q = ↑R
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:141:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.include_surjective`:
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+
+EXIT 1
+```
+
+### GrassmannCounting-1789263185678002300.log
+
+SHA256 `ee4973be1bb7b78e76b7acb96e43b295bf17a68a670a66e2709735dd3da6fe9d`.
+
+```text
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:28:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:60:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.flatten_surjective`:
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:111:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:119:18: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:120:18: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:135:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.include_injective`:
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\GrassmannCounting.lean:144:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.GrassmannCounting.include_surjective`:
+  [Finite V]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Finite V] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+
+EXIT 0
+```
+
+### GrassmannCountingChecks-1789263185678002300.log
+
+SHA256 `771ae818450b1468478931a4085bce09153db009609c6854f85f5c7781e5f108`.
+
+```text
+'PvNP.RealizableHardness.GrassmannCounting.span_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.flatten_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.flatten_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.frameEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_frame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_internal_frame' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_grass_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.frameProduct_self_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_grass_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_grass_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_grass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.gaussian_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.gaussian_of_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.gaussian_self' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.include_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.include_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.containedEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.card_contained' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.GrassmannCounting.incidenceCount_of_lt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lean\PvNP\RealizableHardness\GrassmannCountingChecks.lean:50:8: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```

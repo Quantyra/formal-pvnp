@@ -75,8 +75,10 @@ def frameProduct (n a : ℕ) : ℕ := ∏ i : Fin a, (2 ^ n - 2 ^ i.val)
 
 lemma card_frame (ha : a ≤ Module.finrank (ZMod 2) V) :
     Fintype.card (Frame V a) = frameProduct (Module.finrank (ZMod 2) V) a := by
-  simpa [Frame, frameProduct, Nat.card_eq_fintype_card] using
-    (card_linearIndependent (K := ZMod 2) (V := V) ha)
+  have h := card_linearIndependent (K := ZMod 2) (V := V) ha
+  change Nat.card (Frame V a) = _ at h
+  rw [Nat.card_eq_fintype_card] at h
+  simpa [frameProduct] using h
 
 lemma card_internal_frame (Q : Grass V a) :
     Fintype.card (Frame Q.val a) = frameProduct a a := by
@@ -88,7 +90,7 @@ lemma card_grass_mul (ha : a ≤ Module.finrank (ZMod 2) V) :
       frameProduct (Module.finrank (ZMod 2) V) a := by
   have h := Fintype.card_congr (frameEquiv (V := V) (a := a))
   rw [Fintype.card_sigma, card_frame ha] at h
-  simpa only [card_internal_frame, Finset.sum_const, Finset.card_univ, nsmul_eq_mul] using h
+  simpa only [card_internal_frame, Finset.sum_const, Finset.card_univ, nsmul_eq_mul, Nat.cast_id] using h
 
 lemma frameProduct_self_pos (a : ℕ) : 0 < frameProduct a a := by
   apply Finset.prod_pos
@@ -102,7 +104,7 @@ def gaussian (n a : ℕ) : ℕ :=
 lemma card_grass_of_le (ha : a ≤ Module.finrank (ZMod 2) V) :
     Fintype.card (Grass V a) =
       frameProduct (Module.finrank (ZMod 2) V) a / frameProduct a a := by
-  rw [← card_grass_mul ha, Nat.mul_div_right _ (frameProduct_self_pos a)]
+  rw [← card_grass_mul ha, Nat.mul_div_left _ (frameProduct_self_pos a)]
 
 lemma card_grass_of_lt (ha : Module.finrank (ZMod 2) V < a) :
     Fintype.card (Grass V a) = 0 := by
@@ -121,7 +123,8 @@ lemma gaussian_zero (n : ℕ) : gaussian n 0 = 1 := by simp [gaussian, frameProd
 lemma gaussian_of_lt (h : n < a) : gaussian n a = 0 := by
   simp [gaussian, Nat.not_le_of_gt h]
 lemma gaussian_self (n : ℕ) : gaussian n n = 1 := by
-  simp [gaussian, Nat.ne_of_gt (frameProduct_self_pos n)]
+  simp only [gaussian, le_refl, ite_true]
+  exact Nat.div_self (frameProduct_self_pos n)
 
 /-- Subspaces of W are exactly ambient subspaces contained in W. -/
 def includeSubspace (W : Submodule (ZMod 2) V) (Q : Grass W a) :
@@ -136,7 +139,7 @@ lemma include_injective (W : Submodule (ZMod 2) V) :
   have hm : Q.val.map W.subtype = R.val.map W.subtype :=
     congrArg (fun x => x.val.val) h
   have hc := congrArg (fun S => S.comap W.subtype) hm
-  simpa only [Submodule.comap_map_eq_of_injective (Subtype.val_injective)] using hc
+  simpa only [Submodule.comap_map_eq_of_injective (f := W.subtype) W.injective_subtype] using hc
 
 lemma include_surjective (W : Submodule (ZMod 2) V) :
     Function.Surjective (includeSubspace (a := a) W) := by

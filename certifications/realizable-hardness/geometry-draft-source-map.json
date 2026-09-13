@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "PARTIALLY_COMPILED: incidence main/Checks author EXIT0; remaining4 uncompiled; independent reviews pending",
+  "status": "PARTIALLY_COMPILED: incidence and counting main/Checks author EXIT0; dimension pair pending; independent reviews pending",
   "source_count": 6,
   "companion_base_commit": "6d7718919d681f57e28559bd0ee584c450cb2446",
   "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
@@ -77,8 +77,8 @@
       "source_git_lf_sha256": "613fb14a78254b93db01dc31df86f7803c7a51f4655d1523733003118d770d0b",
       "source_status": "Root source-only UNCOMPILED draft; no acceptance",
       "mirror_path": "lean/PvNP/RealizableHardness/GrassmannCounting.lean",
-      "mirror_sha256": "15ef4c6b02040a41da56933a247c93a176958c3ce42ff2ba73b401369b8c2640",
-      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "mirror_sha256": "84d730695a3f4fc2de11f6683f6aef4fe4efc8eaea7cd23c3135d84ee944b887",
+      "companion_verification": "Author19811 main/Checks EXIT0;21 standard-only selected profiles and boundary examples passed; independent geometry reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -94,6 +94,36 @@
           "before": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "after": "/- UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "reason": "Actual first geometry compiler rejected imports after module-doc comment; use ordinary leading status comment. No theorem or import change."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simpa [Frame, frameProduct, Nat.card_eq_fintype_card] using\n    (card_linearIndependent (K := ZMod 2) (V := V) ha)",
+          "after": "  have h := card_linearIndependent (K := ZMod 2) (V := V) ha\n  change Nat.card (Frame V a) = _ at h\n  rw [Nat.card_eq_fintype_card] at h\n  simpa [frameProduct] using h",
+          "reason": "Actual54461 counting diagnostics: explicit Nat.card/Fintype bridge, identity nat cast, corrected multiplication cancellation orientation/positive self division, explicit subtype linear map; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "Finset.card_univ, nsmul_eq_mul] using h",
+          "after": "Finset.card_univ, nsmul_eq_mul, Nat.cast_id] using h",
+          "reason": "Actual54461 counting diagnostics: explicit Nat.card/Fintype bridge, identity nat cast, corrected multiplication cancellation orientation/positive self division, explicit subtype linear map; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "Nat.mul_div_right _ (frameProduct_self_pos a)",
+          "after": "Nat.mul_div_left _ (frameProduct_self_pos a)",
+          "reason": "Actual54461 counting diagnostics: explicit Nat.card/Fintype bridge, identity nat cast, corrected multiplication cancellation orientation/positive self division, explicit subtype linear map; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simp [gaussian, Nat.ne_of_gt (frameProduct_self_pos n)]",
+          "after": "  simp only [gaussian, le_refl, ite_true]\n  exact Nat.div_self (frameProduct_self_pos n)",
+          "reason": "Actual54461 counting diagnostics: explicit Nat.card/Fintype bridge, identity nat cast, corrected multiplication cancellation orientation/positive self division, explicit subtype linear map; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "Submodule.comap_map_eq_of_injective (Subtype.val_injective)",
+          "after": "Submodule.comap_map_eq_of_injective (f := W.subtype) W.injective_subtype",
+          "reason": "Actual54461 counting diagnostics: explicit Nat.card/Fintype bridge, identity nat cast, corrected multiplication cancellation orientation/positive self division, explicit subtype linear map; statements unchanged."
         }
       ]
     },
@@ -106,7 +136,7 @@
       "source_status": "Root source-only UNCOMPILED draft; no acceptance",
       "mirror_path": "lean/PvNP/RealizableHardness/GrassmannCountingChecks.lean",
       "mirror_sha256": "ff505d1a5f0ee537441231418ecdddae70bb2374ae7493c112c99ef2aa391f11",
-      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "companion_verification": "Author19811 main/Checks EXIT0;21 standard-only selected profiles and boundary examples passed; independent geometry reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -182,5 +212,5 @@
       ]
     }
   ],
-  "author_exported_module_count": 2
+  "author_exported_module_count": 4
 }
