@@ -97,8 +97,8 @@ theorem rotationFn_mem_FP : rotationFn ∈ FP := by
 theorem ifEqLen_unary (i k : Nat) (x y : List Bool) :
     ifEqLen (unary i) (unary k) x y = if i = k then x else y := by
   by_cases h : i = k
-  · rw [ifEqLen_pos (by simpa using h), if_pos h]
-  · rw [ifEqLen_neg (by simpa using h), if_neg h]
+  · rw [ifEqLen_pos (by simpa using h), ite_eq_left h]
+  · rw [ifEqLen_neg (by simpa using h), ite_eq_right h]
 
 theorem shiftedOutput_input (offset reverseLabel n v j i : Nat) :
     shiftedOutput offset reverseLabel (input n v j i) =
@@ -172,20 +172,22 @@ theorem rotate_value (j : Fin (FixedPortCycleFamily.predecessor + 1)) :
   · subst j
     simp
   · have hj := Fin.val_lt_last h
-    rw [if_neg h, Nat.mod_eq_of_lt (by omega)]
+    rw [ite_eq_right h, Nat.mod_eq_of_lt (by omega)]
 
 theorem rotate_symm_value (j : Fin (FixedPortCycleFamily.predecessor + 1)) :
     ((finRotate (FixedPortCycleFamily.predecessor + 1)).symm j).val =
       (j.val + (FixedPortCycleFamily.degree - 1)) % FixedPortCycleFamily.degree := by
   let k : Fin (FixedPortCycleFamily.predecessor + 1) :=
     ⟨(j.val + FixedPortCycleFamily.predecessor) % FixedPortCycleFamily.degree,
-      by rw [← FixedPortCycleFamily.degree_eq]; exact Nat.mod_lt _ FixedPortCycleFamily.degree_pos⟩
+      by simpa only [FixedPortCycleFamily.degree_eq] using
+        Nat.mod_lt (j.val + FixedPortCycleFamily.predecessor) FixedPortCycleFamily.degree_pos⟩
   have hk : finRotate (FixedPortCycleFamily.predecessor + 1) k = j := by
     apply Fin.ext
     rw [rotate_value]
     change ((j.val + FixedPortCycleFamily.predecessor) % FixedPortCycleFamily.degree + 1) %
       FixedPortCycleFamily.degree = j.val
-    rw [Nat.mod_add_mod, Nat.add_assoc, ← FixedPortCycleFamily.degree_eq, Nat.add_mod_right]
+    rw [Nat.mod_add_mod, Nat.add_assoc]
+    simp only [← FixedPortCycleFamily.degree_eq, Nat.add_mod_right]
     apply Nat.mod_eq_of_lt
     simpa only [FixedPortCycleFamily.degree_eq] using j.isLt
   have hi : (finRotate (FixedPortCycleFamily.predecessor + 1)).symm j = k := by
@@ -204,11 +206,16 @@ theorem rotationFn_agrees (n : Nat) (v : Fin n)
     simpa only [FixedPortCycleFamily.degree_eq] using j.isLt
   rw [rotationFn_on_input n v.val j.val i.val v.isLt hj]
   fin_cases i
-  · simp only [Fin.val_zero, if_pos rfl, PortCycleReplacement.rotation]
+  · simp only [PortCycleReplacement.rotation]
     rw [external_agrees]
     rfl
-  · simp [PortCycleReplacement.rotation, rotate_value]
-  · simp [PortCycleReplacement.rotation, rotate_symm_value]
+  · change output v.val ((j.val + 1) % FixedPortCycleFamily.degree) 2 =
+      output v.val (finRotate (FixedPortCycleFamily.predecessor + 1) j).val 2
+    rw [rotate_value]
+  · change output v.val ((j.val + (FixedPortCycleFamily.degree - 1)) %
+        FixedPortCycleFamily.degree) 1 =
+      output v.val ((finRotate (FixedPortCycleFamily.predecessor + 1)).symm j).val 1
+    rw [rotate_symm_value]
 
 end
 end PvNP.RealizableHardness.ExecutablePortRotation
