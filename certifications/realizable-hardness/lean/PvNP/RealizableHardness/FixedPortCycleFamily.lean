@@ -85,7 +85,7 @@ theorem cut_expansion (n : Nat) (S : Port n predecessor → Bool) :
 
 theorem boundary_expansion (n : Nat) (S : (graph n).V → Bool) :
     kappa * smallSide S ≤ boundary (graph n) S := by
-  rw [boundary_eq_cut]
+  rw [boundary_eq_cut n S]
   exact cut_expansion n S
 
 /-- The same actual rotation table, still a finite typed list rather than an
