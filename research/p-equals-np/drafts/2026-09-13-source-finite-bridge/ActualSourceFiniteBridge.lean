@@ -19,7 +19,7 @@ theorem normalized_label_lt (S : Source) (r : Fin S.1.length) (i : Fin 3) :
   have h := normalized_label_bound (S := S) (List.getElem_mem r.isLt)
   fin_cases i <;> simp_all [label]
 
-def variable (S : Source) (r : Fin S.1.length) (i : Fin 3) : Fin (3*S.1.length) :=
+def «variable» (S : Source) (r : Fin S.1.length) (i : Fin 3) : Fin (3*S.1.length) :=
   Fin.mk (label (renameTriple S S.1[r.val]) i) (normalized_label_lt S r i)
 
 theorem rhsIndex_lt (S : Source) (h : Valid S) (r : Fin S.1.length) : r.val < S.2.length := by
@@ -31,7 +31,7 @@ theorem rhsIndex_lt (S : Source) (h : Valid S) (r : Fin S.1.length) : r.val < S.
 No source labels are deduplicated within rows. -/
 def instanceOf (S : Source) (h : Valid S) :
     ActualOccurrenceAllocation.Instance (3*S.1.length) S.1.length where
-  vars := variable S
+  vars := «variable» S
   rhs := fun r => rhsValue (S.2[r.val]'(rhsIndex_lt S h r))
 
 theorem instance_variable_value (S : Source) (h : Valid S)
@@ -56,20 +56,20 @@ theorem restrict_extend (S : Source) (b : Fin (3*S.1.length) -> ZMod 2) :
 theorem instance_flags_restrict (S : Source) (h : Valid S) (a : Nat -> ZMod 2) :
     (List.finRange S.1.length).map
       ((instanceOf S h).sourceBadRow (restrictAssignment S a)) =
-      violationFlags (normalize S) a := by
+      violationFlags (ActualSourceNormalization.normalize S) a := by
   have hv : S.1.length = S.2.length := h
   apply List.ext_getElem
-  case hl => simp [violationFlags, normalize, hv]
+  case hl => simp [violationFlags, ActualSourceNormalization.normalize, hv]
   case h =>
     intro i hi hj
     have hir : i < S.1.length := by simpa using hi
     have hiy : i < S.2.length := by omega
-    simp [violationFlags, normalize, ActualOccurrenceAllocation.Instance.sourceBadRow,
-      instanceOf, variable, restrictAssignment, label, rowValue, renameTriple]
+    simp [violationFlags, ActualSourceNormalization.normalize, ActualOccurrenceAllocation.Instance.sourceBadRow,
+      instanceOf, «variable», restrictAssignment, label, rowValue, renameTriple]
 
 theorem instance_violations_restrict (S : Source) (h : Valid S) (a : Nat -> ZMod 2) :
     (instanceOf S h).sourceViolations (restrictAssignment S a) =
-      violations (normalize S) a := by
+      violations (ActualSourceNormalization.normalize S) a := by
   have he := congrArg (fun l : List Bool => l.countP id) (instance_flags_restrict S h a)
   simpa [ActualOccurrenceAllocation.Instance.sourceViolations, violations,
     List.countP_map, Function.comp_def] using he
@@ -125,11 +125,11 @@ theorem sourceTriples_eq_unaryRows (S : Source) (h : Valid S) :
       ActualSourceNormalizedTable.unaryRows S := by
   apply List.ext_getElem
   case hl =>
-    simp [ActualOccurrenceLookup.sourceTriples, ActualSourceNormalizedTable.unaryRows, normalize]
+    simp [ActualOccurrenceLookup.sourceTriples, ActualSourceNormalizedTable.unaryRows, ActualSourceNormalization.normalize]
   case h =>
     intro i hi hj
     simp [ActualOccurrenceLookup.sourceTriples, ActualSourceNormalizedTable.unaryRows,
-      ActualSourceNormalizedTable.unaryTriple, normalize, instanceOf, variable, label]
+      ActualSourceNormalizedTable.unaryTriple, ActualSourceNormalization.normalize, instanceOf, «variable», label]
 
 theorem serializedSource_eq_unaryRows (S : Source) (h : Valid S) :
     ActualOccurrenceLookup.serializedSource (instanceOf S h) =

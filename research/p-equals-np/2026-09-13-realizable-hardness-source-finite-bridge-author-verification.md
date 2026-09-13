@@ -1,0 +1,35 @@
+# ActualSourceFiniteBridge isolated author verification
+
+2026-09-13. S3131/S3132/S3137. AUTHOR BUILD GREEN, independent review pending. This agent did not author the archived bridge but performed its first compilation role, not an independent proof review. The agent authored imported lower Allocation/Counts/Completeness and NormalizedTable components; their separate independent acceptance is explicitly relied on.
+
+## Source scope and repair
+
+Archive freeze `6f78f85cbc60dc57ed9275645e5553ee6556adaf` contains main `31016722ef0e9330d42853976ed43ad2ce93adce666bcee0936d733710b32c0a` and Checks `8c9584966321f323ab42e1821c86fae29869d862d4e5477b48a33ce32f562833` under `research/p-equals-np/drafts/2026-09-13-source-finite-bridge/`. Current archive bytes equal the frozen Git bytes and were not changed. No live Lean source was inserted or modified.
+
+Fresh isolated author root: `certifications/realizable-hardness/.lake/build/actual-source-finite-bridge-author-20260913`. Repaired source is under its `lean/PvNP/RealizableHardness/` directory. Final main SHA256 `08a248f3081cca00a94521a94e7b13e2f84cba2c18689386cadaaf962dd94a3f`; Checks unchanged. Final main differs only by quoting the reserved identifier variable, preserving its canonical declaration name, and fully qualifying intended ActualSourceNormalization.normalize references. Reversing those exact spelling repairs reconstructs the complete original archive bytes. Definitions, public target meanings and assumptions are unchanged. No sorry, admit, native_decide or new axiom declaration occurs in the final source.
+
+The exact archive-to-final patch is retained in the author root as `archive-to-final.patch`, SHA256 `d13149d909591dcb083cf3bed78dc4288d45c1ec94d95f74d8b4d47a7aef6d04`. Source headers retain historical restricted-Allocation/uncompiled wording; the accepted generalized interface and the build record here supersede that earlier status. No header edits were folded into proof repair.
+
+## Actual execution
+
+Noncompiler preparation session9853 failed on a metadata parser field lookup; generalized evidence stores its manifest hash in build results, not its top level. That failure is preserved separately. Corrected preparation session28399 exited0. Root then accepted NormalizedTable independent95364 through verifier85291 and reviewfreeze fcecc12c, before the compiler grant. The initially conditional pregrant plan remains separate from the accepted and authorized attempt plans.
+
+Author session31240 returned actual main1. Reserved-identifier parser recovery and ambiguous normalization references caused the errors. Any generated sorry terms in that failed diagnostic are compiler recovery artifacts, not successful proof evidence or source placeholders. After the spelling/elaboration repair, session64414 returned main0 and Checks0. Actual outcomes [1,0,0], all three raw logs, terminal metadata and three raw source snapshots are preserved. Sixteen profiles use exactly propext, Classical.choice and Quot.sound; five examples and four signatures elaborated. Both successful modules are warning-free. No heartbeat escalation or unchecked indexing was used.
+
+One Lean thread;768MiB physical preflight and640MiB owned-process stop threshold. No guard fired. Lowest physical memory across attempts1087320064 bytes; successful main/Checks minima1165774848/1226280960 bytes. Compiler explicitly released after actual64414 terminal. No independent review or full theorem acceptance is inferred from this author result.
+
+## Original dependencies and portable evidence
+
+Original generalized5164 lower closure and Table95364 original dependency closure were combined with four needed independently rebuilt generalized mains (Allocation, Counts, Completeness, Lookup) and the independent Table main. One old restricted Allocation export from the incoming closure was explicitly excluded. No author Table target or old restricted Allocation output was substituted. There are2632 original exports/copies,2621 duplicate path records with matching hashes,13 distinct receipts,15 current-only package export exceptions,180 source records and11 pinned package HEADs/manifest. All original exports, copies, unique receipts, current exceptions, current and available original source records, normalized pinned Git source identities, final outputs, raw logs/metadata/snapshots and1380 absent fallback paths were rechecked after the build. Historical provenance limits for current-only package exports remain explicit.
+
+Runner SHA256 `212790ea713a052fa1161281a55f68494b6b63e7dada15512e36fb734725e1e9`; initial preparation `b5e1c48b59b6e9690415f85cdbefa54de29eb800c594cb61a62ce7097999f4e1`; original inventory `b43900f476ff4a2663600335d5a5239bf72bb4c3f62ca6be8a983a57e483d385`. Portable `author-verification.json` in the isolated author root has SHA256 `c1b3d0a23fcabdad280a13fed7a91813bbc3529fd1e09056aacd64855cd212b0`,118777761 bytes. It embeds raw UTF8 plans, runner, logs, metadata, snapshots, receipts, source inventory and repair patch; hashes use raw bytes without newline normalization. Its final_source_freeze is null because only the isolated copy was repaired and final preservation/promotion is not granted.
+
+## What is established and what remains
+
+The actual generalized finite Instance has3m available names with every row address supplied by bounded first-occurrence normalization. It preserves exact ordered violation flags and counts in both directions through explicit assignment lift/decoder, including repeated source labels, all three parity summands, empty rows and indexed RHS values. The producer/consumer theorem joins tableFn of the compact source table to the existing ActualOccurrenceLookup.serializedSource of that finite instance.
+
+That serialization join is TABLE ONLY. instance_rhs identifies indexed ZMod2 RHS values, but this pair does not supply the whole finite-source Boolean RHS roundtrip or sourceFn equality to a full finite-source wire. The separately assigned WireBridge must close that exact obligation. Remaining full occurrence/gadget constructor FP, upstream source hardness and complete reduction/paper theorem are also open. No novelty, quantum, PvsNP, publication or final-consolidation claim is made. No compiler, Git, live insertion or public action was performed during packet preparation after compiler release.
+
+## Authorized final archival copy
+
+Root read the exact spelling-only repair and author evidence, then authorized final archival preservation. The final isolated main08a248f3 was copied byte-for-byte into the archived ActualSourceFiniteBridge.lean; archived Checks8c958496 remains unchanged. This paragraph supersedes the earlier archive-unchanged and pending-preservation status while retaining that historical chronology. Original main31016722 remains preserved at6f78f85 and in the failed attempt snapshot. The immutable c1b3d0a2 author packet retains final_source_freeze=null as prefreeze metadata; the actual final archival commit is reported separately. No live source insertion, new compile, independent acceptance or public action is claimed by this copy.
