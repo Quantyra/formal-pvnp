@@ -1,0 +1,667 @@
+{
+  "status": "SOURCE_ONLY_UNCOMPILED",
+  "original_freeze": "e9c5c6aaf69c05856445e9a6aa1a969063b06f29",
+  "original_main_sha256": "ecbeecaad69e6c086662a30cc7a1938da4a724096df3f1926c78fc1ad491d554",
+  "modules": [
+    {
+      "module": "ActualGadgetRowProducerMachine",
+      "source_lines": [
+        14,
+        136
+      ],
+      "exact_original_segment_sha256": "0869441f6bd2ad565199f9c8236cbbb1bc6397e3d77f8b7a892f22941f4cc8d1",
+      "sha256": "2d1336f45e1766ac726cc75c1776c4b70626ff8451d624df5c0b4e3ab75406d3",
+      "imports": [
+        "ActualOccurrenceCode",
+        "ExecutablePortRotation",
+        "ActualSourceNormalizedTable"
+      ],
+      "duplicate_private_compose": false
+    },
+    {
+      "module": "ActualGadgetRowProducerGeometry",
+      "source_lines": [
+        138,
+        235
+      ],
+      "exact_original_segment_sha256": "336dd9b6b1c175d37e0dd34cfa93cbe330877c3dae19aa69c315f3c3b9efb350",
+      "sha256": "2e8888a1e7dc0b3886139c4f4a3268d74b160530cd67cf1a1649119161855160",
+      "imports": [
+        "ActualGadgetRowProducerMachine"
+      ],
+      "duplicate_private_compose": false
+    },
+    {
+      "module": "ActualGadgetRowProducerRows",
+      "source_lines": [
+        237,
+        341
+      ],
+      "exact_original_segment_sha256": "ccd5d0adb3f8bc215908262c33be48fc84ca647ae576a87d186c6099292b15c3",
+      "sha256": "c963d638b1dffb79d2091b1fdc214292bbdbccff3e7b186c8f386bc34b447820",
+      "imports": [
+        "ActualGadgetRowProducerGeometry"
+      ],
+      "duplicate_private_compose": false
+    },
+    {
+      "module": "ActualGadgetRowProducer",
+      "source_lines": [
+        344,
+        374
+      ],
+      "exact_original_segment_sha256": "e3d85561e40aeeb52889a0388de8a4fbfabfdb718c02ee6c82c7db7a27d9d3fe",
+      "sha256": "bcc029a5aa1db1ace6b8c68a6e46eed9fd437354a770d3ce848f9198da2b0796",
+      "imports": [
+        "ActualGadgetRowProducerRows",
+        "ActualOccurrenceCountFP"
+      ],
+      "duplicate_private_compose": true
+    }
+  ],
+  "checks_sha256": "96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5",
+  "checks_byte_identical": true,
+  "comparison_method": "Remove nested Lean block comments and line comments, omit module wrapper/import/open/options/end lines; compare complete declaration text after whitespace normalization. Exact retained line-segment SHA values above additionally preserve original body bytes. No theorem statement or proof-body substitutions.",
+  "public_declarations": [
+    {
+      "name": "D",
+      "kind": "abbrev",
+      "normalized_body_sha256": "9786eee33f1c05507ecd59472d43ee28c09b0941b8a758634a1a9723e2ccfc07",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "u",
+      "kind": "abbrev",
+      "normalized_body_sha256": "67a55e1ca2e8a5c9bd5cab00f536566d325bf15371af746185c365e183ead577",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dp",
+      "kind": "abbrev",
+      "normalized_body_sha256": "51b5c8150e7e31df4a83bac5083bf815e9fa3c14f958baea5967411d7f7264e5",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "context",
+      "kind": "def",
+      "normalized_body_sha256": "81d3255580d260d137548fcb8b3146e42aec6c778091147f54559c5e571e7431",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "ownerWord",
+      "kind": "def",
+      "normalized_body_sha256": "9bad14de84fb9fa39fae7ccce9c0a7e6efac54f922c33098af107bebb4a81fc6",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "sizeWord",
+      "kind": "def",
+      "normalized_body_sha256": "9d0a6a0966952da596ed39ada8fe027eab559d628e2569215e2adeb0d5f77239",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "kWord",
+      "kind": "def",
+      "normalized_body_sha256": "4c9fb434f933e4120847768c16adfa0066d0d449db27f4268d773833768e8606",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "jWord",
+      "kind": "def",
+      "normalized_body_sha256": "526f1ccb29f93ffd1a2810a61ecde2da7f83303945806cbee60cc3c04b77e4c3",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "iWord",
+      "kind": "def",
+      "normalized_body_sha256": "a6d6efdcb9237c8ae9d175956fba7823459046c092825521d1f23280fd68eea2",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseWord",
+      "kind": "def",
+      "normalized_body_sha256": "b7921b38d604e6b7c0da86202ffa62d4431a520a1708e905ce3f7ece13b3f15f",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseK",
+      "kind": "def",
+      "normalized_body_sha256": "ad1670834730796550c50eb6a42106dd4cc0848d9975718c496dd5e126fe4cdc",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseJ",
+      "kind": "def",
+      "normalized_body_sha256": "478c78c5a67fe78adb8c67473eaf30c97385cf2a4554b9f15f33e66d8e6ff0d0",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "sourceRank",
+      "kind": "def",
+      "normalized_body_sha256": "9d756e629cc7b328451ff52e44ade88a19160cea9747e5d65772bcf0afbf1aca",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "targetRank",
+      "kind": "def",
+      "normalized_body_sha256": "4939f12c9db8c4235fb1894b463516fbe7e2c42b48d1f436edab74c11af85b50",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "packVar",
+      "kind": "def",
+      "normalized_body_sha256": "236f6432ce86149b4896466201deb7c46b8cf33fa5ee1e259660c1f6bdbc8e6f",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "packVar_eq",
+      "kind": "theorem",
+      "normalized_body_sha256": "0ee73b50bc89bb7aa960972c2ec02d7c8e9e1f84549900052f79232574f99572",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "portFn",
+      "kind": "def",
+      "normalized_body_sha256": "17d406e1daddd85db7f77b78e56eea046050ec3e13c00de73bc24293a6cf5135",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "internalFn",
+      "kind": "def",
+      "normalized_body_sha256": "dd685676e26ef38c6042d94add6c4f366a6394dfac99dfd4a85c45647c609f13",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "gadgetVarFn",
+      "kind": "def",
+      "normalized_body_sha256": "13837e999f7560816c7509e29c1f9a442ce934942c508d4bf3fdda6875e31dfa",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "packRow",
+      "kind": "def",
+      "normalized_body_sha256": "5b9ac31ef36a84da9dbc0aac85b1f56627002a9f7a206de443b048a8677b2d9d",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "gadgetRowFn",
+      "kind": "def",
+      "normalized_body_sha256": "9c637c0dda4956eac19feae6bd24757d84f21f766f57320810dcd7d0e97d2294",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "fourEntries",
+      "kind": "def",
+      "normalized_body_sha256": "f06182558249747938cf0de3371c2f5f8279586408b3c34bf61af97ede3614b1",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dartRule",
+      "kind": "def",
+      "normalized_body_sha256": "731653aa01d9b211f9ff244cf29e2bd1f1f1d66184f069919e482bad4e39aca2",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dartClock",
+      "kind": "def",
+      "normalized_body_sha256": "6063f71bce7330ea8a6be0c798dfbc8d813672d8e680c8462999565e1cf8319b",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "cloudFn",
+      "kind": "def",
+      "normalized_body_sha256": "5594bd1cee036b895631203f1753615938dbfaa3f4dcd3b41c1b98904945b3fa",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "ownerWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "47af17005850ba00d134cf34e4e521816e64782a13eb42395019419f05c46bd4",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "sizeWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "d88ca72ddb88c6caf240482cf1f1a60e3b08eec92afa2228b5b196cfdaaa5472",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "kWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "7d28cdb4c4eebfd809ceba7af25c423318ecb0e6c58f6682ebd4cf05e8149826",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "jWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "014bdbb96778fa14fa76a347cce5e9240e084b3ed9f03633be9b0979fb4cc4c2",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "iWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "51e709ba75deed6667255358e1836434a6cb74d977d53e9d5784dc9c0d2a7923",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseWord_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "cc53647d87290de9125fcb92e6d0ad48743ca3bc293d4230e97bba0402adc201",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseK_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "bdc60c90a5d2c1665f253a1ffd4ba6113f2d6bad66611b2665ffc4e09419b6d4",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "reverseJ_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "ff40c9640f654b9f9a7cd97001cd00190331825dd5f4be1ca08162ef5dcf9e74",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "sourceRank_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "dfcda339f0e89502ac8406bc1e4a22a6a5c06c969090d7d881a242399fd02152",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "targetRank_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "ce2a222a4b55a331542530b52e420e93a155181ac0a51ee57aeece0560d5020f",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "packVar_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "5a9813afdb43a0d7fe0149432f17253f6b92e6934c3602250460239bd416eba3",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "portFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "35b7c07dad67cab40664c30439f6ca9585db521643c73e9a676b8025f3cc197c",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "internalFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "83d3dd2829b7925b7d4bf2c5d05c492b809ff22a1414066220ce80808ffc0d16",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "gadgetVarFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "ceca9388dc5c89ed92c42811bb0da1ddc7e95d8736fbf78ba1c03318e8c0b830",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "gadgetRowFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "be506ca638b7316384e921e31de0feec82291b7b6a972eec774555cf019782de",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "fourEntries_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "5b1a9dd0753aa4e68138ba1f8e193474463a33dc61b6da806da2f9b7cd0de2e5",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dartRule_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "5aa4d7c90fd52c752c6b7c15414653daf06cead8c7dd147d579c3243cdb9bf20",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dartClock_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "55b527af980534ab18536dab72f98169c89b82edb1149bbacb09be4b889a4d44",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "cloudFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "b8fe74e9d66dd4043a41cc6a4d3610bd87db2f94091ba84d6f94ad4fc24da3e0",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "cloudFn_output_polynomial",
+      "kind": "theorem",
+      "normalized_body_sha256": "cae4ac6225a8e75a04bbe93016b78d345b14434f902446e17fe180754a05bee3",
+      "module": "ActualGadgetRowProducerMachine",
+      "equal": true
+    },
+    {
+      "name": "dartIndex",
+      "kind": "def",
+      "normalized_body_sha256": "1061f59b00f11be4880c1ef908a5dfa8540952617e318547215e68769465803c",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "rank_value",
+      "kind": "theorem",
+      "normalized_body_sha256": "e64cb5eb68c41b63cc94f3e8c27a458f81a35a39b63ab45cf297088281146fd1",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "dartList_index",
+      "kind": "theorem",
+      "normalized_body_sha256": "a2d7e241ec85e1c8201e42ca7cbe12c2fe3fdb19aaa28f9ffea79297a4e7b907",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "words_at_dart",
+      "kind": "theorem",
+      "normalized_body_sha256": "765c5be53b85c7909154bfc90f311cd0c52688f493877df6334555c297a30e11",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "reverse_at_dart",
+      "kind": "theorem",
+      "normalized_body_sha256": "5913b1f6c47709f44d6152372633cdf83539d2847a43e550db7fd2678b738553",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "ranks_at_dart",
+      "kind": "theorem",
+      "normalized_body_sha256": "952d5f6204f845b7ded9ef6a0c2d1d7f4b61e94c9529297a6803ab57e8f8ffaa",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "localCode",
+      "kind": "def",
+      "normalized_body_sha256": "385f3781f2e0973553a2db254c7a4cc064ac6543bdfd71a052c8e602b2f61837",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "localRowCode",
+      "kind": "def",
+      "normalized_body_sha256": "179969e629c6904d69d515cb18859ceb1f22057f0b7bfea0654902f22d482338",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "dartVars",
+      "kind": "def",
+      "normalized_body_sha256": "115364a159b9a1737718d2ca94339a3866d6a95b9fd641244ef91062a0a40d54",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "dartRow",
+      "kind": "def",
+      "normalized_body_sha256": "43da07009d5187a1c1952b935649a8b427f444699c7e83461237e5e7681ca1a3",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "dartRows",
+      "kind": "def",
+      "normalized_body_sha256": "5b576d508d13f37f3694a2243c86a49d90b4299c3a3aa804d1d3f94da98076a5",
+      "module": "ActualGadgetRowProducerGeometry",
+      "equal": true
+    },
+    {
+      "name": "gadgetVarFn_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "0684f8a5b47f7cb0593d401f10c87e067bceb6fc1dcb62132d82fbde1b5ade54",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "gadgetRowFn_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "1ed0de1bdf034c5ee485cc50b605bd7c624afc25cef6a209b132e1a66751c5e6",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "fourEntries_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "582bf29065db9d8fc30f09ff31ee486fae203dcce3959ef4b3eded14bbe1c121",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "dartRule_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "38df3885d62846e5e1a631b2c3ae530393a689f0ce986ab7f16d5f359367ce33",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "dartVars_embed",
+      "kind": "theorem",
+      "normalized_body_sha256": "90b8fd6ee7237f9458c9792c3971eeaa1d231bfdfa44cd6779ae1c27568c8672",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "dartRows_localRows",
+      "kind": "theorem",
+      "normalized_body_sha256": "395986290d14c3cf975be832d3012f8a91fc44e5360a0ee4a6daf3d5d10d2913",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "representative_entries",
+      "kind": "theorem",
+      "normalized_body_sha256": "2388e13b751ea03cd9cc88eb2242f41443d9bd56533c4b2c2a622208a1168a5c",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "entryCat_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "b1c33f6c050baa41ac85d96097359220360793d7763032afea166aa065e1fad2",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "dartClock_context",
+      "kind": "theorem",
+      "normalized_body_sha256": "ace7d7bffd758484c137e4bf6bff5ab67b9b43a9643115450ddfea53e742f92c",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "cloudFn_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "407fafb911d03ee934530d0d13aff5043ee8b9a870b111d48b1f525d91066215",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "cloudFn_empty",
+      "kind": "theorem",
+      "normalized_body_sha256": "c490c84c9121584c8229f20734a8d0aa9544f9a9c5e1dbc116fc3d2b04f5cf3b",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "localCode_tag",
+      "kind": "theorem",
+      "normalized_body_sha256": "40182e95ecc2445b4ccc47950f5ab6edc42241c6c7a5e115bbf3b1c6470810dc",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "localRowCode_tag",
+      "kind": "theorem",
+      "normalized_body_sha256": "1684428c5bb96055b19c973df64bb2d5351dcf0b3862639edaf75f200e46d8f6",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "cloudFn_instance",
+      "kind": "theorem",
+      "normalized_body_sha256": "037f787cba0d8368d5c76d957ffba7944ee2f00c26f359402c838d371ba45fe2",
+      "module": "ActualGadgetRowProducerRows",
+      "equal": true
+    },
+    {
+      "name": "ownerCloudFn",
+      "kind": "def",
+      "normalized_body_sha256": "ec23e3d8743cd9311102a278fe3050af16ca8a5b81906f5d57e6075b82a4702f",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "ownerCloudFn_mem_FP",
+      "kind": "theorem",
+      "normalized_body_sha256": "9ccf4ebb82bc11c929c51fde7aedb9a7d123e8e429e85e10172752b1de4b809d",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "ownerCloudFn_correct",
+      "kind": "theorem",
+      "normalized_body_sha256": "6199203548fb8a2626694ea67ce0db61737e0935b2a3e3acd06779789b90bb2f",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "ownerCloudFn_output_polynomial",
+      "kind": "theorem",
+      "normalized_body_sha256": "64b66a78ed910c6245fb4c609630db554fa6d4482e718f74dcea623c612c7e40",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "context_length",
+      "kind": "theorem",
+      "normalized_body_sha256": "3a3e259f4d83a9b999c80b90f79df3c36d74ad44ba4caa1fbad99b9c658e2c93",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "dartClock_length",
+      "kind": "theorem",
+      "normalized_body_sha256": "40abeadb201d13b7f101666f6ccfc0eca7ff3278bfb244465a64accaedf812f9",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "loop_input_length",
+      "kind": "theorem",
+      "normalized_body_sha256": "972cbeeb1e15fde9a3b52b9cb4db15ad09e9a3cb541284f37df210533b1df0cd",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    },
+    {
+      "name": "dartRows_length",
+      "kind": "theorem",
+      "normalized_body_sha256": "03b854dc50ce66edfcacc29029aeb150c28bd92c3de4de4241e2fe158ebc06b3",
+      "module": "ActualGadgetRowProducer",
+      "equal": true
+    }
+  ],
+  "private_declarations": [
+    {
+      "name": "compose",
+      "module": "ActualGadgetRowProducerMachine",
+      "normalized_body_sha256": "0dcc3e9580cb384b337c91b271d83a4c8e892a022672bc7a1411f272a20e88ae",
+      "equal_to_original": true
+    },
+    {
+      "name": "finRange_map_value",
+      "module": "ActualGadgetRowProducerGeometry",
+      "normalized_body_sha256": "673ab4d453b6e61260e8a78838574f94d2a523c492eb7c0fd9bfb1a7b2ab0cb4",
+      "equal_to_original": true
+    },
+    {
+      "name": "finRange_flatMap_value",
+      "module": "ActualGadgetRowProducerGeometry",
+      "normalized_body_sha256": "859e780f5cd32f95fb2959c31cacc2bec6ab9123cae70fec5354118bec017ae8",
+      "equal_to_original": true
+    },
+    {
+      "name": "range_mul_map",
+      "module": "ActualGadgetRowProducerGeometry",
+      "normalized_body_sha256": "948d763bb564aab99ef1b3a589ff420099bde6bf7225330237d3975664448952",
+      "equal_to_original": true
+    },
+    {
+      "name": "range_mul_flatMap",
+      "module": "ActualGadgetRowProducerGeometry",
+      "normalized_body_sha256": "20029dd49f02d61d48197d4b8ea4980c9567b00b3721e685db6d0bc91b32a0c9",
+      "equal_to_original": true
+    },
+    {
+      "name": "filter_flatMap",
+      "module": "ActualGadgetRowProducerRows",
+      "normalized_body_sha256": "261ab60fc21b52bd62d123088b64dc9f99007cabb81e32510bc32f0820741b6d",
+      "equal_to_original": true
+    },
+    {
+      "name": "encode_list",
+      "module": "ActualGadgetRowProducerRows",
+      "normalized_body_sha256": "febdeb82068280a165a750fb8162701ba646cc303fc4eb4fe96b4f30dc61abc4",
+      "equal_to_original": true
+    },
+    {
+      "name": "compose",
+      "module": "ActualGadgetRowProducer",
+      "normalized_body_sha256": "0dcc3e9580cb384b337c91b271d83a4c8e892a022672bc7a1411f272a20e88ae",
+      "equal_to_original": true
+    }
+  ],
+  "public_count": 78,
+  "private_original_count": 7,
+  "private_split_count": 8,
+  "compiler_launched": false
+}

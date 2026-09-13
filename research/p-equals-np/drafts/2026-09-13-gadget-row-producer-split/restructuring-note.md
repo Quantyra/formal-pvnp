@@ -1,0 +1,26 @@
+# GadgetRowProducer source-only module split - 2026-09-13
+
+S3137. UNCOMPILED packaging experiment, not mathematical acceptance. The original e9c5c6aaf69c05856445e9a6aa1a969063b06f29 archive, original author runner cff3dc6b and guard-stop attempt51976 remain unchanged. This new archival directory has four layers and the byte-identical original Checks. No compiler or Git operation was performed for this split.
+
+| Sequential module | Original lines | Role |
+|---|---|---|
+| ActualGadgetRowProducerMachine | 14-136 | Raw functions and their FP proofs |
+| ActualGadgetRowProducerGeometry | 138-235 | Actual ordered dart enumeration, arithmetic, rotation and local code definitions |
+| ActualGadgetRowProducerRows | 237-341 | Row encoding, representative filtering, exact accumulation and instance tag bridge |
+| ActualGadgetRowProducer | 344-374 | CountFP owner adapter and size lemmas; existing aggregate import path |
+
+Every module retains namespace PvNP.RealizableHardness.ActualGadgetRowProducer and the original open declarations, autoImplicit=false and noncomputable section. Public functions, theorem statements, assumptions and proof bodies are unchanged. Later consumers still import ActualGadgetRowProducer. Each retained source range is copied verbatim. Seven original private declarations remain with their users; private compose is additionally copied into the final module because ownerCloudFn_mem_FP uses it. The two compose declarations have module-local private identities and identical bodies. No public helper or new axiom was introduced.
+
+The machine layer imports accepted Code, ExecutablePortRotation and NormalizedTable; CountFP is deferred to the final adapter. Geometry imports Machine; Rows imports Geometry; final imports Rows plus CountFP. This is an acyclic import chain. The original Checks bytes remain SHA256 96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5: its 31 profile requests, nine examples and four signatures are scripts, not new observed outcomes.
+
+The companion declaration-equivalence.json records all 78 public declaration bodies and eight resulting private declarations (seven original, compose duplicated), retained-range raw hashes, module hashes and ownership. It compares complete declarations after comment removal and whitespace normalization, separately recording the import/wrapper/private differences. All 78 public comparisons passed. This textual inventory is not a Lean build or elaboration proof. Private declaration mangling and generated metadata may change with module placement; public declaration names and source-level statements do not.
+
+## Memory rationale and limits
+
+Each layer will elaborate in a fresh sequential Lean process, importing prior checked exports. This can release parser/elaborator/tactic state accumulated during earlier source sections instead of retaining the entire 377-line source compilation in one process. The main proof blocks become 123, 98, 105 and 31 original lines, rather than one whole module. Geometry and Rows contain the Fin case splits, large simp reductions and enumeration/flatten proofs; they are isolated from the initial FP elaboration. No timing evidence locates the prior stop at a specific declaration, so no specific tactic is blamed.
+
+Existing analogues compiled successfully: Rotation (221 source lines), Code (258), CountFP (143) and Table (192), but line counts are not memory bounds. The four direct accepted import .olean sizes in the original prepared root are Code458416 bytes, CountFP168600, Rotation323880 and Table289720; these file sizes are not loaded-memory measurements or full transitive import sizes. Removing CountFP from early imports alone is unlikely to explain a large saving. Code transitively imports Regularization and Table imports FirstOccurrence/CompactLookup; this split does not rewrite accepted dependency modules or eliminate that common import environment.
+
+Attempt51976 had no diagnostic output or progress markers. The log filename timestamp and metadata filesystem write time span approximately419.6 seconds, an approximate artifact-time interval rather than recorded process duration or proof-stage timing. Available physical memory fell from2681298944 to661848064 bytes and the unchanged640MiB guard stopped it. This is machine-wide memory, not Lean RSS. The full remaining peak is unknown. If the common import environment or one individual declaration dominates memory, splitting may not help. Fresh processes add import/startup cost and three intermediate artifacts requiring explicit provenance and review.
+
+The old unsplit retry runner and its3.5GiB start threshold remain intact. Root has proposed a distinct2GiB start threshold for a future split experiment, retaining the640MiB stop and one thread; that is an experimental scheduling choice, not a proven sufficiency guarantee or a compiler grant. New runner preparation and independent split review are required before launch. Preserve failed evidence and successful unchanged layer exports for exact resumption. No user application shutdown, system-setting change, guard relaxation, source assumption change, reduced theorem target or heartbeat escalation is part of this plan.
