@@ -47,3 +47,35 @@ elaboration has not been tested and generic/specialized BEq and list dependent
 index normalization remain possible elaboration issues. No sorry, admit,
 native_decide or new axiom is present. Full encoded constructor FP, upstream
 source hardness and final proof/paper consolidation remain separate obligations.
+
+## Author verification update
+
+Draft freeze: 6f0d28d7f6939b24402db1add2bc3a409a2cf997. Original session16870
+was polled until actual exit1, not restarted because a process observation
+was absent. Session89393 exited1. Session77621 completed actual main/Checks
+pair exit0. Raw logs, metadata and exact source snapshots preserve all four
+attempts [1,1,0,0]. No memory guard fired or source changed during an attempt.
+
+Repairs made projection arithmetic explicit, supplied flatMap helper arguments,
+and let private generic list helpers use the target lawful BEq instances.
+The reserved identifier prefix is now escaped in Lean source; the declaration
+name and definition are unchanged. Checks received only that spelling repair.
+An extra implicit Nodup.take argument and linter suggestions were corrected.
+All exact ordered-list/count statements are unchanged, not weakened to
+membership or a numeric cardinality claim. Final main/Checks logs are clean:
+fourteen profiles, four examples, three signatures. Axioms are subsets of
+propext, Classical.choice and Quot.sound; no nonstandard proof primitive.
+
+309 original accepted artifacts, copies and acceptance-receipt hashes were
+rechecked after execution; duplicate receipts were hashed once while every
+artifact was verified. Six current direct package artifacts, eleven pins and
+manifest were also rechecked. This does not certify historical package bytes.
+One thread, 768MiB preflight and 640MiB owned-child stop; minimum available RAM
+1695035392 bytes. Compiler released.
+
+Portable raw packet: certifications/realizable-hardness/.lake/build/actual-occurrence-prefix-author-20260913/author-verification.json
+SHA256 6504816556165fa6e88748bdf30a7c2d6d5accc6210db40bc78e8c2ddd48229f. All embedded text is raw bytes decoded UTF-8, no
+newline normalization. Pregrant preparation is preserved separately. This is
+author verification only; independent acceptance and final repair freeze are
+pending. The same-function encoded scanner FP and wire accounting, full
+constructor, upstream hardness and final paper proof remain separate joins.
