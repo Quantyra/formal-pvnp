@@ -706,12 +706,36 @@
       "source_git_lf_sha256": "7060942e670044628284b864dca10d42c49fbc6fae3dc4bf1532a29a448ef863",
       "source_working_sha256": "7060942e670044628284b864dca10d42c49fbc6fae3dc4bf1532a29a448ef863",
       "mirror_path": "lean/PvNP/RealizableHardness/WeightRounding.lean",
-      "mirror_sha256": "7060942e670044628284b864dca10d42c49fbc6fae3dc4bf1532a29a448ef863",
+      "mirror_sha256": "f99379cadbffe016a48b20b52d91777c09c42b900ea3f526862bee36e6cbf357",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main89265 and Checks84250 exit0 with25 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "div_le_div_right hAq",
+          "after": "div_le_div_iff_of_pos_right hAq",
+          "reason": "Actual62306 WeightRounding diagnostics: pinned4.34 division/clog iff API and field_simp closes former trailing-ring goals; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : \u2115))).mp hj'",
+          "after": "Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : \u2115))).mpr hj'",
+          "reason": "Actual62306 WeightRounding diagnostics: pinned4.34 division/clog iff API and field_simp closes former trailing-ring goals; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "    unfold roundedWeights\n    push_cast\n    field_simp\n    ring",
+          "after": "    unfold roundedWeights\n    push_cast\n    field_simp",
+          "reason": "Actual62306 WeightRounding diagnostics: pinned4.34 division/clog iff API and field_simp closes former trailing-ring goals; statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  \u00b7 unfold roundedBudget\n    push_cast\n    field_simp\n    ring",
+          "after": "  \u00b7 unfold roundedBudget\n    push_cast\n    field_simp",
+          "reason": "Actual62306 WeightRounding diagnostics: pinned4.34 division/clog iff API and field_simp closes former trailing-ring goals; statements unchanged."
         }
       ]
     },
@@ -721,17 +745,35 @@
       "source_git_lf_sha256": "f2a41e3853d98d13084f0d23c5ff9b052d0167235b23702d019eb76939639f82",
       "source_working_sha256": "f2a41e3853d98d13084f0d23c5ff9b052d0167235b23702d019eb76939639f82",
       "mirror_path": "lean/PvNP/RealizableHardness/WeightRoundingChecks.lean",
-      "mirror_sha256": "f2a41e3853d98d13084f0d23c5ff9b052d0167235b23702d019eb76939639f82",
+      "mirror_sha256": "9e63050f4813401ff857c98188401d98bd18aec3f2c1e6a4b223a45b56f70260",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main89265 and Checks84250 exit0 with25 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  norm_num [dyadicScale, Nat.clog]",
+          "after": "  have hu : Nat.clog 2 256 <= 8 := (Nat.clog_le_iff_le_pow (by decide)).mpr (by decide)\n  have hl : 7 < Nat.clog 2 256 := (Nat.lt_clog_iff_pow_lt (by decide)).mpr (by decide)\n  have hc : Nat.clog 2 256 = 8 := by omega\n  norm_num [dyadicScale, hc]",
+          "reason": "Actual98568 concrete example failures: replace implementation-unfolding of clog with adjunction bounds; retain Bool case equation while simplifying hx/goal. Statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "    coordinate, average, h] at *",
+          "after": "    coordinate, average, h] at hx \u22a2",
+          "reason": "Actual98568 concrete example failures: replace implementation-unfolding of clog with adjunction bounds; retain Bool case equation while simplifying hx/goal. Statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  cases h : x ()\n  all_goals norm_num [weight, roundedWeights, roundedBudget, budgetNumerator, denominator,\n    coordinate, average, h] at hx \u22a2",
+          "after": "  cases h : x () with\n  | false => norm_num [average, h]\n  | true =>\n    norm_num [weight, roundedWeights, roundedBudget, budgetNumerator, denominator,\n      coordinate, h] at hx",
+          "reason": "Actual86337 no-goals failure from simultaneous norm_num at contradictory hypothesis and goal; explicit Bool branches retain exact example and derive true-case contradiction in hx only."
         }
       ]
     }
   ],
   "initial_source_commit": "4aff259c9da28f558be716c40d9acb9b72e2fc0e",
   "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline.",
-  "author_exported_module_count": 9
+  "author_exported_module_count": 11
 }

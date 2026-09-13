@@ -20,7 +20,10 @@ theorem fractional_denominator_example :
   norm_num [h43, h86]
 
 theorem dyadic_scale_example : dyadicScale 1 (1 / 16) = 256 := by
-  norm_num [dyadicScale, Nat.clog]
+  have hu : Nat.clog 2 256 <= 8 := (Nat.clog_le_iff_le_pow (by decide)).mpr (by decide)
+  have hl : 7 < Nat.clog 2 256 := (Nat.lt_clog_iff_pow_lt (by decide)).mpr (by decide)
+  have hc : Nat.clog 2 256 = 8 := by omega
+  norm_num [dyadicScale, hc]
 
 theorem clipped_budget_example :
     denominator (fun _ : Unit => (1 : ℚ)) 16 = 16 ∧
@@ -42,9 +45,11 @@ theorem rounded_no_example :
         ((5 / 2 : ℕ) : ℚ) * roundedBudget (fun _ : Unit => (1 : ℚ)) 256 (1 / 16) →
       average (fun _ : Unit => x ()) < 1 / 4 := by
   intro x hx
-  cases h : x ()
-  all_goals norm_num [weight, roundedWeights, roundedBudget, budgetNumerator, denominator,
-    coordinate, average, h] at *
+  cases h : x () with
+  | false => norm_num [average, h]
+  | true =>
+    norm_num [weight, roundedWeights, roundedBudget, budgetNumerator, denominator,
+      coordinate, h] at hx
 
 #print axioms coordinate_lower
 #print axioms coordinate_upper

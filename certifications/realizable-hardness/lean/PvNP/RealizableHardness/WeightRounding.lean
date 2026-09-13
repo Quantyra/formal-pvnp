@@ -165,7 +165,7 @@ theorem rounding_budget_transfer {V : Type*} [Fintype V]
     have hx' : weight (fun v => (coordinate w D v : ℚ)) x / denominator w D ≤
         (k * budgetNumerator w D t) / denominator w D := by
       simpa only [mul_div_assoc] using hx
-    exact (div_le_div_right hAq).mp hx'
+    exact (div_le_div_iff_of_pos_right hAq).mp hx'
   have hlo := raw_weight_lower w D x
   have hDq : (0 : ℚ) < D := by exact_mod_cast hD
   have hold : weight w x ≤ k * ((budgetNumerator w D t : ℚ) / D) := by
@@ -209,7 +209,7 @@ theorem dyadicScale_least (N : ℕ) (t : ℚ) (j : ℕ)
     (hj : 8 * ((N : ℚ) + 1) / t ≤ ((2 ^ j : ℕ) : ℚ)) :
     dyadicScale N t ≤ 2 ^ j := by
   have hj' : ⌈8 * ((N : ℚ) + 1) / t⌉₊ ≤ 2 ^ j := Nat.ceil_le.mpr hj
-  have he := (Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : ℕ))).mp hj'
+  have he := (Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : ℕ))).mpr hj'
   exact Nat.pow_le_pow_right (by norm_num) he
 
 theorem dyadicScale_upper (N : ℕ) (t : ℚ) (ht : 0 < t) (ht1 : t ≤ 1) :
@@ -264,11 +264,9 @@ theorem integral_lengths {V : Type*} [Fintype V] (w : V → ℚ) (D : ℕ) (t : 
     unfold roundedWeights
     push_cast
     field_simp
-    ring
   · unfold roundedBudget
     push_cast
     field_simp
-    ring
 
 /-- The exact dyadic construction has an explicit numeric common-denominator bound. -/
 theorem dyadic_denominator_bound {V : Type*} [Fintype V] (w : V → ℚ) (t : ℚ)

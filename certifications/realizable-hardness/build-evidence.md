@@ -490,3 +490,241 @@ SHA256 `c6bbaa2d7676c26ad1f3bfb6af50ea6adcdebae7f4ede12c9b879d6643915131`.
 
 EXIT 0
 ```
+
+## Fourth author checkpoint: eleven of 33 modules
+
+WeightRounding main89265 returned exit0 after two API renames and removal
+of two trailing ring calls after field_simp had closed the goals. Deprecated
+if_false and unused-simp warnings remain unsuppressed. Checks98568 failed
+on two concrete examples;86337 fixed the dyadic example but the simultaneous
+hypothesis/goal simplification still failed. Checks84250 uses explicit Bool
+branches and returned actual exit0 with25 standard-only profiles, including
+all nonvacuous examples. No theorem statement or numerical target changed.
+Independent companion port reviews remain pending.
+
+WeightRounding SHA256 `f99379cadbffe016a48b20b52d91777c09c42b900ea3f526862bee36e6cbf357`.
+
+WeightRoundingChecks SHA256 `9e63050f4813401ff857c98188401d98bd18aec3f2c1e6a4b223a45b56f70260`.
+
+### Exact saved output: WeightRounding-1789259862412666900.log
+
+SHA256 `b563e0c75f82bbd92691a2f493f5fdcefd46de9c3af5b76fcdaaeea1bd46e49d`.
+
+```text
+lean\PvNP\RealizableHardness\WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean\PvNP\RealizableHardness\WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean\PvNP\RealizableHardness\WeightRounding.lean:47:32: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.false_eq_true, if_false, mul_zero, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\WeightRounding.lean:61:14: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\WeightRounding.lean:168:11: error(lean.unknownIdentifier): Unknown identifier `div_le_div_right`
+lean\PvNP\RealizableHardness\WeightRounding.lean:212:14: error(lean.unknownIdentifier): Unknown constant `Nat.le_pow_iff_clog_le`
+lean\PvNP\RealizableHardness\WeightRounding.lean:210:31: error: unsolved goals
+N : ℕ
+t : ℚ
+j : ℕ
+hj : 8 * (↑N + 1) / t ≤ ↑(2 ^ j)
+hj' : ⌈8 * (↑N + 1) / t⌉₊ ≤ 2 ^ j
+⊢ dyadicScale N t ≤ 2 ^ j
+lean\PvNP\RealizableHardness\WeightRounding.lean:267:4: error: No goals to be solved
+lean\PvNP\RealizableHardness\WeightRounding.lean:271:4: error: No goals to be solved
+
+EXIT 1
+```
+
+### Exact saved output: WeightRounding-repair-1789260014870033100.log
+
+SHA256 `e984105fc4f34b06f392807e544f130205d4078b1cf696cc0cb565b4c2e2b08f`.
+
+```text
+lean/PvNP/RealizableHardness/WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean/PvNP/RealizableHardness/WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean/PvNP/RealizableHardness/WeightRounding.lean:47:32: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.false_eq_true, if_false, mul_zero, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean/PvNP/RealizableHardness/WeightRounding.lean:61:14: warning: This simp argument is unused:
+  hx
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### Exact saved output: WeightRoundingChecks-1789260059351340800.log
+
+SHA256 `a47d161f9027a2eae165420124476d3a7a4c14ddbec911ec16f9370b08270af0`.
+
+```text
+lean\PvNP\RealizableHardness\WeightRoundingChecks.lean:22:63: error: unsolved goals
+⊢ 2 ^ ((Nat.clog.go 256 2 256).2 + 1) = 256
+lean\PvNP\RealizableHardness\WeightRoundingChecks.lean:43:48: error: unsolved goals
+case true
+x : Unit → Bool
+hx : weight (roundedWeights (fun x => 1) 256) x ≤ ↑(5 / 2) * roundedBudget (fun x => 1) 256 (1 / 16)
+h : True
+⊢ False
+'PvNP.RealizableHardness.WeightRounding.coordinate_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.coordinate_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedBudget_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_budget_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.common_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.integral_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bound_of_inverse_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.polynomial_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.formula_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_coordinate_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_denominator_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_scale_example' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.clipped_budget_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_yes_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_no_example' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 1
+```
+
+### Exact saved output: WeightRoundingChecks-repair-1789260170368317600.log
+
+SHA256 `d886ea0ad253bba1b38b9d1be7df6977f5c1aa8528ffe0411e588595fd22eb3f`.
+
+```text
+lean/PvNP/RealizableHardness/WeightRoundingChecks.lean:49:12: error: No goals to be solved
+'PvNP.RealizableHardness.WeightRounding.coordinate_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.coordinate_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedBudget_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_budget_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.common_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.integral_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bound_of_inverse_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.polynomial_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.formula_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_coordinate_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_denominator_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_scale_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.clipped_budget_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_yes_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_no_example' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 1
+```
+
+### Exact saved output: WeightRoundingChecks-repair2-1789260258212870600.log
+
+SHA256 `1fcaa2a63dab11dcf24969d8c5ff7c6a3b1b0f11771725471e40199779a587de`.
+
+```text
+'PvNP.RealizableHardness.WeightRounding.coordinate_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.coordinate_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.roundedBudget_valid' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_budget_transfer' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounding_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadicScale_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.common_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.integral_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.denominator_bound_of_inverse_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.polynomial_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.formula_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_coordinate_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.fractional_denominator_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.dyadic_scale_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.clipped_budget_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_yes_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.WeightRounding.rounded_no_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 0
+```
