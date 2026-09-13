@@ -2,6 +2,8 @@ import PvNP.RealizableHardness.MatrixGrassmannIncidence
 /-! UNCOMPILED anchored-fibre checks; no kernel acceptance is claimed. -/
 open PvNP.RealizableHardness GrassmannCounting MatrixGrassmannIncidence
 open scoped BigOperators
+noncomputable section
+attribute [local instance] Classical.propDecidable
 
 #print axioms snoc_independent_iff
 #print axioms dependent_snoc
@@ -39,3 +41,5 @@ example {V : Type*} [AddCommGroup V] [Module (ZMod 2) V] [Fintype V]
 example {V : Type*} [AddCommGroup V] [Module (ZMod 2) V] [Fintype V]
     {d : ℕ} (M : Fin d → V) (h : ¬LinearIndependent (ZMod 2) M) (x : V) :
     ¬LinearIndependent (ZMod 2) (Fin.snoc M x) := dependent_snoc M h x
+
+end

@@ -35,14 +35,15 @@ def arrayOfList {k : ℕ} (xs : List V) (hl : xs.length = k) : Fin k → V :=
 theorem ofFn_arrayOfList {k : ℕ} (xs : List V) (hl : xs.length = k) :
     List.ofFn (arrayOfList xs hl) = xs := by
   subst k
-  simpa [arrayOfList] using List.ofFn_get xs
+  change List.ofFn xs.get = xs
+  exact List.ofFn_get xs
 
 /-- Concrete extension arrays, with the actual sequential rank predicate. -/
 def ArrayFibre {d : ℕ} (f : Frame V d) (k : ℕ) :=
   {B : Fin k → V // IndependentExtension f (List.ofFn B)}
 
 instance arrayFibreFintype {d k : ℕ} (f : Frame V d) : Fintype (ArrayFibre f k) :=
-  Fintype.ofFinite _
+  by unfold ArrayFibre; infer_instance
 
 def arrayToList {d k : ℕ} (f : Frame V d) (B : ArrayFibre f k) : ListFibre f k :=
   ⟨List.ofFn B.val, List.length_ofFn, B.property⟩

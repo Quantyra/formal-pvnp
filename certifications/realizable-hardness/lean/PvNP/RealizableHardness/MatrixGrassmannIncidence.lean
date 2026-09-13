@@ -6,16 +6,18 @@ namespace PvNP.RealizableHardness.MatrixGrassmannIncidence
 open scoped BigOperators
 open GrassmannCounting
 set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
 noncomputable section
 attribute [local instance] Classical.propDecidable
 
-variable {V : Type*} [AddCommGroup V] [Module (ZMod 2) V] [Fintype V]
+universe u
+variable {V : Type u} [AddCommGroup V] [Module (ZMod 2) V] [Fintype V]
 
 def Outside {d : ℕ} (f : Frame V d) :=
   {x : V // x ∉ Submodule.span (ZMod 2) (Set.range f.val)}
 
 instance outsideFintype {d : ℕ} (f : Frame V d) : Fintype (Outside f) :=
-  Fintype.ofFinite _
+  by unfold Outside; infer_instance
 
 def extend {d : ℕ} (f : Frame V d) (x : Outside f) : Frame V (d+1) :=
   ⟨Fin.snoc f.val x.val, f.property.finSnoc x.property⟩
@@ -57,7 +59,7 @@ theorem card_one_column {d : ℕ} (f : Frame V d) :
   rw [← Fintype.card_congr (oneColumnEquiv f), card_outside]
 
 /-- Ordered successive independent columns, with their anchor retained at each step. -/
-def Continuation : {d : ℕ} → Frame V d → ℕ → Type _
+def Continuation : {d : ℕ} → Frame V d → ℕ → Type u
   | _, _, 0 => PUnit
   | _, f, k+1 => (x : Outside f) × Continuation (extend f x) k
 
@@ -94,12 +96,17 @@ theorem extensionProduct_eq (n d k : ℕ) :
 theorem card_continuation {d : ℕ} (f : Frame V d) (k : ℕ) :
     Fintype.card (Continuation f k) = extensionProduct (Module.finrank (ZMod 2) V) d k := by
   induction k generalizing d with
-  | zero => simp [Continuation, extensionProduct]
+  | zero =>
+      have he : Continuation f 0 ≃ PUnit.{u+1} := Equiv.refl _
+      rw [Fintype.card_congr he]
+      exact Fintype.card_unique
   | succ k ih =>
-      change Fintype.card ((x : Outside f) × Continuation (extend f x) k) = _
+      have he : Continuation f (k+1) ≃ ((x : Outside f) × Continuation (extend f x) k) :=
+        Equiv.refl _
+      rw [Fintype.card_congr he]
       rw [Fintype.card_sigma]
       simp only [ih, Finset.sum_const, Finset.card_univ, nsmul_eq_mul,
-        card_outside, extensionProduct]
+        card_outside, extensionProduct, Nat.cast_id]
 
 /-- Actual ordered column payload; dependence proofs do not create multiplicity. -/
 def columns : {d k : ℕ} → (f : Frame V d) → Continuation f k → List V
@@ -117,7 +124,7 @@ theorem columns_length {d k : ℕ} (f : Frame V d) (e : Continuation f k) :
 theorem columns_injective {d k : ℕ} (f : Frame V d) :
     Function.Injective (columns (k := k) f) := by
   induction k generalizing d with
-  | zero => intro x y _; exact Subsingleton.elim _ _
+  | zero => intro x y _; exact @Subsingleton.elim PUnit.{u+1} inferInstance x y
   | succ k ih =>
       rintro ⟨x,xs⟩ ⟨y,ys⟩ he
       change x.val :: columns (extend f x) xs = y.val :: columns (extend f y) ys at he
@@ -144,7 +151,7 @@ theorem columns_surjective {d k : ℕ} (f : Frame V d) (xs : List V)
     ∃ e : Continuation f k, columns f e = xs := by
   induction k generalizing d xs with
   | zero =>
-      have he : xs = [] := List.length_eq_zero.mp hlen
+      have he : xs = [] := by simpa using hlen
       subst xs
       exact ⟨PUnit.unit, rfl⟩
   | succ k ih =>
