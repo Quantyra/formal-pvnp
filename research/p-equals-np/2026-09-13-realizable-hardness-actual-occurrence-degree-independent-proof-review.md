@@ -1,0 +1,25 @@
+# Actual occurrence degree: independent proof review
+
+2026-09-13; S3132/S3137 under S3126. Reviewer is independent of the Lean author. **GO-WITH-NOTES for actual original-plus-cloud occurrence degree.** Companion and inherited three-lens protocols apply. Source freeze `fc16c7a132a188ab508cb71788a9e18c7efbcccd` and separate receipt freeze `a373ea32050525b6978aaa72a37153fa0b8b6f08` were verified against raw working bytes; the earlier draft freeze is not substituted for the repaired source.
+
+Main SHA256: `18a4151cd131776efee7b1c5925daa7438eebd9d1098a644e133f0d4545ca31e`; Checks: `40bb592c3c1928e9c7e299281d64b2318de38ed4f76cd229c50187d10d568617`. The author receipt's normalization correction distinguishes its raw CRLF runner from an earlier normalized embedding. This independent runner is a separate fresh LF artifact and its embedded text uses direct UTF-8 byte decoding.
+
+## Mathematical and statement audit
+
+degree counts containing row occurrences in the actual Instance.rows list. originalDegree counts the actual originalRows list. Its cardinality identity expands ofFn and countP into the finite original-row support filter. The bound at most one follows from actual disjoint original supports and anchor injection, not a desired caller degree premise. The inherited source-triple structural conditions remain in the input type.
+
+Internal variables cannot occur in original rows: applying recover to an alleged equality with an anchor would equate some source slot with none. This uses recover only in its proved direction; no inverse on dummy ports is assumed. Consequently every internal variable has zero original contribution.
+
+contains_tag_same transports actual row support membership through the injective tag. contains_tag_other uses Sigma.fst to rule out a different owner. Their list-count versions use list induction and retain duplicate occurrences rather than silently replacing lists by support sets. Expanding the actual original-plus-cloud append and flatMap, and using the complete nodup finRange variable list, leaves exactly the matching cloud count. The resulting degree_eq_original_add_cloud concerns the same actual output degree function defined here.
+
+The independently accepted cloud degree bound is at most three for a port and exactly two for each edge-tagged internal variable. Combining the original contribution gives port degree at most four and internal degree exactly two in the complete output list. Case analysis covers every value of the actual Sigma/sum variable carrier, proving degree_le_four and its weaker degree_le_ten corollary. Nonzero dummy ports need not occur in original rows; the upper bound does not assert they do. Parallel copies remain distinct through their edge tags and list occurrences. The zero-source example rewrites the actual empty row list and proves degree zero under its correctly typed assignment.
+
+No mathematical, vacuity, hidden-hypothesis or multiplicity blocker was found. The strongest result here is a degree-four bound for every variable in this actual allocated original-plus-cloud output, conditional only on the existing typed input structure and accepted fixed construction. It is not an encoded constructor/runtime FP result, source hardness, gap or majority transfer, complete learning reduction, or full paper theorem. Counts and completeness results established elsewhere are not silently imported into this pair.
+
+## Independent verification preparation
+
+The fresh root copies 310 original accepted exports after checking each original/copy/receipt hash, without author Degree outputs. Existing package provenance limitations remain explicit; current cache availability is not historical per-export binary certification. The narrow runner checks source freshness and absent target outputs, original and copied artifacts/receipts, eleven package revisions, manifest and Lean 4.34.0-rc2. It uses one thread, requires 768 MiB available physical memory before each module, and stops only its owned child below 640 MiB. Raw logs, snapshots and actual exit metadata are preserved before display. Expected evidence is thirteen profiles, four compiled examples and three printed signatures. No source edit, Git operation, broad build, download or public action is part of this review.
+
+## Independent build completed
+
+Session 11467 compiled both modules with actual exit 0 and terminal runner exit 0. Sources remained unchanged; there was no guard stop and both logs are clean. All thirteen emitted profiles were parsed and contain only propext, Classical.choice and Quot.sound; four examples and three signatures compiled. Raw snapshots, logs, outputs, metadata and all 310 original/copied exports were reverified. Embedded runner and logs preserve raw UTF-8 decoded bytes. Compiler ownership was released immediately at terminal. No retry, source repair, Git operation or public action occurred. The degree-four result is bounded to this actual construction; source hardness, FP and the full theorem remain unestablished by this pair.
