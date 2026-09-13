@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "status": "UNCOMPILED source-only geometry ports; excluded from frozen aggregate",
+  "source_count": 6,
+  "companion_base_commit": "6d7718919d681f57e28559bd0ee584c450cb2446",
+  "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
+  "mathlib_pin": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+  "frozen_source_map_sha256": "b60506d4a969d19e9f3d87615a1fd09274b6a07f9459381b657b9c2b8d93f297",
+  "entries": [
+    {
+      "source_commit": "3fb16f4508396007d35270b2657c217c75e62de7",
+      "source_path": "lean/PvNP/RealizableHardness/GrassmannIncidence.lean",
+      "source_git_blob": "7cac4c7048f5d6b0e4d98c66d182c1fb0c9b85f4",
+      "source_git_bytes_sha256": "1faa084993341ee4505eeb44d1de96917cbcbc4cad8e454ac7d9033eb29ae49c",
+      "source_git_lf_sha256": "1faa084993341ee4505eeb44d1de96917cbcbc4cad8e454ac7d9033eb29ae49c",
+      "source_status": "ROOT4.13 bounded accepted via563e9b5074e55f3f1063d935d3e46da32c8e778e; no companion acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/GrassmannIncidence.lean",
+      "mirror_sha256": "54e61efde690a6c4c77e1e4632796167b386346e6f8d01655257a8d94a287b44",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.SubspaceRestriction",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.SubspaceRestriction",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "Author exports passed; independent review pending. Actual finite advice incidence law.",
+          "after": "Root4.13 incidence accepted separately; this companion port is UNCOMPILED. Actual finite advice incidence law.",
+          "reason": "Distinguish accepted root source from uncompiled companion; comment only."
+        }
+      ]
+    },
+    {
+      "source_commit": "3fb16f4508396007d35270b2657c217c75e62de7",
+      "source_path": "lean/PvNP/RealizableHardness/GrassmannIncidenceChecks.lean",
+      "source_git_blob": "93da8bebcca23069976b8f1b7e6802821b30447a",
+      "source_git_bytes_sha256": "5cfe158eac23235603629ffff58fa7f0ec266b4c8a3fe14849de9a441b39cc48",
+      "source_git_lf_sha256": "5cfe158eac23235603629ffff58fa7f0ec266b4c8a3fe14849de9a441b39cc48",
+      "source_status": "ROOT4.13 bounded accepted via563e9b5074e55f3f1063d935d3e46da32c8e778e; no companion acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/GrassmannIncidenceChecks.lean",
+      "mirror_sha256": "37592d758f3201f31668040e921d8d8fb65818304b23f3da6ec711aeb2bf5b14",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.GrassmannIncidence",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.GrassmannIncidence",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        }
+      ]
+    },
+    {
+      "source_commit": "ebf4d5d21a99c8c5483481219166d0b8b3fe66ce",
+      "source_path": "lean/PvNP/RealizableHardness/GrassmannCounting.lean",
+      "source_git_blob": "287670ce37a79f61c310c8c7ff1f384549a4c5da",
+      "source_git_bytes_sha256": "613fb14a78254b93db01dc31df86f7803c7a51f4655d1523733003118d770d0b",
+      "source_git_lf_sha256": "613fb14a78254b93db01dc31df86f7803c7a51f4655d1523733003118d770d0b",
+      "source_status": "Root source-only UNCOMPILED draft; no acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/GrassmannCounting.lean",
+      "mirror_sha256": "8b4d42ddae77409dab981c8d51ec5ba21292803fa7823daa68b87228913b7644",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.GrassmannIncidence",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.GrassmannIncidence",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        }
+      ]
+    },
+    {
+      "source_commit": "ebf4d5d21a99c8c5483481219166d0b8b3fe66ce",
+      "source_path": "lean/PvNP/RealizableHardness/GrassmannCountingChecks.lean",
+      "source_git_blob": "9c234c4ad00f24d632395734f06079480f3f4b8d",
+      "source_git_bytes_sha256": "ab37d9a5efaec0fba76748034a8192f82ea46b0913d32d6b80820313be0cd540",
+      "source_git_lf_sha256": "ab37d9a5efaec0fba76748034a8192f82ea46b0913d32d6b80820313be0cd540",
+      "source_status": "Root source-only UNCOMPILED draft; no acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/GrassmannCountingChecks.lean",
+      "mirror_sha256": "bc3e975466645fa2182ec9a92a7762fe340cf8355c0f0331074fdb2b06320a1e",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.GrassmannCounting",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.GrassmannCounting",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        }
+      ]
+    },
+    {
+      "source_commit": "b5c366b4c0e58403c9023be15a5c07693d5f336f",
+      "source_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimension.lean",
+      "source_git_blob": "7d068c767b6f24f25d3b634bc11669c4c1d6a7fc",
+      "source_git_bytes_sha256": "36ef8364e9111d01b0b638f57c24427e388c8fa547f8492bcccc603975b78bf3",
+      "source_git_lf_sha256": "36ef8364e9111d01b0b638f57c24427e388c8fa547f8492bcccc603975b78bf3",
+      "source_status": "Root source-only UNCOMPILED draft; no acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimension.lean",
+      "mirror_sha256": "bc00057fb18378dce0561962e2b64bb2981862e3a565accc234c29b2eff81acc",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.TripleRestrictionRank",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.TripleRestrictionRank",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        }
+      ]
+    },
+    {
+      "source_commit": "b5c366b4c0e58403c9023be15a5c07693d5f336f",
+      "source_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimensionChecks.lean",
+      "source_git_blob": "42dc9a24e670c3da87fe5c8f879815545120efa9",
+      "source_git_bytes_sha256": "ff96e25d9b378c9e17a4b4a9c0bda8875ec349d72a06e0f32fa904b6f9233c37",
+      "source_git_lf_sha256": "ff96e25d9b378c9e17a4b4a9c0bda8875ec349d72a06e0f32fa904b6f9233c37",
+      "source_status": "Root source-only UNCOMPILED draft; no acceptance",
+      "mirror_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimensionChecks.lean",
+      "mirror_sha256": "5bdedcb42e6d9c0147d48dae1aee84929f0abd5ba64f24a94ff8a092f78240a3",
+      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "transforms": [
+        {
+          "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import PvNP.RealizableHardness.TripleRestrictionDimension",
+          "after": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/\nimport PvNP.RealizableHardness.TripleRestrictionDimension",
+          "reason": "Explicit companion UNCOMPILED status comment only; no proof change."
+        }
+      ]
+    }
+  ]
+}
