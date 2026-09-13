@@ -56,3 +56,26 @@ attaining extension here is local; a global assembly must prove its extensions
 coexist. Håstad's source hardness, repetition and the complete paper theorem
 remain separate unfinished obligations. No P-versus-NP, algorithmic novelty,
 source-hardness completion, or paper readiness claim follows from this draft.
+
+## Author verification update
+
+The source-only status above records the original draft. Both unchanged source
+modules now passed the narrow author build on their first attempts (session
+73960, actual terminal exit 0), with 22 standard-only axiom profiles, ten
+examples, and two printed signatures. No proof repair or statement change was
+needed. Main reports five unused DecidableEq section-variable warnings; Checks
+is clean. Independent build and three-lens review remain pending.
+
+Portable author packet: `.lake/build/equality-gadget-author-20260913/author-verification.json`
+(relative to the companion), SHA256 `9ed30096ec3badb0ce2ff03c5c3e87b8fbf7854624b1dd0901e93d55b833ea5a`.
+It embeds both raw logs, terminal metadata, exact attempt source snapshots,
+runner and dependency provenance. Minimum observed physical memory was
+3110928384 bytes, above the 640 MiB abort threshold.
+
+The dependency audit covers 1,038 package modules and 4,152 current source and
+export hashes with zero missing artifacts, under eleven pinned revisions.
+These modules belong to the original accepted finite-component source import
+closure and reuse its package paths. That original acceptance recorded package
+paths/revisions rather than historical per-export hashes: the hashes captured
+here attest current bytes and are not retroactively asserted historical byte
+identities. No package rebuild or satellite-export substitution was performed.
