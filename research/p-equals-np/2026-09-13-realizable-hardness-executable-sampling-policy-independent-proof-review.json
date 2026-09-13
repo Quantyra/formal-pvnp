@@ -1,0 +1,721 @@
+{
+  "status": "GO-WITH-NOTES: independent source audit and fresh pair compilation complete",
+  "freeze": "fea288ecc4e6a5aaf226c49b9ee331242d049a2d",
+  "sources": [
+    {
+      "name": "ExecutableSamplingPolicy",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicy.lean",
+      "sha256": "c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c",
+      "raw_equals_frozen": true,
+      "frozen_sha256": "c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c"
+    },
+    {
+      "name": "ExecutableSamplingPolicyChecks",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicyChecks.lean",
+      "sha256": "cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7",
+      "raw_equals_frozen": true,
+      "frozen_sha256": "cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7"
+    }
+  ],
+  "dependencies": [
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGF",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CMMSACodec",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\cmmsa-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CMMSACodec.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CMMSACodec.olean",
+      "sha256": "57688ae8bafffd83add194ebb7a7e6bdde076791068499975f7f05d154b33754",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CMMSAEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\cmmsa-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CMMSAEncoding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CMMSAEncoding.olean",
+      "sha256": "a35848da5d5ff2917e9fd9b6243fa4c8dcbdd1e812770e24ee702b7d60f6aed9",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CMMSAPipelineEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\cmmsa-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CMMSAPipelineEncoding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CMMSAPipelineEncoding.olean",
+      "sha256": "be0ec7d135b784b6921d187c47b11058d242c7421f7c0e8f42088829688923d5",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCount",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExceptionRepair",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExecutablePipeline",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-pipeline-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutablePipeline.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutablePipeline.olean",
+      "sha256": "d03e8f8b13e0d1993723442b3bbc9925ac383c1a99e3fc721b1fe4f75268b2ca",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExecutableRounding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-rounding-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableRounding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableRounding.olean",
+      "sha256": "ad2b150a170e06e8d895308b8847d172de47cae9fc24d1151e6f3855578bfd6d",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentration",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSampling",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSourceSampler",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\finite-source-sampler-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSourceSampler.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSourceSampler.olean",
+      "sha256": "56e12ad48c1be183b1fe840d789e215d2438938166c7f952f7b55ff1ebf08e77",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Formula",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSampler",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLaw",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromises",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuarantee",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThreshold",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRounding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json",
+      "receipt_sha256": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4"
+    },
+    {
+      "module": "Complexitylib.Encoding.Delimit",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean",
+      "sha256": "cebe1132cec5526e911d247c1f435b95d603005a886a1f1a15ea406632411185",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib.Encoding.Pairing",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean",
+      "sha256": "8742d8544ed08a40d5ccecc4b4de50bbbfe26c2b2d9939be300570f4222041e3",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.ilean.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ilean.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ilean.hash",
+      "sha256": "b1c01419fa2b309b26630f441f18241c12108a0f674a0c5998180c9d924c717f",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.ir",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir",
+      "sha256": "6fa2928064f34f021371d5f82f8209ca43eaaba22c62aa9dbd21e3e48438b745",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.ir.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.hash",
+      "sha256": "c1cd47470980310caa6aeceaed1d8c25c2aba5d0999854bbce024089c8359af5",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.ir.sig.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.sig.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.sig.hash",
+      "sha256": "9dba2c7c34fb8b5d63ca6821e62364001a763b6fb0194e1a03a16dee08125899",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.olean.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.hash",
+      "sha256": "012b6da390e959adc9c07894811c5a29f044a07e37e1e596f3c8ece96c395583",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.olean.private",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.private",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.private",
+      "sha256": "a19822d7a15a62a6b842ae9dd80d971ef0f657e34d953c4b87642c8742f1432b",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.olean.private.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.private.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.private.hash",
+      "sha256": "75b291444a21b7ac95e47646b8fa7585d2481d444ddcb3865cacf9fa1e2bf173",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.olean.server",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.server",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.server",
+      "sha256": "b6c39277531421a49f21d8611f38e9b0fb12b64391f41854279b15f714c7bea5",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.olean.server.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.server.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.olean.server.hash",
+      "sha256": "06d44e283e03032878d320e4550c0d76bdd5135e21030b7ed14f4f544fc478c3",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.trace",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.trace",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.trace",
+      "sha256": "f47330a161c0b4f8ead88bb2cf7e61dba3cb53c257b9129a1d412c69011fc88a",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Pairing.ir.sig",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.sig",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Pairing.ir.sig",
+      "sha256": "a37dfefdc0d40e4e3fc1c25d7d78669c52ad8a55b1904365dc0419dfe88bb835",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.ilean.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ilean.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ilean.hash",
+      "sha256": "1b983030dd8372da00a1325bd7bb6d8b685da7d613a8ec941733c95160cf3813",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.ir",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir",
+      "sha256": "3e9cead5f42264c34046419774df050cc6e3c7455bf4f5c65a56bc91c656ee0e",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.ir.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.hash",
+      "sha256": "5889c825d39d067de1c04984acf2e26b795227ed1f97a96d0033ae2663b6dcdf",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.ir.sig.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.sig.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.sig.hash",
+      "sha256": "e9f7c5b7c241ed9be6d4795c7780f73bed33e005a04f9b4653589a1ae24f1543",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.olean.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.hash",
+      "sha256": "41b49063258d07e248ea2c9fb279622823888f52a534bd616990deb23e59ac60",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.olean.private",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.private",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.private",
+      "sha256": "44564f10b092734b6c517183c4387ccb67907f062d556077ca0e8e7234f38578",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.olean.private.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.private.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.private.hash",
+      "sha256": "719207aa9dc171cb4c7b362d8ced56666b259176f8560326c9210d91973083a3",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.olean.server",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.server",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.server",
+      "sha256": "237f2390ab883263918e9449e64de5ca3ee2bfa5b7a521455af369c0c988b3c2",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.olean.server.hash",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.server.hash",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.olean.server.hash",
+      "sha256": "1cbcdf6a72b2fcb86c6b1e98daaec28b3edb6bba86f2fbc2698973c4e1898437",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.trace",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.trace",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.trace",
+      "sha256": "a6991c631050eb442dc9f1a189c41e03a445aba62f7be5b587a5e67f09847719",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "Complexitylib/Encoding/Delimit.ir.sig",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\randomized-independent-review-20260912\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.sig",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\Complexitylib\\Encoding\\Delimit.ir.sig",
+      "sha256": "ada9ce0c986fb5435b8b68a510e0a659b120a73acdb2641f83e922b9fcfacca5",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json",
+      "receipt_sha256": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExecutablePipelineInput",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-pipeline-input-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutablePipelineInput.olean",
+      "sha256": "e5e2caab7061b47fad68ecd3728ae74b753b8927bddecc30795ebdbc19e191f6",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-input-independent-proof-review.json",
+      "receipt_sha256": "e1306a909dc6a8f7bd615f7fad5344f1c76056ca8d1b16256b23d1b44973422e",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutablePipelineInput.olean"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd",
+      "receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\results.json",
+      "receipt_sha256": "dacb92820e890612796569cfb2b705dd8d390b7d620842c213dc5e4bba4b7f7f",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean"
+    }
+  ],
+  "receipt_hashes": {
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json": "b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json": "7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-13-realizable-hardness-executable-pipeline-input-independent-proof-review.json": "e1306a909dc6a8f7bd615f7fad5344f1c76056ca8d1b16256b23d1b44973422e",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\results.json": "dacb92820e890612796569cfb2b705dd8d390b7d620842c213dc5e4bba4b7f7f"
+  },
+  "runner": {
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\independent-runner.py",
+    "sha256": "7726cd716413a4d7832a11cd2e101a75af067f9fe64cde38e665a3012b3b9b66",
+    "raw_utf8": "import ctypes,hashlib,json,os,pathlib,subprocess,sys,time\nsys.stdout.reconfigure(encoding='utf-8')\nroot=pathlib.Path('C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness')\nwork=root/'.lake/build/executable-sampling-policy-independent-review-20260913'\nclass MS(ctypes.Structure):\n    _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(x,ctypes.c_ulonglong) for x in ['total','avail','totalpage','availpage','totalvirtual','availvirtual','extended']]\ndef memory():\n    m=MS();m.length=ctypes.sizeof(m)\n    assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m))\n    return m.avail\ndef sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()\nmanifest=root/'lake-manifest.json'\nassert sha(manifest)=='825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0'\npins={}\nfor p in json.loads(manifest.read_bytes())['packages']:\n    head=subprocess.check_output(['git','-C',str(root/'.lake/packages'/p['name']),'rev-parse','HEAD']).decode().strip()\n    assert head==p['rev'];pins[p['name']]=head\nlean=pathlib.Path('C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe')\nversion=subprocess.check_output([str(lean),'--version']).decode().strip()\nassert '6a10ac8c22beadecabdbb0919c2b50214762f91d' in version\nenv=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['PYTHONUTF8']='1'\nenv['LEAN_PATH']=';'.join([str(work/'lib/lean')]+[str(root/'.lake/packages'/p/'.lake/build/lib/lean') for p in pins]+[str(lean.parent.parent/'lib/lean')])\nfor entry in json.loads((work/'copies.json').read_bytes()):\n    assert sha(pathlib.Path(entry['source']))==entry['sha256']\n    assert sha(pathlib.Path(entry['output']))==entry['sha256']\n    assert sha(pathlib.Path(entry['receipt']))==entry['receipt_sha256']\ndiag=work/'diagnostics';diag.mkdir(exist_ok=True)\nfor name in sys.argv[1:] or ['ExecutableSamplingPolicy','ExecutableSamplingPolicyChecks']:\n    pre=memory();assert pre>=805306368,pre\n    source=root/'lean/PvNP/RealizableHardness'/f'{name}.lean'\n    out=work/'lib/lean/PvNP/RealizableHardness'/f'{name}.olean'\n    log=diag/f'{name}-{time.time_ns()}.log';meta=log.with_suffix('.json')\n    cmd=[str(lean),'-R','lean','-o',str(out),str(source)]\n    assert name in ['ExecutableSamplingPolicy','ExecutableSamplingPolicyChecks']\n    before=sha(source)\n    assert before=={'ExecutableSamplingPolicy': 'c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c', 'ExecutableSamplingPolicyChecks': 'cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7'}[name]\n    assert not out.exists()\n    (diag/(name+'-source-'+before+'.lean')).write_bytes(source.read_bytes())\n    with log.open('wb') as f:\n        proc=subprocess.Popen(cmd,cwd=root,env=env,stdout=f,stderr=subprocess.STDOUT)\n        print('LIVE',name,proc.pid,str(log),flush=True)\n        low=pre;stopped=False\n        while proc.poll() is None:\n            mem=memory();low=min(low,mem)\n            if mem<671088640:proc.terminate();stopped=True\n            time.sleep(.25)\n        rc=proc.wait()\n    record={'command':cmd,'cwd':str(root),'exit_code':rc,'guard_stopped':stopped,'memory_pre':pre,'memory_min':low,'source_sha256':before,'source_unchanged':before==sha(source),'log_path':str(log),'log_sha256':sha(log),'output_sha256':sha(out) if rc==0 else None,'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','version':version,'manifest_sha256':sha(manifest),'pins':pins}\n    meta.write_bytes(json.dumps(record,indent=2).encode('utf-8'))\n    print(log.read_bytes().decode('utf-8'),flush=True)\n    print('ACTUAL_EXIT',rc,'METADATA',str(meta),flush=True)\n    if rc:sys.exit(rc)\n    assert record['source_unchanged'] and not record['guard_stopped']\n",
+    "text_normalization": "none; raw UTF-8 bytes"
+  },
+  "build_results": [
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicy.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicy.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 4367122432,
+      "memory_min": 2735935488,
+      "source_sha256": "c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicy-1789289288623886800.log",
+      "log_sha256": "9996ce46be490bf23113ace2f9766f74d14b7aedf6d782b1b2542cedeb4b4c87",
+      "output_sha256": "708c99d19845950e7c80f10e5f88d74396014658021820196f0c93cf8b3ec2ab",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "metadata": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicy-1789289288623886800.json",
+        "sha256": "3a86f872dba8cfff83c9c9f45e2c37f577fabe1fed005e7a00e896867e203fcf",
+        "byte_count": 3923,
+        "raw_utf8": "{\n  \"command\": [\n    \"C:\\\\Users\\\\Dan\\\\.elan\\\\toolchains\\\\leanprover--lean4---v4.34.0-rc2\\\\bin\\\\lean.exe\",\n    \"-R\",\n    \"lean\",\n    \"-o\",\n    \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableSamplingPolicy.olean\",\n    \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableSamplingPolicy.lean\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\",\n  \"exit_code\": 0,\n  \"guard_stopped\": false,\n  \"memory_pre\": 4367122432,\n  \"memory_min\": 2735935488,\n  \"source_sha256\": \"c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c\",\n  \"source_unchanged\": true,\n  \"log_path\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\diagnostics\\\\ExecutableSamplingPolicy-1789289288623886800.log\",\n  \"log_sha256\": \"9996ce46be490bf23113ace2f9766f74d14b7aedf6d782b1b2542cedeb4b4c87\",\n  \"output_sha256\": \"708c99d19845950e7c80f10e5f88d74396014658021820196f0c93cf8b3ec2ab\",\n  \"LEAN_PATH\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\cslib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\mathlib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\complexitylib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\plausible\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\LeanSearchClient\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\importGraph\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\proofwidgets\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\aesop\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\Qq\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\batteries\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\Cli\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\.elan\\\\toolchains\\\\leanprover--lean4---v4.34.0-rc2\\\\lib\\\\lean\",\n  \"LEAN_NUM_THREADS\": \"1\",\n  \"version\": \"Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)\",\n  \"manifest_sha256\": \"825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0\",\n  \"pins\": {\n    \"cslib\": \"d9be64196bf145edd019f1ccfeaee0c11166ba6b\",\n    \"mathlib\": \"e06eff5f95374108acfaf19f1ff7473aa7771df2\",\n    \"complexitylib\": \"6c248df7859f2f245e731c1e07057bf69d165fe2\",\n    \"plausible\": \"d9598f07b1bc701f1e3aae163d2681c1fd978793\",\n    \"LeanSearchClient\": \"ba67e212be1197b84c1f1f6299488a10a3002713\",\n    \"importGraph\": \"d8823026ac7ef130c253089d95685f9877b95323\",\n    \"proofwidgets\": \"a8acbfd87375ff4abe14ce09db5b7664d383bc7f\",\n    \"aesop\": \"18889deb9e83ea7420ef51c160d6f88552e744e3\",\n    \"Qq\": \"507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3\",\n    \"batteries\": \"7e23602c91bc04586b2b06de2708a041853e4681\",\n    \"Cli\": \"ab3a82db9fea14cf0fd7f5a2de650f4b534640af\"\n  }\n}"
+      },
+      "log": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicy-1789289288623886800.log",
+        "sha256": "9996ce46be490bf23113ace2f9766f74d14b7aedf6d782b1b2542cedeb4b4c87",
+        "byte_count": 208,
+        "raw_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicy.lean:199:6: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\n"
+      },
+      "output_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicy.olean",
+      "source_snapshot": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicy-source-c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c.lean",
+        "sha256": "c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c",
+        "byte_count": 14500,
+        "raw_utf8": "import PvNP.RealizableHardness.ExecutablePipelineInput\nimport PvNP.RealizableHardness.ComputableSampleCount\nimport PvNP.RealizableHardness.SamplingGuarantee\nimport PvNP.RealizableHardness.SeedEncoding\n\n/-! Source draft. Concrete manuscript sampling policy and encoded-length coin bound.\nNo parser/arithmetic FP or source-support construction theorem is asserted. -/\nnamespace PvNP.RealizableHardness.ExecutableSamplingPolicy\nopen CMMSACodec ExecutablePipelineInput\nset_option autoImplicit false\n\ndef inverseCeil (eps : Rat) : Nat := ⌈1 / eps⌉₊\n\ndef selected (eps : Rat) (ws : List Rat) (t : FiniteSourceSampler.Table ws.length)\n    (q : ExecutableRounding.InputParameters) : Input :=\n  ⟨ws, t, q, SamplingGuarantee.precision t.rows.length eps,\n    ComputableSampleCount.count ws.length (inverseCeil eps)⟩\n\ntheorem inverse_le (eps : Rat) : 1 / eps ≤ (inverseCeil eps : Rat) := Nat.le_ceil _\n\ntheorem inverse_pos (eps : Rat) (he : 0 < eps) : 0 < inverseCeil eps := by\n  have h : (0 : Rat) < inverseCeil eps :=\n    lt_of_lt_of_le (by positivity : (0 : Rat) < 1 / eps) (inverse_le eps)\n  exact_mod_cast h\n\ntheorem self_le_two_pow (n : Nat) : n ≤ 2 ^ n := by\n  induction n with\n  | zero => simp\n  | succ n ih =>\n    rw [pow_succ]\n    have hp : 0 < (2 : Nat) ^ n := by positivity\n    omega\n\ntheorem precision_upper (S : Nat) (eps : Rat) :\n    SamplingGuarantee.precision S eps ≤ 8 * S * inverseCeil eps := by\n  apply Nat.clog_le_of_le_pow\n  apply le_trans (show ⌈8 * (S : Rat) / eps⌉₊ ≤ 8*S*inverseCeil eps from ?_)\n    (self_le_two_pow _)\n  apply Nat.ceil_le.mpr\n  have h := mul_le_mul_of_nonneg_left (inverse_le eps)\n    (by positivity : (0 : Rat) ≤ 8 * S)\n  push_cast\n  calc\n    8 * (S : Rat) / eps = (8 * S) * (1 / eps) := by ring\n    _ ≤ _ := h\n\ntheorem selected_trials_pos (eps : Rat) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters) :\n    0 < (selected eps ws t q).trials := ComputableSampleCount.count_pos _ _\n\ntheorem selected_grid (eps : Rat) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters) :\n    8 * (t.rows.length : Rat) / eps ≤\n      ((2 ^ (selected eps ws t q).precision : Nat) : Rat) :=\n  SamplingGuarantee.precision_bound _ _\n\ntheorem selected_threshold (eps : Rat) (he : 0 < eps) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters) :\n    SamplingThreshold.learningThreshold ws.length (eps : Real) ≤\n      ((selected eps ws t q).trials : Real) := by\n  apply ComputableSampleCount.learningThreshold_le_count\n  · exact_mod_cast he\n  · exact_mod_cast inverse_le eps\n\ntheorem list_count_le_encode (ts : List Tree) : ts.length ≤ (Tree.encode (listTree ts)).length := by\n  induction ts with\n  | nil => simp [listTree, Tree.encode]\n  | cons t ts ih =>\n    simp only [listTree, Tree.encode, List.length_cons, List.length_append] at *\n    omega\n\n/-- The actual weight list consumes at least one encoded bit per variable. -/\ntheorem variables_le_input_length (x : Input) : x.weights.length ≤ (encodeInput x).length := by\n  have h := list_count_le_encode (x.weights.map signedTree)\n  simp only [List.length_map] at h\n  simp only [encodeInput, inputTree, Tree.encode, List.length_cons, List.length_append]\n  omega\n\n/-- Stored source occurrences, including zero-probability rows, consume input bits. -/\ntheorem rows_le_input_length (x : Input) : x.source.rows.length ≤ (encodeInput x).length := by\n  have h := list_count_le_encode (x.source.rows.map rowTree)\n  simp only [List.length_map] at h\n  simp only [encodeInput, inputTree, Tree.encode, List.length_cons, List.length_append]\n  omega\n\n/-- A quadratic length-only ruler for each fixed positive rational epsilon. -/\ndef coinRuler (eps : Rat) (n : Nat) : Nat :=\n  (64 * (n+11) * inverseCeil eps ^ 2) * (8*n*inverseCeil eps)\n\ntheorem coinRuler_quadratic (eps : Rat) (n : Nat) :\n    coinRuler eps n = 512 * inverseCeil eps ^ 3 * (n^2 + 11*n) := by\n  unfold coinRuler\n  ring\n\ntheorem selected_coins_le (eps : Rat) (he : 0 < eps) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters) :\n    (selected eps ws t q).trials * (selected eps ws t q).precision ≤\n      coinRuler eps (encodeInput (selected eps ws t q)).length := by\n  let x := selected eps ws t q\n  have hN := variables_le_input_length x\n  have hS := rows_le_input_length x\n  have hM := (ComputableSampleCount.count_upper ws.length (inverseCeil eps)\n    (inverse_pos eps he)).le\n  have hb := precision_upper t.rows.length eps\n  have hMu : x.trials ≤ 64*((encodeInput x).length+11)*inverseCeil eps^2 := by\n    exact hM.trans (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left 64 (Nat.add_le_add_right hN 11)))\n  have hbu : x.precision ≤ 8*(encodeInput x).length*inverseCeil eps := by\n    exact hb.trans (Nat.mul_le_mul_right _ (Nat.mul_le_mul_left 8 hS))\n  exact Nat.mul_le_mul hMu hbu\n\ntheorem selected_good_probability (eps : Rat) (he : 0 < eps) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters)\n    (F : (Fin ws.length → Bool) → Nat → Bool) :\n    (5 / 6 : Real) ≤ JointSamplingLaw.seedProbability\n      (selected eps ws t q).trials (selected eps ws t q).precision\n      (fun seeds => SamplingGuarantee.Good (FiniteSourceSampler.probability t)\n        t.rows.length ws.length (selected eps ws t q).trials F eps\n        (FiniteSourceSampler.selectArray t (selected eps ws t q).precision\n          (selected eps ws t q).trials seeds)) := by\n  exact SamplingGuarantee.good_probability_of_learningThreshold\n    (FiniteSourceSampler.probability t) t.rows.length (selected eps ws t q).precision\n    ws.length (selected eps ws t q).trials F eps\n    (FiniteSourceSampler.cumulative_endpoint t) (FiniteSourceSampler.probability_nonneg t)\n    he (selected_grid eps ws t q) (selected_threshold eps he ws t q)\n\ntheorem selected_run_valid {L : Nat} (eps : Rat) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length)\n    (p : FiniteRepairRoundingPipeline.Parameters ws.get)\n    (seeds : JointSamplingLaw.SeedArray\n      (selected eps ws t (ExecutableRounding.inputOf p)).trials\n      (selected eps ws t (ExecutableRounding.inputOf p)).precision)\n    (hF : ∀ j : Fin t.rows.length, Formula.leaves (t.rows.get j).2+1 ≤ L) :\n    run L (Complexity.pair (encodeInput (selected eps ws t (ExecutableRounding.inputOf p)))\n      (coinBits seeds)) = ExecutablePipeline.bits ws t\n        (SamplingGuarantee.precision t.rows.length eps)\n        (ComputableSampleCount.count ws.length (inverseCeil eps))\n        (ExecutableRounding.inputOf p) seeds :=\n  run_valid ws t _ _ p seeds (ComputableSampleCount.count_pos _ _) hF\n\n/-- The parser's Boolean convention is exactly the accepted row-major seed equivalence. -/\ntheorem digitBool_eq_finTwoEquiv (d : Fin 2) : digitBool d = finTwoEquiv d := by\n  fin_cases d <;> rfl\n\ntheorem coinBits_eq_flatten {M b : Nat} (seeds : JointSamplingLaw.SeedArray M b) :\n    coinBits seeds = List.ofFn (SeedEncoding.flatten M b seeds) := by\n  unfold coinBits SeedEncoding.flatten\n  simp only [digitBool_eq_finTwoEquiv]\n\ntheorem padded_seed_probability (M b k : Nat) (event : JointSamplingLaw.SeedArray M b → Prop) :\n    SeedEncoding.uniformProbability (fun bits : SeedEncoding.FlatSeed (M*b+k) =>\n      event (SeedEncoding.unflatten M b (SeedEncoding.takePrefix (M*b) k bits))) =\n      JointSamplingLaw.seedProbability M b event := by\n  rw [SeedEncoding.prefix_probability (M*b) k\n    (fun bits => event (SeedEncoding.unflatten M b bits))]\n  exact SeedEncoding.flat_probability M b event\n\n/-- Validate policy fields and the full length-only tape before executing the pipeline.\nThe parser and arithmetic used for these guards still require runtime proofs. -/\ndef paddedRunOption (L : Nat) (eps : Rat) (instanceBits coins : Bits) : Option Bits := do\n  let x ← decodeInput instanceBits\n  if x.precision = SamplingGuarantee.precision x.source.rows.length eps ∧\n      x.trials = ComputableSampleCount.count x.weights.length (inverseCeil eps) ∧\n      coins.length = coinRuler eps instanceBits.length ∧\n      x.trials*x.precision ≤ coins.length then\n    runOption L instanceBits (coins.take (x.trials*x.precision))\n  else none\n\ndef paddedRun (L : Nat) (eps : Rat) (instanceBits coins : Bits) : Bits :=\n  (paddedRunOption L eps instanceBits coins).getD []\n\ntheorem paddedRunOption_selected (L : Nat) (eps : Rat) (he : 0 < eps)\n    (ws : List Rat) (t : FiniteSourceSampler.Table ws.length)\n    (q : ExecutableRounding.InputParameters)\n    (seeds : JointSamplingLaw.SeedArray (selected eps ws t q).trials\n      (selected eps ws t q).precision) (tail : Bits)\n    (htail : tail.length = coinRuler eps (encodeInput (selected eps ws t q)).length -\n      (selected eps ws t q).trials*(selected eps ws t q).precision) :\n    paddedRunOption L eps (encodeInput (selected eps ws t q)) (coinBits seeds ++ tail) =\n      ExecutablePipeline.checkedBits L ws t (selected eps ws t q).precision\n        (selected eps ws t q).trials q seeds := by\n  have hc := selected_coins_le eps he ws t q\n  have hlen : (coinBits seeds ++ tail).length =\n      coinRuler eps (encodeInput (selected eps ws t q)).length := by\n    rw [List.length_append, coinBits_length, htail]\n    omega\n  have htake : (coinBits seeds ++ tail).take\n      ((selected eps ws t q).trials*(selected eps ws t q).precision) = coinBits seeds := by\n    rw [← coinBits_length seeds]\n    exact List.take_left\n  simp only [paddedRunOption, decode_encodeInput]\n  change (if\n    (selected eps ws t q).precision = SamplingGuarantee.precision t.rows.length eps ∧\n    (selected eps ws t q).trials = ComputableSampleCount.count ws.length (inverseCeil eps) ∧\n    (coinBits seeds ++ tail).length = coinRuler eps (encodeInput (selected eps ws t q)).length ∧\n    (selected eps ws t q).trials*(selected eps ws t q).precision ≤ (coinBits seeds ++ tail).length\n    then runOption L (encodeInput (selected eps ws t q))\n      ((coinBits seeds ++ tail).take ((selected eps ws t q).trials*(selected eps ws t q).precision))\n    else none) = _\n  rw [if_pos (by exact ⟨rfl, rfl, hlen, by rw [hlen]; exact hc⟩), htake]\n  exact runOption_roundtrip L (selected eps ws t q) seeds\n\ntheorem ofFn_prefix_split (n k : Nat) (bits : SeedEncoding.FlatSeed (n+k)) :\n    List.ofFn bits = List.ofFn (SeedEncoding.takePrefix n k bits) ++\n      List.ofFn (fun j => bits (Fin.natAdd n j)) := by\n  rw [List.ofFn_add]\n  rfl\n\ntheorem coinBits_unflatten (M b : Nat) (bits : SeedEncoding.FlatSeed (M*b)) :\n    coinBits (SeedEncoding.unflatten M b bits) = List.ofFn bits := by\n  rw [coinBits_eq_flatten, SeedEncoding.flatten_unflatten]\n\n/-- Exact Q-bit executor theorem, with Q written as c+(Q-c) using the proved cap. -/\ntheorem paddedRun_selected_valid {L : Nat} (eps : Rat) (he : 0 < eps) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (p : FiniteRepairRoundingPipeline.Parameters ws.get)\n    (hF : ∀ j : Fin t.rows.length, Formula.leaves (t.rows.get j).2+1 ≤ L)\n    (bits : SeedEncoding.FlatSeed\n      ((selected eps ws t (ExecutableRounding.inputOf p)).trials *\n        (selected eps ws t (ExecutableRounding.inputOf p)).precision +\n      (coinRuler eps (encodeInput (selected eps ws t (ExecutableRounding.inputOf p))).length -\n        (selected eps ws t (ExecutableRounding.inputOf p)).trials *\n          (selected eps ws t (ExecutableRounding.inputOf p)).precision))) :\n    let x := selected eps ws t (ExecutableRounding.inputOf p)\n    let k := coinRuler eps (encodeInput x).length - x.trials*x.precision\n    let seeds := SeedEncoding.unflatten x.trials x.precision\n      (SeedEncoding.takePrefix (x.trials*x.precision) k bits)\n    paddedRun L eps (encodeInput x) (List.ofFn bits) =\n      ExecutablePipeline.bits ws t x.precision x.trials (ExecutableRounding.inputOf p) seeds := by\n  dsimp only\n  rw [ofFn_prefix_split, ← coinBits_unflatten]\n  unfold paddedRun\n  rw [paddedRunOption_selected L eps he ws t (ExecutableRounding.inputOf p) _ _ (by simp)]\n  rw [ExecutablePipeline.checkedBits_valid ws t _ _ p _\n    (selected_trials_pos eps ws t (ExecutableRounding.inputOf p)) hF]\n  rfl\n\ntheorem padded_length_eq_ruler (eps : Rat) (he : 0 < eps) (ws : List Rat)\n    (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters) :\n    let x := selected eps ws t q\n    x.trials*x.precision + (coinRuler eps (encodeInput x).length - x.trials*x.precision) =\n      coinRuler eps (encodeInput x).length := by\n  dsimp only\n  have h := selected_coins_le eps he ws t q\n  omega\n\n/-- The actual padded executor agrees on every tape; its recovered source draws\nsimultaneously satisfy the concentration event with probability at least 5/6. -/\ntheorem padded_executor_good_probability {L : Nat} (eps : Rat) (he : 0 < eps)\n    (ws : List Rat) (t : FiniteSourceSampler.Table ws.length)\n    (p : FiniteRepairRoundingPipeline.Parameters ws.get)\n    (hF : ∀ j : Fin t.rows.length, Formula.leaves (t.rows.get j).2+1 ≤ L)\n    (F : (Fin ws.length → Bool) → Nat → Bool) :\n    let x := selected eps ws t (ExecutableRounding.inputOf p)\n    let k := coinRuler eps (encodeInput x).length - x.trials*x.precision\n    (5 / 6 : Real) ≤ SeedEncoding.uniformProbability\n      (fun bits : SeedEncoding.FlatSeed (x.trials*x.precision+k) =>\n        let seeds := SeedEncoding.unflatten x.trials x.precision\n          (SeedEncoding.takePrefix (x.trials*x.precision) k bits)\n        paddedRun L eps (encodeInput x) (List.ofFn bits) =\n          ExecutablePipeline.bits ws t x.precision x.trials (ExecutableRounding.inputOf p) seeds ∧\n        SamplingGuarantee.Good (FiniteSourceSampler.probability t) t.rows.length\n          ws.length x.trials F eps (FiniteSourceSampler.selectArray t x.precision x.trials seeds)) := by\n  dsimp only\n  simp only [paddedRun_selected_valid eps he ws t p hF, true_and]\n  rw [padded_seed_probability\n    (selected eps ws t (ExecutableRounding.inputOf p)).trials\n    (selected eps ws t (ExecutableRounding.inputOf p)).precision _\n    (fun seeds => SamplingGuarantee.Good (FiniteSourceSampler.probability t) t.rows.length\n      ws.length (selected eps ws t (ExecutableRounding.inputOf p)).trials F eps\n      (FiniteSourceSampler.selectArray t (selected eps ws t (ExecutableRounding.inputOf p)).precision\n        (selected eps ws t (ExecutableRounding.inputOf p)).trials seeds))]\n  exact selected_good_probability eps he ws t (ExecutableRounding.inputOf p) F\n\nend PvNP.RealizableHardness.ExecutableSamplingPolicy\n"
+      }
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicyChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicyChecks.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 4276187136,
+      "memory_min": 2704580608,
+      "source_sha256": "cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicyChecks-1789289308923585900.log",
+      "log_sha256": "dff495ef6b08b85f4727124f2bc3d926053fef94d3720d4d8e00aef7ab2664ac",
+      "output_sha256": "4196e5082e33ba6b33fd9ceef485a99373235095535f8a2d6b50e526ce4082b8",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "metadata": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicyChecks-1789289308923585900.json",
+        "sha256": "866a93504996ccf233cd318f73f00a6e0ffef01c773a17ca4f10225cdc8e2248",
+        "byte_count": 3941,
+        "raw_utf8": "{\n  \"command\": [\n    \"C:\\\\Users\\\\Dan\\\\.elan\\\\toolchains\\\\leanprover--lean4---v4.34.0-rc2\\\\bin\\\\lean.exe\",\n    \"-R\",\n    \"lean\",\n    \"-o\",\n    \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableSamplingPolicyChecks.olean\",\n    \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableSamplingPolicyChecks.lean\"\n  ],\n  \"cwd\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\",\n  \"exit_code\": 0,\n  \"guard_stopped\": false,\n  \"memory_pre\": 4276187136,\n  \"memory_min\": 2704580608,\n  \"source_sha256\": \"cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7\",\n  \"source_unchanged\": true,\n  \"log_path\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\diagnostics\\\\ExecutableSamplingPolicyChecks-1789289308923585900.log\",\n  \"log_sha256\": \"dff495ef6b08b85f4727124f2bc3d926053fef94d3720d4d8e00aef7ab2664ac\",\n  \"output_sha256\": \"4196e5082e33ba6b33fd9ceef485a99373235095535f8a2d6b50e526ce4082b8\",\n  \"LEAN_PATH\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\cslib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\mathlib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\complexitylib\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\plausible\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\LeanSearchClient\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\importGraph\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\proofwidgets\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\aesop\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\Qq\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\batteries\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\packages\\\\Cli\\\\.lake\\\\build\\\\lib\\\\lean;C:\\\\Users\\\\Dan\\\\.elan\\\\toolchains\\\\leanprover--lean4---v4.34.0-rc2\\\\lib\\\\lean\",\n  \"LEAN_NUM_THREADS\": \"1\",\n  \"version\": \"Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)\",\n  \"manifest_sha256\": \"825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0\",\n  \"pins\": {\n    \"cslib\": \"d9be64196bf145edd019f1ccfeaee0c11166ba6b\",\n    \"mathlib\": \"e06eff5f95374108acfaf19f1ff7473aa7771df2\",\n    \"complexitylib\": \"6c248df7859f2f245e731c1e07057bf69d165fe2\",\n    \"plausible\": \"d9598f07b1bc701f1e3aae163d2681c1fd978793\",\n    \"LeanSearchClient\": \"ba67e212be1197b84c1f1f6299488a10a3002713\",\n    \"importGraph\": \"d8823026ac7ef130c253089d95685f9877b95323\",\n    \"proofwidgets\": \"a8acbfd87375ff4abe14ce09db5b7664d383bc7f\",\n    \"aesop\": \"18889deb9e83ea7420ef51c160d6f88552e744e3\",\n    \"Qq\": \"507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3\",\n    \"batteries\": \"7e23602c91bc04586b2b06de2708a041853e4681\",\n    \"Cli\": \"ab3a82db9fea14cf0fd7f5a2de650f4b534640af\"\n  }\n}"
+      },
+      "log": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicyChecks-1789289308923585900.log",
+        "sha256": "dff495ef6b08b85f4727124f2bc3d926053fef94d3720d4d8e00aef7ab2664ac",
+        "byte_count": 6585,
+        "raw_utf8": "'PvNP.RealizableHardness.ExecutableSamplingPolicy.inverse_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.inverse_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.self_le_two_pow' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.precision_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_trials_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_grid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_threshold' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.list_count_le_encode' depends on axioms: [propext, Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.variables_le_input_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.rows_le_input_length' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.coinRuler_quadratic' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_coins_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_good_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_run_valid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.digitBool_eq_finTwoEquiv' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.coinBits_eq_flatten' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_seed_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.paddedRunOption_selected' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.ofFn_prefix_split' depends on axioms: [propext, Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.coinBits_unflatten' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.paddedRun_selected_valid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_length_eq_ruler' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_executor_good_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nselected_coins_le : ∀ (eps : ℚ),\n  0 < eps →\n    ∀ (ws : List ℚ) (t : FiniteSourceSampler.Table ws.length) (q : ExecutableRounding.InputParameters),\n      (selected eps ws t q).trials * (selected eps ws t q).precision ≤\n        coinRuler eps (List.length (ExecutablePipelineInput.encodeInput (selected eps ws t q)))\n@selected_run_valid : ∀ {L : ℕ} (eps : ℚ) (ws : List ℚ) (t : FiniteSourceSampler.Table ws.length)\n  (p : FiniteRepairRoundingPipeline.Parameters ws.get)\n  (seeds :\n    JointSamplingLaw.SeedArray (selected eps ws t (ExecutableRounding.inputOf p)).trials\n      (selected eps ws t (ExecutableRounding.inputOf p)).precision),\n  (∀ (j : Fin t.rows.length), (t.rows.get j).2.leaves + 1 ≤ L) →\n    ExecutablePipelineInput.run L\n        (Complexity.pair (ExecutablePipelineInput.encodeInput (selected eps ws t (ExecutableRounding.inputOf p)))\n          (ExecutablePipelineInput.coinBits seeds)) =\n      ExecutablePipeline.bits ws t (SamplingGuarantee.precision t.rows.length eps)\n        (ComputableSampleCount.count ws.length (inverseCeil eps)) (ExecutableRounding.inputOf p) seeds\n@paddedRun_selected_valid : ∀ {L : ℕ} (eps : ℚ),\n  0 < eps →\n    ∀ (ws : List ℚ) (t : FiniteSourceSampler.Table ws.length) (p : FiniteRepairRoundingPipeline.Parameters ws.get),\n      (∀ (j : Fin t.rows.length), (t.rows.get j).2.leaves + 1 ≤ L) →\n        ∀\n          (bits :\n            SeedEncoding.FlatSeed\n              ((selected eps ws t (ExecutableRounding.inputOf p)).trials *\n                  (selected eps ws t (ExecutableRounding.inputOf p)).precision +\n                (coinRuler eps\n                    (List.length\n                      (ExecutablePipelineInput.encodeInput (selected eps ws t (ExecutableRounding.inputOf p)))) -\n                  (selected eps ws t (ExecutableRounding.inputOf p)).trials *\n                    (selected eps ws t (ExecutableRounding.inputOf p)).precision))),\n          let x := selected eps ws t (ExecutableRounding.inputOf p);\n          let k := coinRuler eps (List.length (ExecutablePipelineInput.encodeInput x)) - x.trials * x.precision;\n          have seeds :=\n            SeedEncoding.unflatten x.trials x.precision (SeedEncoding.takePrefix (x.trials * x.precision) k bits);\n          paddedRun L eps (ExecutablePipelineInput.encodeInput x) (List.ofFn bits) =\n            ExecutablePipeline.bits ws t x.precision x.trials (ExecutableRounding.inputOf p) seeds\n@padded_executor_good_probability : ∀ {L : ℕ} (eps : ℚ),\n  0 < eps →\n    ∀ (ws : List ℚ) (t : FiniteSourceSampler.Table ws.length) (p : FiniteRepairRoundingPipeline.Parameters ws.get),\n      (∀ (j : Fin t.rows.length), (t.rows.get j).2.leaves + 1 ≤ L) →\n        ∀ (F : (Fin ws.length → Bool) → ℕ → Bool),\n          have x := selected eps ws t (ExecutableRounding.inputOf p);\n          have k := coinRuler eps (List.length (ExecutablePipelineInput.encodeInput x)) - x.trials * x.precision;\n          5 / 6 ≤\n            SeedEncoding.uniformProbability fun bits =>\n              have seeds :=\n                SeedEncoding.unflatten x.trials x.precision (SeedEncoding.takePrefix (x.trials * x.precision) k bits);\n              paddedRun L eps (ExecutablePipelineInput.encodeInput x) (List.ofFn bits) =\n                  ExecutablePipeline.bits ws t x.precision x.trials (ExecutableRounding.inputOf p) seeds ∧\n                SamplingGuarantee.Good (FiniteSourceSampler.probability t) t.rows.length ws.length x.trials F eps\n                  (FiniteSourceSampler.selectArray t x.precision x.trials seeds)\n"
+      },
+      "output_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExecutableSamplingPolicyChecks.olean",
+      "source_snapshot": {
+        "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\diagnostics\\ExecutableSamplingPolicyChecks-source-cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7.lean",
+        "sha256": "cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7",
+        "byte_count": 2259,
+        "raw_utf8": "import PvNP.RealizableHardness.ExecutableSamplingPolicy\n/-! Draft checks; no compiler acceptance claimed. -/\nopen PvNP.RealizableHardness ExecutableSamplingPolicy\n\n#print axioms inverse_le\n#print axioms inverse_pos\n#print axioms self_le_two_pow\n#print axioms precision_upper\n#print axioms selected_trials_pos\n#print axioms selected_grid\n#print axioms selected_threshold\n#print axioms list_count_le_encode\n#print axioms variables_le_input_length\n#print axioms rows_le_input_length\n#print axioms coinRuler_quadratic\n#print axioms selected_coins_le\n#print axioms selected_good_probability\n#print axioms selected_run_valid\n#print axioms digitBool_eq_finTwoEquiv\n#print axioms coinBits_eq_flatten\n#print axioms padded_seed_probability\n#print axioms paddedRunOption_selected\n#print axioms ofFn_prefix_split\n#print axioms coinBits_unflatten\n#print axioms paddedRun_selected_valid\n#print axioms padded_length_eq_ruler\n#print axioms padded_executor_good_probability\n#check @selected_coins_le\n#check @selected_run_valid\n#check @paddedRun_selected_valid\n#check @padded_executor_good_probability\n\nexample : inverseCeil (1/4 : Rat) = 4 := by norm_num [inverseCeil]\nexample : inverseCeil (2/3 : Rat) = 2 := by\n  norm_num [inverseCeil]\n  have hu : ⌈(3/2 : Rat)⌉₊ ≤ 2 := Nat.ceil_le.mpr (by norm_num)\n  have hl := Nat.le_ceil (3/2 : Rat)\n  by_contra h\n  have hn : ⌈(3/2 : Rat)⌉₊ ≤ 1 := by omega\n  have hq : (⌈(3/2 : Rat)⌉₊ : Rat) ≤ 1 := by exact_mod_cast hn\n  linarith\nexample : coinRuler (1/4 : Rat) 0 = 0 := by simp [coinRuler]\nexample (eps : Rat) (n : Nat) :\n    coinRuler eps n = 512 * inverseCeil eps ^ 3 * (n^2+11*n) := coinRuler_quadratic _ _\nexample (x : ExecutablePipelineInput.Input) :\n    x.source.rows.length ≤ (ExecutablePipelineInput.encodeInput x).length := rows_le_input_length x\nexample : ExecutablePipelineInput.digitBool (0 : Fin 2) = false := rfl\nexample : ExecutablePipelineInput.digitBool (1 : Fin 2) = true := rfl\nexample (event : JointSamplingLaw.SeedArray 0 0 → Prop) :\n    SeedEncoding.uniformProbability (fun bits : SeedEncoding.FlatSeed (0*0+3) =>\n      event (SeedEncoding.unflatten 0 0 (SeedEncoding.takePrefix (0*0) 3 bits))) =\n      JointSamplingLaw.seedProbability 0 0 event := padded_seed_probability 0 0 3 event\n"
+      }
+    }
+  ],
+  "expected_profiles": 23,
+  "expected_examples": 8,
+  "expected_signatures": 4,
+  "profiles": [
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.inverse_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.inverse_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.self_le_two_pow",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.precision_upper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_trials_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_grid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_threshold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.list_count_le_encode",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.variables_le_input_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.rows_le_input_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.coinRuler_quadratic",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_coins_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_good_probability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.selected_run_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.digitBool_eq_finTwoEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.coinBits_eq_flatten",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_seed_probability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.paddedRunOption_selected",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.ofFn_prefix_split",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.coinBits_unflatten",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.paddedRun_selected_valid",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_length_eq_ruler",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ExecutableSamplingPolicy.padded_executor_good_probability",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "actual_session": 73339,
+  "actual_session_exit": 0,
+  "examples": 8,
+  "signatures": 4,
+  "compiler_released": true,
+  "portable_artifacts": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\copies.json",
+      "sha256": "bbd98648ed8127ba56b50a825a1c00de9fa1284a5647727586fac05d06ba81d7",
+      "byte_count": 38075,
+      "raw_utf8": "[\n  {\n    \"module\": \"PvNP.RealizableHardness.BernoulliMGF\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\BernoulliMGF.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\BernoulliMGF.olean\",\n    \"sha256\": \"2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.CMMSACodec\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\cmmsa-independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSACodec.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSACodec.olean\",\n    \"sha256\": \"57688ae8bafffd83add194ebb7a7e6bdde076791068499975f7f05d154b33754\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.CMMSAEncoding\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\cmmsa-independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSAEncoding.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSAEncoding.olean\",\n    \"sha256\": \"a35848da5d5ff2917e9fd9b6243fa4c8dcbdd1e812770e24ee702b7d60f6aed9\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.CMMSAPipelineEncoding\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\cmmsa-independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSAPipelineEncoding.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\CMMSAPipelineEncoding.olean\",\n    \"sha256\": \"be0ec7d135b784b6921d187c47b11058d242c7421f7c0e8f42088829688923d5\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.ComputableSampleCount\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ComputableSampleCount.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ComputableSampleCount.olean\",\n    \"sha256\": \"e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.ExceptionRepair\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExceptionRepair.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExceptionRepair.olean\",\n    \"sha256\": \"7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.ExecutablePipeline\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-pipeline-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutablePipeline.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutablePipeline.olean\",\n    \"sha256\": \"d03e8f8b13e0d1993723442b3bbc9925ac383c1a99e3fc721b1fe4f75268b2ca\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.ExecutableRounding\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-rounding-independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableRounding.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutableRounding.olean\",\n    \"sha256\": \"ad2b150a170e06e8d895308b8847d172de47cae9fc24d1151e6f3855578bfd6d\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.FiniteConcentration\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteConcentration.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteConcentration.olean\",\n    \"sha256\": \"226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.FiniteRepairRoundingPipeline\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteRepairRoundingPipeline.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteRepairRoundingPipeline.olean\",\n    \"sha256\": \"9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.FiniteSampling\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteSampling.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteSampling.olean\",\n    \"sha256\": \"8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.FiniteSourceSampler\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\finite-source-sampler-independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteSourceSampler.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\FiniteSourceSampler.olean\",\n    \"sha256\": \"56e12ad48c1be183b1fe840d789e215d2438938166c7f952f7b55ff1ebf08e77\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.Formula\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\Formula.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\Formula.olean\",\n    \"sha256\": \"2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.InverseCDFSampler\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\InverseCDFSampler.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\InverseCDFSampler.olean\",\n    \"sha256\": \"57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.JointSamplingLaw\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\JointSamplingLaw.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\JointSamplingLaw.olean\",\n    \"sha256\": \"5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.SamplingFormulaPromises\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingFormulaPromises.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingFormulaPromises.olean\",\n    \"sha256\": \"4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.SamplingGuarantee\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingGuarantee.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingGuarantee.olean\",\n    \"sha256\": \"a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.SamplingThreshold\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingThreshold.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SamplingThreshold.olean\",\n    \"sha256\": \"b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.WeightRounding\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\WeightRounding.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\WeightRounding.olean\",\n    \"sha256\": \"04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-independent-proof-review.json\",\n    \"receipt_sha256\": \"b58c3f458c945f8c65bdfc4797e38dfac7049cf47e605c3a5fec86d946ba69a4\"\n  },\n  {\n    \"module\": \"Complexitylib.Encoding.Delimit\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean\",\n    \"sha256\": \"cebe1132cec5526e911d247c1f435b95d603005a886a1f1a15ea406632411185\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib.Encoding.Pairing\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean\",\n    \"sha256\": \"8742d8544ed08a40d5ccecc4b4de50bbbfe26c2b2d9939be300570f4222041e3\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.ilean.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ilean.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ilean.hash\",\n    \"sha256\": \"b1c01419fa2b309b26630f441f18241c12108a0f674a0c5998180c9d924c717f\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.ir\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir\",\n    \"sha256\": \"6fa2928064f34f021371d5f82f8209ca43eaaba22c62aa9dbd21e3e48438b745\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.ir.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.hash\",\n    \"sha256\": \"c1cd47470980310caa6aeceaed1d8c25c2aba5d0999854bbce024089c8359af5\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.ir.sig.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.sig.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.sig.hash\",\n    \"sha256\": \"9dba2c7c34fb8b5d63ca6821e62364001a763b6fb0194e1a03a16dee08125899\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.olean.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.hash\",\n    \"sha256\": \"012b6da390e959adc9c07894811c5a29f044a07e37e1e596f3c8ece96c395583\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.olean.private\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.private\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.private\",\n    \"sha256\": \"a19822d7a15a62a6b842ae9dd80d971ef0f657e34d953c4b87642c8742f1432b\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.olean.private.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.private.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.private.hash\",\n    \"sha256\": \"75b291444a21b7ac95e47646b8fa7585d2481d444ddcb3865cacf9fa1e2bf173\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.olean.server\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.server\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.server\",\n    \"sha256\": \"b6c39277531421a49f21d8611f38e9b0fb12b64391f41854279b15f714c7bea5\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.olean.server.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.server.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.olean.server.hash\",\n    \"sha256\": \"06d44e283e03032878d320e4550c0d76bdd5135e21030b7ed14f4f544fc478c3\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.trace\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.trace\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.trace\",\n    \"sha256\": \"f47330a161c0b4f8ead88bb2cf7e61dba3cb53c257b9129a1d412c69011fc88a\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Pairing.ir.sig\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.sig\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Pairing.ir.sig\",\n    \"sha256\": \"a37dfefdc0d40e4e3fc1c25d7d78669c52ad8a55b1904365dc0419dfe88bb835\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.ilean.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ilean.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ilean.hash\",\n    \"sha256\": \"1b983030dd8372da00a1325bd7bb6d8b685da7d613a8ec941733c95160cf3813\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.ir\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir\",\n    \"sha256\": \"3e9cead5f42264c34046419774df050cc6e3c7455bf4f5c65a56bc91c656ee0e\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.ir.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.hash\",\n    \"sha256\": \"5889c825d39d067de1c04984acf2e26b795227ed1f97a96d0033ae2663b6dcdf\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.ir.sig.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.sig.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.sig.hash\",\n    \"sha256\": \"e9f7c5b7c241ed9be6d4795c7780f73bed33e005a04f9b4653589a1ae24f1543\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.olean.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.hash\",\n    \"sha256\": \"41b49063258d07e248ea2c9fb279622823888f52a534bd616990deb23e59ac60\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.olean.private\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.private\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.private\",\n    \"sha256\": \"44564f10b092734b6c517183c4387ccb67907f062d556077ca0e8e7234f38578\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.olean.private.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.private.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.private.hash\",\n    \"sha256\": \"719207aa9dc171cb4c7b362d8ced56666b259176f8560326c9210d91973083a3\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.olean.server\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.server\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.server\",\n    \"sha256\": \"237f2390ab883263918e9449e64de5ca3ee2bfa5b7a521455af369c0c988b3c2\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.olean.server.hash\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.server.hash\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.olean.server.hash\",\n    \"sha256\": \"1cbcdf6a72b2fcb86c6b1e98daaec28b3edb6bba86f2fbc2698973c4e1898437\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.trace\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.trace\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.trace\",\n    \"sha256\": \"a6991c631050eb442dc9f1a189c41e03a445aba62f7be5b587a5e67f09847719\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"Complexitylib/Encoding/Delimit.ir.sig\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\randomized-independent-review-20260912\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.sig\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\Complexitylib\\\\Encoding\\\\Delimit.ir.sig\",\n    \"sha256\": \"ada9ce0c986fb5435b8b68a510e0a659b120a73acdb2641f83e922b9fcfacca5\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-12-realizable-hardness-randomized-reduction-proof-verification.json\",\n    \"receipt_sha256\": \"7104f3ee41f2eb39540383c5672d193e3341071e642b18517cc7fe9701da712d\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.ExecutablePipelineInput\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-pipeline-input-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutablePipelineInput.olean\",\n    \"sha256\": \"e5e2caab7061b47fad68ecd3728ae74b753b8927bddecc30795ebdbc19e191f6\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\research\\\\p-equals-np\\\\2026-09-13-realizable-hardness-executable-pipeline-input-independent-proof-review.json\",\n    \"receipt_sha256\": \"e1306a909dc6a8f7bd615f7fad5344f1c76056ca8d1b16256b23d1b44973422e\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\ExecutablePipelineInput.olean\"\n  },\n  {\n    \"module\": \"PvNP.RealizableHardness.SeedEncoding\",\n    \"source\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SeedEncoding.olean\",\n    \"sha256\": \"ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd\",\n    \"receipt\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\independent-review-20260912\\\\results.json\",\n    \"receipt_sha256\": \"dacb92820e890612796569cfb2b705dd8d390b7d620842c213dc5e4bba4b7f7f\",\n    \"output\": \"C:\\\\Users\\\\Dan\\\\Desktop\\\\Projects\\\\formal-pvnp\\\\certifications\\\\realizable-hardness\\\\.lake\\\\build\\\\executable-sampling-policy-independent-review-20260913\\\\lib\\\\lean\\\\PvNP\\\\RealizableHardness\\\\SeedEncoding.olean\"\n  }\n]\n"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\executable-sampling-policy-independent-review-20260913\\independent-runner.py",
+      "sha256": "7726cd716413a4d7832a11cd2e101a75af067f9fe64cde38e665a3012b3b9b66",
+      "byte_count": 3676,
+      "raw_utf8": "import ctypes,hashlib,json,os,pathlib,subprocess,sys,time\nsys.stdout.reconfigure(encoding='utf-8')\nroot=pathlib.Path('C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness')\nwork=root/'.lake/build/executable-sampling-policy-independent-review-20260913'\nclass MS(ctypes.Structure):\n    _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(x,ctypes.c_ulonglong) for x in ['total','avail','totalpage','availpage','totalvirtual','availvirtual','extended']]\ndef memory():\n    m=MS();m.length=ctypes.sizeof(m)\n    assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m))\n    return m.avail\ndef sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()\nmanifest=root/'lake-manifest.json'\nassert sha(manifest)=='825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0'\npins={}\nfor p in json.loads(manifest.read_bytes())['packages']:\n    head=subprocess.check_output(['git','-C',str(root/'.lake/packages'/p['name']),'rev-parse','HEAD']).decode().strip()\n    assert head==p['rev'];pins[p['name']]=head\nlean=pathlib.Path('C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe')\nversion=subprocess.check_output([str(lean),'--version']).decode().strip()\nassert '6a10ac8c22beadecabdbb0919c2b50214762f91d' in version\nenv=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['PYTHONUTF8']='1'\nenv['LEAN_PATH']=';'.join([str(work/'lib/lean')]+[str(root/'.lake/packages'/p/'.lake/build/lib/lean') for p in pins]+[str(lean.parent.parent/'lib/lean')])\nfor entry in json.loads((work/'copies.json').read_bytes()):\n    assert sha(pathlib.Path(entry['source']))==entry['sha256']\n    assert sha(pathlib.Path(entry['output']))==entry['sha256']\n    assert sha(pathlib.Path(entry['receipt']))==entry['receipt_sha256']\ndiag=work/'diagnostics';diag.mkdir(exist_ok=True)\nfor name in sys.argv[1:] or ['ExecutableSamplingPolicy','ExecutableSamplingPolicyChecks']:\n    pre=memory();assert pre>=805306368,pre\n    source=root/'lean/PvNP/RealizableHardness'/f'{name}.lean'\n    out=work/'lib/lean/PvNP/RealizableHardness'/f'{name}.olean'\n    log=diag/f'{name}-{time.time_ns()}.log';meta=log.with_suffix('.json')\n    cmd=[str(lean),'-R','lean','-o',str(out),str(source)]\n    assert name in ['ExecutableSamplingPolicy','ExecutableSamplingPolicyChecks']\n    before=sha(source)\n    assert before=={'ExecutableSamplingPolicy': 'c7faedec1867adc13b45a439888da7eaa1483c6b7ae85de9d91f3c73d7c5112c', 'ExecutableSamplingPolicyChecks': 'cd2b3d69ec98c7e5aee91c1e0f274ec17d4cf5f57f92401f7bdd63524ed27fc7'}[name]\n    assert not out.exists()\n    (diag/(name+'-source-'+before+'.lean')).write_bytes(source.read_bytes())\n    with log.open('wb') as f:\n        proc=subprocess.Popen(cmd,cwd=root,env=env,stdout=f,stderr=subprocess.STDOUT)\n        print('LIVE',name,proc.pid,str(log),flush=True)\n        low=pre;stopped=False\n        while proc.poll() is None:\n            mem=memory();low=min(low,mem)\n            if mem<671088640:proc.terminate();stopped=True\n            time.sleep(.25)\n        rc=proc.wait()\n    record={'command':cmd,'cwd':str(root),'exit_code':rc,'guard_stopped':stopped,'memory_pre':pre,'memory_min':low,'source_sha256':before,'source_unchanged':before==sha(source),'log_path':str(log),'log_sha256':sha(log),'output_sha256':sha(out) if rc==0 else None,'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','version':version,'manifest_sha256':sha(manifest),'pins':pins}\n    meta.write_bytes(json.dumps(record,indent=2).encode('utf-8'))\n    print(log.read_bytes().decode('utf-8'),flush=True)\n    print('ACTUAL_EXIT',rc,'METADATA',str(meta),flush=True)\n    if rc:sys.exit(rc)\n    assert record['source_unchanged'] and not record['guard_stopped']\n"
+    }
+  ],
+  "notes": [
+    "Q is quadratic in selected deterministic encoding length for each fixed positive rational eps; original SAT-size and FP remain unproved.",
+    "Policy epsilon and arithmetic epsilon remain separate; later semantic application must establish their relationship.",
+    "Good is simultaneous concentration for the actual recovered source draws, not a supplied hardness predicate.",
+    "No theorem/source/package/Git/public modifications. Other review lenses remain separate.",
+    "Main has one deprecated if_pos warning; Checks clean. Two evidence-assembly regex assertions were corrected for actual short-name signature display; no compiler rerun or theorem edit."
+  ]
+}
