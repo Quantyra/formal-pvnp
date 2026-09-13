@@ -16,7 +16,7 @@ lemma card_advice (J a : ℕ) : Fintype.card (Advice J a) = gaussian (3 * J) a :
   have h : Nat.card (Advice J a) = gaussian (3 * J) a := by
     change Nat.card (Grass (Vector J) a) = _
     rw [Nat.card_eq_fintype_card, card_grass]
-    simp [Vector, Coord, Module.finrank_pi, Nat.mul_comm]
+    simp [TripleRestrictionRank.Vector, Coord, Module.finrank_pi, Nat.mul_comm]
   simpa only [Nat.card_eq_fintype_card] using h
 
 lemma ambientMass_eq (Q : Advice J a) :
@@ -121,6 +121,7 @@ theorem event_transfer (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
   rw [he] at h
   exact h
 
+set_option maxHeartbeats 800000 in
 /-- A fixed W may depend on the already chosen Q, but not on the subsequently sampled d.
 The unconditional rank bound is transported without asserting posterior independence. -/
 theorem fixed_subspace_failure_transfer (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1)
@@ -135,9 +136,16 @@ theorem fixed_subspace_failure_transfer (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β �
   have hu' : PosteriorReweighting.mass (prior β)
       (fun d => decide (SubspaceRestriction.codimInRetained W d ≠ SubspaceRestriction.codim W)) ≤
         ((2 ^ SubspaceRestriction.codim W - 1 : ℕ) : ℚ) * β := by
-    simpa only [PosteriorReweighting.mass, probability, prior, decide_eq_true_eq] using hu
+    convert hu using 1
+    unfold PosteriorReweighting.mass probability prior
+    apply Finset.sum_congr rfl
+    intro d _
+    by_cases hd : SubspaceRestriction.codimInRetained W d = SubspaceRestriction.codim W
+    · simp [hd]
+    · simp [hd]
   exact (event_transfer β hβ hβ1 Q ha hgood _ T).trans
-    (add_le_add_right (mul_le_mul_of_nonneg_left hu' (by positivity)) _)
+    (add_le_add (mul_le_mul_of_nonneg_left hu'
+      (by positivity : 0 ≤ (8 * (2 : ℚ)^(2 * a * T)))) le_rfl)
 
 end
 end PvNP.RealizableHardness.PosteriorDensity
