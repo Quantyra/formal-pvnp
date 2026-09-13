@@ -77,7 +77,10 @@ theorem ownerLookup_correct (S : Source) (r : Fin S.1.length) (i : Fin 3) :
   have he : posAt (table S) r.val = DataEncode.bitstringEncode S.1[r.val] :=
     posAt_eq_of_lt r.isLt
   rw [he]
-  fin_cases i <;> simp [tripleLabel, fstEnc_eq, sndEnc_eq]
+  cases ht : S.1[r.val] with
+  | mk a bc =>
+    cases bc with
+    | mk b c => fin_cases i <;> simp [tripleLabel, fstEnc_eq, sndEnc_eq]
 
 theorem lookupInput_length (T : List Bool) (q : Nat) :
     (lookupInput T q).length = 2*T.length+2+q := by simp [lookupInput]
@@ -111,14 +114,18 @@ theorem equalityMark_correct (a b : List Bool) :
   rcases Cobham.eqFlag_flag a b with he | he
   case inl =>
     have hab := (Cobham.eqFlag_eq_true_iff a b).mp he
-    simp [equalityMark, he, hab, Cobham.selectHead]
+    unfold equalityMark
+    rw [he, if_pos hab]
+    rfl
   case inr =>
     have hab : Not (a = b) := by
       intro hab
       have ht := (Cobham.eqFlag_eq_true_iff a b).mpr hab
       rw [he] at ht
       cases ht
-    simp [equalityMark, he, hab, Cobham.selectHead]
+    unfold equalityMark
+    rw [he, if_neg hab]
+    rfl
 
 /-- Exact original-label equality, even for equal-length binary codes. -/
 theorem equalityMark_encoded (v w : Nat) :
