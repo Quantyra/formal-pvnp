@@ -1,0 +1,37 @@
+# Independent proof-adversarial review: complete per-seed output
+
+2026-09-13. S3131/S3126. Reviewer did not author ExecutablePipeline. **GO-WITH-NOTES for this bounded constructor.** Source review found no HIGH statement, cast, circularity or mathematical blocker within the bounded constructor theorem.
+
+Reviewed both complete Lean sources and the dated author receipt at exact freeze `67d478d3d4c78a0e78323bccf053d6fa3b3c42a9`. All three current files match raw frozen bytes. The receipt SHA256 is `db393a42f63f0110a295ccf593fb15b5ee6e74a95b1adc1555c7d16689db2a0b`. Checked underlying repairedFamily, outputData, codec Valid, accepted, readRat, Instance.data and decode definitions. The companion instructions and three-lens protocol were already read in the preceding review.
+
+## Proof findings
+
+The implementation constructs actual bits from typed finite data. No argument supplies its output, a correctness equality, a desired sampled formula list, or a validity certificate for the completed output. The table has normalized probability input proofs; the scalar Parameters used in correctness theorems are input promises. The constructor itself takes their computable scalar projection.
+
+draws uses the existing selectArray on the very same t, b, M and seeds as fromSeeds in the statement. It does not resample or postselect successful seeds. This is a pointwise identity for every seed array, not a probabilistic coupling hypothesis. No assumption of uniform independent seeds is needed for this identity; such assumptions would be needed for later probability guarantees.
+
+repairedFamily attaches exception coordinate finSumFinEquiv(inr i) using the trial position i. Repeated table rows or repeated sampled indices retain separate occurrence positions and exception coordinates. List.ofFn preserves order and multiplicity. Original coordinates use the inl injection into Fin(N+M), disjoint from all exception coordinates.
+
+The data formula cast has the correct direction: outputWeights_length states the actual list has length N+M, and its symmetry maps Fin(N+M) into Fin of that list length. record_congr is general equality elimination on the weights, formula functions and budgets; after substitution, equality-proof irrelevance makes the dependent casts coincide. It does not assume the final data equality. The concrete outputWeights_eq, draws_eq and outputBudget_eq discharge its arguments in data_eq.
+
+tree emits the computed unreduced arithmetic trees and full formula list. read_tree assumes only positivity of the computed common denominator; valid Parameters and M>0 later derive it. readRat interprets the fraction, so semantic equality is appropriate. The proof does not claim equality with the canonical fraction byte encoding. Instance.data extraction uses the actual successful readData equality; the impossible parse branch is eliminated from that equality. decode_bits then applies the codec roundtrip to the same emitted tree, and decode_seeded_data identifies the full decoded record, including dependent formula coordinates, with the same-seed semantic instance.
+
+formula_wire_bound structurally covers every connective and variable-index tree. Nat.size is monotone on each bounded Fin index, and the bound uses N.size, not a constant-cost variable-name assumption. full_wire_bound combines this with the rounded arithmetic fragment bounds, the ordered M-element list overhead, and both outer nodes. Its hF counts the extra exception leaf already, so the repaired formulas meet L. The conclusion covers the complete payload; it does not bound runtime or all arithmetic intermediates.
+
+## Boundary cases and limitations
+
+- M=0 constructs an empty formula list, as checked in the first example. No valid-instance conclusion is asserted there: correctness/validity theorems require M>0. The existing codec Valid requires a nonempty formula list, so checkedBits cannot accept such an empty output. This last observation is from inspected definitions; no separate M=0 rejection example was compiled in this increment.
+- b=0 is a valid typed one-point seed space. The same-seed equality remains meaningful; no claim of exact original rational distribution is introduced. The previously accepted sampler uses rounded grid masses.
+- Raw q may produce invalid arithmetic/output. checkedBits validates the emitted output tree and explicitly returns none on rejection. It is not a validator that rejects every invalid input scalar tuple, nor a parser for arbitrary source bytes. If invalid input scalars happen to produce a valid output, acceptance is consistent with its definition.
+- A Table is already normalized and nonempty, and seeds are already correctly typed. The constructor does not establish a binary table parser, arbitrary malformed seed handling, an encoded sample-count ruler, or an all-input FP machine.
+- Arbitrary binary M can request exponentially many formulas relative to its bit length. The output bound must not be presented as a polynomial-time claim in arbitrary binary inputs. Intermediate rational costs, bounded traversal, source table size, actual same-function FP witnesses and fixed-L parameter bounds remain open.
+
+The stale uncompiled source comments and historical receipt sections are superseded by the author appendix. The raced first Checks result is explicitly excluded from stable author acceptance. Independent acceptance will use only newly run stable source bytes. Expected checks: sixteen profiles (including axiom-free record_congr), four examples, no evaluations.
+
+## Prepared independent build
+
+Fresh root: companion `.lake/build/executable-pipeline-independent-review-20260913`. Copied twenty-three original accepted exports directly from the finite/CMMSA/rounding/sampler independent output roots. Each original hash and its cited acceptance receipt hash were verified, and each artifact hash was found in that receipt. No Pipeline author export is reused. The JSON lists every original path, copied path, hash and receipt.
+
+The two-target runner checks exact source hashes, absence of target outputs, all twenty-three original/copied artifact hashes and receipt hashes, manifest, eleven package revisions and Lean 4.34.0-rc2 identity. It uses one thread, physical RAM precondition 768 MiB, and stops only its owned child below 640 MiB. Raw logs and actual exit metadata precede display. Runner is exact UTF-8 LF and its embedded text matches raw bytes.
+
+Runner SHA256: `293775c691e7f25b44de67e8f5ec864df5ac54d8630ab7d1612d7fea6c3fa853`. After the exclusive compiler grant, independent session 3496 compiled both targets with actual exit zero and unchanged source bytes. Sixteen emitted axiom profiles were inspected: record_congr is axiom-free, and the other fifteen use only propext, Classical.choice and Quot.sound. Four examples compiled; no evaluations were run. The sole warning is an unused simp argument. Raw logs, actual metadata, output hashes and pins are preserved in the JSON; embedded log strings decode the raw bytes without newline transformation. All twenty-three original/copied exports and their receipt hashes were reverified after the build. No RAM guard stop occurred. Compiler ownership was released immediately after the terminal result. No source edits, Git changes, package downloads or public actions were made. Full hardness, FP, learning, manuscript reconciliation and final consolidated fresh-checkout verification remain unfinished.
