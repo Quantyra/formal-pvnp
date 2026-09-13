@@ -36,7 +36,8 @@ example : cubeSum (fun x y z : Fin 2 => (blockRatio 0 x y z - 1) ^ 2) = 0 := by
 example (β : ℝ) :
     cubeSum (fun x y z : Fin 1 => (blockRatio β x y z - 1) ^ 2) = 0 := by
   have h := block_chiSquare_exact (S := Fin 1) β
-  simpa using h
+  norm_num at h
+  exact h
 
 example : 1 - (PvNP.RealizableHardness.GrassmannCounting.frameProduct 3 1 : ℚ) /
     (2 : ℚ) ^ (3 * 1) ≤ ((2 : ℚ) ^ 1 - 1) / (2 : ℚ) ^ 3 :=

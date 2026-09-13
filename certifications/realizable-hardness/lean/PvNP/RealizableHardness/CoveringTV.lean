@@ -52,6 +52,9 @@ lemma card_pos_real : 0 < (Fintype.card S : ℝ) := by
   exact_mod_cast Fintype.card_pos
 
 lemma deletedRatio_nonneg (x y z : S) : 0 ≤ deletedRatio x y z := by
+  have hx := zeroIndicator_nonneg x
+  have hy := zeroIndicator_nonneg y
+  have hz := zeroIndicator_nonneg z
   unfold deletedRatio
   positivity
 
@@ -231,7 +234,7 @@ theorem product_affinity (p q : A → ℝ) (hp : ∀ x, 0 ≤ p x)
     rw [Real.sqrt_prod _ (fun j _ => hp (x j)),
       Real.sqrt_prod _ (fun j _ => hq (x j)), Finset.prod_mul_distrib]
   simp only [affinity, he]
-  rw [← Fintype.prod_sum]
+  rw [← Fintype.prod_sum (fun (_j : Fin J) (x : A) => Real.sqrt (p x) * Real.sqrt (q x))]
   simp
 
 lemma one_sub_pow_le (r : ℝ) (hr : 0 ≤ r) (hr1 : r ≤ 1) (J : ℕ) :
@@ -271,7 +274,8 @@ theorem realTV_sq_le_hellingerSq (p q : A → ℝ) (hp : ∀ x, 0 ≤ p x)
       nlinarith [Real.sq_sqrt (hp x), Real.sq_sqrt (hq x),
         sq_nonneg (Real.sqrt (p x) - Real.sqrt (q x))]
     have h := Finset.sum_le_sum (fun x (_ : x ∈ (Finset.univ : Finset A)) => hpoint x)
-    simpa [← Finset.mul_sum, Finset.sum_add_distrib, hps, hqs] using h
+    norm_num [← Finset.mul_sum, Finset.sum_add_distrib, hps, hqs] at h ⊢
+    exact h
   have hc := Finset.sum_mul_sq_le_sq_mul_sq Finset.univ
     (fun x => |Real.sqrt (p x) - Real.sqrt (q x)|)
     (fun x => Real.sqrt (p x) + Real.sqrt (q x))
