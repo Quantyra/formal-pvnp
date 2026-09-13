@@ -38,6 +38,7 @@ open CoveringSpan GrassmannCounting TripleRestrictionRank GrassmannIncidence
 #print axioms actual_adviceTV_le_manuscript
 
 noncomputable section
+attribute [local instance] Classical.propDecidable
 
 example (x : Fin 2 → CoveringTV.Cube (Fin 1 → ZMod 2)) :
     (arrayCoordinates 2 1).symm (arrayCoordinates 2 1 x) = x :=
@@ -71,7 +72,8 @@ example (β : ℚ) (Q : Advice 1 1) :
     (∑ d : Draw 1, (prior β d : ℝ) * subspaceLaw (retained d) Q) =
       (adviceMarginal β Q : ℝ) := averaged_subspaceLaw_eq_adviceMarginal β Q
 
-example : (0 : ℝ) / (2 : ℝ)^0 ≤ Real.sqrt 0 := size_over_two_pow_le_sqrt 0
+example : (0 : ℝ) / (2 : ℝ)^0 ≤ Real.sqrt 0 := by
+  simpa using size_over_two_pow_le_sqrt 0
 
 example (J a : ℕ) (ha : a ≤ J) :
     CoveringTV.realTV (fun Q : Advice J a => (PosteriorDensity.ambientMass Q : ℝ))

@@ -118,8 +118,8 @@ theorem sum_over_frames (g : Grass V a → ℝ) :
       (frameProduct a a : ℝ) * ∑ Q : Grass V a, g Q := by
   have he := (frameEquiv (V := V) (a := a)).sum_comp (fun f => g (spanFrame f))
   rw [← he]
-  simp only [Fintype.sum_sigma, frameEquiv, Equiv.ofBijective_apply,
-    spanFrame_flatten, Finset.sum_const, Finset.card_univ, nsmul_eq_mul,
+  change (∑ s : (Q : Grass V a) × Frame Q.val a, g (spanFrame (flatten s))) = _
+  simp only [Fintype.sum_sigma, spanFrame_flatten, Finset.sum_const, Finset.card_univ, nsmul_eq_mul,
     card_internal_frame, ← Finset.mul_sum]
 
 def uniformGrass (Q : Grass V a) : ℝ := (Fintype.card (Grass V a) : ℝ)⁻¹
@@ -143,7 +143,7 @@ lemma grass_card_pos (ha : a ≤ Module.finrank (ZMod 2) V) :
     apply Nat.sub_pos_of_lt
     exact Nat.pow_lt_pow_right (by decide : 1 < 2) (lt_of_lt_of_le i.isLt ha)
   have he := card_grass_mul (V := V) ha
-  exact (Nat.mul_pos_iff.mp (he.symm ▸ hp)).1
+  nlinarith [he]
 
 lemma uniformGrass_sum (ha : a ≤ Module.finrank (ZMod 2) V) :
     ∑ Q : Grass V a, uniformGrass Q = 1 := by
@@ -166,7 +166,9 @@ def uniformArray (v : Fin a → V) : ℝ := (Fintype.card (Fin a → V) : ℝ)�
 def BadArray (V : Type*) [AddCommGroup V] [Module (ZMod 2) V] (a : ℕ) :=
   {v : Fin a → V // ¬ LinearIndependent (ZMod 2) v}
 
-instance badArrayFintype : Fintype (BadArray V a) := Fintype.ofFinite _
+instance badArrayFintype : Fintype (BadArray V a) := by
+  unfold BadArray
+  infer_instance
 
 def failureFraction (V : Type*) [AddCommGroup V] [Module (ZMod 2) V]
     [Fintype V] (a : ℕ) : ℝ :=
@@ -175,8 +177,11 @@ def failureFraction (V : Type*) [AddCommGroup V] [Module (ZMod 2) V]
 lemma split_arrays (f : (Fin a → V) → ℝ) :
     (∑ v : Fin a → V, f v) =
       (∑ v : Frame V a, f v.val) + ∑ v : BadArray V a, f v.val := by
-  exact (Fintype.sum_subtype_add_sum_subtype
-    (fun v : Fin a → V => LinearIndependent (ZMod 2) v) f).symm
+  convert (Fintype.sum_subtype_add_sum_subtype
+    (fun v : Fin a → V => LinearIndependent (ZMod 2) v) f).symm using 1
+  congr 1
+  let e : Frame V a ≃ {v : Fin a → V // LinearIndependent (ZMod 2) v} := Equiv.refl _
+  exact e.sum_comp (fun v => f v.val)
 
 lemma array_card_split (ha : a ≤ Module.finrank (ZMod 2) V) :
     (Fintype.card (Grass V a) : ℝ) * frameProduct a a +
@@ -201,10 +206,16 @@ theorem push_uniformArray (ha : a ≤ Module.finrank (ZMod 2) V) (Q : Grass V a)
   unfold push uniformArray
   rw [← Finset.mul_sum, split_arrays]
   have hi : (∑ v : Frame V a, spanKernel v.val Q) = (frameProduct a a : ℝ) := by
-    simpa only [spanKernel, dif_pos (Subtype.property _)] using hs
+    have he (v : Frame V a) : spanKernel v.val Q =
+        (if spanFrame v = Q then 1 else 0) := by
+      simp [spanKernel, v.property, spanFrame]
+      rfl
+    simpa only [he] using hs
   have hb : (∑ v : BadArray V a, spanKernel v.val Q) =
       (Fintype.card (BadArray V a) : ℝ) * uniformGrass Q := by
-    simp only [spanKernel, dif_neg (Subtype.property _), Finset.sum_const,
+    have he (v : BadArray V a) : spanKernel v.val Q = uniformGrass Q := by
+      simp [spanKernel, v.property]
+    simp only [he, Finset.sum_const,
       Finset.card_univ, nsmul_eq_mul]
   rw [hi, hb]
   unfold uniformGrass
@@ -227,6 +238,7 @@ theorem failureFraction_eq (ha : a ≤ Module.finrank (ZMod 2) V) :
   have hs := split_arrays (V := V) (a := a) (fun _ => (1 : ℝ))
   simp only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one,
     card_frame ha, hc] at hs
+  push_cast at hs
   unfold failureFraction
   rw [hc, Nat.cast_pow, Nat.cast_ofNat]
   have hd : (2 : ℝ) ^ (Module.finrank (ZMod 2) V * a) ≠ 0 := by positivity
@@ -237,7 +249,13 @@ theorem failureFraction_le (ha : a ≤ Module.finrank (ZMod 2) V) :
     failureFraction V a ≤
       ((2 : ℝ) ^ a - 1) / (2 : ℝ) ^ Module.finrank (ZMod 2) V := by
   rw [failureFraction_eq ha]
-  exact_mod_cast CoveringTV.frame_failure_le (Module.finrank (ZMod 2) V) a ha
+  have h := CoveringTV.frame_failure_le (Module.finrank (ZMod 2) V) a ha
+  have hr : ((1 - (frameProduct (Module.finrank (ZMod 2) V) a : ℚ) /
+      (2 : ℚ)^(Module.finrank (ZMod 2) V * a) : ℚ) : ℝ) ≤
+      ((((2 : ℚ)^a - 1) / (2 : ℚ)^Module.finrank (ZMod 2) V : ℚ) : ℝ) :=
+    Rat.cast_le.mpr h
+  simpa only [Rat.cast_sub, Rat.cast_one, Rat.cast_div, Rat.cast_natCast,
+    Rat.cast_pow, Rat.cast_ofNat] using hr
 
 end Frames
 
@@ -298,7 +316,13 @@ lemma spanFrame_coe (W : Submodule (ZMod 2) V) (v : Frame W a) :
     (Submodule.span (ZMod 2) (Set.range v.val)).map W.subtype
   rw [Submodule.map_span]
   congr 1
-  exact Set.image_range.symm
+  ext x
+  simp only [Set.mem_image, Set.mem_range]
+  constructor
+  · rintro ⟨i, rfl⟩
+    exact ⟨v.val i, ⟨i, rfl⟩, rfl⟩
+  · rintro ⟨y, ⟨i, rfl⟩, rfl⟩
+    exact ⟨i, rfl⟩
 
 lemma sum_include_indicator (W : Submodule (ZMod 2) V) (Q : Grass V a) :
     (∑ R : Grass W a, if (includeSubspace W R).val = Q then (1 : ℝ) else 0) =
@@ -367,8 +391,15 @@ theorem subspaceArrayPush_eq (W : Submodule (ZMod 2) V)
           if (includeSubspace W (spanFrame v)).val = Q then (1 : ℝ) else 0 := by
         apply Finset.sum_congr rfl
         intro v _
-        rw [spanKernel, dif_pos (v.property.map' W.subtype W.ker_subtype), spanFrame_coe]
-      _ = _ := by rw [sum_over_frames, sum_include_indicator]
+        have hv : LinearIndependent (ZMod 2) (fun i => (v.val i).val) :=
+          v.property.map' W.subtype W.ker_subtype
+        simp only [spanKernel, dif_pos hv]
+        rw [spanFrame_coe]
+      _ = _ := by
+        have hs := sum_over_frames (V := W)
+          (fun R : Grass W a => if (includeSubspace W R).val = Q then (1 : ℝ) else 0)
+        rw [sum_include_indicator] at hs
+        exact hs
   have hb : (∑ v : BadArray W a, spanKernel (fun i => (v.val i).val) Q) =
       (Fintype.card (BadArray W a) : ℝ) * uniformGrass Q := by
     have hf (v : BadArray W a) :
@@ -387,16 +418,16 @@ theorem subspaceArrayPush_eq (W : Submodule (ZMod 2) V)
 theorem subspaceLaw_top (Q : Grass V a) : subspaceLaw ⊤ Q = uniformGrass Q := by
   have he : Fintype.card (Grass (⊤ : Submodule (ZMod 2) V) a) =
       Fintype.card (Grass V a) := by
-    rw [card_grass, card_grass, Submodule.finrank_top]
+    rw [card_grass, card_grass, finrank_top]
   simp [subspaceLaw, uniformGrass, he]
 
 theorem subspaceArrayPush_tv_le (W : Submodule (ZMod 2) V)
     (ha : a ≤ Module.finrank (ZMod 2) W) :
-    CoveringTV.realTV (subspaceArrayPush W) (subspaceLaw W) ≤ failureFraction W a := by
+    CoveringTV.realTV (subspaceArrayPush (a := a) W) (subspaceLaw W) ≤ failureFraction W a := by
   have hav : a ≤ Module.finrank (ZMod 2) V := ha.trans W.finrank_le
   have hf := failureFraction_nonneg (V := W) (a := a)
-  have he : CoveringTV.realTV (subspaceArrayPush W) (subspaceLaw W) =
-      failureFraction W a * CoveringTV.realTV (uniformGrass (V := V)) (subspaceLaw W) := by
+  have he : CoveringTV.realTV (subspaceArrayPush (a := a) W) (subspaceLaw W) =
+      failureFraction W a * CoveringTV.realTV (uniformGrass (V := V) (a := a)) (subspaceLaw W) := by
     unfold CoveringTV.realTV
     rw [← mul_div_assoc, Finset.mul_sum]
     congr 1
@@ -467,7 +498,7 @@ theorem rawArrayLaw_coordinates (d : Draw J)
     rawArrayLaw (retained d) (arrayCoordinates J a x) =
       ∏ j : Fin J, blockArrayMass (d j) (x j) := by
   unfold rawArrayLaw
-  rw [arrayCoordinates_mem_iff, retained_array_card]
+  simp only [arrayCoordinates_mem_iff, retained_array_card]
   by_cases hx : ∀ j, blockAllowed (d j) (x j)
   · simp only [if_pos hx, blockArrayMass, if_pos (hx _), Nat.cast_pow, Nat.cast_ofNat,
       Finset.prod_inv_distrib, Finset.prod_pow_eq_pow_sum, ← Finset.mul_sum]
@@ -483,10 +514,10 @@ lemma blockArrayMass_mixture (β : ℚ) (x : CoveringTV.Cube (Fin a → ZMod 2))
   have ha : (Fintype.card (Fin a → ZMod 2) : ℝ) = (2 : ℝ)^a := by
     simp [Fintype.card_fun, ZMod.card]
   rw [ha]
-  simp [Fintype.sum_option, Fin.sum_univ_succ, TripleRestrictionRank.blockMass,
+  by_cases h0 : x.1 = 0 <;> by_cases h1 : x.2.1 = 0 <;> by_cases h2 : x.2.2 = 0 <;>
+    simp [Fintype.sum_option, Fin.sum_univ_succ, TripleRestrictionRank.blockMass,
     blockArrayMass, blockAllowed, blockDimension, Fin.forall_fin_succ,
-    CoveringTV.zeroIndicator, pow_mul]
-  <;> split_ifs <;> push_cast <;> ring
+    CoveringTV.zeroIndicator, pow_mul, h0, h1, h2] <;> push_cast <;> ring
 
 /-- The retained uniform-array mixture is the explicit J-block raw product law.
 The proof factors the actual prior and per-draw array mass; no sampler identity
@@ -497,7 +528,8 @@ theorem rawArrayLaw_mixture_coordinates (β : ℚ)
       CoveringTV.productMass (CoveringTV.deletedCube (β : ℝ)) J x := by
   simp only [rawArrayLaw_coordinates, prior, FiniteSampling.trialMass, Rat.cast_prod,
     ← Finset.prod_mul_distrib]
-  rw [← Fintype.prod_sum]
+  rw [← Fintype.prod_sum (fun (j : Fin J) (c : BlockChoice) =>
+    (TripleRestrictionRank.blockMass β c : ℝ) * blockArrayMass c (x j))]
   simp only [blockArrayMass_mixture, CoveringTV.productMass]
 
 /-- The ambient uniform-array law is the undeleted product law in the same coordinates. -/
@@ -506,7 +538,7 @@ theorem uniformArray_coordinates
     uniformArray (arrayCoordinates J a x) =
       CoveringTV.productMass CoveringTV.uniformCube J x := by
   unfold uniformArray CoveringTV.productMass CoveringTV.uniformCube
-  simp [Fintype.card_fun, Vector, Coord, ZMod.card, ← pow_mul, Nat.mul_comm,
+  simp [Fintype.card_fun, TripleRestrictionRank.Vector, Coord, ZMod.card, ← pow_mul, Nat.mul_comm,
     Nat.mul_left_comm, Nat.mul_assoc]
 
 lemma retained_eq_top_of_no_drop (d : Draw J)
@@ -547,7 +579,7 @@ lemma retained_failure_le (d : Draw J) (ha : a ≤ J) :
   linarith
 
 lemma retained_correction_le (d : Draw J) (ha : a ≤ J) :
-    CoveringTV.realTV (subspaceArrayPush (retained d)) (subspaceLaw (retained d)) ≤
+    CoveringTV.realTV (subspaceArrayPush (a := a) (retained d)) (subspaceLaw (retained d)) ≤
       if 0 < TripleRestrictionDimension.dropCount d then
         ((2 : ℝ)^a - 1) / (2 : ℝ)^J else 0 := by
   by_cases hd : 0 < TripleRestrictionDimension.dropCount d
@@ -557,7 +589,7 @@ lemma retained_correction_le (d : Draw J) (ha : a ≤ J) :
   · rw [if_neg hd]
     have hz : TripleRestrictionDimension.dropCount d = 0 := by omega
     have ht := retained_eq_top_of_no_drop d hz
-    have he : subspaceArrayPush (retained d) = subspaceLaw (retained d) := by
+    have he : subspaceArrayPush (a := a) (retained d) = subspaceLaw (retained d) := by
       funext Q
       rw [subspaceArrayPush_eq _ (ha.trans (retained_finrank_lower d))]
       have hl : subspaceLaw (retained d) Q = uniformGrass Q := by
@@ -630,7 +662,7 @@ lemma coordinateSpanKernel_sum (ha : a ≤ J)
     ∑ Q, coordinateSpanKernel J a x Q = 1 := by
   apply spanKernel_sum
   have hf : Module.finrank (ZMod 2) (Vector J) = 3 * J := by
-    simp [Vector, Coord, Module.finrank_pi, Nat.mul_comm]
+    simp [TripleRestrictionRank.Vector, Coord, Module.finrank_pi, Nat.mul_comm]
   rw [hf]
   omega
 
@@ -645,7 +677,7 @@ theorem push_uniform_coordinates (ha : a ≤ J) (Q : Grass (Vector J) a) :
   rw [he, push_coordinates]
   apply push_uniformArray
   have hf : Module.finrank (ZMod 2) (Vector J) = 3 * J := by
-    simp [Vector, Coord, Module.finrank_pi, Nat.mul_comm]
+    simp [TripleRestrictionRank.Vector, Coord, Module.finrank_pi, Nat.mul_comm]
   rw [hf]
   omega
 
@@ -661,7 +693,8 @@ theorem push_deleted_coordinates (β : ℚ) (Q : Grass (Vector J) a) :
         rawArrayLaw (retained d) (arrayCoordinates J a x) := by
     funext x
     exact (rawArrayLaw_mixture_coordinates β x).symm
-  rw [he, push_coordinates, push_mixture]
+  rw [he, push_coordinates (fun v => ∑ d : Draw J,
+    (prior β d : ℝ) * rawArrayLaw (retained d) v), push_mixture]
   apply Finset.sum_congr rfl
   intro d _
   rw [push_rawArrayLaw]
@@ -681,6 +714,7 @@ theorem actual_advice_tv_le (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1) (ha : 
     funext Q
     rw [push_uniform_coordinates ha]
     simp [uniformGrass, PosteriorDensity.ambientMass]
+    exact Fintype.card_congr (Equiv.refl _)
   have hp : push K p = fun Q : Advice J a =>
       ∑ d : Draw J, (prior β d : ℝ) * subspaceArrayPush (retained d) Q := by
     funext Q
@@ -695,7 +729,8 @@ theorem actual_advice_tv_le (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β ≤ 1) (ha : 
   rw [hu] at ht
   apply ht.trans
   apply add_le_add
-  · exact (push_tv_le K u p (fun x Q => spanKernel_nonneg _ _)
+  · rw [← hu]
+    exact (push_tv_le K u p (fun x Q => spanKernel_nonneg _ _)
       (coordinateSpanKernel_sum ha)).trans
         (CoveringTV.binary_raw_array_tv_le (β : ℝ)
           (by exact_mod_cast hβ) (by exact_mod_cast hβ1) J a)
@@ -708,7 +743,7 @@ lemma size_over_two_pow_le_sqrt (J : ℕ) : (J : ℝ) / (2 : ℝ)^J ≤ Real.sqr
   · have hj : (1 : ℝ) ≤ J := by
       exact_mod_cast (Nat.one_le_iff_ne_zero.mpr hJ)
     have hn : (J : ℝ) ≤ (2 : ℝ)^J := by
-      exact_mod_cast (Nat.lt_two_pow_self J).le
+      exact_mod_cast (Nat.lt_two_pow_self (n := J)).le
     calc
       _ ≤ 1 := (div_le_one (by positivity)).mpr hn
       _ ≤ _ := by simpa using Real.sqrt_le_sqrt hj
