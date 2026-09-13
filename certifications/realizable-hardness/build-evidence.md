@@ -179,3 +179,186 @@ SHA256 `5d324d9c5eedfa843d089f3fd899c83dcbee21e0cbb021cea8ef03e3e462dc86`.
 
 EXIT 0
 ```
+
+## Second author checkpoint: seven of 33 modules
+
+Formula and Checks completed with actual child exit0 in16632 (3 and13
+standard-only profiles respectively), with no changes to their proof sources.
+SamplingThreshold26835 and SamplingThresholdChecks9712 both returned actual
+exit0; the Checks output contains29 profiles, all limited to propext,
+Classical.choice and Quot.sound. Independent companion port reviews remain
+pending. The running batch advances to ComputableSampleCount; its outcome
+is not included in this seven-module checkpoint.
+
+SamplingThreshold preserved both mathematical and learning-threshold statements.
+Its repairs replace deprecated imports, use the reversed new clog iff through
+.mpr, update division-order API names, and allow field_simp to close its goal.
+The two nonfatal trailing-ring linter warnings remain recorded, not suppressed.
+
+SamplingThreshold source SHA256 `f21c368aa168b6283dfc21aca606801e376c2537888367485fe9404954b86f8d`.
+
+### Exact saved output: Formula-1789259022829567400.log
+
+SHA256 `5b686de96fa563867b7ce38ec1ce9281bf52e0aa09a58bfd583c2d37f9b87614`.
+
+```text
+'PvNP.RealizableHardness.Formula.repair_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Formula.leaves_repair' depends on axioms: [propext]
+'PvNP.RealizableHardness.Formula.repair_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 0
+```
+
+### Exact saved output: Checks-1789259022829567400.log
+
+SHA256 `c63842368fbf659fe06c55a61e6e99aae0a2b9fb310bdd4895d172d1b48d3bc4`.
+
+```text
+'PvNP.RealizableHardness.exception_completeness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.exception_soundness' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.repairedWeight_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.repairedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.repairedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.repairedBudget_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.repairedBudget_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Formula.eval_repair' depends on axioms: [propext]
+'PvNP.RealizableHardness.Formula.leaves_repair' depends on axioms: [propext]
+'PvNP.RealizableHardness.Formula.repair_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Formula.repair_sound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.no_instance_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.yes_instance_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 0
+```
+
+### Exact saved output: SamplingThreshold-1789259022829567400.log
+
+SHA256 `484c9769258d5e865b0d8d102ae1bace45c4039f33eac524125b07e83a074265`.
+
+```text
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:3:0: warning: 
+'Mathlib.Data.Real.Archimedean' has been deprecated: please replace this import by
+
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
+import Mathlib.Data.Rat.Floor
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:48:14: error(lean.unknownIdentifier): Unknown constant `Nat.le_pow_iff_clog_le`
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:46:78: error: unsolved goals
+N : ℕ
+eps : ℝ
+j : ℕ
+hj : threshold N eps ≤ ↑(2 ^ j)
+hc : ⌈threshold N eps⌉₊ ≤ 2 ^ j
+⊢ sampleCount N eps ≤ 2 ^ j
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:99:9: error(lean.unknownIdentifier): Unknown identifier `div_le_div_right`
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:100:2: error: No goals to be solved
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:142:32: error: No goals to be solved
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:170:14: error(lean.unknownIdentifier): Unknown constant `Nat.le_pow_iff_clog_le`
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:168:94: error: unsolved goals
+N : ℕ
+eps : ℝ
+j : ℕ
+hj : learningThreshold N eps ≤ ↑(2 ^ j)
+hc : ⌈learningThreshold N eps⌉₊ ≤ 2 ^ j
+⊢ learningSampleCount N eps ≤ 2 ^ j
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:211:9: error(lean.unknownIdentifier): Unknown identifier `div_le_div_right`
+lean\PvNP\RealizableHardness\SamplingThreshold.lean:212:2: error: No goals to be solved
+
+EXIT 1
+```
+
+### Exact saved output: SamplingThreshold-repair-1789259442896893600.log
+
+SHA256 `f8e50ad83ff05c015974f2dc500318331d6bb6fb8cadc65d7ba14c00e9f3b985`.
+
+```text
+lean/PvNP/RealizableHardness/SamplingThreshold.lean:143:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+lean/PvNP/RealizableHardness/SamplingThreshold.lean:143:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+
+EXIT 0
+```
+
+### Exact saved output: SamplingThresholdChecks-1789259510785678500.log
+
+SHA256 `a74ffb42a46be7a1b3ecb7715c84fbb41def483e10b6e66e44c8e55f8dde3585`.
+
+```text
+'PvNP.RealizableHardness.SamplingThreshold.threshold_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.threshold_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_least' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.failure_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_failure_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.threshold_numeric_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_numeric_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.sampleCount_bound_of_inverse_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.failure_budget_of_log_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.threshold_le_learningThreshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_lower' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_least' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learning_failure_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_failure_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningThreshold_numeric_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_numeric_upper' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_bound_of_inverse_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.zero_variables_positive_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.positive_variables_threshold_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.inverse_error_numeric_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.selected_count_failure_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.explicit_count_failure_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learning_selected_count_failure_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingThreshold.learning_explicit_count_failure_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

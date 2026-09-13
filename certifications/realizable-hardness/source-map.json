@@ -114,7 +114,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/Checks.lean",
       "mirror_sha256": "213d25d9ee18a5edae005fbd1b25afba15f94ef36f6347d403d5cfcf340e851b",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author Checks16632 exit0 with 13 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -165,7 +165,7 @@
           "reason": "Direct import path absent in pinned mathlib; replacement modules found by source inspection; elaboration untested."
         }
       ],
-      "companion_verification": "Author main75063 exit0 with two standard-only headline profiles; downstream Formula/Checks and independent port reviews pending",
+      "companion_verification": "Author main75063 exit0; downstream Formula/Checks16632 exit0 with13 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -300,7 +300,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/Formula.lean",
       "mirror_sha256": "ab893de33e2e52b337195add1bb317a9f69ccce9ba1bd972df934005257b5a00",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main16632 exit0, Checks16632 exit0; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -479,12 +479,48 @@
       "source_git_lf_sha256": "915c257be9470041524b789db87a5de5ef946abe6e452650a02e5efb19b49791",
       "source_working_sha256": "915c257be9470041524b789db87a5de5ef946abe6e452650a02e5efb19b49791",
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingThreshold.lean",
-      "mirror_sha256": "915c257be9470041524b789db87a5de5ef946abe6e452650a02e5efb19b49791",
+      "mirror_sha256": "f21c368aa168b6283dfc21aca606801e376c2537888367485fe9404954b86f8d",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main26835 exit0 and Checks9712 exit0 with29 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "import Mathlib.Data.Real.Archimedean\n",
+          "after": "import Mathlib.Algebra.Order.AbsoluteValue.Basic\nimport Mathlib.Data.Rat.Floor\n",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "theorem sampleCount_least (N : \u2115) (eps : \u211d) (j : \u2115)\n    (hj : threshold N eps \u2264 ((2 ^ j : \u2115) : \u211d)) : sampleCount N eps \u2264 2 ^ j := by\n  have hc : \u2308threshold N eps\u2309\u208a \u2264 2 ^ j := Nat.ceil_le.mpr hj\n  have he := (Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : \u2115))).mp hc\n  exact Nat.pow_le_pow_right (by norm_num) he\n",
+          "after": "theorem sampleCount_least (N : \u2115) (eps : \u211d) (j : \u2115)\n    (hj : threshold N eps \u2264 ((2 ^ j : \u2115) : \u211d)) : sampleCount N eps \u2264 2 ^ j := by\n  have hc : \u2308threshold N eps\u2309\u208a \u2264 2 ^ j := Nat.ceil_le.mpr hj\n  have he := (Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : \u2115))).mpr hc\n  exact Nat.pow_le_pow_right (by norm_num) he\n",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "theorem learningSampleCount_least (N : \u2115) (eps : \u211d) (j : \u2115)\n    (hj : learningThreshold N eps \u2264 ((2 ^ j : \u2115) : \u211d)) : learningSampleCount N eps \u2264 2 ^ j := by\n  have hc : \u2308learningThreshold N eps\u2309\u208a \u2264 2 ^ j := Nat.ceil_le.mpr hj\n  have he := (Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : \u2115))).mp hc\n  exact Nat.pow_le_pow_right (by norm_num) he\n",
+          "after": "theorem learningSampleCount_least (N : \u2115) (eps : \u211d) (j : \u2115)\n    (hj : learningThreshold N eps \u2264 ((2 ^ j : \u2115) : \u211d)) : learningSampleCount N eps \u2264 2 ^ j := by\n  have hc : \u2308learningThreshold N eps\u2309\u208a \u2264 2 ^ j := Nat.ceil_le.mpr hj\n  have he := (Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : \u2115))).mpr hc\n  exact Nat.pow_le_pow_right (by norm_num) he\n",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "theorem threshold_numeric_upper (N : \u2115) (eps : \u211d) (heps : 0 < eps) :\n    threshold N eps \u2264 32 * ((N : \u211d) + 5) / eps ^ 2 := by\n  have h2 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 2)\n  have h6 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 6)\n  have hN := mul_le_mul_of_nonneg_left h2 (Nat.cast_nonneg N : (0 : \u211d) \u2264 N)\n  unfold threshold\n  have hid : 2 * (eps / 8) ^ 2 = eps ^ 2 / 32 := by ring\n  rw [hid]\n  have heq : ((N : \u211d) * Real.log 2 + Real.log 6) / (eps ^ 2 / 32) =\n      32 * ((N : \u211d) * Real.log 2 + Real.log 6) / eps ^ 2 := by ring\n  rw [heq]\n  apply (div_le_div_right (by positivity : (0 : \u211d) < eps ^ 2)).mpr\n  nlinarith\n",
+          "after": "theorem threshold_numeric_upper (N : \u2115) (eps : \u211d) (heps : 0 < eps) :\n    threshold N eps \u2264 32 * ((N : \u211d) + 5) / eps ^ 2 := by\n  have h2 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 2)\n  have h6 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 6)\n  have hN := mul_le_mul_of_nonneg_left h2 (Nat.cast_nonneg N : (0 : \u211d) \u2264 N)\n  unfold threshold\n  have hid : 2 * (eps / 8) ^ 2 = eps ^ 2 / 32 := by ring\n  rw [hid]\n  have heq : ((N : \u211d) * Real.log 2 + Real.log 6) / (eps ^ 2 / 32) =\n      32 * ((N : \u211d) * Real.log 2 + Real.log 6) / eps ^ 2 := by ring\n  rw [heq]\n  apply (div_le_div_iff_of_pos_right (by positivity : (0 : \u211d) < eps ^ 2)).mpr\n  nlinarith\n",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "theorem learningThreshold_numeric_upper (N : \u2115) (eps : \u211d) (heps : 0 < eps) :\n    learningThreshold N eps \u2264 32 * ((N : \u211d) + 11) / eps ^ 2 := by\n  have h2 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 2)\n  have h12 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 12)\n  have hN := mul_le_mul_of_nonneg_left h2 (Nat.cast_nonneg N : (0 : \u211d) \u2264 N)\n  unfold learningThreshold\n  have hid : 2 * (eps / 8) ^ 2 = eps ^ 2 / 32 := by ring\n  rw [hid]\n  have heq : ((N : \u211d) * Real.log 2 + Real.log 12) / (eps ^ 2 / 32) =\n      32 * ((N : \u211d) * Real.log 2 + Real.log 12) / eps ^ 2 := by ring\n  rw [heq]\n  apply (div_le_div_right (by positivity : (0 : \u211d) < eps ^ 2)).mpr\n  nlinarith\n",
+          "after": "theorem learningThreshold_numeric_upper (N : \u2115) (eps : \u211d) (heps : 0 < eps) :\n    learningThreshold N eps \u2264 32 * ((N : \u211d) + 11) / eps ^ 2 := by\n  have h2 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 2)\n  have h12 := Real.log_le_sub_one_of_pos (by norm_num : (0 : \u211d) < 12)\n  have hN := mul_le_mul_of_nonneg_left h2 (Nat.cast_nonneg N : (0 : \u211d) \u2264 N)\n  unfold learningThreshold\n  have hid : 2 * (eps / 8) ^ 2 = eps ^ 2 / 32 := by ring\n  rw [hid]\n  have heq : ((N : \u211d) * Real.log 2 + Real.log 12) / (eps ^ 2 / 32) =\n      32 * ((N : \u211d) * Real.log 2 + Real.log 12) / eps ^ 2 := by ring\n  rw [heq]\n  apply (div_le_div_iff_of_pos_right (by positivity : (0 : \u211d) < eps ^ 2)).mpr\n  nlinarith\n",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "    _ = 2 / C := by field_simp; ring",
+          "after": "    _ = 2 / C := by field_simp <;> ring",
+          "reason": "SamplingThreshold actual16632 diagnostics: pinned4.34 API names/iff direction, deprecated import replacement, and tactic goal closure; mathematical targets unchanged."
         }
       ]
     },
@@ -496,7 +532,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SamplingThresholdChecks.lean",
       "mirror_sha256": "559bb713fae0f334e7eee2d467bc8d00d7264fe9913ee8913219017ad1e603cc",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author main26835 exit0 and Checks9712 exit0 with29 standard-only profiles; independent port reviews pending",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -672,5 +708,6 @@
     }
   ],
   "initial_source_commit": "4aff259c9da28f558be716c40d9acb9b72e2fc0e",
-  "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline."
+  "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline.",
+  "author_exported_module_count": 7
 }

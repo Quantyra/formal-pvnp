@@ -1,6 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Data.Nat.Log
-import Mathlib.Data.Real.Archimedean
+import Mathlib.Algebra.Order.AbsoluteValue.Basic
+import Mathlib.Data.Rat.Floor
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -45,7 +46,7 @@ theorem sampleCount_lower (N : ℕ) (eps : ℝ) : threshold N eps ≤ sampleCoun
 theorem sampleCount_least (N : ℕ) (eps : ℝ) (j : ℕ)
     (hj : threshold N eps ≤ ((2 ^ j : ℕ) : ℝ)) : sampleCount N eps ≤ 2 ^ j := by
   have hc : ⌈threshold N eps⌉₊ ≤ 2 ^ j := Nat.ceil_le.mpr hj
-  have he := (Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : ℕ))).mp hc
+  have he := (Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : ℕ))).mpr hc
   exact Nat.pow_le_pow_right (by norm_num) he
 
 theorem sampleCount_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) (heps1 : eps ≤ 1) :
@@ -96,7 +97,7 @@ theorem threshold_numeric_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) :
   have heq : ((N : ℝ) * Real.log 2 + Real.log 6) / (eps ^ 2 / 32) =
       32 * ((N : ℝ) * Real.log 2 + Real.log 6) / eps ^ 2 := by ring
   rw [heq]
-  apply (div_le_div_right (by positivity : (0 : ℝ) < eps ^ 2)).mpr
+  apply (div_le_div_iff_of_pos_right (by positivity : (0 : ℝ) < eps ^ 2)).mpr
   nlinarith
 
 theorem sampleCount_numeric_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) (heps1 : eps ≤ 1) :
@@ -139,7 +140,7 @@ theorem failure_budget_of_log_threshold (N M : ℕ) (eps C : ℝ)
   calc
     _ = ((2 : ℝ) ^ N * 2) * Real.exp (-2 * (M : ℝ) * (eps / 8) ^ 2) := by ring
     _ ≤ ((2 : ℝ) ^ N * 2) * (1 / ((2 : ℝ) ^ N * C)) := hm
-    _ = 2 / C := by field_simp; ring
+    _ = 2 / C := by field_simp <;> ring
 
 /-- The learning corollary reserves half its failure budget by using log 12. -/
 noncomputable def learningThreshold (N : ℕ) (eps : ℝ) : ℝ :=
@@ -167,7 +168,7 @@ theorem learningSampleCount_lower (N : ℕ) (eps : ℝ) :
 theorem learningSampleCount_least (N : ℕ) (eps : ℝ) (j : ℕ)
     (hj : learningThreshold N eps ≤ ((2 ^ j : ℕ) : ℝ)) : learningSampleCount N eps ≤ 2 ^ j := by
   have hc : ⌈learningThreshold N eps⌉₊ ≤ 2 ^ j := Nat.ceil_le.mpr hj
-  have he := (Nat.le_pow_iff_clog_le (by norm_num : 1 < (2 : ℕ))).mp hc
+  have he := (Nat.clog_le_iff_le_pow (by norm_num : 1 < (2 : ℕ))).mpr hc
   exact Nat.pow_le_pow_right (by norm_num) he
 
 theorem learningSampleCount_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) (heps1 : eps ≤ 1) :
@@ -208,7 +209,7 @@ theorem learningThreshold_numeric_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) :
   have heq : ((N : ℝ) * Real.log 2 + Real.log 12) / (eps ^ 2 / 32) =
       32 * ((N : ℝ) * Real.log 2 + Real.log 12) / eps ^ 2 := by ring
   rw [heq]
-  apply (div_le_div_right (by positivity : (0 : ℝ) < eps ^ 2)).mpr
+  apply (div_le_div_iff_of_pos_right (by positivity : (0 : ℝ) < eps ^ 2)).mpr
   nlinarith
 
 theorem learningSampleCount_numeric_upper (N : ℕ) (eps : ℝ) (heps : 0 < eps) (heps1 : eps ≤ 1) :
