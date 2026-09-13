@@ -56,3 +56,25 @@ Runner SHA256: 9f779eacd390b0c30d07ab1f2b7188fb38bc160c5bdb96a6d6b6703e7bf76339.
 Copies SHA256: 2ba752ba542df981ef22f64960337490b4dfdfced4d7be134466cec4eb0ef86d.
 
 Preparation SHA256: a6f5afb6c3de6d801dc82faae388b4e4816a20b80c6b7f29235f5e8f3e00836d.
+
+## Isolated author verification update
+
+Proposal patch/receipt freeze077188bce47957a5b6c016bffc0e09e6f463b2be preceded
+execution. Original session95407 completed actual overlay main/Checks exits[0,0]
+on its first attempt, with no repair and unchanged overlay bytes. Logs are
+clean:27 profiles (standard axiom subsets),13 examples,4 signatures, including
+the explicit all-three-positions-same-owner source. No memory guard fired.
+Live accepted Allocation still hashes to b818b97e0fd08c97a720cdc2034ba3cb59aae836b392ec46add8e91ffda4aa38.
+
+Raw packet: certifications/realizable-hardness/.lake/build/actual-allocation-generalization-author-20260913/author-verification.json
+SHA256 ade4d7aa9a7353852c704455d9e732996487e11fb7e52c97273dcd54d63d7211. It includes raw byte-decoded runner/pregrant/granted
+preparation,307 original-copy/receipt records, actual metadata/logs and exact
+overlay snapshots. No newline normalization. Every original/copy and receipt
+was rehashed after the run (duplicate receipts cached); six current direct
+package artifacts, eleven pins and manifest also rechecked. Minimum physical
+available memory: 1756893184 bytes. One thread and768/640MiB guards retained.
+
+Compiler released. This verifies ONLY the isolated generalized Allocation pair;
+no live promotion or twenty-module downstream rebuild/review has occurred.
+Existing restricted-interface binaries cannot certify generalized downstream
+results. The unchanged .patch still exactly records this passing proposal.
