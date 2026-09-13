@@ -286,12 +286,18 @@
       "source_git_lf_sha256": "434a0320f3179c67d7e0930fea3372f712a1ad91a1852eba684d8df598ac90de",
       "source_working_sha256": "d6377773387719ba05e19a590f2c19f2f6d7f7ab15cd9c10f1cbc4b54c9187d6",
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.lean",
-      "mirror_sha256": "434a0320f3179c67d7e0930fea3372f712a1ad91a1852eba684d8df598ac90de",
+      "mirror_sha256": "6e04ac94f0e932d58bf636df9fa48ff16e1ac9bdb898edc526f77cfba5f14af3",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "      field_simp [ne_of_gt hs, ne_of_gt hg]; ring_nf; simp",
+          "after": "      field_simp [ne_of_gt hs, ne_of_gt hg]",
+          "reason": "Actual25908 pipeline no-goals error: field_simp closes reciprocal-budget identity; remove trailing tactics only."
         }
       ]
     },
@@ -303,7 +309,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.lean",
       "mirror_sha256": "0e2e5e87f8cd79585c7acc6699e809087cb8c4ed1951b15cf91038c37e62f594",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -363,7 +369,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/InverseCDFSampler.lean",
       "mirror_sha256": "8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -378,7 +384,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/InverseCDFSamplerChecks.lean",
       "mirror_sha256": "c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -393,7 +399,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/JointSamplingLaw.lean",
       "mirror_sha256": "3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -408,7 +414,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/JointSamplingLawChecks.lean",
       "mirror_sha256": "c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author export EXIT0; pair Checks standard-only profiles (pipeline18, inverse CDF18, joint11); independent companion port reviews pending. See build-evidence.md.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -799,5 +805,5 @@
   ],
   "initial_source_commit": "4aff259c9da28f558be716c40d9acb9b72e2fc0e",
   "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline.",
-  "author_exported_module_count": 15
+  "author_exported_module_count": 21
 }

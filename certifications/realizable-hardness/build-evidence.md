@@ -906,3 +906,230 @@ SHA256 `6f80c7f1d95522d7d7f8c91df222d3594db5e45ee9b88512df9faea2f483905e`.
 
 EXIT 0
 ```
+
+## Twenty-one-module author checkpoint
+
+Pipeline main initially failed on a no-goals continuation; removing only the already-discharged ring_nf/simp continuation preserved its statement. Retry21621 exited0. Batch92585 exported pipeline Checks, inverse CDF main/Checks and joint main/Checks successfully. Their Checks printed18,18,11 standard-only profiles respectively. All21 exports remain pending independent companion port review. PosteriorReweighting subsequently failed; it is not accepted or included in this count. Full hardness theorem remains absent.
+
+FiniteRepairRoundingPipeline source SHA256 `6e04ac94f0e932d58bf636df9fa48ff16e1ac9bdb898edc526f77cfba5f14af3`.
+
+FiniteRepairRoundingPipelineChecks source SHA256 `0e2e5e87f8cd79585c7acc6699e809087cb8c4ed1951b15cf91038c37e62f594`.
+
+InverseCDFSampler source SHA256 `8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6`.
+
+InverseCDFSamplerChecks source SHA256 `c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd`.
+
+JointSamplingLaw source SHA256 `3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45`.
+
+JointSamplingLawChecks source SHA256 `c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644`.
+
+### FiniteRepairRoundingPipeline-1789260487401853700.log
+
+SHA256 `eded8e8f8c88de487e2068bf080252e90b57a23b1f82dc2d8cab55718b4b573f`.
+
+```text
+lean\PvNP\RealizableHardness\FiniteRepairRoundingPipeline.lean:132:45: error: No goals to be solved
+
+EXIT 1
+```
+
+### FiniteRepairRoundingPipeline-repair-1789260635468296400.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```
+
+### FiniteRepairRoundingPipelineChecks-1789260645227084300.log
+
+SHA256 `7a151189d038fbf67e466b90b60416f1b101e63f710dbaa09290a489e957336f`.
+
+```text
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.lam_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.eps_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_valid' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.yes_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.no_preserved' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_leaves' depends on axioms: [propext]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.reciprocal_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_common_denominator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_yes_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_input' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_denominator_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_repaired_leaf_count' depends on axioms: [propext]
+
+EXIT 0
+```
+
+### InverseCDFSampler-1789260645227084300.log
+
+SHA256 `ebbd812c3b9938d04a58d83e81afb781e5862ed8b3a9ada655fdf371a0e399bd`.
+
+```text
+lean\PvNP\RealizableHardness\InverseCDFSampler.lean:119:10: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\InverseCDFSampler.lean:120:15: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.true_eq, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\InverseCDFSampler.lean:120:19: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### InverseCDFSamplerChecks-1789260645227084300.log
+
+SHA256 `4579583d90e17f8538e683c5d38ad495bd6047eb9e8b00406fcb0c8e1dc1b1eb`.
+
+```text
+'PvNP.RealizableHardness.InverseCDFSampler.support_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.cut_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.sampler_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.sampler_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.fibre_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.sampler_event_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_cuts' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.first_seed_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.boundary_seed_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.final_seed_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.zero_atom_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.fractional_fibre_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.InverseCDFSampler.binary_precision_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
+
+### JointSamplingLaw-1789260645227084300.log
+
+SHA256 `1e9a0ca7f7d166757ee8d34b39fa25d390d088db1f85cb39a7c148e1da7dd2f5`.
+
+```text
+lean\PvNP\RealizableHardness\JointSamplingLaw.lean:73:10: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\JointSamplingLaw.lean:74:15: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.true_eq, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\JointSamplingLaw.lean:74:19: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### JointSamplingLawChecks-1789260645227084300.log
+
+SHA256 `ecfd29ea027fe8c051ea635daefe5d058faa7a4c352f9334b848762e9c68587d`.
+
+```text
+'PvNP.RealizableHardness.JointSamplingLaw.array_fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.bit_fibre_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.array_fibre_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.sampleArray_event_law' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.sampleArray_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.half_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.half_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.half_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.two_trial_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.zero_atom_joint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.JointSamplingLaw.concrete_real_event_bridge' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
