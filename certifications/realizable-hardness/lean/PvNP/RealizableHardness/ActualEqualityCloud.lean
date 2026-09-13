@@ -61,7 +61,7 @@ theorem edgeList_nodup (n : Nat) : (edgeList n).Nodup := by
   apply (representativeList_nodup n).attach.map
   intro a b h
   apply Subtype.ext
-  exact congrArg Subtype.val h
+  exact congrArg (fun d : Edge n => d.val) h
 
 theorem edgeList_toFinset (n : Nat) : (edgeList n).toFinset = Finset.univ := by
   ext e
@@ -191,13 +191,13 @@ private theorem countP_as_sum {A : Type*} (p : A → Bool) (l : List A) :
     l.countP p = (l.map (fun a => if p a then 1 else 0)).sum := by
   induction l with
   | nil => rfl
-  | cons a l ih => cases h : p a <;> simp [List.countP_cons, h, ih, Nat.add_comm]
+  | cons a l ih => cases h : p a <;> simp [h, ih, Nat.add_comm]
 
 theorem localRows_violations {n : Nat} (x : GlobalVar n → ZMod 2) (e : Edge n) :
     (localRows e).countP (badRow x) = localViolations x e := by
   rw [countP_as_sum, localRows_eq, List.map_ofFn, Fin.sum_ofFn,
     localViolations_eq, Finset.card_filter]
-  rfl
+  simp only [Function.comp_def, badRow, decide_eq_true_eq]
 
 /-- The indexed sum counts the exact generated ordered row list, with its occurrences. -/
 theorem rowsViolations_eq_total {n : Nat} (x : GlobalVar n → ZMod 2) :

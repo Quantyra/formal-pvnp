@@ -72,3 +72,33 @@ to the actual cut/majority decoding inequality. Encoding the sum-type variables 
 constructing the same complete output in FP remain unproved. Håstad source
 hardness, the full source theorem, later decoder work, and final paper/proof
 consolidation remain separate obligations.
+
+## Actual author verification update
+
+Both source modules now passed the scoped author build; the draft-only status
+above is historical. Session 33553 ended with actual exit 0. Main attempts were
+[1,0] and Checks passed on its first attempt. Final logs are clean, with
+31 standard-only axiom profiles, nine examples and five printed signatures.
+Repairs changed only proof elaboration: explicit Edge subtype projection,
+decide-if simplification and one unused simp argument removal. Public
+statements, definitions and imports remained unchanged.
+
+Portable author packet, relative to the companion:
+`.lake/build/actual-equality-cloud-author-20260913/author-verification.json`,
+SHA256 `e35e02ba7792c0536e8f123edf8cc8e10793b21c736e8bfab0ea22121d62dc06`.
+It embeds all three module-attempt logs, terminal metadata, exact source
+snapshots, runner and dependency-copy records. The 306 original accepted
+exports and their receipt identities were rehashed before and after the run.
+The runner verifies eleven pinned package revisions, manifest and toolchain,
+uses one thread and the 768/640 MiB physical-memory thresholds. Minimum
+observed available physical memory was 2025713664 bytes.
+Pinned package caches are reused under the accepted dependency provenance;
+this does not assert historical byte identity for package exports absent from
+older per-export inventories. No broad build, download or public operation
+occurred. Independent build and all three review lenses remain pending.
+
+The next original-instance join is specified by the separate
+`2026-09-13-realizable-hardness-actual-cloud-assembly-obligations.md`: actual
+ordered occurrence ordinals, global Sigma tags, original rows plus cloud rows,
+incidence degree and majority/gap inequalities. This author result does not
+close those obligations or the complete source-hardness/paper goal.
