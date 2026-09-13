@@ -1,0 +1,23 @@
+# Actual occurrence completeness: independent proof review
+
+2026-09-13; S3132/S3137 under S3126. Reviewer is independent of the Lean author. **GO-WITH-NOTES for actual source-extension completeness count transfer.** Companion and inherited three-lens protocols apply. Source and author receipt at `d55195caef012666d97bd0703c1c259f64b480ec` were compared to current raw bytes. Main SHA256: `71292cc306c22dc48bef7fc90edf448e8884038c421b67bacd81733db60bafa9`; Checks: `49772aac1dc0d88e83c56d51b87b813a91a876934333203eab9ad320b813a22f`.
+
+## Mathematical and statement audit
+
+sourceViolations counts the actual ordered Fin m source equation occurrences, using all three source-variable positions and the stored right-hand side. sourceExtension is one explicitly defined function on the global Sigma carrier. In owner v's cloud it uses the accepted actual cloud extension of the constant port assignment y(v). Thus it simultaneously supplies every shared port and every separately tagged internal variable. This is not an assembly of unrelated existential witnesses or a assumed compatibility law.
+
+Port, anchor and original-row value agreement follow from the actual definitions. Rewriting the parity predicate proves each generated original row has the same bad-row Boolean as its corresponding source occurrence. ofFn and countP_map preserve the ordered occurrence count in the originalViolations equality, including repeated source equations.
+
+Restriction of the single assignment to a tagged cloud is definitionally its intended constant-port extension. The accepted actual rowsViolations-to-total identity and extension_total yield zero cloud violations because every endpoint mismatch is zero. Parallel edge copies retain their separate internal allocations and contribute zero individually. The tagged-list version uses the actual count transport. Applying the accepted actual whole-list count decomposition therefore proves exact output violation count equals source violation count for every source assignment y, with no satisfaction premise needed for this equality.
+
+The filter-length theorem preserves the same actual counting convention. The zero and upper-bound corollaries have their proper source-count hypotheses. The zero-source result is explicit; unused variables need no special branch because the cloud-zero theorem is already unconditional on occurrence size. The extra unused-variable example's size-zero hypothesis is intentionally unnecessary, not a hidden vacuity device.
+
+No mathematical, vacuity, compatibility or multiplicity blocker was found. The equality concerns the constructed sourceExtension for every source assignment; it is not a claim about arbitrary output assignments, an optimum equality, reverse implication, soundness/majority decoding or preserved violation fractions with unequal row denominators. This is finite completeness and exact count transfer, not encoded FP, upstream source hardness or the final theorem. The draft comments in source/receipt are superseded only by the recorded actual verification evidence.
+
+## Independent verification preparation
+
+A fresh two-module root reuses 309 original accepted exports, including the independently built Counts main, after original/copy/receipt rehash. No author Completeness output is copied. Three current ProdSigma export records and its pinned source are separately checked; the source comparison explicitly normalizes LF, without claiming historical per-export package binary identity. Runner checks eleven package revisions, pinned Lean 4.34.0-rc2, manifest, source freshness and target absence. It uses one thread, requires 768 MiB available physical memory before each module, and stops only the owned child below 640 MiB. Snapshots, raw logs and actual metadata are retained before display. Embedded text uses direct UTF-8 byte decoding. Expected evidence is fourteen profiles, six compiled examples and three signatures. No source edits, broad builds, downloads or public actions occur.
+
+## Independent build completed
+
+Session 45738 compiled main and Checks with actual exit 0 for both and terminal runner exit 0. Sources remained unchanged, the physical guard never stopped either child, and logs contain all 14 requested profiles using only propext, Classical.choice and Quot.sound. Six examples and three printed signatures compiled; neither log reports warnings or errors. Source snapshots, raw logs, actual metadata, output hashes, 309 original/copied exports and the added current package exports/sources were reverified. Compiler ownership was released immediately after the terminal result. No restart, source repair, Git operation or public action occurred.
