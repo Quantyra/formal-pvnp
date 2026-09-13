@@ -728,3 +728,181 @@ SHA256 `1fcaa2a63dab11dcf24969d8c5ff7c6a3b1b0f11771725471e40199779a587de`.
 
 EXIT 0
 ```
+
+## Fifth author checkpoint: fifteen of 33 modules
+
+FiniteSampling main and Checks21452 passed unchanged (19 standard-only
+profiles). FiniteConcentration21452 failed on a renamed power-order lemma
+and three redundant dsimp calls. Four exact recorded transformations preserve
+all mathematical statements; main53347 and Checks25908 then returned exit0
+with24 standard-only profiles. Deprecated-if and unused-simp warnings remain
+unsuppressed. Independent companion port reviews remain pending.
+
+The downstream pipeline failed after this milestone and is not included
+in the fifteen-module author checkpoint.
+
+FiniteSampling SHA256 `7b1cf53b512e705d08d4eb20a1db69b4015d5fb561f5495e11316c0cfc49ab57`.
+
+FiniteSamplingChecks SHA256 `9281576cae367164b01ec09649245ab7e3d91b17e51c531e5be591661a56461b`.
+
+FiniteConcentration SHA256 `368902b5aae4ff087a078922fa79fd87762c78ebf881c8ed86ed9ee716c011e2`.
+
+FiniteConcentrationChecks SHA256 `8f260a72a5a6770e589c5380bff89368ff4c837aaa5e4f39f6d87250cc0abb8d`.
+
+### Exact saved output: FiniteSampling-1789260293638767600.log
+
+SHA256 `49be69e1cca80ec53825447cf80e4ccfd42383d50931ac69c6a0fecc6c45c152`.
+
+```text
+lean\PvNP\RealizableHardness\FiniteSampling.lean:94:14: warning: This simp argument is unused:
+  hi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\FiniteSampling.lean:136:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+EXIT 0
+```
+
+### Exact saved output: FiniteSamplingChecks-1789260293638767600.log
+
+SHA256 `2638e1473c61ca634a850d1c8187d43d3a8aab8861aeeca17884e6b073dde66f`.
+
+```text
+'PvNP.RealizableHardness.FiniteSampling.cumulative_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.mass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.mass_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.event_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.event_error_of_precision' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.trialMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.trialMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.trial_event_factorization' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.assignment_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.listSampler_exact' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.thirds_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.thirds_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.fractional_cut_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.fractional_mass_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.rounded_distribution_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.uniform_event_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.independent_two_trial_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteSampling.one_bit_sampler_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
+
+### Exact saved output: FiniteConcentration-1789260293638767600.log
+
+SHA256 `5e92de7c4faae0ea7c5ddaeb373b5f7486c17bca4828533cc0f185d345ac6326`.
+
+```text
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:82:38: error(lean.unknownIdentifier): Unknown identifier `pow_le_pow_left`
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:123:20: error: `dsimp` made no progress
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:136:20: error: `dsimp` made no progress
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:180:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:184:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:206:2: error: `dsimp` made no progress
+lean\PvNP\RealizableHardness\FiniteConcentration.lean:221:22: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 1
+```
+
+### Exact saved output: FiniteConcentration-repair-1789260470835994000.log
+
+SHA256 `f310eaee9530a8ac47f5674ee0c54320e24a16e681459b61aff2fa84ed4b479b`.
+
+```text
+lean/PvNP/RealizableHardness/FiniteConcentration.lean:180:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean/PvNP/RealizableHardness/FiniteConcentration.lean:184:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean/PvNP/RealizableHardness/FiniteConcentration.lean:220:22: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### Exact saved output: FiniteConcentrationChecks-1789260487401853700.log
+
+SHA256 `6f80c7f1d95522d7d7f8c91df222d3594db5e45ee9b88512df9faea2f483905e`.
+
+```text
+'PvNP.RealizableHardness.FiniteConcentration.mean_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.one_trial_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.exp_finite_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.product_mgf_identity' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.product_mgf_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.probability_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.exponential_markov' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.upper_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.lower_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.probability_union' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.two_sided_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.probability_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.centered_empirical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.empirical_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.assignment_empirical_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.assignment_approximation_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.assignment_epsilon_tail' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.probability_complement' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.fair_mean' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.fair_all_true' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.fair_all_false' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.fair_draw_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.fair_eight_tail' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.FiniteConcentration.zero_variable_assignment_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

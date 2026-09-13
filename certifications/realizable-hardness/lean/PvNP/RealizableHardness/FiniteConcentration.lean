@@ -79,7 +79,7 @@ lemma product_mgf_bound {A : Type*} [Fintype A] (q : A → ℚ) (f : A → Bool)
     add_nonneg (mul_nonneg (sub_nonneg.mpr hb.2) (Real.exp_pos _).le)
       (mul_nonneg hb.1 (Real.exp_pos _).le)
   calc
-    _ ≤ (Real.exp (t ^ 2 / 8)) ^ M := pow_le_pow_left hlo h M
+    _ ≤ (Real.exp (t ^ 2 / 8)) ^ M := pow_le_pow_left₀ hlo h M
     _ = Real.exp ((M : ℝ) * t ^ 2 / 8) := by rw [← Real.exp_nat_mul]; congr 1; ring
 
 
@@ -120,7 +120,7 @@ lemma upper_tail {A : Type*} [Fintype A] (q : A → ℚ) (f : A → Bool)
   have hm := probability_mono q M hq
     (fun x => (M : ℝ) * δ ≤ centeredSum q f M x)
     (fun x => 4 * (M : ℝ) * δ ^ 2 ≤ (4 * δ) * centeredSum q f M x)
-    (fun x hx => by dsimp at hx ⊢; nlinarith only [mul_nonneg hδ (sub_nonneg.mpr hx)])
+    (fun x hx => by nlinarith only [mul_nonneg hδ (sub_nonneg.mpr hx)])
   have he := exponential_markov q f hq hn M (4 * δ) (4 * (M : ℝ) * δ ^ 2)
   have hid : (M : ℝ) * (4 * δ) ^ 2 / 8 - 4 * (M : ℝ) * δ ^ 2 = -2 * (M : ℝ) * δ ^ 2 := by ring
   rw [hid] at he
@@ -133,7 +133,7 @@ lemma lower_tail {A : Type*} [Fintype A] (q : A → ℚ) (f : A → Bool)
   have hm := probability_mono q M hq
     (fun x => centeredSum q f M x ≤ -(M : ℝ) * δ)
     (fun x => 4 * (M : ℝ) * δ ^ 2 ≤ (-4 * δ) * centeredSum q f M x)
-    (fun x hx => by dsimp at hx ⊢; nlinarith only [mul_nonneg hδ (sub_nonneg.mpr hx)])
+    (fun x hx => by nlinarith only [mul_nonneg hδ (sub_nonneg.mpr hx)])
   have he := exponential_markov q f hq hn M (-4 * δ) (4 * (M : ℝ) * δ ^ 2)
   have hid : (M : ℝ) * (-4 * δ) ^ 2 / 8 - 4 * (M : ℝ) * δ ^ 2 = -2 * (M : ℝ) * δ ^ 2 := by ring
   rw [hid] at he
@@ -203,7 +203,6 @@ lemma empirical_tail {A : Type*} [Fintype A] (q : A → ℚ) (f : A → Bool)
       2 * Real.exp (-2 * (M : ℝ) * δ ^ 2) := by
   apply (probability_mono q M hq _ _ ?_).trans (two_sided_tail q f hq hn M δ hδ)
   intro x hx
-  dsimp at hx ⊢
   rw [centered_empirical q f M hM x, abs_mul, abs_of_nonneg (Nat.cast_nonneg M)]
   exact mul_le_mul_of_nonneg_left hx (Nat.cast_nonneg M)
 
