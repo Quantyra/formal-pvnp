@@ -8,6 +8,7 @@ open ActualOccurrenceAllocation
 open scoped BigOperators
 set_option autoImplicit false
 noncomputable section
+attribute [local instance] Classical.propDecidable
 variable {N m : Nat} (I : Instance N m)
 
 def containsVar (x : I.GlobalVar)
@@ -28,6 +29,9 @@ theorem originalDegree_eq (x : I.GlobalVar) :
   unfold originalDegree Instance.originalRows
   rw [countP_as_sum, List.map_ofFn, Fin.sum_ofFn, Finset.card_filter]
   simp only [Function.comp_def, containsVar, decide_eq_true_eq, Instance.originalSupport]
+  apply Finset.sum_congr rfl
+  intro r _
+  by_cases h : x ∈ Finset.univ.image (I.originalRow r) <;> simp [h]
 
 theorem originalDegree_le_one (x : I.GlobalVar) : originalDegree I x ≤ 1 := by
   rw [originalDegree_eq]
@@ -43,7 +47,9 @@ theorem internal_not_original (v : Fin N)
   intro h
   obtain ⟨j, _, hj⟩ := Finset.mem_image.mp h
   have he := congrArg I.recover hj
-  simpa [Instance.originalRow, I.recover_anchor, Instance.tag, Instance.recover] using he
+  change I.recover (I.anchor (r,j)) = none at he
+  rw [I.recover_anchor] at he
+  cases he
 
 theorem original_internal_zero (v : Fin N)
     (z : ActualGraphEdges.Edge (I.size v) × Fin 5) :
@@ -75,7 +81,7 @@ theorem tagged_count_same (v : Fin N) (x : ActualEqualityCloud.GlobalVar (I.size
       l.countP (ActualEqualityCloudDegree.containsVar x) := by
   induction l with
   | nil => rfl
-  | cons q l ih => simp [contains_tag_same, ih]
+  | cons q l ih => simp only [List.map_cons, List.countP_cons, contains_tag_same, ih]
 
 theorem tagged_count_other (v w : Fin N) (h : v ≠ w)
     (x : ActualEqualityCloud.GlobalVar (I.size v))
@@ -93,12 +99,16 @@ theorem degree_eq_original_add_cloud (v : Fin N)
   rw [List.countP_append, List.countP_flatMap]
   change originalDegree I (I.tag v x) + _ = _
   congr 1
+  dsimp only [Function.comp_def]
+  unfold ActualEqualityCloudDegree.degree
   rw [← List.sum_toFinset _ (List.nodup_finRange N)]
   have hu : (List.finRange N).toFinset = Finset.univ := by ext w; simp
   rw [hu, Finset.sum_eq_single v]
-  · exact tagged_count_same I v x _
+  · exact tagged_count_same I v x (ActualEqualityCloud.rows (I.size v))
   · intro w _ hw
-    exact tagged_count_other I v w (Ne.symm hw) x _
+    change ((ActualEqualityCloud.rows (I.size w)).map (I.tagRow w)).countP
+      (containsVar I (I.tag v x)) = 0
+    exact tagged_count_other I v w (Ne.symm hw) x (ActualEqualityCloud.rows (I.size w))
   · simp
 
 theorem port_degree_le_four (v : Fin N) (p : ActualGraphEdges.Vertex (I.size v)) :

@@ -54,3 +54,44 @@ degree statements are accepted, encoded FP construction, source-size bounds,
 actual majority-gap and YES transfer, upstream source hardness, specialized
 PCP/decoder/learning, and final theorem/paper consolidation remain separate
 obligations. This draft is neither a full certification nor a novelty claim.
+
+## Author verification update
+
+Historical source-only status above is superseded for author compilation.
+Actual session 26539 returned terminal EXIT 0 for main and Checks, both clean.
+Thirteen profiles contain exactly propext, Classical.choice and Quot.sound;
+four examples and three signatures compiled. Compiler ownership was released
+at completion. Independent build and three-lens acceptance remain pending.
+
+Draft freeze 91eb42ed8923ef5f7d7d7d6112ec763639a13d07 preceded compilation.
+Sessions 56699, 45591 and 22274 each exited 1. Repairs added local classical
+proposition decidability for the filter statement, explicit recover_anchor
+rewriting, explicit countP_cons, per-row proposition cases to reconcile
+different decidability witnesses, and explicit composition/cloud-degree
+unfolding to avoid expensive implicit reduction. No heartbeat override was
+needed in the successful source. The initial failed elaboration emitted
+recovery sorry warnings; they are not accepted proofs. All failed source
+snapshots and diagnostics are preserved. Mathematical count/degree targets
+and actual row multiplicities are unchanged; Checks is unchanged.
+
+Final compiled main SHA256:
+18a4151cd131776efee7b1c5925daa7438eebd9d1098a644e133f0d4545ca31e.
+Checks SHA256:
+40bb592c3c1928e9c7e299281d64b2318de38ed4f76cd229c50187d10d568617.
+No source or status-comment edit followed the successful build.
+
+Fresh author root contains 310 artifacts copied directly from original
+accepted locations in the Allocation/CloudDegree independent closures and
+their main exports. Overlapping relative paths required identical hashes.
+Original/copy/acceptance-receipt hashes were verified before and after the
+run. Runner checked pinned Lean commit, manifest and eleven package revisions,
+used one thread, and enforced physical-memory preflight 768 MiB and owned-child
+stop 640 MiB. No guard stop, download, broad build, or whole-dependency
+certification claim is involved; package-artifact provenance limits persist.
+
+Portable packet:
+certifications/realizable-hardness/.lake/build/actual-occurrence-degree-author-20260913/author-verification.json
+SHA256 eaebcdf4b6203b3d6141646ce9713de807b5637f632aac9278b805021a12eab8.
+It embeds runner, plan, 310 original-copy provenance entries, all five
+terminal records [1,1,1,0,0], raw logs and source snapshots. This author
+milestone does not establish FP, source gap/hardness, or full certification.
