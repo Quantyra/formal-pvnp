@@ -81,7 +81,7 @@ lemma cast_frameProduct (ha : a ≤ n) :
     push_cast
     field_simp
   unfold frameProduct
-  rw [Fin.prod_univ_eq_prod_range]
+  rw [Fin.prod_univ_eq_prod_range (fun i => 2^n - 2^i) a]
   rw [Nat.cast_prod]
   calc
     (∏ i ∈ Finset.range a, ((2^n - 2^i : ℕ) : ℚ)) =
@@ -139,7 +139,8 @@ lemma gaussian_ratio_eq (ha : a ≤ m) (hm : m ≤ n) :
   apply (mul_right_cancel₀ hf)
   rw [h1]
   field_simp [hnorm]
-  nlinarith [congrArg (fun x : ℚ => (2 : ℚ)^(a*(n-m)) * normalizedFrame n a * x) h2]
+  have hh := congrArg (fun x => normalizedFrame n a * x) h2
+  nlinarith only [hh]
 
 /-- A concrete constant bound under one spare retained dimension. -/
 lemma gaussian_ratio_le (ha : a + 1 ≤ m) (hm : m ≤ n) :
