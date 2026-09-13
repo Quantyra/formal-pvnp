@@ -29,7 +29,7 @@ lemma coordinateDual_apply (v x : Vector J) : coordinateDual J v x = evaluate v 
     change (Pi.basisFun (ZMod 2) (Coord J)).toDual v
       ((Pi.basisFun (ZMod 2) (Coord J)) r) = evaluate v
         ((Pi.basisFun (ZMod 2) (Coord J)) r)
-    rw [Basis.toDual_apply_left, Pi.basisFun_repr]
+    rw [Module.Basis.toDual_apply_left, Pi.basisFun_repr]
     simp [Pi.basisFun_apply, evaluate, Pi.single_apply, mul_ite]
   exact congrArg (fun g : Module.Dual (ZMod 2) (Vector J) => g x) hf
 
@@ -45,7 +45,7 @@ lemma annihilator_finrank (W : Submodule (ZMod 2) (Vector J)) :
   omega
 
 noncomputable def annihilatorBasis (W : Submodule (ZMod 2) (Vector J)) :
-    Basis (Fin (codim W)) (ZMod 2) W.dualAnnihilator :=
+    Module.Basis (Fin (codim W)) (ZMod 2) W.dualAnnihilator :=
   Module.finBasisOfFinrankEq (ZMod 2) W.dualAnnihilator (annihilator_finrank W)
 
 /-- Every coefficient vector specifies a unique element of the full annihilator.
@@ -120,9 +120,9 @@ lemma codim_top : codim (⊤ : Submodule (ZMod 2) (Vector J)) = 0 := by
   simp [codim]
 
 lemma codim_bot : codim (⊥ : Submodule (ZMod 2) (Vector J)) = 3 * J := by
-  simp [codim, Vector, Coord, Module.finrank_pi, Nat.mul_comm]
+  simp [codim, TripleRestrictionRank.Vector, Coord, Module.finrank_pi, Nat.mul_comm]
 
 lemma codim_empty (W : Submodule (ZMod 2) (Vector 0)) : codim W = 0 := by
-  simp [codim, Vector, Coord, Module.finrank_pi]
+  simp [codim, TripleRestrictionRank.Vector, Coord, Module.finrank_pi]
 
 end PvNP.RealizableHardness.SubspaceRestriction

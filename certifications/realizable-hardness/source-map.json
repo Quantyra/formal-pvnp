@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "status": "PARTIALLY_COMPILED; independent companion port reviews pending",
+  "status": "AUTHOR_COMPILED_33_AND_AGGREGATE; independent companion port reviews pending",
   "source_repository": "Quantyra/formal-pvnp",
   "source_count": 33,
   "entries": [
@@ -681,12 +681,36 @@
       "source_git_lf_sha256": "f6cd2342704fe24a3b3b5f8b0ff22d3f9cc54e11d69c5f3a695cc8af08944506",
       "source_working_sha256": "f6cd2342704fe24a3b3b5f8b0ff22d3f9cc54e11d69c5f3a695cc8af08944506",
       "mirror_path": "lean/PvNP/RealizableHardness/SubspaceRestriction.lean",
-      "mirror_sha256": "f6cd2342704fe24a3b3b5f8b0ff22d3f9cc54e11d69c5f3a695cc8af08944506",
+      "mirror_sha256": "9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author batch18032 main/Checks EXIT0;13 standard-only profiles; independent companion reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "rw [Basis.toDual_apply_left, Pi.basisFun_repr]",
+          "after": "rw [Module.Basis.toDual_apply_left, Pi.basisFun_repr]",
+          "reason": "Batch15557 namespace compatibility: pinned dual Basis is Module.Basis; explicitly qualify intended Vector in simp. Statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "    Basis (Fin (codim W))",
+          "after": "    Module.Basis (Fin (codim W))",
+          "reason": "Batch15557 namespace compatibility: pinned dual Basis is Module.Basis; explicitly qualify intended Vector in simp. Statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "simp [codim, Vector, Coord, Module.finrank_pi, Nat.mul_comm]",
+          "after": "simp [codim, TripleRestrictionRank.Vector, Coord, Module.finrank_pi, Nat.mul_comm]",
+          "reason": "Batch15557 namespace compatibility: pinned dual Basis is Module.Basis; explicitly qualify intended Vector in simp. Statements unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "simp [codim, Vector, Coord, Module.finrank_pi]",
+          "after": "simp [codim, TripleRestrictionRank.Vector, Coord, Module.finrank_pi]",
+          "reason": "Batch15557 namespace compatibility: pinned dual Basis is Module.Basis; explicitly qualify intended Vector in simp. Statements unchanged."
         }
       ],
       "source_verification": "Accepted bounded Lean 4.13 component; does not certify companion",
@@ -700,7 +724,7 @@
       "mirror_path": "lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean",
       "mirror_sha256": "8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf",
       "patches": [],
-      "companion_verification": "UNCOMPILED",
+      "companion_verification": "Author batch18032 main/Checks EXIT0;13 standard-only profiles; independent companion reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -853,5 +877,6 @@
   ],
   "initial_source_commit": "4aff259c9da28f558be716c40d9acb9b72e2fc0e",
   "source_commit_policy": "Per-entry source_commit is authoritative; initial_source_commit records original mirror baseline.",
-  "author_exported_module_count": 31
+  "author_exported_module_count": 33,
+  "aggregate_verification": "Original35-import aggregate exported EXIT0 in18032; foundation and33 mapped modules import together; no final hardness theorem present."
 }

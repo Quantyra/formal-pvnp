@@ -1946,3 +1946,153 @@ Note: This linter can be disabled with `set_option linter.unnecessarySimpa false
 
 EXIT 0
 ```
+
+## Final scoped author checkpoint:33 mapped modules and aggregate
+
+SubspaceRestriction15557 failed on the moved Module.Basis namespace and ambiguous Vector names. Four literal qualifications retain the intended mathematical types and targets. Batch18032 main/Checks exited0; Checks printed13 standard-only profiles. The unchanged original35-import aggregate then exited0. This establishes author compilation of the selected33 finite modules together with pinned foundation headline imports under Lean4.34rc2. Independent three-lens companion review remains pending. There is no final randomized hardness theorem or learning corollary in this aggregate. New unmapped drafts, including RandomizedReduction, and root4.13 incidence/counting/dimension sources are excluded. Compiler scope is frozen at this checkpoint.
+
+Companion legacy non-module sources emit ordinary olean files; the five-facet requirement described for reused new-style mathlib dependency modules is not a claim about companion outputs. Downstream imports and selected executable checks were actually run.
+
+SubspaceRestriction source SHA256 `9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41`.
+
+SubspaceRestrictionChecks source SHA256 `8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf`.
+
+Unchanged aggregate source SHA256 `f6bde30681dcf7a14c1ac6adee16d18374a5c58e0090716bfb8c28a03100333b`;35 unique imports.
+
+### SubspaceRestriction-1789261499131001800.log
+
+SHA256 `ce771a3abf54f711863d008ddb0dbf1138da36aa4ac95e2d9cf28ebd22976779`.
+
+```text
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:32:8: error(lean.unknownIdentifier): Unknown identifier `Basis.toDual_apply_left`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:48:4: error: Function expected at
+  Basis
+but this term has type
+  ?m.2
+
+Note: Expected a function because this term is being applied to the argument
+  (Fin (codim W))
+
+Hint: The identifier `Basis` is unknown, and Lean's `autoImplicit` option causes an unknown identifier to be treated as an implicitly bound variable with an unknown type. However, the unknown type cannot be a function, and a function is what Lean expects here. This is often the result of a typo or a missing `import` or `open` statement.
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:56:5: error: typeclass instance problem is stuck
+  RingHomCompTriple ?m.91 (RingHom.id (ZMod 2)) ?m.93
+
+Note: Lean will not try to resolve this typeclass instance problem because the seventh type argument to `RingHomCompTriple` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:58:6: warning: declaration uses `sorry`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:63:6: warning: declaration uses `sorry`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:66:2: warning: Unused tactic linter: `change
+  evaluate ((coordinateDual J).symm (((annihilatorBasis W).equivFun.symm u).val)) x = _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:68:2: warning: Unused tactic linter: `rw [← coordinateDual_apply, (coordinateDual J).apply_symm_apply]` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:68:2: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:81:11: error: Tactic `rcases` failed: `x✝ : ?m.55` is not an inductive datatype
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:123:15: error: Ambiguous term
+  Vector
+Possible interpretations:
+  _root_.Vector : Type ?u.19 → ℕ → Type ?u.19
+  
+  TripleRestrictionRank.Vector : ℕ → Type
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:123:30: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [codim, Vector, Coord, Nat.mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:126:15: error: Ambiguous term
+  Vector
+Possible interpretations:
+  _root_.Vector : Type ?u.15 → ℕ → Type ?u.15
+  
+  TripleRestrictionRank.Vector : ℕ → Type
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:126:30: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [codim, Vector, Coord]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 1
+```
+
+### SubspaceRestriction-1789261636692042400.log
+
+SHA256 `91adb771c5c40225e97281174edf841ccdc16485324715ee5952cce2cd4566e7`.
+
+```text
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:123:52: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [codim, TripleRestrictionRank.Vector, Coord, Nat.mul_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\SubspaceRestriction.lean:126:52: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [codim, TripleRestrictionRank.Vector, Coord]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### SubspaceRestrictionChecks-1789261636692042400.log
+
+SHA256 `c03d2040dc9d871513daeaedb280b289fa18fb1f6f67249f3b46959a92c86f5e`.
+
+```text
+'PvNP.RealizableHardness.SubspaceRestriction.coordinateDual_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.annihilator_finrank' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.definingForms_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.definingForms_evaluate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.definingForms_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.exists_independent_defining_forms' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.represented_codim' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.arbitrary_subspace_failure_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.codim_top' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.codim_bot' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.codim_empty' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.coordinateForm_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SubspaceRestriction.coordinateHyperplane_codim' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
+
+### AGGREGATE-1789261636692042400.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```

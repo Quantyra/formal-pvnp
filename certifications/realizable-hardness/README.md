@@ -1,19 +1,21 @@
 # Realizable hardness companion package
 
-**PARTIALLY COMPILED. Independent companion port reviews remain pending.**
-Thirty-one of 33 modules passed author exports: BernoulliMGF and its Checks,
+**ALL 33 MAPPED MODULES AND AGGREGATE AUTHOR-COMPILED. Independent companion port reviews remain pending.**
+All 33 of 33 modules passed author exports: BernoulliMGF and its Checks,
 ExceptionRepair, Formula and Checks, SamplingThreshold and its Checks,
 ComputableSampleCount and its Checks, WeightRounding and its Checks,
 FiniteSampling and its Checks, FiniteConcentration and its Checks,
 FiniteRepairRoundingPipeline and its Checks, InverseCDFSampler and its Checks,
 JointSamplingLaw and its Checks, PosteriorReweighting and its Checks,
 SamplingGuarantee and its Checks, SamplingFormulaPromises and its Checks,
-SeedEncoding and its Checks, TripleRestrictionRank and its Checks. The Checks groups printed
-13, 13, 29, 17, 25, 19, 24, 18, 18, 11, 13, 18, 15, 25 and 22 standard-only axiom profiles respectively;
+SeedEncoding and its Checks, TripleRestrictionRank and its Checks,
+SubspaceRestriction and its Checks. The Checks groups printed
+13, 13, 29, 17, 25, 19, 24, 18, 18, 11, 13, 18, 15, 25, 22 and 13 standard-only axiom profiles respectively;
 count evaluation printed
 512, 2048 and 1.
-Other modules remain pending unless explicitly
-recorded in `build-evidence.md`; successful source ports do not certify the whole graph.
+The original aggregate also exported successfully, importing the two pinned foundation
+headlines and all 33 mapped modules. Unmapped drafts are excluded. These author
+exports do not constitute independent companion review or full-theorem certification.
 The full randomized NP-hardness theorem and learning corollary are absent.
 This package prepares their eventual single-kernel assembly; its current
 aggregate imports the candidate foundation headlines and finite proof components.
