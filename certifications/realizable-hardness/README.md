@@ -1,13 +1,13 @@
 # Realizable hardness companion package
 
 **PARTIALLY COMPILED. Independent companion port reviews remain pending.**
-Twenty-one of 33 modules passed author exports: BernoulliMGF and its Checks,
+Twenty-three of 33 modules passed author exports: BernoulliMGF and its Checks,
 ExceptionRepair, Formula and Checks, SamplingThreshold and its Checks,
 ComputableSampleCount and its Checks, WeightRounding and its Checks,
 FiniteSampling and its Checks, FiniteConcentration and its Checks,
 FiniteRepairRoundingPipeline and its Checks, InverseCDFSampler and its Checks,
-JointSamplingLaw and its Checks. The Checks groups printed
-13, 13, 29, 17, 25, 19, 24, 18, 18 and 11 standard-only axiom profiles respectively;
+JointSamplingLaw and its Checks, PosteriorReweighting and its Checks. The Checks groups printed
+13, 13, 29, 17, 25, 19, 24, 18, 18, 11 and 13 standard-only axiom profiles respectively;
 count evaluation printed
 512, 2048 and 1.
 Other modules remain pending unless explicitly

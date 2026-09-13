@@ -1133,3 +1133,250 @@ SHA256 `ecfd29ea027fe8c051ea635daefe5d058faa7a4c352f9334b848762e9c68587d`.
 
 EXIT 0
 ```
+
+## Twenty-three-module author checkpoint
+
+PosteriorReweighting failed in92585 on unavailable sum_div, a discharged ring continuation and additive orientation. Three literal transforms add the pinned Field import, remove the redundant ring and use add_le_add le_rfl hbad. Statements are unchanged. Batch19744 main/Checks both exited0; Checks printed13 standard-only profiles. Linter warnings remain unsuppressed. Independent companion reviews remain pending; no full hardness theorem is certified. SamplingGuarantee is the next live module and is not included in this checkpoint count.
+
+PosteriorReweighting source SHA256 `87f613673b0b0f1bd56308d14a1cba006f3fb00dfbafa5d524dcd199b057298a`.
+
+PosteriorReweightingChecks source SHA256 `48ca57c80a389efa3d8460010acb8875b25e06d598749cbb623ee8b443b321aa`.
+
+### PosteriorReweighting-1789260645227084300.log
+
+SHA256 `37bd5820486905e66c8ab0d208102a2a2ef024094372b64fdc8faaa4277d1c6f`.
+
+```text
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:24:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:37:26: error(lean.unknownIdentifier): Unknown constant `Finset.sum_div`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:38:2: error: Type mismatch
+  div_self (ne_of_gt hq)
+has type
+  marginal p k q / marginal p k q = 1
+but is expected to have type
+  ∑ v, p v * k v q / marginal p k q = 1
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:40:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.bayes_mass`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:45:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.zero_prior`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:54:4: error: No goals to be solved
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:56:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:88:29: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, hr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:90:17: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, Bool.not_false, Bool.true_eq, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:90:41: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hb, hg, Bool.not_false, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:121:27: error: Type mismatch
+  add_le_add_left hbad ?m.384
+has type
+  (mass r fun v => !g v) + ?m.384 ≤ zeta + ?m.384
+but is expected to have type
+  (p0 * eta + mass r fun v => !g v) ≤ p0 * eta + zeta
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:109:17: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.not_false, Bool.true_eq, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:109:37: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, Bool.not_false, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:116:17: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.not_true, Bool.false_eq_true, ite_false, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:167:10: error(lean.unknownIdentifier): Unknown constant `Finset.sum_div`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:218:8: error(lean.unknownIdentifier): Unknown constant `Finset.sum_div`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:217:43: error: unsolved goals
+V : Type u_1
+inst✝ : Fintype V
+r w : V → ℚ
+hZ : 0 < normalizer r w
+⊢ ∑ v, r v * w v / normalizer r w = 1
+
+EXIT 1
+```
+
+### PosteriorReweighting-1789260989162401300.log
+
+SHA256 `c31f5bfe22552d26b0b458f218bae50e557676c4ff9374645a2eace035f8dcbe`.
+
+```text
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:25:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:36:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.posterior_normalized`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:41:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.bayes_mass`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:46:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.zero_prior`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:49:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.bayes_ratio`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:56:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero`:
+  [Fintype Q]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype Q] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:88:29: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hg, hr]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:90:17: warning: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, Bool.not_false, Bool.true_eq, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:90:41: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hb, hg, Bool.not_false, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:100:20: warning: Variable name `hz` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hz
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:109:17: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.not_false, Bool.true_eq, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:109:37: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [hg, Bool.not_false, ite_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\PosteriorReweighting.lean:116:17: warning: This simp argument is unused:
+  hg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.not_true, Bool.false_eq_true, ite_false, add_zero]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### PosteriorReweightingChecks-1789260989162401300.log
+
+SHA256 `b6d911e88d334c430c16c92a595dc7922f2f8d89a2e3fd2ae1bc6f997181333f`.
+
+```text
+lean\PvNP\RealizableHardness\PosteriorReweightingChecks.lean:34:2: warning: Unused tactic linter: `all_goals intro b; cases b <;> norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+lean\PvNP\RealizableHardness\PosteriorReweightingChecks.lean:34:12: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+lean\PvNP\RealizableHardness\PosteriorReweightingChecks.lean:34:21: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+'PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.marginal_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.posterior_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.bayes_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.zero_prior' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.bayes_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.total_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.posterior_event_cutoff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.reweight_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.normalizer_deviation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.normalized_reweighting' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.PosteriorReweighting.reweighted_normalized' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

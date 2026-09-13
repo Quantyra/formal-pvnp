@@ -1,6 +1,7 @@
 import Mathlib.Data.Rat.Cast.Order
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Algebra.BigOperators.Ring.Finset
+import Mathlib.Algebra.BigOperators.Field
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
@@ -51,7 +52,6 @@ lemma bayes_ratio (p : V → ℚ) (k : V → Q → ℚ) (q : Q) (v : V)
   by_cases hm : marginal p k q = 0
   · simp [hm]
   · field_simp [ne_of_gt hv, hm]
-    ring
 
 lemma joint_zero_of_marginal_zero (p : V → ℚ) (k : V → Q → ℚ)
     (hp : ∀ v, 0 ≤ p v) (hk : ∀ v q, 0 ≤ k v q)
@@ -118,7 +118,7 @@ lemma reweight_error (r w : V → ℚ) (g : V → Bool) (p0 eta zeta : ℚ)
   calc
     _ ≤ ∑ v, (r v * (p0 * eta) + (if !(g v) then r v else 0)) := Finset.sum_le_sum fun v _ => hpoint v
     _ = p0 * eta + mass r (fun v => !(g v)) := by rw [Finset.sum_add_distrib, ← Finset.sum_mul, hrn]; simp [mass]
-    _ ≤ p0 * eta + zeta := add_le_add_left hbad _
+    _ ≤ p0 * eta + zeta := add_le_add le_rfl hbad
 
 lemma normalizer_deviation (r w : V → ℚ) (p0 : ℚ)
     (hr : ∀ v, 0 ≤ r v) (hrn : ∑ v, r v = 1) :
