@@ -1,0 +1,3630 @@
+{
+  "schema": 1,
+  "scope": "Independent exports and proof review of exactly 33 mapped finite components plus original 35-import aggregate; not full hardness certification",
+  "candidate_commit": "6d7718919d681f57e28559bd0ee584c450cb2446",
+  "source_map_sha256": "b60506d4a969d19e9f3d87615a1fd09274b6a07f9459381b657b9c2b8d93f297",
+  "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "environment": {
+    "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;c:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "LEAN_NUM_THREADS": "1",
+    "toolchain": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)"
+  },
+  "source_reconstruction": [
+    {
+      "path": "lean/PvNP/RealizableHardness/BernoulliMGF.lean",
+      "sha256": "bba0f91c80fb8c3162965a9c6132fb9ae397763446534c795dea8196c3ba818c",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/BernoulliMGFChecks.lean",
+      "sha256": "f370c56951ed923db58da67d1cdbc93e3a4cadf8b994c62abbc588e604be450f",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/Checks.lean",
+      "sha256": "213d25d9ee18a5edae005fbd1b25afba15f94ef36f6347d403d5cfcf340e851b",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ComputableSampleCount.lean",
+      "sha256": "d611b5fe4b3770b27aeb05deb690fcc160948b96e6268fea681288cf6c26fac9",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ComputableSampleCountChecks.lean",
+      "sha256": "10c47487135dc1538f95cec00e82d54bd4a64276dedfe08d29214f99c5636310",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ExceptionRepair.lean",
+      "sha256": "e5306b32322afb5ec012d8a44ee81ea70b4b4f7bb2b12e5837290a867b3c5405",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteConcentration.lean",
+      "sha256": "368902b5aae4ff087a078922fa79fd87762c78ebf881c8ed86ed9ee716c011e2",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteConcentrationChecks.lean",
+      "sha256": "8f260a72a5a6770e589c5380bff89368ff4c837aaa5e4f39f6d87250cc0abb8d",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.lean",
+      "sha256": "6e04ac94f0e932d58bf636df9fa48ff16e1ac9bdb898edc526f77cfba5f14af3",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.lean",
+      "sha256": "0e2e5e87f8cd79585c7acc6699e809087cb8c4ed1951b15cf91038c37e62f594",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteSampling.lean",
+      "sha256": "7b1cf53b512e705d08d4eb20a1db69b4015d5fb561f5495e11316c0cfc49ab57",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteSamplingChecks.lean",
+      "sha256": "9281576cae367164b01ec09649245ab7e3d91b17e51c531e5be591661a56461b",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/Formula.lean",
+      "sha256": "ab893de33e2e52b337195add1bb317a9f69ccce9ba1bd972df934005257b5a00",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/InverseCDFSampler.lean",
+      "sha256": "8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/InverseCDFSamplerChecks.lean",
+      "sha256": "c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/JointSamplingLaw.lean",
+      "sha256": "3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/JointSamplingLawChecks.lean",
+      "sha256": "c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/PosteriorReweighting.lean",
+      "sha256": "87f613673b0b0f1bd56308d14a1cba006f3fb00dfbafa5d524dcd199b057298a",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/PosteriorReweightingChecks.lean",
+      "sha256": "48ca57c80a389efa3d8460010acb8875b25e06d598749cbb623ee8b443b321aa",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingFormulaPromises.lean",
+      "sha256": "5b3be5d6cc5b66c9907855153b7e11c11c43e28fca5feff952ea649de278e941",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingFormulaPromisesChecks.lean",
+      "sha256": "ef50b659f0275a622c0a918c543b0ae6e58fbf47d4da9f6b9edacc225512af06",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingGuarantee.lean",
+      "sha256": "ed1303659b170bb560eb415623e8298344820aa4313b56b2578d0ea82aa76fe0",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingGuaranteeChecks.lean",
+      "sha256": "08effac99e531296d8361e56e4cadbf19b183d3a41a6a5fb77b7e9503f053b97",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingThreshold.lean",
+      "sha256": "f21c368aa168b6283dfc21aca606801e376c2537888367485fe9404954b86f8d",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingThresholdChecks.lean",
+      "sha256": "559bb713fae0f334e7eee2d467bc8d00d7264fe9913ee8913219017ad1e603cc",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SeedEncoding.lean",
+      "sha256": "286890661a574841a84754b12033f7caadf167c3bde52c5c0f55ca9d2f21482d",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SeedEncodingChecks.lean",
+      "sha256": "f2692f38794aad6d955cc1b8bac946e3bf7e53d909a4a8a5c6370a018599acd4",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SubspaceRestriction.lean",
+      "sha256": "9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean",
+      "sha256": "8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionRank.lean",
+      "sha256": "ca7653309402410e5050f0f6d4c03aa88a94c5c64a4b4964cb50ff82ce3896bc",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionRankChecks.lean",
+      "sha256": "89e3c004fb206b5f81d3679dd3a9197dfd5c2eae754c32df511814077b39adf3",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/WeightRounding.lean",
+      "sha256": "f99379cadbffe016a48b20b52d91777c09c42b900ea3f526862bee36e6cbf357",
+      "reconstruction": "PASS"
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/WeightRoundingChecks.lean",
+      "sha256": "9e63050f4813401ff857c98188401d98bd18aec3f2c1e6a4b223a45b56f70260",
+      "reconstruction": "PASS"
+    }
+  ],
+  "source_token_audit": [
+    {
+      "path": "lean/PvNP/RealizableHardness/BernoulliMGF.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/BernoulliMGFChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "partition_pos",
+        "partition_deriv",
+        "gap_deriv",
+        "gapSlope_deriv",
+        "gapCurvature_nonneg",
+        "gapSlope_monotone",
+        "gap_nonneg",
+        "centered_mgf_le",
+        "probability_zero_example",
+        "probability_one_example",
+        "parameter_zero_example",
+        "nondegenerate_example",
+        "negative_parameter_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/Checks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "exception_completeness",
+        "exception_soundness",
+        "repairedWeight_eq_sum",
+        "repairedWeights_pos",
+        "repairedWeights_sum",
+        "repairedBudget_pos",
+        "repairedBudget_le_one",
+        "Formula.eval_repair",
+        "Formula.leaves_repair",
+        "Formula.repair_complete",
+        "Formula.repair_sound",
+        "no_instance_example",
+        "yes_instance_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ComputableSampleCount.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ComputableSampleCountChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "concrete_count_small",
+        "concrete_count_half",
+        "concrete_count_zero",
+        "count_pos",
+        "count_power_two",
+        "target_le_count",
+        "target_gt_one",
+        "count_upper",
+        "learningThreshold_le_target",
+        "learningThreshold_le_count",
+        "threshold_le_count",
+        "inverse_bound_pos",
+        "count_upper_of_inverse",
+        "learning_budget",
+        "base_budget",
+        "concrete_half_error",
+        "concrete_small_error"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/ExceptionRepair.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "exception_completeness",
+        "exception_soundness"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteConcentration.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteConcentrationChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "mean_bounds",
+        "one_trial_mgf",
+        "exp_finite_sum",
+        "product_mgf_identity",
+        "product_mgf_bound",
+        "probability_mono",
+        "exponential_markov",
+        "upper_tail",
+        "lower_tail",
+        "probability_union",
+        "two_sided_tail",
+        "probability_exists",
+        "centered_empirical",
+        "empirical_tail",
+        "assignment_empirical_tail",
+        "assignment_approximation_tail",
+        "assignment_epsilon_tail",
+        "probability_complement",
+        "fair_mean",
+        "fair_all_true",
+        "fair_all_false",
+        "fair_draw_mass",
+        "fair_eight_tail",
+        "zero_variable_assignment_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipeline.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteRepairRoundingPipelineChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "lam_pos",
+        "eps_le_one",
+        "budget_pos",
+        "budget_le_one",
+        "weights_pos",
+        "weights_sum",
+        "output_valid",
+        "yes_preserved",
+        "no_preserved",
+        "output_leaves",
+        "reciprocal_budget",
+        "denominator_bound",
+        "output_common_denominator",
+        "genuine_yes_example",
+        "genuine_no_input",
+        "genuine_no_example",
+        "concrete_denominator_bound",
+        "concrete_repaired_leaf_count"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteSampling.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/FiniteSamplingChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "cumulative_error",
+        "mass_nonneg",
+        "mass_error",
+        "mass_sum",
+        "event_error",
+        "event_error_of_precision",
+        "trialMass_nonneg",
+        "trialMass_sum",
+        "trial_event_factorization",
+        "assignment_count",
+        "listSampler_exact",
+        "thirds_nonneg",
+        "thirds_normalized",
+        "fractional_cut_example",
+        "fractional_mass_example",
+        "rounded_distribution_example",
+        "uniform_event_example",
+        "independent_two_trial_example",
+        "one_bit_sampler_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/Formula.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "Formula.repair_complete",
+        "Formula.leaves_repair",
+        "Formula.repair_sound"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/InverseCDFSampler.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/InverseCDFSamplerChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "support_pos",
+        "cut_endpoint",
+        "sampler_interval",
+        "sampler_eq_iff",
+        "fibre_card",
+        "fibre_probability",
+        "sampler_event_law",
+        "bitSampler_event_law",
+        "bitSampler_event_error",
+        "gapThirds_nonneg",
+        "gapThirds_normalized",
+        "gapThirds_cuts",
+        "first_seed_example",
+        "boundary_seed_example",
+        "final_seed_example",
+        "zero_atom_example",
+        "fractional_fibre_example",
+        "binary_precision_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/JointSamplingLaw.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/JointSamplingLawChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "array_fibre_card",
+        "bit_fibre_probability",
+        "array_fibre_probability",
+        "sampleArray_event_law",
+        "sampleArray_probability",
+        "half_nonneg",
+        "half_normalized",
+        "half_mass",
+        "two_trial_diagonal",
+        "zero_atom_joint",
+        "concrete_real_event_bridge"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/PosteriorReweighting.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/PosteriorReweightingChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "marginal_nonneg",
+        "marginal_normalized",
+        "posterior_normalized",
+        "bayes_mass",
+        "zero_prior",
+        "bayes_ratio",
+        "joint_zero_of_marginal_zero",
+        "total_probability",
+        "posterior_event_cutoff",
+        "reweight_error",
+        "normalizer_deviation",
+        "normalized_reweighting",
+        "reweighted_normalized"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingFormulaPromises.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingFormulaPromisesChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "SamplingFormulaPromises.empirical_eq_average",
+        "SamplingFormulaPromises.good_yes_average",
+        "SamplingFormulaPromises.good_no_average",
+        "SamplingFormulaPromises.parameter_margin",
+        "SamplingFormulaPromises.good_yes_output",
+        "SamplingFormulaPromises.good_no_output",
+        "SamplingFormulaPromises.fromSeeds_eval",
+        "SamplingFormulaPromises.output_leaves",
+        "SamplingFormulaPromises.seedProbability_mono",
+        "SamplingFormulaPromises.computed_event_probability",
+        "SamplingFormulaPromises.computed_yes_probability",
+        "SamplingFormulaPromises.computed_no_probability",
+        "duplicate_positions",
+        "duplicate_empirical",
+        "empty_trials"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingGuarantee.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingGuaranteeChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "finiteMean_eq_eventMass",
+        "roundedLaw_nonneg",
+        "roundedLaw_sum",
+        "roundedMean_error",
+        "seed_failure_bound",
+        "seed_success_bound",
+        "good_probability_of_threshold",
+        "good_probability_of_learningThreshold",
+        "precision_bound",
+        "chosen_good_probability",
+        "chosen_learning_good_probability",
+        "atoms_nonneg",
+        "atoms_normalized",
+        "original_mean_example",
+        "chosen_base_example",
+        "chosen_learning_example",
+        "explicit_count_example",
+        "zero_variable_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingThreshold.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SamplingThresholdChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "threshold_pos",
+        "threshold_gt_one",
+        "sampleCount_pos",
+        "sampleCount_lower",
+        "sampleCount_least",
+        "sampleCount_upper",
+        "failure_budget",
+        "sampleCount_failure_budget",
+        "threshold_numeric_upper",
+        "sampleCount_numeric_upper",
+        "sampleCount_bound_of_inverse_error",
+        "failure_budget_of_log_threshold",
+        "threshold_le_learningThreshold",
+        "learningSampleCount_pos",
+        "learningSampleCount_lower",
+        "learningSampleCount_least",
+        "learningSampleCount_upper",
+        "learning_failure_budget",
+        "learningSampleCount_failure_budget",
+        "learningThreshold_numeric_upper",
+        "learningSampleCount_numeric_upper",
+        "learningSampleCount_bound_of_inverse_error",
+        "zero_variables_positive_example",
+        "positive_variables_threshold_example",
+        "inverse_error_numeric_example",
+        "selected_count_failure_example",
+        "explicit_count_failure_example",
+        "learning_selected_count_failure_example",
+        "learning_explicit_count_failure_example"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SeedEncoding.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SeedEncodingChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "unflatten_flatten",
+        "flatten_unflatten",
+        "split_join",
+        "join_split",
+        "event_card_equiv",
+        "uniformProbability_equiv",
+        "uniformProbability_eq_sum",
+        "seedProbability_eq_uniform",
+        "flat_event_card",
+        "flat_probability",
+        "sampleFlat_probability",
+        "prefix_fibre_card",
+        "prefix_event_card",
+        "prefix_probability",
+        "padded_sampleFlat_probability",
+        "zero_trials_inverse",
+        "zero_width_inverse",
+        "zero_trials_flat_inverse",
+        "zero_width_flat_inverse",
+        "empty_seed_card",
+        "row_major_example",
+        "padding_example",
+        "no_padding_example",
+        "empty_prefix_example",
+        "diagonal_padded_law"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SubspaceRestriction.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/SubspaceRestrictionChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "coordinateDual_apply",
+        "annihilator_finrank",
+        "definingForms_full",
+        "definingForms_evaluate",
+        "definingForms_kernel",
+        "exists_independent_defining_forms",
+        "represented_codim",
+        "arbitrary_subspace_failure_probability",
+        "codim_top",
+        "codim_bot",
+        "codim_empty",
+        "coordinateForm_surjective",
+        "coordinateHyperplane_codim"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionRank.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/TripleRestrictionRankChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "blockMass_sum",
+        "probability_univ",
+        "block_marginal",
+        "drop_marginal",
+        "coordinate_removed_bound",
+        "restrict_eq_zero_iff",
+        "badRows_iff_not_injective",
+        "goodRows_rank",
+        "rowVanishes_probability",
+        "probability_cover",
+        "badRows_probability",
+        "restricted_rank_failure_probability",
+        "vanishing_on_retained_iff",
+        "rowVanishes_on_retained",
+        "matrix_restricted_rank_failure_probability",
+        "intersection_eq_kernel",
+        "rowFunctionals_injective",
+        "restrictedEvaluation_dual",
+        "goodRows_evaluation_surjective",
+        "goodRows_intersectionCodim",
+        "intersection_codim_failure_probability",
+        "exampleRows_full"
+      ]
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/WeightRounding.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": []
+    },
+    {
+      "path": "lean/PvNP/RealizableHardness/WeightRoundingChecks.lean",
+      "forbidden_tokens": [],
+      "axiom_queries": [
+        "coordinate_lower",
+        "coordinate_upper",
+        "denominator_bounds",
+        "roundedWeights_pos",
+        "roundedWeights_sum",
+        "roundedBudget_valid",
+        "rounding_complete",
+        "rounding_budget_transfer",
+        "rounding_sound",
+        "dyadicScale_lower",
+        "dyadicScale_least",
+        "dyadicScale_upper",
+        "common_denominator",
+        "integral_lengths",
+        "dyadic_denominator_bound",
+        "denominator_bound_of_inverse_budget",
+        "polynomial_denominator_bound",
+        "rounded_lower_bounds",
+        "formula_rounding",
+        "fractional_coordinate_example",
+        "fractional_denominator_example",
+        "dyadic_scale_example",
+        "clipped_budget_example",
+        "rounded_yes_example",
+        "rounded_no_example"
+      ]
+    }
+  ],
+  "session_id": 36677,
+  "exports": [
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGF",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\BernoulliMGF-1789261972197688300.log",
+      "log_sha256": "2c10f123df6b6385935dd8a8d7cf0c146cc33b50bc8a488c61440981336cd85b",
+      "source_sha256": "bba0f91c80fb8c3162965a9c6132fb9ae397763446534c795dea8196c3ba818c",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "output_sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.lean:32:17: warning: This simp argument is unused:\n  gap\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [gapSlope, id_eq]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nTry this:\n  [apply] ring_nf\n  \n  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.\n    \n  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGFChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\BernoulliMGFChecks-1789261996324258400.log",
+      "log_sha256": "e7d8b8191ed6e7c53225f79b1bd7b5f6ec523752fee7afae2e5d6937e65440c0",
+      "source_sha256": "f370c56951ed923db58da67d1cdbc93e3a4cadf8b994c62abbc588e604be450f",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "output_sha256": "ce5c74ada383b2bcd58865fbe407bda4009b0e1df4fe27faa7d1daf0524e2760",
+      "raw_log_utf8": "'PvNP.RealizableHardness.BernoulliMGF.partition_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.partition_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.gap_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.gapSlope_deriv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.gapCurvature_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.gapSlope_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.gap_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.centered_mgf_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.probability_zero_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.probability_one_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.parameter_zero_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.nondegenerate_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.BernoulliMGF.negative_parameter_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.partition_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.partition_deriv",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.gap_deriv",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.gapSlope_deriv",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.gapCurvature_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.gapSlope_monotone",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.gap_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.centered_mgf_le",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.probability_zero_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.probability_one_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.parameter_zero_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.nondegenerate_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.BernoulliMGF.negative_parameter_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExceptionRepair",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\ExceptionRepair-1789262018629034900.log",
+      "log_sha256": "24ff45c751cfdd70da3378adb568838dbd161e7460a860f7cae3a8823c926f0e",
+      "source_sha256": "e5306b32322afb5ec012d8a44ee81ea70b4b4f7bb2b12e5837290a867b3c5405",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "output_sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9",
+      "raw_log_utf8": "'PvNP.RealizableHardness.exception_completeness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.exception_soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.exception_completeness",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.exception_soundness",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.Formula",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\Formula.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\Formula-1789262037009809100.log",
+      "log_sha256": "24ebceed43492322a68afdddf57d485fd11af48f17a0a40603920083d96eed49",
+      "source_sha256": "ab893de33e2e52b337195add1bb317a9f69ccce9ba1bd972df934005257b5a00",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "output_sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41",
+      "raw_log_utf8": "'PvNP.RealizableHardness.Formula.repair_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.Formula.leaves_repair' depends on axioms: [propext]\n'PvNP.RealizableHardness.Formula.repair_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.Formula.repair_complete",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.leaves_repair",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.repair_sound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.Checks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\Checks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\Checks-1789262052219855300.log",
+      "log_sha256": "f0ba50a8aaa936e7421df2d7b953a46ac09fe61cebc2d2957e0c4da8a710361c",
+      "source_sha256": "213d25d9ee18a5edae005fbd1b25afba15f94ef36f6347d403d5cfcf340e851b",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "output_sha256": "d1678afee60528ef8f8ca853635e14d6ce3cef32b4e0dadf061adb7f0e62b6ca",
+      "raw_log_utf8": "'PvNP.RealizableHardness.exception_completeness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.exception_soundness' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.repairedWeight_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.repairedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.repairedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.repairedBudget_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.repairedBudget_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.Formula.eval_repair' depends on axioms: [propext]\n'PvNP.RealizableHardness.Formula.leaves_repair' depends on axioms: [propext]\n'PvNP.RealizableHardness.Formula.repair_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.Formula.repair_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.no_instance_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.yes_instance_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.exception_completeness",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.exception_soundness",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.repairedWeight_eq_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.repairedWeights_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.repairedWeights_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.repairedBudget_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.repairedBudget_le_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.eval_repair",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.leaves_repair",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.repair_complete",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.Formula.repair_sound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.no_instance_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.yes_instance_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThreshold",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingThreshold-1789262067220678300.log",
+      "log_sha256": "80672e77c22dbb0db5ef813c829267aed716523f1018897b88947502221fb13f",
+      "source_sha256": "f21c368aa168b6283dfc21aca606801e376c2537888367485fe9404954b86f8d",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "output_sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.lean:143:35: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.lean:143:35: warning: Unused tactic linter: `ring` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCount",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\ComputableSampleCount-1789262089888995600.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "d611b5fe4b3770b27aeb05deb690fcc160948b96e6268fea681288cf6c26fac9",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "output_sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8",
+      "raw_log_utf8": "",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCountChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\ComputableSampleCountChecks-1789262111611632900.log",
+      "log_sha256": "956732bce88c55e9ce9adb815932b0ea2cd48f15d61e6c7c44464539c165aa20",
+      "source_sha256": "10c47487135dc1538f95cec00e82d54bd4a64276dedfe08d29214f99c5636310",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "output_sha256": "4af2b61dd8037498fa244b67372f31005f27361ab1188fb5a59a45c21fef5573",
+      "raw_log_utf8": "512\n2048\n1\n'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_small' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_half' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.count_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.count_power_two' depends on axioms: [propext]\n'PvNP.RealizableHardness.ComputableSampleCount.target_le_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.target_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.count_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_target' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.threshold_le_count' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.inverse_bound_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.count_upper_of_inverse' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.learning_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.base_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.concrete_half_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ComputableSampleCount.concrete_small_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.concrete_count_small",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.concrete_count_half",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.concrete_count_zero",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.count_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.count_power_two",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.target_le_count",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.target_gt_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.count_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_target",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_count",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.threshold_le_count",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.inverse_bound_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.count_upper_of_inverse",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.learning_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.base_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.concrete_half_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ComputableSampleCount.concrete_small_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRounding",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRounding.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\WeightRounding-1789262131542156500.log",
+      "log_sha256": "587c7bac3e73c8466435e72e1f5ee1f23cee6393a7b5705329d5d411b2a5e3cb",
+      "source_sha256": "f99379cadbffe016a48b20b52d91777c09c42b900ea3f526862bee36e6cbf357",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "output_sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRounding.lean:47:56: warning: `if_false` has been deprecated: Use `ite_false` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRounding.lean:47:32: warning: This simp argument is unused:\n  hx\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.false_eq_true, if_false, mul_zero, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRounding.lean:61:14: warning: This simp argument is unused:\n  hx\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSampling",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteSampling.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteSampling-1789262150850448200.log",
+      "log_sha256": "30075fb63053c44748123548dee17e0dec628308d8ca132a72558fa1c86907e6",
+      "source_sha256": "7b1cf53b512e705d08d4eb20a1db69b4015d5fb561f5495e11316c0cfc49ab57",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "output_sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteSampling.lean:94:14: warning: This simp argument is unused:\n  hi\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteSampling.lean:136:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentration",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteConcentration-1789262168169187400.log",
+      "log_sha256": "2e4e64fe0f8bf731fae85008d5bb13b7194b08ba2bd7ae49b945d70070aac783",
+      "source_sha256": "368902b5aae4ff087a078922fa79fd87762c78ebf881c8ed86ed9ee716c011e2",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "output_sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.lean:180:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.lean:184:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.lean:220:22: warning: This simp argument is unused:\n  Fintype.card_fun\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentrationChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteConcentrationChecks-1789262191161980200.log",
+      "log_sha256": "a2f54ee6909f505b987e5aad10c559a86da9ea1b2edcb35cf33f711e439ba37b",
+      "source_sha256": "8f260a72a5a6770e589c5380bff89368ff4c837aaa5e4f39f6d87250cc0abb8d",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "output_sha256": "9007bdc721473a1e8c924165669b553b21b7033a8afed3ed214d5be5b4412139",
+      "raw_log_utf8": "'PvNP.RealizableHardness.FiniteConcentration.mean_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.one_trial_mgf' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.exp_finite_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.product_mgf_identity' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.product_mgf_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.probability_mono' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.exponential_markov' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.upper_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.lower_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.probability_union' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.two_sided_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.probability_exists' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.centered_empirical' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.empirical_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.assignment_empirical_tail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.assignment_approximation_tail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.assignment_epsilon_tail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.probability_complement' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.fair_mean' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.fair_all_true' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.fair_all_false' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.fair_draw_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.fair_eight_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteConcentration.zero_variable_assignment_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.mean_bounds",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.one_trial_mgf",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.exp_finite_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.product_mgf_identity",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.product_mgf_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.probability_mono",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.exponential_markov",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.upper_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.lower_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.probability_union",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.two_sided_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.probability_exists",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.centered_empirical",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.empirical_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.assignment_empirical_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.assignment_approximation_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.assignment_epsilon_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.probability_complement",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.fair_mean",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.fair_all_true",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.fair_all_false",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.fair_draw_mass",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.fair_eight_tail",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteConcentration.zero_variable_assignment_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteRepairRoundingPipeline-1789262215226459400.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "6e04ac94f0e932d58bf636df9fa48ff16e1ac9bdb898edc526f77cfba5f14af3",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "output_sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0",
+      "raw_log_utf8": "",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipelineChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteRepairRoundingPipelineChecks-1789262234149332200.log",
+      "log_sha256": "962582be68cb8d14809fab782c11adf65644ea0cdfde3f3678ea27489d7eef34",
+      "source_sha256": "0e2e5e87f8cd79585c7acc6699e809087cb8c4ed1951b15cf91038c37e62f594",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "output_sha256": "26f12774632065cb37d8d6d55523a0bf453d8c22efb52d8a85ebb91b496e4198",
+      "raw_log_utf8": "'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.lam_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.eps_le_one' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_le_one' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_valid' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.yes_preserved' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.no_preserved' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_leaves' depends on axioms: [propext]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.reciprocal_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.denominator_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_common_denominator' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_yes_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_input' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_denominator_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_repaired_leaf_count' depends on axioms: [propext]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.lam_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.eps_le_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.budget_le_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.weights_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_valid",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.yes_preserved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.no_preserved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_leaves",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.reciprocal_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.denominator_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.output_common_denominator",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_yes_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_input",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.genuine_no_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_denominator_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline.concrete_repaired_leaf_count",
+          "axioms": [
+            "propext"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSamplingChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\FiniteSamplingChecks-1789262249871074100.log",
+      "log_sha256": "55b965c15c962970e20341935a9613973eb6be33c620f128ab66e01f52f8503a",
+      "source_sha256": "9281576cae367164b01ec09649245ab7e3d91b17e51c531e5be591661a56461b",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "output_sha256": "bfb1a563e85a17376d799fef8aa497f17975e8687bffae2611a9c115ba645dbe",
+      "raw_log_utf8": "'PvNP.RealizableHardness.FiniteSampling.cumulative_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.mass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.mass_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.mass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.event_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.event_error_of_precision' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.trialMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.trialMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.trial_event_factorization' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.assignment_count' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.listSampler_exact' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.thirds_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.thirds_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.fractional_cut_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.fractional_mass_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.rounded_distribution_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.uniform_event_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.independent_two_trial_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.FiniteSampling.one_bit_sampler_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.cumulative_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.mass_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.mass_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.mass_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.event_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.event_error_of_precision",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.trialMass_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.trialMass_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.trial_event_factorization",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.assignment_count",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.listSampler_exact",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.thirds_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.thirds_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.fractional_cut_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.fractional_mass_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.rounded_distribution_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.uniform_event_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.independent_two_trial_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.FiniteSampling.one_bit_sampler_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSampler",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\InverseCDFSampler-1789262265939159200.log",
+      "log_sha256": "5495d063c04b9eb7ff4be410e1b26bcd02dc29b672ac4393eda4dc031193962f",
+      "source_sha256": "8350e861d27d1f8c58148bf7656a1f2f467b38403819540eefd065cc6193dad6",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "output_sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.lean:119:10: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.lean:120:15: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.true_eq, ↓reduceIte, mul_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.lean:120:19: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [he, ↓reduceIte, mul_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSamplerChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\InverseCDFSamplerChecks-1789262281592033300.log",
+      "log_sha256": "d010c0ed1dbdb63a28cf33f866aafe3fec80dde982c4b5a73bf85e3c41e0e0d7",
+      "source_sha256": "c80b702ae6b568809da803747bd3cff4aae8c22095c5582ab54d75090116a0cd",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "output_sha256": "d9f6e2401786d5dcf940f6d7db982ba50d7b13282d2983cabb5d1b9487c120b0",
+      "raw_log_utf8": "'PvNP.RealizableHardness.InverseCDFSampler.support_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.cut_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.sampler_interval' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.sampler_eq_iff' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.fibre_probability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.sampler_event_law' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_law' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.gapThirds_cuts' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.first_seed_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.boundary_seed_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.final_seed_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.zero_atom_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.fractional_fibre_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.InverseCDFSampler.binary_precision_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.support_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.cut_endpoint",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.sampler_interval",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.sampler_eq_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.fibre_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.fibre_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.sampler_event_law",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_law",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.bitSampler_event_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.gapThirds_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.gapThirds_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.gapThirds_cuts",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.first_seed_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.boundary_seed_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.final_seed_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.zero_atom_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.fractional_fibre_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.InverseCDFSampler.binary_precision_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLaw",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\JointSamplingLaw-1789262298011854600.log",
+      "log_sha256": "bd64287640dfe37b157497d7b240d60bda6526c04c62d794e55a0386407ec732",
+      "source_sha256": "3ddff3f8062162526f56d8ee53b25b37936e9c75538723bc04f25e83d8023d45",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "output_sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.lean:73:10: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.lean:74:15: warning: This simp argument is unused:\n  he\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.true_eq, ↓reduceIte, mul_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.lean:74:19: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [he, ↓reduceIte, mul_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLawChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\JointSamplingLawChecks-1789262319936736200.log",
+      "log_sha256": "1b84a9aa2ebdb43b92704531f25448e6bb196bd154cde84f28352fa9a6e50ba2",
+      "source_sha256": "c956a5f38911f71f9d285e06bd261fda072207b4261e10e1270334989d486644",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "output_sha256": "b606d7d702d9ad1c87704039c979449d8be80be27c91d582362002ccff8771e8",
+      "raw_log_utf8": "'PvNP.RealizableHardness.JointSamplingLaw.array_fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.bit_fibre_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.array_fibre_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.sampleArray_event_law' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.sampleArray_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.half_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.half_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.half_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.two_trial_diagonal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.zero_atom_joint' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.JointSamplingLaw.concrete_real_event_bridge' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.array_fibre_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.bit_fibre_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.array_fibre_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.sampleArray_event_law",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.sampleArray_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.half_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.half_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.half_mass",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.two_trial_diagonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.zero_atom_joint",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.JointSamplingLaw.concrete_real_event_bridge",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweighting",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\PosteriorReweighting-1789262340276289500.log",
+      "log_sha256": "3a57abef70ffd9d42db165b23fcf06e16a231ef5c8b8df227e5b06f8f4567bbc",
+      "source_sha256": "87f613673b0b0f1bd56308d14a1cba006f3fb00dfbafa5d524dcd199b057298a",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "output_sha256": "744015f91d67d8b701fcf9309137b49f72bd369e27d58172fe692119dff6e555",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:25:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:36:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.posterior_normalized`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:41:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.bayes_mass`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:46:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.zero_prior`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:49:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.bayes_ratio`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:56:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero`:\n  [Fintype Q]\nconsider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:\n  omit [Fintype Q] in theorem ...\n\nNote: This linter can be disabled with `set_option linter.unusedSectionVars false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:88:29: warning: This simp argument is unused:\n  hb\n\nHint: Omit it from the simp argument list.\n  [apply] simp [hg, hr]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:90:17: warning: This simp argument is unused:\n  hb\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hg, Bool.not_false, Bool.true_eq, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:90:41: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hb, hg, Bool.not_false, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:100:20: warning: Variable name `hz` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hz\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:109:17: warning: This simp argument is unused:\n  hg\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.not_false, Bool.true_eq, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:109:37: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hg, Bool.not_false, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.lean:116:17: warning: This simp argument is unused:\n  hg\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.not_true, Bool.false_eq_true, ite_false, add_zero]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweightingChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\PosteriorReweightingChecks-1789262359612910000.log",
+      "log_sha256": "800519f4e29d917ad25a520152dff78ab317c96ff2291ae09fb06bfb5d6dacb6",
+      "source_sha256": "48ca57c80a389efa3d8460010acb8875b25e06d598749cbb623ee8b443b321aa",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "output_sha256": "de9b4d55fd5001bfed4332ff93f39fe71c45a0181830088aec3989590a066d02",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.lean:34:2: warning: Unused tactic linter: `all_goals intro b; cases b <;> norm_num` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.lean:34:12: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.lean:34:21: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\n'PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.marginal_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.posterior_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.bayes_mass' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.zero_prior' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.bayes_ratio' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.total_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.posterior_event_cutoff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.reweight_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.normalizer_deviation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.normalized_reweighting' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.PosteriorReweighting.reweighted_normalized' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.marginal_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.marginal_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.posterior_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.bayes_mass",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.zero_prior",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.bayes_ratio",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.joint_zero_of_marginal_zero",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.total_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.posterior_event_cutoff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.reweight_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.normalizer_deviation",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.normalized_reweighting",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.PosteriorReweighting.reweighted_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuarantee",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingGuarantee-1789262374655306600.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "ed1303659b170bb560eb415623e8298344820aa4313b56b2578d0ea82aa76fe0",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "output_sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42",
+      "raw_log_utf8": "",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromises",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingFormulaPromises-1789262396341302700.log",
+      "log_sha256": "ba67b807dda2671956e5a90c4cb8c34105ff3e2f91ef7cfdb87e4b88c5c635f2",
+      "source_sha256": "5b3be5d6cc5b66c9907855153b7e11c11c43e28fca5feff952ea649de278e941",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "output_sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.lean:26:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.lean:77:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.lean:92:2: warning: Try this: \n  letI̵\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.lean:125:19: warning: `if_false` has been deprecated: Use `ite_false` instead\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingFormulaPromisesChecks-1789262419213705300.log",
+      "log_sha256": "ac4b8d750298cd770f68aa3ef08debdb14538fee909ffb05a2f9805e51891fbe",
+      "source_sha256": "ef50b659f0275a622c0a918c543b0ae6e58fbf47d4da9f6b9edacc225512af06",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "output_sha256": "61d7faef060d73087454277f8fdecb30872b4322c64d9d76cb6670540e23d0bb",
+      "raw_log_utf8": "'PvNP.RealizableHardness.SamplingFormulaPromises.empirical_eq_average' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_average' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.good_no_average' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.parameter_margin' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_output' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.good_no_output' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.fromSeeds_eval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.output_leaves' depends on axioms: [propext]\n'PvNP.RealizableHardness.SamplingFormulaPromises.seedProbability_mono' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.computed_event_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.computed_yes_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromises.computed_no_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_positions' depends on axioms: [propext]\n'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_empirical' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.empty_trials' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.empirical_eq_average",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_average",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.good_no_average",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.parameter_margin",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_output",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.good_no_output",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.fromSeeds_eval",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.output_leaves",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.seedProbability_mono",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.computed_event_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.computed_yes_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromises.computed_no_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_positions",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_empirical",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks.empty_trials",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuaranteeChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingGuaranteeChecks-1789262439152062300.log",
+      "log_sha256": "5c32317c42b9ff60d887f30abd791af07f04d5cb3664e9a2736bed1df02b8492",
+      "source_sha256": "08effac99e531296d8361e56e4cadbf19b183d3a41a6a5fb77b7e9503f053b97",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "output_sha256": "95f5ec7e2e40de8c0934f1c0cc75103ed46e848ce9fdaa60d70c3f1e47c7a142",
+      "raw_log_utf8": "'PvNP.RealizableHardness.SamplingGuarantee.finiteMean_eq_eventMass' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.roundedMean_error' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.seed_failure_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.seed_success_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_threshold' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_learningThreshold' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.precision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.chosen_good_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_good_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.atoms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.atoms_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.original_mean_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.chosen_base_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.explicit_count_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingGuarantee.zero_variable_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.finiteMean_eq_eventMass",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.roundedMean_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.seed_failure_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.seed_success_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_threshold",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_learningThreshold",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.precision_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.chosen_good_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_good_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.atoms_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.atoms_normalized",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.original_mean_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.chosen_base_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.explicit_count_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingGuarantee.zero_variable_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThresholdChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SamplingThresholdChecks-1789262462107537700.log",
+      "log_sha256": "0c9848f808d33a2420370cd8ded411ab8d635ba54abd541d966bea60346374ec",
+      "source_sha256": "559bb713fae0f334e7eee2d467bc8d00d7264fe9913ee8913219017ad1e603cc",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "output_sha256": "487d712a6f3052d88e28b40fefdfc265204e3e82f0fdac45e9545b787b73efd4",
+      "raw_log_utf8": "'PvNP.RealizableHardness.SamplingThreshold.threshold_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.threshold_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_least' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.failure_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_failure_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.threshold_numeric_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_numeric_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.sampleCount_bound_of_inverse_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.failure_budget_of_log_threshold' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.threshold_le_learningThreshold' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_pos' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_least' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learning_failure_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_failure_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningThreshold_numeric_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_numeric_upper' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_bound_of_inverse_error' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.zero_variables_positive_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.positive_variables_threshold_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.inverse_error_numeric_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.selected_count_failure_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.explicit_count_failure_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learning_selected_count_failure_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SamplingThreshold.learning_explicit_count_failure_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.threshold_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.threshold_gt_one",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_least",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.failure_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_failure_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.threshold_numeric_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_numeric_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.sampleCount_bound_of_inverse_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.failure_budget_of_log_threshold",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.threshold_le_learningThreshold",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_least",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learning_failure_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_failure_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningThreshold_numeric_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_numeric_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learningSampleCount_bound_of_inverse_error",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.zero_variables_positive_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.positive_variables_threshold_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.inverse_error_numeric_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.selected_count_failure_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.explicit_count_failure_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learning_selected_count_failure_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SamplingThreshold.learning_explicit_count_failure_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncoding",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SeedEncoding.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SeedEncoding-1789262491292132300.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "286890661a574841a84754b12033f7caadf167c3bde52c5c0f55ca9d2f21482d",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "output_sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd",
+      "raw_log_utf8": "",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncodingChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SeedEncodingChecks-1789262512185724000.log",
+      "log_sha256": "5e325cc1dd082346d3a18e54d7a9c94295e90fc51fff29eef731215e4649d6e9",
+      "source_sha256": "f2692f38794aad6d955cc1b8bac946e3bf7e53d909a4a8a5c6370a018599acd4",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "output_sha256": "524b8bbfbdb41a2dc2df054730971fd2415f36110ea3b38fd647de996a9f437a",
+      "raw_log_utf8": "[false, true, false, true, false, true]\n[false, false, true]\n'PvNP.RealizableHardness.SeedEncoding.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.split_join' depends on axioms: [propext, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.join_split' depends on axioms: [propext, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.event_card_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.uniformProbability_equiv' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.uniformProbability_eq_sum' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.seedProbability_eq_uniform' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.flat_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.flat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.sampleFlat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.prefix_fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.prefix_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.prefix_probability' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.padded_sampleFlat_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.zero_trials_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.zero_width_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.zero_trials_flat_inverse' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.zero_width_flat_inverse' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.empty_seed_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.row_major_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.no_padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.empty_prefix_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SeedEncoding.diagonal_padded_law' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.unflatten_flatten",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.flatten_unflatten",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.split_join",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.join_split",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.event_card_equiv",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.uniformProbability_equiv",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.uniformProbability_eq_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.seedProbability_eq_uniform",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.flat_event_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.flat_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.sampleFlat_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.prefix_fibre_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.prefix_event_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.prefix_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.padded_sampleFlat_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.zero_trials_inverse",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.zero_width_inverse",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.zero_trials_flat_inverse",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.zero_width_flat_inverse",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.empty_seed_card",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.row_major_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.padding_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.no_padding_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.empty_prefix_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SeedEncoding.diagonal_padded_law",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRank",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\TripleRestrictionRank-1789262532233421700.log",
+      "log_sha256": "a779a1ddcb4db6d4ed1ebe4b2954953bba97c14eec569781d842e9f8c01bd51c",
+      "source_sha256": "ca7653309402410e5050f0f6d4c03aa88a94c5c64a4b4964cb50ff82ce3896bc",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "output_sha256": "0fbad23000b59f2d6dd319a01c8fd6b972bd64592557602a7e2123902f089c92",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:41:39: warning: This simp argument is unused:\n  Fin.sum_univ_succ\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fintype.sum_option, blockMass]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:42:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:49:26: warning: `if_true` has been deprecated: Use `ite_true` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:69:19: warning: `if_false` has been deprecated: Use `ite_false` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:91:25: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:92:25: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:92:50: warning: `if_true` has been deprecated: Use `ite_true` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:105:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:106:19: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:92:36: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [events, if_neg hi, if_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:112:39: warning: This simp argument is unused:\n  Fin.sum_univ_succ\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fintype.sum_option, blockMass]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:113:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:121:20: warning: This simp argument is unused:\n  hd\n\nHint: Omit it from the simp argument list.\n  [apply] simp\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:190:15: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Coeff]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:224:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:234:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:257:25: warning: This simp argument is unused:\n  Coeff\n\nHint: Omit it from the simp argument list.\n  [apply] simp [s, Fintype.card_fun, ZMod.card]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:257:32: warning: This simp argument is unused:\n  Fintype.card_fun\n\nHint: Omit it from the simp argument list.\n  [apply] simp [s, Coeff, ZMod.card]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:335:49: warning: This simp argument is unused:\n  mul_assoc\n\nHint: Omit it from the simp argument list.\n  [apply] simp [evaluate, Finset.mul_sum, mul_left_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.lean:433:69: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Coeff]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestriction",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SubspaceRestriction-1789262555926246200.log",
+      "log_sha256": "d135beadda412a96ff33cba078a59f0af18fa448534c3a93f05bd5f6ef255bd1",
+      "source_sha256": "9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "output_sha256": "be2018d7d01a19b86c1c36e305726c67d648a0d70dac6805f6b40296b3435826",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.lean:123:52: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp [codim, TripleRestrictionRank.Vector, Coord, Nat.mul_comm]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.lean:126:52: warning: This simp argument is unused:\n  Module.finrank_pi\n\nHint: Omit it from the simp argument list.\n  [apply] simp [codim, TripleRestrictionRank.Vector, Coord]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "axiom_profiles": []
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestrictionChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\SubspaceRestrictionChecks-1789262575718675400.log",
+      "log_sha256": "137646a0a7346a5da3617772eb6911f2b11cda10cdad1e7977494d0140439775",
+      "source_sha256": "8061a8cbf674e63c617e204a87df22b2abeb345784bd8e44dbea1d113e38c7bf",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "output_sha256": "24c8b6b9d53c41c89aa3bfff3205304a50cfdca0cdbb450b793438c95cbd5f19",
+      "raw_log_utf8": "'PvNP.RealizableHardness.SubspaceRestriction.coordinateDual_apply' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.annihilator_finrank' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.definingForms_full' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.definingForms_evaluate' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.definingForms_kernel' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.exists_independent_defining_forms' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.represented_codim' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.arbitrary_subspace_failure_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.codim_top' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.codim_bot' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.codim_empty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.coordinateForm_surjective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.SubspaceRestriction.coordinateHyperplane_codim' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.coordinateDual_apply",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.annihilator_finrank",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.definingForms_full",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.definingForms_evaluate",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.definingForms_kernel",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.exists_independent_defining_forms",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.represented_codim",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.arbitrary_subspace_failure_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.codim_top",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.codim_bot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.codim_empty",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.coordinateForm_surjective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.SubspaceRestriction.coordinateHyperplane_codim",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRankChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\TripleRestrictionRankChecks-1789262594861872600.log",
+      "log_sha256": "986f39e48f7542cca883ac56566453e4d9de4ae4e3500c959d1687d074111896",
+      "source_sha256": "89e3c004fb206b5f81d3679dd3a9197dfd5c2eae754c32df511814077b39adf3",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "output_sha256": "194bec5d3fc7f71ae0ed604fa093bf99ba67ef6fc7a9fda30e8e817aa8b16e05",
+      "raw_log_utf8": "'PvNP.RealizableHardness.TripleRestrictionRank.blockMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.probability_univ' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.block_marginal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.drop_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.coordinate_removed_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.restrict_eq_zero_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.badRows_iff_not_injective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_rank' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.probability_cover' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.badRows_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.restricted_rank_failure_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.vanishing_on_retained_iff' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_on_retained' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.matrix_restricted_rank_failure_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.intersection_eq_kernel' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.rowFunctionals_injective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.restrictedEvaluation_dual' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_evaluation_surjective' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_intersectionCodim' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.TripleRestrictionRank.intersection_codim_failure_probability' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.lean:67:26: warning: Try `simp at he` instead of `simpa using he`\n\nNote: This linter can be disabled with `set_option linter.unnecessarySimpa false`\n'PvNP.RealizableHardness.TripleRestrictionRank.exampleRows_full' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.blockMass_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.probability_univ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.block_marginal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.drop_marginal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.coordinate_removed_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.restrict_eq_zero_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.badRows_iff_not_injective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.goodRows_rank",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.probability_cover",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.badRows_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.restricted_rank_failure_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.vanishing_on_retained_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_on_retained",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.matrix_restricted_rank_failure_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.intersection_eq_kernel",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.rowFunctionals_injective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.restrictedEvaluation_dual",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.goodRows_evaluation_surjective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.goodRows_intersectionCodim",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.intersection_codim_failure_probability",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.TripleRestrictionRank.exampleRows_full",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRoundingChecks",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\WeightRoundingChecks-1789262615277198800.log",
+      "log_sha256": "3a72db83e4a58640d96975a362c18134ef7fabb6c09091c01361f2fba6e76273",
+      "source_sha256": "9e63050f4813401ff857c98188401d98bd18aec3f2c1e6a4b223a45b56f70260",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "output_sha256": "9d7a4ff6c2417d80b7741ff9c3d807c7ff6dd6c866c3a4e3c0c5c50536b91a2b",
+      "raw_log_utf8": "'PvNP.RealizableHardness.WeightRounding.coordinate_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.coordinate_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.denominator_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.roundedWeights_pos' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.roundedWeights_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.roundedBudget_valid' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounding_complete' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounding_budget_transfer' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounding_sound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.dyadicScale_lower' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.dyadicScale_least' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.dyadicScale_upper' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.common_denominator' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.integral_lengths' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.dyadic_denominator_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.denominator_bound_of_inverse_budget' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.polynomial_denominator_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounded_lower_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.formula_rounding' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.fractional_coordinate_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.fractional_denominator_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.dyadic_scale_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.clipped_budget_example' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounded_yes_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.WeightRounding.rounded_no_example' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.coordinate_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.coordinate_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.denominator_bounds",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.roundedWeights_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.roundedWeights_sum",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.roundedBudget_valid",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounding_complete",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounding_budget_transfer",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounding_sound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.dyadicScale_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.dyadicScale_least",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.dyadicScale_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.common_denominator",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.integral_lengths",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.dyadic_denominator_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.denominator_bound_of_inverse_budget",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.polynomial_denominator_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounded_lower_bounds",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.formula_rounding",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.fractional_coordinate_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.fractional_denominator_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.dyadic_scale_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.clipped_budget_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounded_yes_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.WeightRounding.rounded_no_example",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ]
+    },
+    {
+      "module": "PvNP",
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP.lean"
+      ],
+      "exit_code": 0,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\PvNP-1789262632698679000.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_sha256": "f6bde30681dcf7a14c1ac6adee16d18374a5c58e0090716bfb8c28a03100333b",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP.olean",
+      "output_sha256": "b7a3004461c82a03a18927bba211c40d5fb6b4564f364c196de29403b65d4337",
+      "raw_log_utf8": "",
+      "axiom_profiles": []
+    }
+  ],
+  "total_axiom_profiles": 298,
+  "runner_source": "import pathlib,json,subprocess,hashlib,difflib,os,time,shutil\nrepo=pathlib.Path(r'C:/Users/Dan/Desktop/Projects/formal-pvnp'); pkg=repo/'certifications/realizable-hardness'\nout=pkg/'.lake/build/independent-review-20260912'; out.mkdir(exist_ok=True)\nm=json.loads((pkg/'source-map.json').read_text()); report=[]; diffs=[]\nfor e in m['entries']:\n b=subprocess.check_output(['git','show',e['source_commit']+':'+e['source_path']],cwd=repo); original=b\n assert hashlib.sha256(b).hexdigest()==e['source_git_lf_sha256']\n for t in e['transforms']:\n  op=t['operation']\n  if op=='normalize_crlf_to_lf': b=b.replace(b'\\r\\n',b'\\n')\n  elif op=='remove_utf8_bom':\n   assert b.startswith(b'\\xef\\xbb\\xbf'); b=b[3:]\n  elif op=='replace_utf8_literal':\n   x=t['before'].encode(); assert b.count(x)==1,(e['mirror_path'],x,b.count(x)); b=b.replace(x,t['after'].encode())\n  else: raise Exception(op)\n assert b==(pkg/e['mirror_path']).read_bytes()\n assert hashlib.sha256(b).hexdigest()==e['mirror_sha256']\n report.append({'path':e['mirror_path'],'sha256':e['mirror_sha256'],'reconstruction':'PASS'})\n diffs.extend(difflib.unified_diff(original.decode('utf-8-sig').splitlines(True),b.decode().splitlines(True),fromfile=e['source_path'],tofile=e['mirror_path']))\n(out/'provenance.json').write_text(json.dumps(report,indent=2)); (out/'source-diffs.txt').write_text(''.join(diffs),encoding='utf-8')\nprint('PASS',len(report),'strict source reconstructions; diff saved',out/'source-diffs.txt')\nimport re\nmods={'.'.join(pathlib.PurePosixPath(e['mirror_path']).with_suffix('').parts[1:]):e['mirror_path'] for e in m['entries']}\nordered=[]; done=set()\ndef visit(mod):\n if mod in done:return\n done.add(mod)\n for dep in re.findall(r'^import\\s+(\\S+)',(pkg/mods[mod]).read_text(),re.M):\n  if dep in mods:visit(dep)\n ordered.append(mod)\nfor mod in mods:visit(mod)\nenv=os.environ.copy(); env['LEAN_NUM_THREADS']='1'; env['PYTHONUTF8']='1'; env['PYTHONIOENCODING']='utf-8'\noriginalpath=env.get('LEAN_PATH',''); parts=originalpath.split(os.pathsep)\n# Exclude author package output; dependencies remain same-version only.\nparts=[p for p in parts if pathlib.Path(p).resolve()!= (pkg/'.lake/build/lib/lean').resolve() and pathlib.Path(p).resolve()!= (pkg/'.lake/build/lib').resolve()]\nenv['LEAN_PATH']=str(out/os.path.join('lib','lean'))+os.pathsep+os.pathsep.join(parts)\n(out/'environment.json').write_text(json.dumps({'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':env['LEAN_NUM_THREADS'],'toolchain':subprocess.check_output(['lean','--version'],cwd=pkg,env=env,text=True).strip()},indent=2))\nresults=[]\nfor mod in ordered+['PvNP']:\n source=pkg/(mods[mod] if mod in mods else 'lean/PvNP.lean'); dest=out/'lib/lean'/pathlib.Path(*mod.split('.')).with_suffix('.olean');dest.parent.mkdir(parents=True,exist_ok=True)\n name=mod.split('.')[-1]+'-'+str(time.time_ns()); log=out/(name+'.log'); command=['lean','-o',str(dest),str(source)]\n assert shutil.disk_usage('C:/').free>=640*1024**2\n print('START',mod,flush=True)\n with log.open('wb') as f:\n  p=subprocess.Popen(command,cwd=pkg,env=env,stdout=f,stderr=subprocess.STDOUT)\n  while True:\n   try:code=p.wait(timeout=10);break\n   except subprocess.TimeoutExpired:\n    if shutil.disk_usage('C:/').free<640*1024**2:\n     subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F'],stdout=subprocess.DEVNULL);code=p.wait();break\n row={'module':mod,'command':command,'exit_code':code,'log':str(log),'log_sha256':hashlib.sha256(log.read_bytes()).hexdigest(),'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'output':str(dest),'output_sha256':hashlib.sha256(dest.read_bytes()).hexdigest() if dest.exists() else None}\n results.append(row);(out/'results.json').write_text(json.dumps(results,indent=2))\n print('END',mod,'EXIT',code,'LOG',log,flush=True)\n if code:raise SystemExit(code)\nprint('ALL 34 REVIEW EXPORTS EXIT 0',flush=True)\n",
+  "proof_verdict": "GO-WITH-NOTES"
+}
