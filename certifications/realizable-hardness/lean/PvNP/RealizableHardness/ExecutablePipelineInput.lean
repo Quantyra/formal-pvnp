@@ -1,5 +1,5 @@
 import PvNP.RealizableHardness.ExecutablePipeline
-import PvNP.RealizableHardness.RandomizedReduction
+import Complexitylib.Encoding.Pairing
 import Mathlib.Tactic.FinCases
 
 /-! Uncompiled binary input and paired-coin parser for ExecutablePipeline.
@@ -29,7 +29,12 @@ def readSigned : Tree → Option Rat
 theorem read_ratTree_abs (q : Rat) : readRat (ratTree q) = some |q| := by
   have hn : (q.num.natAbs : Rat) = |(q.num : Rat)| := by simp
   have hd : (0 : Rat) < q.den := by exact_mod_cast q.den_pos
-  simp [ratTree, readRat, q.den_ne_zero, hn, ← abs_div, abs_of_pos hd, Rat.num_div_den]
+  have he : |(q.num : Rat)| / (q.den : Rat) = |q| := by
+    calc
+      _ = |(q.num : Rat)| / |(q.den : Rat)| := by rw [abs_of_pos hd]
+      _ = |(q.num : Rat) / (q.den : Rat)| := (abs_div _ _).symm
+      _ = |q| := congrArg abs (Rat.num_div_den q)
+  simp [ratTree, readRat, q.den_ne_zero, hn, he]
 
 @[simp] theorem read_signedTree (q : Rat) : readSigned (signedTree q) = some q := by
   by_cases h : q < 0
@@ -152,7 +157,11 @@ def seedsOf (M b : Nat) (coins : Bits) (h : coins.length = M*b) :
 theorem seedsOf_coinBits {M b : Nat} (seeds : JointSamplingLaw.SeedArray M b) :
     seedsOf M b (coinBits seeds) (coinBits_length seeds) = seeds := by
   funext i j
-  simp [seedsOf, coinBits]
+  simp only [seedsOf, coinBits, List.get_ofFn]
+  change boolDigit (digitBool (seeds
+    (finProdFinEquiv.symm (finProdFinEquiv (i,j))).1
+    (finProdFinEquiv.symm (finProdFinEquiv (i,j))).2)) = seeds i j
+  rw [Equiv.symm_apply_apply, digit_roundtrip]
 
 /-- No input proof is supplied by callers; source and seed validation are executed. -/
 def runOption (L : Nat) (instanceBits coins : Bits) : Option Bits := do
