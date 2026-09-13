@@ -1676,3 +1676,273 @@ SHA256 `2a1ece0166a9d29c98ec7f8fa1b5f58200e48f3a5fed31f913ff134d0637235b`.
 
 EXIT 0
 ```
+
+## Thirty-one-module author checkpoint
+
+TripleRestrictionRank58810 failed on redundant dsimp, missing reflexivity, a timeout and rank-nullity instance alignment. Pinned Data.ZMod.Basic asserts Field is absent; the prime field instance is now in Mathlib.Algebra.Field.ZMod. Its five same4.34 artifact facets were already present. Adding that import and removing only the redundant dsimp resolved all failures under unchanged default heartbeats; no extra dependency build, option escalation or statement change. Batch15557 main/Checks exited0; Checks printed22 standard-only profiles. SubspaceRestriction is next and excluded from this count. Independent reviews and full hardness assembly remain pending.
+
+TripleRestrictionRank source SHA256 `ca7653309402410e5050f0f6d4c03aa88a94c5c64a4b4964cb50ff82ce3896bc`.
+
+TripleRestrictionRankChecks source SHA256 `89e3c004fb206b5f81d3679dd3a9197dfd5c2eae754c32df511814077b39adf3`.
+
+### TripleRestrictionRank-1789261319580476200.log
+
+SHA256 `7774691fcff8812979cf6ccae9344489b1faee5f463167989014454cb4592b03`.
+
+```text
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:40:39: warning: This simp argument is unused:
+  Fin.sum_univ_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_option, blockMass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:41:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:48:26: warning: `if_true` has been deprecated: Use `ite_true` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:68:19: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:90:25: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:91:25: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:91:50: warning: `if_true` has been deprecated: Use `ite_true` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:104:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:105:19: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:91:36: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [events, if_neg hi, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:111:39: warning: This simp argument is unused:
+  Fin.sum_univ_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_option, blockMass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:112:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:120:20: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:189:15: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Coeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:223:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:230:8: error: `dsimp` made no progress
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:234:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:257:25: warning: This simp argument is unused:
+  Coeff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [s, Fintype.card_fun, ZMod.card]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:257:32: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [s, Coeff, ZMod.card]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:335:49: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [evaluate, Finset.mul_sum, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:412:7: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Module.IsReflexive (ZMod 2) ↥(retained d)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:420:5: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Module.IsReflexive (ZMod 2) ↥(retained d)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:419:51: error: (deterministic) timeout at `whnf`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:431:15: error: Application type mismatch: The argument
+  restrictedEvaluation R d
+has type
+  ↥(retained d) →ₛₗ[@RingHom.id (ZMod 2) (@Semiring.toNonAssocSemiring (ZMod 2) CommRing.toCommSemiring.toSemiring)]
+    Module.Dual (ZMod 2) (Coeff c)
+but is expected to have type
+  ?m.60 →ₛₗ[@RingHom.id ?m.59 (@Semiring.toNonAssocSemiring ?m.59 DivisionRing.toDivisionSemiring.toSemiring)] ?m.64
+in the application
+  LinearMap.finrank_range_add_finrank_ker (restrictedEvaluation R d)
+
+EXIT 1
+```
+
+### TripleRestrictionRank-1789261499131001800.log
+
+SHA256 `ff89422687536a23019e086e48004500d6bd350bfd5b64a3289e99eb3040675a`.
+
+```text
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:41:39: warning: This simp argument is unused:
+  Fin.sum_univ_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_option, blockMass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:42:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:49:26: warning: `if_true` has been deprecated: Use `ite_true` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:69:19: warning: `if_false` has been deprecated: Use `ite_false` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:91:25: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:92:25: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:92:50: warning: `if_true` has been deprecated: Use `ite_true` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:105:19: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:106:19: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:92:36: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [events, if_neg hi, if_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:112:39: warning: This simp argument is unused:
+  Fin.sum_univ_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.sum_option, blockMass]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:113:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:121:20: warning: This simp argument is unused:
+  hd
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:190:15: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Coeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:224:15: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:234:15: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:257:25: warning: This simp argument is unused:
+  Coeff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [s, Fintype.card_fun, ZMod.card]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:257:32: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [s, Coeff, ZMod.card]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:335:49: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [evaluate, Finset.mul_sum, mul_left_comm]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+lean\PvNP\RealizableHardness\TripleRestrictionRank.lean:433:69: warning: This simp argument is unused:
+  Module.finrank_pi
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Coeff]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+EXIT 0
+```
+
+### TripleRestrictionRankChecks-1789261499131001800.log
+
+SHA256 `c987188ad46a6c8efcef6030f25f55a9b140e65b934104c68b1d163cc8267ca0`.
+
+```text
+'PvNP.RealizableHardness.TripleRestrictionRank.blockMass_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.probability_univ' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.block_marginal' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.drop_marginal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.coordinate_removed_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.restrict_eq_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.badRows_iff_not_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.probability_cover' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.badRows_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.restricted_rank_failure_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.vanishing_on_retained_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.rowVanishes_on_retained' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.matrix_restricted_rank_failure_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.intersection_eq_kernel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.rowFunctionals_injective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.restrictedEvaluation_dual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_evaluation_surjective' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.goodRows_intersectionCodim' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionRank.intersection_codim_failure_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lean\PvNP\RealizableHardness\TripleRestrictionRankChecks.lean:67:26: warning: Try `simp at he` instead of `simpa using he`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+'PvNP.RealizableHardness.TripleRestrictionRank.exampleRows_full' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

@@ -1,5 +1,6 @@
 import PvNP.RealizableHardness.FiniteSampling
 import Mathlib.Data.ZMod.Basic
+import Mathlib.Algebra.Field.ZMod
 import Mathlib.LinearAlgebra.Dimension.Constructions
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
@@ -227,7 +228,6 @@ lemma probability_cover {A : Type*} [DecidableEq A] (β : ℚ)
         apply Finset.single_le_sum (f := fun b => if F b d then
           FiniteSampling.trialMass (blockMass β) J d else 0) _ ha
         intro b _
-        dsimp only
         split_ifs
         · exact drawMass_nonneg β hβ hβ1 d
         · exact le_rfl
