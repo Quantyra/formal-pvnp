@@ -66,7 +66,7 @@ example {J a d : ℕ} (s : Draw J) (Q : Advice J a)
     (W : Submodule (ZMod 2) (TripleRestrictionRank.Vector J))
     (hQV : Q.val ≤ retained s) (hQW : Q.val ≤ W) (had : a ≤ d)
     (hd : d ≤ Module.finrank (ZMod 2) (retained s))
-    (hsmall : Module.finrank (ZMod 2) (retained s ⊓ W) - a < d - a) :
+    (hsmall : Module.finrank (ZMod 2) ↥(retained s ⊓ W) - a < d - a) :
     retainedZoomMass s Q W d = 0 := by
   rw [retainedZoomMass_ratio s Q W hQV hQW had hd, gaussian_of_lt hsmall]
   simp

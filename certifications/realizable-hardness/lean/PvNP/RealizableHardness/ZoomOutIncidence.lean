@@ -58,10 +58,13 @@ lemma retainedConditional_uniform (s : Draw J) (Q : Advice J a) (L : Advice J d)
         gaussian (Module.finrank (ZMod 2) (retained s) - a) (d - a) := by
   have hn : (gaussian (Module.finrank (ZMod 2) (retained s)) d : ℚ) ≠ 0 := by
     exact_mod_cast Nat.ne_of_gt (GaussianRatio.gaussian_pos hd)
+  have hg : (gaussian (Module.finrank (ZMod 2) (retained s) - a) (d - a) : ℚ) ≠ 0 := by
+    exact_mod_cast Nat.ne_of_gt (GaussianRatio.gaussian_pos
+      (show d - a ≤ Module.finrank (ZMod 2) (retained s) - a by omega))
   unfold retainedConditional
   rw [retained_event_mass s Q hQ had]
   by_cases hQL : Q.val ≤ L.val <;> by_cases hLV : L.val ≤ retained s <;>
-    simp [kernel, incidenceCount_eq, hQL, hLV, div_div, hn]
+    simp [kernel, incidenceCount_eq, hQL, hLV] <;> field_simp [hn, hg]
 
 /-- The event is measured under the accepted retainedConditional, not a surrogate law. -/
 def retainedZoomMass (s : Draw J) (Q : Advice J a)
@@ -102,7 +105,7 @@ theorem retainedZoomMass_ratio (s : Draw J) (Q : Advice J a)
     (hQV : Q.val ≤ retained s) (hQW : Q.val ≤ W) (had : a ≤ d)
     (hd : d ≤ Module.finrank (ZMod 2) (retained s)) :
     retainedZoomMass s Q W d =
-      (gaussian (Module.finrank (ZMod 2) (retained s ⊓ W) - a) (d - a) : ℚ) /
+      (gaussian (Module.finrank (ZMod 2) ↥(retained s ⊓ W) - a) (d - a) : ℚ) /
         gaussian (Module.finrank (ZMod 2) (retained s) - a) (d - a) := by
   calc
     _ = (∑ L : Advice J d,
@@ -122,13 +125,13 @@ theorem retainedZoomMass_rank_stable (s : Draw J) (Q : Advice J a)
     (W : Submodule (ZMod 2) (TripleRestrictionRank.Vector J)) (c : ℕ)
     (hQV : Q.val ≤ retained s) (hQW : Q.val ≤ W) (had : a ≤ d)
     (hd : d ≤ Module.finrank (ZMod 2) (retained s))
-    (hc : Module.finrank (ZMod 2) (retained s ⊓ W) + c =
+    (hc : Module.finrank (ZMod 2) ↥(retained s ⊓ W) + c =
       Module.finrank (ZMod 2) (retained s)) :
     retainedZoomMass s Q W d =
       (gaussian (Module.finrank (ZMod 2) (retained s) - a - c) (d - a) : ℚ) /
         gaussian (Module.finrank (ZMod 2) (retained s) - a) (d - a) := by
   rw [retainedZoomMass_ratio s Q W hQV hQW had hd]
-  have he : Module.finrank (ZMod 2) (retained s ⊓ W) - a =
+  have he : Module.finrank (ZMod 2) ↥(retained s ⊓ W) - a =
       Module.finrank (ZMod 2) (retained s) - a - c := by omega
   rw [he]
 
