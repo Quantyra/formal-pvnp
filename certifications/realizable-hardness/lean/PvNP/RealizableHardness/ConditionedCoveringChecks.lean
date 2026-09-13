@@ -54,9 +54,10 @@ example : (1/16 : ℚ) < 1 :=
   beta_lt_one_of_source _ (by norm_num) 1 (by norm_num)
 example :
     (mass (ambientMass : Advice 1 0 → ℚ) (badZoom (d := 1) (1/16)) : ℝ) ≤
-      Real.sqrt ((1/16 : ℚ) : ℝ) * (1 : ℝ)^(1/4 : ℝ) :=
-  (actual_conditioned_covering (J := 1) (a := 0) (d := 1)
-    (1/16) (by norm_num) (by omega) (by omega) (by norm_num)).1
+      Real.sqrt ((1/16 : ℚ) : ℝ) * (1 : ℝ)^(1/4 : ℝ) := by
+  simpa only [Nat.cast_one] using
+    (actual_conditioned_covering (J := 1) (a := 0) (d := 1)
+      (1/16) (by norm_num) (by omega) (by omega) (by norm_num)).1
 example (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β < 1) (Q : Advice 0 0) :
     (conditionalDistance (d := 0) β Q : ℝ) ≤ zoomError β 0 * (2 : ℝ)^5 := by
   have h := actual_conditional_average_le_real (J := 0) (a := 0) (d := 0)
@@ -67,7 +68,8 @@ example (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β < 1) (Q : Advice 0 0) :
     exact_mod_cast ambientMass_pos Q (by omega)
   have hs : (ambientMass Q : ℝ) * (conditionalDistance (d := 0) β Q : ℝ) ≤
       ∑ R : Advice 0 0, (ambientMass R : ℝ) * (conditionalDistance (d := 0) β R : ℝ) := by
-    apply Finset.single_le_sum
+    apply Finset.single_le_sum (f := fun R : Advice 0 0 =>
+      (ambientMass R : ℝ) * (conditionalDistance (d := 0) β R : ℝ))
     · intro R _
       have hp : (0 : ℝ) ≤ ambientMass R := by
         exact_mod_cast (ambientMass_pos R (by omega)).le
@@ -75,5 +77,6 @@ example (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β < 1) (Q : Advice 0 0) :
         exact_mod_cast conditionalDistance_nonneg (d := 0) β R
       exact mul_nonneg hp hd
     · exact Finset.mem_univ Q
-  simp [zoomError] at h ⊢
-  nlinarith
+  simp [zoomError] at h
+  have hr : (conditionalDistance (d := 0) β Q : ℝ) ≤ 0 := by nlinarith
+  simpa [zoomError] using hr

@@ -306,8 +306,10 @@ theorem actual_conditional_average_le (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β < 1
     (flagKernel_normalized had)
     (fun Q => by rw [ambient_flag_marginal Q had hdJ]; exact ambientMass_pos Q (had.trans hdJ))
     (fun Q => by rw [deleted_flag_marginal β Q had hdJ]; exact adviceMarginal_pos β hβ hβ1 Q (had.trans hdJ))
-  simpa only [ambient_flag_marginal _ had hdJ, conditionalDistance,
-    ambientConditional, deletedConditional] using h
+  change (∑ Q : Advice J a, ambientMass Q * AdviceExceptions.tv
+    (posterior (ambientMass : Advice J d → ℚ) flagKernel Q)
+    (posterior (adviceMarginal β : Advice J d → ℚ) flagKernel Q)) ≤ _
+  simpa only [ambient_flag_marginal _ had hdJ] using h
 
 def zoomError (β : ℚ) (J : ℕ) : ℝ := Real.sqrt (β : ℝ) * Real.sqrt (Real.sqrt J)
 
@@ -382,7 +384,7 @@ theorem badZoom_mass_le (β : ℚ) (hβ : 0 ≤ β) (hβ1 : β < 1)
     rw [← hm] at hs
     have hbound := hs.trans hav
     have hpos : 0 < zoomError β J * (2 : ℝ)^(d+5) := by positivity
-    apply (mul_le_mul_right hpos).mp
+    apply (mul_le_mul_iff_right₀ hpos).mp
     nlinarith [hbound]
 
 theorem goodZoom_distance_le (β : ℚ) (Q : Advice J a)
