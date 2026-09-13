@@ -91,13 +91,15 @@ theorem dartList_nodup (n : Nat) : (dartList n).Nodup :=
   ((List.nodup_finRange n).product (List.nodup_finRange _)).product (List.nodup_finRange 3)
 
 @[simp] theorem mem_dartList {n : Nat} (d : Dart n) : d ∈ dartList n := by
-  simp [dartList]
+  rcases d with ⟨⟨v, j⟩, i⟩
+  simp [dartList, List.product]
 
 /-- This is precisely the source-dart order of the already constructed typed table. -/
 theorem dartList_eq_table_sources (n : Nat) :
     dartList n = (FixedPortCycleFamily.table n).map Prod.fst := by
   simp [dartList, FixedPortCycleFamily.table, PortCycleReplacement.table,
-    List.product, List.map_flatMap, List.flatMap_assoc, List.map_map, Function.comp_def]
+    List.product, List.map_flatMap, List.flatMap_assoc, List.flatMap_map,
+    List.map_map, Function.comp_def]
 
 def representativeList (n : Nat) : List (Dart n) := (dartList n).filter (fun d => decide (IsRep d))
 def representatives (n : Nat) : Finset (Dart n) := Finset.univ.filter IsRep
@@ -207,16 +209,24 @@ theorem outgoing_eq_actual_darts (n : Nat) (S : Vertex n → Bool) :
       (ExpanderCutInstantiation.support (FixedPortCycleFamily.graph n) S)
       (ExpanderCutInstantiation.support (FixedPortCycleFamily.graph n) S)ᶜ := by
   ext d
-  cases hs : S d.1 <;> cases ht : S (reverse d).1 <;>
-    simp [outgoing, Complexity.RegGraph.dartsBetween, ExpanderCutInstantiation.support,
-      Complexity.RegGraph.nbr, FixedPortCycleFamily.graph, PortCycleReplacement.graph,
-      reverse, hs, ht] at *
+  simp only [outgoing, Complexity.RegGraph.dartsBetween, Finset.mem_filter,
+    Finset.mem_univ, true_and, Finset.mem_compl, ExpanderCutInstantiation.support]
+  change (S d.1 = true ∧ S (reverse d).1 = false) ↔
+    d ∈ Finset.univ.filter (fun x : Dart n => S x.1 = true ∧ ¬ S (reverse x).1 = true)
+  simp only [Finset.mem_filter]
+  cases S (reverse d).1 <;> simp
+  intro _
+  exact Finset.mem_univ d
 
 /-- The selected edge count is the accepted actual graph cut, with all multiplicities. -/
 theorem crossing_card_eq_cut (n : Nat) (S : Vertex n → Bool) :
     ((crossing n S).card : Real) = FixedPortCycleFamily.cut n S := by
-  rw [crossing_card_eq_outgoing, outgoing_eq_actual_darts,
-    ← ExpanderCutInstantiation.boundary_eq_outgoing, FixedPortCycleFamily.boundary_eq_cut]
+  rw [crossing_card_eq_outgoing]
+  have hb := ExpanderCutInstantiation.boundary_eq_outgoing (FixedPortCycleFamily.graph n) S
+  rw [FixedPortCycleFamily.boundary_eq_cut n S] at hb
+  have ho := congrArg (fun t : Finset (Dart n) => (t.card : Real))
+    (outgoing_eq_actual_darts n S)
+  exact ho.trans hb.symm
 
 theorem crossing_expansion (n : Nat) (S : Vertex n → Bool) :
     FixedPortCycleFamily.kappa * smallSide S ≤ ((crossing n S).card : Real) := by

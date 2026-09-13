@@ -62,3 +62,27 @@ general denominator 1+6 d C. The complete majority-decoding/count accounting,
 actual encoded FP filter/cloud constructor, source Håstad hardness and the
 final paper theorem remain open. Numeric list construction here is not an FP
 claim and does not complete the source reduction.
+
+## Actual author build update
+
+The original source-only status above is superseded by the author result here.
+Scoped author session 15902 completed with actual exit 0: both main and Checks
+passed, producing 25 standard-only profiles, eight examples and three printed
+signatures. Final logs are clean. Main attempts were [1,1,1,0]; Checks passed
+on its first attempt. Failures concerned list-product simplification and
+semireducible graph-view Finset membership/equality elaboration. The repair
+changed only proof scripts, not statements or imports.
+
+The fresh scoped root reused 304 rehashed original accepted exports: the
+303-entry FixedFamily dependency closure and its independent main export.
+Eleven package pins and the manifest/toolchain identity were checked by the
+runner. Minimum observed available physical memory was 1923989504 bytes.
+The one-thread runner retained exact source snapshots, raw logs and terminal
+metadata for all five module attempts. No package rebuild, broad build,
+download, public write or unchanged-green-main rerun occurred.
+
+Portable packet (relative to companion):
+`.lake/build/actual-graph-edges-author-20260913/author-verification.json`,
+SHA256 `dd7a51f01d72040b51dedc683a173efad16abb91e4f9b5ed24881e8e4d1fd231`.
+Independent compilation and all three review lenses remain pending. This
+author result does not complete source hardness or the final paper theorem.
