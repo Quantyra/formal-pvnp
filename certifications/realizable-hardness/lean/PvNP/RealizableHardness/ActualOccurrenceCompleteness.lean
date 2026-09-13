@@ -32,6 +32,7 @@ theorem sourceExtension_original_value (y : Fin N → ZMod 2) (r : Fin m) (i : F
 theorem sourceExtension_original_bad (y : Fin N → ZMod 2) (r : Fin m) :
     I.badRow (I.sourceExtension y) (I.originalRow r, I.rhs r) = I.sourceBadRow y r := by
   simp only [badRow, sourceBadRow, I.sourceExtension_original_value]
+  rfl
 
 theorem sourceExtension_original_violations (y : Fin N → ZMod 2) :
     I.originalViolations (I.sourceExtension y) = I.sourceViolations y := by
