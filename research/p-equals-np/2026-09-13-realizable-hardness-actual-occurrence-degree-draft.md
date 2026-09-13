@@ -91,7 +91,13 @@ certification claim is involved; package-artifact provenance limits persist.
 
 Portable packet:
 certifications/realizable-hardness/.lake/build/actual-occurrence-degree-author-20260913/author-verification.json
-SHA256 eaebcdf4b6203b3d6141646ce9713de807b5637f632aac9278b805021a12eab8.
+SHA256 6600a4c3ea7823f5f15000cf8f2ab68490c65fcd2c0fa28d3668192e48e4fc85.
 It embeds runner, plan, 310 original-copy provenance entries, all five
 terminal records [1,1,1,0,0], raw logs and source snapshots. This author
 milestone does not establish FP, source gap/hardness, or full certification.
+
+Final source freeze: fc16c7a132a188ab508cb71788a9e18c7efbcccd. Both working
+source files were verified byte-for-byte against this commit, separately
+from their recorded SHA256. Packet plan explicitly distinguishes draft_freeze
+91eb42e from final_source_freeze fc16c7a; final_freeze_verified refers only to
+the latter. Repaired main bytes are not claimed equal to the draft baseline.
