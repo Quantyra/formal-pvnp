@@ -1,0 +1,1653 @@
+{
+  "status": "GO-WITH-NOTES",
+  "compiler_launched": true,
+  "reviewer": "/root/matrix_identity_independent_proof",
+  "sources": [
+    {
+      "module": "MatrixGrassmannIncidence",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannIncidence.lean",
+      "freeze": "4673d9be00eccae5adafe90139aa50c2a95cba9f",
+      "working_sha256": "afca36bfaeacfc15f5d307eb8f2ca89f8cf435ee8618bc9353d19f7e859888fb",
+      "frozen_sha256": "afca36bfaeacfc15f5d307eb8f2ca89f8cf435ee8618bc9353d19f7e859888fb",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 0,
+      "examples": 0
+    },
+    {
+      "module": "MatrixGrassmannIncidenceChecks",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannIncidenceChecks.lean",
+      "freeze": "4673d9be00eccae5adafe90139aa50c2a95cba9f",
+      "working_sha256": "c6b260f58c09a441945388bfa02f3500b8a6ea0ff97ad2b5bfce143777028772",
+      "frozen_sha256": "c6b260f58c09a441945388bfa02f3500b8a6ea0ff97ad2b5bfce143777028772",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 16,
+      "examples": 8
+    },
+    {
+      "module": "MatrixGrassmannMoment",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannMoment.lean",
+      "freeze": "4673d9be00eccae5adafe90139aa50c2a95cba9f",
+      "working_sha256": "34febcefeaeb07edb8fc69a6c3165bad6641151a1d0b76fa1da9bf6610db4cb5",
+      "frozen_sha256": "34febcefeaeb07edb8fc69a6c3165bad6641151a1d0b76fa1da9bf6610db4cb5",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 0,
+      "examples": 0
+    },
+    {
+      "module": "MatrixGrassmannMomentChecks",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannMomentChecks.lean",
+      "freeze": "4673d9be00eccae5adafe90139aa50c2a95cba9f",
+      "working_sha256": "541f5721a07e748138971eea99cd62d1001bad5e66a884be5b812e22f9bcbca1",
+      "frozen_sha256": "541f5721a07e748138971eea99cd62d1001bad5e66a884be5b812e22f9bcbca1",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 11,
+      "examples": 5
+    },
+    {
+      "module": "MatrixGrassmannFibre",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannFibre.lean",
+      "freeze": "1e6a5bf82f3ba2fbc6454ae3a5b6d8f8dbc4f537",
+      "working_sha256": "ffa72442467a2c253b42eaf983d85a984a887ae6a3eaa8c76d997cd24ab6a833",
+      "frozen_sha256": "ffa72442467a2c253b42eaf983d85a984a887ae6a3eaa8c76d997cd24ab6a833",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 0,
+      "examples": 0
+    },
+    {
+      "module": "MatrixGrassmannFibreChecks",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannFibreChecks.lean",
+      "freeze": "1e6a5bf82f3ba2fbc6454ae3a5b6d8f8dbc4f537",
+      "working_sha256": "dd621ee73fb95ae7ca7c60476d5219c9d66c15a7a7371fb25a8f35e88ccccb2a",
+      "frozen_sha256": "dd621ee73fb95ae7ca7c60476d5219c9d66c15a7a7371fb25a8f35e88ccccb2a",
+      "raw_identical": true,
+      "lf_normalized_identical": true,
+      "profiles": 13,
+      "examples": 5
+    },
+    {
+      "module": "MatrixGrassmannIdentity",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannIdentity.lean",
+      "freeze": "1e6a5bf82f3ba2fbc6454ae3a5b6d8f8dbc4f537",
+      "working_sha256": "e518e87c545d5bbc79f7661e5ff7841248ae50920522c653bb2714b1b5cb7fb4",
+      "frozen_sha256": "ea286521f8d890167cfcf46f9c653104236ae02487f6aa287fbfbcbf6d001168",
+      "raw_identical": false,
+      "lf_normalized_identical": true,
+      "profiles": 0,
+      "examples": 0
+    },
+    {
+      "module": "MatrixGrassmannIdentityChecks",
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/MatrixGrassmannIdentityChecks.lean",
+      "freeze": "1e6a5bf82f3ba2fbc6454ae3a5b6d8f8dbc4f537",
+      "working_sha256": "2adb28c71a9efd74ef08f79ecd25116ec44c3f11482a71d3850f8e782a03d634",
+      "frozen_sha256": "498e2cb40d8ad647b05ea3617c90dc1a56ec65cdda888418bb5c0b558f4b5db7",
+      "raw_identical": false,
+      "lf_normalized_identical": true,
+      "profiles": 37,
+      "examples": 11
+    }
+  ],
+  "original_dependency_receipt": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\p-equals-np\\2026-09-12-realizable-hardness-joint-vector-proof-verification.json",
+  "original_dependency_receipt_sha256": "4d9d4e59272cee51d790f87d642006c8012c1817d0a1cae97bd80b15a3b2b78e",
+  "accepted_dependency_copies": [
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGF",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGFChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "sha256": "ce5c74ada383b2bcd58865fbe407bda4009b0e1df4fe27faa7d1daf0524e2760"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExceptionRepair",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Formula",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Checks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "sha256": "d1678afee60528ef8f8ca853635e14d6ce3cef32b4e0dadf061adb7f0e62b6ca"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThreshold",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCount",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCountChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "sha256": "4af2b61dd8037498fa244b67372f31005f27361ab1188fb5a59a45c21fef5573"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRounding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSampling",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentration",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentrationChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "sha256": "9007bdc721473a1e8c924165669b553b21b7033a8afed3ed214d5be5b4412139"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipelineChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "sha256": "26f12774632065cb37d8d6d55523a0bf453d8c22efb52d8a85ebb91b496e4198"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSamplingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "sha256": "bfb1a563e85a17376d799fef8aa497f17975e8687bffae2611a9c115ba645dbe"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSampler",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSamplerChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "sha256": "d9f6e2401786d5dcf940f6d7db982ba50d7b13282d2983cabb5d1b9487c120b0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLaw",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLawChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "sha256": "b606d7d702d9ad1c87704039c979449d8be80be27c91d582362002ccff8771e8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweighting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "sha256": "744015f91d67d8b701fcf9309137b49f72bd369e27d58172fe692119dff6e555"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweightingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "sha256": "de9b4d55fd5001bfed4332ff93f39fe71c45a0181830088aec3989590a066d02"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuarantee",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromises",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "sha256": "61d7faef060d73087454277f8fdecb30872b4322c64d9d76cb6670540e23d0bb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuaranteeChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "sha256": "95f5ec7e2e40de8c0934f1c0cc75103ed46e848ce9fdaa60d70c3f1e47c7a142"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThresholdChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "sha256": "487d712a6f3052d88e28b40fefdfc265204e3e82f0fdac45e9545b787b73efd4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncodingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "sha256": "524b8bbfbdb41a2dc2df054730971fd2415f36110ea3b38fd647de996a9f437a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRank",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "sha256": "0fbad23000b59f2d6dd319a01c8fd6b972bd64592557602a7e2123902f089c92"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestriction",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "sha256": "be2018d7d01a19b86c1c36e305726c67d648a0d70dac6805f6b40296b3435826"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestrictionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "sha256": "24c8b6b9d53c41c89aa3bfff3205304a50cfdca0cdbb450b793438c95cbd5f19"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRankChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "sha256": "194bec5d3fc7f71ae0ed604fa093bf99ba67ef6fc7a9fda30e8e817aa8b16e05"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRoundingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "sha256": "9d7a4ff6c2417d80b7741ff9c3d807c7ff6dd6c866c3a4e3c0c5c50536b91a2b"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "sha256": "c09f08906d53b79221a422bb70a383d83838da226bf5568fa2eeea9c9ddfc8bf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "sha256": "fb993c7a5071d4940f98d322fa12d3389fec8203c79f4fdb7f3e78dd4cc4dcf3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCounting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "sha256": "92c4c4aea2239f28674df9bfe702b333f2c1ffe14d1920d1d153677d221b9e95"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCountingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "sha256": "228500444a443b35ac73a1649ab4f99614c70df103774b1ab151e68df88d14e5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimension",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "sha256": "eb01f16a95e318b70e4dd3e3c5d78c73c9daac44a07a2f6c0ebfefd6124fe4d7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimensionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "sha256": "a7dbd1db16e4c3a7a26b5a714b6d188b644f0fbb8fe6a1b6350b7d1314fbd80c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatio",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "sha256": "6788148e1976e3b742917dd5e7aa4b244228a365c4e4d7410f7ac641acf7f0cb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatioChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "sha256": "a72452fa0e33fc172f4d027b9cfab24b4295f0eaf5883505e9f35c936f129f84"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensity",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "sha256": "10928555ba9e2ac1631643932c17f7e904d638d99ed10bc14cb4916c75b0ffe2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensityChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "sha256": "62d115b1c5d4d95d559c96a4673f15687b616cfa9ecf12eda6a2f0e5b414d92e"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropCountTail",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+      "sha256": "63d28c52935814d0df943b4e3342db80f029217af7a9241fcb5c36b8924653b3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropCountTailChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+      "sha256": "8619de21274c3a9c689cd63db21233bfd5515cbeb92b9162296941f27f6ec53d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptions",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+      "sha256": "1c2b226e4c815feca266be119fe544b659b92e18403ef1608368e139fcd2f638"
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptionsChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+      "sha256": "b2295429e0593e9db71d8a6eb62aa00c1fd86769c832b6799752fa05c16b5015"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannFlagPosterior",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\flag-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosterior.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosterior.olean",
+      "sha256": "31675761d10e7951fa3344e804c9f533a7658a64409a967d22a3a4fd15312326"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannFlagPosteriorChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\flag-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosteriorChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosteriorChecks.olean",
+      "sha256": "357a43286456c57cc4698d450691d488d01428d7c46e45a8fbf572533169efac"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringTV",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-tv-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTV.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTV.olean",
+      "sha256": "c776e9736948ef65064f2c1cf2c928d4ef0f3f8b42ef19c7a7ad95203fad7e5f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringTVChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-tv-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTVChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTVChecks.olean",
+      "sha256": "79d13761e1ec25330a04ea0d3c62fe2d2629d35d789d2eff69ba0dc61313e3e9"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropTailParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParameters.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParameters.olean",
+      "sha256": "289c163eae388a6d2d1790ea898d6ad836e35a9aa4c960f3b3dac3da44281653"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropTailParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParametersChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParametersChecks.olean",
+      "sha256": "2682490bee7d67094cb7fb79276fba6a20b6e1eada763aaea143342f0199247d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringSpan",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-span-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpan.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpan.olean",
+      "sha256": "a5140975c414dc9b498067860ea96c2b2a1e89c9518c662832b4c460c8798c0f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringSpanChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-span-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpanChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpanChecks.olean",
+      "sha256": "6ac628a9dcf7f9d40d3b3b7a7e5d5d52c496119e3d747ec0b411648ad0a83c2d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParameters.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParameters.olean",
+      "sha256": "1156f52ced3fa3253f7bf98692a7a4c6ffde5d46024e2996fa9ac2b8ce359b16"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParametersChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParametersChecks.olean",
+      "sha256": "ed3a5c5c32e512b60dc2a50e5b32afb2e13bae470235d68db619d223976ed356"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ConditionedCovering",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\conditioned-covering-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCovering.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCovering.olean",
+      "sha256": "30714b565370cb548b832273050d28aae9304dccb7df78f38e9515bd736dff1b"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ConditionedCoveringChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\conditioned-covering-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCoveringChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCoveringChecks.olean",
+      "sha256": "c5a1fb2083788a786dc67dfc96ecaaeadb888030721222a240d62d480369552f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerProximity",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-proximity-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximity.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximity.olean",
+      "sha256": "92989199264dcab33037b09b3625d07e327c0400b913ca28bf4b24733c317c74"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerProximityChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-proximity-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximityChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximityChecks.olean",
+      "sha256": "a66ee6d130ae5abeaac00c2be4ac0efc40e187a9e128214abda3c3bcef291096"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianNearOne",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\gaussian-nearone-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOne.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOne.olean",
+      "sha256": "4650e598f60960e3bfe02a8f22774de2c6efba7535106e8975ad6fc4900d412c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianNearOneChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\gaussian-nearone-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOneChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOneChecks.olean",
+      "sha256": "aa743913f433e8f368efa81a526dce32c5378c36bab93cc2673d5be2540e1949"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-incidence-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidence.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidence.olean",
+      "sha256": "7c5d57e2a1d8bb99f0a32a5d4b420d4fe2601d670af2f442014621e349f87bf7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-incidence-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidenceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidenceChecks.olean",
+      "sha256": "27e38349ff85978e0665f3eda8ff496d6d776eb273ae87d00b02e438d2faa298"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.olean",
+      "sha256": "b879dea24cb4962044df4513bf42afb1e8ad88a3e871377428f3bf892fda84db"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.olean",
+      "sha256": "23bee7ff834870f528eca8e6c6207c8558ea5d41bb8f4919d396e29388938ff2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GoodAdvice",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\good-advice-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GoodAdvice.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GoodAdvice.olean",
+      "sha256": "c7db824439905748b2adffa096e9169b456acfa3bb4895a2bfb8fc83f6e5540e"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GoodAdviceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\good-advice-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GoodAdviceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\GoodAdviceChecks.olean",
+      "sha256": "97343da384820bcb496b8f37553cc1ea8cba8cac106e7bd44c1645f82b94d76d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutPosterior",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-posterior-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutPosterior.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutPosterior.olean",
+      "sha256": "0fe9672373f93ec2ee13dcfbb2ca0fb459712b8f4f12e737a836de98aa77c8c7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutPosteriorChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-posterior-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutPosteriorChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutPosteriorChecks.olean",
+      "sha256": "2b53f92c2ddbeeee63d6eb09da596e7f6d1035b7b1207effcd864370b9cab365"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutTransfer",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-transfer-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutTransfer.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutTransfer.olean",
+      "sha256": "a6898d5dcf4d9c14184e2462cd2282956841e7e7139d1363ca2ef8f25e9ba7c3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutTransferChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-transfer-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutTransferChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutTransferChecks.olean",
+      "sha256": "43254c39e5d8ef7cc8b7d49bb332783c4ad79590871482ceb9f71059f1ca48ec"
+    },
+    {
+      "module": "PvNP.RealizableHardness.VectorAdvice",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\joint-vector-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\VectorAdvice.olean",
+      "sha256": "39dbc5eb4643b1ea039d1d6322de85c2bb5cbdcea0b6ce966b074183f4ce3c8a",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\VectorAdvice.olean"
+    },
+    {
+      "module": "PvNP.RealizableHardness.VectorAdviceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\joint-vector-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\VectorAdviceChecks.olean",
+      "sha256": "698d43f6f5c002ad94bde3c1805ce59b18a4b9a1c9e977724bc37940d4c95926",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\VectorAdviceChecks.olean"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutJoint",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\joint-vector-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutJoint.olean",
+      "sha256": "3cdb9385dcf394d07eded5efb7ebac5689decdbf1e825e6188001beb62f3f3bf",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutJoint.olean"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutJointChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\joint-vector-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutJointChecks.olean",
+      "sha256": "67e96e7a8395fb2556b67be80b3305e974bb34bee1c77c320939742ac0a50cbf",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutJointChecks.olean"
+    }
+  ],
+  "runner_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\independent-runner.py",
+  "runner_sha256": "bf7cb532a822154d4a8005eca2a4c22bf64314f8a98015e5c46d46d4231ac7dc",
+  "expected_profiles": 77,
+  "expected_examples": 29,
+  "required_grant": "Exclusive compiler grant from root before launch",
+  "memory_preflight": 805306368,
+  "memory_stop": 671088640,
+  "LEAN_NUM_THREADS": 1,
+  "session_id": 69402,
+  "session_exit_code": 0,
+  "compiler_released": true,
+  "exports": [
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidence.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidence.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3510407168,
+      "memory_min": 1792569344,
+      "source_sha256": "afca36bfaeacfc15f5d307eb8f2ca89f8cf435ee8618bc9353d19f7e859888fb",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidence-1789284940982659100.log",
+      "log_sha256": "c66340885d711f45a05bff1e4c386aec0419af12c0a8ee98b156d546ce5951c6",
+      "output_sha256": "1335528b9d8b904c5b890345e478aad719fb3536a843d7ae17a605975e81a89c",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannIncidence",
+      "examples": 0,
+      "profile_count": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidenceChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidenceChecks.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3463385088,
+      "memory_min": 1791893504,
+      "source_sha256": "c6b260f58c09a441945388bfa02f3500b8a6ea0ff97ad2b5bfce143777028772",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidenceChecks-1789284959282175600.log",
+      "log_sha256": "16dd54a8b00a718e496082155648c46c5fe5bcf97355ab3d125f7bdf83e6a40c",
+      "output_sha256": "0b69cc9b1888c95345f77f59f92771380e65217b9387a3bf6197baff92bc3345",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannIncidenceChecks",
+      "examples": 8,
+      "profile_count": 16
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMoment.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMoment.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3473604608,
+      "memory_min": 1768120320,
+      "source_sha256": "34febcefeaeb07edb8fc69a6c3165bad6641151a1d0b76fa1da9bf6610db4cb5",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMoment-1789284978837819300.log",
+      "log_sha256": "32e57493059d5112dc819c4fc0fe794583db8e0b892f7511cb5eb1f212b98c4c",
+      "output_sha256": "7dd9a6a6f6715d7c60e58f1b6da43dcf4fcd4be95147e6f331b3f6b25ce27a98",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannMoment",
+      "examples": 0,
+      "profile_count": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMomentChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMomentChecks.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3478732800,
+      "memory_min": 1891147776,
+      "source_sha256": "541f5721a07e748138971eea99cd62d1001bad5e66a884be5b812e22f9bcbca1",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMomentChecks-1789284997380014400.log",
+      "log_sha256": "13366ffb42bf780ac2aadac1d1e6268feba8f7af8d6bdeb867325090ec045471",
+      "output_sha256": "9696da3f13e10c57552e8d00f47dad9738418f487480f833ee4fcb5474943db4",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannMomentChecks",
+      "examples": 5,
+      "profile_count": 11
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibre.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibre.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3530125312,
+      "memory_min": 1797648384,
+      "source_sha256": "ffa72442467a2c253b42eaf983d85a984a887ae6a3eaa8c76d997cd24ab6a833",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibre-1789285015684181800.log",
+      "log_sha256": "9585e60936eab9c95cd1fff3259b1532e8aacbd240720fd466197660999ef6b9",
+      "output_sha256": "51ae05c8a5a148c31bd92102870a06078e98429cc27f93d62860ac04159d91a0",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannFibre",
+      "examples": 0,
+      "profile_count": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibreChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibreChecks.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3530678272,
+      "memory_min": 1848451072,
+      "source_sha256": "dd621ee73fb95ae7ca7c60476d5219c9d66c15a7a7371fb25a8f35e88ccccb2a",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibreChecks-1789285034482348000.log",
+      "log_sha256": "5e87de4f89574c903a4c5e7f9beb70ec241ba55d254c154b89c752afdb1d70fa",
+      "output_sha256": "d30634f10d0df720503de0816614466014b96946bff4bb7d9181a55c154cee82",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannFibreChecks",
+      "examples": 5,
+      "profile_count": 13
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentity.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentity.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3482406912,
+      "memory_min": 1650466816,
+      "source_sha256": "e518e87c545d5bbc79f7661e5ff7841248ae50920522c653bb2714b1b5cb7fb4",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentity-1789285053275583000.log",
+      "log_sha256": "9d1a360e2fb1b675dbf5f9cc9bb37ccb9b96037a91d9db90ec21d84a6e693438",
+      "output_sha256": "47aadd5cfcc69b244eab79f289c84120d27f91359b09f285ad1814166a99f299",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannIdentity",
+      "examples": 0,
+      "profile_count": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentityChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentityChecks.lean"
+      ],
+      "cwd": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+      "exit_code": 0,
+      "guard_stopped": false,
+      "memory_pre": 3473412096,
+      "memory_min": 1789693952,
+      "source_sha256": "2adb28c71a9efd74ef08f79ecd25116ec44c3f11482a71d3850f8e782a03d634",
+      "source_unchanged": true,
+      "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentityChecks-1789285076832013400.log",
+      "log_sha256": "b757263137fe1e59b1b4919119f3ad9c962108e24037b70bc9f77afae8332476",
+      "output_sha256": "243e4561af0512b0442e9f753b3c467ad97667f20d11df69f6207e5ed040590b",
+      "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+      "LEAN_NUM_THREADS": "1",
+      "version": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+      "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+      "pins": {
+        "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+        "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+        "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+        "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+        "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+        "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+        "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+        "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+        "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+        "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+        "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+      },
+      "module": "MatrixGrassmannIdentityChecks",
+      "examples": 11,
+      "profile_count": 37
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidence-1789284940982659100.json",
+      "sha256": "10cfc88f34302576303a3a1dff1bfd9589b574031d6cdec9457253024eb907a5",
+      "bytes": 3926
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidence-1789284940982659100.log",
+      "sha256": "c66340885d711f45a05bff1e4c386aec0419af12c0a8ee98b156d546ce5951c6",
+      "bytes": 4729
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidence.olean",
+      "sha256": "1335528b9d8b904c5b890345e478aad719fb3536a843d7ae17a605975e81a89c",
+      "bytes": 626280
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidenceChecks-1789284959282175600.json",
+      "sha256": "3e5168ebbbea999820fe223bedd239d14a217cc05441422812c612da7b187b16",
+      "bytes": 3944
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIncidenceChecks-1789284959282175600.log",
+      "sha256": "16dd54a8b00a718e496082155648c46c5fe5bcf97355ab3d125f7bdf83e6a40c",
+      "bytes": 2093
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIncidenceChecks.olean",
+      "sha256": "0b69cc9b1888c95345f77f59f92771380e65217b9387a3bf6197baff92bc3345",
+      "bytes": 3488
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMoment-1789284978837819300.json",
+      "sha256": "fc82cdd88a0c04fbcae34234fa3c581b1680a089ce34fa6ad0add867c617c494",
+      "bytes": 3917
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMoment-1789284978837819300.log",
+      "sha256": "32e57493059d5112dc819c4fc0fe794583db8e0b892f7511cb5eb1f212b98c4c",
+      "bytes": 2096
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMoment.olean",
+      "sha256": "7dd9a6a6f6715d7c60e58f1b6da43dcf4fcd4be95147e6f331b3f6b25ce27a98",
+      "bytes": 335344
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMomentChecks-1789284997380014400.json",
+      "sha256": "cb2d8cf34148c9261cf730ed29d806ac8a3aaf2951cecaa63ac73d034791c3b4",
+      "bytes": 3935
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannMomentChecks-1789284997380014400.log",
+      "sha256": "13366ffb42bf780ac2aadac1d1e6268feba8f7af8d6bdeb867325090ec045471",
+      "bytes": 1847
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannMomentChecks.olean",
+      "sha256": "9696da3f13e10c57552e8d00f47dad9738418f487480f833ee4fcb5474943db4",
+      "bytes": 4800
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibre-1789285015684181800.json",
+      "sha256": "773e44a03cd4fa4dce8dd9c769351931c88c032157fa157917ab9c77584626a8",
+      "bytes": 3914
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibre-1789285015684181800.log",
+      "sha256": "9585e60936eab9c95cd1fff3259b1532e8aacbd240720fd466197660999ef6b9",
+      "bytes": 2187
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibre.olean",
+      "sha256": "51ae05c8a5a148c31bd92102870a06078e98429cc27f93d62860ac04159d91a0",
+      "bytes": 624968
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibreChecks-1789285034482348000.json",
+      "sha256": "55f4a3240471945ec8c2377c35f9c6ed4eda933c233d8c28405e1fd4e28d35bb",
+      "bytes": 3932
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannFibreChecks-1789285034482348000.log",
+      "sha256": "5e87de4f89574c903a4c5e7f9beb70ec241ba55d254c154b89c752afdb1d70fa",
+      "bytes": 1576
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannFibreChecks.olean",
+      "sha256": "d30634f10d0df720503de0816614466014b96946bff4bb7d9181a55c154cee82",
+      "bytes": 4080
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentity-1789285053275583000.json",
+      "sha256": "4df2eba511e320e7ee2791864aed264106c4569e2f65491147ff7453602830a0",
+      "bytes": 3923
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentity-1789285053275583000.log",
+      "sha256": "9d1a360e2fb1b675dbf5f9cc9bb37ccb9b96037a91d9db90ec21d84a6e693438",
+      "bytes": 1183
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentity.olean",
+      "sha256": "47aadd5cfcc69b244eab79f289c84120d27f91359b09f285ad1814166a99f299",
+      "bytes": 1128088
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentityChecks-1789285076832013400.json",
+      "sha256": "bfe936ebf7627f9566e57cd6cbbf93757e3868725b3e7f041842e8d21531aa68",
+      "bytes": 3941
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\diagnostics\\MatrixGrassmannIdentityChecks-1789285076832013400.log",
+      "sha256": "b757263137fe1e59b1b4919119f3ad9c962108e24037b70bc9f77afae8332476",
+      "bytes": 4883
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\matrix-identity-independent-review-20260913\\lib\\lean\\PvNP\\RealizableHardness\\MatrixGrassmannIdentityChecks.olean",
+      "sha256": "243e4561af0512b0442e9f753b3c467ad97667f20d11df69f6207e5ed040590b",
+      "bytes": 3680
+    }
+  ],
+  "axiom_profiles": [
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.snoc_independent_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.dependent_snoc",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.card_outside",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.card_one_column",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.extensionProduct_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.card_continuation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.columns_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.columns_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.columns_independent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.columns_surjective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.card_listFibre",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.terminal_finrank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.terminal_eq_top",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.anchored_completion_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.anchored_completion_spans",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIncidence.anchored_list_fibre_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.terminalSpan_eq_listSpan",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.ofFn_arrayOfList",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.card_arrayFibre",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.concatenate_span",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.listFibre_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.concatenate_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.concatenate_independent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.anchor_mem_spanOutput",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.sum_by_span",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.uniform_span_partition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannMoment.spanFibreMass_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.reanchor_old",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.reanchor_new",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.reanchor_tail",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.reanchor_columns",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.independentExtension_of_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.independentExtension_iff_rank",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.card_rankArray",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.liftArray_span",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.fibre_column_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.card_spanFibre",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.sum_over_rankArrays",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.sum_extensionTest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannFibre.uniform_extension_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankProbability_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankProbability_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankProbability_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.array_card",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankArray_ratio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.containing_count",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.containing_card_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.normalized_extension_law",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rawF_deficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rawTF_frame",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.iid_mean_power",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmannExperiment_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.base_rank_ratio",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.matrix_grassmann_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.product_failure_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankProbability_loss",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_loss_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_zero_dimension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_zero_copies",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmannExperiment_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmann_le_twice_moment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.matrixExperiment_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.above_card_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmannExperiment_all",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.prod_indicator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankEventProbability_eq_experiment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankEventProbability_eq_alpha",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rankProbability_zero_width",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_zero_width",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_zero_base",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.alpha_zero_ambient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.deficient_integrand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.rawTF_deficient",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.matrixMoment_zero_copies",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmannExperiment_zero_copies",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.MatrixGrassmannIdentity.grassmann_le_twice_moment_zero_dimension",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "total_axiom_profiles": 77,
+  "total_examples": 29,
+  "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "dependency_pins": {
+    "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+    "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+    "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+    "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+    "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+    "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+    "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+    "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+    "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+    "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+    "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+  },
+  "notes": [
+    "Bounded eight-module finite matrix/Grassmann identity only.",
+    "Both Identity working sources are CRLF; frozen Git blobs LF. Raw and frozen hashes remain distinct.",
+    "No source modifications during independent verification.",
+    "No proof of the full hardness theorem, runtime, parameter instantiation or learning transfer."
+  ]
+}
