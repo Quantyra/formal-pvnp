@@ -1,0 +1,19 @@
+# Actual equality cloud: independent non-claims review
+
+2026-09-13. S3132/S3137 under S3126. Reviewer `/root/matrix_identity_independent_proof` is independent of the source author; this is the separately requested top-level non-claims lens following its proof audit. **GO-WITH-NOTES for the typed equality-cloud allocation and generated-row minimum only.**
+
+Reviewed source freeze `68ca17b2b6305283aab0b4727952f4cc07b08631`: main SHA256 `f61975e47fa0119bd6b037035fb08148bdb537109bc4fa6260cea9e5963ab992`, Checks `366b962a8a35019ea5c8d3f66f5372076ffc5842e4971c4f08ecf2969cb21726`. Independent session 48880 passed both unchanged sources, 31 standard-only profiles, nine examples and five signatures. Proof review SHA256 `55caf23636ec7f9c8f6fde38c4b6593d4e12701d6e0262aae1b0a15e8a27c903`; evidence JSON `df4693dfeb1bfe070d33d4f1d8c785ff4221ac3b2247b7c24b77080a42d71bf5`.
+
+Allowed claims now include an actual globally consistent allocation for this equality-only cloud. Shared ports inhabit one side of a sum type; the five fresh internal variables for each retained edge occurrence inhabit the other side, indexed by the full edge identity. Distinct internal blocks remain disjoint even for parallel edges with identical endpoints. Nonloop terminal distinctness supplies an injective seven-variable embedding for every copy. Each row has three distinct variables; any two distinct row identities have support intersection at most one, including across parallel copies.
+
+The generated ordered row list enumerates all retained edge copies exactly once and all four local rows per copy. Its actual filtered violation count equals the indexed sum of local violations. For every fixed port assignment, every competing global assignment preserving those ports has at least the sum of endpoint mismatch indicators; one explicit global extension attains that sum simultaneously. This is a theorem about the actual generated row list, not only an abstract cost function.
+
+The universal assertion is a lower bound. Attainment is existential, with a specified witness. It is not valid to claim arbitrary internal assignments attain the optimum, or that equal terminal values automatically satisfy each copy without selecting internal values. The theorem allows arbitrary port assignments; it does not assume all ports agree. The zero-size case produces an empty row list.
+
+This advances the earlier local gadget boundary: simultaneous global freshness and attainment for these equality copies are now supported. It does not establish the corresponding claims for a larger system containing original source equations. The implementation has not yet proved global variable degrees, original-equation placement and intersection compatibility, the final equation-count bound, majority decoding, gap preservation, or the full source-regularization construction.
+
+The variable carrier is a typed sum, and rows are typed finite records. No encoded cloud allocator, binary serializer or same-function FP theorem is supplied by this increment. Earlier graph rotation/table FP results do not themselves prove FP for the new allocation and row generation. Loops remain excluded by the accepted representative-edge type; parallel edge occurrences remain distinct and must not be silently deduplicated downstream.
+
+No specialized source NP-hardness, Håstad/repetition completion, full paper theorem, learning corollary, P-versus-NP result, novelty assertion or publication readiness follows. The independent kernel checks are not human peer review or a fresh whole-repository build. No wording violation was found within the inspected bounded source/proof claims.
+
+The orchestrator must still record all required lenses before route-final acceptance. No compiler, Git, source, package or public action occurred for this review.
