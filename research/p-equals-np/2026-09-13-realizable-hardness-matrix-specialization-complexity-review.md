@@ -1,0 +1,40 @@
+# Independent complexity review: matrix parameter specialization
+
+2026-09-13. S3134/S3137 under S3126. Reviewer: specialization_complexity_review, independent of source authorship and proof review. Verdict: **GO-WITH-NOTES** for the bounded fixed-parameter matrix/Grassmann specialization. No false-force or quantifier blocker found. This is a known-prerequisite formalization; it is not full-paper certification or a novelty claim.
+
+## Scope and evidence
+
+Reviewed the full MatrixGrassmannSpecialization main and Checks, the dated matrix-grassmann-specialization draft crosswalk and author appendix, completed independent proof-review markdown and JSON, and the actual imported blocks, eventual-ready, ready-dimension and matrix/Grassmann comparison definitions/interfaces. Read the local protocol and formal-three-lens-closeout protocol. No AGENTS.md exists at the destination root, and repository file search found no nested AGENTS.md. Initial git status was empty. No compiler, Git mutation, package, source or public action was performed. Only this review file was created; it is left untracked for the orchestrator's scoped freeze.
+
+Both raw source files equal their blobs at source freeze `1be621319fb4ecc3c30daf713ef16374d1ffc877`:
+
+- Main SHA256: `5363246b96ef23fb76e74e5a557ae5f78c098cf1aa3c955a842c91d1abe0c17b`.
+- Checks SHA256: `5ccb3185427314141af59dc21cd0b6f1f1bf02e95813a79a0bd24483930a4135`.
+
+Both independent proof-review files are raw-identical to freeze `27c1c6cb4b85cddad1fc1775bb025024e63f6356`: markdown `c976213ad7d5931ac7dfadce49333fabd27a4650358f1c4cd19b220fb2a5a5bd`, JSON `aaef4f053a27c531098a25417532657cb6ef2cb0ea5d959f7df2f5efe397ba8d`. That packet reports session 17675 pair EXIT 0, eight standard-only profiles, eight examples and one signature. This complexity review does not substitute a second compiler run or a complete dependency rehash for the orchestrator's evidence verification.
+
+Preserved primary text `C:/Users/Dan/AppData/Local/Temp/s3123-mz2510.23991.pdf.txt` was read directly; SHA256 `e8cb21fb8279f7881a5cf5c53b87b09b215f0bb3c8466b8fbdfcd4517ee5fbce`. Lines 449-450 fix the copy count k as a constant, line 476 gives ambient dimension 3J, and lines 784-803 give the factor-two matrix/Grassmann statement and actual shared-base matrix experiment. These are newline-based line numbers, retaining PDF form-feed characters. The extracted reciprocal/complement display at lines 805 onward is not relied on as a correct formula or declared an author error.
+
+The current submission manuscript SHA256 is `491f54667880a85efe47fc5fd15cd371d6a945b21647a88f1acf6f748a99590b`. Its lines 144-146 name leaf-query count m, rational slack rho and r=10m/rho with integral r; lines 308-316 fix m,rho and subsidiary parameters before sufficiently large h, require h a denominator multiple, and identify ambient dimension 3J. This is a review of that local manuscript, not a claim that these changes are already published.
+
+## Quantifiers and actual mathematical content
+
+The final theorem has the order: for fixed natural A,m,a,b with A>0 and 0<a<b, there exists N such that every q>=N satisfies the comparison for every finite GF(2) vector space of dimension 3*blocks A (b*q) and every pair of Boolean Grassmann predicates. Thus the threshold precedes V and both predicates and is uniform over them. It follows A,m,a,b; it need not be uniform in parameters that grow with q. The theorem does not interchange those quantifiers. The proof actually obtains a threshold from A,m, which is stronger than the advertised dependence and harmless.
+
+Here rho=a/b, h=b*q, d=2(b-a)q and w=2aq. Since 0<a<b, b is positive and natural subtraction is justified. The source proves d+w=2h and both exact rational dimension identities. No dimensions are rounded, no irrational slack is represented, and b need not be the reduced denominator. Because b>=1, q<=b*q; the selected h values form an unbounded cofinal sequence. The theorem does not say every sufficiently large integer h is admissible. The source's a is the numerator of rho, not the separate advice dimension also named a in the manuscript.
+
+The block count is the imported actual definition J=2^(2^(A*h^2)). It is not a free ambient-size surrogate or caller-supplied growth certificate. The proof invokes eventual_ready A m, derives 2h<=J and, after choosing h>=m+1, derives m+1<=J. The m in this invocation is merely the freely instantiable numerical argument of that growth lemma; no identification with the manuscript's advice bound r is claimed or needed for this inequality. The copy count m is not Lemma 4.1's separate analytic norm exponent.
+
+The finite rank-loss numerator is derived: d+m*w <= (m+1)(d+w) <= J^2 <= 2^(2J), and 2^(d+w-1) <= 2^(J-1). Positivity makes the natural predecessor identities valid. The product is at most 2^(3J-1), so division by the positive 2^(3J) gives at most 1/2. Intermediate hypotheses of half_error_of_growth are discharged in the eventual theorem. No final half-error, coupling, rank-success probability, desired comparison or computational cost is assumed.
+
+The ambient finrank equality identifies a real mathematical space of the requisite dimension. Such spaces exist (finite coordinate spaces over GF(2)); it is not an inconsistent promise that makes the claim vacuous. The imported grassmannExperiment uses uniform base subspaces and independent uniform containing subspaces; matrixMoment is the actual finite shared-base matrix average. Its accepted comparison consumes the derived size and loss inequalities. Therefore this increment removes the parameter-specialization premise from a genuine finite distribution comparison. It does not merely rename an assumed conclusion.
+
+## Limits relevant to complexity and assembly
+
+1. The threshold is existential. The module is noncomputable and proves no executable threshold selector, encoding, runtime, random-bit budget or FP membership. The enormous J is a fixed-parameter constant only after the relevant parameters are fixed. Nothing here establishes polynomial complexity when h or the other parameters grow with the original input. Fixed-L reduction assembly must preserve the intended order and prove its own bit-cost bounds.
+2. The theorem permits m=0 as a legitimate empty-leaf finite experiment; Checks includes this case. It does not discharge a positive-copy requirement elsewhere. For actual positive fixed m the theorem applies directly, without an upper-bound premise on m.
+3. Choosing rho so r=10m/rho is integral, choosing A relative to all required constants, and jointly satisfying decoder, hypercontractive, advice, zoom-out and soundness thresholds remain assembly obligations. A cofinal sequence permits combining finitely many compatible eventual requirements, but this module has not proved that the other requirements are compatible or eventual.
+4. The factor-two comparison is a component of the MZ argument. It is not a hypercontractive estimate, decoding theorem, PCP source-hardness proof, actual randomized reduction, CMMSA hardness theorem, learning consequence or P-versus-NP result. Exact membership predicates are arbitrary here; identifying them with the final reduction's events remains part of the full assembly.
+5. Historical SOURCE ONLY comments in the frozen main/Checks and initial draft describe preparation status. The author appendix and completed independent receipt supersede them as build evidence. This harmless stale status should be reconciled during final artifact preparation, without rewriting historical evidence or treating this review as publication approval.
+
+Remaining to-do list: S3137 completes the separate non-claims lens, root evidence verification and bounded acceptance; S3134/S3135 complete decoder and parameter assembly; S3132 completes source hardness; S3131 proves encoded runtime and reduction; S3136 completes learning; S3128 reconciles the manuscript and consolidates finalized Lean sources and reproducibility evidence into the paper repository. Full S3126 remains open.
