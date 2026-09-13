@@ -26,7 +26,6 @@ theorem row_major_example :
       [false, true, false, true, false, true] := by
   norm_num [List.ofFn_succ, flatten, alternatingBlocks, finTwoEquiv,
     finProdFinEquiv, Fin.divNat, Fin.modNat]
-  rfl
 
 theorem padding_example (x : FlatSeed 3) :
     Fintype.card {bits : FlatSeed (3 + 4) // takePrefix 3 4 bits = x} = 16 := by

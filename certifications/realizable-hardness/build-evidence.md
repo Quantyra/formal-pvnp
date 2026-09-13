@@ -1479,3 +1479,200 @@ SHA256 `4ee5a3590a203a39799fe7cb99df297630becd906a958e45a5370b1a9c13de80`.
 
 EXIT 0
 ```
+
+## Twenty-nine-module author checkpoint
+
+SamplingFormulaPromises main/Checks and SeedEncoding main passed unchanged in7356. FormulaPromises Checks printed15 standard-subset profiles. SeedChecks7356 failed only because norm_num already closed row_major_example before its rfl; those printed profiles did not accept the failed module. Removing only the redundant rfl gave actual EXIT0 in58810,25 standard-subset profiles, and the two expected Boolean-list evaluations. All statements remain unchanged. TripleRestrictionRank is next and excluded from this count. Independent reviews/full hardness assembly remain pending.
+
+SamplingFormulaPromises source SHA256 `5b3be5d6cc5b66c9907855153b7e11c11c43e28fca5feff952ea649de278e941`.
+
+SamplingFormulaPromisesChecks source SHA256 `ef50b659f0275a622c0a918c543b0ae6e58fbf47d4da9f6b9edacc225512af06`.
+
+SeedEncoding source SHA256 `286890661a574841a84754b12033f7caadf167c3bde52c5c0f55ca9d2f21482d`.
+
+SeedEncodingChecks source SHA256 `f2692f38794aad6d955cc1b8bac946e3bf7e53d909a4a8a5c6370a018599acd4`.
+
+### SamplingFormulaPromises-1789261162878172000.log
+
+SHA256 `a213a6e8cec02676ea488868022a46c03efc440fa7b9038f8fa89cfc9d4df813`.
+
+```text
+lean\PvNP\RealizableHardness\SamplingFormulaPromises.lean:26:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+lean\PvNP\RealizableHardness\SamplingFormulaPromises.lean:77:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\SamplingFormulaPromises.lean:92:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+lean\PvNP\RealizableHardness\SamplingFormulaPromises.lean:125:19: warning: `if_false` has been deprecated: Use `ite_false` instead
+
+EXIT 0
+```
+
+### SamplingFormulaPromisesChecks-1789261162878172000.log
+
+SHA256 `9e7d46fdd9710ea793862aec6a1736fdd338d214ef704f63c594d88bc8c3c4b7`.
+
+```text
+'PvNP.RealizableHardness.SamplingFormulaPromises.empirical_eq_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.good_no_average' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.parameter_margin' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.good_yes_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.good_no_output' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.fromSeeds_eval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.output_leaves' depends on axioms: [propext]
+'PvNP.RealizableHardness.SamplingFormulaPromises.seedProbability_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.computed_event_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.computed_yes_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromises.computed_no_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_positions' depends on axioms: [propext]
+'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.duplicate_empirical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingFormulaPromisesChecks.empty_trials' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
+
+### SeedEncoding-1789261162878172000.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```
+
+### SeedEncodingChecks-1789261162878172000.log
+
+SHA256 `e42ed336d9ed7a3eeec4f046d6bfaa826f15ced7486ce30f6ac36b901db00284`.
+
+```text
+lean\PvNP\RealizableHardness\SeedEncodingChecks.lean:29:2: error: No goals to be solved
+[false, true, false, true, false, true]
+[false, false, true]
+'PvNP.RealizableHardness.SeedEncoding.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.split_join' depends on axioms: [propext, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.join_split' depends on axioms: [propext, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.event_card_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.uniformProbability_equiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.uniformProbability_eq_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.seedProbability_eq_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flat_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.sampleFlat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.padded_sampleFlat_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_trials_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_width_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_trials_flat_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_width_flat_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.empty_seed_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.row_major_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.no_padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.empty_prefix_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.diagonal_padded_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 1
+```
+
+### SeedEncodingChecks-1789261319580476200.log
+
+SHA256 `2a1ece0166a9d29c98ec7f8fa1b5f58200e48f3a5fed31f913ff134d0637235b`.
+
+```text
+[false, true, false, true, false, true]
+[false, false, true]
+'PvNP.RealizableHardness.SeedEncoding.unflatten_flatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flatten_unflatten' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.split_join' depends on axioms: [propext, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.join_split' depends on axioms: [propext, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.event_card_equiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.uniformProbability_equiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.uniformProbability_eq_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.seedProbability_eq_uniform' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flat_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.flat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.sampleFlat_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_fibre_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_event_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.prefix_probability' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.padded_sampleFlat_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_trials_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_width_inverse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_trials_flat_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.zero_width_flat_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.empty_seed_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.row_major_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.no_padding_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.empty_prefix_example' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SeedEncoding.diagonal_padded_law' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+EXIT 0
+```
