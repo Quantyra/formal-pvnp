@@ -67,7 +67,7 @@ theorem ownerLookup_dispatch (table : List Bool) (r : Nat) (i : Fin 3) :
   have hd : (3*r+i.val)/3 = r := by omega
   have hm : (3*r+i.val)%3 = i.val := by omega
   simp only [ownerLookup, lookupInput, pairSnd_pair, pairFst_pair,
-    divC_eq (by decide), modC_eq (by decide), List.length_replicate, hd, hm]
+    divC_eq (c := 3) (by decide), modC_eq (c := 3) (by decide), List.length_replicate, hd, hm]
   fin_cases i <;> simp [ifEqLen_pos, ifEqLen_neg]
 
 /-- This is the same ownerLookup as in ownerLookup_mem_FP, on the actual wire. -/

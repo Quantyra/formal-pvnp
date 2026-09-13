@@ -27,15 +27,15 @@ example : Membership.mem FP ownerLookup := ownerLookup_mem_FP
 example {N m : Nat} (I : Instance N m) (r : Fin m) :
     ownerLookup (lookupInput (serializedSource I) (3*r.val+0)) =
       List.replicate (I.vars r 0).val true := by
-  simpa only [Instance.owner] using ownerLookup_correct I (r,0)
+  simpa [Instance.owner] using ownerLookup_correct I (r,0)
 example {N m : Nat} (I : Instance N m) (r : Fin m) :
     ownerLookup (lookupInput (serializedSource I) (3*r.val+1)) =
       List.replicate (I.vars r 1).val true := by
-  simpa only [Instance.owner] using ownerLookup_correct I (r,1)
+  simpa [Instance.owner] using ownerLookup_correct I (r,1)
 example {N m : Nat} (I : Instance N m) (r : Fin m) :
     ownerLookup (lookupInput (serializedSource I) (3*r.val+2)) =
       List.replicate (I.vars r 2).val true := by
-  simpa only [Instance.owner] using ownerLookup_correct I (r,2)
+  simpa [Instance.owner] using ownerLookup_correct I (r,2)
 example {N m : Nat} (I : Instance N m) (o : Slot m) :
     (lookupInput (serializedSource I) (3*o.1.val+o.2.val)).length <=
       2*(serializedSource I).length+2+3*m := validInput_length_le I o
