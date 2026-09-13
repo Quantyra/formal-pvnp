@@ -6,6 +6,7 @@ open PvNP.RealizableHardness ExecutablePipeline
 #print axioms repaired_leaves
 #print axioms data_count
 #print axioms read_tree
+#print axioms record_congr
 #print axioms data_eq
 #print axioms draws_leaf_bound
 #print axioms data_valid

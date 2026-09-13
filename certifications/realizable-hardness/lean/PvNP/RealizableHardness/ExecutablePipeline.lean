@@ -5,6 +5,7 @@ import PvNP.RealizableHardness.ExecutableRounding
 namespace PvNP.RealizableHardness.ExecutablePipeline
 open CMMSACodec CMMSAEncoding
 set_option autoImplicit false
+set_option backward.isDefEq.respectTransparency false
 
 /-- Actual indexed table lookup, preserving trial positions. -/
 def draws {N : Nat} (t : FiniteSourceSampler.Table N) (b M : Nat)
@@ -67,7 +68,23 @@ theorem read_tree (ws : List Rat) (t : FiniteSourceSampler.Table ws.length) (b M
     (readFormula (ExecutableRounding.outputWeights ws M q).length)
     (data ws t b M q seeds).formulas (fun f _ => read_formulaTree f)
   simp only [tree, readData, ExecutableRounding.read_weightTree ws M q hd]
-  simp only [hf, ExecutableRounding.read_budgetTree ws M q hd]
+  change (do
+    let fs ← readList (readFormula (ExecutableRounding.outputWeights ws M q).length)
+      (listTree ((data ws t b M q seeds).formulas.map formulaTree))
+    let budget ← readRat (ExecutableRounding.budgetTree ws M q)
+    pure (Data.mk (ExecutableRounding.outputWeights ws M q) fs budget)) = _
+  rw [hf]
+  simp only [Option.bind_some, ExecutableRounding.read_budgetTree ws M q hd]
+  rfl
+
+theorem record_congr {N M : Nat} (xs ys : List Rat) (hx : N = xs.length) (hy : N = ys.length)
+    (F G : Fin M → Formula (Fin N)) (s t : Rat)
+    (hxy : xs = ys) (hFG : F = G) (hst : s = t) :
+    (Data.mk xs (List.ofFn (fun i => Formula.rename (Fin.cast hx) (F i))) s) =
+      Data.mk ys (List.ofFn (fun i => Formula.rename (Fin.cast hy) (G i))) t := by
+  cases hxy
+  cases hFG
+  cases hst
   rfl
 
 /-- Full record equality, including dependent formula coordinates and ordered occurrences. -/
@@ -79,8 +96,10 @@ theorem data_eq (ws : List Rat) (t : FiniteSourceSampler.Table ws.length) (b M :
         (FiniteSourceSampler.probability t) t.rows.length b M
         (FiniteSourceSampler.cumulative_endpoint t) (FiniteSourceSampler.formula t) seeds) := by
   unfold data CMMSAPipelineEncoding.outputData indexedData
-  simp only [ExecutableRounding.outputWeights_eq, ExecutableRounding.outputBudget_eq,
-    repaired, draws_eq]
+  apply record_congr
+  · exact ExecutableRounding.outputWeights_eq M p
+  · simp only [repaired, draws_eq]
+  · exact ExecutableRounding.outputBudget_eq M p
 
 /-- A leaf bound on stored rows supplies the bound on every selected occurrence. -/
 theorem draws_leaf_bound {N L : Nat} (t : FiniteSourceSampler.Table N) (b M : Nat)
@@ -107,13 +126,13 @@ theorem formula_wire_bound {N : Nat} (f : Formula (Fin N)) :
   | var v =>
       have hn := natTree_length v.val
       have hs := Nat.size_le_size (Nat.le_of_lt v.isLt)
-      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, Formula.leaves]
+      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, List.length_nil, Formula.leaves]
       omega
   | and f g hf hg =>
-      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, Formula.leaves] at *
+      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, List.length_nil, Formula.leaves] at *
       nlinarith
   | or f g hf hg =>
-      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, Formula.leaves] at *
+      simp only [formulaTree, Tree.encode, List.length_cons, List.length_append, List.length_nil, Formula.leaves] at *
       nlinarith
 
 theorem full_wire_bound {L : Nat} (ws : List Rat) (t : FiniteSourceSampler.Table ws.length) (b M : Nat)
@@ -168,7 +187,12 @@ theorem instanceOf_data {L : Nat} (ws : List Rat) (t : FiniteSourceSampler.Table
     (instanceOf ws t b M p seeds hM hF).data = data ws t b M (ExecutableRounding.inputOf p) seeds := by
   have hr := read_tree ws t b M (ExecutableRounding.inputOf p) seeds
     (ExecutableRounding.positive_integer_data M hM p).1
-  simp [Instance.data, instanceOf, hr]
+  dsimp only [Instance.data, instanceOf]
+  split
+  next d h =>
+    rw [h] at hr
+    exact Option.some.inj hr
+  next h => simp [h] at hr
 
 theorem decode_bits {L : Nat} (ws : List Rat) (t : FiniteSourceSampler.Table ws.length) (b M : Nat)
     (p : FiniteRepairRoundingPipeline.Parameters ws.get)
@@ -202,9 +226,8 @@ theorem checkedBits_valid {L : Nat} (ws : List Rat) (t : FiniteSourceSampler.Tab
     (hF : forall j : Fin t.rows.length, Formula.leaves (t.rows.get j).2+1 <= L) :
     checkedBits L ws t b M (ExecutableRounding.inputOf p) seeds =
       some (bits ws t b M (ExecutableRounding.inputOf p) seeds) := by
-  have h := (instanceOf ws t b M p seeds hM hF).property
-  simpa [checkedBits, instanceOf] using
-    (show (if accepted L (tree ws t b M (ExecutableRounding.inputOf p) seeds) then
-      some (bits ws t b M (ExecutableRounding.inputOf p) seeds) else none) = _ by rw [h]; rfl)
+  have h : accepted L (tree ws t b M (ExecutableRounding.inputOf p) seeds) = true :=
+    (instanceOf ws t b M p seeds hM hF).property
+  simp [checkedBits, h]
 
 end PvNP.RealizableHardness.ExecutablePipeline
