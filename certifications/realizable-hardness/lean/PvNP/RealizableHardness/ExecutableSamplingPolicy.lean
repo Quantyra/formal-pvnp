@@ -150,7 +150,8 @@ theorem padded_seed_probability (M b k : Nat) (event : JointSamplingLaw.SeedArra
     SeedEncoding.uniformProbability (fun bits : SeedEncoding.FlatSeed (M*b+k) =>
       event (SeedEncoding.unflatten M b (SeedEncoding.takePrefix (M*b) k bits))) =
       JointSamplingLaw.seedProbability M b event := by
-  rw [SeedEncoding.prefix_probability]
+  rw [SeedEncoding.prefix_probability (M*b) k
+    (fun bits => event (SeedEncoding.unflatten M b bits))]
   exact SeedEncoding.flat_probability M b event
 
 /-- Validate policy fields and the full length-only tape before executing the pipeline.
@@ -185,8 +186,16 @@ theorem paddedRunOption_selected (L : Nat) (eps : Rat) (he : 0 < eps)
   have htake : (coinBits seeds ++ tail).take
       ((selected eps ws t q).trials*(selected eps ws t q).precision) = coinBits seeds := by
     rw [← coinBits_length seeds]
-    exact List.take_left _ _
-  simp only [paddedRunOption, decode_encodeInput, Option.bind_some]
+    exact List.take_left
+  simp only [paddedRunOption, decode_encodeInput]
+  change (if
+    (selected eps ws t q).precision = SamplingGuarantee.precision t.rows.length eps ∧
+    (selected eps ws t q).trials = ComputableSampleCount.count ws.length (inverseCeil eps) ∧
+    (coinBits seeds ++ tail).length = coinRuler eps (encodeInput (selected eps ws t q)).length ∧
+    (selected eps ws t q).trials*(selected eps ws t q).precision ≤ (coinBits seeds ++ tail).length
+    then runOption L (encodeInput (selected eps ws t q))
+      ((coinBits seeds ++ tail).take ((selected eps ws t q).trials*(selected eps ws t q).precision))
+    else none) = _
   rw [if_pos (by exact ⟨rfl, rfl, hlen, by rw [hlen]; exact hc⟩), htake]
   exact runOption_roundtrip L (selected eps ws t q) seeds
 
@@ -252,7 +261,13 @@ theorem padded_executor_good_probability {L : Nat} (eps : Rat) (he : 0 < eps)
           ws.length x.trials F eps (FiniteSourceSampler.selectArray t x.precision x.trials seeds)) := by
   dsimp only
   simp only [paddedRun_selected_valid eps he ws t p hF, true_and]
-  rw [padded_seed_probability]
+  rw [padded_seed_probability
+    (selected eps ws t (ExecutableRounding.inputOf p)).trials
+    (selected eps ws t (ExecutableRounding.inputOf p)).precision _
+    (fun seeds => SamplingGuarantee.Good (FiniteSourceSampler.probability t) t.rows.length
+      ws.length (selected eps ws t (ExecutableRounding.inputOf p)).trials F eps
+      (FiniteSourceSampler.selectArray t (selected eps ws t (ExecutableRounding.inputOf p)).precision
+        (selected eps ws t (ExecutableRounding.inputOf p)).trials seeds))]
   exact selected_good_probability eps he ws t (ExecutableRounding.inputOf p) F
 
 end PvNP.RealizableHardness.ExecutableSamplingPolicy

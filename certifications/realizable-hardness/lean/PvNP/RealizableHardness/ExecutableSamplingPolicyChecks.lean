@@ -31,7 +31,14 @@ open PvNP.RealizableHardness ExecutableSamplingPolicy
 #check @padded_executor_good_probability
 
 example : inverseCeil (1/4 : Rat) = 4 := by norm_num [inverseCeil]
-example : inverseCeil (2/3 : Rat) = 2 := by norm_num [inverseCeil]
+example : inverseCeil (2/3 : Rat) = 2 := by
+  norm_num [inverseCeil]
+  have hu : ⌈(3/2 : Rat)⌉₊ ≤ 2 := Nat.ceil_le.mpr (by norm_num)
+  have hl := Nat.le_ceil (3/2 : Rat)
+  by_contra h
+  have hn : ⌈(3/2 : Rat)⌉₊ ≤ 1 := by omega
+  have hq : (⌈(3/2 : Rat)⌉₊ : Rat) ≤ 1 := by exact_mod_cast hn
+  linarith
 example : coinRuler (1/4 : Rat) 0 = 0 := by simp [coinRuler]
 example (eps : Rat) (n : Nat) :
     coinRuler eps n = 512 * inverseCeil eps ^ 3 * (n^2+11*n) := coinRuler_quadratic _ _
