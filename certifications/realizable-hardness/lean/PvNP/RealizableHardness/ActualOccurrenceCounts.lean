@@ -22,9 +22,13 @@ theorem cloudIndices_nodup (n : Nat) : (cloudIndices n).Nodup :=
 theorem cloud_rows_eq_map (n : Nat) :
     ActualEqualityCloud.rows n = (cloudIndices n).map
       (fun q => (ActualEqualityCloud.row q, ActualEqualityCloud.rhs q)) := by
-  simp [ActualEqualityCloud.rows, ActualEqualityCloud.localRows, EqualityGadget.relabeledRows,
+  simp [ActualEqualityCloud.rows,
     ActualEqualityCloud.row, ActualEqualityCloud.rhs, cloudIndices,
-    List.product, List.map_flatMap, List.map_map, List.ofFn_eq_map, Function.comp_def]
+    List.product, List.map_flatMap, List.map_map, Function.comp_def]
+  apply congrArg (fun f => (ActualEqualityCloud.edgeList n).flatMap f)
+  funext e
+  simp [ActualEqualityCloud.localRows, EqualityGadget.relabeledRows]
+  rfl
 
 end
 end PvNP.RealizableHardness.ActualOccurrenceCounts
@@ -35,6 +39,7 @@ open scoped BigOperators
 set_option autoImplicit false
 noncomputable section
 variable {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m)
+local instance : DecidableEq I.RowId := Classical.decEq _
 
 def gadgetIndices : List I.GadgetId :=
   (List.finRange N).sigma (fun v => cloudIndices (I.size v))
@@ -55,7 +60,8 @@ theorem rowIndices_nodup : I.rowIndices.Nodup := by
   intro x hx hy
   obtain ⟨r, _, hr⟩ := List.mem_map.mp hx
   obtain ⟨q, _, hq⟩ := List.mem_map.mp hy
-  exact Sum.noConfusion (hr.trans hq.symm)
+  have h : (Sum.inl r : I.RowId) = Sum.inr q := hr.trans hq.symm
+  cases h
 
 @[simp] theorem mem_rowIndices (q : I.RowId) : q ∈ I.rowIndices := by
   cases q <;> simp [rowIndices]
@@ -70,7 +76,8 @@ theorem rows_eq_map : I.rows = I.rowIndices.map (fun q => (I.row q, I.rowRhs q))
     rowIndices, gadgetIndices, List.sigma, List.map_append, List.map_flatMap, List.map_map,
     List.ofFn_eq_map, ActualOccurrenceAllocation.Instance.row,
     ActualOccurrenceAllocation.Instance.rowRhs, ActualOccurrenceAllocation.Instance.tagRow,
-    ActualOccurrenceAllocation.Instance.gadgetRow, cloud_rows_eq_map, Function.comp_def]
+    cloud_rows_eq_map, Function.comp_def]
+  rfl
 
 theorem rowPair_injective : Function.Injective (fun q : I.RowId => (I.row q, I.rowRhs q)) := by
   intro a b h

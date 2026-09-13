@@ -57,3 +57,26 @@ incidence degree, compatible entire-instance YES extension, minority charging,
 majority soundness and the final fixed-gap inequality still need their own
 actual-row joins. No source Håstad hardness, encoded allocation/serialization
 FP, P-versus-NP result or final paper certification follows from this draft.
+
+## Actual author verification update
+
+Scoped author session 50422 completed with actual exit 0 for main and Checks.
+Final logs are clean: 21 standard-only profiles, eight examples and four
+printed signatures. Main attempts were [1,1,0]; Checks passed first attempt.
+Repairs used explicit higher-order list congruence and finite-list reduction,
+Sum constructor elimination by cases, and a local classical DecidableEq for
+the dependent RowId needed by toFinset. Mathematical statements, ordered rows,
+parallel multiplicity and actual countP targets were not weakened.
+
+Portable author packet (relative to companion):
+`.lake/build/actual-occurrence-counts-author-20260913/author-verification.json`,
+SHA256 `740a6ce53282cb5008d49b0dd085ebbe6975c1064ac8a61c74c0f3179bc1fe75`.
+It embeds all four module attempts, raw logs, metadata, exact source snapshots,
+runner, preparation and dependency copies. All 308 original accepted exports
+and receipt identities plus three current direct ProdSigma exports were
+rehashed. Eleven pinned revisions, manifest and toolchain are runner-checked.
+The one-thread 768/640 MiB memory guard observed a minimum of
+1858772992 available bytes. Current package export hashes do not retroactively
+claim historical byte identity absent from older inventories. No package
+rebuild, download, broad build or public action occurred. Independent build
+and three-lens review remain pending, as do the substantive next joins above.
