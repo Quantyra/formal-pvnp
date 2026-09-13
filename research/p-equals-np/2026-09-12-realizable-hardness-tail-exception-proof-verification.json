@@ -1,0 +1,652 @@
+{
+  "candidate_commit": "5401443679c5f35178e4dcbdca170d9523e13360",
+  "environment": {
+    "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;c:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "LEAN_NUM_THREADS": "1",
+    "toolchain": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+    "PYTHONUTF8": "1",
+    "PYTHONIOENCODING": "utf-8"
+  },
+  "accepted_dependency_copies": [
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGF",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGFChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "sha256": "ce5c74ada383b2bcd58865fbe407bda4009b0e1df4fe27faa7d1daf0524e2760"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExceptionRepair",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Formula",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Checks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "sha256": "d1678afee60528ef8f8ca853635e14d6ce3cef32b4e0dadf061adb7f0e62b6ca"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThreshold",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCount",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCountChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "sha256": "4af2b61dd8037498fa244b67372f31005f27361ab1188fb5a59a45c21fef5573"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRounding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSampling",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentration",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentrationChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "sha256": "9007bdc721473a1e8c924165669b553b21b7033a8afed3ed214d5be5b4412139"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipelineChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "sha256": "26f12774632065cb37d8d6d55523a0bf453d8c22efb52d8a85ebb91b496e4198"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSamplingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "sha256": "bfb1a563e85a17376d799fef8aa497f17975e8687bffae2611a9c115ba645dbe"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSampler",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSamplerChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "sha256": "d9f6e2401786d5dcf940f6d7db982ba50d7b13282d2983cabb5d1b9487c120b0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLaw",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLawChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "sha256": "b606d7d702d9ad1c87704039c979449d8be80be27c91d582362002ccff8771e8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweighting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "sha256": "744015f91d67d8b701fcf9309137b49f72bd369e27d58172fe692119dff6e555"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweightingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "sha256": "de9b4d55fd5001bfed4332ff93f39fe71c45a0181830088aec3989590a066d02"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuarantee",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromises",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "sha256": "61d7faef060d73087454277f8fdecb30872b4322c64d9d76cb6670540e23d0bb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuaranteeChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "sha256": "95f5ec7e2e40de8c0934f1c0cc75103ed46e848ce9fdaa60d70c3f1e47c7a142"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThresholdChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "sha256": "487d712a6f3052d88e28b40fefdfc265204e3e82f0fdac45e9545b787b73efd4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncodingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "sha256": "524b8bbfbdb41a2dc2df054730971fd2415f36110ea3b38fd647de996a9f437a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRank",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "sha256": "0fbad23000b59f2d6dd319a01c8fd6b972bd64592557602a7e2123902f089c92"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestriction",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "sha256": "be2018d7d01a19b86c1c36e305726c67d648a0d70dac6805f6b40296b3435826"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestrictionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "sha256": "24c8b6b9d53c41c89aa3bfff3205304a50cfdca0cdbb450b793438c95cbd5f19"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRankChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "sha256": "194bec5d3fc7f71ae0ed604fa093bf99ba67ef6fc7a9fda30e8e817aa8b16e05"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRoundingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "sha256": "9d7a4ff6c2417d80b7741ff9c3d807c7ff6dd6c866c3a4e3c0c5c50536b91a2b"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "sha256": "c09f08906d53b79221a422bb70a383d83838da226bf5568fa2eeea9c9ddfc8bf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "sha256": "fb993c7a5071d4940f98d322fa12d3389fec8203c79f4fdb7f3e78dd4cc4dcf3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCounting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "sha256": "92c4c4aea2239f28674df9bfe702b333f2c1ffe14d1920d1d153677d221b9e95"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCountingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "sha256": "228500444a443b35ac73a1649ab4f99614c70df103774b1ab151e68df88d14e5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimension",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "sha256": "eb01f16a95e318b70e4dd3e3c5d78c73c9daac44a07a2f6c0ebfefd6124fe4d7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimensionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "sha256": "a7dbd1db16e4c3a7a26b5a714b6d188b644f0fbb8fe6a1b6350b7d1314fbd80c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatio",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "sha256": "6788148e1976e3b742917dd5e7aa4b244228a365c4e4d7410f7ac641acf7f0cb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatioChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "sha256": "a72452fa0e33fc172f4d027b9cfab24b4295f0eaf5883505e9f35c936f129f84"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensity",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "sha256": "10928555ba9e2ac1631643932c17f7e904d638d99ed10bc14cb4916c75b0ffe2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensityChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "sha256": "62d115b1c5d4d95d559c96a4673f15687b616cfa9ecf12eda6a2f0e5b414d92e"
+    }
+  ],
+  "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "dependency_pins": [
+    {
+      "name": "cslib",
+      "revision": "d9be64196bf145edd019f1ccfeaee0c11166ba6b"
+    },
+    {
+      "name": "mathlib",
+      "revision": "e06eff5f95374108acfaf19f1ff7473aa7771df2"
+    },
+    {
+      "name": "complexitylib",
+      "revision": "6c248df7859f2f245e731c1e07057bf69d165fe2"
+    },
+    {
+      "name": "plausible",
+      "revision": "d9598f07b1bc701f1e3aae163d2681c1fd978793"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ba67e212be1197b84c1f1f6299488a10a3002713"
+    },
+    {
+      "name": "importGraph",
+      "revision": "d8823026ac7ef130c253089d95685f9877b95323"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f"
+    },
+    {
+      "name": "aesop",
+      "revision": "18889deb9e83ea7420ef51c160d6f88552e744e3"
+    },
+    {
+      "name": "Qq",
+      "revision": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3"
+    },
+    {
+      "name": "batteries",
+      "revision": "7e23602c91bc04586b2b06de2708a041853e4681"
+    },
+    {
+      "name": "Cli",
+      "revision": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+    }
+  ],
+  "exports": [
+    {
+      "module": "PvNP.RealizableHardness.DropCountTail",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean",
+      "source_sha256": "d2994d1124c7bfc39208906725a1475fe49ec1b8e33dc97303649401ffda2dd8",
+      "candidate_match": true,
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 4063260672,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\DropCountTail-1789266296635512300.log",
+      "log_sha256": "2207effda31b8210c20e5b58463ba1e667cee3cb401e086f4c536a5ddcbb5a60",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:53:48: warning: This simp argument is unused:\n  Fin.sum_univ_succ\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fintype.sum_option, blockMass, dropped]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:54:2: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:129:8: warning: Unused tactic linter: `ring` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:129:8: warning: this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:158:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTail.lean:170:31: warning: This simp argument is unused:\n  h\n\nHint: Omit it from the simp argument list.\n  [apply] simp [blockMass]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+      "output_sha256": "63d28c52935814d0df943b4e3342db80f029217af7a9241fcb5c36b8924653b3",
+      "query_order": [],
+      "axiom_profiles": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropCountTailChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.lean",
+      "source_sha256": "e2d2719251410fc14b746bb69a3eea88ad931550e103c1266811011fa1aa1239",
+      "candidate_match": true,
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 4105035776,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\DropCountTailChecks-1789266320157430200.log",
+      "log_sha256": "a9771cac8bf75431c58ec927545f6dcf5c87ac2820daf49870849277e1387740",
+      "raw_log_utf8": "'PvNP.RealizableHardness.DropCountTail.dropCount_eq_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.dropCount_cast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_sum' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_le_one' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.block_moment' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.moment_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.moment_bound' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.exponential_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.optimized_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.chernoff_tail' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_zero_of_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_empty' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.prior_zero_of_drop' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_beta_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.tail_mean_zero' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.DropCountTail.chernoff_tail_allow_zero' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.lean:40:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.lean:45:12: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+      "output_sha256": "8619de21274c3a9c689cd63db21233bfd5515cbeb92b9162296941f27f6ec53d",
+      "query_order": [
+        "DropCountTail.dropCount_eq_sum",
+        "DropCountTail.dropCount_cast",
+        "DropCountTail.tail_sum",
+        "DropCountTail.tail_nonneg",
+        "DropCountTail.tail_le_one",
+        "DropCountTail.block_moment",
+        "DropCountTail.moment_identity",
+        "DropCountTail.moment_bound",
+        "DropCountTail.exponential_tail",
+        "DropCountTail.optimized_tail",
+        "DropCountTail.chernoff_tail",
+        "DropCountTail.tail_zero_of_le",
+        "DropCountTail.tail_empty",
+        "DropCountTail.prior_zero_of_drop",
+        "DropCountTail.tail_beta_zero",
+        "DropCountTail.tail_mean_zero",
+        "DropCountTail.chernoff_tail_allow_zero"
+      ],
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.DropCountTail.dropCount_eq_sum",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.dropCount_cast",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_sum",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_nonneg",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_le_one",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.block_moment",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.moment_identity",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.moment_bound",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.exponential_tail",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.optimized_tail",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.chernoff_tail",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_zero_of_le",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_empty",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.prior_zero_of_drop",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_beta_zero",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.tail_mean_zero",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.DropCountTail.chernoff_tail_allow_zero",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ],
+      "examples": 10
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptions",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean",
+      "source_sha256": "eb0ac116e6a12a3f0ae9cc2e09b8ad75db261c7d521119688075532b276cf553",
+      "candidate_match": true,
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 3915337728,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\AdviceExceptions-1789266375658333100.log",
+      "log_sha256": "7042c08bb9a122186b2fe80c3f35fedf85875b8a2e039898946d85142af16130",
+      "raw_log_utf8": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:34:17: warning: This simp argument is unused:\n  hb\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.false_eq_true, ite_false, sub_self, mul_zero]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:37:17: warning: This simp argument is unused:\n  hb\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [Bool.true_eq, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:37:21: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hb, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:104:32: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [hd, decide_true, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:137:43: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [badTail, hb, decide_true, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\nC:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.lean:167:46: warning: This simp argument is unused:\n  Bool.true_eq\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [lowMarginal, h, decide_true, ite_true]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+      "output_sha256": "1c2b226e4c815feca266be119fe544b659b92e18403ef1608368e139fcd2f638",
+      "query_order": [],
+      "axiom_profiles": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptionsChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.lean",
+      "source_sha256": "f9037941388cb479ee62e03b38c584a6dd9887a57ffc6f31571e5681e7560e11",
+      "candidate_match": true,
+      "command": [
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 3887091712,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\AdviceExceptionsChecks-1789266399186030200.log",
+      "log_sha256": "74b4c38bc2ebd4dca900c501285126dec20d5885a907c89e488f8b1c51490048",
+      "raw_log_utf8": "'PvNP.RealizableHardness.AdviceExceptions.tv_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.tv_self' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.event_sub_le_tv' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.mass_union_le' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.priorTail_cast' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.conditional_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.conditional_zero_marginal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.tailMass_zero_marginal' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.tailMass_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.posterior_tail_expectation' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.null_marginal_not_badTail' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.badTail_marginal_mass_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.ambient_event_transfer' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.lowMarginal_ambient_mass_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.badTail_ambient_mass_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.exceptional_ambient_mass_le' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.good_advice_properties' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.exceptional_ambient_mass_le_real' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.AdviceExceptions.exceptional_chernoff_bound' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+      "output_sha256": "b2295429e0593e9db71d8a6eb62aa00c1fd86769c832b6799752fa05c16b5015",
+      "query_order": [
+        "tv_nonneg",
+        "tv_self",
+        "event_sub_le_tv",
+        "mass_union_le",
+        "priorTail_cast",
+        "conditional_nonneg",
+        "conditional_zero_marginal",
+        "tailMass_zero_marginal",
+        "tailMass_nonneg",
+        "posterior_tail_expectation",
+        "null_marginal_not_badTail",
+        "badTail_marginal_mass_le",
+        "ambient_event_transfer",
+        "lowMarginal_ambient_mass_le",
+        "badTail_ambient_mass_le",
+        "exceptional_ambient_mass_le",
+        "good_advice_properties",
+        "exceptional_ambient_mass_le_real",
+        "exceptional_chernoff_bound"
+      ],
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.tv_nonneg",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.tv_self",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.event_sub_le_tv",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.mass_union_le",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.priorTail_cast",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.conditional_nonneg",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.conditional_zero_marginal",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.tailMass_zero_marginal",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.tailMass_nonneg",
+          "depends on axioms: [propext, Classical.choice, Quot.sound]",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.posterior_tail_expectation",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.null_marginal_not_badTail",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.badTail_marginal_mass_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.ambient_event_transfer",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.lowMarginal_ambient_mass_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.badTail_ambient_mass_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.exceptional_ambient_mass_le",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.good_advice_properties",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.exceptional_ambient_mass_le_real",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.AdviceExceptions.exceptional_chernoff_bound",
+          "depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ]
+      ],
+      "examples": 10
+    }
+  ],
+  "runner_source": "import pathlib,json,subprocess,hashlib,os,time,shutil,re,ctypes\nrepo=pathlib.Path('C:/Users/Dan/Desktop/Projects/formal-pvnp');pkg=repo/'certifications/realizable-hardness';ev=repo/'research/p-equals-np'\nout=pkg/'.lake/build/tail-exception-independent-review-20260912';out.mkdir(exist_ok=False)\nhash=lambda b:hashlib.sha256(b).hexdigest()\nreceipts=[json.loads((ev/f'2026-09-12-realizable-hardness-{n}-proof-verification.json').read_text(encoding='utf-8')) for n in ['companion','geometry','density']]\nd=receipts[-1];copies=[]\nfor e in [e for r in receipts for e in r['exports'] if e['module']!='PvNP']:\n rel=pathlib.Path(*e['module'].split('.')).with_suffix('.olean');src=pkg/'.lake/build/density-independent-review-20260912/lib/lean'/rel\n assert hash(src.read_bytes())==e['output_sha256'];dst=out/'lib/lean'/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,dst);assert hash(dst.read_bytes())==e['output_sha256'];copies.append({'module':e['module'],'source':str(src),'output':str(dst),'sha256':e['output_sha256']})\nassert len(copies)==43\nenv=os.environ.copy();parts=d['environment']['LEAN_PATH'].split(';');parts=[p for p in parts if '/.lake/packages/' in p.replace('\\\\','/') or '/.elan/toolchains/' in p.replace('\\\\','/')];env['LEAN_PATH']=';'.join([str(out/'lib/lean')]+parts);env['LEAN_NUM_THREADS']='1';env['PYTHONUTF8']='1';env['PYTHONIOENCODING']='utf-8'\nversion=subprocess.check_output(['lean','--version'],cwd=pkg,env=env,text=True).strip();assert version==d['environment']['toolchain'];assert hash((pkg/'lake-manifest.json').read_bytes())==d['manifest_sha256']\nmanifest=json.loads((pkg/'lake-manifest.json').read_text());heads=[]\nfor p in manifest['packages']:\n head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=pkg/'.lake/packages'/p['name'],text=True).strip();assert head==p['rev'];heads.append({'name':p['name'],'revision':head})\nclass Memory(ctypes.Structure):\n _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(n,ctypes.c_ulonglong) for n in ['totalPhys','availPhys','totalPage','availPage','totalVirtual','availVirtual','availExtended']]\ndef available():\n m=Memory();m.length=ctypes.sizeof(m);assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m));return m.availPhys\ncandidate='5401443679c5f35178e4dcbdca170d9523e13360'\nr={'candidate_commit':candidate,'environment':{'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','toolchain':version,'PYTHONUTF8':'1','PYTHONIOENCODING':'utf-8'},'accepted_dependency_copies':copies,'manifest_sha256':d['manifest_sha256'],'dependency_pins':heads,'exports':[],'runner_source':pathlib.Path(__file__).read_text(encoding='utf-8')}\nfor name in ['DropCountTail','DropCountTailChecks','AdviceExceptions','AdviceExceptionsChecks']:\n source=pkg/'lean/PvNP/RealizableHardness'/f'{name}.lean';raw=source.read_bytes();frozen=subprocess.check_output(['git','show',candidate+':'+source.relative_to(repo).as_posix()],cwd=repo);assert raw==frozen\n assert not re.search(r'\\b(sorry|admit|native_decide|axiom)\\b',re.sub(r'/\\-.*?\\-/|--[^\\n]*','',raw.decode('utf-8'),flags=re.S))\n dest=out/'lib/lean/PvNP/RealizableHardness'/f'{name}.olean';log=out/f'{name}-{time.time_ns()}.log';cmd=['lean','-o',str(dest),str(source)];mem=available();assert mem>=768*1024**2;assert shutil.disk_usage('C:/').free>=768*1024**2\n print('START',name,'memory',mem,flush=True)\n with log.open('wb') as f:\n  p=subprocess.Popen(cmd,cwd=pkg,env=env,stdout=f,stderr=subprocess.STDOUT);print('PID',p.pid,flush=True)\n  while True:\n   try:code=p.wait(timeout=10);break\n   except subprocess.TimeoutExpired:\n    if available()<640*1024**2 or shutil.disk_usage('C:/').free<640*1024**2:subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F']);code=p.wait();break\n meta={'command':cmd,'exit_code':code,'available_memory_before':mem};(out/(log.stem+'.exit.json')).write_text(json.dumps(meta),encoding='utf-8');data=log.read_bytes();s=data.decode('utf-8');profiles=re.findall(r\"'([^']+)' (depends on axioms: \\[([^\\]]*)\\]|does not depend on any axioms)\",s);queries=re.findall(r'^#print axioms (\\S+)',raw.decode('utf-8'),re.M)\n row={'module':'PvNP.RealizableHardness.'+name,'source':str(source),'source_sha256':hash(raw),'candidate_match':True,**meta,'log':str(log),'log_sha256':hash(data),'raw_log_utf8':s,'output':str(dest),'output_sha256':hash(dest.read_bytes()) if dest.exists() else None,'query_order':queries,'axiom_profiles':profiles,'examples':len(re.findall(r'^example\\b',raw.decode('utf-8'),re.M))};r['exports'].append(row);(out/'results.json').write_text(json.dumps(r,indent=2),encoding='utf-8');print('END',name,code,'profiles',len(profiles),flush=True)\n assert code==0 and len(profiles)==len(queries) and 'sorryAx' not in s\n for q,pf in zip(queries,profiles):assert pf[0].split('.')[-1]==q and set(x.strip() for x in pf[2].split(',') if x.strip())<={'propext','Classical.choice','Quot.sound'}\nassert sum(len(e['axiom_profiles']) for e in r['exports'])==36;assert sum(e['examples'] for e in r['exports'])==20\nprint('ALL4 EXIT0; 36 profiles; 20 examples',flush=True)\n",
+  "harness_failures": [
+    {
+      "session_id": 72502,
+      "exit_code": 1,
+      "reason": "Post-export validator compared qualified query with basename. Both completed Lean exports exited zero; no proof failure or source repair."
+    }
+  ],
+  "resume_runner_source": "import pathlib,json,subprocess,hashlib,os,time,shutil,re,ctypes\nrepo=pathlib.Path('C:/Users/Dan/Desktop/Projects/formal-pvnp');pkg=repo/'certifications/realizable-hardness';ev=repo/'research/p-equals-np'\nout=pkg/'.lake/build/tail-exception-independent-review-20260912';assert out.is_dir()\nhash=lambda b:hashlib.sha256(b).hexdigest()\nreceipts=[json.loads((ev/f'2026-09-12-realizable-hardness-{n}-proof-verification.json').read_text(encoding='utf-8')) for n in ['companion','geometry','density']]\nd=receipts[-1];copies=[]\nfor e in [e for r in receipts for e in r['exports'] if e['module']!='PvNP']:\n rel=pathlib.Path(*e['module'].split('.')).with_suffix('.olean');src=pkg/'.lake/build/density-independent-review-20260912/lib/lean'/rel\n assert hash(src.read_bytes())==e['output_sha256'];dst=out/'lib/lean'/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(src,dst);assert hash(dst.read_bytes())==e['output_sha256'];copies.append({'module':e['module'],'source':str(src),'output':str(dst),'sha256':e['output_sha256']})\nassert len(copies)==43\nenv=os.environ.copy();parts=d['environment']['LEAN_PATH'].split(';');parts=[p for p in parts if '/.lake/packages/' in p.replace('\\\\','/') or '/.elan/toolchains/' in p.replace('\\\\','/')];env['LEAN_PATH']=';'.join([str(out/'lib/lean')]+parts);env['LEAN_NUM_THREADS']='1';env['PYTHONUTF8']='1';env['PYTHONIOENCODING']='utf-8'\nversion=subprocess.check_output(['lean','--version'],cwd=pkg,env=env,text=True).strip();assert version==d['environment']['toolchain'];assert hash((pkg/'lake-manifest.json').read_bytes())==d['manifest_sha256']\nmanifest=json.loads((pkg/'lake-manifest.json').read_text());heads=[]\nfor p in manifest['packages']:\n head=subprocess.check_output(['git','rev-parse','HEAD'],cwd=pkg/'.lake/packages'/p['name'],text=True).strip();assert head==p['rev'];heads.append({'name':p['name'],'revision':head})\nclass Memory(ctypes.Structure):\n _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(n,ctypes.c_ulonglong) for n in ['totalPhys','availPhys','totalPage','availPage','totalVirtual','availVirtual','availExtended']]\ndef available():\n m=Memory();m.length=ctypes.sizeof(m);assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m));return m.availPhys\ncandidate='5401443679c5f35178e4dcbdca170d9523e13360'\nr={'candidate_commit':candidate,'environment':{'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','toolchain':version,'PYTHONUTF8':'1','PYTHONIOENCODING':'utf-8'},'accepted_dependency_copies':copies,'manifest_sha256':d['manifest_sha256'],'dependency_pins':heads,'exports':[],'runner_source':pathlib.Path(__file__).read_text(encoding='utf-8')}\nr=json.loads((out/'results.json').read_text(encoding='utf-8'))\nr['harness_failures']=[{'session_id':72502,'exit_code':1,'reason':'Post-export validator compared qualified query with basename. Both completed Lean exports exited zero; no proof failure or source repair.'}]\nr['resume_runner_source']=pathlib.Path(__file__).read_text(encoding='utf-8')\nfor e in r['exports']:\n assert e['exit_code']==0 and hash(pathlib.Path(e['source']).read_bytes())==e['source_sha256'] and hash(pathlib.Path(e['output']).read_bytes())==e['output_sha256'] and hash(pathlib.Path(e['log']).read_bytes())==e['log_sha256']\n assert len(e['query_order'])==len(e['axiom_profiles'])\n for q,pf in zip(e['query_order'],e['axiom_profiles']):assert pf[0].endswith('.'+q) and set(x.strip() for x in pf[2].split(',') if x.strip())<={'propext','Classical.choice','Quot.sound'}\nprint('Prior two successful exports revalidated without recompiling',flush=True)\nfor name in ['AdviceExceptions','AdviceExceptionsChecks']:\n source=pkg/'lean/PvNP/RealizableHardness'/f'{name}.lean';raw=source.read_bytes();frozen=subprocess.check_output(['git','show',candidate+':'+source.relative_to(repo).as_posix()],cwd=repo);assert raw==frozen\n assert not re.search(r'\\b(sorry|admit|native_decide|axiom)\\b',re.sub(r'/\\-.*?\\-/|--[^\\n]*','',raw.decode('utf-8'),flags=re.S))\n dest=out/'lib/lean/PvNP/RealizableHardness'/f'{name}.olean';log=out/f'{name}-{time.time_ns()}.log';cmd=['lean','-o',str(dest),str(source)];mem=available();assert mem>=768*1024**2;assert shutil.disk_usage('C:/').free>=768*1024**2\n print('START',name,'memory',mem,flush=True)\n with log.open('wb') as f:\n  p=subprocess.Popen(cmd,cwd=pkg,env=env,stdout=f,stderr=subprocess.STDOUT);print('PID',p.pid,flush=True)\n  while True:\n   try:code=p.wait(timeout=10);break\n   except subprocess.TimeoutExpired:\n    if available()<640*1024**2 or shutil.disk_usage('C:/').free<640*1024**2:subprocess.run(['taskkill','/PID',str(p.pid),'/T','/F']);code=p.wait();break\n meta={'command':cmd,'exit_code':code,'available_memory_before':mem};(out/(log.stem+'.exit.json')).write_text(json.dumps(meta),encoding='utf-8');data=log.read_bytes();s=data.decode('utf-8');profiles=re.findall(r\"'([^']+)' (depends on axioms: \\[([^\\]]*)\\]|does not depend on any axioms)\",s);queries=re.findall(r'^#print axioms (\\S+)',raw.decode('utf-8'),re.M)\n row={'module':'PvNP.RealizableHardness.'+name,'source':str(source),'source_sha256':hash(raw),'candidate_match':True,**meta,'log':str(log),'log_sha256':hash(data),'raw_log_utf8':s,'output':str(dest),'output_sha256':hash(dest.read_bytes()) if dest.exists() else None,'query_order':queries,'axiom_profiles':profiles,'examples':len(re.findall(r'^example\\b',raw.decode('utf-8'),re.M))};r['exports'].append(row);(out/'results.json').write_text(json.dumps(r,indent=2),encoding='utf-8');print('END',name,code,'profiles',len(profiles),flush=True)\n assert code==0 and len(profiles)==len(queries) and 'sorryAx' not in s\n for q,pf in zip(queries,profiles):assert pf[0].endswith('.'+q) and set(x.strip() for x in pf[2].split(',') if x.strip())<={'propext','Classical.choice','Quot.sound'}\nassert sum(len(e['axiom_profiles']) for e in r['exports'])==36;assert sum(e['examples'] for e in r['exports'])==20\nprint('ALL4 EXIT0; 36 profiles; 20 examples',flush=True)\n",
+  "schema": "quantyra-independent-tail-exception-review-v1",
+  "session_ids": [
+    72502,
+    21717
+  ],
+  "final_session_exit_code": 0,
+  "total_axiom_profiles": 36,
+  "total_examples": 20,
+  "proof_verdict": "GO-WITH-NOTES",
+  "scope": "Four bounded actual-product tail and two-event exceptional-advice modules; full hardness and learning unproved.",
+  "source_token_audit": "Four frozen sources inspected; no sorry/admit/native_decide/new axiom declaration after stripping comments.",
+  "notes": [
+    "One post-export Python qualified-name comparator failure; no Lean failure, no source changes, no repeated successful exports.",
+    "Actual physical memory and disk-space guards both enforced by new runner; previous density runner only checked disk space.",
+    "TV proximity, manuscript parameter specialization, KMS/zoom event, full encoded hardness and exact learning remain open."
+  ]
+}
