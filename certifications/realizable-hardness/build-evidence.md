@@ -362,3 +362,131 @@ SHA256 `a74ffb42a46be7a1b3ecb7715c84fbb41def483e10b6e66e44c8e55f8dde3585`.
 
 EXIT 0
 ```
+
+## Third author checkpoint: nine of 33 modules
+
+ComputableSampleCount main returned actual child exit0 in9712 without source
+changes. Its original Checks failed in the same batch on four obsolete Nat
+clog iff references; two sorryAx-containing example profiles are rejected,
+even though executable evaluation already printed512/2048/1. Four uniquely
+anchored replacements use the pinned new iff names and reversed .mpr direction.
+Checks59199 then returned actual exit0, with17 profiles using standard axioms
+only and all three evaluation results preserved. Independent port review is
+pending. Remaining24modules and aggregate are outside this checkpoint.
+
+Checks source SHA256 `10c47487135dc1538f95cec00e82d54bd4a64276dedfe08d29214f99c5636310`.
+
+### Exact saved output: ComputableSampleCount-1789259510785678500.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```
+
+### Exact saved output: ComputableSampleCountChecks-1789259510785678500.log
+
+SHA256 `526dfd68aa23cad37d24bd9ee80d2a7fbbafe08209ae78c53ece6185c2539ddf`.
+
+```text
+lean\PvNP\RealizableHardness\ComputableSampleCountChecks.lean:6:5: error(lean.unknownIdentifier): Unknown constant `Nat.le_pow_iff_clog_le`
+lean\PvNP\RealizableHardness\ComputableSampleCountChecks.lean:8:5: error(lean.unknownIdentifier): Unknown constant `Nat.pow_lt_iff_lt_clog`
+lean\PvNP\RealizableHardness\ComputableSampleCountChecks.lean:17:5: error(lean.unknownIdentifier): Unknown constant `Nat.le_pow_iff_clog_le`
+lean\PvNP\RealizableHardness\ComputableSampleCountChecks.lean:19:5: error(lean.unknownIdentifier): Unknown constant `Nat.pow_lt_iff_lt_clog`
+512
+2048
+1
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_small' depends on axioms: [propext, sorryAx, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_half' depends on axioms: [propext, sorryAx, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_power_two' depends on axioms: [propext]
+'PvNP.RealizableHardness.ComputableSampleCount.target_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.target_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_target' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.threshold_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.inverse_bound_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_upper_of_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learning_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.base_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_half_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_small_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 1
+```
+
+### Exact saved output: ComputableSampleCountChecks-repair-1789259809999135800.log
+
+SHA256 `c6bbaa2d7676c26ad1f3bfb6af50ea6adcdebae7f4ede12c9b879d6643915131`.
+
+```text
+512
+2048
+1
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_small' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_half' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_count_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_power_two' depends on axioms: [propext]
+'PvNP.RealizableHardness.ComputableSampleCount.target_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.target_gt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_target' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learningThreshold_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.threshold_le_count' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.inverse_bound_pos' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.count_upper_of_inverse' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.learning_budget' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.base_budget' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_half_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ComputableSampleCount.concrete_small_error' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

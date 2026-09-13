@@ -1,9 +1,11 @@
 # Realizable hardness companion package
 
 **PARTIALLY COMPILED. Independent companion port reviews remain pending.**
-Seven of 33 modules passed author exports: BernoulliMGF and its Checks,
-ExceptionRepair, Formula and Checks, SamplingThreshold and its Checks.
-The Checks groups printed 13, 13 and 29 standard-only axiom profiles respectively.
+Nine of 33 modules passed author exports: BernoulliMGF and its Checks,
+ExceptionRepair, Formula and Checks, SamplingThreshold and its Checks,
+ComputableSampleCount and its Checks. The Checks groups printed 13, 13, 29
+and 17 standard-only axiom profiles respectively; count evaluation printed
+512, 2048 and 1.
 Other modules remain pending unless explicitly
 recorded in `build-evidence.md`; successful source ports do not certify the whole graph.
 The full randomized NP-hardness theorem and learning corollary are absent.
