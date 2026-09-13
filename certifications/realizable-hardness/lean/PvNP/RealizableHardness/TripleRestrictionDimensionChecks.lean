@@ -32,7 +32,8 @@ def mixedDraw : Draw 2 := fun j => if j = 0 then none else some 1
 example : dropCount mixedDraw = 1 := by
   simp [dropCount_sum, mixedDraw, Fin.sum_univ_succ]
 example : Module.finrank (ZMod 2) (retained mixedDraw) = 4 := by
-  rw [retained_finrank_eq]
-  norm_num [dropCount_sum, mixedDraw, Fin.sum_univ_succ]
+  have hd : dropCount mixedDraw = 1 := by
+    simp [dropCount_sum, mixedDraw, Fin.sum_univ_succ]
+  rw [retained_finrank_eq, hd]
 
 end PvNP.RealizableHardness.TripleRestrictionDimension

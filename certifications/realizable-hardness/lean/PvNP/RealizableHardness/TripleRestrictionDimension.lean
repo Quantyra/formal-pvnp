@@ -60,7 +60,7 @@ lemma keptCoord_card_sum (d : Draw J) :
 
 lemma dropCount_sum (d : Draw J) :
     dropCount d = ∑ j : Fin J, if d j ≠ none then 1 else 0 := by
-  simp [dropCount]
+  simp only [dropCount, Finset.card_eq_sum_ones, Finset.sum_filter]
 
 /-- Exact additive identity avoids any truncated-subtraction ambiguity. -/
 lemma retained_finrank_add_twice_dropCount (d : Draw J) :
@@ -68,8 +68,8 @@ lemma retained_finrank_add_twice_dropCount (d : Draw J) :
   rw [retained_finrank_eq_card, keptCoord_card_sum, dropCount_sum, Finset.mul_sum,
     ← Finset.sum_add_distrib]
   calc
-    (∑ j : Fin J, (if d j = none then 3 else 1) +
-      2 * (if d j ≠ none then 1 else 0)) = ∑ _j : Fin J, 3 := by
+    (∑ j : Fin J, ((if d j = none then 3 else 1) +
+      2 * (if d j ≠ none then 1 else 0))) = ∑ _j : Fin J, 3 := by
         apply Finset.sum_congr rfl
         intro j _
         by_cases h : d j = none <;> simp [h]

@@ -320,3 +320,191 @@ Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
 
 EXIT 0
 ```
+
+## Six-module author candidate for independent review
+
+All six geometry modules now have actual author EXIT0 exports. Dimension main67493 passed after the explicit filtered-cardinality sum and summand-parenthesization repairs, preserving finrank(retained d)+2*dropCount d=3*J exactly. Its Checks67493 failed the final concrete dimension-four example. Naming the already-proved mixed drop count solved that goal; Checks93196 then failed only on redundant norm_num. Removing that trailing tactic produced actual Checks46724 EXIT0. The15 selected profiles include axiom-free keptEquiv and14 standard-three profiles. All boundary examples passed. Incidence17 plus counting21 plus dimension15 give53 selected profiles, all standard-axiom subsets. This is author verification, not independent acceptance or full geometry completion.
+
+The six sources are frozen for fresh top-level proof-adversarial, complexity and non-claims reviews. Their leading status comments are historical source-port notices; this checkpoint and separate map record current results. Frozen33 baseline proof/map/aggregate, root4.13 sources, and RandomizedReduction remain untouched. No aggregate expansion, Gaussian ratio/tail/likelihood bridge, runtime theorem or full hardness/learning certification is asserted.
+
+### TripleRestrictionDimension-1789263185678002300.log
+
+SHA256 `0c288b420e1277dd5b704bc51bf4077d31e9130b525f754f83c82f3bffa660e9`.
+
+```text
+lean\PvNP\RealizableHardness\TripleRestrictionDimension.lean:62:62: error: unsolved goals
+J : ℕ
+d : Draw J
+⊢ {x | ¬d x = none}.card = ∑ x, if d x = none then 0 else 1
+lean\PvNP\RealizableHardness\TripleRestrictionDimension.lean:72:16: error(lean.unknownIdentifier): Unknown identifier `j`
+
+EXIT 1
+```
+
+### TripleRestrictionDimension-1789263646367666100.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```
+
+### TripleRestrictionDimensionChecks-1789263646367666100.log
+
+SHA256 `543362eb2b96898fe36e02758570ff77a5d6512378a23ed9305f8c749e0f58d1`.
+
+```text
+'PvNP.RealizableHardness.TripleRestrictionDimension.retainedEquiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptEquiv' does not depend on any axioms
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptBlock_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptCoord_card_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_add_twice_dropCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.twice_dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lean\PvNP\RealizableHardness\TripleRestrictionDimensionChecks.lean:34:62: error: unsolved goals
+⊢ 6 - 2 * {x | ¬x = 0 ∧ ¬some 1 = none}.card = 4
+
+EXIT 1
+```
+
+### TripleRestrictionDimensionChecks-1789263836393551700.log
+
+SHA256 `efb5596d56f8b0951b9a9c470328dec253b8d1672c1994fe0a0ff752a84b38b0`.
+
+```text
+'PvNP.RealizableHardness.TripleRestrictionDimension.retainedEquiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptEquiv' does not depend on any axioms
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptBlock_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptCoord_card_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_add_twice_dropCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.twice_dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+lean\PvNP\RealizableHardness\TripleRestrictionDimensionChecks.lean:38:2: error: No goals to be solved
+
+EXIT 1
+```
+
+### TripleRestrictionDimensionChecks-1789263872080620600.log
+
+SHA256 `9a2f7909287fe3cb583ab2f89537aec9571c7841536169803a9ae02929922452`.
+
+```text
+'PvNP.RealizableHardness.TripleRestrictionDimension.retainedEquiv' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptEquiv' does not depend on any axioms
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptBlock_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.keptCoord_card_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_add_twice_dropCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.twice_dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.dropCount_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.TripleRestrictionDimension.retained_finrank_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```

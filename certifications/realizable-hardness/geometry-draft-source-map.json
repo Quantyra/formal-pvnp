@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "status": "PARTIALLY_COMPILED: incidence and counting main/Checks author EXIT0; dimension pair pending; independent reviews pending",
+  "status": "ALL6_AUTHOR_COMPILED; fresh independent geometry three-lens reviews pending",
   "source_count": 6,
   "companion_base_commit": "6d7718919d681f57e28559bd0ee584c450cb2446",
   "lean_toolchain": "leanprover/lean4:v4.34.0-rc2",
@@ -163,8 +163,8 @@
       "source_git_lf_sha256": "36ef8364e9111d01b0b638f57c24427e388c8fa547f8492bcccc603975b78bf3",
       "source_status": "Root source-only UNCOMPILED draft; no acceptance",
       "mirror_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimension.lean",
-      "mirror_sha256": "4ba836732bb976c6a72043d26bca6481bc2f6dccf3cae5f51a1fe05b959f657c",
-      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "mirror_sha256": "18dcb7a132df2dc5b8e84dbc1cdbfad230394fc4d7602e29ea7016bd57945925",
+      "companion_verification": "Main67493 and Checks46724 actual EXIT0;15 selected profiles (keptEquiv no axioms,14 standard3); exact boundary examples passed; independent reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -180,6 +180,18 @@
           "before": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "after": "/- UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "reason": "Actual first geometry compiler rejected imports after module-doc comment; use ordinary leading status comment. No theorem or import change."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  simp [dropCount]\n\n/-- Exact additive",
+          "after": "  simp only [dropCount, Finset.card_eq_sum_ones, Finset.sum_filter]\n\n/-- Exact additive",
+          "reason": "Actual19811 dimension diagnostics: explicitly express filtered cardinality as indicator sum and parenthesize full summand across newline; exact finrank+2D=3J statement unchanged."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "(\u2211 j : Fin J, (if d j = none then 3 else 1) +\n      2 * (if d j \u2260 none then 1 else 0))",
+          "after": "(\u2211 j : Fin J, ((if d j = none then 3 else 1) +\n      2 * (if d j \u2260 none then 1 else 0)))",
+          "reason": "Actual19811 dimension diagnostics: explicitly express filtered cardinality as indicator sum and parenthesize full summand across newline; exact finrank+2D=3J statement unchanged."
         }
       ]
     },
@@ -191,8 +203,8 @@
       "source_git_lf_sha256": "ff96e25d9b378c9e17a4b4a9c0bda8875ec349d72a06e0f32fa904b6f9233c37",
       "source_status": "Root source-only UNCOMPILED draft; no acceptance",
       "mirror_path": "lean/PvNP/RealizableHardness/TripleRestrictionDimensionChecks.lean",
-      "mirror_sha256": "753447d903f637614fd1b298f35b3c9da148567e4704e9882a8a452f55248ea3",
-      "companion_verification": "UNCOMPILED; no axiom audit or independent review",
+      "mirror_sha256": "5344221c38378beab52aa17f477694609ed12ab4e66221016f1892b95d2808ff",
+      "companion_verification": "Main67493 and Checks46724 actual EXIT0;15 selected profiles (keptEquiv no axioms,14 standard3); exact boundary examples passed; independent reviews pending.",
       "transforms": [
         {
           "operation": "normalize_crlf_to_lf"
@@ -208,9 +220,21 @@
           "before": "/-! UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "after": "/- UNCOMPILED companion source port. No Lean4.34 verification or acceptance has run for this file. -/",
           "reason": "Actual first geometry compiler rejected imports after module-doc comment; use ordinary leading status comment. No theorem or import change."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  rw [retained_finrank_eq]\n  norm_num [dropCount_sum, mixedDraw, Fin.sum_univ_succ]",
+          "after": "  have hd : dropCount mixedDraw = 1 := by\n    simp [dropCount_sum, mixedDraw, Fin.sum_univ_succ]\n  rw [retained_finrank_eq, hd]\n  norm_num",
+          "reason": "Actual67493 Checks mixed-draw example: establish already-successful dropCount=1 fact explicitly before numeric subtraction; unchanged finrank=4 statement."
+        },
+        {
+          "operation": "replace_utf8_literal",
+          "before": "  rw [retained_finrank_eq, hd]\n  norm_num",
+          "after": "  rw [retained_finrank_eq, hd]",
+          "reason": "Actual93196 rewrite already closes concrete subtraction; remove redundant norm_num, statement unchanged."
         }
       ]
     }
   ],
-  "author_exported_module_count": 4
+  "author_exported_module_count": 6
 }
