@@ -12,7 +12,7 @@ set_option autoImplicit false
 noncomputable section
 
 /-- Data product brackets for already encoded subtrees. -/
-theorem dataPair_encode {A B : Type*} [DataEncode A] [DataEncode B] (a : A) (b : B) :
+theorem dataPair_encode {A B : Type} [DataEncode A] [DataEncode B] (a : A) (b : B) :
     dataPair (DataEncode.bitstringEncode a) (DataEncode.bitstringEncode b) =
       DataEncode.bitstringEncode (a,b) :=
   (bitstringEncode_prod_eq a b).symm
@@ -153,15 +153,17 @@ theorem originalRowsFn_correct {N m : Nat} (I : Instance N m) :
     originalRowsFn (wire I) =
       DataEncode.bitstringEncode (I.originalRows.map (codeRow I)) := by
   unfold originalRowsFn
-  rw [rowClock_correct]
-  change listEncFn rowRule (pair (List.replicate m true) (wire I)) =
+  have hc : rowClock (wire I) = List.replicate (originalCodes I).length true := by
+    rw [originalCodes_length, rowClock_correct]
+  rw [hc]
+  change listEncFn rowRule (pair (List.replicate (originalCodes I).length true) (wire I)) =
     DataEncode.bitstringEncode (originalCodes I)
-  rw [<- originalCodes_length I]
   apply materialize_eq (originalCodes I) (wire I)
   intro k hk
   have hk' : k < m := by simpa [originalCodes_length] using hk
   rw [originalCodes_get I (Fin.mk k hk')]
   exact rowRule_correct I (Fin.mk k hk')
+
 
 theorem originalRowsFn_output_polynomial :
     Exists (fun p : Polynomial Nat => forall z : List Bool,
