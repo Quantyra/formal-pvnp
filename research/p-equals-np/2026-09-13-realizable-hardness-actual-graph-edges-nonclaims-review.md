@@ -1,0 +1,19 @@
+# Actual graph edges: independent non-claims review
+
+2026-09-13. S3132/S3137 under S3126. Reviewer `/root/matrix_identity_independent_proof` is independent of the author and performs this separately requested top-level non-claims lens after its proof audit. **GO-WITH-NOTES for typed nonloop edge selection and its actual-cut identity only.** The formal three-lens protocol requires the other lenses before route-final acceptance.
+
+Scope: source freeze `f6977d1c87a814ebfb63437259423d3afef3f987`, main SHA256 `9149f49f5ad6eae2064e886b1c633165c9474e792852ba33c4d788e8a51f91f7`, Checks `902712a55c364e09d2f274174b643c3074fca015b2c2be2ead6da65aa37687e2`, author receipt `a81c17f44ae6df49d8c5a7fde001d6c50b643bc3e016e3cb3ae8523194754b8e`. Independent session 95016 passed both unchanged modules: 25 standard-only profiles, eight examples and three signatures. Proof review SHA256 `df08301980cfc0503f6c87bdd1183be6b675b1dab5dc52a9aadd8e5739ed37d1`; JSON `fbbbee10144dbeba480b72c2d226a485fb182f86a339e88f6ac99f489baa94e3`.
+
+Allowed claims: the actual fixed port-cycle graph has an ordered representative list selecting exactly one dart from each nonloop reversal orbit. The list order is inherited from the actual typed table. Selected terminals are distinct, parallel dart orbits retain separate identities, and twice the representative count is at most 3*n*D. For every Boolean coloring, crossing representatives are explicitly bijective with actual outgoing darts; their cardinality equals the accepted graph cut and therefore inherits its fixed positive expansion bound.
+
+Loops are excluded, including two-dart loops whose endpoint vertices agree. They contribute no crossing cut, so omission preserves this cut statement. The claim is not that all edges, including loops, receive representatives or that the original graph becomes a simple graph. Distinct parallel edge orbits are not merged merely because endpoints agree. Future equation generation must preserve this occurrence multiplicity; a set of endpoint pairs would lose required information.
+
+The total rank orders replacement vertices containing both the original vertex and port coordinate. The graph has n*D vertices and degree three in its dart representation. The representative-count bound is an inequality, not an exact half of all darts when loops exist. The n=0 list and set are empty. These are the precise typed combinatorial statements supported by the source.
+
+The module supplies no global equality-gadget allocation, five fresh internal variables per edge, simultaneous attaining assignments, cross-copy structural bounds, occurrence-cloud construction, original constraint placement, majority-decoding loss accounting or global YES/NO gap theorem. Its distinct-terminal fact enables a later embedding proof but is not that proof. The receipt describes future degree/gap targets as obligations rather than established conclusions, which is appropriate.
+
+The representative list and finite sets are typed constructions using the fixed chosen graph. No encoded representative filter or cloud constructor has been proved FP here. Previously accepted rotation/table FP does not automatically transfer to this new selection function without a same-function encoded bridge. This increment makes no numerical extraction or observed-evaluation claim for the fixed existential base.
+
+No source NP-hardness, complete Håstad/repetition theorem, final paper certification, learning corollary, P-versus-NP conclusion, novelty or publication-readiness claim is supported. No wording violation was found in the inspected bounded source/receipt/proof claims. Historical source-only comments are superseded by recorded builds; they do not expand the scope.
+
+No compiler, Git, source, package or public action was performed for this lens. Full-paper and final consolidated fresh-checkout verification remain separate work.
