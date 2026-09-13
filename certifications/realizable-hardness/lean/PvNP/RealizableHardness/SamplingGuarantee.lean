@@ -54,7 +54,8 @@ theorem seed_failure_bound (p : ℕ → ℚ) (S b N M : ℕ)
     (fun x (i : Fin S) => F x i.val) (fun x => originalMean p S (F x))
     (roundedLaw_nonneg p S b hp) (roundedLaw_sum p S b hn) M hM (eps : ℝ)
     (by exact_mod_cast heps.le) (fun x => roundedMean_error p S b eps hp heps hgrid (F x))
-  simpa only [Good, not_forall, not_lt, roundedLaw] using h
+  change probability (roundedLaw p S b) M (fun draws => ¬ Good p S N M F eps draws) ≤ _
+  simpa only [Good, not_forall, not_lt] using h
 
 theorem seed_success_bound (p : ℕ → ℚ) (S b N M : ℕ)
     (F : (Fin N → Bool) → ℕ → Bool) (eps : ℚ)

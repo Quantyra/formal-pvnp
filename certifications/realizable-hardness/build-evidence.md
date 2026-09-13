@@ -1380,3 +1380,102 @@ Note: This linter can be disabled with `set_option linter.unreachableTactic fals
 
 EXIT 0
 ```
+
+## Twenty-five-module author checkpoint
+
+SamplingGuarantee19744 failed on higher-order roundedLaw alignment. Attempt80803 explicitly dsimp at h failed with no progress. Retry7356 removes that ineffective tactic and explicitly changes the goal to the definitionally equal roundedLaw probability before proposition simplification. Main/Checks exited0; Checks printed18 standard-only profiles. All statements are unchanged. SamplingFormulaPromises is next and excluded from this count. Independent reviews and full hardness assembly remain pending.
+
+SamplingGuarantee source SHA256 `ed1303659b170bb560eb415623e8298344820aa4313b56b2578d0ea82aa76fe0`.
+
+SamplingGuaranteeChecks source SHA256 `08effac99e531296d8361e56e4cadbf19b183d3a41a6a5fb77b7e9503f053b97`.
+
+### SamplingGuarantee-1789260989162401300.log
+
+SHA256 `af66f8bfa617fda5829c73c2f9745e714de71860723e5ec58e0d051f0d9a4055`.
+
+```text
+lean\PvNP\RealizableHardness\SamplingGuarantee.lean:57:2: error: Type mismatch: After simplification, term
+  h
+ has type
+  @LE.le ℝ Real.instLE
+    (probability (roundedLaw p S b) M fun x =>
+      ∃ b, ↑eps / 4 ≤ |empirical (fun i => F b ↑i) M x - originalMean p S (F b)|)
+    (2 ^ N * (2 * Real.exp (-2 * ↑M * (↑eps / 8) ^ 2)))
+but is expected to have type
+  @LE.le ℝ Real.instLE
+    (probability (fun i => mass p (2 ^ b) ↑i) M fun draws =>
+      ∃ x, ↑eps / 4 ≤ |empirical (fun i => F x ↑i) M draws - originalMean p S (F x)|)
+    (2 ^ N * (2 * Real.exp (-2 * ↑M * (↑eps / 8) ^ 2)))
+
+EXIT 1
+```
+
+### SamplingGuarantee-1789261118052183300.log
+
+SHA256 `eb30d7583ffb62fc11fafee075212b8a72a36b21f4bbd17f2f9d0b18b5729896`.
+
+```text
+lean\PvNP\RealizableHardness\SamplingGuarantee.lean:57:2: error: `dsimp` made no progress
+
+EXIT 1
+```
+
+### SamplingGuarantee-1789261162878172000.log
+
+SHA256 `8e3c732ce1a8b24cb9b555ba883cf4bb55690f7de6694f4ad1fc0412508b73b2`.
+
+```text
+
+EXIT 0
+```
+
+### SamplingGuaranteeChecks-1789261162878172000.log
+
+SHA256 `4ee5a3590a203a39799fe7cb99df297630becd906a958e45a5370b1a9c13de80`.
+
+```text
+'PvNP.RealizableHardness.SamplingGuarantee.finiteMean_eq_eventMass' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.roundedLaw_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.roundedMean_error' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.seed_failure_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.seed_success_bound' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_threshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.good_probability_of_learningThreshold' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.precision_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.chosen_good_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_good_probability' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.atoms_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.atoms_normalized' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.original_mean_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.chosen_base_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.chosen_learning_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.explicit_count_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.SamplingGuarantee.zero_variable_example' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+EXIT 0
+```
