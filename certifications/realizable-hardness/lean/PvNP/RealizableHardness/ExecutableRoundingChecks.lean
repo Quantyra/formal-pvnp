@@ -36,20 +36,59 @@ namespace PvNP.RealizableHardness.ExecutableRoundingChecks
 def sample : InputParameters := ⟨1, 0, 1/4, 8⟩
 def clipping : InputParameters := ⟨1, 1, 1, 1⟩
 
-example : roundingScale [1] 1 sample = 1024 := by decide
-example : numerators [1] 1 sample = [32, 993] := by decide
-example : commonDenominator [1] 1 sample = 1025 := by decide
-example : outputWeights [1] 1 sample = [32/1025, 993/1025] := by decide
-example : outputBudget [1] 1 sample = 34/1025 := by decide
+private theorem clog792 : Nat.clog 2 792 = 10 := by
+  have hl : 9 < Nat.clog 2 792 := (Nat.lt_clog_iff_pow_lt (by norm_num)).mpr (by norm_num)
+  have hu : Nat.clog 2 792 ≤ 10 := (Nat.clog_le_iff_le_pow (by norm_num)).mpr (by norm_num)
+  omega
 
--- This raw input intentionally lies outside the pipeline validity domain.
--- The total arithmetic still clips to the computed denominator.
-example : clippedNumerator [1] 1 clipping = 32 := by decide
-example : outputBudget [1] 1 clipping = 1 := by decide
+private theorem clog24 : Nat.clog 2 24 = 5 := by
+  have hl : 4 < Nat.clog 2 24 := (Nat.lt_clog_iff_pow_lt (by norm_num)).mpr (by norm_num)
+  have hu : Nat.clog 2 24 ≤ 5 := (Nat.clog_le_iff_le_pow (by norm_num)).mpr (by norm_num)
+  omega
 
--- Empty raw lists are total, but are not advertised as valid CMMSA inputs.
-example : outputWeights [] 0 sample = [] := by decide
-example : outputBudget [] 0 sample = 0 := by decide
+private theorem sampleScale : roundingScale [1] 1 sample = 1024 := by
+  norm_num [roundingScale, WeightRounding.dyadicScale, repairBudget, repairLambda, sample, clog792]
+
+private theorem clippingScale : roundingScale [1] 1 clipping = 32 := by
+  norm_num [roundingScale, WeightRounding.dyadicScale, repairBudget, repairLambda, clipping, clog24]
+
+private theorem sampleNumerators : numerators [1] 1 sample = [32, 993] := by
+  have h0 : ⌈(1024 : Rat)/33⌉₊ = 32 := (Nat.ceil_eq_iff (by decide)).mpr (by norm_num)
+  have h1 : ⌈(32768 : Rat)/33⌉₊ = 993 := (Nat.ceil_eq_iff (by decide)).mpr (by norm_num)
+  unfold numerators
+  rw [sampleScale]
+  norm_num [List.ofFn_succ, WeightRounding.coordinate, flatRepairedAt, repairedAt,
+    repairLambda, sample, h0, h1, finSumFinEquiv, Fin.addCases]
+
+private theorem clippingNumerators : numerators [1] 1 clipping = [16, 16] := by
+  unfold numerators
+  rw [clippingScale]
+  norm_num [List.ofFn_succ, WeightRounding.coordinate, flatRepairedAt, repairedAt,
+    repairLambda, clipping, finSumFinEquiv, Fin.addCases]
+
+example : roundingScale [1] 1 sample = 1024 := sampleScale
+example : numerators [1] 1 sample = [32, 993] := sampleNumerators
+example : commonDenominator [1] 1 sample = 1025 := by
+  norm_num [commonDenominator, sampleNumerators]
+example : outputWeights [1] 1 sample = [32/1025, 993/1025] := by
+  norm_num [outputWeights, commonDenominator, sampleNumerators]
+example : outputBudget [1] 1 sample = 34/1025 := by
+  have hc : ⌈(1024 : Rat)/33⌉₊ = 32 := (Nat.ceil_eq_iff (by decide)).mpr (by norm_num)
+  simp only [outputBudget, clippedNumerator, commonDenominator, sampleNumerators, sampleScale]
+  norm_num [repairBudget, repairLambda, sample, hc]
+
+-- Invalid scalar data still exercises the exact clipping branch.
+example : clippedNumerator [1] 1 clipping = 32 := by
+  simp only [clippedNumerator, commonDenominator, clippingNumerators, clippingScale]
+  norm_num [repairBudget, repairLambda, clipping]
+example : outputBudget [1] 1 clipping = 1 := by
+  simp only [outputBudget, clippedNumerator, commonDenominator, clippingNumerators, clippingScale]
+  norm_num [repairBudget, repairLambda, clipping]
+
+-- Empty raw lists remain total without asserting input validity.
+example : outputWeights [] 0 sample = [] := by simp [outputWeights, numerators]
+example : outputBudget [] 0 sample = 0 := by
+  simp [outputBudget, clippedNumerator, commonDenominator, numerators]
 
 example (ws : List Rat) (M : Nat) (q : InputParameters) (i : Fin M) :
     flatRepairedAt ws M q (finSumFinEquiv (Sum.inr i)) =

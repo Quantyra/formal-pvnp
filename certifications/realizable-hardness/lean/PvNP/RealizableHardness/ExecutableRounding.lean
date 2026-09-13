@@ -47,7 +47,7 @@ def clippedNumerator (ws : List Rat) (M : Nat) (q : InputParameters) : Nat :=
     (⌈(roundingScale ws M q : Rat) * repairBudget q⌉₊ + (ws.length + M))
 
 def outputWeights (ws : List Rat) (M : Nat) (q : InputParameters) : List Rat :=
-  (numerators ws M q).map (fun n => (n : Rat) / commonDenominator ws M q)
+  (numerators ws M q).map (fun (n : Nat) => (n : Rat) / commonDenominator ws M q)
 
 def outputBudget (ws : List Rat) (M : Nat) (q : InputParameters) : Rat :=
   (clippedNumerator ws M q : Rat) / commonDenominator ws M q
