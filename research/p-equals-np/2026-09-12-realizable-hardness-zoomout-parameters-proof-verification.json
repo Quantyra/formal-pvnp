@@ -1,0 +1,554 @@
+{
+  "schema": "independent-proof-v1",
+  "candidate_commit": "881c5b882556534b7b34468f8b34c7db9358a04b",
+  "environment": {
+    "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\cslib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Cli\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "LEAN_NUM_THREADS": "1",
+    "toolchain": "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)"
+  },
+  "manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "dependency_pins": [
+    {
+      "name": "cslib",
+      "revision": "d9be64196bf145edd019f1ccfeaee0c11166ba6b"
+    },
+    {
+      "name": "mathlib",
+      "revision": "e06eff5f95374108acfaf19f1ff7473aa7771df2"
+    },
+    {
+      "name": "complexitylib",
+      "revision": "6c248df7859f2f245e731c1e07057bf69d165fe2"
+    },
+    {
+      "name": "plausible",
+      "revision": "d9598f07b1bc701f1e3aae163d2681c1fd978793"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "ba67e212be1197b84c1f1f6299488a10a3002713"
+    },
+    {
+      "name": "importGraph",
+      "revision": "d8823026ac7ef130c253089d95685f9877b95323"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f"
+    },
+    {
+      "name": "aesop",
+      "revision": "18889deb9e83ea7420ef51c160d6f88552e744e3"
+    },
+    {
+      "name": "Qq",
+      "revision": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3"
+    },
+    {
+      "name": "batteries",
+      "revision": "7e23602c91bc04586b2b06de2708a041853e4681"
+    },
+    {
+      "name": "Cli",
+      "revision": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+    }
+  ],
+  "accepted_dependency_copies": [
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGF",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGF.olean",
+      "sha256": "2e62c9539a2e1f0b4f43f61b67adc929a036828216b64c1f96153aae44d4ae7a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.BernoulliMGFChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\BernoulliMGFChecks.olean",
+      "sha256": "ce5c74ada383b2bcd58865fbe407bda4009b0e1df4fe27faa7d1daf0524e2760"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ExceptionRepair",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ExceptionRepair.olean",
+      "sha256": "7723be10f459a069a8f36efe8ca806f746bb13f3234c5ff0a80416fce02181f9"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Formula",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Formula.olean",
+      "sha256": "2bb25e4b503b9a13921fb5b9702b7bd0032197d9d691ea9da8bd343aaff3ea41"
+    },
+    {
+      "module": "PvNP.RealizableHardness.Checks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\Checks.olean",
+      "sha256": "d1678afee60528ef8f8ca853635e14d6ce3cef32b4e0dadf061adb7f0e62b6ca"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThreshold",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThreshold.olean",
+      "sha256": "b93b247367fbf03e15ab19758c42d8f0a3d74ac310592266ad84ad5b79c9f4eb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCount",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCount.olean",
+      "sha256": "e90d69358c0577f2963128a31fe484836598e93529521fe3745aed2bbd801ec8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ComputableSampleCountChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ComputableSampleCountChecks.olean",
+      "sha256": "4af2b61dd8037498fa244b67372f31005f27361ab1188fb5a59a45c21fef5573"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRounding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRounding.olean",
+      "sha256": "04a110933024c13c7c60f26f7f62d9404e612691bc091f68a02cc415c3d9b513"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSampling",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSampling.olean",
+      "sha256": "8e11402f47896fa8701abd78fdfd7b34d1904366e2f10a291cdbaec818ab3bc5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentration",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentration.olean",
+      "sha256": "226913e4e35111b30eaac62f1bf2529586699d152cf66f7d1093cb22194a9de2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteConcentrationChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteConcentrationChecks.olean",
+      "sha256": "9007bdc721473a1e8c924165669b553b21b7033a8afed3ed214d5be5b4412139"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipeline",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipeline.olean",
+      "sha256": "9cf10ab0b8c19831237265dd2a6bb091e81a0af81f6a7a0f9c3bc92d4ee2beb0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteRepairRoundingPipelineChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteRepairRoundingPipelineChecks.olean",
+      "sha256": "26f12774632065cb37d8d6d55523a0bf453d8c22efb52d8a85ebb91b496e4198"
+    },
+    {
+      "module": "PvNP.RealizableHardness.FiniteSamplingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\FiniteSamplingChecks.olean",
+      "sha256": "bfb1a563e85a17376d799fef8aa497f17975e8687bffae2611a9c115ba645dbe"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSampler",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSampler.olean",
+      "sha256": "57bb39e96271fd35a76ac0de7f4667efdd1e4083ca0004777cce0de0c58a9bbf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.InverseCDFSamplerChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\InverseCDFSamplerChecks.olean",
+      "sha256": "d9f6e2401786d5dcf940f6d7db982ba50d7b13282d2983cabb5d1b9487c120b0"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLaw",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLaw.olean",
+      "sha256": "5b1fa9c7ebfaf0a40fb6aac2f69a92fb056c3abdf05b010d22e00abb83c5456c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.JointSamplingLawChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\JointSamplingLawChecks.olean",
+      "sha256": "b606d7d702d9ad1c87704039c979449d8be80be27c91d582362002ccff8771e8"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweighting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweighting.olean",
+      "sha256": "744015f91d67d8b701fcf9309137b49f72bd369e27d58172fe692119dff6e555"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorReweightingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorReweightingChecks.olean",
+      "sha256": "de9b4d55fd5001bfed4332ff93f39fe71c45a0181830088aec3989590a066d02"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuarantee",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuarantee.olean",
+      "sha256": "a71833f777f606145d033e556ba00414edb76418ba8869cd754bc58272607d42"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromises",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromises.olean",
+      "sha256": "4e2e895a46cb70d13c37f1a030cdf0e703c003b1b5c1a61f82c331b879818fa7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingFormulaPromisesChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingFormulaPromisesChecks.olean",
+      "sha256": "61d7faef060d73087454277f8fdecb30872b4322c64d9d76cb6670540e23d0bb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingGuaranteeChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingGuaranteeChecks.olean",
+      "sha256": "95f5ec7e2e40de8c0934f1c0cc75103ed46e848ce9fdaa60d70c3f1e47c7a142"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplingThresholdChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplingThresholdChecks.olean",
+      "sha256": "487d712a6f3052d88e28b40fefdfc265204e3e82f0fdac45e9545b787b73efd4"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncoding",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncoding.olean",
+      "sha256": "ee8f6ef265171f48615e2a87e285159062beec74a0ad0d4162b1c45f90407dcd"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SeedEncodingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SeedEncodingChecks.olean",
+      "sha256": "524b8bbfbdb41a2dc2df054730971fd2415f36110ea3b38fd647de996a9f437a"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRank",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRank.olean",
+      "sha256": "0fbad23000b59f2d6dd319a01c8fd6b972bd64592557602a7e2123902f089c92"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestriction",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestriction.olean",
+      "sha256": "be2018d7d01a19b86c1c36e305726c67d648a0d70dac6805f6b40296b3435826"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SubspaceRestrictionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SubspaceRestrictionChecks.olean",
+      "sha256": "24c8b6b9d53c41c89aa3bfff3205304a50cfdca0cdbb450b793438c95cbd5f19"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionRankChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionRankChecks.olean",
+      "sha256": "194bec5d3fc7f71ae0ed604fa093bf99ba67ef6fc7a9fda30e8e817aa8b16e05"
+    },
+    {
+      "module": "PvNP.RealizableHardness.WeightRoundingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\WeightRoundingChecks.olean",
+      "sha256": "9d7a4ff6c2417d80b7741ff9c3d807c7ff6dd6c866c3a4e3c0c5c50536b91a2b"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidence.olean",
+      "sha256": "c09f08906d53b79221a422bb70a383d83838da226bf5568fa2eeea9c9ddfc8bf"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannIncidenceChecks.olean",
+      "sha256": "fb993c7a5071d4940f98d322fa12d3389fec8203c79f4fdb7f3e78dd4cc4dcf3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCounting",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCounting.olean",
+      "sha256": "92c4c4aea2239f28674df9bfe702b333f2c1ffe14d1920d1d153677d221b9e95"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannCountingChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannCountingChecks.olean",
+      "sha256": "228500444a443b35ac73a1649ab4f99614c70df103774b1ab151e68df88d14e5"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimension",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimension.olean",
+      "sha256": "eb01f16a95e318b70e4dd3e3c5d78c73c9daac44a07a2f6c0ebfefd6124fe4d7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.TripleRestrictionDimensionChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\geometry-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\TripleRestrictionDimensionChecks.olean",
+      "sha256": "a7dbd1db16e4c3a7a26b5a714b6d188b644f0fbb8fe6a1b6350b7d1314fbd80c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatio",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatio.olean",
+      "sha256": "6788148e1976e3b742917dd5e7aa4b244228a365c4e4d7410f7ac641acf7f0cb"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianRatioChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianRatioChecks.olean",
+      "sha256": "a72452fa0e33fc172f4d027b9cfab24b4295f0eaf5883505e9f35c936f129f84"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensity",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensity.olean",
+      "sha256": "10928555ba9e2ac1631643932c17f7e904d638d99ed10bc14cb4916c75b0ffe2"
+    },
+    {
+      "module": "PvNP.RealizableHardness.PosteriorDensityChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\density-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\PosteriorDensityChecks.olean",
+      "sha256": "62d115b1c5d4d95d559c96a4673f15687b616cfa9ecf12eda6a2f0e5b414d92e"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropCountTail",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTail.olean",
+      "sha256": "63d28c52935814d0df943b4e3342db80f029217af7a9241fcb5c36b8924653b3"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropCountTailChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropCountTailChecks.olean",
+      "sha256": "8619de21274c3a9c689cd63db21233bfd5515cbeb92b9162296941f27f6ec53d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptions",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptions.olean",
+      "sha256": "1c2b226e4c815feca266be119fe544b659b92e18403ef1608368e139fcd2f638"
+    },
+    {
+      "module": "PvNP.RealizableHardness.AdviceExceptionsChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-exception-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\AdviceExceptionsChecks.olean",
+      "sha256": "b2295429e0593e9db71d8a6eb62aa00c1fd86769c832b6799752fa05c16b5015"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannFlagPosterior",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\flag-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosterior.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosterior.olean",
+      "sha256": "31675761d10e7951fa3344e804c9f533a7658a64409a967d22a3a4fd15312326"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GrassmannFlagPosteriorChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\flag-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosteriorChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GrassmannFlagPosteriorChecks.olean",
+      "sha256": "357a43286456c57cc4698d450691d488d01428d7c46e45a8fbf572533169efac"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringTV",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-tv-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTV.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTV.olean",
+      "sha256": "c776e9736948ef65064f2c1cf2c928d4ef0f3f8b42ef19c7a7ad95203fad7e5f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringTVChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-tv-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTVChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringTVChecks.olean",
+      "sha256": "79d13761e1ec25330a04ea0d3c62fe2d2629d35d789d2eff69ba0dc61313e3e9"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropTailParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParameters.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParameters.olean",
+      "sha256": "289c163eae388a6d2d1790ea898d6ad836e35a9aa4c960f3b3dac3da44281653"
+    },
+    {
+      "module": "PvNP.RealizableHardness.DropTailParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\tail-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParametersChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\DropTailParametersChecks.olean",
+      "sha256": "2682490bee7d67094cb7fb79276fba6a20b6e1eada763aaea143342f0199247d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringSpan",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-span-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpan.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpan.olean",
+      "sha256": "a5140975c414dc9b498067860ea96c2b2a1e89c9518c662832b4c460c8798c0f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.CoveringSpanChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\covering-span-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpanChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\CoveringSpanChecks.olean",
+      "sha256": "6ac628a9dcf7f9d40d3b3b7a7e5d5d52c496119e3d747ec0b411648ad0a83c2d"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParameters.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParameters.olean",
+      "sha256": "1156f52ced3fa3253f7bf98692a7a4c6ffde5d46024e2996fa9ac2b8ce359b16"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParametersChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerParametersChecks.olean",
+      "sha256": "ed3a5c5c32e512b60dc2a50e5b32afb2e13bae470235d68db619d223976ed356"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ConditionedCovering",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\conditioned-covering-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCovering.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCovering.olean",
+      "sha256": "30714b565370cb548b832273050d28aae9304dccb7df78f38e9515bd736dff1b"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ConditionedCoveringChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\conditioned-covering-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCoveringChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ConditionedCoveringChecks.olean",
+      "sha256": "c5a1fb2083788a786dc67dfc96ecaaeadb888030721222a240d62d480369552f"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerProximity",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-proximity-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximity.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximity.olean",
+      "sha256": "92989199264dcab33037b09b3625d07e327c0400b913ca28bf4b24733c317c74"
+    },
+    {
+      "module": "PvNP.RealizableHardness.SamplerProximityChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\sampler-proximity-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximityChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\SamplerProximityChecks.olean",
+      "sha256": "a66ee6d130ae5abeaac00c2be4ac0efc40e187a9e128214abda3c3bcef291096"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianNearOne",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\gaussian-nearone-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOne.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOne.olean",
+      "sha256": "4650e598f60960e3bfe02a8f22774de2c6efba7535106e8975ad6fc4900d412c"
+    },
+    {
+      "module": "PvNP.RealizableHardness.GaussianNearOneChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\gaussian-nearone-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOneChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\GaussianNearOneChecks.olean",
+      "sha256": "aa743913f433e8f368efa81a526dce32c5378c36bab93cc2673d5be2540e1949"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutIncidence",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-incidence-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidence.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidence.olean",
+      "sha256": "7c5d57e2a1d8bb99f0a32a5d4b420d4fe2601d670af2f442014621e349f87bf7"
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutIncidenceChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-incidence-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidenceChecks.olean",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutIncidenceChecks.olean",
+      "sha256": "27e38349ff85978e0665f3eda8ff496d6d776eb273ae87d00b02e438d2faa298"
+    }
+  ],
+  "exports": [
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutParameters",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.lean",
+      "source_sha256": "28b1901358bdbe3b4065ba7f124c35caaf1de3ed98541b633f730649f5873f69",
+      "frozen_source_sha256": "28b1901358bdbe3b4065ba7f124c35caaf1de3ed98541b633f730649f5873f69",
+      "candidate_match_after_CRLF_normalization": true,
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 3243536384,
+      "minimum_available_memory": 1739010048,
+      "guard_stopped": false,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\ZoomOutParameters-1789276105032667300.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParameters.olean",
+      "output_sha256": "b879dea24cb4962044df4513bf42afb1e8ad88a3e871377428f3bf892fda84db",
+      "raw_log_utf8": "",
+      "axiom_profiles": [],
+      "query_order": [],
+      "examples": 0
+    },
+    {
+      "module": "PvNP.RealizableHardness.ZoomOutParametersChecks",
+      "source": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.lean",
+      "source_sha256": "434d058b5ff7724813dc4bac3dbb44eec13eefa439c33c3950326729bcae1482",
+      "frozen_source_sha256": "434d058b5ff7724813dc4bac3dbb44eec13eefa439c33c3950326729bcae1482",
+      "candidate_match_after_CRLF_normalization": true,
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.lean"
+      ],
+      "exit_code": 0,
+      "available_memory_before": 4009848832,
+      "minimum_available_memory": 2201387008,
+      "guard_stopped": false,
+      "log": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\ZoomOutParametersChecks-1789276141013088400.log",
+      "log_sha256": "2f85104b81b4b4402de3d0bea486cac219da69cbd8d3853ad2e8e1e7a87affd3",
+      "output": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\zoomout-parameters-independent-review-20260912\\lib\\lean\\PvNP\\RealizableHardness\\ZoomOutParametersChecks.olean",
+      "output_sha256": "23bee7ff834870f528eca8e6c6207c8558ea5d41bb8f4919d396e29388938ff2",
+      "raw_log_utf8": "'PvNP.RealizableHardness.ZoomOutParameters.ratio_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.retained_dimension_lower' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.ready_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.eventual_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.dimension_budget' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.retained_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.ambient_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]\n'PvNP.RealizableHardness.ZoomOutParameters.eventual_zoom_out' depends on axioms: [propext, Classical.choice, Quot.sound]\n",
+      "axiom_profiles": [
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.ratio_bounds",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.retained_dimension_lower",
+          "propext,\n Classical.choice,\n Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.ready_budget",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.eventual_budget",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.dimension_budget",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.retained_bounds",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.ambient_bounds",
+          "propext, Classical.choice, Quot.sound"
+        ],
+        [
+          "PvNP.RealizableHardness.ZoomOutParameters.eventual_zoom_out",
+          "propext, Classical.choice, Quot.sound"
+        ]
+      ],
+      "query_order": [
+        "ratio_bounds",
+        "retained_dimension_lower",
+        "ready_budget",
+        "eventual_budget",
+        "dimension_budget",
+        "retained_bounds",
+        "ambient_bounds",
+        "eventual_zoom_out"
+      ],
+      "examples": 8
+    }
+  ],
+  "runner_source": "import pathlib, json, hashlib, subprocess, os, ctypes, shutil, time, re, sys\nsys.stdout.reconfigure(encoding='utf-8')\nrepo=pathlib.Path('C:/Users/Dan/Desktop/Projects/formal-pvnp')\nroot=repo/'certifications/realizable-hardness'\nreports=repo/'research/p-equals-np'\noutroot=root/'.lake/build/zoomout-parameters-independent-review-20260912'\nlib=outroot/'lib/lean'\nreport=reports/'2026-09-12-realizable-hardness-zoomout-parameters-proof-verification.json'\ncandidate='881c5b882556534b7b34468f8b34c7db9358a04b'\ndef sha(p): return hashlib.sha256(pathlib.Path(p).read_bytes()).hexdigest()\ndef digest(b): return hashlib.sha256(b).hexdigest()\nclass MS(ctypes.Structure):\n    _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(x,ctypes.c_ulonglong) for x in ['total','avail','totalpage','availpage','totalvirtual','availvirtual','extended']]\ndef memory():\n    m=MS(); m.length=ctypes.sizeof(m)\n    assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m))\n    return m.avail\ndef readreport(n): return json.loads((reports/f'2026-09-12-realizable-hardness-{n}-proof-verification.json').read_bytes())\nassert not outroot.exists(), 'Fresh root required'\nassert sha(root/'lake-manifest.json')=='825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0'\nmanifest=json.loads((root/'lake-manifest.json').read_bytes()); pins=[]\nfor p in manifest['packages']:\n    actual=subprocess.check_output(['git','-C',str(root/'.lake/packages'/p['name']),'rev-parse','HEAD']).decode().strip()\n    assert actual==p['rev']; pins.append({'name':p['name'],'revision':actual})\nassert len(pins)==11\nlean=pathlib.Path('C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe')\nversion=subprocess.check_output([str(lean),'--version']).decode().strip()\nassert '6a10ac8c22beadecabdbb0919c2b50214762f91d' in version\nenv=os.environ.copy(); env['LEAN_NUM_THREADS']='1'; env['PYTHONUTF8']='1'\nenv['LEAN_PATH']=';'.join([str(lib)]+[str(root/'.lake/packages'/p['name']/'.lake/build/lib/lean') for p in pins]+[str(lean.parent.parent/'lib/lean')])\nstate={'schema':'independent-proof-v1','candidate_commit':candidate,'environment':{'LEAN_PATH':env['LEAN_PATH'],'LEAN_NUM_THREADS':'1','toolchain':version},'manifest_sha256':sha(root/'lake-manifest.json'),'dependency_pins':pins,'accepted_dependency_copies':[],'exports':[],'runner_source':pathlib.Path(__file__).read_bytes().decode('utf-8')}\nbase=readreport('good-advice')['accepted_dependency_copies']; assert len(base)==61\ndeps=[(x['module'],x['source'],x['sha256']) for x in base]\nfor sibling in ['gaussian-nearone','zoomout-incidence']:\n    d=readreport(sibling)\n    for x in d['exports']:\n        assert x['exit_code']==0\n        deps.append((x['module'],x['output'],x['output_sha256']))\nassert len(deps)==65 and len(set(x[0] for x in deps))==65\nlib.mkdir(parents=True)\nfor mod,src,expected in deps:\n    src=pathlib.Path(src); assert sha(src)==expected,(mod,'source')\n    dest=lib/pathlib.Path(*mod.split('.')).with_suffix('.olean'); dest.parent.mkdir(parents=True,exist_ok=True)\n    shutil.copyfile(src,dest); assert sha(dest)==expected\n    state['accepted_dependency_copies'].append({'module':mod,'source':str(src),'output':str(dest),'sha256':expected})\ndef save(): report.write_text(json.dumps(state,indent=2,ensure_ascii=False),encoding='utf-8')\nnames=['ZoomOutParameters','ZoomOutParametersChecks']\nexpected=['28b1901358bdbe3b4065ba7f124c35caaf1de3ed98541b633f730649f5873f69','434d058b5ff7724813dc4bac3dbb44eec13eefa439c33c3950326729bcae1482']\nfor name,hs in zip(names,expected):\n    source=root/f'lean/PvNP/RealizableHardness/{name}.lean'; raw=source.read_bytes(); assert digest(raw)==hs\n    rel=source.relative_to(repo).as_posix(); frozen=subprocess.check_output(['git','-C',str(repo),'show',candidate+':'+rel])\n    assert raw.replace(b'\\r\\n',b'\\n')==frozen.replace(b'\\r\\n',b'\\n')\n    text=raw.decode('utf-8'); assert not re.search(r'\\b(sorry|admit|native_decide|axiom)\\b',re.sub(r'/\\-.*?\\-/|--[^\\n]*','',text,flags=re.S))\n    pre=memory(); assert pre>=805306368; assert shutil.disk_usage(root).free>=805306368\n    output=lib/f'PvNP/RealizableHardness/{name}.olean'; log=outroot/f'{name}-{time.time_ns()}.log'\n    cmd=[str(lean),'-R','lean','-o',str(output),str(source)]\n    with log.open('wb') as f:\n        proc=subprocess.Popen(cmd,cwd=root,env=env,stdout=f,stderr=subprocess.STDOUT)\n        print('LIVE',name,proc.pid,str(log),flush=True)\n        low=pre; stopped=False\n        while proc.poll() is None:\n            mem=memory(); low=min(low,mem)\n            if mem<671088640 or shutil.disk_usage(root).free<671088640:\n                proc.terminate(); stopped=True\n            time.sleep(.25)\n        rc=proc.wait()\n    rec={'module':'PvNP.RealizableHardness.'+name,'source':str(source),'source_sha256':hs,'frozen_source_sha256':digest(frozen),'candidate_match_after_CRLF_normalization':True,'command':cmd,'exit_code':rc,'available_memory_before':pre,'minimum_available_memory':low,'guard_stopped':stopped,'log':str(log),'log_sha256':sha(log),'output':str(output),'output_sha256':sha(output) if rc==0 else None}\n    log.with_suffix('.json').write_text(json.dumps(rec,indent=2),encoding='utf-8')\n    state['exports'].append(rec); save()\n    rec['raw_log_utf8']=log.read_bytes().decode('utf-8'); save()\n    print('ACTUAL_EXIT',name,rc,flush=True)\n    if rc: sys.exit(rc)\n    assert sha(source)==hs\n    queries=re.findall(r'^#print axioms (\\S+)',text,re.M)\n    profiles=re.findall(r\"'([^']+)' depends on axioms: \\[([^\\]]*)\\]\",rec['raw_log_utf8'],re.S)\n    assert len(profiles)==len(queries)\n    for q,(full,ax) in zip(queries,profiles):\n        assert full.endswith('.'+q)\n        assert set(re.findall(r'[\\w.]+',ax))<= {'propext','Classical.choice','Quot.sound'}\n    rec['axiom_profiles']=profiles; rec['query_order']=queries; rec['examples']=len(re.findall(r'^example\\b',text,re.M)); save()\nstate['total_axiom_profiles']=sum(len(x['axiom_profiles']) for x in state['exports'])\nstate['total_examples']=sum(x['examples'] for x in state['exports'])\nassert state['total_axiom_profiles']==8 and state['total_examples']==8\nstate['runner_exit_code']=0; state['proof_verdict']='GO-WITH-NOTES'; save()\nprint('VERIFIED',sha(report),flush=True)\n",
+  "total_axiom_profiles": 8,
+  "total_examples": 8,
+  "runner_exit_code": 0,
+  "proof_verdict": "GO-WITH-NOTES",
+  "session_id": 15904,
+  "session_exit_code": 0,
+  "scope": "Actual zoom-out event bounds under explicit containment and rank geometry; not posterior comparison or full hardness"
+}
