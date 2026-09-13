@@ -18,13 +18,18 @@ lemma two_add (x y : ℝ) : two (x + y) = two x * two y :=
   Real.rpow_add (by norm_num) _ _
 lemma two_nat (n : ℕ) : two (n : ℝ) = (2 : ℝ) ^ n := Real.rpow_natCast _ _
 lemma blocks_real (A h : ℕ) : (blocks A h : ℝ) = two (exponent A h) := by
-  simp [blocks, exponent, two, Real.rpow_natCast]
+  unfold blocks exponent two
+  rw [Real.rpow_natCast]
+  norm_cast
 lemma beta_real (A h : ℕ) : (beta A h : ℝ) = mean A h / two (exponent A h) := by
   simp [beta, mean, blocks_real, Rat.cast_div, Rat.cast_natCast]
 lemma decay_two (k h : ℕ) : decay k h = two (-(k : ℝ) * (h : ℝ) ^ 2) := by
   rw [decay_eq_reciprocal]
-  simp [two, ← neg_mul, Real.rpow_neg, Real.rpow_natCast, ← Nat.cast_mul,
-    ← Nat.cast_pow, one_div]
+  have he : -(k : ℝ) * (h : ℝ) ^ 2 = -((k * h ^ 2 : ℕ) : ℝ) := by push_cast; ring
+  rw [he]
+  unfold two
+  rw [Real.rpow_neg (by norm_num), Real.rpow_natCast]
+  simp only [one_div]
 
 /-- Polynomial growth is dominated by the actual inner exponent. -/
 theorem eventual_inner_domination (A : ℕ) (hA : 0 < A) (C : ℝ) (hC : 0 < C) :
@@ -98,7 +103,14 @@ lemma advice_le_two (A h a : ℕ) :
   rw [hs, ← two_nat]
   have ht := mul_le_mul_of_nonneg_right (beta_le_two A h) (two_pos (exponent A h / 2)).le
   have hu := mul_le_mul_of_nonneg_right ht (two_pos ((a + 4 : ℕ) : ℝ)).le
-  convert hu using 1 <;> simp only [← two_add, Nat.cast_add, Nat.cast_ofNat] <;> congr 1 <;> ring
+  have he : two (mean A h - exponent A h) * two (exponent A h / 2) * two ((a + 4 : ℕ) : ℝ) =
+      two (mean A h - exponent A h / 2 + (a : ℝ) + 4) := by
+    rw [← two_add, ← two_add]
+    congr 1
+    push_cast
+    ring
+  rw [he] at hu
+  exact hu
 
 lemma zoom_le_two (A h : ℕ) :
     Real.sqrt (beta A h : ℝ) * (blocks A h : ℝ) ^ (1 / 4 : ℝ) ≤
@@ -107,11 +119,14 @@ lemma zoom_le_two (A h : ℕ) :
   have hs := Real.rpow_le_rpow hb (beta_le_two A h) (show (0 : ℝ) ≤ 1 / 2 by norm_num)
   rw [Real.sqrt_eq_rpow, blocks_real]
   have ht := mul_le_mul_of_nonneg_right hs
-    (show 0 ≤ two (exponent A h) ^ (1 / 4 : ℝ) by positivity)
-  convert ht using 1
-  unfold two
-  rw [← Real.rpow_mul (by norm_num), ← Real.rpow_mul (by norm_num), ← Real.rpow_add (by norm_num)]
-  congr 1 <;> ring
+    (Real.rpow_nonneg (two_pos (exponent A h)).le (1 / 4 : ℝ))
+  have he : two (mean A h - exponent A h) ^ (1 / 2 : ℝ) *
+      two (exponent A h) ^ (1 / 4 : ℝ) = two (mean A h / 2 - exponent A h / 4) := by
+    unfold two
+    rw [← Real.rpow_mul (by norm_num), ← Real.rpow_mul (by norm_num), ← Real.rpow_add (by norm_num)]
+    congr 1 <;> ring
+  rw [he] at ht
+  exact ht
 
 lemma ready_advice {A r h a : ℕ} (hr : Ready A r h) (ha : a ≤ r) :
     (beta A h : ℝ) * Real.sqrt (blocks A h : ℝ) * (2 : ℝ) ^ (a + 4) ≤ decay 100 h := by
@@ -159,8 +174,12 @@ lemma ready_small_beta {A r h : ℕ} (hr : Ready A r h) :
     have he : 0 ≤ exponent A h := by unfold exponent; positivity
     push_cast
     nlinarith [hr.2]
-  convert hb using 1
-  norm_num [two, Real.rpow_neg, Real.rpow_natCast]
+  have he : two (-3) = (1 : ℝ) / 8 := by
+    change (2 : ℝ) ^ (-(3 : ℝ)) = _
+    rw [Real.rpow_neg (by norm_num)]
+    norm_num
+  rw [he] at hb
+  exact hb
 
 lemma ready_density {A r h a c : ℕ} (hr : Ready A r h) (ha : a ≤ r) (hc : c ≤ r) :
     8 * (2 : ℝ) ^ (2 * a * h ^ 4) * ((2 : ℝ) ^ c - 1) * (beta A h : ℝ) ≤ decay 30 h := by
@@ -185,6 +204,7 @@ lemma ready_dimensions {A r h : ℕ} (hr : Ready A r h) :
     r + 1 ≤ blocks A h ∧ 2 * h ≤ blocks A h := by
   have hE : exponent A h ≤ (blocks A h : ℝ) := by
     have hn : 2 ^ (A * h ^ 2) ≤ blocks A h := Nat.le_of_lt Nat.lt_two_pow_self
+    unfold exponent
     exact_mod_cast hn
   have hn : 0 ≤ mean A h := by unfold mean; positivity
   have hp : 0 ≤ 2 * (r : ℝ) * (h : ℝ) ^ 4 := by positivity
