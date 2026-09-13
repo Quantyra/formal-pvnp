@@ -3,6 +3,13 @@ import PvNP.RealizableHardness.ZoomOutJoint
 open PvNP.RealizableHardness ZoomOutJoint PosteriorReweighting
 open scoped BigOperators
 
+set_option pp.fullNames true in
+#check favorable_marginal_lower
+set_option pp.fullNames true in
+#check ready_joint_success
+set_option pp.fullNames true in
+#check eventual_joint_success
+
 #print axioms mass_and_not_lower
 #print axioms score_threshold
 #print axioms agreement_bounds

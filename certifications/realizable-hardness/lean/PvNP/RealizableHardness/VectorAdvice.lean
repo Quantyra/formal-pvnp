@@ -5,6 +5,7 @@ This is a fixed-length shared-prefix marginal, not a complete prover strategy. -
 namespace PvNP.RealizableHardness.VectorAdvice
 open scoped BigOperators
 open GrassmannCounting CoveringSpan GrassmannIncidence TripleRestrictionRank
+set_option autoImplicit false
 noncomputable section
 attribute [local instance] Classical.propDecidable
 
@@ -36,7 +37,9 @@ lemma outputLaw_none : outputLaw (V := V) (a := a) none = failureFraction V a :=
     simp [output, v.property]
   have hb : (∑ v : BadArray V a, if output v.val = none then (1 : ℝ) else 0) =
       Fintype.card (BadArray V a) := by
-    simp [output, Subtype.property]
+    have he (v : BadArray V a) : (if output v.val = none then (1 : ℝ) else 0) = 1 := by
+      simp [output, v.property]
+    simp only [he, Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one]
   rw [hi, hb, zero_add]
   simp [failureFraction, div_eq_mul_inv, mul_comm]
 
@@ -53,7 +56,9 @@ lemma outputLaw_some (ha : a ≤ Module.finrank (ZMod 2) V) (Q : Grass V a) :
   have hi : (∑ v : Frame V a, if output v.val = some Q then (1 : ℝ) else 0) =
       (frameProduct a a : ℝ) := by
     have he (v : Frame V a) : (if output v.val = some Q then (1 : ℝ) else 0) =
-        if spanFrame v = Q then 1 else 0 := by simp [output, v.property]
+        if spanFrame v = Q then 1 else 0 := by
+      simp [output, v.property]
+      rfl
     simp only [he]
     simpa using sum_over_frames (V := V) (fun R => if R = Q then (1 : ℝ) else 0)
   have hb : (∑ v : BadArray V a, if output v.val = some Q then (1 : ℝ) else 0) = 0 := by
@@ -98,7 +103,6 @@ lemma score_eq (ha : a ≤ Module.finrank (ZMod 2) V) (g : Grass V a → ℝ) :
       (∑ v : Fin a → V, uniformArray v * ((if output v = some Q then (1 : ℝ) else 0) * g Q)) =
         outputLaw (some Q) * g Q := by simp [outputLaw, Finset.sum_mul, mul_assoc]
   simp only [hatom, outputLaw_some ha]
-  rw [Finset.mul_sum]
   apply Finset.sum_congr rfl
   intro Q _
   ring
@@ -111,6 +115,7 @@ lemma failure_le_geometric_sum (ha : a ≤ Module.finrank (ZMod 2) V) :
     failureFraction V a ≤ ∑ i ∈ Finset.range a,
       (2 : ℝ)^i / (2 : ℝ)^Module.finrank (ZMod 2) V := by
   have hs : (∑ i ∈ Finset.range a, (2 : ℝ)^i) = (2 : ℝ)^a-1 := by
+    clear ha
     induction a with
     | zero => simp
     | succ a ih => rw [Finset.sum_range_succ, ih, pow_succ]; ring
@@ -135,7 +140,10 @@ lemma uniform_include_score (W : Submodule (ZMod 2) V) (g : Grass V a → ℝ) :
       (Fintype.card (Grass W a) : ℝ)⁻¹ * ((if (includeSubspace W R).val = Q then 1 else 0) * g Q)) =
       (Fintype.card (Grass W a) : ℝ)⁻¹ *
         (∑ R : Grass W a, if (includeSubspace W R).val = Q then (1 : ℝ) else 0) * g Q := by
-    simp [Finset.mul_sum, Finset.sum_mul, mul_assoc]
+    simp only [Finset.mul_sum, Finset.sum_mul]
+    apply Finset.sum_congr rfl
+    intro R _
+    ring
   rw [he, sum_include_indicator]
   by_cases hQ : Q.val ≤ W <;> simp [subspaceLaw, hQ]
 
@@ -164,8 +172,12 @@ lemma retained_error (s : Draw J) (ha : a ≤ r) (hr : r ≤ J) :
 lemma retained_score_eq (s : Draw J) (ha : a ≤ J) (g : Advice J a → ℝ) :
     subspaceScore (retained s) g =
       (1-failureFraction (retained s) a) * ∑ Q, (kernel s Q : ℝ) * g Q := by
-  rw [subspaceScore_eq _ (ha.trans (GrassmannIncidence.retained_finrank_lower s))]
-  simp only [subspaceLaw_retained]
+  have he := subspaceScore_eq (retained s) (ha.trans (GrassmannIncidence.retained_finrank_lower s)) g
+  apply he.trans
+  congr 1
+  apply Finset.sum_congr rfl
+  intro Q _
+  exact congrArg (fun t : ℝ => t * g Q) (subspaceLaw_retained s Q)
 
 /-- Joint score retains the same draw s in the score; dependence fails, not resamples. -/
 def actualJointScore (β : ℚ) (g : Draw J → Advice J a → ℝ) : ℝ :=

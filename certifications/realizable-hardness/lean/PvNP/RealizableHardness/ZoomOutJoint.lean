@@ -5,7 +5,8 @@ The fixed-score decoder interface is an input, not a decoder existence proof. -/
 namespace PvNP.RealizableHardness.ZoomOutJoint
 open scoped BigOperators
 open PosteriorReweighting AdviceExceptions GrassmannIncidence
-open TripleRestrictionRank ConditionedCovering SamplerParameters ZoomOutPosterior
+open TripleRestrictionRank ConditionedCovering SamplerParameters ZoomOutPosterior PosteriorDensity
+set_option autoImplicit false
 noncomputable section
 attribute [local instance] Classical.propDecidable
 
@@ -100,11 +101,11 @@ def favorable (F : Advice (blocks A h) a → Bool) (Q : Advice (blocks A h) a) :
 /-- Favorable advice is charged under the actual marginal, with exact TV cost. -/
 theorem favorable_marginal_lower (haJ : a ≤ blocks A h)
     (F : Advice (blocks A h) a → Bool) :
-    mass ambientMass F - mass ambientMass (GoodAdvice.bad A h) -
+    mass ambientMass F - mass ambientMass (GoodAdvice.bad (a := a) A h) -
         adviceTV (beta A h) (blocks A h) a ≤
       mass (adviceMarginal (beta A h)) (favorable F) := by
   have hi := mass_and_not_lower (ambientMass : Advice (blocks A h) a → ℚ)
-    (fun Q => (ambientMass_pos Q haJ).le) F (GoodAdvice.bad A h)
+    (fun Q => (ambientMass_pos Q haJ).le) F (GoodAdvice.bad (a := a) A h)
   have ht := ambient_event_transfer (beta A h) haJ (favorable F)
   change _ ≤ mass ambientMass (favorable F) at hi
   linarith
@@ -131,7 +132,8 @@ theorem jointSuccess_disintegration (hr : SamplerProximity.Ready A r h)
   intro Q _
   by_cases hF : favorable F Q = true
   · have hgood : GoodAdvice.bad A h Q = false := by
-      simpa [favorable] using (Bool.and_eq_true.mp hF).2
+      have hs : F Q = true ∧ GoodAdvice.bad A h Q = false := by simpa [favorable] using hF
+      exact hs.2
     have hp := GoodAdvice.ready_good_properties hr ha (by omega) Q hgood
     simp only [hF, Bool.true_and, Bool.true_eq, ite_true, mass, Finset.mul_sum]
     apply Finset.sum_congr rfl
@@ -155,7 +157,7 @@ theorem ready_joint_success (hr : SamplerProximity.Ready A r h)
     (hdecoder : ∀ Q, F Q = true → Q.val ≤ W Q ∧
       SubspaceRestriction.codim (W Q) ≤ r ∧
       (∀ L, 0 ≤ f Q L ∧ f Q L ≤ 1) ∧ C ≤ mean (ZoomOutTransfer.ambientW Q (W Q)) (f Q)) :
-    (mass ambientMass F - mass ambientMass (GoodAdvice.bad A h) -
+    (mass ambientMass F - mass ambientMass (GoodAdvice.bad (a := a) A h) -
       adviceTV (beta A h) (blocks A h) a) * (C/8) ≤ jointSuccess F W f C := by
   have haJ : a ≤ blocks A h := by have := SamplerProximity.ready_dimensions hr; omega
   have hmass := favorable_marginal_lower (A := A) (h := h) haJ F
@@ -165,8 +167,8 @@ theorem ready_joint_success (hr : SamplerProximity.Ready A r h)
   apply Finset.sum_le_sum
   intro Q _
   by_cases hF : favorable F Q = true
-  · have hsplit := Bool.and_eq_true.mp hF
-    have hgood : GoodAdvice.bad A h Q = false := by simpa using hsplit.2
+  · have hsplit : F Q = true ∧ GoodAdvice.bad A h Q = false := by simpa [favorable] using hF
+    have hgood : GoodAdvice.bad A h Q = false := hsplit.2
     have hd := hdecoder Q hsplit.1
     have hs := ready_posterior_success hr hh ha Q hgood (W Q) hd.1 hd.2.1
       (f Q) hd.2.2.1 C hC hC1 hdelta hrank hd.2.2.2
@@ -187,7 +189,7 @@ theorem eventual_joint_success (A r : ℕ) (hA : 0 < A) :
           SubspaceRestriction.codim (W Q) ≤ r ∧
           (∀ L, 0 ≤ f Q L ∧ f Q L ≤ 1) ∧
           C ≤ mean (ZoomOutTransfer.ambientW Q (W Q)) (f Q)) →
-        (mass ambientMass F - mass ambientMass (GoodAdvice.bad A h) -
+        (mass ambientMass F - mass ambientMass (GoodAdvice.bad (a := a) A h) -
           adviceTV (beta A h) (blocks A h) a) * (C/8) ≤ jointSuccess F W f C := by
   obtain ⟨NP, hp⟩ := SamplerProximity.eventually_ready A r hA
   refine ⟨max NP (r+1), ?_⟩
