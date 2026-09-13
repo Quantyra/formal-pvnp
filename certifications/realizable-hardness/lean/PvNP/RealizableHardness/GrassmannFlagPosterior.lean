@@ -49,6 +49,7 @@ def upperQuotientEquiv (Q : Grass V a) (had : a ≤ d) :
 lemma card_upper (Q : Grass V a) (had : a ≤ d) :
     Nat.card {L : Grass V d // Q.val ≤ L.val} =
       gaussian (Module.finrank (ZMod 2) V - a) (d - a) := by
+  letI : Finite (V ⧸ Q.val) := Finite.of_surjective Q.val.mkQ Q.val.mkQ_surjective
   rw [Nat.card_congr (upperQuotientEquiv Q had), Nat.card_eq_fintype_card, card_grass]
   have h := Q.val.finrank_quotient_add_finrank
   rw [Q.property] at h
@@ -232,7 +233,7 @@ theorem eventPosterior_eq_conditional (β : ℚ) (d : ℕ)
   rw [containmentProbability_formula _ _ _ had hdJ, he]
   change _ = GrassmannIncidence.prior β s * GrassmannIncidence.kernel s Q /
     GrassmannIncidence.adviceMarginal β Q
-  field_simp [hc, hm] <;> ring
+  field_simp [hc, hm]
 
 end
 end PvNP.RealizableHardness.GrassmannFlagPosterior
