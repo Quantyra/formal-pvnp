@@ -234,6 +234,11 @@ lemma total_error_small {r h a c : ℕ} (hh : r < h) (hc : c ≤ r) :
   rw [he20] at hdiv
   rw [he12]
   norm_num at h10 h2
+  have hm10 := mul_le_mul_of_nonneg_left h10 hp.le
+  have hm2 := mul_le_mul_of_nonneg_left h2 hp.le
+  have he8 : 8*qdecay 100 h/leading (2*h-a) c =
+      8*(qdecay 100 h/leading (2*h-a) c) := by ring
+  rw [he8]
   nlinarith
 
 def Conclusion (A h a : ℕ) (Q : Advice (blocks A h) a)
@@ -305,7 +310,12 @@ theorem ready_transfer {A r h a : ℕ} (hr : SamplerProximity.Ready A r h)
     (mean (posteriorMixture (beta A h) Q W) f)
   rw [hrew, hun, abs_sub_comm (mean (reweighted A h Q W) F)] at htriangle
   have hn := total_error_small (a := a) hh hc
-  nlinarith
+  have hsbound := hs.trans (mul_le_mul_of_nonneg_left htvbound (by norm_num : (0 : ℚ) ≤ 2))
+  have he8 : 2*(4*qdecay 100 h/leading (2*h-a) (SubspaceRestriction.codim W)) =
+      8*qdecay 100 h/leading (2*h-a) (SubspaceRestriction.codim W) := by ring
+  rw [he8, hrew] at hsbound
+  rw [hun]
+  linarith
 
 /-- Actual L transfer with all numerical and exceptional-probability premises discharged. -/
 theorem eventual_transfer (A r : ℕ) (hA : 0 < A) :
