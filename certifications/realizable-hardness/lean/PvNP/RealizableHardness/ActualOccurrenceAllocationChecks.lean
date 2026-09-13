@@ -49,4 +49,22 @@ example {N m : Nat} (I : Instance N m) (q : I.RowId) : (I.support q).card = 3 :=
 example {N : Nat} (I : Instance N 0) (v : Fin N) : I.size v = 0 := zero_size I v
 example {N : Nat} (I : Instance N 0) : I.rows = [] := zero_rows I
 
+
+#print axioms cloud_support_port_unique
+#print axioms gadget_recoverable_unique
+
+/-- One source equation queries the same owner in all three positions. -/
+def repeatedSource : Instance 1 1 where
+  vars := fun _ _ => 0
+  rhs := fun _ => 0
+
+example : repeatedSource.vars 0 0 = repeatedSource.vars 0 1 := rfl
+example : repeatedSource.vars 0 1 = repeatedSource.vars 0 2 := rfl
+example : Function.Injective (repeatedSource.originalRow 0) :=
+  repeatedSource.originalRow_injective 0
+example : (repeatedSource.originalSupport 0).card = 3 := repeatedSource.original_support_card 0
+example (q : repeatedSource.GadgetId) :
+    (repeatedSource.originalSupport 0 ∩ repeatedSource.gadgetSupport q).card ≤ 1 :=
+  repeatedSource.original_gadget_intersection 0 q
+
 end PvNP.RealizableHardness.ActualOccurrenceAllocationChecks

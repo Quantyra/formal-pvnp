@@ -3,8 +3,8 @@ import Mathlib.Data.List.NodupEquivFin
 import Mathlib.Data.Fintype.BigOperators
 
 /-! Source-only ordered occurrence allocation and original-plus-cloud rows.
-The source instance's distinct-variable rows are a structural input condition,
-not a hardness or desired-construction premise. -/
+The source may repeat an owner within a row. Output row variables are distinct
+occurrence anchors; the fixed gadget's unique-port property controls intersections. -/
 namespace PvNP.RealizableHardness.ActualOccurrenceAllocation
 open scoped BigOperators
 set_option autoImplicit false
@@ -12,7 +12,6 @@ noncomputable section
 
 structure Instance (N m : Nat) where
   vars : Fin m → Fin 3 → Fin N
-  distinct : ∀ r, Function.Injective (vars r)
   rhs : Fin m → ZMod 2
 
 abbrev Slot (m : Nat) := Fin m × Fin 3
@@ -146,19 +145,61 @@ theorem different_clouds_disjoint (q t : I.GadgetId) (h : q.1 ≠ t.1) :
   intro x hx hy
   exact h ((I.gadget_member_owner q x hx).symm.trans (I.gadget_member_owner t x hy))
 
-/-- The original row uses a variable at most once; this prevents hitting both gadget terminals. -/
+/-- Each concrete gadget row has at most one port, independent of source owner collisions. -/
+theorem cloud_support_port_unique {n : Nat} (q : ActualEqualityCloud.RowId n)
+    (p t : ActualGraphEdges.Vertex n)
+    (hp : Sum.inl p ∈ ActualEqualityCloud.support q)
+    (ht : Sum.inl t ∈ ActualEqualityCloud.support q) : p = t := by
+  change Sum.inl p ∈ (EqualityGadget.support q.2).map
+    (ActualEqualityCloud.embedding q.1) at hp
+  change Sum.inl t ∈ (EqualityGadget.support q.2).map
+    (ActualEqualityCloud.embedding q.1) at ht
+  obtain ⟨u, hu, hup⟩ := Finset.mem_map.mp hp
+  obtain ⟨v, hv, hvt⟩ := Finset.mem_map.mp ht
+  have hut : u < 2 := by
+    fin_cases u <;> simp_all [ActualEqualityCloud.embedding, ActualEqualityCloud.embedFn]
+  have hvt' : v < 2 := by
+    fin_cases v <;> simp_all [ActualEqualityCloud.embedding, ActualEqualityCloud.embedFn]
+  have huv := ActualEqualityCloud.local_terminal_unique q.2 u hu v hv hut hvt'
+  have he : (Sum.inl p : ActualEqualityCloud.GlobalVar n) = Sum.inl t :=
+    hup.symm.trans ((congrArg (ActualEqualityCloud.embedding q.1) huv).trans hvt)
+  exact Sum.inl.inj he
+
+/-- The actual recovery discriminator excludes internals without assuming distinct owners. -/
+theorem gadget_recoverable_unique (q : I.GadgetId) (x y : I.GlobalVar)
+    (hx : x ∈ I.gadgetSupport q) (hy : y ∈ I.gadgetSupport q)
+    (hxp : I.recover x ≠ none) (hyp : I.recover y ≠ none) : x = y := by
+  obtain ⟨a, ha, hax⟩ := Finset.mem_map.mp hx
+  obtain ⟨b, hb, hby⟩ := Finset.mem_map.mp hy
+  subst x
+  subst y
+  cases a with
+  | inl p =>
+    cases b with
+    | inl t =>
+      exact congrArg (I.tag q.1) (congrArg Sum.inl (cloud_support_port_unique q.2 p t ha hb))
+    | inr z => exact (hyp rfl).elim
+  | inr z => exact (hxp rfl).elim
+
+/-- Original positions have distinct anchors even when their source owners coincide. -/
 theorem original_gadget_intersection (r : Fin m) (q : I.GadgetId) :
     (I.originalSupport r ∩ I.gadgetSupport q).card ≤ 1 := by
   apply Finset.card_le_one.mpr
   intro x hx y hy
   obtain ⟨i, _, hi⟩ := Finset.mem_image.mp (Finset.mem_inter.mp hx).1
   obtain ⟨j, _, hj⟩ := Finset.mem_image.mp (Finset.mem_inter.mp hy).1
-  have hxi := I.gadget_member_owner q x (Finset.mem_inter.mp hx).2
-  have hyj := I.gadget_member_owner q y (Finset.mem_inter.mp hy).2
-  have hiOwner : I.vars r i = q.1 := (congrArg Sigma.fst hi).trans hxi
-  have hjOwner : I.vars r j = q.1 := (congrArg Sigma.fst hj).trans hyj
-  have hij := I.distinct r (hiOwner.trans hjOwner.symm)
-  exact hi.symm.trans ((congrArg (I.originalRow r) hij).trans hj)
+  have hxp : I.recover x ≠ none := by
+    rw [← hi]
+    change I.recover (I.anchor (r,i)) ≠ none
+    rw [I.recover_anchor]
+    simp
+  have hyp : I.recover y ≠ none := by
+    rw [← hj]
+    change I.recover (I.anchor (r,j)) ≠ none
+    rw [I.recover_anchor]
+    simp
+  exact I.gadget_recoverable_unique q x y
+    (Finset.mem_inter.mp hx).2 (Finset.mem_inter.mp hy).2 hxp hyp
 
 theorem gadget_pair_intersection (q t : I.GadgetId) (h : q ≠ t) :
     (I.gadgetSupport q ∩ I.gadgetSupport t).card ≤ 1 := by
