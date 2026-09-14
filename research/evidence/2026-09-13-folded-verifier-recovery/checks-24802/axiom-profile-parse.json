@@ -1,0 +1,275 @@
+[
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_positive",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_injective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_bounds",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.addressCode_injective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_complete",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_length",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_nodup",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.mkAddress_injective",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_sound",
+    "axioms": [
+      "propext"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_none_iff",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_pair",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_complement",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_none_iff",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_complement",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_restriction",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.localValue_restrictGlobal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestAddress_mk",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestProof_code",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_honest",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.literal_label_mem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.clause_label_mem_wide",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.smallView_nodup",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wideView_nodup",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.restrictLocal_honest",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.selectedSat_honest",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.bitAssignment_boolAssignment",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.boolAssignment_bitAssignment",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct_GF2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitted_row_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitRow_none_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_eq_foldEval",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_honest",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff_GF2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowSource_valid",
+    "axioms": []
+  }
+]

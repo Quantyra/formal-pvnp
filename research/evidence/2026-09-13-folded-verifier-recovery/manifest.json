@@ -1,0 +1,215 @@
+{
+  "status": "RECOVERY ONLY, NOT ACCEPTANCE",
+  "source_freeze": "dd3704fef7ddd99c7ace36e5b38d63f51e1cbfd4",
+  "green_main_session": 58053,
+  "last_compiled_checks_session": 24802,
+  "latest_checks_attempt": 49391,
+  "latest_checks_launched": false,
+  "dependencies_remain_external": true,
+  "records": [
+    {
+      "path": "verifier-58053/terminal-metadata.json",
+      "sha256": "eb5a7237150d103ce39a3cb504cd9c8a165cd10339ae22cf98884003ce91d640",
+      "bytes": 5559,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/diagnostics/ActualFoldedParityVerifier-1789358520933837500.json",
+      "role": "actual terminal metadata"
+    },
+    {
+      "path": "verifier-58053/raw.log",
+      "sha256": "98b97aad91fd000242d6666fdae7bfbe7bd614907938b143501ddd72efc6dc48",
+      "bytes": 1611288,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/diagnostics/ActualFoldedParityVerifier-1789358520933837500.log",
+      "role": "original raw evidence"
+    },
+    {
+      "path": "verifier-58053/telemetry.jsonl",
+      "sha256": "e7147decb2000684afdc94d8632c30b54126a8ff986805492c52e9ab291dc696",
+      "bytes": 49182,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/diagnostics/ActualFoldedParityVerifier-1789358520933837500.jsonl",
+      "role": "original raw evidence"
+    },
+    {
+      "path": "verifier-58053/terminal-summary.json",
+      "sha256": "a839104c41dc983f208e7ca3ab899773b75de8b1ed1fb37926b2d11c9fd04ea0",
+      "bytes": 4140,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/terminal-summary.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "verifier-58053/diagnostic-runner.py",
+      "sha256": "11fc1854ce4fa72e6432f067f44c33313cb69e3fc6250704466eda6a1f4786c1",
+      "bytes": 9306,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/diagnostic-runner.py",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "verifier-58053/plan.json",
+      "sha256": "0df449362a87d9d7f70abd6a2b316257673192cdbdf26d25d5292b8640a832c8",
+      "bytes": 2389383,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/plan.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-24802/terminal-metadata.json",
+      "sha256": "fed1453c2f0f4d02be55f3f1a3302ab53bf0ae7ee02e7a932c04d9cdf8f422e0",
+      "bytes": 5520,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789358822273657600.json",
+      "role": "actual terminal metadata"
+    },
+    {
+      "path": "checks-24802/raw.log",
+      "sha256": "a76c1a62bf2f7af2a84557ab9c5ebce84ee0a43c6b0cbfc95f8d85c433037c0a",
+      "bytes": 1257719,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789358822273657600.log",
+      "role": "original raw evidence"
+    },
+    {
+      "path": "checks-24802/telemetry.jsonl",
+      "sha256": "17d077a51d48176551918aaea2b39bc3c62a2f01c1f7e775790a3ccb7f62b100",
+      "bytes": 41612,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789358822273657600.jsonl",
+      "role": "original raw evidence"
+    },
+    {
+      "path": "checks-24802/terminal-summary.json",
+      "sha256": "cd31bee36cd7fae26171c018206b15c15e90bed646c2c901c69abdcbfb466368",
+      "bytes": 4380,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/terminal-summary.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-24802/axiom-profile-parse.json",
+      "sha256": "b9b8dbf82c8ae81118cbce8ec283423133be4f1c6508ade34f0d0e92ef479ad1",
+      "bytes": 6474,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/axiom-profile-parse.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-24802/diagnostic-runner.py",
+      "sha256": "5207a71c5e5f9151935e0c5c5c396531f72b165dcb6fcb681a3b2e99b1765176",
+      "bytes": 9655,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/diagnostic-runner.py",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-24802/plan.json",
+      "sha256": "670f092e22e158ce51dcc8da8e6a077bb6b3b9278e5f8414a8acfe82c7864ecb",
+      "bytes": 2391389,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/plan.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-refused-49391/terminal-metadata.json",
+      "sha256": "5ecb5ee22034c46698d87a2302784cfc02cc1c7ba016a6aa0139c7851ba46956",
+      "bytes": 339,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789363775051139000.json",
+      "role": "actual terminal metadata"
+    },
+    {
+      "path": "checks-refused-49391/diagnostic-runner.py",
+      "sha256": "81af39d82bf3b709951599d1fe042464d569e48ebce5debe5dad28a9f09a455f",
+      "bytes": 9785,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-repair-20260913/diagnostic-runner.py",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-refused-49391/plan.json",
+      "sha256": "097fd75161552df344c455385d6ae18b869ab1e8def3c5bc26d8fea3a1f1ea17",
+      "bytes": 2393307,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-repair-20260913/plan.json",
+      "role": "evidence/provenance; no acceptance promotion"
+    },
+    {
+      "path": "checks-refused-49391/refusal-summary.json",
+      "sha256": "13b636b3aa324892bbc2d44dbc91913490ae5082e3a05ba6e1fdad0885d36890",
+      "bytes": 295,
+      "role": "capacity refusal; not compiler result"
+    },
+    {
+      "path": "original/ActualFoldedParityVerifier.lean",
+      "sha256": "8c5237a19c06e89adaea2382405691541198d0c120a5699fab25fbff5dbbea0a",
+      "bytes": 21495,
+      "original_path": "research/p-equals-np/drafts/2026-09-13-folded-parity-verifier/ActualFoldedParityVerifier.lean",
+      "role": "frozen dd3704f original"
+    },
+    {
+      "path": "repaired/ActualFoldedParityVerifier.lean",
+      "sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+      "bytes": 21657,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/lean/PvNP/RealizableHardness/ActualFoldedParityVerifier.lean",
+      "role": "green main"
+    },
+    {
+      "path": "patches/ActualFoldedParityVerifier.lean.patch",
+      "sha256": "a1f07f1f1b5c4387ed49b2802c120af88c68b7191eddaa46dba4ea06c2daade4",
+      "bytes": 6224,
+      "role": "cumulative readable patch; raw original retains CRLF identity"
+    },
+    {
+      "path": "original/ActualFoldedParityVerifierChecks.lean",
+      "sha256": "92cfce4d59a8ab73b1784f1b2b9bc5cb8d629bbb7d7ba36e5fda744039616956",
+      "bytes": 4184,
+      "original_path": "research/p-equals-np/drafts/2026-09-13-folded-parity-verifier/ActualFoldedParityVerifierChecks.lean",
+      "role": "frozen dd3704f original"
+    },
+    {
+      "path": "repaired/ActualFoldedParityVerifierChecks.lean",
+      "sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+      "bytes": 5649,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-repair-20260913/lean/PvNP/RealizableHardness/ActualFoldedParityVerifierChecks.lean",
+      "role": "latest uncompiled Checks repair"
+    },
+    {
+      "path": "patches/ActualFoldedParityVerifierChecks.lean.patch",
+      "sha256": "7db8294f0879330df1f85453a9bd3c891ee9dbe1381bbcaadc421224ca82d69d",
+      "bytes": 3793,
+      "role": "cumulative readable patch; raw original retains CRLF identity"
+    },
+    {
+      "path": "checks-24802/ActualFoldedParityVerifierChecks.lean",
+      "sha256": "5126508c64f8205b10a71bdc2ba596e8e1729221ad263b801f0a160b1e0dcc41",
+      "bytes": 4201,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/lean/PvNP/RealizableHardness/ActualFoldedParityVerifierChecks.lean",
+      "role": "last compiler-tested Checks source, failed"
+    },
+    {
+      "path": "verifier-58053/source-snapshot.lean",
+      "sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+      "bytes": 21657,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-contradiction-repair-20260913/diagnostics/ActualFoldedParityVerifier-source-a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3.lean",
+      "role": "exact diagnostic source snapshot"
+    },
+    {
+      "path": "checks-24802/source-snapshot.lean",
+      "sha256": "5126508c64f8205b10a71bdc2ba596e8e1729221ad263b801f0a160b1e0dcc41",
+      "bytes": 4201,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-index-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-source-5126508c64f8205b10a71bdc2ba596e8e1729221ad263b801f0a160b1e0dcc41.lean",
+      "role": "exact diagnostic source snapshot"
+    },
+    {
+      "path": "checks-refused-49391/source-snapshot.lean",
+      "sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+      "bytes": 5649,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-source-754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a.lean",
+      "role": "exact diagnostic source snapshot"
+    },
+    {
+      "path": "checks-24802/profile-status.json",
+      "sha256": "f49b4bfd9e63dec23158945c04f5dc955cc5dd93fcd2df916cd5fda578d79c4d",
+      "bytes": 203,
+      "role": "explicit incomplete profile flag"
+    },
+    {
+      "path": "README.md",
+      "sha256": "f84041b2172bbb9171948ecc2fd0e2cb5a0a18fc2cce25df9bd10761d9504a27",
+      "bytes": 1854,
+      "role": "scoped recovery status"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "85f1ec83424b3b845ed82afde3673d847deadbce932d43c0374c561546e60fc4",
+      "bytes": 28,
+      "role": "Preserve raw recovery bytes in Git without text conversion"
+    }
+  ]
+}

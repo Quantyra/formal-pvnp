@@ -1,0 +1,7 @@
+{
+  "complete": false,
+  "requested": 37,
+  "cleanly_parsed": 36,
+  "reason": "Native profiler interleaving obscures one requested header; no complete profile acceptance.",
+  "compiler_exit": 1
+}

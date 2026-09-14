@@ -1,0 +1,42 @@
+{
+  "command": [
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "lean",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 39.36836229999608,
+  "guard_stopped": false,
+  "source_sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+  "source_unchanged": true,
+  "memory_pre": 4789383168,
+  "memory_min": 3139653632,
+  "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\diagnostics\\ActualFoldedParityVerifier-1789358520933837500.log",
+  "log_sha256": "98b97aad91fd000242d6666fdae7bfbe7bd614907938b143501ddd72efc6dc48",
+  "telemetry_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\diagnostics\\ActualFoldedParityVerifier-1789358520933837500.jsonl",
+  "telemetry_sha256": "e7147decb2000684afdc94d8632c30b54126a8ff986805492c52e9ab291dc696",
+  "output_sha256": "6b9b234de01e183384d81c5b4cba3abe8c0d1cc647e8683ef026ec0c0161960b",
+  "session": 58053,
+  "compiler_released": true,
+  "checks_run": false,
+  "metadata_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\diagnostics\\ActualFoldedParityVerifier-1789358520933837500.json",
+  "metadata_sha256": "eb5a7237150d103ce39a3cb504cd9c8a165cd10339ae22cf98884003ce91d640",
+  "errors": [],
+  "warnings": [
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:35:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:52:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:6: warning: `if_false` has been deprecated: Use `ite_false` instead",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:16: warning: `if_true` has been deprecated: Use `ite_true` instead",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:6: warning: `if_false` has been deprecated: Use `ite_false` instead",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-parity-verifier-contradiction-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:16: warning: `if_true` has been deprecated: Use `ite_true` instead"
+  ],
+  "axiom_profile_count": 0,
+  "patch_sha256": "4bdf5d422f8191648a692348f986226cb1439cb355d349a48c887fdf23d86761"
+}

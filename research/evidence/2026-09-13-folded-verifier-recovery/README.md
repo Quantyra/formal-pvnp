@@ -1,0 +1,9 @@
+# Folded verifier recovery bundle
+
+This preserves the repaired verifier that compiled in session 58053, the last actual failed Checks run 24802, and the seven-example Checks proof patch whose run 49391 was refused before launching Lean. It does not promote diagnostic evidence to independent acceptance.
+
+The verifier passed with six style/deprecation warnings. Checks 24802 failed with seven finite-example reduction/Decidable errors and no warnings. Its log contains only 36 cleanly parsed profiles out of 37 requested; profiler interleaving prevents treating the parsed profile file as a complete verification. The latest Checks proof patch has not been compiled: its start sample was 3,645,038,592 bytes, below the unchanged 3,758,096,384-byte floor.
+
+`original/` retains the frozen source bytes; `repaired/` contains the green verifier and the latest uncompiled Checks candidate. `patches/` contains cumulative diffs. Per-run directories retain byte-identical raw logs, telemetry, terminal metadata, and available runner/plan/summary records. Every file listed in manifest.json is SHA256-bound. Plans reference original external dependency receipts and .olean files: this is a durable source/evidence recovery bundle, not a self-contained fresh-checkout build. No binaries, massive nested historical receipts, or original-row JSON are copied.
+
+The existing example propositions, imports and options are preserved. Main repairs correct product notation and proof elaboration; Checks repairs make a finite clause index explicit and unfold the finite example definitions instead of blocked `decide`. The newest proof patch requires its first actual compile once capacity permits. Full Fourier soundness, producer FP realization, full theorem assembly, independent review and eventual paper-repository consolidation remain outside this result.

@@ -1,0 +1,126 @@
+--- original/ActualFoldedParityVerifier.lean
++++ repaired/ActualFoldedParityVerifier.lean
+@@ -14,14 +14,14 @@
+ noncomputable section
+ attribute [local instance] Classical.propDecidable
+ 
+-abbrev Literal := Nat * Bool
+-abbrev Clause := Literal * (Literal * Literal)
++abbrev Literal := Nat × Bool
++abbrev Clause := Literal × (Literal × Literal)
+ abbrev CNF := List Clause
+ abbrev Assignment (n : Nat) := Fin n -> Bool
+ abbrev Truth (V : List Nat) := Assignment V.length -> Bool
+-abbrev Address := List Nat * List Bool
+-abbrev SignedAddress := Address * Bool
+-abbrev Row := ActualSourceNormalization.BinaryTriple * Bool
++abbrev Address := List Nat × List Bool
++abbrev SignedAddress := Address × Bool
++abbrev Row := ActualSourceNormalization.BinaryTriple × Bool
+ 
+ def bitNat (b : Bool) : Nat := if b then 1 else 0
+ 
+@@ -52,7 +52,8 @@
+       cases a <;> simp [wordNat, bitNat] at h <;> omega
+     | cons b ys =>
+       have hab : a = b := by
+-        cases a <;> cases b <;> simp [wordNat, bitNat] at h |- <;> omega
++        cases a <;> cases b
++        all_goals simp [wordNat, bitNat] at h ⊢ <;> omega
+       subst b
+       apply congrArg (List.cons a)
+       apply ih
+@@ -81,7 +82,7 @@
+       (assignments n).map (Fin.cons true)
+ 
+ theorem assignments_complete (n : Nat) (a : Assignment n) : a ∈ assignments n := by
+-  induction n generalizing a with
++  induction n with
+   | zero =>
+     have ha : a = (fun i : Fin 0 => Fin.elim0 i) := by funext i; exact Fin.elim0 i
+     simp [assignments, ha]
+@@ -124,10 +125,10 @@
+         intro a ha b hb he
+         obtain ⟨x,_,hx⟩ := List.mem_map.mp ha
+         obtain ⟨y,_,hy⟩ := List.mem_map.mp hb
+-        subst a
+-        subst b
+-        have hz := congrFun he 0
+-        simpa only [Fin.cons_zero] using hz
++        have heq := hx.trans (he.trans hy.symm)
++        have hz := congrFun heq 0
++        have hfalse : false = true := by simpa only [Fin.cons_zero] using hz
++        cases hfalse
+ 
+ def mkAddress (V : List Nat) (f : Truth V) : Address :=
+   (V, (assignments V.length).map f)
+@@ -265,7 +266,7 @@
+ 
+ /-- Finite questions select ordered clause occurrences and literal POSITIONS.
+ For repeated-literal clauses this is not silently identified with distinct-variable sampling. -/
+-abbrev Question (phi : CNF) (u : Nat) := Fin u -> (Fin phi.length * Fin 3)
++abbrev Question (phi : CNF) (u : Nat) := Fin u -> (Fin phi.length × Fin 3)
+ 
+ def literalAt (c : Clause) (i : Fin 3) : Literal := ![c.1,c.2.1,c.2.2] i
+ def clauseLabels (c : Clause) : List Nat := [c.1.1,c.2.1.1,c.2.2.1]
+@@ -332,7 +333,8 @@
+     (clause_label_mem_wide q j _ (by simp [clauseLabels]))
+   have h2 := localValue_restrictGlobal sigma (wideView q) (clauseAt q j).2.2.1
+     (clause_label_mem_wide q j _ (by simp [clauseLabels]))
+-  simpa only [clauseValue, literalValue, h0, h1, h2] using hphi (q j).1
++  have hselected : clauseValue sigma (clauseAt q j) = true := hphi (q j).1
++  simpa only [clauseValue, literalValue, h0, h1, h2] using hselected
+ 
+ /-- Concrete third truth-table query, with noise bittrue meaning a negative sign. -/
+ def noisyThird {phi : CNF} {u : Nat} (q : Question phi u)
+@@ -340,13 +342,13 @@
+   fun a => Bool.xor (Bool.xor (f (restrictLocal (smallView q) (wideView q) a)) (g a)) (noise a)
+ 
+ def queries {phi : CNF} {u : Nat} (q : Question phi u)
+-    (f : Truth (smallView q)) (g noise : Truth (wideView q)) : Option (SignedAddress * (SignedAddress * SignedAddress)) := do
++    (f : Truth (smallView q)) (g noise : Truth (wideView q)) : Option (SignedAddress × (SignedAddress × SignedAddress)) := do
+   let a <- foldQuery (smallView q) (fun _ => true) f
+   let b <- foldQuery (wideView q) (selectedSat q) g
+   let c <- foldQuery (wideView q) (selectedSat q) (noisyThird q f g noise)
+   pure (a,(b,c))
+ 
+-def rowOfQueries (qs : SignedAddress * (SignedAddress * SignedAddress)) : Row :=
++def rowOfQueries (qs : SignedAddress × (SignedAddress × SignedAddress)) : Row :=
+   ((addressCode qs.1.1,(addressCode qs.2.1.1,addressCode qs.2.2.1)),
+     Bool.xor (Bool.xor qs.1.2 qs.2.1.2) qs.2.2.2)
+ 
+@@ -354,7 +356,7 @@
+     (f : Truth (smallView q)) (g noise : Truth (wideView q)) : Option Row :=
+   (queries q f g noise).map rowOfQueries
+ 
+-def queryParity (P : Nat -> Bool) (qs : SignedAddress * (SignedAddress * SignedAddress)) : Bool :=
++def queryParity (P : Nat -> Bool) (qs : SignedAddress × (SignedAddress × SignedAddress)) : Bool :=
+   Bool.xor (Bool.xor (readQuery P qs.1) (readQuery P qs.2.1)) (readQuery P qs.2.2)
+ 
+ def verifierBit {phi : CNF} {u : Nat} (P : Nat -> Bool) (q : Question phi u)
+@@ -384,14 +386,14 @@
+           ActualSourceNormalization.rhsValue (Bool.xor (Bool.xor s t) v)) := by
+   cases a <;> cases b <;> cases c <;> cases s <;> cases t <;> cases v <;> decide
+ 
+-theorem rowOfQueries_correct (P : Nat -> Bool) (qs : SignedAddress * (SignedAddress * SignedAddress)) :
++theorem rowOfQueries_correct (P : Nat -> Bool) (qs : SignedAddress × (SignedAddress × SignedAddress)) :
+     Iff (queryParity P qs = false)
+       (ActualSourceNormalization.rowValue (bitAssignment P) (rowOfQueries qs).1 =
+         ActualSourceNormalization.rhsValue (rowOfQueries qs).2) := by
+   exact parity_algebra _ _ _ _ _ _
+ 
+ theorem rowOfQueries_correct_GF2 (a : Nat -> ZMod 2)
+-    (qs : SignedAddress * (SignedAddress * SignedAddress)) :
++    (qs : SignedAddress × (SignedAddress × SignedAddress)) :
+     Iff (queryParity (boolAssignment a) qs = false)
+       (ActualSourceNormalization.rowValue a (rowOfQueries qs).1 =
+         ActualSourceNormalization.rhsValue (rowOfQueries qs).2) := by
+@@ -400,7 +402,7 @@
+ /-- Exact existing source predicate for an actually emitted row; no distinctness premise. -/
+ theorem emitted_row_correct {phi : CNF} {u : Nat} (P : Nat -> Bool) (q : Question phi u)
+     (f : Truth (smallView q)) (g noise : Truth (wideView q))
+-    (qs : SignedAddress * (SignedAddress * SignedAddress)) (hq : queries q f g noise = some qs) :
++    (qs : SignedAddress × (SignedAddress × SignedAddress)) (hq : queries q f g noise = some qs) :
+     And (emitRow q f g noise = some (rowOfQueries qs))
+       (Iff (verifierBit P q f g noise = some false)
+         (ActualSourceNormalization.rowValue (bitAssignment P) (rowOfQueries qs).1 =

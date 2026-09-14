@@ -1,0 +1,10 @@
+{
+  "session": 49391,
+  "launched": false,
+  "reason": "below_3.5GiB_start_threshold",
+  "memory_pre": 3645038592,
+  "required": 3758096384,
+  "source_sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+  "compiler_released": true,
+  "compiler_result": null
+}

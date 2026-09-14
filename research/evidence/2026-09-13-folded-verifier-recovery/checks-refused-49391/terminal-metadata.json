@@ -1,0 +1,9 @@
+{
+  "exit_code": null,
+  "launched": false,
+  "reason": "below_3.5GiB_start_threshold",
+  "memory_pre": 3645038592,
+  "start_utc": "2026-09-14T05:29:35.054258+00:00",
+  "source_sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+  "fingerprint": "0ae3f42f8ab97ca498599592539675d24ed4e0d5a5185931fd1264497254e511"
+}
