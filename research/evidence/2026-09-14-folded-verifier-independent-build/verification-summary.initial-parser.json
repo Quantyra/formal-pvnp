@@ -1,0 +1,406 @@
+{
+  "session": 17675,
+  "independent_target_rebuild": true,
+  "independent_of_author_target_outputs": true,
+  "root_acceptance_pending": true,
+  "plan_sha256": "2a7d0bdcd6fd16292dd6147774104c2357e1a3e7cd9495b0566c130e827eaa85",
+  "runner_sha256": "4be7e0a6084bf69af64c1ab18c1cde0f2351416233e045a095d27cf94cef19e1",
+  "preparation_sha256": "50272204599c4736aa8938a593b1d9aa8e9546df599c71c5f88a7e7cfad9e50e",
+  "records": [
+    {
+      "module": "ActualFoldedParityVerifier",
+      "source_sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+      "metadata_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifier-1789366177444785600.json",
+      "metadata_sha256": "14118ef13e9609e31aba535d5f715eafb4f0b485b0fd1e9668983f78bbc07f41",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-Dprofiler=true",
+        "-Dprofiler.threshold=0",
+        "-DstderrAsMessages=false",
+        "-DElab.async=false",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lib\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean"
+      ],
+      "guard_stopped": false,
+      "errors": [],
+      "warnings": [
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:35:55: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:52:46: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:6: warning: `if_false` has been deprecated: Use `ite_false` instead",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:16: warning: `if_true` has been deprecated: Use `ite_true` instead",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:6: warning: `if_false` has been deprecated: Use `ite_false` instead",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifier.lean:71:16: warning: `if_true` has been deprecated: Use `ite_true` instead"
+      ],
+      "profiles": [],
+      "log_sha256": "211a84612b23cadabd6e4e8235e0f4f5db53ef58b9c58ea5ee2e238c1fcc0005",
+      "telemetry_sha256": "5235a068b29c43d5bb23bbbdfa5e96918f67a8b338b7e05212d2bdb44c39bfc3",
+      "snapshot_sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+      "output_sha256": "6aa2fc99204cb285aec7bee9384b96146efa730d88c5322533b1235afdfe5811"
+    },
+    {
+      "module": "ActualFoldedParityVerifierChecks",
+      "source_sha256": "1b70a36cfd2ad51b985dd94ce53b9b73d348cc9d33657fe2f7491acef6c6d999",
+      "metadata_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifierChecks-1789366435218187100.json",
+      "metadata_sha256": "c2495296ec8e013ef1289a6a08ae9751afb4a9012e8cf3f74b27fa6cbeb16b0f",
+      "exit_code": 0,
+      "command": [
+        "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+        "-Dprofiler=true",
+        "-Dprofiler.threshold=0",
+        "-DstderrAsMessages=false",
+        "-DElab.async=false",
+        "-R",
+        "lean",
+        "-o",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lib\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.olean",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean"
+      ],
+      "guard_stopped": false,
+      "errors": [],
+      "warnings": [
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:13:19: warning: This simp argument is unused:",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:13:70: warning: This simp argument is unused:",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:15:8: warning: This simp argument is unused:",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:15:84: warning: This simp argument is unused:",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:45:16: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:67:47: warning: This simp argument is unused:",
+        "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\lean\\PvNP\\RealizableHardness\\ActualFoldedParityVerifierChecks.lean:79:47: warning: This simp argument is unused:"
+      ],
+      "profiles": [
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_positive",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_injective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_bounds",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.addressCode_injective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_complete",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "._boxed took 0.1ms\ninterpretation of _private.Mathlib.Tactic.Linter.FlexibleLinter.0.Mathlib.Linter.Flexible.flexibleLinter._lam_0._boxed took 0.0316ms\ninterpretation of _private.Mathlib.Tactic.Linter.Multigoal.0.Mathlib.Linter.Style.multiGoal.multiGoalLinter._lam_0._boxed took 0.0235ms\ninterpretation of _private.Mathlib.Tactic.Linter.OldObtain.0.Mathlib.Linter.Style.oldObtainLinter._lam_0._boxed took 0.0221ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.0655ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.0376ms\noverlappingInstancesLinter took 0.0652ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.153ms\ninterpretation of _private.Mathlib.Tactic.Linter.PrivateModule.0.Mathlib.Linter.privateModule._lam_1._boxed took 0.0249ms\ninterpretation of _private.Mathlib.Tactic.Linter.UnusedTactic.0.Mathlib.Linter.UnusedTactic.unusedTacticLinter._lam_0._boxed took 0.495ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.setOption.setOptionLinter._lam_0._boxed took 0.0328ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.missingEnd.missingEndLinter._lam_0._boxed took 0.0528ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.cdotLinter._lam_0._boxed took 0.0214ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.dollarSyntax.dollarSyntaxLinter._lam_0._boxed took 0.0183ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.lambdaSyntax.lambdaSyntaxLinter._lam_0._boxed took 0.0173ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.longFile.longFileLinter._lam_0._boxed took 0.0211ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.longLine.longLineLinter._lam_0._boxed took 0.0185ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.nameCheck.doubleUnderscore._lam_2._boxed took 0.177ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.openClassical.openClassicalLinter._lam_0._boxed took 0.0235ms\ninterpretation of _private.Mathlib.Tactic.Linter.Whitespace.0.Mathlib.Linter.Style.Whitespace.whitespaceLinter._lam_4._boxed took 0.0294ms\ntacticAnalysis took 0.406ms\ninterpretation of Mathlib.TacticAnalysis.tacticAnalysis._lam_1._boxed took 0.0809ms\ninterpretation of term_\u00d7_ took 0.0052ms\ninterpretation of term_\u00d7_ took 0.0023ms\ninterpretation of _private.Mathlib.Tactic.Linter.Lint.0.Mathlib.Linter.DupNamespaceLinter.dupNamespace._lam_1._boxed took 0.17ms\ninterpretation of term\u2115 took 0.0291ms\ninterpretation of term_\u00d7_ took 0.0032ms\ninterpretation of term_\u00d7_ took 0.0024ms\ninterpretation of Batteries.Linter.UnreachableTactic.unreachableTacticLinter._lam_0._boxed took 0.293ms\ninterpretation of term\u2115 took 0.0188ms\ninterpretation of Batteries.Linter.UnnecessarySeqFocus.unnecessarySeqFocusLinter._lam_1._boxed took 0.257ms\ninterpretation of _private.Mathlib.Tactic.Linter.HaveLetLinter.0.Mathlib.Linter.haveLet.haveLetLinter._lam_0._boxed took 0.023ms\ninterpretation of _private.Mathlib.Tactic.Linter.MinImports.0.Mathlib.Linter.MinImports.minImportsLinter._lam_2._boxed took 0.0369ms\ninterpretation of _private.Mathlib.Tactic.Linter.PPRoundtrip.0.Mathlib.Linter.PPRoundtrip.ppRoundtrip._lam_1._boxed took 0.0247ms\nlength",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_nodup",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.mkAddress_injective",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_sound",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_none_iff",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_pair",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_complement",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_none_iff",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_complement",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_restriction",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.localValue_restrictGlobal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestAddress_mk",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestProof_code",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_honest",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.literal_label_mem",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.clause_label_mem_wide",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.small_subset_wide",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.smallView_nodup",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wideView_nodup",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.restrictLocal_honest",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.selectedSat_honest",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.bitAssignment_boolAssignment",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.boolAssignment_bitAssignment",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct_GF2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitted_row_correct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitRow_none_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_eq_foldEval",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_honest",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff_GF2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowSource_valid",
+          "axioms": []
+        }
+      ],
+      "log_sha256": "888aa303dddc202b0e9d6cff4770e3b7cceb5005abd62aea666087e3647aa3c1",
+      "telemetry_sha256": "30c7498677f1e947ddd04cb9dcb712c76920255aabcb6fc96582d2e905227425",
+      "snapshot_sha256": "1b70a36cfd2ad51b985dd94ce53b9b73d348cc9d33657fe2f7491acef6c6d999",
+      "output_sha256": "7b2cdbbffdd2398872a6cc9b02a9ad3433a01396022b3650b624e36c36766165"
+    }
+  ],
+  "expected_profiles": [
+    "wordNat_positive",
+    "wordNat_injective",
+    "wordNat_bounds",
+    "addressCode_injective",
+    "assignments_complete",
+    "assignments_length",
+    "assignments_nodup",
+    "mkAddress_injective",
+    "firstSat_sound",
+    "firstSat_none_iff",
+    "canonical_pair",
+    "canonical_complement",
+    "foldQuery_none_iff",
+    "foldEval_complement",
+    "foldQuery_restriction",
+    "localValue_restrictGlobal",
+    "honestAddress_mk",
+    "honestProof_code",
+    "foldEval_honest",
+    "literal_label_mem",
+    "clause_label_mem_wide",
+    "small_subset_wide",
+    "smallView_nodup",
+    "wideView_nodup",
+    "restrictLocal_honest",
+    "selectedSat_honest",
+    "bitAssignment_boolAssignment",
+    "boolAssignment_bitAssignment",
+    "rowOfQueries_correct",
+    "rowOfQueries_correct_GF2",
+    "emitted_row_correct",
+    "emitRow_none_iff",
+    "verifierBit_eq_foldEval",
+    "verifierBit_honest",
+    "verifier_accept_iff",
+    "verifier_accept_iff_GF2",
+    "rowSource_valid"
+  ],
+  "examples": 19,
+  "signatures": 5,
+  "both_exit_zero": true,
+  "profiles_exact": false,
+  "profiles_allowed": true
+}

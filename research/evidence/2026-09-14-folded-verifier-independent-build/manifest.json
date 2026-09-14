@@ -1,0 +1,107 @@
+{
+  "status": "FRESH EXACT PAIR BUILD GREEN; ROOT ACCEPTANCE PENDING",
+  "session": 17675,
+  "records": [
+    {
+      "path": "plan.json",
+      "sha256": "2a7d0bdcd6fd16292dd6147774104c2357e1a3e7cd9495b0566c130e827eaa85",
+      "bytes": 2388084,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\plan.json"
+    },
+    {
+      "path": "review-runner.py",
+      "sha256": "4be7e0a6084bf69af64c1ab18c1cde0f2351416233e045a095d27cf94cef19e1",
+      "bytes": 7819,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\review-runner.py"
+    },
+    {
+      "path": "prepare.py",
+      "sha256": "f85fbdb5a60af265bdd7fea4587a450e56d0fccd76896d5ddb68b5f470d21b4f",
+      "bytes": 1115,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\prepare.py"
+    },
+    {
+      "path": "preparation.json",
+      "sha256": "50272204599c4736aa8938a593b1d9aa8e9546df599c71c5f88a7e7cfad9e50e",
+      "bytes": 281,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\preparation.json"
+    },
+    {
+      "path": "collect.py",
+      "sha256": "0ce87c82a1af9b6d43de9e3f05c72a738bcf6f53983c9347e66049c54d60d503",
+      "bytes": 2645,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\collect.py"
+    },
+    {
+      "path": "verification-summary.json",
+      "sha256": "ae19a8bc5372d9b9a9961fc0ea66b1b13a97aec9df2efc3c4e2ed5470fe62ca1",
+      "bytes": 17019,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\verification-summary.json"
+    },
+    {
+      "path": "verification-summary.initial-parser.json",
+      "sha256": "3be9770af03d517790424b0bdc9d36f0562c52557423929b266390ea069aac05",
+      "bytes": 20151,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\verification-summary.initial-parser.json"
+    },
+    {
+      "path": "profile-interleaving-reconstruction.json",
+      "sha256": "4dbeab098de331f5561c82ac5352c4b7ed673e1623762137096cd932ac48e7dd",
+      "bytes": 179441,
+      "original_path": "certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\profile-interleaving-reconstruction.json"
+    },
+    {
+      "path": "ActualFoldedParityVerifier/metadata.json",
+      "sha256": "14118ef13e9609e31aba535d5f715eafb4f0b485b0fd1e9668983f78bbc07f41",
+      "bytes": 5534,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifier-1789366177444785600.json"
+    },
+    {
+      "path": "ActualFoldedParityVerifier/raw.log",
+      "sha256": "211a84612b23cadabd6e4e8235e0f4f5db53ef58b9c58ea5ee2e238c1fcc0005",
+      "bytes": 1610474,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifier-1789366177444785600.log"
+    },
+    {
+      "path": "ActualFoldedParityVerifier/telemetry.jsonl",
+      "sha256": "5235a068b29c43d5bb23bbbdfa5e96918f67a8b338b7e05212d2bdb44c39bfc3",
+      "bytes": 315422,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifier-1789366177444785600.jsonl"
+    },
+    {
+      "path": "ActualFoldedParityVerifier/source.lean",
+      "sha256": "a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3",
+      "bytes": 21657,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifier-source-a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3.lean"
+    },
+    {
+      "path": "ActualFoldedParityVerifierChecks/metadata.json",
+      "sha256": "c2495296ec8e013ef1289a6a08ae9751afb4a9012e8cf3f74b27fa6cbeb16b0f",
+      "bytes": 5564,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifierChecks-1789366435218187100.json"
+    },
+    {
+      "path": "ActualFoldedParityVerifierChecks/raw.log",
+      "sha256": "888aa303dddc202b0e9d6cff4770e3b7cceb5005abd62aea666087e3647aa3c1",
+      "bytes": 1332033,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifierChecks-1789366435218187100.log"
+    },
+    {
+      "path": "ActualFoldedParityVerifierChecks/telemetry.jsonl",
+      "sha256": "30c7498677f1e947ddd04cb9dcb712c76920255aabcb6fc96582d2e905227425",
+      "bytes": 39747,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifierChecks-1789366435218187100.jsonl"
+    },
+    {
+      "path": "ActualFoldedParityVerifierChecks/source.lean",
+      "sha256": "1b70a36cfd2ad51b985dd94ce53b9b73d348cc9d33657fe2f7491acef6c6d999",
+      "bytes": 7305,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-folded-verifier-independent-review-20260914\\diagnostics\\ActualFoldedParityVerifierChecks-source-1b70a36cfd2ad51b985dd94ce53b9b73d348cc9d33657fe2f7491acef6c6d999.lean"
+    },
+    {
+      "path": "README.md",
+      "sha256": "e70326b2ce8298e74e1b7f4b9b76764a973f22d69b8b9929ded2c5dd3881b5a5",
+      "bytes": 3209
+    }
+  ]
+}

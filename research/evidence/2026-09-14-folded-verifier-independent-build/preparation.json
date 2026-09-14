@@ -1,0 +1,7 @@
+{
+  "records": 308,
+  "originals_receipts_and_copies_verified": true,
+  "target_outputs_absent": true,
+  "plan_sha256": "2a7d0bdcd6fd16292dd6147774104c2357e1a3e7cd9495b0566c130e827eaa85",
+  "runner_sha256": "4be7e0a6084bf69af64c1ab18c1cde0f2351416233e045a095d27cf94cef19e1"
+}
