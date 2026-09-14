@@ -1,0 +1,115 @@
+{
+  "status": "DISABLED CONTROLLED RECOVERY; PARTIAL SOURCE UNCOMPILED; THREE LOCKED TARGETS ABSENT",
+  "records": [
+    {
+      "path": ".gitattributes",
+      "bytes": 8,
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "path": "isolated-copy-inventory.json",
+      "bytes": 4764063,
+      "sha256": "ef5a80367b42b516bf0de013e7885329ae55cec8bed12e59e154a2d71d3ad3df"
+    },
+    {
+      "path": "original-current-closure.json",
+      "bytes": 4239055,
+      "sha256": "6f3f447739945ad51be0661331f97e99ce8fd5daf9270be17c22a4da7eca9da0"
+    },
+    {
+      "path": "partial-source/PvNP/RealizableHardness/StarFormulaInterface.lean",
+      "bytes": 4534,
+      "sha256": "7b50330495aae8cf65d65a187d645e70fcc60877ef28f8b66fd0da38d896ee07"
+    },
+    {
+      "path": "pinned-sources/aesop/Aesop/BuiltinRules.lean",
+      "bytes": 2398,
+      "sha256": "7c39e1a9ef911072497d036ce70cc34fb2fd0444e6d7b2674ec35367c9b70340"
+    },
+    {
+      "path": "pinned-sources/aesop/Aesop/Search/Expansion.lean",
+      "bytes": 10090,
+      "sha256": "9d64211d5b9a2f60cd1438df83aef07e08be17697cbb12a62650a98f1a579101"
+    },
+    {
+      "path": "pinned-sources/batteries/Batteries/Control/ForInStep/Lemmas.lean",
+      "bytes": 2272,
+      "sha256": "a6df8f9da96600d39a7abb888e49fa755dbadeaeb9e4c1154e3feb6417539e48"
+    },
+    {
+      "path": "pinned-sources/batteries/Batteries/Data/List/Pairwise.lean",
+      "bytes": 4698,
+      "sha256": "96fd89e7fff16524445cb2cff62f42d19d18596cf6b62839fc96e69f5d845d16"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Algebra/Group/Monoid.lean",
+      "bytes": 27847,
+      "sha256": "c36c04083c9d6b35b1fe99dd65936997abd27dbe16a1f14fd488653dd7178592"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Data/Bracket.lean",
+      "bytes": 1682,
+      "sha256": "e4b9257997323f49e2f25f61939b8b4253ec2ea45be758d661cf8bfe5bb03c2a"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Data/List/TFAE.lean",
+      "bytes": 4133,
+      "sha256": "79fc1d00b26a2b1cf68d7b54961f72b35916f868e16ac7059ebd076e49e9e407"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Order/Defs/Unbundled.lean",
+      "bytes": 17718,
+      "sha256": "467e034efcc0a8274e811953b84257ae9831aeb6cc0275e0533e662977d88e8f"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Tactic/Widget/Calc.lean",
+      "bytes": 6402,
+      "sha256": "1a4be9faab5c26d7fc613c255b7cac09837c1d3eac7baac0e78044127d99b776"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Tactic/Widget/Conv.lean",
+      "bytes": 13101,
+      "sha256": "75a7dc97b68a6011c9b2e7daccb9b7879ddc6a53c5c105252b860e367c1cad35"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Tactic/Widget/LibraryRewrite.lean",
+      "bytes": 27941,
+      "sha256": "5be94d686ad97b63e3c68a49d752ff7f7da899b3a9e4af3d6a7784e44b538ae8"
+    },
+    {
+      "path": "pinned-sources/mathlib/Mathlib/Util/AtomM.lean",
+      "bytes": 5238,
+      "sha256": "38496bc981b0deae8694a88c2dcabf36f08cd19d9e15bb2f29222c6680b12ca7"
+    },
+    {
+      "path": "plan.json",
+      "bytes": 28017,
+      "sha256": "52cf449b761b63f91cc39f568106496fd8167e619b538c41545d8cdb219e6e1a"
+    },
+    {
+      "path": "post-broadbuild-audit.json",
+      "bytes": 15712,
+      "sha256": "4eaec8b51c99b413d8c97cc81ab0e30695b36da1525ad3019fb63a013c897ec8"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6893,
+      "sha256": "f00543488364fa04bff4c6816628175d406ddffece9120b01d4a84e2950aee97"
+    },
+    {
+      "path": "reconstruction-order.json",
+      "bytes": 25726,
+      "sha256": "12aaca570c2acb9e07b091c703a9be7ba001c9c6e30519c857e8deeb995e5607"
+    },
+    {
+      "path": "recovery-search.json",
+      "bytes": 41704,
+      "sha256": "3e63c08ee224cffd835f7724dffdc8e55e95b1e4127eb405a450f3b938300eab"
+    },
+    {
+      "path": "runner.py",
+      "bytes": 5881,
+      "sha256": "e40d31826a85353afb20b75d536ae7e058929f50134807553b9187e640abe1ff"
+    }
+  ]
+}

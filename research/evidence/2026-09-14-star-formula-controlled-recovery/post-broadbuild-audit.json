@@ -1,0 +1,247 @@
+{
+  "inventory": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-list-decoding-author-green\\preparation\\current-closure.json",
+  "inventory_sha256": "6f3f447739945ad51be0661331f97e99ce8fd5daf9270be17c22a4da7eca9da0",
+  "checked": 10170,
+  "issues": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean",
+      "expected": "052d7cef78abf93863ef6dab342a6643f164b575faccd796077da787080744b2",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.private",
+      "expected": "70304805825717cfa39cec36d992b25c9eecfa12bd237d0ec22966413206a7dd",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.server",
+      "expected": "d73ed7d379fcdfe16c340a91860e2397fd14ad7b807851c2774ed9e3c0c84d1a",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir",
+      "expected": "0f52d20d8e6e9f941b41ffe5fec59da594d3f40d86d483344ab9e6ca44082487",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+      "expected": "4a30e1379a49c206c3656d6f3607dbde64390f657388ace70ec0f4a32ff2d5d2",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.private",
+      "expected": "56efd5bc6c1e3a6e5e4ebc08577fa155d5223fc9f95014f107cd09409fec0c27",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.server",
+      "expected": "0b900abf6d10272a6fc2ba069c043afe62d210781d3ab87da2bdffcdebb3874b",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir",
+      "expected": "bf38eb5b0d286fdf8ccd7c929081d00f8a1c966a970f169bd0ecb7dc35978c0c",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean",
+      "expected": "08debad5974a3642ee64b509f09222ade4b06ce4f005b2cfbd516d5a95722701",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean.private",
+      "expected": "95147b4a246880f4bd27a13f943bb382ec5981be2430cbc7f98f2917d27875ba",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean.server",
+      "expected": "62af42e78f4d5074c61b4aa9277cdb4582d2ee5f8245630c66ba0ce658e41372",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.ir",
+      "expected": "637cbe2fa671f33988b6754c738ead784c1d9cb528dcb606ac27aeb558297552",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+      "expected": "feb74305410a85f3782d987ac9a410b6b48f23debdffa6a9e7262d94c8640609",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean.private",
+      "expected": "9583fe2013aa38836e1083933e4e89163c570f904f47c04180dcd8535822b788",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean.server",
+      "expected": "bc817693f8fb96d506cbd2165eb329062ac88ddc202af3fc528df858a7c65dbb",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.ir",
+      "expected": "7c35a5cd7a2d7e9a1a1d2b3549148767fc14ca9366e018367a067376286d17da",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean",
+      "expected": "15917b25f3f4ace2355bdac32f2065b39c78232c08deb57e1c685fe11a1f4d31",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean.private",
+      "expected": "9b7058871a537a564f1fd63bcbc4cce83d721e55ef2fa842da8b250f15873656",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean.server",
+      "expected": "e1b100b254718681094a742ead8048c63b4d190c41e96691caef76a817d451c6",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.ir",
+      "expected": "d73bacf4dade500f0b1d860684a1a998d287e7c3c334b5569a54b19d0e557034",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+      "expected": "69b46a73b69be27c419758109e9f0d27e033e5dc1e8ef03d84bf1abe05f7d478",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean.private",
+      "expected": "d75d88f9eface891375707da7d6e5f98e6d9efd08147371342eca20338b1bfb8",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean.server",
+      "expected": "1068f231361a529c4e48d5bc4c10ba97cf3ee82953728bb5d971632bb0f3c2dd",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.ir",
+      "expected": "83ae672d851400d24d0d8f9fede734e103956de6ef47dcb0ced61c839956bec6",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+      "expected": "442c4599a94407facd6197fe631943957d6718880de43f126f1414a4f5539829",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.private",
+      "expected": "6923a45d19ed3148a0d5cfa81fc732f024b41a27c31ba008f8e13bcccc8bddcb",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.server",
+      "expected": "dac313d78be82153074c251dd703dc04614970b61e8a6f74858d0505db9e9b1e",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir",
+      "expected": "61dedce34372e55d76669bbb9079755ac26028955c6fea7e1767fb73037663b2",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+      "expected": "23f5358e95235499c9ec495e3c42d5f439b6fa624e1f20e4475c52acee95f152",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.private",
+      "expected": "88aa2421303983dc8ad89cf011fc25973853a866c9c831e9759bd42d19f477bc",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.server",
+      "expected": "eb9e4792e5747620a4b0b98a26d451666ac6d5aaca8d43ce8b9d60448361f978",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir",
+      "expected": "1f98a48f49d381077f260f9ee612f108c4710a6c5e489515885f8e1944d6aeaf",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean",
+      "expected": "01ad259ebd78e4fba982d7847e6a4b527524a4be479b48c4cb6abc3d08f6e3a4",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.private",
+      "expected": "17b09ecf6e0c8943a8188277b90a4a7106bb980f3513d3a3980848be32d2955e",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.server",
+      "expected": "cce55c2e763e38a4451a4cfce86e00f896b09deb6271c212ae2a6463c96f4896",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir",
+      "expected": "e7af173539c9c0854db6abc457a465d1e7ed2121743fdd0110c6fd3eb8d4a75b",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean",
+      "expected": "eb146d966e945ba708284859074930d1cfeb8dab6f8220f5da23f890518fb13b",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.private",
+      "expected": "1c89fb710799cee593eb66d980c1584c455c9d0ea6b2175b86125a2800f8ee7b",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.server",
+      "expected": "d5f1c706a0c1334aeae22366249ec2ca5bcc7089c5661af77d5e300c113e71b9",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir",
+      "expected": "47c6253c21cc934802568fc29d83ef947c6df4cc734124a5fef1b46c9d827c6a",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean",
+      "expected": "b5110802ba800135f2bd7e8b3b57d43cf85872e3f79a966cd8cc82297049a0bb",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.private",
+      "expected": "963cea7c9a9d1a97a66e1c61c0a2e3fe1564bcd0e79b3b361cded1819eb0ec9d",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.server",
+      "expected": "c52f6e20d8a6b8785f23831c42159b101574c4a6b624d414570acda921e0779b",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir",
+      "expected": "4379b3d93725d7c33b8069f6e4e7d3c5d1be73cdd59ba0652e15fc8c18b277eb",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+      "expected": "b2e08b6b77f36dd9f382949d4a3f005e074140c697ae743d3febc912303fa5c4",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.private",
+      "expected": "9f07bab38ca576ea7f31d6c03a32f1b9e91d07a5c251e183f61b3afc01c12d73",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.server",
+      "expected": "554312f9f9cf9db63d8e8f9b2240271aef18a9ccb10581ad45ea41d21ca01c04",
+      "status": "MISSING"
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir",
+      "expected": "80675a25b24e3d4d15d6fd57ef950e2af8b11b0e1370762c3f85df38e5873b31",
+      "status": "MISSING"
+    }
+  ]
+}
