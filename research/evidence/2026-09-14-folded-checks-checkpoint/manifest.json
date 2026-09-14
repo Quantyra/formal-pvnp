@@ -1,0 +1,157 @@
+{
+  "status": "INCOMPLETE; durable failed-run checkpoint",
+  "prior_recovery_commit": "79fb015a33550bf5065a029dc16ada1ee63d3ad4",
+  "records": [
+    {
+      "path": "16819/terminal-metadata.json",
+      "sha256": "00890193991a2c9c15c15464ec6b54164dd15b68215ac6a7269a032795f08ea0",
+      "bytes": 5542,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364316814836000.json",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "16819/raw.log",
+      "sha256": "cb680a847b2017f47206097c13133d2fcac8f5e8f4193955de4fc2f85f3b5055",
+      "bytes": 1456026,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364316814836000.log",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "16819/telemetry.jsonl",
+      "sha256": "f80f77c8c7146bf4691db6d5ff5a4c2f6f821e718d42cc6ea303487f98b28a76",
+      "bytes": 386723,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364316814836000.jsonl",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "16819/plan.json",
+      "sha256": "2e4ec0bd55eb2ba3c6bef86fd8eb4137f30457d30bf39d7c26bcdd5664df1e1c",
+      "bytes": 2392997,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/plan.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "16819/diagnostic-runner.py",
+      "sha256": "81af39d82bf3b709951599d1fe042464d569e48ebce5debe5dad28a9f09a455f",
+      "bytes": 9785,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/diagnostic-runner.py",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "16819/terminal-summary.json",
+      "sha256": "39eef335abf739675a82cdb9656a8c74e0fdcf382697227d232c22bcb2827eec",
+      "bytes": 8756,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/terminal-summary.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "16819/axiom-profile-parse.json",
+      "sha256": "c4c9ca3c81a99fbc95b92be30d16c8ac5c1aefafddcd146c0f2e6d37e4a623b9",
+      "bytes": 7116,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/axiom-profile-parse.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "16819/ActualFoldedParityVerifierChecks.lean",
+      "sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+      "bytes": 5649,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/lean/PvNP/RealizableHardness/ActualFoldedParityVerifierChecks.lean",
+      "role": "exact compiler-tested Checks source"
+    },
+    {
+      "path": "16819/source-snapshot.lean",
+      "sha256": "754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a",
+      "bytes": 5649,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-reduction-retry-20260913/diagnostics/ActualFoldedParityVerifierChecks-source-754673a70a21e993b5bf917208acfd58fd6ef42cbc3547fc6ba2d6f7e834a96a.lean",
+      "role": "original source snapshot"
+    },
+    {
+      "path": "51661/terminal-metadata.json",
+      "sha256": "9630ba89324d30df74844c13ab9a73d66c72170f7f21c8469e2f6f092626a500",
+      "bytes": 5528,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364712539781400.json",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "51661/raw.log",
+      "sha256": "731302fd8db46f35810fe652eafecfaf2056a66bd0e7f076f0d2daf57e906e15",
+      "bytes": 1466410,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364712539781400.log",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "51661/telemetry.jsonl",
+      "sha256": "10ba061e3f3618f31b85ca2ec383259d91959e38858fa6587d36fd0c6d31ff21",
+      "bytes": 42870,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-1789364712539781400.jsonl",
+      "role": "original failed-run evidence"
+    },
+    {
+      "path": "51661/plan.json",
+      "sha256": "d2b70354df6619586a5cf0a1ee4b49a62aed80dbfe0047f7a7607ecf33cd5209",
+      "bytes": 2393051,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/plan.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "51661/diagnostic-runner.py",
+      "sha256": "4fa0fa85be9ead70de2d1a5f565144a9feb6c1b43f57739c4e7dbaa4903711f7",
+      "bytes": 9951,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/diagnostic-runner.py",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "51661/terminal-summary.json",
+      "sha256": "a0c80d98642953b42a7e80afb7ebaadb692852b695239a395babaf34cbd62368",
+      "bytes": 23419,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/terminal-summary.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "51661/axiom-profile-parse.json",
+      "sha256": "3cc17743090d3c13cbba540d11b2dcc1b214fa61f1a3858c59f362f0d0422c3b",
+      "bytes": 8474,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/axiom-profile-parse.json",
+      "role": "diagnostic provenance; profile incomplete"
+    },
+    {
+      "path": "51661/ActualFoldedParityVerifierChecks.lean",
+      "sha256": "517961d35b88ede87c3e60169e0372a1b9ddbd05dcad073c9b2709d8fa72d687",
+      "bytes": 6837,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/lean/PvNP/RealizableHardness/ActualFoldedParityVerifierChecks.lean",
+      "role": "exact compiler-tested Checks source"
+    },
+    {
+      "path": "51661/source-snapshot.lean",
+      "sha256": "517961d35b88ede87c3e60169e0372a1b9ddbd05dcad073c9b2709d8fa72d687",
+      "bytes": 6837,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/diagnostics/ActualFoldedParityVerifierChecks-source-517961d35b88ede87c3e60169e0372a1b9ddbd05dcad073c9b2709d8fa72d687.lean",
+      "role": "original source snapshot"
+    },
+    {
+      "path": "checks-staged.patch",
+      "sha256": "176d0bce4a4ab68f394123e89e639beb1f90719f62d4883eb10f3350b4798b32",
+      "bytes": 3257,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-folded-parity-verifier-checks-staged-repair-20260913/proof-repair.patch",
+      "role": "incremental four-example proof patch"
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "85f1ec83424b3b845ed82afde3673d847deadbce932d43c0374c561546e60fc4",
+      "bytes": 28,
+      "role": "preserve raw bytes"
+    },
+    {
+      "path": "README.md",
+      "sha256": "2a24dca58db71d51b1ab98f7e2bf405f513b0ff405ee57cb9ea5bab265b8b9cb",
+      "bytes": 2113,
+      "role": "bounded failure diagnosis and next proof boundary"
+    },
+    {
+      "path": "51661/exact-residual-blocks.json",
+      "sha256": "83497f89048327d7d89cde9fa845329f25c9960a3ef9e4dde6801d601b415a0d",
+      "bytes": 473660,
+      "role": "exact four residual goal/error raw spans"
+    }
+  ]
+}

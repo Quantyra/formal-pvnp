@@ -1,0 +1,27 @@
+--- prior
++++ repaired
+@@ -30,10 +30,12 @@
+ example : queries repeatedQuestion (fun _ => false) (fun _ => false) (fun _ => false) =
+     some ((([0],[false,false]),false),
+       ((([0],[false,false]),false),(([0],[false,false]),false))) := by
++  dsimp only [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+   simp [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+ example : queries repeatedQuestion (fun _ => true) (fun _ => false) (fun _ => true) =
+     some ((([0],[false,false]),true),
+       ((([0],[false,false]),false),(([0],[false,false]),false))) := by
++  dsimp only [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+   simp [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+ 
+ -- A genuinely empty selected conditioning domain.
+@@ -42,9 +44,11 @@
+ def contradictoryQuestion : Question contradictoryPhi 2 := fun j => (j,0)
+ example : queries contradictoryQuestion (fun _ => false) (fun _ => false)
+     (fun _ => false) = none := by
++  dsimp only [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+   simp [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+ example : emitRow contradictoryQuestion (fun _ => false) (fun _ => false)
+     (fun _ => false) = none := by
++  dsimp only [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+   simp [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+ 
+ -- The actual ordered emitted row permits three identical addresses and either RHS.
