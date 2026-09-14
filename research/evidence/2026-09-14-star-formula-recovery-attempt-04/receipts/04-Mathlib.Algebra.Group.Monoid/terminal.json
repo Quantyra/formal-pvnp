@@ -1,0 +1,71 @@
+{
+  "module": "Mathlib.Algebra.Group.Monoid",
+  "source_sha256": "c36c04083c9d6b35b1fe99dd65936997abd27dbe16a1f14fd488653dd7178592",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-DautoImplicit=false",
+    "-DmaxSynthPendingDepth=3",
+    "-Dpp.unicode.fun=true",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Algebra\\Group\\Monoid.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5469016064,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 12324,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 4834451456,
+  "elapsed": 16.56633687019348,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ilean",
+      "sha256": "ccb9cfe67241824fe144bad3df9ea6f0643f4d78bf588680e39bffa97b992b28",
+      "bytes": 43309
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir",
+      "sha256": "8811e7eafa72c3728f9c10593b7b71f39d7bb5cc4128f3f25b182727099dbd08",
+      "bytes": 50232
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir.sig",
+      "sha256": "f8359a342a970720f9a2e076fcff7149d004faadf02d0168e290d26047c350a2",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+      "sha256": "734e4db4630c1ba40491a1128a14445a9c136d9870fcd0cb5661bb6bfa2d620a",
+      "bytes": 719616
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.private",
+      "sha256": "4bbdb8a35ddff0aed198b66011f9dfd05ca52692c5599c72476262bafde1a48f",
+      "bytes": 689776
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.server",
+      "sha256": "9d860b010045a54f8e695042149571b2397eed9ea6141d41165d7ba4f47a1069",
+      "bytes": 56768
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "3068ee9392873ebdb87478ed8d593196ed1070d827e9cf84e8a8ac8bb4e32a71",
+  "telemetry_sha256": "ff986c58c020ef2c136f1bf5fffc66287682baaec5a8494929251167a2dfaeef",
+  "diagnostic_only": true
+}

@@ -1,0 +1,71 @@
+{
+  "module": "Mathlib.Tactic.Widget.Calc",
+  "source_sha256": "1a4be9faab5c26d7fc613c255b7cac09837c1d3eac7baac0e78044127d99b776",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-DautoImplicit=false",
+    "-DmaxSynthPendingDepth=3",
+    "-Dpp.unicode.fun=true",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Tactic\\Widget\\Calc.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5412921344,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 37004,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 4946489344,
+  "elapsed": 10.810302257537842,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ilean",
+      "sha256": "70f7beb263f92dbe91c8dff322923232bf0487b72062199b3cd8315cb6963fc3",
+      "bytes": 16417
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir",
+      "sha256": "62ef333e07de887957743924c83392eab99002eebdb7a26d124b38459efba74a",
+      "bytes": 276360
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir.sig",
+      "sha256": "dbf6ec03628c3091ad63c52e02bb8f44517c8bb6e900db4be770cbce4f7163d4",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+      "sha256": "7161d0427499416004b619f7c3481a86cb61629929ccb656bf14f7c3f3ae58a6",
+      "bytes": 371816
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.private",
+      "sha256": "b165d23708192bd914b7e77618af963f2018c970941ade74c5292ea899168129",
+      "bytes": 738968
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.server",
+      "sha256": "ef21c75cdef4e05883b1254ea496c3a78502ef52f08e23d6fa99962bf0d76bbe",
+      "bytes": 5104
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "f02cc0d89402b7a488711aacfae15da4420d48eb0fab9899ffee9dc7b491ad45",
+  "telemetry_sha256": "015183f6d0531a09955f43f444b79871f22dc560142a275e40cf7d7ab7636914",
+  "diagnostic_only": true
+}

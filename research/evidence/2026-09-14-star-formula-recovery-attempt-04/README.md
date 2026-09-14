@@ -1,0 +1,13 @@
+# Controlled dependency recovery and first interface diagnostic
+
+Scope: S3126/S3137; author diagnostics only. No theorem acceptance, no independent build, no full manuscript claim.
+
+The original disabled recovery archive ad8ecf2 is unchanged. Attempt01/session70193 stopped before launching Lean (available 1,983,778,816 bytes below 3.5 GiB). Root paused authorized applications and granted one retry. Attempt02/session89305 exited1 on first target because the first search root shadowed the complete dependency namespace. Attempt03/session98296 exited1 on first target because the original four-output closure omitted IR signature sidecars. Both failures preserved exact logs; neither was a mathematical diagnostic or memory-guard failure.
+
+Pinned Lean Path.findWithExt selects the first package directory without checking the requested module file. Environment.readIRPartsOfMod requires .ir.sig before loading .ir; mainModule? can fail for IR-only imports if signatures are absent. The correction uses one merged isolated root. Comprehensive audit found all2034 raw sources unchanged, 2022 surviving IR outputs equal original hashes, exactly12 missing signature families matching reconstruction targets, and no unresolved non-toolchain source imports. The2022 copied signatures have NEW current-only provenance; the old inventory never pinned them. No retrospective acceptance claim.
+
+Attempt04/session77967 directly compiled the exact12 pinned targets, serially and with unchanged flags/guards. All12 exited0 with allfive required output families. The frozen partial StarFormulaInterface7b5033 then exited1 with real elaboration errors in Boolean fold lemmas and dependent witness transport. Its three remaining locked interface theorems were absent from that source; no completion claim. Source edits were not made during recovery.
+
+All raw attempts, telemetry, terminal metadata and source/runner/plan snapshots are under the corresponding attempt directories. postflight.json verifies10113 original/copied artifacts unchanged and records72 freshly generated files (12 times six, including .ilean). Generated binaries stay in the isolated ignored workspace and are precisely hash-pinned; durable source and raw receipts permit recovery. Partial diagnostics preserve the full raw log and a convenience extract. The native memory guards were unchanged: start3.5GiB, stopownedchild640MiB, one thread. No broad Lake build, download, or publication occurred in this controlled recovery.
+
+The later complete Luna candidate is a separate diagnostic target. It must reuse these dependencies and obtain its own exact source pin, compiler result, Checks and reviews. The existing semantic review8bbe6a concerns the earlier partial source only.

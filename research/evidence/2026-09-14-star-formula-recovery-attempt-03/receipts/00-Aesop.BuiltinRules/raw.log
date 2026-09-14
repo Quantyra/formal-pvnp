@@ -1,0 +1,5 @@
+import took 22.4s
+C:\Users\Dan\Desktop\Projects\formal-pvnp\research\evidence\2026-09-14-star-formula-controlled-recovery\pinned-sources\aesop\Aesop\BuiltinRules.lean:9:0: error: missing data file for module Batteries.Lean.Meta.DiscrTree
+cumulative profiling times:
+	import 22.4s
+	initialization 94ms

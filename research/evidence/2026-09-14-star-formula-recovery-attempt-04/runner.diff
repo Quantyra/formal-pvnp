@@ -1,0 +1,24 @@
+--- 
++++ 
+@@ -29,10 +29,10 @@
+ outroot=w/'deps/lib/lean';outroot.mkdir(parents=True,exist_ok=True)
+ for r in p['sources']+[p['partial']]:
+  rel=pathlib.Path(*r['module'].split('.'))
+- for ext in ['.olean','.olean.private','.olean.server','.ir']:
++ for ext in ['.olean','.olean.private','.olean.server','.ir.sig','.ir']:
+   assert not pathlib.Path(str(outroot/rel)+ext).exists(), 'No automatic retry or overwrite; preserve prior outputs and get a new reviewed plan'
+ env=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['LEAN_PATH']=';'.join([str(outroot),str(pathlib.Path(p['lean_exe']).parent.parent/'lib/lean')]);env.pop('LEAN_SRC_PATH',None)
+-diag=w/'guarded-runs-attempt-03';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
++diag=w/'guarded-runs-attempt-04';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
+ for index,r in enumerate(p['sources']+[p['partial']]):
+  name=r['module'];d=diag/(str(index).zfill(2)+'-'+name);d.mkdir();source=pathlib.Path(r['path']);before=sha(source);(d/'source.lean').write_bytes(source.read_bytes());(d/'runner.py').write_bytes(pathlib.Path(__file__).read_bytes());(d/'plan.json').write_bytes((B/'plan.json').read_bytes())
+  out=outroot/pathlib.Path(*name.split('.'));out.parent.mkdir(parents=True,exist_ok=True)
+@@ -53,7 +53,7 @@
+    time.sleep(.25)
+   rc=child.wait()
+  outputs=[{'path':str(f),'sha256':sha(f),'bytes':f.stat().st_size} for f in out.parent.glob(out.name+'.*') if f.is_file()]
+- required=['.olean'] if index==12 else ['.olean','.olean.private','.olean.server','.ir']
++ required=['.olean'] if index==12 else ['.olean','.olean.private','.olean.server','.ir.sig','.ir']
+  complete=all(pathlib.Path(str(out)+ext).exists() for ext in required)
+  record={**meta,'launched':True,'pid':child.pid,'exit_code':rc,'guard_stopped':stopped,'minimum':low,'elapsed':time.time()-start,'source_unchanged':sha(source)==before,'outputs':outputs,'required_outputs_complete':complete,'log_sha256':sha(log),'telemetry_sha256':sha(tele),'diagnostic_only':True}
+  save(d/'terminal.json',record);print('TERMINAL',name,rc,'complete',complete,flush=True)

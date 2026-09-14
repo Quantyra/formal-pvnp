@@ -1,0 +1,5 @@
+import took 38.7s
+C:\Users\Dan\Desktop\Projects\formal-pvnp\research\evidence\2026-09-14-star-formula-controlled-recovery\pinned-sources\aesop\Aesop\BuiltinRules.lean:9:0: error: object file 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\star-formula-interface-recovery-20260914\reconstructed\lib\lean\Aesop\BuiltinRules\Assumption.olean' of module Aesop.BuiltinRules.Assumption does not exist
+cumulative profiling times:
+	import 38.7s
+	initialization 80.9ms

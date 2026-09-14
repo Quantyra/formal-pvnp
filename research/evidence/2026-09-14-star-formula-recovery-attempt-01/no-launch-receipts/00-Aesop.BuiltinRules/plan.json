@@ -1,0 +1,409 @@
+{
+  "compiler_authorized": true,
+  "partial_only": true,
+  "reconstruction_is_new_current_provenance": true,
+  "workspace": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914",
+  "companion": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+  "pins": {
+    "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+    "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+    "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+    "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+    "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+    "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+    "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+    "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+    "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+    "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+    "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+  },
+  "lake_manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "copies_sha256": "ef5a80367b42b516bf0de013e7885329ae55cec8bed12e59e154a2d71d3ad3df",
+  "sources": [
+    {
+      "module": "Aesop.BuiltinRules",
+      "package": "aesop",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop\\Aesop\\BuiltinRules.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop",
+      "sha256": "7c39e1a9ef911072497d036ce70cc34fb2fd0444e6d7b2674ec35367c9b70340",
+      "pinned_blob_sha256": "60a2029cb540854afebccd00b0a3ad7fc4ce1274cbad36f00a87795d0d96a376",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\Aesop\\BuiltinRules.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean",
+          "sha256": "08debad5974a3642ee64b509f09222ade4b06ce4f005b2cfbd516d5a95722701",
+          "bytes": 18608
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean.private",
+          "sha256": "95147b4a246880f4bd27a13f943bb382ec5981be2430cbc7f98f2917d27875ba",
+          "bytes": 6184
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.olean.server",
+          "sha256": "62af42e78f4d5074c61b4aa9277cdb4582d2ee5f8245630c66ba0ce658e41372",
+          "bytes": 1312
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\BuiltinRules.ir",
+          "sha256": "637cbe2fa671f33988b6754c738ead784c1d9cb528dcb606ac27aeb558297552",
+          "bytes": 2256
+        }
+      ]
+    },
+    {
+      "module": "Aesop.Search.Expansion",
+      "package": "aesop",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop\\Aesop\\Search\\Expansion.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop",
+      "sha256": "9d64211d5b9a2f60cd1438df83aef07e08be17697cbb12a62650a98f1a579101",
+      "pinned_blob_sha256": "7eeee4656e838e398ce12fbab36a9fc5920d6d95b8d4207db731ad65d552ee1b",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\Aesop\\Search\\Expansion.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+          "sha256": "feb74305410a85f3782d987ac9a410b6b48f23debdffa6a9e7262d94c8640609",
+          "bytes": 637976
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean.private",
+          "sha256": "9583fe2013aa38836e1083933e4e89163c570f904f47c04180dcd8535822b788",
+          "bytes": 683096
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.olean.server",
+          "sha256": "bc817693f8fb96d506cbd2165eb329062ac88ddc202af3fc528df858a7c65dbb",
+          "bytes": 8504
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean\\Aesop\\Search\\Expansion.ir",
+          "sha256": "7c35a5cd7a2d7e9a1a1d2b3549148767fc14ca9366e018367a067376286d17da",
+          "bytes": 456696
+        }
+      ]
+    },
+    {
+      "module": "Batteries.Control.ForInStep.Lemmas",
+      "package": "batteries",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries\\Batteries\\Control\\ForInStep\\Lemmas.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries",
+      "sha256": "a6df8f9da96600d39a7abb888e49fa755dbadeaeb9e4c1154e3feb6417539e48",
+      "pinned_blob_sha256": "bb64f141ecf9d378130442270fe52d09be17f64908fc9dcf84b857b2a87bd010",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\Batteries\\Control\\ForInStep\\Lemmas.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean",
+          "sha256": "01ad259ebd78e4fba982d7847e6a4b527524a4be479b48c4cb6abc3d08f6e3a4",
+          "bytes": 29064
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.private",
+          "sha256": "17b09ecf6e0c8943a8188277b90a4a7106bb980f3513d3a3980848be32d2955e",
+          "bytes": 36856
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.server",
+          "sha256": "cce55c2e763e38a4451a4cfce86e00f896b09deb6271c212ae2a6463c96f4896",
+          "bytes": 3496
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir",
+          "sha256": "e7af173539c9c0854db6abc457a465d1e7ed2121743fdd0110c6fd3eb8d4a75b",
+          "bytes": 1584
+        }
+      ]
+    },
+    {
+      "module": "Batteries.Data.List.Pairwise",
+      "package": "batteries",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries\\Batteries\\Data\\List\\Pairwise.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries",
+      "sha256": "96fd89e7fff16524445cb2cff62f42d19d18596cf6b62839fc96e69f5d845d16",
+      "pinned_blob_sha256": "ba742868a2af05168a2d786984ebd800df63406529737728d8198d3d09d415ec",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\Batteries\\Data\\List\\Pairwise.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+          "sha256": "23f5358e95235499c9ec495e3c42d5f439b6fa624e1f20e4475c52acee95f152",
+          "bytes": 34696
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.private",
+          "sha256": "88aa2421303983dc8ad89cf011fc25973853a866c9c831e9759bd42d19f477bc",
+          "bytes": 101416
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.server",
+          "sha256": "eb9e4792e5747620a4b0b98a26d451666ac6d5aaca8d43ce8b9d60448361f978",
+          "bytes": 4432
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir",
+          "sha256": "1f98a48f49d381077f260f9ee612f108c4710a6c5e489515885f8e1944d6aeaf",
+          "bytes": 1576
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Algebra\\Group\\Monoid.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "c36c04083c9d6b35b1fe99dd65936997abd27dbe16a1f14fd488653dd7178592",
+      "pinned_blob_sha256": "192a415f3decda0c5c21f8c6c04bdc26fd7072cb47ded0b0d0aa2ba09e204c35",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Algebra\\Group\\Monoid.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+          "sha256": "4a30e1379a49c206c3656d6f3607dbde64390f657388ace70ec0f4a32ff2d5d2",
+          "bytes": 757344
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.private",
+          "sha256": "56efd5bc6c1e3a6e5e4ebc08577fa155d5223fc9f95014f107cd09409fec0c27",
+          "bytes": 657832
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.server",
+          "sha256": "0b900abf6d10272a6fc2ba069c043afe62d210781d3ab87da2bdffcdebb3874b",
+          "bytes": 56896
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir",
+          "sha256": "bf38eb5b0d286fdf8ccd7c929081d00f8a1c966a970f169bd0ecb7dc35978c0c",
+          "bytes": 50288
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Data.Bracket",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Data\\Bracket.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "e4b9257997323f49e2f25f61939b8b4253ec2ea45be758d661cf8bfe5bb03c2a",
+      "pinned_blob_sha256": "946ad898e09127764d9350797d317bdfdd9368c951604ade79af8f9958c71a8d",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Data\\Bracket.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean",
+          "sha256": "15917b25f3f4ace2355bdac32f2065b39c78232c08deb57e1c685fe11a1f4d31",
+          "bytes": 53936
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean.private",
+          "sha256": "9b7058871a537a564f1fd63bcbc4cce83d721e55ef2fa842da8b250f15873656",
+          "bytes": 61160
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.olean.server",
+          "sha256": "e1b100b254718681094a742ead8048c63b4d190c41e96691caef76a817d451c6",
+          "bytes": 3400
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\Bracket.ir",
+          "sha256": "d73bacf4dade500f0b1d860684a1a998d287e7c3c334b5569a54b19d0e557034",
+          "bytes": 22360
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Data.List.TFAE",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Data\\List\\TFAE.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "79fc1d00b26a2b1cf68d7b54961f72b35916f868e16ac7059ebd076e49e9e407",
+      "pinned_blob_sha256": "d7446b4076bca4dbf2758b7799d9016ac06aec99583a68e6f94e0ab370a4748d",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Data\\List\\TFAE.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+          "sha256": "442c4599a94407facd6197fe631943957d6718880de43f126f1414a4f5539829",
+          "bytes": 57200
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.private",
+          "sha256": "6923a45d19ed3148a0d5cfa81fc732f024b41a27c31ba008f8e13bcccc8bddcb",
+          "bytes": 145440
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.server",
+          "sha256": "dac313d78be82153074c251dd703dc04614970b61e8a6f74858d0505db9e9b1e",
+          "bytes": 6056
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir",
+          "sha256": "61dedce34372e55d76669bbb9079755ac26028955c6fea7e1767fb73037663b2",
+          "bytes": 28248
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Order.Defs.Unbundled",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Order\\Defs\\Unbundled.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "467e034efcc0a8274e811953b84257ae9831aeb6cc0275e0533e662977d88e8f",
+      "pinned_blob_sha256": "980b2e411f90880ef416672a2bf5bb39ca10e5f3dd6add2e4937573067bd6eae",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Order\\Defs\\Unbundled.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean",
+          "sha256": "052d7cef78abf93863ef6dab342a6643f164b575faccd796077da787080744b2",
+          "bytes": 295232
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.private",
+          "sha256": "70304805825717cfa39cec36d992b25c9eecfa12bd237d0ec22966413206a7dd",
+          "bytes": 183264
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.server",
+          "sha256": "d73ed7d379fcdfe16c340a91860e2397fd14ad7b807851c2774ed9e3c0c84d1a",
+          "bytes": 39176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir",
+          "sha256": "0f52d20d8e6e9f941b41ffe5fec59da594d3f40d86d483344ab9e6ca44082487",
+          "bytes": 22616
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Calc",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Tactic\\Widget\\Calc.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "1a4be9faab5c26d7fc613c255b7cac09837c1d3eac7baac0e78044127d99b776",
+      "pinned_blob_sha256": "27b9d5a406abc063877f1e6681f0541b0a8be258699fcffeb3a16f28dcf70850",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Tactic\\Widget\\Calc.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+          "sha256": "b2e08b6b77f36dd9f382949d4a3f005e074140c697ae743d3febc912303fa5c4",
+          "bytes": 371904
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.private",
+          "sha256": "9f07bab38ca576ea7f31d6c03a32f1b9e91d07a5c251e183f61b3afc01c12d73",
+          "bytes": 739472
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.server",
+          "sha256": "554312f9f9cf9db63d8e8f9b2240271aef18a9ccb10581ad45ea41d21ca01c04",
+          "bytes": 5104
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir",
+          "sha256": "80675a25b24e3d4d15d6fd57ef950e2af8b11b0e1370762c3f85df38e5873b31",
+          "bytes": 276416
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.Conv",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Tactic\\Widget\\Conv.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "75a7dc97b68a6011c9b2e7daccb9b7879ddc6a53c5c105252b860e367c1cad35",
+      "pinned_blob_sha256": "49742a120f71e8b3bb66dfab6bbc42e1a6956ca25f4665c3fef7cf5cbf1a73dc",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Tactic\\Widget\\Conv.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean",
+          "sha256": "b5110802ba800135f2bd7e8b3b57d43cf85872e3f79a966cd8cc82297049a0bb",
+          "bytes": 518048
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.private",
+          "sha256": "963cea7c9a9d1a97a66e1c61c0a2e3fe1564bcd0e79b3b361cded1819eb0ec9d",
+          "bytes": 752264
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.server",
+          "sha256": "c52f6e20d8a6b8785f23831c42159b101574c4a6b624d414570acda921e0779b",
+          "bytes": 11184
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir",
+          "sha256": "4379b3d93725d7c33b8069f6e4e7d3c5d1be73cdd59ba0652e15fc8c18b277eb",
+          "bytes": 276192
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Tactic.Widget.LibraryRewrite",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Tactic\\Widget\\LibraryRewrite.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "5be94d686ad97b63e3c68a49d752ff7f7da899b3a9e4af3d6a7784e44b538ae8",
+      "pinned_blob_sha256": "56ebb8d660651653f9bfe719837cc214248b19cd42e30ec6181916594bae4ecf",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Tactic\\Widget\\LibraryRewrite.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean",
+          "sha256": "eb146d966e945ba708284859074930d1cfeb8dab6f8220f5da23f890518fb13b",
+          "bytes": 1059512
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.private",
+          "sha256": "1c89fb710799cee593eb66d980c1584c455c9d0ea6b2175b86125a2800f8ee7b",
+          "bytes": 2346224
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.server",
+          "sha256": "d5f1c706a0c1334aeae22366249ec2ca5bcc7089c5661af77d5e300c113e71b9",
+          "bytes": 29528
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir",
+          "sha256": "47c6253c21cc934802568fc29d83ef947c6df4cc734124a5fef1b46c9d827c6a",
+          "bytes": 858768
+        }
+      ]
+    },
+    {
+      "module": "Mathlib.Util.AtomM",
+      "package": "mathlib",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Util\\AtomM.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+      "sha256": "38496bc981b0deae8694a88c2dcabf36f08cd19d9e15bb2f29222c6680b12ca7",
+      "pinned_blob_sha256": "0231b4698f88f5cbdddce5453fc2943a18cd7067ea67d1f251bc600b54518c72",
+      "original": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\Mathlib\\Util\\AtomM.lean",
+      "expected_old_outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+          "sha256": "69b46a73b69be27c419758109e9f0d27e033e5dc1e8ef03d84bf1abe05f7d478",
+          "bytes": 107880
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean.private",
+          "sha256": "d75d88f9eface891375707da7d6e5f98e6d9efd08147371342eca20338b1bfb8",
+          "bytes": 110048
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.olean.server",
+          "sha256": "1068f231361a529c4e48d5bc4c10ba97cf3ee82953728bb5d971632bb0f3c2dd",
+          "bytes": 8064
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean\\Mathlib\\Util\\AtomM.ir",
+          "sha256": "83ae672d851400d24d0d8f9fede734e103956de6ef47dcb0ced61c839956bec6",
+          "bytes": 45288
+        }
+      ]
+    }
+  ],
+  "partial": {
+    "module": "PvNP.RealizableHardness.StarFormulaInterface",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\partial-source\\PvNP\\RealizableHardness\\StarFormulaInterface.lean",
+    "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\partial-source",
+    "sha256": "7b50330495aae8cf65d65a187d645e70fcc60877ef28f8b66fd0da38d896ee07"
+  },
+  "lean_exe": "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+  "start_bytes": 3758096384,
+  "stop_bytes": 671088640,
+  "threads": 1,
+  "do_not_run_lake": true,
+  "lean_sha256": "37dfe799f69b990251f3b6bcff8a1c10c1afe2adcdecc5c580cc6726ffb63433",
+  "root_clearance": "Root /root explicitly authorized exact12-module reconstruction then frozen partial7b5033, serial3.5GiB/640MiBguard; no broadLake/sourcechange/fulltheoremclaim."
+}

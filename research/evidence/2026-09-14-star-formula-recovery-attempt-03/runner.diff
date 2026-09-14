@@ -1,0 +1,19 @@
+--- attempt02
++++ attempt03
+@@ -26,13 +26,13 @@
+  _fields_=[('length',ctypes.c_ulong),('load',ctypes.c_ulong)]+[(n,ctypes.c_ulonglong) for n in ['total','available','totalpage','availablepage','totalvirtual','availablevirtual','extended']]
+ def memory():
+  m=MS();m.length=ctypes.sizeof(m);assert ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(m));return m.available
+-outroot=w/'reconstructed/lib/lean';outroot.mkdir(parents=True,exist_ok=True)
++outroot=w/'deps/lib/lean';outroot.mkdir(parents=True,exist_ok=True)
+ for r in p['sources']+[p['partial']]:
+  rel=pathlib.Path(*r['module'].split('.'))
+  for ext in ['.olean','.olean.private','.olean.server','.ir']:
+   assert not pathlib.Path(str(outroot/rel)+ext).exists(), 'No automatic retry or overwrite; preserve prior outputs and get a new reviewed plan'
+-env=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['LEAN_PATH']=';'.join([str(outroot),str(w/'deps/lib/lean'),str(pathlib.Path(p['lean_exe']).parent.parent/'lib/lean')]);env.pop('LEAN_SRC_PATH',None)
+-diag=w/'guarded-runs';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
++env=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['LEAN_PATH']=';'.join([str(outroot),str(pathlib.Path(p['lean_exe']).parent.parent/'lib/lean')]);env.pop('LEAN_SRC_PATH',None)
++diag=w/'guarded-runs-attempt-03';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
+ for index,r in enumerate(p['sources']+[p['partial']]):
+  name=r['module'];d=diag/(str(index).zfill(2)+'-'+name);d.mkdir();source=pathlib.Path(r['path']);before=sha(source);(d/'source.lean').write_bytes(source.read_bytes());(d/'runner.py').write_bytes(pathlib.Path(__file__).read_bytes());(d/'plan.json').write_bytes((B/'plan.json').read_bytes())
+  out=outroot/pathlib.Path(*name.split('.'));out.parent.mkdir(parents=True,exist_ok=True)

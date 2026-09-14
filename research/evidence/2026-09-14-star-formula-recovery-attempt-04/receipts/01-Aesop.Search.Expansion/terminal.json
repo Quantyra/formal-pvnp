@@ -1,0 +1,69 @@
+{
+  "module": "Aesop.Search.Expansion",
+  "source_sha256": "9d64211d5b9a2f60cd1438df83aef07e08be17697cbb12a62650a98f1a579101",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-Dlinter.unusedVariables=false",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop\\Aesop\\Search\\Expansion.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5535449088,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 41956,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 5052964864,
+  "elapsed": 7.064418792724609,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ilean",
+      "sha256": "c4d9b4a970f4187e9c0733e548d7899a4a95088f4a45b20b045b15b6efba14bf",
+      "bytes": 33446
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir",
+      "sha256": "21fea78105da59ac4f325e2c42e2711bea4ad96fd513830272f37ee0bd0dfe54",
+      "bytes": 456336
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir.sig",
+      "sha256": "71646baf00a8563a5796d76a4ecf2c6bd4ac36b5883326c6baa90480ba0c0ca1",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+      "sha256": "a57ea54d4a43f47d97d72f58878d26c073f25a5f01041d3024d408c9c2ba7af3",
+      "bytes": 637896
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.private",
+      "sha256": "a54246f7f1d36601df06cb375b5809a056d3405738baca148bdcfd6699f89fc7",
+      "bytes": 681784
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.server",
+      "sha256": "aef0f7e74855d18851f3e1a5d25f7813156bc0c8a2e6eab614aa6a24780bd188",
+      "bytes": 8504
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "5c1c3b13c51465498b538f72cf2cca36693bc810f62c262fec4d0bae8b44ebf3",
+  "telemetry_sha256": "aae300de4f873db4ad753dbdeeefd53576f443f46da8abb3e3f1eeb29a8c908a",
+  "diagnostic_only": true
+}

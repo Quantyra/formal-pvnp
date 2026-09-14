@@ -1,0 +1,69 @@
+{
+  "module": "Batteries.Data.List.Pairwise",
+  "source_sha256": "96fd89e7fff16524445cb2cff62f42d19d18596cf6b62839fc96e69f5d845d16",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-Dlinter.missingDocs=true",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\batteries\\Batteries\\Data\\List\\Pairwise.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5360807936,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 7200,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 5105156096,
+  "elapsed": 7.309428691864014,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ilean",
+      "sha256": "a7018f4f0dd239967b4c3cc955197e6a853568c377bbb901d7090819e63e4334",
+      "bytes": 9450
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir",
+      "sha256": "bd3181dbfd011662157fb4ca74215f0dffbbbcf077a8de84640c9a446bb57bf2",
+      "bytes": 1512
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir.sig",
+      "sha256": "879056c77624c0886ea24fb735cccc6d3aeebd45a41ff993d8f5f38065335ae8",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+      "sha256": "f27d97ff79c0b9c35f59bacf49b6df8bcc77bb3f5a6b23c02bb19e089fe765eb",
+      "bytes": 29848
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.private",
+      "sha256": "8124b0636443046946ec0001c8ce49fcd1027a3c6c80888735442362a26ceb61",
+      "bytes": 104024
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.server",
+      "sha256": "69397619747ab8dd3bdad76f96696964f592513f58a7ffe132faa611d2e701e7",
+      "bytes": 4440
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "f66ca1be75f0b45ae9c91adab8c396cc0b7c5637d67d956ddd1f1c2694d3a2de",
+  "telemetry_sha256": "3335e74c67f5ca71f171615e25e7bf4d3e8635749888e8dc56764a5a94b61146",
+  "diagnostic_only": true
+}

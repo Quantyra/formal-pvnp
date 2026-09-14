@@ -1,0 +1,69 @@
+{
+  "module": "Aesop.BuiltinRules",
+  "source_sha256": "7c39e1a9ef911072497d036ce70cc34fb2fd0444e6d7b2674ec35367c9b70340",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-Dlinter.unusedVariables=false",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop\\Aesop\\BuiltinRules.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5594836992,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 10868,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 5275484160,
+  "elapsed": 8.041005373001099,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ilean",
+      "sha256": "7109348b17c1ddeb1403ee04dc0067c5177b6386c8583c64007d2108ef18dd0f",
+      "bytes": 3350
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir",
+      "sha256": "76b405743b21452fcc107fed6d293290191af5a85187baa0f668dbb7d1cb11d8",
+      "bytes": 2200
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir.sig",
+      "sha256": "659377c856847df62bcd45aa861e22418a2b61fe0bc557cd191e451ce744efec",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean",
+      "sha256": "9ee01f1de5d335f0dfef5465214cd1fdeddf1e37007efc4a0e345dbb9f9e0896",
+      "bytes": 18856
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.private",
+      "sha256": "30f652678d8390761d3ea3a54a190fc187785e06c8c0438cd4f1062728be380b",
+      "bytes": 6184
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.server",
+      "sha256": "a99fdaa1067c37b37284a6c0110f3b349547189302bf9d5d1d28c99871a5dac6",
+      "bytes": 1320
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "f12082578b5d3248c45a969f054787f685f3293279c7d9cd9bcdaafcdcc2586a",
+  "telemetry_sha256": "a88bc3fae0723015da24038a1df057c85628a7e46f91a2b99e25e94953359f3f",
+  "diagnostic_only": true
+}

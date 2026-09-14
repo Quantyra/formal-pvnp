@@ -1,0 +1,29 @@
+{
+  "module": "Aesop.BuiltinRules",
+  "source_sha256": "7c39e1a9ef911072497d036ce70cc34fb2fd0444e6d7b2674ec35367c9b70340",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-Dlinter.unusedVariables=false",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\reconstructed\\lib\\lean\\Aesop\\BuiltinRules.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\reconstructed\\lib\\lean\\Aesop\\BuiltinRules.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\aesop\\Aesop\\BuiltinRules.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 1983778816,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\reconstructed\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "ef5a80367b42b516bf0de013e7885329ae55cec8bed12e59e154a2d71d3ad3df",
+  "runner_sha256": "e40d31826a85353afb20b75d536ae7e058929f50134807553b9187e640abe1ff",
+  "plan_sha256": "ad62d09ed6274448bace558bf5fd7c514a04c657777243853c64aa57f9090058",
+  "launched": false,
+  "reason": "below3.5GiB",
+  "exit_code": null
+}

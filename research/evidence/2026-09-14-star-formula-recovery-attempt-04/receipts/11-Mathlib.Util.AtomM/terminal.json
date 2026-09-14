@@ -1,0 +1,71 @@
+{
+  "module": "Mathlib.Util.AtomM",
+  "source_sha256": "38496bc981b0deae8694a88c2dcabf36f08cd19d9e15bb2f29222c6680b12ca7",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-DautoImplicit=false",
+    "-DmaxSynthPendingDepth=3",
+    "-Dpp.unicode.fun=true",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Util\\AtomM.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5310853120,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 19060,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 4969947136,
+  "elapsed": 6.3015296459198,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ilean",
+      "sha256": "ae2490d44a24837d89e1332dd0f1c3086e93e596cbea62815c95f19326b72012",
+      "bytes": 7467
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir",
+      "sha256": "ac6f90b24198ff8bee92ae6f1df81e3944d9455c9e752435f463b65e013bfa87",
+      "bytes": 45232
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir.sig",
+      "sha256": "506acbdfc6ad02044fb02bd78176b4bb0d514597d54189f70f6463cec49ff352",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+      "sha256": "aeb50399bff65a712a0fbaee7257e4459ad2ecd74d575a717f6f732f6c9e0cc0",
+      "bytes": 107792
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.private",
+      "sha256": "8f6067a542ae2a3a6f4254132f792e26472a04d307cc00b347eb565eb919c037",
+      "bytes": 109952
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.server",
+      "sha256": "b8e0ec3bd1f5b540841f969a17f4ebfc306b594c04400dd59f32973ac006ed34",
+      "bytes": 8064
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "93d5e9ee0685bbc441d8339bf7cbe5e7699147d860cc9fd8225d59e5a2dd6074",
+  "telemetry_sha256": "9722213000bed67d6503d5a9ac714ba5adb07f3eaa36eafc3a1fcf452c03cd2d",
+  "diagnostic_only": true
+}

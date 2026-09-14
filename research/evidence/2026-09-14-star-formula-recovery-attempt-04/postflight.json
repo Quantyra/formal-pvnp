@@ -1,0 +1,846 @@
+{
+  "copied_subset_unchanged": 10113,
+  "records": [
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\00-Aesop.BuiltinRules\\terminal.json",
+      "sha256": "9cbcde19f46019b577f2cfa7223e11dba54246b966593da9b82a4e540cbbedf3",
+      "module": "Aesop.BuiltinRules",
+      "exit_code": 0,
+      "minimum": 5275484160,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ilean",
+          "sha256": "7109348b17c1ddeb1403ee04dc0067c5177b6386c8583c64007d2108ef18dd0f",
+          "bytes": 3350
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir",
+          "sha256": "76b405743b21452fcc107fed6d293290191af5a85187baa0f668dbb7d1cb11d8",
+          "bytes": 2200
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir.sig",
+          "sha256": "659377c856847df62bcd45aa861e22418a2b61fe0bc557cd191e451ce744efec",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean",
+          "sha256": "9ee01f1de5d335f0dfef5465214cd1fdeddf1e37007efc4a0e345dbb9f9e0896",
+          "bytes": 18856
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.private",
+          "sha256": "30f652678d8390761d3ea3a54a190fc187785e06c8c0438cd4f1062728be380b",
+          "bytes": 6184
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.server",
+          "sha256": "a99fdaa1067c37b37284a6c0110f3b349547189302bf9d5d1d28c99871a5dac6",
+          "bytes": 1320
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\01-Aesop.Search.Expansion\\terminal.json",
+      "sha256": "cc7749cdd4b0a9ec449b59eede30a8961a1dea9f92a9887b0c92e0484270ffe0",
+      "module": "Aesop.Search.Expansion",
+      "exit_code": 0,
+      "minimum": 5052964864,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ilean",
+          "sha256": "c4d9b4a970f4187e9c0733e548d7899a4a95088f4a45b20b045b15b6efba14bf",
+          "bytes": 33446
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir",
+          "sha256": "21fea78105da59ac4f325e2c42e2711bea4ad96fd513830272f37ee0bd0dfe54",
+          "bytes": 456336
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir.sig",
+          "sha256": "71646baf00a8563a5796d76a4ecf2c6bd4ac36b5883326c6baa90480ba0c0ca1",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+          "sha256": "a57ea54d4a43f47d97d72f58878d26c073f25a5f01041d3024d408c9c2ba7af3",
+          "bytes": 637896
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.private",
+          "sha256": "a54246f7f1d36601df06cb375b5809a056d3405738baca148bdcfd6699f89fc7",
+          "bytes": 681784
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.server",
+          "sha256": "aef0f7e74855d18851f3e1a5d25f7813156bc0c8a2e6eab614aa6a24780bd188",
+          "bytes": 8504
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\02-Batteries.Control.ForInStep.Lemmas\\terminal.json",
+      "sha256": "221f81ea2ddeecf04f0682a72ee4bdefd8ea2fc19c94752b410775e6b73dc645",
+      "module": "Batteries.Control.ForInStep.Lemmas",
+      "exit_code": 0,
+      "minimum": 5227675648,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ilean",
+          "sha256": "8146c603342188c1d55dcde745286b960ebaae30c6c63040707b4550662dfde5",
+          "bytes": 5952
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir",
+          "sha256": "7277578513c5024f5c6d5abbfde877f10547ab372967ce5013b7fcfa8d8fe981",
+          "bytes": 1520
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir.sig",
+          "sha256": "3392c12e4f5e6740fe358348e8d496788f633617187b2d17a7619363f6bd157e",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean",
+          "sha256": "e39679739032a5146523291223dc1cefe99b10e56153603c6a75c23fdbeb6c5d",
+          "bytes": 28968
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.private",
+          "sha256": "6cfdfeda318dc44beac2a0f9e2e5841344dde20b21c79fa1b0e50f03fb1bb33a",
+          "bytes": 36816
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.server",
+          "sha256": "7fd51101e73c00c8d7c2ccefa6e6418e75d112c88470311c2bafdfc826d6b5de",
+          "bytes": 3496
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\03-Batteries.Data.List.Pairwise\\terminal.json",
+      "sha256": "013f29d440df90b572cf2ddb3861cca0300ab7752f64c96d6e43631ab52056bc",
+      "module": "Batteries.Data.List.Pairwise",
+      "exit_code": 0,
+      "minimum": 5105156096,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ilean",
+          "sha256": "a7018f4f0dd239967b4c3cc955197e6a853568c377bbb901d7090819e63e4334",
+          "bytes": 9450
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir",
+          "sha256": "bd3181dbfd011662157fb4ca74215f0dffbbbcf077a8de84640c9a446bb57bf2",
+          "bytes": 1512
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir.sig",
+          "sha256": "879056c77624c0886ea24fb735cccc6d3aeebd45a41ff993d8f5f38065335ae8",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+          "sha256": "f27d97ff79c0b9c35f59bacf49b6df8bcc77bb3f5a6b23c02bb19e089fe765eb",
+          "bytes": 29848
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.private",
+          "sha256": "8124b0636443046946ec0001c8ce49fcd1027a3c6c80888735442362a26ceb61",
+          "bytes": 104024
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.server",
+          "sha256": "69397619747ab8dd3bdad76f96696964f592513f58a7ffe132faa611d2e701e7",
+          "bytes": 4440
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\04-Mathlib.Algebra.Group.Monoid\\terminal.json",
+      "sha256": "1d8017315839fd61d2b7cdac6ebe32a21732b76ac3023db8bccf63871b87552b",
+      "module": "Mathlib.Algebra.Group.Monoid",
+      "exit_code": 0,
+      "minimum": 4834451456,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ilean",
+          "sha256": "ccb9cfe67241824fe144bad3df9ea6f0643f4d78bf588680e39bffa97b992b28",
+          "bytes": 43309
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir",
+          "sha256": "8811e7eafa72c3728f9c10593b7b71f39d7bb5cc4128f3f25b182727099dbd08",
+          "bytes": 50232
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir.sig",
+          "sha256": "f8359a342a970720f9a2e076fcff7149d004faadf02d0168e290d26047c350a2",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+          "sha256": "734e4db4630c1ba40491a1128a14445a9c136d9870fcd0cb5661bb6bfa2d620a",
+          "bytes": 719616
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.private",
+          "sha256": "4bbdb8a35ddff0aed198b66011f9dfd05ca52692c5599c72476262bafde1a48f",
+          "bytes": 689776
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.server",
+          "sha256": "9d860b010045a54f8e695042149571b2397eed9ea6141d41165d7ba4f47a1069",
+          "bytes": 56768
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\05-Mathlib.Data.Bracket\\terminal.json",
+      "sha256": "8798a8df352d15536f4b09770020c8548ee20385546ef5a8c7e7d70d18d6b87e",
+      "module": "Mathlib.Data.Bracket",
+      "exit_code": 0,
+      "minimum": 5057597440,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ilean",
+          "sha256": "5f3aefdc9aa8e09649ed81358d209181f913fa6823730cc84bae3580fef75766",
+          "bytes": 453
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ir",
+          "sha256": "c99ee58db746ee6b7831c7c30a91b624d6597ed1d55868a6a292cd34d4942f01",
+          "bytes": 22304
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ir.sig",
+          "sha256": "762960829268051cea0f7765ecd941d0defab79c2e455769231862ee50f4f787",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean",
+          "sha256": "0e34cc349f8263ed10f21b186eabc0258324339bfe4420249a8934a43a71d5c6",
+          "bytes": 53848
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean.private",
+          "sha256": "17c6aa26d420e1763d5d1f32fd980a3b8b39df2581adf077fd496c95d70488ef",
+          "bytes": 61064
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean.server",
+          "sha256": "e04644a620dec2169a86e5e4881f9f1b82f869fb7c968d82efcd36cb0749fde9",
+          "bytes": 3400
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\06-Mathlib.Data.List.TFAE\\terminal.json",
+      "sha256": "83eb1771e96b5d79dd05734e92a72088dc65b5c9e49fc1142328f52189a5febb",
+      "module": "Mathlib.Data.List.TFAE",
+      "exit_code": 0,
+      "minimum": 4962721792,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ilean",
+          "sha256": "377e39c3b6fc38d74f58330b71e6221313ec9cd111a6ef5c459f29cd80c06dd0",
+          "bytes": 6436
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir",
+          "sha256": "697f4a759cb8797702d322439695a19fa32f17f0f30a25e7242547ab18fd85da",
+          "bytes": 28192
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir.sig",
+          "sha256": "eb611f031995bf658bd6c1751aac163848c7333b088ebb676f435b7d86fb972d",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+          "sha256": "64d69727c324b7931a7c9c954732f292e97883bcbbfbb1f603e24c7ea63797a8",
+          "bytes": 56864
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.private",
+          "sha256": "793c22515d438b26be094ae470fe8bcd0261c0a6408da292d359ba6d00c7072c",
+          "bytes": 145200
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.server",
+          "sha256": "6ad71b30f40e8c9148048c1a91be7e557c338a2a49d59632ce14eefd835ec000",
+          "bytes": 6056
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\07-Mathlib.Order.Defs.Unbundled\\terminal.json",
+      "sha256": "fb5dede508994e74dfe12bc4084f909506968296ec3e1734cde4f258f30ef05f",
+      "module": "Mathlib.Order.Defs.Unbundled",
+      "exit_code": 0,
+      "minimum": 4856565760,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ilean",
+          "sha256": "0c023d8dd795f519819be5e04745aa80ccd75ac9d49e62313c25c5dd2d4f2499",
+          "bytes": 35026
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir",
+          "sha256": "207e20f3b2edc31d8f4a1bdbb7a8494c614893ad73882dd5194e5891a5d2cd1d",
+          "bytes": 22560
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir.sig",
+          "sha256": "39ba6ce1a2d1bcbabd8dfcf1903e47107d94dc4a3e721ea51c80f64399a8f652",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean",
+          "sha256": "2a1a5ab88e4afc2bb11f7531945cf4350c98124514ee3e029fee063226bc78af",
+          "bytes": 295168
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.private",
+          "sha256": "93e5fc8a9a146cce802f1e6824139510b67cf1d134c493c9433cd4555bb19270",
+          "bytes": 183192
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.server",
+          "sha256": "a40ffde13a8761618a8f7ce55df27bebc7aabe8453be66229cd25ece708573a7",
+          "bytes": 39176
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\08-Mathlib.Tactic.Widget.Calc\\terminal.json",
+      "sha256": "97590509c42998a7f338d98aefa7a907475c785adcc1df380efcd857929cb8fc",
+      "module": "Mathlib.Tactic.Widget.Calc",
+      "exit_code": 0,
+      "minimum": 4946489344,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ilean",
+          "sha256": "70f7beb263f92dbe91c8dff322923232bf0487b72062199b3cd8315cb6963fc3",
+          "bytes": 16417
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir",
+          "sha256": "62ef333e07de887957743924c83392eab99002eebdb7a26d124b38459efba74a",
+          "bytes": 276360
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir.sig",
+          "sha256": "dbf6ec03628c3091ad63c52e02bb8f44517c8bb6e900db4be770cbce4f7163d4",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+          "sha256": "7161d0427499416004b619f7c3481a86cb61629929ccb656bf14f7c3f3ae58a6",
+          "bytes": 371816
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.private",
+          "sha256": "b165d23708192bd914b7e77618af963f2018c970941ade74c5292ea899168129",
+          "bytes": 738968
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.server",
+          "sha256": "ef21c75cdef4e05883b1254ea496c3a78502ef52f08e23d6fa99962bf0d76bbe",
+          "bytes": 5104
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\09-Mathlib.Tactic.Widget.Conv\\terminal.json",
+      "sha256": "e0d52e358fb32f5e13a39f9378048b57c54797437c55e6012eadbe950adffe6d",
+      "module": "Mathlib.Tactic.Widget.Conv",
+      "exit_code": 0,
+      "minimum": 4975886336,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ilean",
+          "sha256": "66b10ab967d15b357560c8ff51cf62f7b6f8308aa71341cffa654ed41d448294",
+          "bytes": 31934
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir",
+          "sha256": "df2c6474ea02c7256b7b2361b172a5cac55d7d124a2ede5d1ed4eadd09c52516",
+          "bytes": 276168
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir.sig",
+          "sha256": "4fb5d3bf1c2df04eeffbed4f94fc9a168aac9110f80ada34a802032a05b3da47",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean",
+          "sha256": "d58c979f742866b06dd5f39f02b5cdbf2c7fcfe17dcdb74916e74267aa0da2f0",
+          "bytes": 517992
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.private",
+          "sha256": "1f569447a20fde0f684d518c5df4895eb78c9c8260e1a828596e2582146de0dd",
+          "bytes": 751928
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.server",
+          "sha256": "b6a434e459653ee4b51604437d543bff5e3c5d936eeb8a7bdbd34af0ed011f44",
+          "bytes": 11184
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\10-Mathlib.Tactic.Widget.LibraryRewrite\\terminal.json",
+      "sha256": "5676f4a0d3a78200ec08cd4040251a7a58fade0f3f30dda3e836a774239a357a",
+      "module": "Mathlib.Tactic.Widget.LibraryRewrite",
+      "exit_code": 0,
+      "minimum": 4896727040,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ilean",
+          "sha256": "73e5f3d9292f258ee79020fab6d1be29f3139cd7d43d12aac37746e7b6fc0ad7",
+          "bytes": 92924
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir",
+          "sha256": "2ba095f9c110eb09877e1086bee6e47ee566341051e3375cffa18ed6acc35a4d",
+          "bytes": 858776
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir.sig",
+          "sha256": "9738396a5a51a173fac85f8ef113565926ce63a9dee3974c54591eb475ce5fcc",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean",
+          "sha256": "80e334ac9d6c6a4161ff5a5391143ac1e59b2169b638de68faa2fc9fc823e127",
+          "bytes": 1059488
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.private",
+          "sha256": "c130434ce94cba9ced85ea8568ea3f7b2e5603594c31f53e1e09e345a033a19c",
+          "bytes": 2344936
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.server",
+          "sha256": "b70c1faf70698c63a69c2fb112f6d1a919b2fa67282f8bcb7277d05be8e64ff5",
+          "bytes": 29528
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\11-Mathlib.Util.AtomM\\terminal.json",
+      "sha256": "d51589cd63150aabc9357d3ec188768c16fca7204ad2928657b0b4b8d82bbc12",
+      "module": "Mathlib.Util.AtomM",
+      "exit_code": 0,
+      "minimum": 4969947136,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ilean",
+          "sha256": "ae2490d44a24837d89e1332dd0f1c3086e93e596cbea62815c95f19326b72012",
+          "bytes": 7467
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir",
+          "sha256": "ac6f90b24198ff8bee92ae6f1df81e3944d9455c9e752435f463b65e013bfa87",
+          "bytes": 45232
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir.sig",
+          "sha256": "506acbdfc6ad02044fb02bd78176b4bb0d514597d54189f70f6463cec49ff352",
+          "bytes": 176
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+          "sha256": "aeb50399bff65a712a0fbaee7257e4459ad2ecd74d575a717f6f732f6c9e0cc0",
+          "bytes": 107792
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.private",
+          "sha256": "8f6067a542ae2a3a6f4254132f792e26472a04d307cc00b347eb565eb919c037",
+          "bytes": 109952
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.server",
+          "sha256": "b8e0ec3bd1f5b540841f969a17f4ebfc306b594c04400dd59f32973ac006ed34",
+          "bytes": 8064
+        }
+      ]
+    },
+    {
+      "path": "research\\evidence\\2026-09-14-star-formula-recovery-attempt-04\\receipts\\12-PvNP.RealizableHardness.StarFormulaInterface\\terminal.json",
+      "sha256": "3fdefeba81a44392480da6d94997781267af4e33a3a923653d34e50b1d4c9d8a",
+      "module": "PvNP.RealizableHardness.StarFormulaInterface",
+      "exit_code": 1,
+      "minimum": 3796713472,
+      "outputs": []
+    }
+  ],
+  "new_outputs_current_only": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ilean",
+      "sha256": "7109348b17c1ddeb1403ee04dc0067c5177b6386c8583c64007d2108ef18dd0f",
+      "bytes": 3350
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir",
+      "sha256": "76b405743b21452fcc107fed6d293290191af5a85187baa0f668dbb7d1cb11d8",
+      "bytes": 2200
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.ir.sig",
+      "sha256": "659377c856847df62bcd45aa861e22418a2b61fe0bc557cd191e451ce744efec",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean",
+      "sha256": "9ee01f1de5d335f0dfef5465214cd1fdeddf1e37007efc4a0e345dbb9f9e0896",
+      "bytes": 18856
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.private",
+      "sha256": "30f652678d8390761d3ea3a54a190fc187785e06c8c0438cd4f1062728be380b",
+      "bytes": 6184
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\BuiltinRules.olean.server",
+      "sha256": "a99fdaa1067c37b37284a6c0110f3b349547189302bf9d5d1d28c99871a5dac6",
+      "bytes": 1320
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ilean",
+      "sha256": "c4d9b4a970f4187e9c0733e548d7899a4a95088f4a45b20b045b15b6efba14bf",
+      "bytes": 33446
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir",
+      "sha256": "21fea78105da59ac4f325e2c42e2711bea4ad96fd513830272f37ee0bd0dfe54",
+      "bytes": 456336
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.ir.sig",
+      "sha256": "71646baf00a8563a5796d76a4ecf2c6bd4ac36b5883326c6baa90480ba0c0ca1",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean",
+      "sha256": "a57ea54d4a43f47d97d72f58878d26c073f25a5f01041d3024d408c9c2ba7af3",
+      "bytes": 637896
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.private",
+      "sha256": "a54246f7f1d36601df06cb375b5809a056d3405738baca148bdcfd6699f89fc7",
+      "bytes": 681784
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Aesop\\Search\\Expansion.olean.server",
+      "sha256": "aef0f7e74855d18851f3e1a5d25f7813156bc0c8a2e6eab614aa6a24780bd188",
+      "bytes": 8504
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ilean",
+      "sha256": "8146c603342188c1d55dcde745286b960ebaae30c6c63040707b4550662dfde5",
+      "bytes": 5952
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir",
+      "sha256": "7277578513c5024f5c6d5abbfde877f10547ab372967ce5013b7fcfa8d8fe981",
+      "bytes": 1520
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.ir.sig",
+      "sha256": "3392c12e4f5e6740fe358348e8d496788f633617187b2d17a7619363f6bd157e",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean",
+      "sha256": "e39679739032a5146523291223dc1cefe99b10e56153603c6a75c23fdbeb6c5d",
+      "bytes": 28968
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.private",
+      "sha256": "6cfdfeda318dc44beac2a0f9e2e5841344dde20b21c79fa1b0e50f03fb1bb33a",
+      "bytes": 36816
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Control\\ForInStep\\Lemmas.olean.server",
+      "sha256": "7fd51101e73c00c8d7c2ccefa6e6418e75d112c88470311c2bafdfc826d6b5de",
+      "bytes": 3496
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ilean",
+      "sha256": "a7018f4f0dd239967b4c3cc955197e6a853568c377bbb901d7090819e63e4334",
+      "bytes": 9450
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir",
+      "sha256": "bd3181dbfd011662157fb4ca74215f0dffbbbcf077a8de84640c9a446bb57bf2",
+      "bytes": 1512
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.ir.sig",
+      "sha256": "879056c77624c0886ea24fb735cccc6d3aeebd45a41ff993d8f5f38065335ae8",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean",
+      "sha256": "f27d97ff79c0b9c35f59bacf49b6df8bcc77bb3f5a6b23c02bb19e089fe765eb",
+      "bytes": 29848
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.private",
+      "sha256": "8124b0636443046946ec0001c8ce49fcd1027a3c6c80888735442362a26ceb61",
+      "bytes": 104024
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Batteries\\Data\\List\\Pairwise.olean.server",
+      "sha256": "69397619747ab8dd3bdad76f96696964f592513f58a7ffe132faa611d2e701e7",
+      "bytes": 4440
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ilean",
+      "sha256": "ccb9cfe67241824fe144bad3df9ea6f0643f4d78bf588680e39bffa97b992b28",
+      "bytes": 43309
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir",
+      "sha256": "8811e7eafa72c3728f9c10593b7b71f39d7bb5cc4128f3f25b182727099dbd08",
+      "bytes": 50232
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.ir.sig",
+      "sha256": "f8359a342a970720f9a2e076fcff7149d004faadf02d0168e290d26047c350a2",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean",
+      "sha256": "734e4db4630c1ba40491a1128a14445a9c136d9870fcd0cb5661bb6bfa2d620a",
+      "bytes": 719616
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.private",
+      "sha256": "4bbdb8a35ddff0aed198b66011f9dfd05ca52692c5599c72476262bafde1a48f",
+      "bytes": 689776
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Algebra\\Group\\Monoid.olean.server",
+      "sha256": "9d860b010045a54f8e695042149571b2397eed9ea6141d41165d7ba4f47a1069",
+      "bytes": 56768
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ilean",
+      "sha256": "5f3aefdc9aa8e09649ed81358d209181f913fa6823730cc84bae3580fef75766",
+      "bytes": 453
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ir",
+      "sha256": "c99ee58db746ee6b7831c7c30a91b624d6597ed1d55868a6a292cd34d4942f01",
+      "bytes": 22304
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.ir.sig",
+      "sha256": "762960829268051cea0f7765ecd941d0defab79c2e455769231862ee50f4f787",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean",
+      "sha256": "0e34cc349f8263ed10f21b186eabc0258324339bfe4420249a8934a43a71d5c6",
+      "bytes": 53848
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean.private",
+      "sha256": "17c6aa26d420e1763d5d1f32fd980a3b8b39df2581adf077fd496c95d70488ef",
+      "bytes": 61064
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Bracket.olean.server",
+      "sha256": "e04644a620dec2169a86e5e4881f9f1b82f869fb7c968d82efcd36cb0749fde9",
+      "bytes": 3400
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ilean",
+      "sha256": "377e39c3b6fc38d74f58330b71e6221313ec9cd111a6ef5c459f29cd80c06dd0",
+      "bytes": 6436
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir",
+      "sha256": "697f4a759cb8797702d322439695a19fa32f17f0f30a25e7242547ab18fd85da",
+      "bytes": 28192
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir.sig",
+      "sha256": "eb611f031995bf658bd6c1751aac163848c7333b088ebb676f435b7d86fb972d",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+      "sha256": "64d69727c324b7931a7c9c954732f292e97883bcbbfbb1f603e24c7ea63797a8",
+      "bytes": 56864
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.private",
+      "sha256": "793c22515d438b26be094ae470fe8bcd0261c0a6408da292d359ba6d00c7072c",
+      "bytes": 145200
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.server",
+      "sha256": "6ad71b30f40e8c9148048c1a91be7e557c338a2a49d59632ce14eefd835ec000",
+      "bytes": 6056
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ilean",
+      "sha256": "0c023d8dd795f519819be5e04745aa80ccd75ac9d49e62313c25c5dd2d4f2499",
+      "bytes": 35026
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir",
+      "sha256": "207e20f3b2edc31d8f4a1bdbb7a8494c614893ad73882dd5194e5891a5d2cd1d",
+      "bytes": 22560
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.ir.sig",
+      "sha256": "39ba6ce1a2d1bcbabd8dfcf1903e47107d94dc4a3e721ea51c80f64399a8f652",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean",
+      "sha256": "2a1a5ab88e4afc2bb11f7531945cf4350c98124514ee3e029fee063226bc78af",
+      "bytes": 295168
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.private",
+      "sha256": "93e5fc8a9a146cce802f1e6824139510b67cf1d134c493c9433cd4555bb19270",
+      "bytes": 183192
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Order\\Defs\\Unbundled.olean.server",
+      "sha256": "a40ffde13a8761618a8f7ce55df27bebc7aabe8453be66229cd25ece708573a7",
+      "bytes": 39176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ilean",
+      "sha256": "70f7beb263f92dbe91c8dff322923232bf0487b72062199b3cd8315cb6963fc3",
+      "bytes": 16417
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir",
+      "sha256": "62ef333e07de887957743924c83392eab99002eebdb7a26d124b38459efba74a",
+      "bytes": 276360
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.ir.sig",
+      "sha256": "dbf6ec03628c3091ad63c52e02bb8f44517c8bb6e900db4be770cbce4f7163d4",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean",
+      "sha256": "7161d0427499416004b619f7c3481a86cb61629929ccb656bf14f7c3f3ae58a6",
+      "bytes": 371816
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.private",
+      "sha256": "b165d23708192bd914b7e77618af963f2018c970941ade74c5292ea899168129",
+      "bytes": 738968
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Calc.olean.server",
+      "sha256": "ef21c75cdef4e05883b1254ea496c3a78502ef52f08e23d6fa99962bf0d76bbe",
+      "bytes": 5104
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ilean",
+      "sha256": "66b10ab967d15b357560c8ff51cf62f7b6f8308aa71341cffa654ed41d448294",
+      "bytes": 31934
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir",
+      "sha256": "df2c6474ea02c7256b7b2361b172a5cac55d7d124a2ede5d1ed4eadd09c52516",
+      "bytes": 276168
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.ir.sig",
+      "sha256": "4fb5d3bf1c2df04eeffbed4f94fc9a168aac9110f80ada34a802032a05b3da47",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean",
+      "sha256": "d58c979f742866b06dd5f39f02b5cdbf2c7fcfe17dcdb74916e74267aa0da2f0",
+      "bytes": 517992
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.private",
+      "sha256": "1f569447a20fde0f684d518c5df4895eb78c9c8260e1a828596e2582146de0dd",
+      "bytes": 751928
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\Conv.olean.server",
+      "sha256": "b6a434e459653ee4b51604437d543bff5e3c5d936eeb8a7bdbd34af0ed011f44",
+      "bytes": 11184
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ilean",
+      "sha256": "73e5f3d9292f258ee79020fab6d1be29f3139cd7d43d12aac37746e7b6fc0ad7",
+      "bytes": 92924
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir",
+      "sha256": "2ba095f9c110eb09877e1086bee6e47ee566341051e3375cffa18ed6acc35a4d",
+      "bytes": 858776
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.ir.sig",
+      "sha256": "9738396a5a51a173fac85f8ef113565926ce63a9dee3974c54591eb475ce5fcc",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean",
+      "sha256": "80e334ac9d6c6a4161ff5a5391143ac1e59b2169b638de68faa2fc9fc823e127",
+      "bytes": 1059488
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.private",
+      "sha256": "c130434ce94cba9ced85ea8568ea3f7b2e5603594c31f53e1e09e345a033a19c",
+      "bytes": 2344936
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Tactic\\Widget\\LibraryRewrite.olean.server",
+      "sha256": "b70c1faf70698c63a69c2fb112f6d1a919b2fa67282f8bcb7277d05be8e64ff5",
+      "bytes": 29528
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ilean",
+      "sha256": "ae2490d44a24837d89e1332dd0f1c3086e93e596cbea62815c95f19326b72012",
+      "bytes": 7467
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir",
+      "sha256": "ac6f90b24198ff8bee92ae6f1df81e3944d9455c9e752435f463b65e013bfa87",
+      "bytes": 45232
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.ir.sig",
+      "sha256": "506acbdfc6ad02044fb02bd78176b4bb0d514597d54189f70f6463cec49ff352",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean",
+      "sha256": "aeb50399bff65a712a0fbaee7257e4459ad2ecd74d575a717f6f732f6c9e0cc0",
+      "bytes": 107792
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.private",
+      "sha256": "8f6067a542ae2a3a6f4254132f792e26472a04d307cc00b347eb565eb919c037",
+      "bytes": 109952
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Util\\AtomM.olean.server",
+      "sha256": "b8e0ec3bd1f5b540841f969a17f4ebfc306b594c04400dd59f32973ac006ed34",
+      "bytes": 8064
+    }
+  ],
+  "partial_source": "7b50330495aae8cf65d65a187d645e70fcc60877ef28f8b66fd0da38d896ee07",
+  "interface_green": false,
+  "independent_acceptance": false
+}

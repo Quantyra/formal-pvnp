@@ -1,0 +1,71 @@
+{
+  "module": "Mathlib.Data.List.TFAE",
+  "source_sha256": "79fc1d00b26a2b1cf68d7b54961f72b35916f868e16ac7059ebd076e49e9e407",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-DautoImplicit=false",
+    "-DmaxSynthPendingDepth=3",
+    "-Dpp.unicode.fun=true",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-controlled-recovery\\pinned-sources\\mathlib\\Mathlib\\Data\\List\\TFAE.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 5346406400,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "0f9a6e9bf486f55b8e062d6a3f1af936f76f5fd3cf175b4c11d3caec8c8c6f86",
+  "runner_sha256": "8dbe4b61bcd2245a651680e3670a94a4fb014dafbbeaaccaf2df7ba673fd23e0",
+  "plan_sha256": "1bf6949ef0c995c175760701d0e7fa6189cf9fb60b66f6ceb01d01de35c0d343",
+  "launched": true,
+  "pid": 10392,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 4962721792,
+  "elapsed": 5.550055265426636,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ilean",
+      "sha256": "377e39c3b6fc38d74f58330b71e6221313ec9cd111a6ef5c459f29cd80c06dd0",
+      "bytes": 6436
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir",
+      "sha256": "697f4a759cb8797702d322439695a19fa32f17f0f30a25e7242547ab18fd85da",
+      "bytes": 28192
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.ir.sig",
+      "sha256": "eb611f031995bf658bd6c1751aac163848c7333b088ebb676f435b7d86fb972d",
+      "bytes": 176
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean",
+      "sha256": "64d69727c324b7931a7c9c954732f292e97883bcbbfbb1f603e24c7ea63797a8",
+      "bytes": 56864
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.private",
+      "sha256": "793c22515d438b26be094ae470fe8bcd0261c0a6408da292d359ba6d00c7072c",
+      "bytes": 145200
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\Mathlib\\Data\\List\\TFAE.olean.server",
+      "sha256": "6ad71b30f40e8c9148048c1a91be7e557c338a2a49d59632ce14eefd835ec000",
+      "bytes": 6056
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "1f2643612cbfa4c7a592611be0c79f0e797b853832d2f16c069272d81ee8a72f",
+  "telemetry_sha256": "89c7e1f6696e319692c03fb90fd58fc31a509cda368cfc832ddf771811a66cac",
+  "diagnostic_only": true
+}

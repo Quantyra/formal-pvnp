@@ -1,0 +1,23 @@
+{
+  "authorized_scope": [
+    "Aesop.BuiltinRules",
+    "Aesop.Search.Expansion",
+    "Batteries.Control.ForInStep.Lemmas",
+    "Batteries.Data.List.Pairwise",
+    "Mathlib.Algebra.Group.Monoid",
+    "Mathlib.Data.Bracket",
+    "Mathlib.Data.List.TFAE",
+    "Mathlib.Order.Defs.Unbundled",
+    "Mathlib.Tactic.Widget.Calc",
+    "Mathlib.Tactic.Widget.Conv",
+    "Mathlib.Tactic.Widget.LibraryRewrite",
+    "Mathlib.Util.AtomM",
+    "PvNP.RealizableHardness.StarFormulaInterface"
+  ],
+  "archived_disabled_runner_sha256": "e40d31826a85353afb20b75d536ae7e058929f50134807553b9187e640abe1ff",
+  "archived_disabled_plan_sha256": "52cf449b761b63f91cc39f568106496fd8167e619b538c41545d8cdb219e6e1a",
+  "attempt_runner_sha256": "e40d31826a85353afb20b75d536ae7e058929f50134807553b9187e640abe1ff",
+  "attempt_plan_sha256": "ad62d09ed6274448bace558bf5fd7c514a04c657777243853c64aa57f9090058",
+  "source_changes_allowed": false,
+  "partial_only": true
+}
