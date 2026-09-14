@@ -1,0 +1,33 @@
+# Folded-row entry FP construction: independent bounded review
+
+2026-09-13. S3132/S3137. Verdict: **GO-WITH-NOTES for the finite mathematical/API derivation; not a compiled FP or complete producer acceptance.**
+
+Reviewed the entire author note `2026-09-13-realizable-hardness-folded-row-entry-fp-derivation.md`, raw SHA256 `246ad3841d37e4331b9e11ccc2e11305534b3dd7ba4eca256796764340c72e7c` (25,552 bytes). The shorter path supplied in the initial routing message does not exist; the dated path above is the actual reviewed artifact. No source, compiler, Git, paper or public action was performed.
+
+## Findings
+
+1. ENTRY defines the same total function on every raw outer word through the library's total internal pair projections and index LENGTH. Invalid CNF is distinguished from the cleaned empty CNF: the original strict flag has priority. NO entries are r0,r1 with ruler two; YES has ruler one; out-of-range entries are r0. These branches agree with the intended row list, rather than returning an entire NO source from one entry call. Strict canonical recognition remains the separately reviewed finite derivation, not an already compiled parser theorem.
+
+2. The ten-state comparator is a valid finite construction. Little-endian digit pairs are processed from low to high; a differing higher pair overrides the previous comparison. Missing canonical Nat digits read false because posAt returns the empty word, which is different from encoded true. The bit oracle always returns one bit and has the precise bitwise_mem_FP interface. The reverse-input recFold construction and constant four-bit state bounds discharge the universal clamp premise, including malformed states. It never expands an input Nat into unary numeric magnitude.
+
+3. For fixed u,b the shape and tape sets are finite constants. Complete equality/order tests determine exactly the sorted ranks of all 3u literal slots; surjectivity prevents missing ranks. The smallest representative slot and selected-rank list reconstruct actual wide/small sorted variable lists. This preserves repetitions. The false-prefix assignment recursion, selectedSat XOR-sign convention, firstSat choice, conditioning outside the satisfying domain, noisyThird and addressCode agree with the actual folded draft. The guard enumerates all clause tuples, not sampled questions, and position zero suffices because wide-domain emptiness is independent of selected positions. Finite tables may be huge but are not input-dependent advice; no uniform polynomial bound in u,b is claimed.
+
+4. The radix decoder agrees with the typed join's clause-major/position-minor lexicographic question order and tape-inner order. The actual variable-divisor APIs take pair(divisor,dividend); their equations require a positive divisor, used only in the normal positive-m branch. Their FP membership is total. Every outcome is emitted, including identical resulting rows; no multiplicity is discarded.
+
+5. FramePair/FrameList concatenate already encoded children once. encUnary(z ++ [true]) encodes the sentinel Nat's little-endian bits, rather than a unary numeral. The resulting labels preserve shared variable-set/truth-vector addresses, including equal small and wide views. Projection of E into triple and RHS entries followed by TWO materializations gives the actual Source pair. A list of row/RHS pairs would be a different wire; the candidate explicitly avoids that error. Materialize.materialize_eq requires exactly the in-range equality furnished here; its FP theorem requires actual entry membership, not a caller-supplied runtime bound.
+
+6. The explicit clocks follow from length multiplication and fixed powers on all words. The entry-length ledger is conservative: 12H(n)+28 = 144un+360u+48G+100 is at most 400(u+G+1)(n+1); the default rows also fit. Extraction cannot increase the raw outer input length. Composition/bitwise/countOver/materialization therefore provide a legitimate mathematical route to FP for the described expression. No inference from an informal running-time estimate or from finite carrier cardinality is used.
+
+## Existing normalizers and the remaining kernel obligation
+
+Inspected actual FirstOccurrence.firstFn/firstFn_mem_FP and NormalizedTable.tableFn/tableFn_mem_FP, sourceFn/sourceFn_mem_FP/sourceFn_correct. Their historical source-only headers are stale relative to the independent proof reviews: FirstOccurrence session 38816 and NormalizedTable session 95364 report unchanged main/Checks exit zero. They are substantive independently built bounded modules. This review does not repeat their full artifact-closure audit.
+
+FirstOccurrence searches labels in an ALREADY supplied parity-source triple table. NormalizedTable emits unary first-occurrence owner IDs and retains that source's RHS. Neither accepts CNF literal/sign triples to construct the folded experiment. They can act downstream of FULL-WIRE, but substituting either for E changes the function and omits its defining work. The candidate's comparison is correct.
+
+The remaining kernel target is implementation of this precise strict flag, comparator, finite shape/tape branch expression, computed global guard and two-list materializer, together with all-word ENTRY/FULL-WIRE equalities in the pinned library. The mathematical construction is explicit enough to identify that target; no corresponding newly compiled module or extracted TM witness is supplied. The typed folded verifier itself remains an uncompiled draft, and its semantic use here is source-level. The paused downstream gadget producer, upstream fixed-gap reduction and full Lean consolidation are not discharged.
+
+## Evidence and independence
+
+API checks used actual PosScan, UnaryList encUnary_eq, UnaryDivMod divFn2/modFn2 and their positive-divisor equations, BitwiseFP.bitwise_mem_FP, and Materialize.materialize_eq/membership. Compared the actual folded draft assignments, firstSat, canonical, foldQuery, selectedSat/noisyThird and addressCode with the previously reviewed dyadic source join (bdaf52f2284a72f9c33c533c44e3649ef7b07c762ae02f9ef528ee3a098ed563). Author source hash was independently recomputed. Library pins are those recorded by the candidate; this bounded review is not a new package-wide provenance verification.
+
+The reviewer did not author the new comparator or local shape construction. Prior contributions include FirstOccurrence and related lower modules, the sentinel encoding discussion, and review/advice on the strict scanner and dyadic join. Reliance on their separately recorded independent acceptance is disclosed. No novel complexity result, full theorem certification or P-versus-NP conclusion follows from this review.
