@@ -1,0 +1,9 @@
+# Folded Checks green diagnostic
+
+S3137/S3126. Session 81334 exited 0 with all 19 existing examples and 5 signatures accepted. All 37 requested main-verifier axiom profiles were individually matched by theorem name: 36 nonempty profiles use only propext, Classical.choice and Quot.sound; one profile is empty. Seven nonfatal warnings remain: six unused-simp warnings and one tactic-style warning. No sorry tokens or compiler sorry warnings occur.
+
+The preceding 72561 failure is retained. Its helper mistakes were corrected together: propositional inequality, explicit canonical reduction, and a nonempty constant-true domain proof using the public firstSat_none_iff. The resulting constant-fold identity removes dependence on the choice of the first satisfying assignment. Repeated-query examples use concrete singleton-view identities and selectedSat_honest; contradictory examples use the two opposite clauses and existing none equivalences. Every original example proposition is preserved. Three private proof helpers are added, with no additional axioms.
+
+The main verifier is the unchanged green author output from session 58053, source a84b6da84c406ce3e0725b16b98b6582473c3a69a0b948a5efa2c89d228f75f3, output 6b9b234de01e183384d81c5b4cba3abe8c0d1cc647e8683ef026ec0c0161960b. It was not rerun. Existing accepted lower dependencies and all original hashes/guards were checked; this Checks run retains dependency_accepted=false because the main is still an author diagnostic dependency.
+
+This is bounded Checks success, not independent reconstruction, full source soundness/FP assembly or full-paper theorem acceptance. Sources, patches, logs, telemetry, snapshots, plans/runners and terminal summaries are preserved with relative manifest paths and byte hashes. Dependencies remain external original receipt/artifact references; this is not a self-contained checkout build. No push or source promotion.

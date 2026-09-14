@@ -1,0 +1,87 @@
+--- prior
++++ repaired
+@@ -21,6 +21,28 @@
+ example (bs : List Bool) :
+     And (2^bs.length <= wordNat bs) (wordNat bs < 2^(bs.length+1)) := wordNat_bounds bs
+ 
++private theorem constant_fold (V : List Nat) (sat : Truth V) (b : Bool)
++    (hne : firstSat V sat != none) :
++    foldQuery V sat (fun _ => b) = some (mkAddress V (fun _ => false), b) := by
++  cases h : firstSat V sat with
++  | none => exact False.elim (hne h)
++  | some a =>
++    have hc : canonical V sat (fun _ => b) a = (fun _ => false) := by
++      funext x
++      cases b <;> cases sat x <;> rfl
++    simp only [foldQuery, h, hc]
++
++private theorem repeated_nonempty :
++    firstSat (wideView repeatedQuestion) (selectedSat repeatedQuestion) != none := by
++  have hs := selectedSat_honest repeatedQuestion (fun _ => true) (by
++    intro i
++    fin_cases i <;> rfl)
++  intro h
++  have hf := (firstSat_none_iff _ _).mp h
++    (restrictGlobal (fun _ => true) (wideView repeatedQuestion))
++  rw [hs] at hf
++  cases hf
++
+ -- Actual canonical addresses, not just equality of independently assumed queries.
+ example : foldQuery [0] (fun _ => true) (fun _ => true) =
+     some (([0],[false,false]),true) := by decide
+@@ -30,13 +52,27 @@
+ example : queries repeatedQuestion (fun _ => false) (fun _ => false) (fun _ => false) =
+     some ((([0],[false,false]),false),
+       ((([0],[false,false]),false),(([0],[false,false]),false))) := by
+-  dsimp only [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+-  simp [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
++  have hu : smallView repeatedQuestion = [0] := by
++    simp [smallView, repeatedQuestion, repeatedPhi, clauseAt, literalAt, List.ofFn_succ]
++  have hw : wideView repeatedQuestion = [0] := by
++    simp [wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, List.ofFn_succ]
++  have hn : noisyThird repeatedQuestion (fun _ => false) (fun _ => false) (fun _ => false) = (fun _ => false) := rfl
++  simp only [queries, hn, constant_fold _ _ false (firstSat_true_ne_none _),
++    constant_fold _ _ false repeated_nonempty, Option.bind_some]
++  rw [hu, hw]
++  rfl
+ example : queries repeatedQuestion (fun _ => true) (fun _ => false) (fun _ => true) =
+     some ((([0],[false,false]),true),
+       ((([0],[false,false]),false),(([0],[false,false]),false))) := by
+-  dsimp only [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+-  simp [queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
++  have hu : smallView repeatedQuestion = [0] := by
++    simp [smallView, repeatedQuestion, repeatedPhi, clauseAt, literalAt, List.ofFn_succ]
++  have hw : wideView repeatedQuestion = [0] := by
++    simp [wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, List.ofFn_succ]
++  have hn : noisyThird repeatedQuestion (fun _ => true) (fun _ => false) (fun _ => true) = (fun _ => false) := rfl
++  simp only [queries, hn, constant_fold _ _ true (firstSat_true_ne_none _),
++    constant_fold _ _ false repeated_nonempty, Option.bind_some]
++  rw [hu, hw]
++  rfl
+ 
+ -- A genuinely empty selected conditioning domain.
+ def contradictoryPhi : CNF :=
+@@ -44,12 +80,19 @@
+ def contradictoryQuestion : Question contradictoryPhi 2 := fun j => (j,0)
+ example : queries contradictoryQuestion (fun _ => false) (fun _ => false)
+     (fun _ => false) = none := by
+-  dsimp only [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+-  simp [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
++  have hs : forall a, selectedSat contradictoryQuestion a = false := by
++    intro a
++    simp [selectedSat, contradictoryQuestion, contradictoryPhi, clauseAt, clauseValue, literalValue, List.ofFn_succ]
++  have hf := (foldQuery_none_iff (wideView contradictoryQuestion)
++    (selectedSat contradictoryQuestion) (fun _ => false)).mpr hs
++  cases h : foldQuery (smallView contradictoryQuestion) (fun _ => true) (fun _ => false) <;>
++    simp [queries, h, hf]
+ example : emitRow contradictoryQuestion (fun _ => false) (fun _ => false)
+     (fun _ => false) = none := by
+-  dsimp only [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
+-  simp [emitRow, contradictoryQuestion, contradictoryPhi, queries, foldQuery, firstSat, assignments, mkAddress, canonical, condition, selectedSat, clauseValue, literalValue, noisyThird, restrictLocal, localValue, smallView, wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, literalAt, List.ofFn_succ]
++  have hs : forall a, selectedSat contradictoryQuestion a = false := by
++    intro a
++    simp [selectedSat, contradictoryQuestion, contradictoryPhi, clauseAt, clauseValue, literalValue, List.ofFn_succ]
++  exact (emitRow_none_iff _ _ _ _).mpr hs
+ 
+ -- The actual ordered emitted row permits three identical addresses and either RHS.
+ example (a : Address) : rowOfQueries ((a,false),((a,false),(a,false))) =

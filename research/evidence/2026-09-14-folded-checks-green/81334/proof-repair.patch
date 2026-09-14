@@ -1,0 +1,48 @@
+--- prior
++++ repaired
+@@ -22,18 +22,24 @@
+     And (2^bs.length <= wordNat bs) (wordNat bs < 2^(bs.length+1)) := wordNat_bounds bs
+ 
+ private theorem constant_fold (V : List Nat) (sat : Truth V) (b : Bool)
+-    (hne : firstSat V sat != none) :
++    (hne : firstSat V sat ≠ none) :
+     foldQuery V sat (fun _ => b) = some (mkAddress V (fun _ => false), b) := by
+   cases h : firstSat V sat with
+   | none => exact False.elim (hne h)
+   | some a =>
+     have hc : canonical V sat (fun _ => b) a = (fun _ => false) := by
+       funext x
+-      cases b <;> cases sat x <;> rfl
++      cases b <;> cases hs : sat x <;> simp [canonical, condition, hs]
+     simp only [foldQuery, h, hc]
+ 
++private theorem true_nonempty (V : List Nat) :
++    firstSat V (fun _ => true) ≠ none := by
++  intro h
++  have hf := (firstSat_none_iff V (fun _ => true)).mp h (fun _ => false)
++  cases hf
++
+ private theorem repeated_nonempty :
+-    firstSat (wideView repeatedQuestion) (selectedSat repeatedQuestion) != none := by
++    firstSat (wideView repeatedQuestion) (selectedSat repeatedQuestion) ≠ none := by
+   have hs := selectedSat_honest repeatedQuestion (fun _ => true) (by
+     intro i
+     fin_cases i <;> rfl)
+@@ -57,7 +63,7 @@
+   have hw : wideView repeatedQuestion = [0] := by
+     simp [wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, List.ofFn_succ]
+   have hn : noisyThird repeatedQuestion (fun _ => false) (fun _ => false) (fun _ => false) = (fun _ => false) := rfl
+-  simp only [queries, hn, constant_fold _ _ false (firstSat_true_ne_none _),
++  simp only [queries, hn, constant_fold _ _ false (true_nonempty _),
+     constant_fold _ _ false repeated_nonempty, Option.bind_some]
+   rw [hu, hw]
+   rfl
+@@ -69,7 +75,7 @@
+   have hw : wideView repeatedQuestion = [0] := by
+     simp [wideView, repeatedQuestion, repeatedPhi, clauseAt, clauseLabels, List.ofFn_succ]
+   have hn : noisyThird repeatedQuestion (fun _ => true) (fun _ => false) (fun _ => true) = (fun _ => false) := rfl
+-  simp only [queries, hn, constant_fold _ _ true (firstSat_true_ne_none _),
++  simp only [queries, hn, constant_fold _ _ true (true_nonempty _),
+     constant_fold _ _ false repeated_nonempty, Option.bind_some]
+   rw [hu, hw]
+   rfl

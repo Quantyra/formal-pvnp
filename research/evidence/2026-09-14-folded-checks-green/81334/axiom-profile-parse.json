@@ -1,0 +1,326 @@
+{
+  "complete": true,
+  "profiles": [
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_positive",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wordNat_bounds",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.addressCode_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_complete",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "._boxed took 0.195ms\ninterpretation of _private.Mathlib.Tactic.Linter.FlexibleLinter.0.Mathlib.Linter.Flexible.flexibleLinter._lam_0._boxed took 0.1ms\ninterpretation of _private.Mathlib.Tactic.Linter.Multigoal.0.Mathlib.Linter.Style.multiGoal.multiGoalLinter._lam_0._boxed took 0.116ms\ninterpretation of _private.Mathlib.Tactic.Linter.OldObtain.0.Mathlib.Linter.Style.oldObtainLinter._lam_0._boxed took 0.113ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.473ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.0589ms\noverlappingInstancesLinter took 0.256ms\ninterpretation of Mathlib.Linter.UnusedInstancesInType.withSetBoolOptionIn._boxed took 0.32ms\ninterpretation of _private.Mathlib.Tactic.Linter.PrivateModule.0.Mathlib.Linter.privateModule._lam_1._boxed took 0.0904ms\ninterpretation of _private.Mathlib.Tactic.Linter.UnusedTactic.0.Mathlib.Linter.UnusedTactic.unusedTacticLinter._lam_0._boxed took 3.12ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.setOption.setOptionLinter._lam_0._boxed took 0.157ms\ninterpretation of term_\u00d7_ took 0.0102ms\ninterpretation of term_\u00d7_ took 0.0048ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.missingEnd.missingEndLinter._lam_0._boxed took 0.175ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.cdotLinter._lam_0._boxed took 0.134ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.dollarSyntax.dollarSyntaxLinter._lam_0._boxed took 0.0573ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.lambdaSyntax.lambdaSyntaxLinter._lam_0._boxed took 0.0352ms\ninterpretation of term\u2115 took 0.0515ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.longFile.longFileLinter._lam_0._boxed took 0.132ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.longLine.longLineLinter._lam_0._boxed took 0.0965ms\ninterpretation of term_\u00d7_ took 0.027ms\ninterpretation of term_\u00d7_ took 0.0054ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.nameCheck.doubleUnderscore._lam_2._boxed took 0.921ms\ninterpretation of _private.Mathlib.Tactic.Linter.Style.0.Mathlib.Linter.Style.openClassical.openClassicalLinter._lam_0._boxed took 0.09ms\ninterpretation of term\u2115 took 0.0697ms\ninterpretation of _private.Mathlib.Tactic.Linter.Whitespace.0.Mathlib.Linter.Style.Whitespace.whitespaceLinter._lam_4._boxed took 0.117ms\nPvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_length",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.assignments_nodup",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.mkAddress_injective",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_sound",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.firstSat_none_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_pair",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.canonical_complement",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_none_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_complement",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldQuery_restriction",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.localValue_restrictGlobal",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestAddress_mk",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.honestProof_code",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.foldEval_honest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.literal_label_mem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.clause_label_mem_wide",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.small_subset_wide",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.smallView_nodup",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.wideView_nodup",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.restrictLocal_honest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.selectedSat_honest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.bitAssignment_boolAssignment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.boolAssignment_bitAssignment",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowOfQueries_correct_GF2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitted_row_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.emitRow_none_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_eq_foldEval",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifierBit_honest",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.verifier_accept_iff_GF2",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.ActualFoldedParityVerifier.rowSource_valid",
+      "axioms": []
+    }
+  ],
+  "interleaved": [],
+  "requested": [
+    "wordNat_positive",
+    "wordNat_injective",
+    "wordNat_bounds",
+    "addressCode_injective",
+    "assignments_complete",
+    "assignments_length",
+    "assignments_nodup",
+    "mkAddress_injective",
+    "firstSat_sound",
+    "firstSat_none_iff",
+    "canonical_pair",
+    "canonical_complement",
+    "foldQuery_none_iff",
+    "foldEval_complement",
+    "foldQuery_restriction",
+    "localValue_restrictGlobal",
+    "honestAddress_mk",
+    "honestProof_code",
+    "foldEval_honest",
+    "literal_label_mem",
+    "clause_label_mem_wide",
+    "small_subset_wide",
+    "smallView_nodup",
+    "wideView_nodup",
+    "restrictLocal_honest",
+    "selectedSat_honest",
+    "bitAssignment_boolAssignment",
+    "boolAssignment_bitAssignment",
+    "rowOfQueries_correct",
+    "rowOfQueries_correct_GF2",
+    "emitted_row_correct",
+    "emitRow_none_iff",
+    "verifierBit_eq_foldEval",
+    "verifierBit_honest",
+    "verifier_accept_iff",
+    "verifier_accept_iff_GF2",
+    "rowSource_valid"
+  ]
+}
