@@ -1,0 +1,40 @@
+{
+  "command": [
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "lean",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ActualRegularizedSourceProducer.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualRegularizedSourceProducer.lean"
+  ],
+  "exit_code": 0,
+  "elapsed_seconds": 34.60504619999847,
+  "guard_stopped": false,
+  "source_sha256": "2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f",
+  "source_unchanged": true,
+  "memory_pre": 5636038656,
+  "memory_min": 3715149824,
+  "log_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\diagnostics\\ActualRegularizedSourceProducer-1789356740259210000.log",
+  "log_sha256": "2b1413967b1f7e00d5001a59fe7041fd4b0b46c31c770e8faaee65947c16ff60",
+  "telemetry_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\diagnostics\\ActualRegularizedSourceProducer-1789356740259210000.jsonl",
+  "telemetry_sha256": "e12af5c8df4718808c51233b553cff1fa0b63d5faae2dfb792de343b98cf19f6",
+  "output_sha256": "f271b228a55d1ebc581e1d3a0cbc83a14a81fcd9f96f533e5acee7fa96a4e8bf",
+  "session": 74940,
+  "compiler_released": true,
+  "dependency_accepted": false,
+  "diagnostic_only_dependency_use": true,
+  "checks_run": false,
+  "metadata_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\diagnostics\\ActualRegularizedSourceProducer-1789356740259210000.json",
+  "metadata_sha256": "0f29ef6fcf43940ae10a461d0cdec87032101f8a3846f81d0430bd15a93091c9",
+  "patch_sha256": "85d7102deb267fe8b612afbef77b23fc3d9c9bdc4983bc9fafae60d19b645fe0",
+  "errors": [],
+  "warnings": [
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualRegularizedSourceProducer.lean:27:4: warning: This simp argument is unused:",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-regularized-source-flatmap-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualRegularizedSourceProducer.lean:33:45: warning: This simp argument is unused:"
+  ],
+  "axiom_profile_count": 0
+}

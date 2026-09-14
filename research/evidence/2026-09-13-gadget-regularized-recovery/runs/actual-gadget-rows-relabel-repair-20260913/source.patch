@@ -1,0 +1,10 @@
+--- previous/Rows.lean
++++ repaired/Rows.lean
+@@ -47,6 +47,7 @@
+   simp only [ActualEqualityCloud.row,
+     EqualityGadget.relabeledRow, ActualEqualityCloud.embedding, dartVars_embed]
+   simp [ActualEqualityCloud.rhs, EqualityGadget.rhs, rhsBool]
++  exact And.intro rfl (And.intro rfl rfl)
+ 
+ private theorem filter_flatMap {A B : Type} (p : A → Bool) (f : A → List B) (l : List A) :
+     (l.filter p).flatMap f = l.flatMap (fun x => if p x then f x else []) := by

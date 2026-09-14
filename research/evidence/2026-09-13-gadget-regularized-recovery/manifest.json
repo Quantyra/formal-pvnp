@@ -1,0 +1,785 @@
+{
+  "schema": "recovery-bundle-v1",
+  "purpose": "Source/evidence preservation only; no acceptance promotion",
+  "date": "2026-09-13",
+  "repository": "formal-pvnp",
+  "bundle_paths_relative_to": "this manifest directory",
+  "files": [
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostic-runner.py",
+      "sha256": "16e7bb672bee588c974132178fd8776e2614aa8399a7ea5790c4c1d2725cf8b8",
+      "bytes": 8384,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/plan.json",
+      "sha256": "3fbe6abd5b4a18a7949c13a315a8663d123c3472195117c251500a55a1e8c37e",
+      "bytes": 2666430,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/pregrant-plan.json",
+      "sha256": "4306779cf912e836b8cd298de5181cafe5862dd86448a2d5ed7f2282b6a51a76",
+      "bytes": 2666431,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/previous-diagnostic-runner.py",
+      "sha256": "c6b8cf1b8daae4f2921ce671a456a316e6b5fb56ca841b0ce941205879c9d3cb",
+      "bytes": 8384,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/previous-diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/repair-preparation.json",
+      "sha256": "e447634ee7d86cb3d828fa74b6a481e377d5e3ac1d5a5d959a191fbdeef3e281",
+      "bytes": 462,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/repair-preparation.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/source.patch",
+      "sha256": "3c57b31f1219944e7d17a46ca49b28941368b020021bde2df8678509d7ecd8dd",
+      "bytes": 1216,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/source.patch",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/terminal-summary.json",
+      "sha256": "117a724d3327f784fd54163b9242903cbbbaa6b67ecd61f48ce398c383c29fac",
+      "bytes": 1771,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.json",
+      "sha256": "6a7f381ed231dae035dc8ac2ff283741babc7ffae8f4d95663c6565d4742ac55",
+      "bytes": 5529,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.jsonl",
+      "sha256": "69c9f2eed628564636ca273f75327e7c9dd4f91c347d9cd931b675ce24ec30a7",
+      "bytes": 86208,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.log",
+      "sha256": "5ce516376aaae0b37c886fab5997dbb511d9d6358527619cea9c7db2ebf22152",
+      "bytes": 1179964,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-source-fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd.lean",
+      "sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+      "bytes": 8106,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-source-fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualGadgetRowProducerMachine.lean",
+      "sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+      "bytes": 8106,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/lean/PvNP/RealizableHardness/ActualGadgetRowProducerMachine.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostic-runner.py",
+      "sha256": "e3b4065619bcadf71eafe1d01839ed6363f2594e850099f3e8e407ebadab6040",
+      "bytes": 8296,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/plan.json",
+      "sha256": "da6e24e148eb3303d55dd386a8777b1147372cf1f4c0afc57421d43b28fff01f",
+      "bytes": 2648735,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/pregrant-plan.json",
+      "sha256": "87dc8b2c98d21b2c4d31e28234ee45817f6948936889c7494a86c400c1857a37",
+      "bytes": 2648736,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/source.patch",
+      "sha256": "c3f8c49909020c39942c4edf505dbece0798ad0c9f19375d39ce678259d996f9",
+      "bytes": 1005,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/source.patch",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/terminal-summary.json",
+      "sha256": "7b5c9c78b436eed82764cdc4a6ab5f929e79794fe87209a73e90043789c0eadf",
+      "bytes": 1649,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.json",
+      "sha256": "d4d2be81f5d87dd5b35655bc39ad5e388551e067abe306baef59623ad880b423",
+      "bytes": 5487,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.jsonl",
+      "sha256": "bd0a7bb29ae7e6f405c5ff91814a4e95d7fc025d405562218d8f4f3100d2c5a1",
+      "bytes": 45719,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.log",
+      "sha256": "9a525ff5d7fbb88dd9bc8d84e188a1be5fc605e45ff75e36e96e5374db60be3b",
+      "bytes": 1052771,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-source-faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577.lean",
+      "sha256": "faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577",
+      "bytes": 6166,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-source-faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualGadgetRowProducerGeometry.lean",
+      "sha256": "faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577",
+      "bytes": 6166,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/lean/PvNP/RealizableHardness/ActualGadgetRowProducerGeometry.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostic-runner.py",
+      "sha256": "c04f92296535dbac57fdda793b7f16c93610a6a11489043171d29daace905d91",
+      "bytes": 8397,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/plan.json",
+      "sha256": "7d49b22060d92ea5066cc199a471bb4d87ed60bb02d716b28cbf9cc48328034a",
+      "bytes": 2642037,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/pregrant-plan.json",
+      "sha256": "1019141de5131bb33d15a49cee5014599ac947fd1bb08970817d8cc791eeaa5b",
+      "bytes": 2642038,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/source.patch",
+      "sha256": "088c55f8f97d2ef0098143235d6d47e49cea93316887d9ff21f5dda541abf69f",
+      "bytes": 469,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/source.patch",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/terminal-summary.json",
+      "sha256": "c65f247eff4693ff393cc165a3b00801193047672211571d682abee539b9a2d5",
+      "bytes": 2987,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.json",
+      "sha256": "0b1307403fa49204e423d99bc9ed319979954305edc958ed5f3678bfb8890fb4",
+      "bytes": 5445,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.jsonl",
+      "sha256": "af450f7aadf489b16bc93f088b3e29bee4ee1c189f70f706d86498b8a6e3ed14",
+      "bytes": 43812,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.log",
+      "sha256": "71f67ca42bc88ac186f5e7752da96d32ca98e6e25f2314a2378e1924c4897eea",
+      "bytes": 1126502,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-source-b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0.lean",
+      "sha256": "b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0",
+      "bytes": 6515,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-source-b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualGadgetRowProducerRows.lean",
+      "sha256": "b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0",
+      "bytes": 6515,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/lean/PvNP/RealizableHardness/ActualGadgetRowProducerRows.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/diagnostic-runner.py",
+      "sha256": "c548c4a5792315558b6ec5836e15f5df0edda7844d48a58e5f85ede1601422c7",
+      "bytes": 8505,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/plan.json",
+      "sha256": "4bf28793c8e1c84a1a6a88c03fa203730d379ba0c608aa040e01b90a2a617853",
+      "bytes": 2621360,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/pregrant-plan.json",
+      "sha256": "f6a552e3c3f3e69c2df370f2d2736a5cf2df7dd9ed6402c89a2c2bf884769018",
+      "bytes": 2621361,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/source.patch",
+      "sha256": "b9b1f0bfbefc424e006ea9be11863f73dbd29201d52f91a7b6c307a08e6f9680",
+      "bytes": 731,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/source.patch",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/terminal-summary.json",
+      "sha256": "b01ceea75b0555d9ba1286500c427673e3848069906431cf11c9e0532adab0f1",
+      "bytes": 1567,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.json",
+      "sha256": "6701dad911998fa4f830485dfd9ce0d41df67f6074f01510b34f89e3faa84fb6",
+      "bytes": 5369,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.jsonl",
+      "sha256": "e476e9e794a1b9c16aaeb2bc4b6674df7d091a00e57779a1e9bae3d9ad1f6637",
+      "bytes": 44989,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.log",
+      "sha256": "c9761e744e285bb79f918ec6006d34672dafaae6f0ab58f6534cdea798f7d871",
+      "bytes": 981607,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-source-423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4.lean",
+      "sha256": "423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4",
+      "bytes": 2309,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-source-423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualGadgetRowProducer.lean",
+      "sha256": "423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4",
+      "bytes": 2309,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/lean/PvNP/RealizableHardness/ActualGadgetRowProducer.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/axiom-profile-parse.json",
+      "sha256": "2c2de85b0aa23e4d5e4c3848a73f8d1f9dde725f593ce531c678fcc01328ca3c",
+      "bytes": 6052,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/axiom-profile-parse.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/diagnostic-runner.py",
+      "sha256": "a74d50b9d91b962b552ef990e6ca2f1be5853eb0df245d98dc1a412a0d66a98e",
+      "bytes": 8566,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/plan.json",
+      "sha256": "cb7bc8c74a097801f07e7fd117bb2272716ddc14cc71273b42856bc6ce2c587b",
+      "bytes": 2625663,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/pregrant-plan.json",
+      "sha256": "35a59171150d0873401b3a30a6f7443d0bed835ab52bf9ddcc5e3b509754e7d8",
+      "bytes": 2625664,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/terminal-summary.json",
+      "sha256": "fd0a9624b577ba320dc46702b21e086ee1ade7d19f02b24145a160bd1979bb88",
+      "bytes": 5597,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.json",
+      "sha256": "434f97610200f608731dafbc3a7c83761049f9b0f9a2316f22bac374859f2549",
+      "bytes": 5406,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.jsonl",
+      "sha256": "b05c4ecbbeb55c2b5988430e73a12c9ab251fe5a0a7a752b5b054df457d35ecf",
+      "bytes": 34930,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.log",
+      "sha256": "8580474fcb5c5089c3c69231479ca0befd8ee2056dba2e3167858836bd059d31",
+      "bytes": 1127333,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-source-96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5.lean",
+      "sha256": "96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5",
+      "bytes": 2750,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-source-96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualGadgetRowProducerChecks.lean",
+      "sha256": "96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5",
+      "bytes": 2750,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/lean/PvNP/RealizableHardness/ActualGadgetRowProducerChecks.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostic-runner.py",
+      "sha256": "b15e53120bd2c0100858e5d68d1aadd1a4a28921c65d60df3c99b2d8f32eff9e",
+      "bytes": 9003,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/plan.json",
+      "sha256": "32147530515582aa0853d8eaf8e853b218bcd926c2be014b2e4220bf3bbfb354",
+      "bytes": 2792422,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/pregrant-plan.json",
+      "sha256": "7a3c2335aa6c37c99808eeacb14666314ee91288d7d0d395482694ebf44de649",
+      "bytes": 2786179,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/proof-repair.patch",
+      "sha256": "85d7102deb267fe8b612afbef77b23fc3d9c9bdc4983bc9fafae60d19b645fe0",
+      "bytes": 389,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/proof-repair.patch",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/terminal-summary.json",
+      "sha256": "a0c0b0157e6df0df6b99c0187593b853b0e78482be3813f94fc8a1d0677fe6d2",
+      "bytes": 2918,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.json",
+      "sha256": "0f29ef6fcf43940ae10a461d0cdec87032101f8a3846f81d0430bd15a93091c9",
+      "bytes": 5514,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.jsonl",
+      "sha256": "e12af5c8df4718808c51233b553cff1fa0b63d5faae2dfb792de343b98cf19f6",
+      "bytes": 43189,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.log",
+      "sha256": "2b1413967b1f7e00d5001a59fe7041fd4b0b46c31c770e8faaee65947c16ff60",
+      "bytes": 1158115,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-source-2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f.lean",
+      "sha256": "2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f",
+      "bytes": 9070,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-source-2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualRegularizedSourceProducer.lean",
+      "sha256": "2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f",
+      "bytes": 9070,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/lean/PvNP/RealizableHardness/ActualRegularizedSourceProducer.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/axiom-profile-parse.json",
+      "sha256": "ba80c057671526e233517999f2bc4046c14beb9f178118621e53ffcc454adab1",
+      "bytes": 4804,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/axiom-profile-parse.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostic-runner.py",
+      "sha256": "89bcd2a9bc910f84dbf02936802707d0b6679badf906cf098f41fa836597e62d",
+      "bytes": 9144,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/diagnostic-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/plan.json",
+      "sha256": "1586a9f0c3b9341fe8a073686ede6035832352b02eaf8e6a2357d3e325a87be7",
+      "bytes": 2802420,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/pregrant-plan.json",
+      "sha256": "32147530515582aa0853d8eaf8e853b218bcd926c2be014b2e4220bf3bbfb354",
+      "bytes": 2792422,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/pregrant-plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/terminal-summary.json",
+      "sha256": "b7440fd9362a3d7be931a94f3b97f1aefefba37f975c89dcc7b2211dab64cb71",
+      "bytes": 2472,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/terminal-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.json",
+      "sha256": "21a20dcd183e13cb766c60ec945570b7b69f69624be2b807e6a3c09b89190454",
+      "bytes": 5565,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.jsonl",
+      "sha256": "8e0823b8627a773348a3634d7a8f81a50234c296c1dec109e3d69ca853bd8070",
+      "bytes": 38838,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.log",
+      "sha256": "832a22f9158acbe39467aa783c3da90bb13de65d3603792ce496cc0d2622079c",
+      "bytes": 1092559,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-source-5c875adf56a10236d6f2229ded962040ccb8596609fa18ff6318eddefa5d1664.lean",
+      "sha256": "5c875adf56a10236d6f2229ded962040ccb8596609fa18ff6318eddefa5d1664",
+      "bytes": 2472,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-source-5c875adf56a10236d6f2229ded962040ccb8596609fa18ff6318eddefa5d1664.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "sources/ActualRegularizedSourceProducerChecks.lean",
+      "sha256": "5c875adf56a10236d6f2229ded962040ccb8596609fa18ff6318eddefa5d1664",
+      "bytes": 2472,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/lean/PvNP/RealizableHardness/ActualRegularizedSourceProducerChecks.lean",
+      "role": "successful-repaired-source-or-unchanged-checks"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/collect.py",
+      "sha256": "fb3fe651e58f288d1db182bd508d33db706ac6fa94a4bc14dff3a555833127c8",
+      "bytes": 2580,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/collect.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/plan.json",
+      "sha256": "c8b3e2b7b9c7b67dbb6db16b84728f9fd18315f67f9617340780c002dbf4fa08",
+      "bytes": 2683555,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/plan.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/preparation.json",
+      "sha256": "7016631f951902cc1acc936f5ed611295d9459786866abd510dd8ae77d118f42",
+      "bytes": 282,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/preparation.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/prepare.py",
+      "sha256": "21e25469886a11e407c8c58da8207fbf332e5e0bb0ebe9bd6f2981d028013d56",
+      "bytes": 1205,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/prepare.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/review-runner.py",
+      "sha256": "3a0853abb459b860e92459dc08c545d18ed8b1779aca1b3fbeae7204c642a954",
+      "bytes": 7914,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/review-runner.py",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/verification-summary.json",
+      "sha256": "67b165d3a0316fcd749ea6982cae8ee40e97647b117b8167570950c2ea79f6fe",
+      "bytes": 18936,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/verification-summary.json",
+      "role": "runner-plan-summary-or-patch"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.json",
+      "sha256": "abc74de07a7c16b281371e7618df4c3f62f77a2b6b708229b9ff401089d1d5bd",
+      "bytes": 5498,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.jsonl",
+      "sha256": "d57d40762d5dc8081f7f33e25123fd7495f9b9939e60d3c95b71857b6f707096",
+      "bytes": 40321,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.log",
+      "sha256": "170dbbd7aa95839db382599d8e17f0330221d8eb706b60e306f08e5d9fe36a96",
+      "bytes": 982177,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-1789355605052293300.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-source-423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4.lean",
+      "sha256": "423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4",
+      "bytes": 2309,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducer-source-423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.json",
+      "sha256": "51d947144f58f8f695d0f3d89bccc64e33669aebc2b9aebafd03db084c5ef3ea",
+      "bytes": 5529,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.jsonl",
+      "sha256": "4916200b6f58f562c0fd5d80d7d7d55e6594ad32d72198bdb2d37bea3c11825b",
+      "bytes": 37506,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.log",
+      "sha256": "a8d03e1e6b21ec02909513a8ede3da9e424aee0510ca74fe06efecf37d703573",
+      "bytes": 1127633,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-1789355637449649800.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-source-96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5.lean",
+      "sha256": "96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5",
+      "bytes": 2750,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerChecks-source-96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.json",
+      "sha256": "ea428075e9afdbc0be0b3bf4bf2399a7d89c17d69e72cefe1137ae237e69828c",
+      "bytes": 5538,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.jsonl",
+      "sha256": "bba5b217a819a574e0c5d67f712b2e36fca4a10dbffdeb2e19b8ec8343a287c0",
+      "bytes": 39161,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.log",
+      "sha256": "6d0225c28dd5967bf2099012d664dbe83aaf4e832239410ba1e38f3c42dd293c",
+      "bytes": 1053318,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789355540251070500.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-source-faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577.lean",
+      "sha256": "faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577",
+      "bytes": 6166,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerGeometry-source-faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.json",
+      "sha256": "2f616bc9a1555cb0d2d01b67e6dbfc91c80daa78953bb3f29d527d1d6fbcf198",
+      "bytes": 5533,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.jsonl",
+      "sha256": "765c49278cceee914ec26b40f6292d4dd3efa33922c0a193ac43e92e497b49d6",
+      "bytes": 106063,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.log",
+      "sha256": "59973315089a3bdbc684241ed673b6aac5fdddba6978ed191cd2c10900cf6e01",
+      "bytes": 1180208,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-1789355455206289200.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-source-fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd.lean",
+      "sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+      "bytes": 8106,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerMachine-source-fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd.lean",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.json",
+      "sha256": "7b9ea2bae45bf9301ca09e07327c6fd69011f3d14f92465e1a789a836d6c4c4a",
+      "bytes": 5517,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.json",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.jsonl",
+      "sha256": "bab1aae6c127efd8d64bf20cfbe8361654231a906846016c82d1208be216b263",
+      "bytes": 41651,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.jsonl",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.log",
+      "sha256": "72ad40061a0d58222f0c3358260926a2af53bb0ee237c8538b8db59198229b1a",
+      "bytes": 1126308,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-1789355571647935400.log",
+      "role": "raw-diagnostic-record"
+    },
+    {
+      "path": "runs/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-source-b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0.lean",
+      "sha256": "b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0",
+      "bytes": 6515,
+      "original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-five-module-review-build-20260913/diagnostics/ActualGadgetRowProducerRows-source-b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0.lean",
+      "role": "raw-diagnostic-record"
+    }
+  ],
+  "author_runs": [
+    {
+      "session": 69028,
+      "root": "runs/actual-gadget-machine-port-transport-repair-20260913",
+      "source": "sources/ActualGadgetRowProducerMachine.lean",
+      "source_sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-machine-port-transport-repair-20260913/lib/lean/PvNP/RealizableHardness/ActualGadgetRowProducerMachine.olean",
+      "output_sha256": "cc02a35cd6fc28c52a1d322927b7a6061b552c3f0c8c280d3b99ac1528c680e7",
+      "output_bundled": false,
+      "metadata": "runs/actual-gadget-machine-port-transport-repair-20260913/diagnostics/ActualGadgetRowProducerMachine-1789351283504082600.json"
+    },
+    {
+      "session": 50093,
+      "root": "runs/actual-gadget-geometry-degree-repair-20260913",
+      "source": "sources/ActualGadgetRowProducerGeometry.lean",
+      "source_sha256": "faaf300cf7a58946727496882f2185b50ef62053795d4ae302abd947bafe4577",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-geometry-degree-repair-20260913/lib/lean/PvNP/RealizableHardness/ActualGadgetRowProducerGeometry.olean",
+      "output_sha256": "d47ca0d290d16a1e7362c1d2b05f13cd6ec47d56f6386ae467316c1e0c5d7c6e",
+      "output_bundled": false,
+      "metadata": "runs/actual-gadget-geometry-degree-repair-20260913/diagnostics/ActualGadgetRowProducerGeometry-1789353609997591000.json"
+    },
+    {
+      "session": 63634,
+      "root": "runs/actual-gadget-rows-relabel-repair-20260913",
+      "source": "sources/ActualGadgetRowProducerRows.lean",
+      "source_sha256": "b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-rows-relabel-repair-20260913/lib/lean/PvNP/RealizableHardness/ActualGadgetRowProducerRows.olean",
+      "output_sha256": "2a59581f6a09f3bb7f6e5293a2050ce58cf6c92e1caf747b6d4b1b5d63a95dee",
+      "output_bundled": false,
+      "metadata": "runs/actual-gadget-rows-relabel-repair-20260913/diagnostics/ActualGadgetRowProducerRows-1789354280623856700.json"
+    },
+    {
+      "session": 39387,
+      "root": "runs/actual-gadget-main-repair-20260913",
+      "source": "sources/ActualGadgetRowProducer.lean",
+      "source_sha256": "423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-main-repair-20260913/lib/lean/PvNP/RealizableHardness/ActualGadgetRowProducer.olean",
+      "output_sha256": "b3e143f46fdcf759de1e5816052ac354c1f3a9adbdd6677e616ca541a496edc0",
+      "output_bundled": false,
+      "metadata": "runs/actual-gadget-main-repair-20260913/diagnostics/ActualGadgetRowProducer-1789354709089226300.json"
+    },
+    {
+      "session": 19233,
+      "root": "runs/actual-gadget-final-checks-20260913",
+      "source": "sources/ActualGadgetRowProducerChecks.lean",
+      "source_sha256": "96766935a00ceba263b70287d7f89f040d30887db033ab3b8cd24dae6ddb8eb5",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-gadget-final-checks-20260913/lib/lean/PvNP/RealizableHardness/ActualGadgetRowProducerChecks.olean",
+      "output_sha256": "bd53dc8de913b0c7d225ce4aa496a1984fa5a15894b3c288a078a6ae524edf1c",
+      "output_bundled": false,
+      "metadata": "runs/actual-gadget-final-checks-20260913/diagnostics/ActualGadgetRowProducerChecks-1789354889040021600.json"
+    },
+    {
+      "session": 74940,
+      "root": "runs/actual-regularized-source-flatmap-repair-20260913",
+      "source": "sources/ActualRegularizedSourceProducer.lean",
+      "source_sha256": "2fa973582abb0eb89f5e4bf5ec76c53c00d68f1f3d3312037472bd7aed6cfe7f",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-flatmap-repair-20260913/lib/lean/PvNP/RealizableHardness/ActualRegularizedSourceProducer.olean",
+      "output_sha256": "f271b228a55d1ebc581e1d3a0cbc83a14a81fcd9f96f533e5acee7fa96a4e8bf",
+      "output_bundled": false,
+      "metadata": "runs/actual-regularized-source-flatmap-repair-20260913/diagnostics/ActualRegularizedSourceProducer-1789356740259210000.json"
+    },
+    {
+      "session": 66488,
+      "root": "runs/actual-regularized-source-checks-diagnostic-20260913",
+      "source": "sources/ActualRegularizedSourceProducerChecks.lean",
+      "source_sha256": "5c875adf56a10236d6f2229ded962040ccb8596609fa18ff6318eddefa5d1664",
+      "exit_code": 0,
+      "output_original_path": "certifications/realizable-hardness/.lake/build/actual-regularized-source-checks-diagnostic-20260913/lib/lean/PvNP/RealizableHardness/ActualRegularizedSourceProducerChecks.olean",
+      "output_sha256": "bdc7feb991047a4f6c6d7bf901eacce2a7b18d23d996c1fc74bef82dc4cc551a",
+      "output_bundled": false,
+      "metadata": "runs/actual-regularized-source-checks-diagnostic-20260913/diagnostics/ActualRegularizedSourceProducerChecks-1789356943913663200.json"
+    }
+  ],
+  "fresh_run": {
+    "session": 23366,
+    "root": "runs/actual-gadget-five-module-review-build-20260913",
+    "summary": "runs/actual-gadget-five-module-review-build-20260913/verification-summary.json"
+  },
+  "limitations": [
+    "Original records are copied verbatim and retain historical absolute paths; use files[].original_path to files[].path mapping for bundled evidence.",
+    "No compiled exports, recursive lower dependency artifacts, or historical failed roots are bundled. Referenced original artifacts remain in their original locations.",
+    "Diagnostic flags and chronology remain unchanged; source recovery is not theorem acceptance.",
+    "Folded verifier bundle and original-row JSON excluded."
+  ]
+}

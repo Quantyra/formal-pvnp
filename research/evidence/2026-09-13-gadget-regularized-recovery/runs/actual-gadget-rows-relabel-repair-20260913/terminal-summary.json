@@ -1,0 +1,36 @@
+{
+  "session": 63634,
+  "metadata_sha256": "0b1307403fa49204e423d99bc9ed319979954305edc958ed5f3678bfb8890fb4",
+  "metadata": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\diagnostics\\ActualGadgetRowProducerRows-1789354280623856700.json",
+  "errors": [],
+  "warnings": [
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean:16:87: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean:35:6: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean:36:86: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean:48:4: warning: This simp argument is unused:",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean:89:83: warning: This simp argument is unused:"
+  ],
+  "compiler_released": true,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "source_unchanged": true,
+  "source_sha256": "b8743f0e0d6acab28f3e8d1920343bd9766359bf0e33f5e393524ec92e8731a0",
+  "elapsed_seconds": 35.10799400000542,
+  "memory_pre": 6398418944,
+  "memory_min": 4427071488,
+  "log_sha256": "71f67ca42bc88ac186f5e7752da96d32ca98e6e25f2314a2378e1924c4897eea",
+  "telemetry_sha256": "af450f7aadf489b16bc93f088b3e29bee4ee1c189f70f706d86498b8a6e3ed14",
+  "output_sha256": "2a59581f6a09f3bb7f6e5293a2050ce58cf6c92e1caf747b6d4b1b5d63a95dee",
+  "command": [
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "lean",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-rows-relabel-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerRows.lean"
+  ]
+}

@@ -1,0 +1,25 @@
+--- port-repaired/Machine.lean
++++ transport-repaired/Machine.lean
+@@ -106,11 +106,17 @@
+   cases target
+   · exact packVar_mem_FP false ownerWord_mem_FP kWord_mem_FP jWord_mem_FP
+       (constFn_mem_FP []) (constFn_mem_FP [])
+-  · exact packVar_mem_FP
+-      (a := ownerWord) (k := reverseK) (j := reverseJ)
+-      (i := fun _ => []) (h := fun _ => [])
+-      false ownerWord_mem_FP reverseK_mem_FP reverseJ_mem_FP
+-      (constFn_mem_FP []) (constFn_mem_FP [])
++  · have h : Membership.mem FP
++        (fun w => packVar (ownerWord w) false (reverseK w) (reverseJ w) [] []) :=
++      packVar_mem_FP
++        (a := ownerWord) (k := reverseK) (j := reverseJ)
++        (i := fun _ => []) (h := fun _ => [])
++        false ownerWord_mem_FP reverseK_mem_FP reverseJ_mem_FP
++        (constFn_mem_FP []) (constFn_mem_FP [])
++    have heq : portFn true =
++        (fun w => packVar (ownerWord w) false (reverseK w) (reverseJ w) [] []) := by
++      rfl
++    exact heq.symm ▸ h
+ theorem internalFn_mem_FP (h : Nat) : internalFn h ∈ FP :=
+   packVar_mem_FP true ownerWord_mem_FP kWord_mem_FP jWord_mem_FP iWord_mem_FP (constFn_mem_FP _)
+ theorem gadgetVarFn_mem_FP (t : EqualityGadget.Var) : gadgetVarFn t ∈ FP := by

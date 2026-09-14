@@ -1,0 +1,199 @@
+[
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.wrap_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.encode_list",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.inner_encode",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.joinLists_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.joinLists_encode",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.ownerRule_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.ownerRule_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.owner_entries",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.ownerClock_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.ownerClock_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.cloudsFn_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.cloudsFn_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.normalizedTableFn_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.normalizedTableFn_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.cloudsFromSourceFn_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.cloudsFromSourceFn_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.rows_code_split",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.constructorFn_mem_FP",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.constructorFn_correct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.constructorFn_output_polynomial",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.constructorFn_codeRows",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.emitted_violations_restrict",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.emitted_violations_extend",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.emitted_degree_le_four",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  {
+    "theorem": "PvNP.RealizableHardness.ActualRegularizedSourceProducer.constructorFn_empty",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  }
+]

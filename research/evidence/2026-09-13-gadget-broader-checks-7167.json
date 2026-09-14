@@ -1,0 +1,55 @@
+{
+  "session": 7167,
+  "metadata": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\diagnostics\\ActualGadgetRowProducerGeometry-1789351935186421600.json",
+  "metadata_sha256": "e5662d7bc98792f79ca9b8448346c93568ca113e314286808c43383190e25a71",
+  "errors": [
+    [
+      11055,
+      "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:45:11: error: `simp` made no progress"
+    ],
+    [
+      11056,
+      "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:81:75: error: unsolved goals"
+    ]
+  ],
+  "warnings": [
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:83:52: warning: This simp argument is unused:",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:84:4: warning: This simp argument is unused:",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:84:35: warning: This simp argument is unused:",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean:84:39: warning: This simp argument is unused:"
+  ],
+  "import_events": [
+    "import took 147s"
+  ],
+  "compiler_released": true,
+  "not_launched": [
+    "ActualGadgetRowProducerRows",
+    "ActualGadgetRowProducer",
+    "ActualGadgetRowProducerChecks"
+  ],
+  "machine_source_sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+  "exit_code": 1,
+  "guard_stopped": false,
+  "source_unchanged": true,
+  "source_sha256": "2e8888a1e7dc0b3886139c4f4a3268d74b160530cd67cf1a1649119161855160",
+  "memory_pre": 6070149120,
+  "memory_min": 4174979072,
+  "elapsed_seconds": 167.98757189999742,
+  "working_set_sample_max": 1903230976,
+  "private_usage_sample_max": 4357713920,
+  "command": [
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "lean",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-broader-checks-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducerGeometry.lean"
+  ],
+  "log_sha256": "b1e803b0ad777d488e250ed80d0d590c005bc72a396ac676f5b2079d162cbfcf",
+  "telemetry_sha256": "8e9f5af6847dc553fc6ddd1036cbc82f992a39c233d4060d45ec0f439921ace3",
+  "output_sha256": null
+}

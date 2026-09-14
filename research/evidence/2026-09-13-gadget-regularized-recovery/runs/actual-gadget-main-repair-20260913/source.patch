@@ -1,0 +1,12 @@
+--- frozen/Main.lean
++++ repaired/Main.lean
+@@ -14,7 +14,8 @@
+ def ownerCloudFn (z : List Bool) : List Bool :=
+   cloudFn (pair (pairSnd z) (ActualOccurrenceCountFP.occurrenceCountFn z))
+ theorem ownerCloudFn_mem_FP : ownerCloudFn ∈ FP :=
+-  compose (Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP
++  compose (f := fun z => pair (pairSnd z) (ActualOccurrenceCountFP.occurrenceCountFn z))
++    (g := cloudFn) (Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP
+     ActualOccurrenceCountFP.occurrenceCountFn_mem_FP) cloudFn_mem_FP
+ theorem ownerCloudFn_correct {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) (v : Fin N) :
+     ownerCloudFn (ActualOccurrenceLookup.lookupInput (ActualOccurrenceLookup.serializedSource I) v.val) =

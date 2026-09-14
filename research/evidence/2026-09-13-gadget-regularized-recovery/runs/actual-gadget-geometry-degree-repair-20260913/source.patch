@@ -1,0 +1,21 @@
+--- previous/Geometry.lean
++++ repaired/Geometry.lean
+@@ -43,14 +43,15 @@
+     List.flatMap_map, List.flatMap_assoc, Function.comp_def, dartIndex]
+   simp_rw [finRange_map_value]
+   change (List.finRange n).flatMap (fun v =>
+-    (List.finRange D).flatMap (fun j =>
++    (List.finRange (FixedPortCycleFamily.predecessor + 1)).flatMap (fun j =>
+       (List.range 3).map (fun i => (v.val*D+j.val)*3+i))) = _
+   rw [finRange_flatMap_value n (fun v =>
+-    (List.finRange D).flatMap (fun j =>
++    (List.finRange (FixedPortCycleFamily.predecessor + 1)).flatMap (fun j =>
+       (List.range 3).map (fun i => (v*D+j.val)*3+i)))]
+-  have hinner (v : Nat) := finRange_flatMap_value D
++  have hinner (v : Nat) := finRange_flatMap_value (FixedPortCycleFamily.predecessor + 1)
+     (fun j => (List.range 3).map (fun i => (v*D+j)*3+i))
+   simp_rw [hinner]
++  rw [← FixedPortCycleFamily.degree_eq]
+   have h := range_mul_map (n*D) 3 id
+   rw [range_mul_flatMap] at h
+   simpa only [List.map_id, id_eq] using h.symm

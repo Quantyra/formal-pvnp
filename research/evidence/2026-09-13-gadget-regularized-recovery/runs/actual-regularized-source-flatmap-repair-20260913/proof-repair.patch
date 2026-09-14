@@ -1,0 +1,12 @@
+--- prior
++++ repaired
+@@ -78,7 +78,8 @@
+   simp only [List.flatMap_def]
+   rw [<- he]
+   change (List.finRange N).flatMap (fun v =>
+-    ownerRule (lookupInput (serializedSource I) v.val)) = _
++    ownerRule (lookupInput (serializedSource I) v.val)) =
++      (cloudCodes I).flatMap DataEncode.bitstringEncode
+   simp_rw [ownerRule_correct]
+   simp only [cloudCodes, List.flatMap_assoc]
+ 

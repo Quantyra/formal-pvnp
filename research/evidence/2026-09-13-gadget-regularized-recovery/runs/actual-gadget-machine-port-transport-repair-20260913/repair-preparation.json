@@ -1,0 +1,8 @@
+{
+  "previous_sha256": "e8b6ef657254d6399b754729cde1a15e40f8fcedbda4b78394c89bb38a475911",
+  "source_sha256": "fa7b350305e84cae10945abc9ea141b1cfeae6764ea0d6c5d8eeb0be4ae06bbd",
+  "patch_sha256": "3c57b31f1219944e7d17a46ca49b28941368b020021bde2df8678509d7ecd8dd",
+  "compiler_authorized": false,
+  "compiled": false,
+  "scope": "Only true branch: typed local FP proof, definitional portFn equality, equality transport. No added top-level declarations/options."
+}

@@ -1,0 +1,30 @@
+{
+  "session": 39387,
+  "metadata_sha256": "6701dad911998fa4f830485dfd9ce0d41df67f6074f01510b34f89e3faa84fb6",
+  "metadata": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-main-repair-20260913\\diagnostics\\ActualGadgetRowProducer-1789354709089226300.json",
+  "errors": [],
+  "warnings": [],
+  "compiler_released": true,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "source_unchanged": true,
+  "source_sha256": "423bce28d031ab3aa89a4d381ba891411a28cbd3ae735599026090f0493e30d4",
+  "elapsed_seconds": 36.12948119999783,
+  "memory_pre": 5810216960,
+  "memory_min": 3949989888,
+  "log_sha256": "c9761e744e285bb79f918ec6006d34672dafaae6f0ab58f6534cdea798f7d871",
+  "telemetry_sha256": "e476e9e794a1b9c16aaeb2bc4b6674df7d091a00e57779a1e9bae3d9ad1f6637",
+  "output_sha256": "b3e143f46fdcf759de1e5816052ac354c1f3a9adbdd6677e616ca541a496edc0",
+  "command": [
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "lean",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-main-repair-20260913\\lib\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducer.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-gadget-main-repair-20260913\\lean\\PvNP\\RealizableHardness\\ActualGadgetRowProducer.lean"
+  ]
+}

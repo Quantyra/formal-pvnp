@@ -1,0 +1,257 @@
+{
+  "profiles": [
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.packVar_eq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.reverseWord_mem_FP",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.gadgetRowFn_mem_FP",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartRule_mem_FP",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.cloudFn_mem_FP",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.cloudFn_output_polynomial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.rank_value",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartList_index",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.words_at_dart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.reverse_at_dart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.ranks_at_dart",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.gadgetVarFn_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.gadgetRowFn_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.fourEntries_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartRule_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartVars_embed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartRows_localRows",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.representative_entries",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.entryCat_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.cloudFn_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.cloudFn_empty",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.localCode_tag",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.localRowCode_tag",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.cloudFn_instance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.ownerCloudFn_mem_FP",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.ownerCloudFn_correct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.ownerCloudFn_output_polynomial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.context_length",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartClock_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.loop_input_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.ActualGadgetRowProducer.dartRows_length",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "count": 31,
+  "expected_prints": 31,
+  "examples": 9,
+  "checks": 4,
+  "all_allowed": true,
+  "raw_log_sha256": "8580474fcb5c5089c3c69231479ca0befd8ee2056dba2e3167858836bd059d31"
+}
