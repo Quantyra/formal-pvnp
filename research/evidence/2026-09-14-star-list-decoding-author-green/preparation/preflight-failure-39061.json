@@ -1,0 +1,8 @@
+{
+  "session": 39061,
+  "exit": 1,
+  "compiler_launched": false,
+  "reason": "Get-Process named lookup exits1 for no matching process, check_output rejected empty successful absence; fixed to enumerate/filter",
+  "runner_before_sha256": "f4fbb74cdbe1218b21abdba8c370f6129f9d7845689d65db3129576407c1fc86",
+  "runner_after_sha256": "8679911fef8d308c7c63f4dc8c54b4e36292a0274ef8f75952e95e6be32f7214"
+}

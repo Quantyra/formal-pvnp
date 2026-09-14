@@ -1,0 +1,10 @@
+--- attempt2
++++ attempt3
+@@ -116,7 +116,6 @@
+     (q : Labeling Sigma) :
+     (∑ l : Labeling Sigma, if ∀ v ∈ s, l v = q v then labelMass A l else 0) =
+       ∏ v ∈ s, coordMass A v (q v) := by
+-  classical
+   calc
+     _ = ∏ v, ∑ a, if v ∈ s → a = q v then coordMass A v a else 0 := by
+       convert cylinder_factorization A (fun v a => v ∈ s → a = q v) using 1

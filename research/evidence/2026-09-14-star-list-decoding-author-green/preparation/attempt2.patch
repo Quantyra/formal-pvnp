@@ -1,0 +1,89 @@
+--- attempt1
++++ attempt2
+@@ -117,7 +117,10 @@
+     (∑ l : Labeling Sigma, if ∀ v ∈ s, l v = q v then labelMass A l else 0) =
+       ∏ v ∈ s, coordMass A v (q v) := by
+   classical
+-  rw [cylinder_factorization A (fun v a => v ∈ s → a = q v)]
++  calc
++    _ = ∏ v, ∑ a, if v ∈ s → a = q v then coordMass A v a else 0 := by
++      convert cylinder_factorization A (fun v a => v ∈ s → a = q v) using 1
++    _ = _ := ?_
+   have hi (v : V) : (∑ a, if v ∈ s → a = q v then coordMass A v a else 0) =
+       if v ∈ s then coordMass A v (q v) else 1 := by
+     by_cases h : v ∈ s <;> simp [h, coordMass_sum]
+@@ -157,10 +160,11 @@
+   rw [← hc']
+   apply Finset.sum_le_sum
+   intro l _
+-  by_cases h : ∀ v ∈ e.support, l v = q v
+-  · simp [h, e.accepts_of_agree hq h]
+-  · simp only [if_neg h]
+-    split_ifs <;> first | exact labelMass_nonneg A l | exact le_rfl
++  split_ifs with h ha ha
++  · exact le_rfl
++  · exact False.elim (ha (e.accepts_of_agree hq h))
++  · exact labelMass_nonneg A l
++  · exact le_rfl
+ 
+ def slotSum (e : Star V Sigma m) (A : ∀ v, Finset (Sigma v)) : ℝ :=
+   ∑ j, ((A (e.slot j)).card : ℝ)
+@@ -205,8 +209,8 @@
+     (pow_le_pow_left₀ (div_nonneg (slotSum_nonneg e A) hn.le) havg (m + 1)))
+   have hd : (0 : ℝ) < ((∏ v ∈ e.support, (A v).card : ℕ) : ℝ) := by
+     exact_mod_cast Finset.prod_pos (fun v hv => lt_of_lt_of_le Nat.zero_lt_one (hpos v hv))
+-  exact (one_div_le_one_div_of_le hd hb).trans (by simpa [one_div] using
+-    edgeProbability_ge_distinct e A hw)
++  exact (one_div_le_one_div_of_le hd hb).trans
++    (by simpa [one_div] using (edgeProbability_ge_distinct e A hw))
+ 
+ /-- Occurrence weights retain zero-mass edges and duplicate slots. Positive-support
+ restriction is not needed for decoding and is NOT claimed as a typed compiler here. -/
+@@ -267,9 +271,9 @@
+     (A : ∀ v, Finset (Sigma v)) :
+     selectedWeight p edges A = listBudget p edges A / alphabetMass p edges := by
+   classical
+-  simp only [selectedWeight, variableWeight, Finset.sum_const, nsmul_eq_mul,
+-    mul_div_assoc, ← Finset.sum_div]
+-  congr 1
++  unfold selectedWeight variableWeight listBudget
++  simp only [Finset.sum_const, nsmul_eq_mul]
++  rw [Finset.sum_div]
+   apply Finset.sum_congr rfl
+   intro v _
+   ring
+@@ -297,7 +301,7 @@
+   apply Finset.sum_congr rfl
+   intro e _
+   rw [Finset.mul_sum]
+-  simp_rw [mul_assoc, Finset.sum_mul]
++  simp_rw [mul_assoc, Finset.sum_mul, Finset.mul_sum]
+   rw [Finset.sum_comm]
+   apply Finset.sum_congr rfl
+   intro j _
+@@ -339,7 +343,7 @@
+     mul_le_mul_of_nonneg_left hbudget (by positivity)
+   have hd : (m + 1 : ℝ) * rho = T * (1 / 8) := by dsimp [T]; ring
+   rw [hd] at hmean
+-  exact (mul_le_mul_left hT).mp (hmark.trans hmean)
++  nlinarith [hmark.trans hmean]
+ 
+ theorem good_mass_ge (p : E → ℝ) (hp : ∀ e, 0 ≤ p e)
+     (edges : E → Star V Sigma m) (A : ∀ v, Finset (Sigma v))
+@@ -425,5 +429,16 @@
+   have h := (div_le_iff₀ hD).mp (hl.trans (hvalue l))
+   nlinarith
+ 
++/-- The exact weighted-selection input of the handoff, with no supplied mean bound. -/
++theorem exists_decoding_of_selectedWeight (p : E → ℝ) (hp : ∀ e, 0 ≤ p e)
++    (hnorm : ∑ e, p e = 1) (edges : E → Star V Sigma m)
++    (A : ∀ v, Finset (Sigma v)) (rho : ℝ) (hrho : 0 < rho)
++    (hbudget : selectedWeight p edges A ≤ rho * (1 / alphabetMass p edges)) :
++    ∃ l : Labeling Sigma,
++      (eventMass p (fun e => (edges e).listWitness A) - 1 / 8) /
++        (8 * rho) ^ (m + 1) ≤ score p edges l :=
++  exists_decoding p hp edges A rho hrho
++    ((selectedWeight_budget_iff p hp hnorm edges A rho).mp hbudget)
++
+ end
+ end PvNP.RealizableHardness.StarListDecoding

@@ -1,0 +1,77 @@
+{
+  "status": "AUTHOR PAIR GREEN; INDEPENDENT BUILD AND THREE-LENS ACCEPTANCE PENDING",
+  "session": 92289,
+  "attempts": [
+    {
+      "attempt": "1789366862612921000",
+      "module": "StarListDecoding",
+      "exit_code": 1,
+      "source_sha256": "d40efc9286f840375e03fff6a2391bb2d2ef73439360f8f578ff7b9879d5ed39",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": null,
+      "metadata": "attempts/1789366862612921000/terminal.json"
+    },
+    {
+      "attempt": "1789367076474027900",
+      "module": "StarListDecoding",
+      "exit_code": 1,
+      "source_sha256": "29a3e8315823d76488cdd46e610e73366df565cd877a074727b57a50f1df4822",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": null,
+      "metadata": "attempts/1789367076474027900/terminal.json"
+    },
+    {
+      "attempt": "1789367190466808300",
+      "module": "StarListDecoding",
+      "exit_code": 1,
+      "source_sha256": "e86c922a710892f5ff6ca4bd11a1524b9c992ed033bc72866b00a6e213485249",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": null,
+      "metadata": "attempts/1789367190466808300/terminal.json"
+    },
+    {
+      "attempt": "1789367291117333400",
+      "module": "StarListDecoding",
+      "exit_code": 1,
+      "source_sha256": "fe31f5a8bc298736f43d64d230245b287514df2eb1a284e64760d81afb2c3ea2",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": null,
+      "metadata": "attempts/1789367291117333400/terminal.json"
+    },
+    {
+      "attempt": "1789367400735514700",
+      "module": "StarListDecoding",
+      "exit_code": 0,
+      "source_sha256": "244400f8a0d9762b7ee30ed287d92e1a525352e264eb874786a5be7b4a53eec8",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": "42c4aeec789971e74051f2f077a90766308d6769acb1f3d7262a27697b0f95ad",
+      "metadata": "attempts/1789367400735514700/terminal.json"
+    },
+    {
+      "attempt": "1789367438150651800",
+      "module": "StarListDecodingChecks",
+      "exit_code": 0,
+      "source_sha256": "f309f94b11a80d777acf8b5d5cf872f6bbb07befa84d4bd8b367f2fe7ab6a1da",
+      "source_unchanged": true,
+      "guard_stopped": false,
+      "output_sha256": "1bbe86b2516780b2c8fc23434c2a7233c7f8e6aeb22d7cdce3356a4f884fb438",
+      "metadata": "attempts/1789367438150651800/terminal.json"
+    }
+  ],
+  "requested_profiles": 17,
+  "profiles_matched": 17,
+  "allowed_axioms_only": true,
+  "examples": 5,
+  "signatures": 3,
+  "main_warnings": 19,
+  "checks_warnings": 0,
+  "current_only_import_modules": 2034,
+  "compiler_released": true,
+  "closure_independently_accepted": false,
+  "full_hardness": false
+}

@@ -1,0 +1,17 @@
+{
+  "compiler_authorized": true,
+  "grant": "root sole author compiler grant; current-only pinned package outputs explicitly authorized",
+  "diagnostic_only": true,
+  "closure_sha256": "6f3f447739945ad51be0661331f97e99ce8fd5daf9270be17c22a4da7eca9da0",
+  "lake_manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "modules": [
+    "StarListDecoding",
+    "StarListDecodingChecks"
+  ],
+  "source_hashes": {
+    "StarListDecoding": "244400f8a0d9762b7ee30ed287d92e1a525352e264eb874786a5be7b4a53eec8",
+    "StarListDecodingChecks": "f309f94b11a80d777acf8b5d5cf872f6bbb07befa84d4bd8b367f2fe7ab6a1da"
+  },
+  "start_bytes": 3758096384,
+  "stop_bytes": 671088640
+}

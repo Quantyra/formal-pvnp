@@ -1,0 +1,163 @@
+{
+  "requested": [
+    "Star.accepts_of_agree",
+    "coordMass_sum",
+    "labelMass_sum",
+    "cylinder_factorization",
+    "cylinder_pinned",
+    "edgeProbability_ge_distinct",
+    "slot_product_le",
+    "edgeProbability_good",
+    "occurrenceWeight_sum",
+    "alphabetMass_ge_one",
+    "selectedWeight_budget_iff",
+    "mean_slotSum",
+    "bad_mass_le",
+    "good_mass_ge",
+    "exists_decoding",
+    "exists_decoding_of_selectedWeight",
+    "witness_mass_le_three_quarters"
+  ],
+  "profiles": [
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.Star.accepts_of_agree",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.coordMass_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.labelMass_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.cylinder_factorization",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.cylinder_pinned",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.edgeProbability_ge_distinct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.slot_product_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.edgeProbability_good",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.occurrenceWeight_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.alphabetMass_ge_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.selectedWeight_budget_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.mean_slotSum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.bad_mass_le",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.good_mass_ge",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.exists_decoding",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.exists_decoding_of_selectedWeight",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "theorem": "PvNP.RealizableHardness.StarListDecoding.witness_mass_le_three_quarters",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "all_names_exact": true,
+  "allowed_only": true,
+  "raw_log_sha256": "de3209d32895d1c7b80228e3cd1d52d812d5fb14fead16b158598ecb78718377",
+  "parser_note": "Compare full relative names after removing namespace prefix; first provisional leaf-only comparison correctly rejected nested Star.accepts_of_agree."
+}

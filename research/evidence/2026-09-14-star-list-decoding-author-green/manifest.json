@@ -1,0 +1,326 @@
+{
+  "status": "AUTHOR PAIR GREEN; INDEPENDENT BUILD AND THREE-LENS ACCEPTANCE PENDING",
+  "records": [
+    {
+      "path": "sources/StarListDecoding.lean",
+      "sha256": "244400f8a0d9762b7ee30ed287d92e1a525352e264eb874786a5be7b4a53eec8",
+      "bytes": 19275,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\StarListDecoding.lean"
+    },
+    {
+      "path": "sources/StarListDecodingChecks.lean",
+      "sha256": "f309f94b11a80d777acf8b5d5cf872f6bbb07befa84d4bd8b367f2fe7ab6a1da",
+      "bytes": 2017,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\lean\\PvNP\\RealizableHardness\\StarListDecodingChecks.lean"
+    },
+    {
+      "path": "attempts/1789366862612921000/raw.log",
+      "sha256": "0708ae3078c64669b65308bcdf42fb11443938f054ed79556886850dd3949f2f",
+      "bytes": 1477286,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789366862612921000\\raw.log"
+    },
+    {
+      "path": "attempts/1789366862612921000/StarListDecoding.lean",
+      "sha256": "d40efc9286f840375e03fff6a2391bb2d2ef73439360f8f578ff7b9879d5ed39",
+      "bytes": 18375,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789366862612921000\\StarListDecoding.lean"
+    },
+    {
+      "path": "attempts/1789366862612921000/telemetry.jsonl",
+      "sha256": "ba7f5d4286825370c817e79345df97ce3e440345c16fbe4f188e6884c1707fd7",
+      "bytes": 17797,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789366862612921000\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789366862612921000/terminal.json",
+      "sha256": "c4ed849cd37ae8cb085e02d98b6dadec31f76cdb2d4d32f60a8647f79b7cd343",
+      "bytes": 3867,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789366862612921000\\terminal.json"
+    },
+    {
+      "path": "attempts/1789367076474027900/plan.json",
+      "sha256": "f6ef079ae0da3aa6d970e8f74498d1949d4b13c646bab0ba26521c807fe07750",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\plan.json"
+    },
+    {
+      "path": "attempts/1789367076474027900/raw.log",
+      "sha256": "672d8d3d174680af4b3dcc006bf17d064865c278e252b018d9bad2cf898296c2",
+      "bytes": 1566249,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\raw.log"
+    },
+    {
+      "path": "attempts/1789367076474027900/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\runner.py"
+    },
+    {
+      "path": "attempts/1789367076474027900/StarListDecoding.lean",
+      "sha256": "29a3e8315823d76488cdd46e610e73366df565cd877a074727b57a50f1df4822",
+      "bytes": 19073,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\StarListDecoding.lean"
+    },
+    {
+      "path": "attempts/1789367076474027900/telemetry.jsonl",
+      "sha256": "0c7f361f64e116715afcdf49893496de24a61f538d3da55d40ddcf169cd11741",
+      "bytes": 8524,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789367076474027900/terminal.json",
+      "sha256": "6ca000e4a53baffa9ae969a2ebfaff423f270b93cc71393f59e3c3d39aa8d783",
+      "bytes": 3868,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367076474027900\\terminal.json"
+    },
+    {
+      "path": "attempts/1789367190466808300/plan.json",
+      "sha256": "7dc04f4c25c6a887f5186a96b18d8c181a6596c65b434bebfaba17796997fc73",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\plan.json"
+    },
+    {
+      "path": "attempts/1789367190466808300/raw.log",
+      "sha256": "96eef5a5bcb17b887f13123b38ce5c66dbf53e98b235cd39cbe7df49dc20cadf",
+      "bytes": 1565553,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\raw.log"
+    },
+    {
+      "path": "attempts/1789367190466808300/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\runner.py"
+    },
+    {
+      "path": "attempts/1789367190466808300/StarListDecoding.lean",
+      "sha256": "e86c922a710892f5ff6ca4bd11a1524b9c992ed033bc72866b00a6e213485249",
+      "bytes": 19061,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\StarListDecoding.lean"
+    },
+    {
+      "path": "attempts/1789367190466808300/telemetry.jsonl",
+      "sha256": "70f9fc0c4ec09e0671e863066664953a0fea203c9f355acd6a1f51ccaeddf29c",
+      "bytes": 8533,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789367190466808300/terminal.json",
+      "sha256": "91d646a0c76a4af5a5391de433910e3ca20d3ef753ae219913a5b4d924f5ce83",
+      "bytes": 3867,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367190466808300\\terminal.json"
+    },
+    {
+      "path": "attempts/1789367291117333400/plan.json",
+      "sha256": "850106122d56e4d9422a2b62034ecfb995fa8a83bfab8c4cc4dad3787e3f13e9",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\plan.json"
+    },
+    {
+      "path": "attempts/1789367291117333400/raw.log",
+      "sha256": "31aacad99120718bec9575de33b0d6aaa75f6acd8c7ebdbd28ca4e039434da24",
+      "bytes": 1570589,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\raw.log"
+    },
+    {
+      "path": "attempts/1789367291117333400/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\runner.py"
+    },
+    {
+      "path": "attempts/1789367291117333400/StarListDecoding.lean",
+      "sha256": "fe31f5a8bc298736f43d64d230245b287514df2eb1a284e64760d81afb2c3ea2",
+      "bytes": 19069,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\StarListDecoding.lean"
+    },
+    {
+      "path": "attempts/1789367291117333400/telemetry.jsonl",
+      "sha256": "79b844fde7a7da1067b65ac8b37982be3b85ccaf8e9f8142426bd2dd7cc57136",
+      "bytes": 10312,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789367291117333400/terminal.json",
+      "sha256": "1711c4f552dbe651b18e09029c7f18144bc24ce6c6d52444019330730484f8f1",
+      "bytes": 3866,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367291117333400\\terminal.json"
+    },
+    {
+      "path": "attempts/1789367400735514700/plan.json",
+      "sha256": "cfbb8595af329b77ec6fe31ef341bcebe84906c2b4c97ddf2ed117ead179dbb8",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\plan.json"
+    },
+    {
+      "path": "attempts/1789367400735514700/raw.log",
+      "sha256": "8a7dc37a373b6659225c3f87a3935475e281efd6cdfcf90328bb40724ac6a3fc",
+      "bytes": 1574602,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\raw.log"
+    },
+    {
+      "path": "attempts/1789367400735514700/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\runner.py"
+    },
+    {
+      "path": "attempts/1789367400735514700/StarListDecoding.lean",
+      "sha256": "244400f8a0d9762b7ee30ed287d92e1a525352e264eb874786a5be7b4a53eec8",
+      "bytes": 19275,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\StarListDecoding.lean"
+    },
+    {
+      "path": "attempts/1789367400735514700/telemetry.jsonl",
+      "sha256": "f40dea8ecca070e79807b1c0342c14e056654f2ff7356ffd9e7e2dedd01ab447",
+      "bytes": 10240,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789367400735514700/terminal.json",
+      "sha256": "4163a05d7bcd0d47e340f2b8306f01265c23b3eed0b8d02a2eacbbf2723ccb09",
+      "bytes": 3929,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367400735514700\\terminal.json"
+    },
+    {
+      "path": "attempts/1789367438150651800/axiom-profile-parse.json",
+      "sha256": "f741fc8a36aa37c6c7318b9735a30f65acb1871e43f7e496e43b8d32e0817934",
+      "bytes": 4168,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\axiom-profile-parse.json"
+    },
+    {
+      "path": "attempts/1789367438150651800/plan.json",
+      "sha256": "cfbb8595af329b77ec6fe31ef341bcebe84906c2b4c97ddf2ed117ead179dbb8",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\plan.json"
+    },
+    {
+      "path": "attempts/1789367438150651800/raw.log",
+      "sha256": "de3209d32895d1c7b80228e3cd1d52d812d5fb14fead16b158598ecb78718377",
+      "bytes": 797098,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\raw.log"
+    },
+    {
+      "path": "attempts/1789367438150651800/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\runner.py"
+    },
+    {
+      "path": "attempts/1789367438150651800/StarListDecodingChecks.lean",
+      "sha256": "f309f94b11a80d777acf8b5d5cf872f6bbb07befa84d4bd8b367f2fe7ab6a1da",
+      "bytes": 2017,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\StarListDecodingChecks.lean"
+    },
+    {
+      "path": "attempts/1789367438150651800/telemetry.jsonl",
+      "sha256": "8ee123de494a7a8dfc9bd23474ca697791d4b4a7d4a78a13a94b8cbb5d29631a",
+      "bytes": 7151,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\telemetry.jsonl"
+    },
+    {
+      "path": "attempts/1789367438150651800/terminal.json",
+      "sha256": "197018b8e9d37e7c54d03f10d38d0dd2e7306dd1c3438b7eceeed029e9c3f49a",
+      "bytes": 3954,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\1789367438150651800\\terminal.json"
+    },
+    {
+      "path": "preparation/attempt2.patch",
+      "sha256": "29787530a53742420a4475f79aa9e3c6d8721ac6f81932ed6599d1674794aa51",
+      "bytes": 3788,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\attempt2.patch"
+    },
+    {
+      "path": "preparation/attempt3.patch",
+      "sha256": "d17550240074c9fd73efc7282f30e76a9bedd9e8503ac501767d570e195c89a0",
+      "bytes": 397,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\attempt3.patch"
+    },
+    {
+      "path": "preparation/attempt4.patch",
+      "sha256": "45108eaedbc9687a71d4e797034c1f0f80b50b17afca3bf4dd304f221ba5d8a0",
+      "bytes": 517,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\attempt4.patch"
+    },
+    {
+      "path": "preparation/attempt5.patch",
+      "sha256": "e35a46e20c6b3e671b19e7193db513a61f65f090724928109d5b37578a35d0df",
+      "bytes": 748,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\attempt5.patch"
+    },
+    {
+      "path": "preparation/current-closure.json",
+      "sha256": "6f3f447739945ad51be0661331f97e99ce8fd5daf9270be17c22a4da7eca9da0",
+      "bytes": 4239055,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\current-closure.json"
+    },
+    {
+      "path": "preparation/plan-attempt1.json",
+      "sha256": "5bc93a543fce5e8c0439d5ca840925a51e234bf1aed75792c6a14180fc5713ef",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\plan-attempt1.json"
+    },
+    {
+      "path": "preparation/plan-attempt2.json",
+      "sha256": "f6ef079ae0da3aa6d970e8f74498d1949d4b13c646bab0ba26521c807fe07750",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\plan-attempt2.json"
+    },
+    {
+      "path": "preparation/plan-attempt3.json",
+      "sha256": "7dc04f4c25c6a887f5186a96b18d8c181a6596c65b434bebfaba17796997fc73",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\plan-attempt3.json"
+    },
+    {
+      "path": "preparation/plan-attempt4.json",
+      "sha256": "850106122d56e4d9422a2b62034ecfb995fa8a83bfab8c4cc4dad3787e3f13e9",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\plan-attempt4.json"
+    },
+    {
+      "path": "preparation/plan.json",
+      "sha256": "cfbb8595af329b77ec6fe31ef341bcebe84906c2b4c97ddf2ed117ead179dbb8",
+      "bytes": 707,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\plan.json"
+    },
+    {
+      "path": "preparation/preflight-failure-39061.json",
+      "sha256": "4ce3391c76c074d3f60a6c8a5cfa7ec45b8401e1d59d0de1e7824f3b5bc9b916",
+      "bytes": 405,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\preflight-failure-39061.json"
+    },
+    {
+      "path": "preparation/runner-attempt1.py",
+      "sha256": "8679911fef8d308c7c63f4dc8c54b4e36292a0274ef8f75952e95e6be32f7214",
+      "bytes": 3772,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\runner-attempt1.py"
+    },
+    {
+      "path": "preparation/runner-preflight-v1.py",
+      "sha256": "f4fbb74cdbe1218b21abdba8c370f6129f9d7845689d65db3129576407c1fc86",
+      "bytes": 3733,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\runner-preflight-v1.py"
+    },
+    {
+      "path": "preparation/runner.py",
+      "sha256": "640be454a523ff3d0128c907d18e3b9578f081831d4064e4b472074c0ddfc64f",
+      "bytes": 3899,
+      "original_path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-list-decoding-author-20260914\\runner.py"
+    },
+    {
+      "path": "summary.json",
+      "sha256": "2c1b5721accc4f2331afc74629a17529642fe1e140551909d2f85c847099fba1",
+      "bytes": 2775
+    },
+    {
+      "path": ".gitattributes",
+      "sha256": "ab90a67b2915ccc202dd6e499e724e77326e8c91f16d7133581c1ba6b31bab60",
+      "bytes": 40
+    },
+    {
+      "path": "README.md",
+      "sha256": "7971bce54ca0dce59e4c6f35e98c7edf4b8eac08640d20ba6cc7ac45dbfbd17a",
+      "bytes": 6263
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+--- attempt3
++++ attempt4
+@@ -118,7 +118,7 @@
+       ∏ v ∈ s, coordMass A v (q v) := by
+   calc
+     _ = ∏ v, ∑ a, if v ∈ s → a = q v then coordMass A v a else 0 := by
+-      convert cylinder_factorization A (fun v a => v ∈ s → a = q v) using 1
++      convert cylinder_factorization A (fun v a => v ∈ s → a = q v) using 1 <;> rfl
+     _ = _ := ?_
+   have hi (v : V) : (∑ a, if v ∈ s → a = q v then coordMass A v a else 0) =
+       if v ∈ s then coordMass A v (q v) else 1 := by
