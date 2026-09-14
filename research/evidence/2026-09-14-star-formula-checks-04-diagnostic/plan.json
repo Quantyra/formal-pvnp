@@ -1,0 +1,37 @@
+{
+  "compiler_authorized": true,
+  "partial_only": true,
+  "reconstruction_is_new_current_provenance": true,
+  "workspace": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914",
+  "companion": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+  "pins": {
+    "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+    "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+    "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+    "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+    "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+    "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+    "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+    "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+    "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+    "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+    "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+  },
+  "lake_manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "copies_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+  "sources": [],
+  "partial": {
+    "module": "PvNP.RealizableHardness.StarFormulaInterfaceChecks",
+    "sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+    "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-checks-04-diagnostic\\source",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-checks-04-diagnostic\\source\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.lean"
+  },
+  "lean_exe": "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+  "start_bytes": 3758096384,
+  "stop_bytes": 671088640,
+  "threads": 1,
+  "do_not_run_lake": true,
+  "lean_sha256": "37dfe799f69b990251f3b6bcff8a1c10c1afe2adcdecc5c580cc6726ffb63433",
+  "root_clearance": "PENDING fixed full source pin and root clearance",
+  "task_status": "Frozen Checks first diagnostic; no acceptance"
+}

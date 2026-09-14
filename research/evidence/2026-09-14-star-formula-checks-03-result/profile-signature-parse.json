@@ -1,0 +1,121 @@
+{
+  "raw_sha256": "47724e9b519e46ce99acdc1b5300cac6a9b23427ecb69bcf4bbb0402c8dc877d",
+  "profiles": [
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.evalOpt_orOpt",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.evalOpt_andOpt",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_orMany_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_andMany_iff",
+      "axioms": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.localWitness_iff_listWitness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_all_true",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_leafFormula_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_branch_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_compile_iff_listWitness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.compile_eq_none_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.compile_some_eval_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "signatures": [
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.localWitness_iff_listWitness",
+      "raw_start": 875442,
+      "raw_excerpt": "PvNP.RealizableHardness.StarFormulaInterface.localWitness_iff_listWitness.{u, v} {V : Type u} [Fintype V]\n  {Sigma : V \u2192 Type v} [(x : V) \u2192 Fintype (Sigma x)] [\u2200 (x : V), Nonempty (Sigma x)] {m : \u2115}\n  (e : StarListDecoding.Star V Sigma m) (A : (x : V) \u2192 Finset (Sigma x)) : LocalWitness e A \u2194 e.listWitness A"
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.eval_compile_iff_listWitness",
+      "raw_start": 875751,
+      "raw_excerpt": "PvNP.RealizableHardness.StarFormulaInterface.eval_compile_iff_listWitness.{u, v} {V : Type u} [Fintype V]\n  {Sigma : V \u2192 Type v} [(x : V) \u2192 Fintype (Sigma x)] [\u2200 (x : V), Nonempty (Sigma x)] {m : \u2115}\n  (e : StarListDecoding.Star V Sigma m) (Z : (x : V) \u00d7 Sigma x \u2192 Bool) :\n  evalOpt Z (compile e) = true \u2194 e.listWitness (selected Z)"
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.compile_eq_none_iff",
+      "raw_start": 876083,
+      "raw_excerpt": "PvNP.RealizableHardness.StarFormulaInterface.compile_eq_none_iff.{u, v} {V : Type u} [Fintype V] {Sigma : V \u2192 Type v}\n  [(x : V) \u2192 Fintype (Sigma x)] [\u2200 (x : V), Nonempty (Sigma x)] {m : \u2115} (e : StarListDecoding.Star V Sigma m) :\n  compile e = none \u2194 \u00ac\u2203 l, e.accepts l"
+    },
+    {
+      "name": "PvNP.RealizableHardness.StarFormulaInterface.compile_some_eval_iff",
+      "raw_start": 876352,
+      "raw_excerpt": "PvNP.RealizableHardness.StarFormulaInterface.compile_some_eval_iff.{u, v} {V : Type u} [Fintype V] {Sigma : V \u2192 Type v}\n  [(x : V) \u2192 Fintype (Sigma x)] [\u2200 (x : V), Nonempty (Sigma x)] {m : \u2115} (e : StarListDecoding.Star V Sigma m)\n  (f : Formula ((x : V) \u00d7 Sigma x)) (hf : compile e = some f) (Z : (x : V) \u00d7 Sigma x \u2192 Bool) :\n  Formula.eval Z f = true \u2194 e.listWitness (selected Z)"
+    }
+  ],
+  "source_example_count": 5,
+  "errors": [
+    {
+      "line": "84",
+      "column": "17",
+      "code": "lean.unknownIdentifier"
+    },
+    {
+      "line": "89",
+      "column": "17",
+      "code": "lean.unknownIdentifier"
+    }
+  ],
+  "checks_green": false
+}

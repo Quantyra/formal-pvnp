@@ -1,0 +1,55 @@
+{
+  "records": [
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/plan.json",
+      "sha256": "f0919ee17c1e9162b7e5397468aacbe1e7a51437779ff49e868939d06696e755",
+      "bytes": 2223
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/raw.log",
+      "sha256": "78fa4e2802a26856e73207bc7134cef4c5f83d936d20fffb74c065ac13a83010",
+      "bytes": 904365
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/runner.py",
+      "sha256": "7ef2d2189d5a4b10080027a2c53f89c0e804f90bee2a8e68e74d64c9a5e022e5",
+      "bytes": 5514
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/source.lean",
+      "sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "bytes": 7620
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/telemetry.jsonl",
+      "sha256": "6dc50e20889c5fbdfede0ab228f69163963668930c0fe10574c40f9fc4a00463",
+      "bytes": 7420
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/terminal.json",
+      "sha256": "534ce432fabfad7aa9e46d0405cbd40413bfa343127fe8c0a9b0fa956eb14ac4",
+      "bytes": 2922
+    }
+  ],
+  "session": 72062,
+  "main_author_green": true,
+  "independent_acceptance": false,
+  "checks_pending": true,
+  "original_outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ilean",
+      "sha256": "c3c4c5578b3cd2289de99667f4b43bceaa8c0048e2fd5b2afa8912491fdff681",
+      "bytes": 38103
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean",
+      "sha256": "abcb4f31c9b86334c0f04f2423866b14ca51b0501ca393e100e703cc60590862",
+      "bytes": 420272
+    }
+  ]
+}

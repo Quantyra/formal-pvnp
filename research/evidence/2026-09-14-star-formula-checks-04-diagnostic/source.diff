@@ -1,0 +1,17 @@
+--- Checks03
++++ Checks04
+@@ -81,12 +81,12 @@
+           intro x hx
+           have hempty : leafVertices zero = ∅ := by simp [leafVertices, zero]
+           rw [hempty] at hx
+-          exact (Finset.not_mem_empty x hx).elim
++          simp at hx
+         · refine ⟨true, Finset.mem_filter.mpr ⟨Finset.mem_univ _, h⟩, ?_⟩
+           intro x hx
+           have hempty : leafVertices zero = ∅ := by simp [leafVertices, zero]
+           rw [hempty] at hx
+-          exact (Finset.not_mem_empty x hx).elim
++          simp at hx
+     cases h : evalOpt Z (compile zero) <;> cases h0 : Z ⟨false, false⟩ <;>
+       cases h1 : Z ⟨false, true⟩ <;> simp_all
+   exact ⟨hall, by simpa using hall (fun _ => false), by simpa [chooseFalse] using hall chooseFalse⟩

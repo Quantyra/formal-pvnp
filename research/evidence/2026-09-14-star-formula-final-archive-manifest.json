@@ -1,0 +1,687 @@
+{
+  "records": [
+    {
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/StarFormulaInterface.lean",
+      "raw_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "frozen_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "raw_equals_frozen": true,
+      "bytes": 7620
+    },
+    {
+      "path": "certifications/realizable-hardness/lean/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "raw_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "frozen_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "raw_equals_frozen": true,
+      "bytes": 7861
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-author-pair-closeout.md",
+      "raw_sha256": "5ba87a9052ca20466dd1950922a5494ccb03deef7bfbb8fd6ef499293155ff38",
+      "frozen_sha256": "4461609d9c14b408a37abbc44452393de03b8c6cf1684e9513c23f0931b0d9fe",
+      "raw_equals_frozen": false,
+      "bytes": 2968
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/manifest.json",
+      "raw_sha256": "891e5f3fd9a7eb3b7cec33a0f28191a7ed89b0a47644e400faaff701b03e30fd",
+      "frozen_sha256": "891e5f3fd9a7eb3b7cec33a0f28191a7ed89b0a47644e400faaff701b03e30fd",
+      "raw_equals_frozen": true,
+      "bytes": 1652
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/profile-signature-parse.json",
+      "raw_sha256": "e0d027415fb7c2eb213f6d67e562a8ce6fc0a9735f998d8f2458f962c4f1d790",
+      "frozen_sha256": "e0d027415fb7c2eb213f6d67e562a8ce6fc0a9735f998d8f2458f962c4f1d790",
+      "raw_equals_frozen": true,
+      "bytes": 5543
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "raw_sha256": "e0841445baee9e4c62ea29d6eec1b9e9a4dc7f4a3b28ff607dfe3723cc6d2094",
+      "frozen_sha256": "e0841445baee9e4c62ea29d6eec1b9e9a4dc7f4a3b28ff607dfe3723cc6d2094",
+      "raw_equals_frozen": true,
+      "bytes": 2205
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "raw_sha256": "c71aff6e24909ebecf59714394d20637052337db66c2ff4a83f2a52c590a7cab",
+      "frozen_sha256": "c71aff6e24909ebecf59714394d20637052337db66c2ff4a83f2a52c590a7cab",
+      "raw_equals_frozen": true,
+      "bytes": 879994
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "raw_sha256": "69bc67a2835037f4240115366315988f1c9ef2054a82e4a19361a8e55e06cc61",
+      "frozen_sha256": "69bc67a2835037f4240115366315988f1c9ef2054a82e4a19361a8e55e06cc61",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "raw_sha256": "4982faad96c36f5c8a2b84bcb2818497381d4914a5e3d8ba544b64af3ea464ed",
+      "frozen_sha256": "4982faad96c36f5c8a2b84bcb2818497381d4914a5e3d8ba544b64af3ea464ed",
+      "raw_equals_frozen": true,
+      "bytes": 6447
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "raw_sha256": "a90fc73e47a34b68b153669afb9bf55aa1c976eee4d6cbdd253a4550834ea8ed",
+      "frozen_sha256": "a90fc73e47a34b68b153669afb9bf55aa1c976eee4d6cbdd253a4550834ea8ed",
+      "raw_equals_frozen": true,
+      "bytes": 19598
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "raw_sha256": "089177637120094b7540a331bd8e5922cdd70afdaf54b3daf263e35886619989",
+      "frozen_sha256": "089177637120094b7540a331bd8e5922cdd70afdaf54b3daf263e35886619989",
+      "raw_equals_frozen": true,
+      "bytes": 2232
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/isolated-copy-inventory.json",
+      "raw_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "frozen_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "raw_equals_frozen": true,
+      "bytes": 5892229
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/plan.json",
+      "raw_sha256": "4542cb23b18b886a39500c28c9cac8d2321e45641b161931ce6d0910d669af26",
+      "frozen_sha256": "4542cb23b18b886a39500c28c9cac8d2321e45641b161931ce6d0910d669af26",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/pregrant-plan.json",
+      "raw_sha256": "246f23987a062e5bfe32e35ab6be8d77e9ec6871696f1c971f4896f64f116f52",
+      "frozen_sha256": "246f23987a062e5bfe32e35ab6be8d77e9ec6871696f1c971f4896f64f116f52",
+      "raw_equals_frozen": true,
+      "bytes": 2198
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/runner.diff",
+      "raw_sha256": "bf9285d8f3d25c02215422f9fe3d551b19fd1422000078bef3bc77674cfec91d",
+      "frozen_sha256": "bf9285d8f3d25c02215422f9fe3d551b19fd1422000078bef3bc77674cfec91d",
+      "raw_equals_frozen": true,
+      "bytes": 1887
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/runner.py",
+      "raw_sha256": "69151de393a16b040d265baa3972ce74ac180b54807e19dce772700199579db7",
+      "frozen_sha256": "69151de393a16b040d265baa3972ce74ac180b54807e19dce772700199579db7",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-diagnostic/source/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "raw_sha256": "0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0",
+      "frozen_sha256": "0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0",
+      "raw_equals_frozen": true,
+      "bytes": 7572
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/manifest.json",
+      "raw_sha256": "24010202fae5cfafb6112fd8d086af079d41e99180035c2d620ed55107458fe6",
+      "frozen_sha256": "24010202fae5cfafb6112fd8d086af079d41e99180035c2d620ed55107458fe6",
+      "raw_equals_frozen": true,
+      "bytes": 1652
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/profile-signature-parse.json",
+      "raw_sha256": "daafa6184651a6a2d9d059971038ed0a7bd341291eb33acde28714c5638919f9",
+      "frozen_sha256": "daafa6184651a6a2d9d059971038ed0a7bd341291eb33acde28714c5638919f9",
+      "raw_equals_frozen": true,
+      "bytes": 23981
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "raw_sha256": "4542cb23b18b886a39500c28c9cac8d2321e45641b161931ce6d0910d669af26",
+      "frozen_sha256": "4542cb23b18b886a39500c28c9cac8d2321e45641b161931ce6d0910d669af26",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "raw_sha256": "8ec7ec865f4d6343770f1e4548db2b1b448eed99122220fce54bf70da36cee34",
+      "frozen_sha256": "8ec7ec865f4d6343770f1e4548db2b1b448eed99122220fce54bf70da36cee34",
+      "raw_equals_frozen": true,
+      "bytes": 876266
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "raw_sha256": "69151de393a16b040d265baa3972ce74ac180b54807e19dce772700199579db7",
+      "frozen_sha256": "69151de393a16b040d265baa3972ce74ac180b54807e19dce772700199579db7",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "raw_sha256": "0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0",
+      "frozen_sha256": "0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0",
+      "raw_equals_frozen": true,
+      "bytes": 7572
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "raw_sha256": "d9e536e5b5d7db93c4a05d2c4b094b8a8712108b7ce7875e6d6d0c249869be3e",
+      "frozen_sha256": "d9e536e5b5d7db93c4a05d2c4b094b8a8712108b7ce7875e6d6d0c249869be3e",
+      "raw_equals_frozen": true,
+      "bytes": 8591
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-02-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "raw_sha256": "a676f891ed364c721dc33611d5d4b32c8c24e4f240520031d78e735d029bed42",
+      "frozen_sha256": "a676f891ed364c721dc33611d5d4b32c8c24e4f240520031d78e735d029bed42",
+      "raw_equals_frozen": true,
+      "bytes": 2224
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/isolated-copy-inventory.json",
+      "raw_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "frozen_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "raw_equals_frozen": true,
+      "bytes": 5892229
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/plan.json",
+      "raw_sha256": "3e5d27c0bb592815e1f2081c252bb9a07249cb815e5e319d225aac638feeb2ef",
+      "frozen_sha256": "3e5d27c0bb592815e1f2081c252bb9a07249cb815e5e319d225aac638feeb2ef",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/pregrant-plan.json",
+      "raw_sha256": "5bdbf0d6bb0a9c1d9bde37af630e6dcc364a91fc1a1d927065650fe78848686c",
+      "frozen_sha256": "5bdbf0d6bb0a9c1d9bde37af630e6dcc364a91fc1a1d927065650fe78848686c",
+      "raw_equals_frozen": true,
+      "bytes": 2198
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/runner.diff",
+      "raw_sha256": "d7dc57ae81a4aa39fde3428a31d3902e82911574bf2ff415a4c300b32ef7cd16",
+      "frozen_sha256": "d7dc57ae81a4aa39fde3428a31d3902e82911574bf2ff415a4c300b32ef7cd16",
+      "raw_equals_frozen": true,
+      "bytes": 1887
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/runner.py",
+      "raw_sha256": "981e20f751e5a9190e56c2d287a7fed052ddba3a286cd1e99ca1fcda6cdc83d0",
+      "frozen_sha256": "981e20f751e5a9190e56c2d287a7fed052ddba3a286cd1e99ca1fcda6cdc83d0",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-diagnostic/source/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "raw_sha256": "01e9707aff60478f1c15db5403b53d7c7fd244e0c4dbc2cd1c08c7c72b20baf5",
+      "frozen_sha256": "01e9707aff60478f1c15db5403b53d7c7fd244e0c4dbc2cd1c08c7c72b20baf5",
+      "raw_equals_frozen": true,
+      "bytes": 7917
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/manifest.json",
+      "raw_sha256": "46fe301f41139bb3544962628c8be2c5bf39eac4b0cc666d1a271d16d72e4867",
+      "frozen_sha256": "46fe301f41139bb3544962628c8be2c5bf39eac4b0cc666d1a271d16d72e4867",
+      "raw_equals_frozen": true,
+      "bytes": 1651
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/profile-signature-parse.json",
+      "raw_sha256": "7c44a72c3237d33f0d446dbbbfacd6f0ec0d0ddf757b833301d9c32aa7c63acf",
+      "frozen_sha256": "7c44a72c3237d33f0d446dbbbfacd6f0ec0d0ddf757b833301d9c32aa7c63acf",
+      "raw_equals_frozen": true,
+      "bytes": 4414
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "raw_sha256": "3e5d27c0bb592815e1f2081c252bb9a07249cb815e5e319d225aac638feeb2ef",
+      "frozen_sha256": "3e5d27c0bb592815e1f2081c252bb9a07249cb815e5e319d225aac638feeb2ef",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "raw_sha256": "47724e9b519e46ce99acdc1b5300cac6a9b23427ecb69bcf4bbb0402c8dc877d",
+      "frozen_sha256": "47724e9b519e46ce99acdc1b5300cac6a9b23427ecb69bcf4bbb0402c8dc877d",
+      "raw_equals_frozen": true,
+      "bytes": 879334
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "raw_sha256": "981e20f751e5a9190e56c2d287a7fed052ddba3a286cd1e99ca1fcda6cdc83d0",
+      "frozen_sha256": "981e20f751e5a9190e56c2d287a7fed052ddba3a286cd1e99ca1fcda6cdc83d0",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "raw_sha256": "01e9707aff60478f1c15db5403b53d7c7fd244e0c4dbc2cd1c08c7c72b20baf5",
+      "frozen_sha256": "01e9707aff60478f1c15db5403b53d7c7fd244e0c4dbc2cd1c08c7c72b20baf5",
+      "raw_equals_frozen": true,
+      "bytes": 7917
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "raw_sha256": "359a642b66d959715009d3f46572bf6ac2e4998632597dc0135326f1ec45c5cb",
+      "frozen_sha256": "359a642b66d959715009d3f46572bf6ac2e4998632597dc0135326f1ec45c5cb",
+      "raw_equals_frozen": true,
+      "bytes": 6259
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-03-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "raw_sha256": "eb8da4eab7a86a0eaaf088090e6be0a302eaadd3964f85fae7a5912dee12ff58",
+      "frozen_sha256": "eb8da4eab7a86a0eaaf088090e6be0a302eaadd3964f85fae7a5912dee12ff58",
+      "raw_equals_frozen": true,
+      "bytes": 2225
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/isolated-copy-inventory.json",
+      "raw_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "frozen_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "raw_equals_frozen": true,
+      "bytes": 5892229
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/plan.json",
+      "raw_sha256": "d80819cf547904faae8aaebb3a6035c84f712f870261c1f8b6fe48c294d364a7",
+      "frozen_sha256": "d80819cf547904faae8aaebb3a6035c84f712f870261c1f8b6fe48c294d364a7",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/pregrant-plan.json",
+      "raw_sha256": "68a074b261929c5804c31820457fe52efe549d4e0ae4726812d4f91bf1391e61",
+      "frozen_sha256": "68a074b261929c5804c31820457fe52efe549d4e0ae4726812d4f91bf1391e61",
+      "raw_equals_frozen": true,
+      "bytes": 2198
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/runner.py",
+      "raw_sha256": "96afa7aa55cb62a7c2ac4703a469f644bcd3e4170968b65a2b88a0815f4da822",
+      "frozen_sha256": "96afa7aa55cb62a7c2ac4703a469f644bcd3e4170968b65a2b88a0815f4da822",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/source.diff",
+      "raw_sha256": "9f07139618b43fc559a9f98fc84fda9af52bb1d22d15d4bc44ee8e7174ced1c4",
+      "frozen_sha256": "9f07139618b43fc559a9f98fc84fda9af52bb1d22d15d4bc44ee8e7174ced1c4",
+      "raw_equals_frozen": true,
+      "bytes": 791
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-04-diagnostic/source/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "raw_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "frozen_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "raw_equals_frozen": true,
+      "bytes": 7861
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/isolated-copy-inventory.json",
+      "raw_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "frozen_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+      "raw_equals_frozen": true,
+      "bytes": 5892229
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/plan.json",
+      "raw_sha256": "e0841445baee9e4c62ea29d6eec1b9e9a4dc7f4a3b28ff607dfe3723cc6d2094",
+      "frozen_sha256": "e0841445baee9e4c62ea29d6eec1b9e9a4dc7f4a3b28ff607dfe3723cc6d2094",
+      "raw_equals_frozen": true,
+      "bytes": 2205
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/pregrant-plan.json",
+      "raw_sha256": "d18ee095ea9041b4d0130b669c8c887bb013d712a07c84f5cca0afa9f23b2f5d",
+      "frozen_sha256": "d18ee095ea9041b4d0130b669c8c887bb013d712a07c84f5cca0afa9f23b2f5d",
+      "raw_equals_frozen": true,
+      "bytes": 2206
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/runner.py",
+      "raw_sha256": "69bc67a2835037f4240115366315988f1c9ef2054a82e4a19361a8e55e06cc61",
+      "frozen_sha256": "69bc67a2835037f4240115366315988f1c9ef2054a82e4a19361a8e55e06cc61",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-diagnostic/source/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "raw_sha256": "4982faad96c36f5c8a2b84bcb2818497381d4914a5e3d8ba544b64af3ea464ed",
+      "frozen_sha256": "4982faad96c36f5c8a2b84bcb2818497381d4914a5e3d8ba544b64af3ea464ed",
+      "raw_equals_frozen": true,
+      "bytes": 6447
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/final-subset-verification.json",
+      "raw_sha256": "4e03e156571b00ebb7c318b5cb7a2a73a9ca35a712637d5c79d19901ac91eea9",
+      "frozen_sha256": "4e03e156571b00ebb7c318b5cb7a2a73a9ca35a712637d5c79d19901ac91eea9",
+      "raw_equals_frozen": true,
+      "bytes": 337
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/manifest.json",
+      "raw_sha256": "cd3e352b863a85fe699e66a8648cc8896765348e6784c4555396b63b9892f009",
+      "frozen_sha256": "cd3e352b863a85fe699e66a8648cc8896765348e6784c4555396b63b9892f009",
+      "raw_equals_frozen": true,
+      "bytes": 2437
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/profile-signature-parse.json",
+      "raw_sha256": "0a4b38e46aa9588937158c351004e02d1ef580f0dfd1519c9ba04dd6aa041ed3",
+      "frozen_sha256": "0a4b38e46aa9588937158c351004e02d1ef580f0dfd1519c9ba04dd6aa041ed3",
+      "raw_equals_frozen": true,
+      "bytes": 4316
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "raw_sha256": "d80819cf547904faae8aaebb3a6035c84f712f870261c1f8b6fe48c294d364a7",
+      "frozen_sha256": "d80819cf547904faae8aaebb3a6035c84f712f870261c1f8b6fe48c294d364a7",
+      "raw_equals_frozen": true,
+      "bytes": 2197
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "raw_sha256": "50339c2c7a9371549bc39754a43603c755693404748180649af83c8007a4b354",
+      "frozen_sha256": "50339c2c7a9371549bc39754a43603c755693404748180649af83c8007a4b354",
+      "raw_equals_frozen": true,
+      "bytes": 884832
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "raw_sha256": "96afa7aa55cb62a7c2ac4703a469f644bcd3e4170968b65a2b88a0815f4da822",
+      "frozen_sha256": "96afa7aa55cb62a7c2ac4703a469f644bcd3e4170968b65a2b88a0815f4da822",
+      "raw_equals_frozen": true,
+      "bytes": 5512
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "raw_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "frozen_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "raw_equals_frozen": true,
+      "bytes": 7861
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "raw_sha256": "095c347cabe3d400846d96c28e6f7a3f5b40f1b1acb5b7a5873c013d2a9d7fbc",
+      "frozen_sha256": "095c347cabe3d400846d96c28e6f7a3f5b40f1b1acb5b7a5873c013d2a9d7fbc",
+      "raw_equals_frozen": true,
+      "bytes": 6469
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "raw_sha256": "6f6d233f151028fbba6f9da7c8d9f93d863615ce804dd530d870004061194716",
+      "frozen_sha256": "6f6d233f151028fbba6f9da7c8d9f93d863615ce804dd530d870004061194716",
+      "raw_equals_frozen": true,
+      "bytes": 2941
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-checks-luna-contract.md",
+      "raw_sha256": "46b1537636ffbaf5391110201b34db7e34138db0e8c343d74a911ab92b1e285c",
+      "frozen_sha256": "46b1537636ffbaf5391110201b34db7e34138db0e8c343d74a911ab92b1e285c",
+      "raw_equals_frozen": true,
+      "bytes": 6058
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/manifest.json",
+      "raw_sha256": "43347d547657ed9b0fb2fc0f567b7bc4d76c43112ed634ddf5ee168a55c44ba6",
+      "frozen_sha256": "43347d547657ed9b0fb2fc0f567b7bc4d76c43112ed634ddf5ee168a55c44ba6",
+      "raw_equals_frozen": true,
+      "bytes": 1595
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/plan.json",
+      "raw_sha256": "7ad88a2801f722dc61328af77372ef9165c0eef132041da0c360cf2b60438b33",
+      "frozen_sha256": "7ad88a2801f722dc61328af77372ef9165c0eef132041da0c360cf2b60438b33",
+      "raw_equals_frozen": true,
+      "bytes": 2217
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/raw.log",
+      "raw_sha256": "bb44ce5e3e7cc5cbac5af9948af11c85f75c2695ae47125d3c79cee40c6abca3",
+      "frozen_sha256": "bb44ce5e3e7cc5cbac5af9948af11c85f75c2695ae47125d3c79cee40c6abca3",
+      "raw_equals_frozen": true,
+      "bytes": 890387
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/runner.py",
+      "raw_sha256": "d377e617f32474ca99c3a55f6bc9c25a17550ae4435e219872069011cda1f824",
+      "frozen_sha256": "d377e617f32474ca99c3a55f6bc9c25a17550ae4435e219872069011cda1f824",
+      "raw_equals_frozen": true,
+      "bytes": 5514
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/source.lean",
+      "raw_sha256": "f698333e431c8f4c6493795110ecf67d1cc9f11d242b3be4a8a9c4f1142ceba4",
+      "frozen_sha256": "f698333e431c8f4c6493795110ecf67d1cc9f11d242b3be4a8a9c4f1142ceba4",
+      "raw_equals_frozen": true,
+      "bytes": 7488
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/telemetry.jsonl",
+      "raw_sha256": "4bd8cca5ea732c6efc13a869519d787cce7504a805468cab03e13fa07ee7aebf",
+      "frozen_sha256": "4bd8cca5ea732c6efc13a869519d787cce7504a805468cab03e13fa07ee7aebf",
+      "raw_equals_frozen": true,
+      "bytes": 7206
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-01-result/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/terminal.json",
+      "raw_sha256": "7914bea24481ff15af4b55bd113df8e0ec74ea9a559470d1f708804202a9a48c",
+      "frozen_sha256": "7914bea24481ff15af4b55bd113df8e0ec74ea9a559470d1f708804202a9a48c",
+      "raw_equals_frozen": true,
+      "bytes": 2211
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/isolated-copy-inventory.json",
+      "raw_sha256": "0d7e3ccfb16eebe9aeac795f86fbb30f1cd13e3d2a5920b07d8b339b34917947",
+      "frozen_sha256": "0d7e3ccfb16eebe9aeac795f86fbb30f1cd13e3d2a5920b07d8b339b34917947",
+      "raw_equals_frozen": true,
+      "bytes": 5891526
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/plan.json",
+      "raw_sha256": "f0919ee17c1e9162b7e5397468aacbe1e7a51437779ff49e868939d06696e755",
+      "frozen_sha256": "f0919ee17c1e9162b7e5397468aacbe1e7a51437779ff49e868939d06696e755",
+      "raw_equals_frozen": true,
+      "bytes": 2223
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/pregrant-plan.json",
+      "raw_sha256": "04720cd5a97aebd533a8da6f295842bd2bed5149a3cd18651176320b8ddb33f7",
+      "frozen_sha256": "04720cd5a97aebd533a8da6f295842bd2bed5149a3cd18651176320b8ddb33f7",
+      "raw_equals_frozen": true,
+      "bytes": 2224
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/runner.diff",
+      "raw_sha256": "3799f4041a4c75961eaf0d21f2855907894a077039a007e4170bc76ed145e52c",
+      "frozen_sha256": "3799f4041a4c75961eaf0d21f2855907894a077039a007e4170bc76ed145e52c",
+      "raw_equals_frozen": true,
+      "bytes": 1903
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/runner.py",
+      "raw_sha256": "7ef2d2189d5a4b10080027a2c53f89c0e804f90bee2a8e68e74d64c9a5e022e5",
+      "frozen_sha256": "7ef2d2189d5a4b10080027a2c53f89c0e804f90bee2a8e68e74d64c9a5e022e5",
+      "raw_equals_frozen": true,
+      "bytes": 5514
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/source/PvNP/RealizableHardness/StarFormulaInterface.lean",
+      "raw_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "frozen_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "raw_equals_frozen": true,
+      "bytes": 7620
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/superseded-unused-preparation/StarFormulaInterface.lean",
+      "raw_sha256": "7011596a7b894667a71788f9342fa73e7bff4fe64000cf42769bcf8cbb64cb5b",
+      "frozen_sha256": "7011596a7b894667a71788f9342fa73e7bff4fe64000cf42769bcf8cbb64cb5b",
+      "raw_equals_frozen": true,
+      "bytes": 7595
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/superseded-unused-preparation/plan.json",
+      "raw_sha256": "b004f224bba5864f89c4c070ab3bf31afcecbb253b620fd88118aedebad29615",
+      "frozen_sha256": "b004f224bba5864f89c4c070ab3bf31afcecbb253b620fd88118aedebad29615",
+      "raw_equals_frozen": true,
+      "bytes": 2224
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-full-candidate-02-diagnostic/superseded-unused-preparation/runner.py",
+      "raw_sha256": "a2a37704b741b9bb93047453a75c78493ad94895a47bb332b7c25095881d5dc1",
+      "frozen_sha256": "a2a37704b741b9bb93047453a75c78493ad94895a47bb332b7c25095881d5dc1",
+      "raw_equals_frozen": true,
+      "bytes": 5514
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/.gitattributes",
+      "raw_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "frozen_sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "raw_equals_frozen": true,
+      "bytes": 8
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/manifest.json",
+      "raw_sha256": "59dcc8eeffd16b7be369bb1011ccb604b23bd7158a6a635936f5150fdbe7bf86",
+      "frozen_sha256": "59dcc8eeffd16b7be369bb1011ccb604b23bd7158a6a635936f5150fdbe7bf86",
+      "raw_equals_frozen": true,
+      "bytes": 2270
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/plan.json",
+      "raw_sha256": "f0919ee17c1e9162b7e5397468aacbe1e7a51437779ff49e868939d06696e755",
+      "frozen_sha256": "f0919ee17c1e9162b7e5397468aacbe1e7a51437779ff49e868939d06696e755",
+      "raw_equals_frozen": true,
+      "bytes": 2223
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/raw.log",
+      "raw_sha256": "78fa4e2802a26856e73207bc7134cef4c5f83d936d20fffb74c065ac13a83010",
+      "frozen_sha256": "78fa4e2802a26856e73207bc7134cef4c5f83d936d20fffb74c065ac13a83010",
+      "raw_equals_frozen": true,
+      "bytes": 904365
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/runner.py",
+      "raw_sha256": "7ef2d2189d5a4b10080027a2c53f89c0e804f90bee2a8e68e74d64c9a5e022e5",
+      "frozen_sha256": "7ef2d2189d5a4b10080027a2c53f89c0e804f90bee2a8e68e74d64c9a5e022e5",
+      "raw_equals_frozen": true,
+      "bytes": 5514
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/source.lean",
+      "raw_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "frozen_sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "raw_equals_frozen": true,
+      "bytes": 7620
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/telemetry.jsonl",
+      "raw_sha256": "6dc50e20889c5fbdfede0ab228f69163963668930c0fe10574c40f9fc4a00463",
+      "frozen_sha256": "6dc50e20889c5fbdfede0ab228f69163963668930c0fe10574c40f9fc4a00463",
+      "raw_equals_frozen": true,
+      "bytes": 7420
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-main-author-green/receipts/00-PvNP.RealizableHardness.StarFormulaInterface/terminal.json",
+      "raw_sha256": "534ce432fabfad7aa9e46d0405cbd40413bfa343127fe8c0a9b0fa956eb14ac4",
+      "frozen_sha256": "534ce432fabfad7aa9e46d0405cbd40413bfa343127fe8c0a9b0fa956eb14ac4",
+      "raw_equals_frozen": true,
+      "bytes": 2922
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-nonclaims-review.md",
+      "raw_sha256": "bf8821846d9292b90edcbb3d33c2e5364f10c20aef41369cd2e9d20774b493f7",
+      "frozen_sha256": "4b96a1bbdac8722a167b8cbb0bf3083f886c92d7570a4fe325f8e82235657cd2",
+      "raw_equals_frozen": false,
+      "bytes": 6672
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-partial-semantic-review.md",
+      "raw_sha256": "2d697f588b887eb26d3117928139c97234fff2574670b32c6b8e5c8192ed12e8",
+      "frozen_sha256": "2d697f588b887eb26d3117928139c97234fff2574670b32c6b8e5c8192ed12e8",
+      "raw_equals_frozen": true,
+      "bytes": 11714
+    },
+    {
+      "path": "research/evidence/2026-09-14-star-formula-proof-adversarial-review.md",
+      "raw_sha256": "52e01a52b7a99c7e5865654f0388c45c4c18e6c5a42f6e98ec4ab3a956670843",
+      "frozen_sha256": "52e01a52b7a99c7e5865654f0388c45c4c18e6c5a42f6e98ec4ab3a956670843",
+      "raw_equals_frozen": true,
+      "bytes": 8233
+    }
+  ],
+  "author_pair_green": true,
+  "fresh_independent_acceptance": false,
+  "full_manuscript_lean_complete": false,
+  "no_push": true
+}

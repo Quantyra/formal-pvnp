@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": "profile-signature-parse.json",
+      "sha256": "daafa6184651a6a2d9d059971038ed0a7bd341291eb33acde28714c5638919f9",
+      "bytes": 23981
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "sha256": "4542cb23b18b886a39500c28c9cac8d2321e45641b161931ce6d0910d669af26",
+      "bytes": 2197
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "sha256": "8ec7ec865f4d6343770f1e4548db2b1b448eed99122220fce54bf70da36cee34",
+      "bytes": 876266
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "sha256": "69151de393a16b040d265baa3972ce74ac180b54807e19dce772700199579db7",
+      "bytes": 5512
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "sha256": "0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0",
+      "bytes": 7572
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "sha256": "d9e536e5b5d7db93c4a05d2c4b094b8a8712108b7ce7875e6d6d0c249869be3e",
+      "bytes": 8591
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "sha256": "a676f891ed364c721dc33611d5d4b32c8c24e4f240520031d78e735d029bed42",
+      "bytes": 2224
+    }
+  ],
+  "acceptance": false
+}

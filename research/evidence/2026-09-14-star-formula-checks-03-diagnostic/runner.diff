@@ -1,0 +1,20 @@
+--- Checks02
++++ Checks03
+@@ -11,7 +11,7 @@
+ assert len(sys.argv)==1,'This runner accepts no alternate command or target'
+ assert p['sources']==[], 'One target only; no dependency reconstruction'
+ assert p['partial']['module']=='PvNP.RealizableHardness.StarFormulaInterfaceChecks'
+-assert p['partial']['sha256']=='0f1f49b4c2e50798a40a4757b8b557a3a8509a24d5a6693277bee88a0f0522d0'
++assert p['partial']['sha256']=='01e9707aff60478f1c15db5403b53d7c7fd244e0c4dbc2cd1c08c7c72b20baf5'
+ assert p['partial_only'] and p['reconstruction_is_new_current_provenance'] and p['do_not_run_lake']
+ assert p['threads']==1 and p['start_bytes']==3758096384 and p['stop_bytes']==671088640
+ assert sha(B/'isolated-copy-inventory.json')==p['copies_sha256']
+@@ -31,7 +31,7 @@
+  for ext in ['.olean','.olean.private','.olean.server','.ir.sig','.ir']:
+   assert not pathlib.Path(str(outroot/rel)+ext).exists(), 'No automatic retry or overwrite; preserve prior outputs and get a new reviewed plan'
+ env=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['LEAN_PATH']=';'.join([str(outroot),str(pathlib.Path(p['lean_exe']).parent.parent/'lib/lean')]);env.pop('LEAN_SRC_PATH',None)
+-diag=w/'guarded-runs-checks-02';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
++diag=w/'guarded-runs-checks-03';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
+ for index,r in enumerate(p['sources']+[p['partial']]):
+  name=r['module'];d=diag/(str(index).zfill(2)+'-'+name);d.mkdir();source=pathlib.Path(r['path']);before=sha(source);(d/'source.lean').write_bytes(source.read_bytes());(d/'runner.py').write_bytes(pathlib.Path(__file__).read_bytes());(d/'plan.json').write_bytes((B/'plan.json').read_bytes())
+  out=outroot/pathlib.Path(*name.split('.'));out.parent.mkdir(parents=True,exist_ok=True)

@@ -38,3 +38,34 @@ This route names the existing generic consumers precisely but does not invent an
 - `certifications/realizable-hardness/lean/PvNP/RealizableHardness/SubspaceRestriction.lean`: SHA256 `9d94b2d8097fbc718a2ba97c6de57e5987e016e964100c0abb55981055120c41`.
 - `certifications/realizable-hardness/lean/PvNP/RealizableHardness/TripleRestrictionRank.lean`: SHA256 `ca7653309402410e5050f0f6d4c03aa88a94c5c64a4b4964cb50ff82ce3896bc`.
 - `C:/Users/Dan/Desktop/Projects/realizable-cmmsa-hardness/paper/submission-manuscript.md`: SHA256 `dc749b0ef184e5d0792c3d366b2461c4478add9facbd4d653627731adc4db240`.
+
+## Main-complete source follow-up (Checks pending)
+
+Reviewed final main SHA256 `93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc` at the certification path. Parent reports main session 72062 exit 0; this follow-up independently inspects source, not its execution records. Checks and the axiom audit remain pending, so no overall GO is issued.
+
+The entire definitions prefix is byte-identical to the pinned partial reviewed above. All four theorem headers were extracted and compared to the frozen contract, ignoring whitespace only: hypotheses and conclusions match exactly. There is no common-alphabet replacement, extra distinct-leaf hypothesis, assumed semantic certificate or global-label-enumeration compiler. Classical global-label choice occurs only inside the local-to-global semantic proof (77-89). Actual compiler definitions remain center-label and distinct-leaf fibre lists (33-47).
+
+- `localWitness_iff_listWitness` (72-113) implements the coherence meaning of paper 223 and 227-234. It now proves center/leaf values explicitly, uses separation in the correct direction, tests every fibre slot, and uses Fin.cases for all selected slots (90-97). Reverse transport is explicit at 109-113.
+- `eval_compile_iff_listWitness` (136-143) proves the evaluation of the expression in paper 230-231 via LocalWitness, then the proved global equivalence. This resolves the earlier missing intermediate argument; it does not enumerate global assignments as syntax.
+- `compile_eq_none_iff` (145-171) exactly explains paper 233's empty-OR convention in constant-free Formula. Both directions use the compiler equivalence, and the negative direction derives an accepting labeling from all-true evaluation of a hypothetical some formula. This resolves the prior unsupported simp step.
+- `compile_some_eval_iff` (173-178) connects an actual successful constructor equation to the Formula evaluation needed by the paper compilation step. The equation hf is not a correctness assumption, since total correctness and exact none characterization precede it.
+
+No source-semantic failure was found in this completed main. The earlier partial-proof comments remain historical, not current defects. The actual-source some-output/transport-coherence dependency and paper's leaf-count/runtime/weight joins identified above remain open and are not discharged by these four generic results.
+
+## Final author-pair complexity lens: GO-WITH-NOTES
+
+This final status supersedes the preceding Checks-pending status, preserving its chronology. Main remains SHA256 `93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc`. Checks is SHA256 `d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac`, author session 27492. I rehashed all eight records in `research/evidence/2026-09-14-star-formula-checks-author-green/manifest.json`, whose SHA256 is `cd3e352b863a85fe699e66a8648cc8896765348e6784c4555396b63b9892f009`. Its terminal SHA256 `6f6d233f151028fbba6f9da7c8d9f93d863615ce804dd530d870004061194716` records actual exit 0, guard false and unchanged source. Raw log SHA256 is `50339c2c7a9371549bc39754a43603c755693404748180649af83c8007a4b354`.
+
+All eleven complete named axiom profiles were independently parsed from that raw log and matched in order to the actual Checks commands. Their axiom sets are subsets of propext, Classical.choice and Quot.sound. Four signatures check all four locked results. This is author-pair evidence; no fresh independent execution or complete dependency-closure certification is claimed by this lens.
+
+The five actual example propositions meet the contract, rather than merely counting five declarations:
+
+1. The zero-leaf star evaluates as the OR of the two selected center labels for every input, with all-false and one-selected specializations.
+2. Repeated identical projections succeed with one shared false leaf label and false center label.
+3. Repeated identity/negation projections yield compile = none, despite inhabited alphabets.
+4. A genuinely dependent Bool/Unit alphabet proves the true-center fibre empty, false-center fibre equal to univ, some output and successful mixed selection. One empty branch therefore does not reject the whole edge.
+5. A some output nevertheless evaluates false at the all-false selection, distinguishing syntax absence from assignment failure.
+
+Bounded verdict: GO-WITH-NOTES for the generic finite optional fibre compiler and its evaluation/coherence equivalences. The exact four statements and definitions remain as compared above. The result does not assume away empty fibres, confuse repeated occurrences with independent labels, or replace the prescribed compiler with global-label enumeration. Prior proof-route advice is disclosed: I reviewed the contract/partial and suggested the LocalWitness intermediate and all-true contradiction, but did not edit or compile this source. This is the complexity/semantic lens, not a claim of wholly noncontributing proof development.
+
+The actual-source coherent-labeling/representative-transport theorem, guaranteed total Formula output on the emitted law (or justified false elimination), leaf count, rational positive-weight support compiler, encoded runtime/FP, and full manuscript hardness remain open. Nothing in the eleven profiles or five examples supplies those joins. No compiler, source edit, Git or public action was performed for this final binding.

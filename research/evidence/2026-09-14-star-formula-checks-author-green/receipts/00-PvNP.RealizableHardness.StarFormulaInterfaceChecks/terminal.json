@@ -1,0 +1,48 @@
+{
+  "module": "PvNP.RealizableHardness.StarFormulaInterfaceChecks",
+  "source_sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-checks-04-diagnostic\\source",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-star-formula-checks-04-diagnostic\\source\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.lean"
+  ],
+  "partial_only": true,
+  "old_acceptance_transferred": false,
+  "pre": 4923285504,
+  "LEAN_PATH": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+  "closure_inventory_sha256": "d182f588f01d2687441aee2ceb0893a6d0bdeb275eddae3724b990a4c988b327",
+  "runner_sha256": "96afa7aa55cb62a7c2ac4703a469f644bcd3e4170968b65a2b88a0815f4da822",
+  "plan_sha256": "d80819cf547904faae8aaebb3a6035c84f712f870261c1f8b6fe48c294d364a7",
+  "launched": true,
+  "pid": 34392,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "minimum": 3394957312,
+  "elapsed": 23.563437938690186,
+  "source_unchanged": true,
+  "outputs": [
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ilean",
+      "sha256": "e552cee1254153c5be1c588e740aef35406fe27403b3e65d64373c07c7621be3",
+      "bytes": 34791
+    },
+    {
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-interface-recovery-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean",
+      "sha256": "5af07672208370f5caf30ad5c1200d2dc80dc9004943cebf08269a0f89a71799",
+      "bytes": 71248
+    }
+  ],
+  "required_outputs_complete": true,
+  "log_sha256": "50339c2c7a9371549bc39754a43603c755693404748180649af83c8007a4b354",
+  "telemetry_sha256": "095c347cabe3d400846d96c28e6f7a3f5b40f1b1acb5b7a5873c013d2a9d7fbc",
+  "diagnostic_only": true
+}
