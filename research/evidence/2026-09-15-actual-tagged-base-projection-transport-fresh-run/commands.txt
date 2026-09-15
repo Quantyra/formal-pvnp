@@ -1,0 +1,6 @@
+﻿cwd=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+main=& 'C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\bin\lean.exe' -R lean -o 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-base-projection-transport-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedBaseProjectionTransport.olean' 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\lean\PvNP\RealizableHardness\ActualTaggedBaseProjectionTransport.lean'
+checks=& 'C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\bin\lean.exe' -R lean -o 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-base-projection-transport-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedBaseProjectionTransportChecks.olean' 'C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\lean\PvNP\RealizableHardness\ActualTaggedBaseProjectionTransportChecks.lean'
+execution=sequential main then Checks
+LEAN_NUM_THREADS=1
+no_lake_build=true

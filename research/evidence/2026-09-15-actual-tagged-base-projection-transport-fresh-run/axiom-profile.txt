@@ -1,0 +1,5 @@
+﻿source_explicit_axiom_scan=clean
+checks_print_axioms_profiles:
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedGoodMean_baseProjection_le_four_thirds' depends on axioms: [propext,
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedUniformMean_baseProjection_eq' depends on axioms: [propext,
+classification=only standard Lean/Mathlib axioms reported; no user-defined or newly introduced axioms
