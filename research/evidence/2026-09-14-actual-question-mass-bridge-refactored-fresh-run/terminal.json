@@ -1,0 +1,27 @@
+{
+    "date":  "2026-09-14",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "toolchain":  "leanprover/lean4:v4.34.0-rc2",
+    "target":  "C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bridge-refactored-fresh-20260914/lib/lean",
+    "seed_step":  "Copied entire temp/lean-probe-overlay-20260914 contents into target",
+    "excluded_root":  "temp/lean-merged-20260914",
+    "main":  {
+                 "command":  "lean.exe -R lean lean/PvNP/RealizableHardness/ActualQuestionMassBridge.lean -o C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bridge-refactored-fresh-20260914/lib/lean/PvNP/RealizableHardness/ActualQuestionMassBridge.olean",
+                 "lean_path":  "C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bridge-refactored-fresh-20260914/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/mathlib/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/batteries/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/proofwidgets/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/aesop/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/Qq/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/plausible/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/importGraph/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/LeanSearchClient/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/complexitylib/.lake/build/lib/lean;C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/lib/lean",
+                 "exit":  0,
+                 "errors":  0,
+                 "stdout":  "main.stdout",
+                 "stderr":  "main.stderr"
+             },
+    "checks":  {
+                   "command":  "lean.exe -R lean lean/PvNP/RealizableHardness/ActualQuestionMassBridgeChecks.lean -o C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bridge-refactored-fresh-20260914/lib/lean/PvNP/RealizableHardness/ActualQuestionMassBridgeChecks.olean",
+                   "lean_path":  "C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bridge-refactored-fresh-20260914/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/mathlib/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/batteries/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/proofwidgets/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/aesop/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/Qq/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/plausible/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/importGraph/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/LeanSearchClient/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/complexitylib/.lake/build/lib/lean;C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/lib/lean",
+                   "exit":  0,
+                   "errors":  0,
+                   "stdout":  "checks.stdout",
+                   "stderr":  "checks.stderr"
+               },
+    "source_unchanged":  true,
+    "forbidden_scan_exit":  0,
+    "no_lake_build":  true
+}

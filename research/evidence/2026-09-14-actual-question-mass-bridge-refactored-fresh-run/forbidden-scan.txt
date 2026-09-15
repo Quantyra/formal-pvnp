@@ -1,0 +1,2 @@
+no forbidden tokens found: sorry|admit|native_decide
+exit=0
