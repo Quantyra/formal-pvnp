@@ -1,0 +1,8 @@
+﻿Fixture results from the compiled Checks module:
+- contradictoryTwoRow.minViolations = 1
+- (contradictoryTwoRow.taggedCopy 0).minViolations = 0
+- (contradictoryTwoRow.taggedCopy 3).minViolations = 3
+- contradictoryTwoRow.minimumViolationRate = 1/2
+- (contradictoryTwoRow.taggedCopy 3).minimumViolationRate = 1/2
+- contradictoryTwoRow.value = 1/2
+- (contradictoryTwoRow.taggedCopy 3).value = 1/2

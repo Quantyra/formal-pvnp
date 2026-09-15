@@ -1,0 +1,8 @@
+﻿'PvNP.RealizableHardness.Finite3LinSource.minViolations' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Finite3LinSource.minViolations_le_violations' depends on axioms: [propext,
+'PvNP.RealizableHardness.Finite3LinSource.exists_violations_eq_minViolations' depends on axioms: [propext,
+'PvNP.RealizableHardness.Finite3LinSource.taggedCopy_minViolations' depends on axioms: [propext,
+'PvNP.RealizableHardness.Finite3LinSource.minimumViolationRate' depends on axioms: [propext,
+'PvNP.RealizableHardness.Finite3LinSource.value' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Finite3LinSource.taggedCopy_minimumViolationRate' depends on axioms: [propext,
+'PvNP.RealizableHardness.Finite3LinSource.taggedCopy_value' depends on axioms: [propext, Classical.choice, Quot.sound]

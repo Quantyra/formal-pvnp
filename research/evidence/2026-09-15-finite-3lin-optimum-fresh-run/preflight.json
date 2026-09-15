@@ -1,0 +1,11 @@
+﻿{
+    "target_root":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\finite-3lin-optimum-fresh-20260915\\lib\\lean",
+    "checks_object_absent_before_compile":  true,
+    "main_source_sha256_before":  "A4FD9733CB93D08E04D1091F07F27C359CA1F16A12E487FC3D40F43F1558E6D2",
+    "main_object_absent_before_compile":  true,
+    "target_fresh":  true,
+    "checks_source_sha256_before":  "EBDDBBC5EB1277A54E60CDF843AE0FFB4FF1FEC307A83625F99EF1EB46C25A9F",
+    "seed_root":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-finite-3lin-source-fresh-20260915\\lib\\lean",
+    "target_directory_created_for_run":  true,
+    "seeded_before_compile":  true
+}

@@ -1,0 +1,7 @@
+﻿runner/setup diagnostics preserved:
+- Initial evidence writer stopped before Lean execution because this PowerShell lacks the utf8NoBOM encoding name.
+- Corrected runner hash guard caught a malformed comparison literal; measured source hash already matched the requested frozen main hash.
+- First isolated Checks attempt exited 1 because LEAN_PATH omitted the target root containing the newly built main object.
+- Second isolated Checks attempt exited 1 because the target root was one directory too high.
+- Third isolated Checks attempt exited 1 because this Lean setup resolves the first LEAN_PATH root only; dependency seed artifacts were then copied into the target root.
+- Final target seeded Checks attempt exited 0.

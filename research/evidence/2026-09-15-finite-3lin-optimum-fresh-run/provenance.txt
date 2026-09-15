@@ -1,0 +1,6 @@
+﻿Certification evidence bundle: finite-3lin optimum
+Main and Checks were compiled directly with an isolated target LEAN_PATH.
+The target was fresh before main compilation; dependency seed artifacts were copied into the target root before the successful Checks compile.
+Three failed Checks/setup attempts are preserved with their raw stdout/stderr and exit files; the final target seeded Checks command exited 0.
+Source hashes were verified against the requested frozen values before and after compilation.
+No source files were edited; no commit, push, review, or unrelated module certification was performed.
