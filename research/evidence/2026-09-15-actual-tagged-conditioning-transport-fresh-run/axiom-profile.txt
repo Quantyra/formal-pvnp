@@ -1,0 +1,8 @@
+﻿source_explicit_axiom_scan=clean
+checks_print_axioms_profiles:
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedGoodMean' depends on axioms: [propext,
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedGoodMean_eq_gatedUniformMean_div_goodMass' depends on axioms: [propext,
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedGoodMean_le_four_thirds_mul_uniformMean_of_nonneg' depends on axioms: [propext,
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedGoodMean_le_two_mul_uniformMean_of_nonneg' depends on axioms: [propext,
+'PvNP.RealizableHardness.ActualQuestionMassBridge.actualTaggedUniformMean' depends on axioms: [propext,
+classification=only standard Lean/Mathlib axioms reported; no user-defined or newly introduced axioms

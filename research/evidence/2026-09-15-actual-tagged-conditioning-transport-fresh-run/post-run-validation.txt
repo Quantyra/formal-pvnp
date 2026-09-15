@@ -1,0 +1,12 @@
+﻿validation=PASS
+source_main_sha256=4C4D97A764ADD32F54806830B42460169DBFF69A5FFBCD3D5AD5E2DECE06C284
+source_checks_sha256=1ECD3F99C5E3C31B9910588ADC344B2FC0570B2815DE14628223C0A1DD0AF61E
+object_main_sha256=78082F14478AE65D23D22A99877EABD6EC1F9BB23C569373F41D7FF2A252E26C
+object_checks_sha256=72AF400B84A10F7E230DED81F53F46E89D79840F57CCFD8E212E179D50746243
+source_seed_contains_main=False
+source_seed_contains_checks=False
+axiom_blocks=5
+axiom_set=Classical.choice, propext, Quot.sound
+unexpected_axioms=none
+raw_stdout_stderr_present=true
+certification_scope=target-fresh main-and-Checks against seeded dependencies; not a full dependency source rebuild
