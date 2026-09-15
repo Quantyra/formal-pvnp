@@ -1,0 +1,32 @@
+﻿{
+    "date":  "2026-09-15",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "toolchain":  "leanprover/lean4:v4.34.0-rc2",
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-question-mass-uniform-mass-fresh-20260915\\lib\\lean",
+    "seedSource":  "certifications/realizable-hardness/.lake/build/actual-question-mass-bad-ordered-count-fresh-20260915/lib/lean",
+    "seededDependencyCount":  2794,
+    "tempOrProbeRootsInLeanPath":  false,
+    "sequence":  [
+                     {
+                         "module":  "ActualQuestionMassBridge",
+                         "exitCode":  0,
+                         "sourceSha256":  "414E679659581296AAEADB421729C0318D149428C6AC671EF217589EF55B433D",
+                         "objectSha256":  "D73F668AF001299D08991A8AC8C8A4B89CD8A10E292D3B0E9975AFF40AB0C6EF",
+                         "objectPreexistingBeforeCompile":  false,
+                         "stdout":  "main.stdout",
+                         "stderr":  "main.stderr"
+                     },
+                     {
+                         "module":  "ActualQuestionMassBridgeChecks",
+                         "exitCode":  0,
+                         "sourceSha256":  "DF51EE8B4EA3BD46188AB71638DBD216EF852A2D57A247F15B0C9EE79B45A502",
+                         "objectSha256":  "7A7FC8438937806A724DA9E1D5A16BEEA6C38BD91F65E21DCB449355EE0859CF",
+                         "objectPreexistingBeforeCompile":  false,
+                         "stdout":  "checks.stdout",
+                         "stderr":  "checks.stderr"
+                     }
+                 ],
+    "sourceHashesStable":  true,
+    "forbiddenScan":  "clean",
+    "axioms":  "[propext, Classical.choice, Quot.sound]"
+}

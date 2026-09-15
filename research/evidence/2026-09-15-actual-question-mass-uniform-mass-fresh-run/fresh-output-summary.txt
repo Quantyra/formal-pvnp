@@ -1,0 +1,7 @@
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-uniform-mass-fresh-20260915\lib\lean
+file_count=2796
+main_object=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-uniform-mass-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualQuestionMassBridge.olean
+checks_object=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-uniform-mass-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualQuestionMassBridgeChecks.olean
+main_object_hash=D73F668AF001299D08991A8AC8C8A4B89CD8A10E292D3B0E9975AFF40AB0C6EF
+checks_object_hash=7A7FC8438937806A724DA9E1D5A16BEEA6C38BD91F65E21DCB449355EE0859CF
+main_precedes_checks=true

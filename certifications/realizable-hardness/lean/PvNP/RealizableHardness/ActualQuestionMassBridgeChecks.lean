@@ -17,6 +17,8 @@ attribute [local instance] Classical.propDecidable
 #check bad_ordered_question_count_le_of_conflict
 #check bad_ordered_question_count_le
 #check actual_bad_ordered_question_count_le
+#check actual_bad_ordered_question_count_mul_rowCard_le
+#check actual_bad_ordered_question_uniform_mass_le
 #print axioms rowId_incidence_card_le_four
 #print axioms rowId_incidence_card_eq_degree
 #print axioms conflict_degree_le
@@ -25,6 +27,8 @@ attribute [local instance] Classical.propDecidable
 #print axioms bad_ordered_question_count_le_of_conflict
 #print axioms bad_ordered_question_count_le
 #print axioms actual_bad_ordered_question_count_le
+#print axioms actual_bad_ordered_question_count_mul_rowCard_le
+#print axioms actual_bad_ordered_question_uniform_mass_le
 
 /-! A concrete allocation with two source rows and repeated ownership.  The
 occurrence IDs remain distinct even though all six source slots use owner 0. -/
@@ -34,6 +38,9 @@ def repeatedOwner : Instance 1 2 where
 
 def trackedOccurrence : repeatedOwner.GlobalVar :=
   repeatedOwner.anchor (0, 0)
+
+lemma repeatedOwner_rowCard_pos : 0 < Fintype.card repeatedOwner.RowId := by
+  exact Fintype.card_pos_iff.mpr ⟨Sum.inl 0⟩
 
 example : repeatedOwner.vars 0 0 = 0 := rfl
 example : repeatedOwner.vars 1 2 = 0 := rfl
@@ -131,6 +138,57 @@ example :
       2 * (2 - 1) * 157 *
         (Fintype.card repeatedOwner.RowId) ^ (2 - 1) := by
   exact actual_bad_ordered_question_count_le repeatedOwner 2
+
+example :
+    ((Finset.univ : Finset (Fin 0 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card *
+        Fintype.card repeatedOwner.RowId ≤
+      (0 * (0 - 1) * 157) *
+        Fintype.card (Fin 0 → repeatedOwner.RowId) := by
+  exact actual_bad_ordered_question_count_mul_rowCard_le repeatedOwner 0
+
+example :
+    ((Finset.univ : Finset (Fin 1 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card *
+        Fintype.card repeatedOwner.RowId ≤
+      (1 * (1 - 1) * 157) *
+        Fintype.card (Fin 1 → repeatedOwner.RowId) := by
+  exact actual_bad_ordered_question_count_mul_rowCard_le repeatedOwner 1
+
+example :
+    ((Finset.univ : Finset (Fin 2 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card *
+        Fintype.card repeatedOwner.RowId ≤
+      (2 * (2 - 1) * 157) *
+        Fintype.card (Fin 2 → repeatedOwner.RowId) := by
+  exact actual_bad_ordered_question_count_mul_rowCard_le repeatedOwner 2
+
+example :
+    (((Finset.univ : Finset (Fin 0 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 0 → repeatedOwner.RowId) : ℚ) ≤
+      ((0 * (0 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) := by
+  apply actual_bad_ordered_question_uniform_mass_le repeatedOwner 0
+  exact repeatedOwner_rowCard_pos
+
+example :
+    (((Finset.univ : Finset (Fin 1 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 1 → repeatedOwner.RowId) : ℚ) ≤
+      ((1 * (1 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) := by
+  apply actual_bad_ordered_question_uniform_mass_le repeatedOwner 1
+  exact repeatedOwner_rowCard_pos
+
+example :
+    (((Finset.univ : Finset (Fin 2 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 2 → repeatedOwner.RowId) : ℚ) ≤
+      ((2 * (2 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) := by
+  apply actual_bad_ordered_question_uniform_mass_le repeatedOwner 2
+  exact repeatedOwner_rowCard_pos
 
 /-! The same cross-only geometry used by the support checks: rows 0 and 1
 are disjoint, while row 2 contains one point from each. -/

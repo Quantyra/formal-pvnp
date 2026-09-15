@@ -432,4 +432,61 @@ theorem actual_bad_ordered_question_count_le
       exact hfilter)
   simpa only [show (1 + 3 * 4 + 9 * 4 ^ 2 : Nat) = 157 by norm_num] using h
 
+theorem actual_bad_ordered_question_count_mul_rowCard_le
+    {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) (J : Nat) :
+    ((Finset.univ : Finset (Fin J → I.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion I.support u)).card *
+        Fintype.card I.RowId ≤
+      (J * (J - 1) * 157) *
+        Fintype.card (Fin J → I.RowId) := by
+  classical
+  have hcount := actual_bad_ordered_question_count_le I J
+  by_cases hJ : J = 0
+  · subst J
+    have hzero :
+        ((Finset.univ : Finset (Fin 0 → I.RowId)).filter
+          (fun u => ¬ GoodOrderedQuestion I.support u)).card = 0 := by
+      apply Nat.eq_zero_of_le_zero
+      simpa using hcount
+    rw [hzero]
+    simp
+  · have hJpos : 0 < J := Nat.pos_of_ne_zero hJ
+    have hpow :
+        (Fintype.card I.RowId) ^ (J - 1) * Fintype.card I.RowId =
+          (Fintype.card I.RowId) ^ J := by
+      rw [← pow_succ, Nat.sub_add_cancel (Nat.one_le_iff_ne_zero.mpr hJ)]
+    calc
+      ((Finset.univ : Finset (Fin J → I.RowId)).filter
+          (fun u => ¬ GoodOrderedQuestion I.support u)).card *
+          Fintype.card I.RowId ≤
+          ((J * (J - 1) * 157) *
+            (Fintype.card I.RowId) ^ (J - 1)) *
+            Fintype.card I.RowId :=
+        Nat.mul_le_mul_right _ hcount
+      _ = (J * (J - 1) * 157) *
+          ((Fintype.card I.RowId) ^ (J - 1) *
+            Fintype.card I.RowId) := by
+        rw [Nat.mul_assoc]
+      _ = (J * (J - 1) * 157) *
+          (Fintype.card I.RowId) ^ J := by rw [hpow]
+      _ = (J * (J - 1) * 157) *
+          Fintype.card (Fin J → I.RowId) := by
+        simp [Fintype.card_fun]
+
+theorem actual_bad_ordered_question_uniform_mass_le
+    {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m)
+    (J : Nat) (hrows : 0 < Fintype.card I.RowId) :
+    (((Finset.univ : Finset (Fin J → I.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion I.support u)).card : ℚ) /
+        (Fintype.card (Fin J → I.RowId) : ℚ) ≤
+      ((J * (J - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card I.RowId : ℚ) := by
+  have hR : (0 : ℚ) < Fintype.card I.RowId := by
+    exact_mod_cast hrows
+  have hT : (0 : ℚ) < Fintype.card (Fin J → I.RowId) := by
+    rw [Fintype.card_fun]
+    exact pow_pos hR _
+  apply (div_le_div_iff₀ hT hR).2
+  exact_mod_cast actual_bad_ordered_question_count_mul_rowCard_le I J
+
 end

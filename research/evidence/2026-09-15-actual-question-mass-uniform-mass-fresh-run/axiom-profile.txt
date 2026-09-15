@@ -1,0 +1,3 @@
+#print axioms output is preserved verbatim in checks.stdout
+All checked declarations: [propext, Classical.choice, Quot.sound]
+No user-declared axioms.

@@ -1,0 +1,1 @@
+Exact #check/#print axioms transcript follows in checks.stdout.

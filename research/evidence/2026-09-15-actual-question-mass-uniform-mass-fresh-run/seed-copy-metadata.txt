@@ -1,0 +1,5 @@
+source_seed=certifications/realizable-hardness/.lake/build/actual-question-mass-bad-ordered-count-fresh-20260915/lib/lean
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-uniform-mass-fresh-20260915\lib\lean
+copy=robocopy <seed> <target> /E /XF ActualQuestionMassBridge.olean ActualQuestionMassBridgeChecks.olean
+seeded_dependency_file_count=2794
+current_objects_excluded_during_seed=true

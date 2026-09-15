@@ -1,0 +1,1 @@
+Checks compiled the repeatedOwner allocation for cross helper J=0, J=1, J=2 and rational uniform-mass theorem J=0, J=1, J=2; exact #check and #print axioms output is in checks.stdout.
