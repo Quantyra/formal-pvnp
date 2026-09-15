@@ -1,0 +1,5 @@
+﻿source_explicit_axiom_scan=clean
+checks_print_axioms_profiles:
+'PvNP.RealizableHardness.SubmoduleFunctionalGluing.existsUnique_glue_on_sup' depends on axioms: [propext, Classical.choice, Quot.sound]
+unique_axiom_sets=[propext, Classical.choice, Quot.sound]
+classification=only standard Lean/Mathlib axioms reported; no user-defined or newly introduced axioms

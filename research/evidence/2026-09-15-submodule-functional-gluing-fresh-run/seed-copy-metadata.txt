@@ -1,0 +1,3 @@
+﻿copied_dependency_files=2816
+excluded_target_patterns=PvNP\RealizableHardness\SubmoduleFunctionalGluing.olean,PvNP\RealizableHardness\SubmoduleFunctionalGluing.ilean,PvNP\RealizableHardness\SubmoduleFunctionalGluing.olean.hash,PvNP\RealizableHardness\SubmoduleFunctionalGluingChecks.olean,PvNP\RealizableHardness\SubmoduleFunctionalGluingChecks.ilean,PvNP\RealizableHardness\SubmoduleFunctionalGluingChecks.olean.hash
+direct_project_dependencies=none; imports resolve from Mathlib package paths

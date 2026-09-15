@@ -1,0 +1,8 @@
+﻿method=independent post-closeout rehash of every artifact-hashes.txt row
+artifact_rows=26
+row_mismatches=0
+artifact_manifest_sha256=E63C8B32DE354264FA8A9AD3A8CAD5CBCE12E80C20ACB875B0E7D7BB395C88C0
+pointer_sha256=E63C8B32DE354264FA8A9AD3A8CAD5CBCE12E80C20ACB875B0E7D7BB395C88C0
+pointer_matches=True
+source_before_after_equal=True
+result=PASS
