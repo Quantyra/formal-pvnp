@@ -1,0 +1,6 @@
+source_seed=certifications/realizable-hardness/.lake/build/actual-question-mass-uniform-mass-fresh-20260915/lib/lean
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-uniform-good-mass-fresh-20260915\lib\lean
+copy=robocopy <seed> <target> /E /XF ActualQuestionMassBridge.olean ActualQuestionMassBridgeChecks.olean
+seeded_file_count=2794
+current_objects_excluded=true
+seed_manifest_sha256=B2C1600156677EFC8772E91FA9EBA35ED36BB924F13234B4CCF1837EBF480AB9

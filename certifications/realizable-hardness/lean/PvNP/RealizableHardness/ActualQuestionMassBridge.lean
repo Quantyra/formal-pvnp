@@ -489,4 +489,68 @@ theorem actual_bad_ordered_question_uniform_mass_le
   apply (div_le_div_iff₀ hT hR).2
   exact_mod_cast actual_bad_ordered_question_count_mul_rowCard_le I J
 
+theorem ordered_good_bad_card_add_eq_total
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    {J : Nat} (row : E → Finset X) :
+    ((Finset.univ : Finset (Fin J → E)).filter
+      (fun u => GoodOrderedQuestion row u)).card +
+      ((Finset.univ : Finset (Fin J → E)).filter
+        (fun u => ¬ GoodOrderedQuestion row u)).card =
+      Fintype.card (Fin J → E) := by
+  classical
+  simpa only [Finset.card_univ] using
+    (Finset.card_filter_add_card_filter_not
+      (s := (Finset.univ : Finset (Fin J → E)))
+      (p := fun u => GoodOrderedQuestion row u))
+
+theorem actual_good_ordered_question_uniform_mass_ge
+    {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m)
+    (J : Nat) (hrows : 0 < Fintype.card I.RowId) :
+    1 - ((J * (J - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card I.RowId : ℚ) ≤
+      (((Finset.univ : Finset (Fin J → I.RowId)).filter
+        (fun u => GoodOrderedQuestion I.support u)).card : ℚ) /
+        (Fintype.card (Fin J → I.RowId) : ℚ) := by
+  classical
+  have hsum :
+      (((Finset.univ : Finset (Fin J → I.RowId)).filter
+        (fun u => GoodOrderedQuestion I.support u)).card : ℚ) +
+          (((Finset.univ : Finset (Fin J → I.RowId)).filter
+            (fun u => ¬ GoodOrderedQuestion I.support u)).card : ℚ) =
+        (Fintype.card (Fin J → I.RowId) : ℚ) := by
+    exact_mod_cast ordered_good_bad_card_add_eq_total I.support
+  have hbad := actual_bad_ordered_question_uniform_mass_le I J hrows
+  have hR : (0 : ℚ) < Fintype.card I.RowId := by
+    exact_mod_cast hrows
+  have hT : (0 : ℚ) < Fintype.card (Fin J → I.RowId) := by
+    rw [Fintype.card_fun]
+    exact pow_pos hR _
+  have hgood :
+      (((Finset.univ : Finset (Fin J → I.RowId)).filter
+        (fun u => GoodOrderedQuestion I.support u)).card : ℚ) /
+          (Fintype.card (Fin J → I.RowId) : ℚ) =
+        1 - (((Finset.univ : Finset (Fin J → I.RowId)).filter
+          (fun u => ¬ GoodOrderedQuestion I.support u)).card : ℚ) /
+            (Fintype.card (Fin J → I.RowId) : ℚ) := by
+    have hnum :
+        (((Finset.univ : Finset (Fin J → I.RowId)).filter
+          (fun u => GoodOrderedQuestion I.support u)).card : ℚ) =
+          (Fintype.card (Fin J → I.RowId) : ℚ) -
+            (((Finset.univ : Finset (Fin J → I.RowId)).filter
+              (fun u => ¬ GoodOrderedQuestion I.support u)).card : ℚ) := by
+      linarith [hsum]
+    rw [hnum, sub_div]
+    rw [div_self (ne_of_gt hT)]
+  calc
+    1 - ((J * (J - 1) * 157 : Nat) : ℚ) /
+          (Fintype.card I.RowId : ℚ) ≤
+        1 - (((Finset.univ : Finset (Fin J → I.RowId)).filter
+          (fun u => ¬ GoodOrderedQuestion I.support u)).card : ℚ) /
+            (Fintype.card (Fin J → I.RowId) : ℚ) :=
+      sub_le_sub_left hbad 1
+    _ = (((Finset.univ : Finset (Fin J → I.RowId)).filter
+        (fun u => GoodOrderedQuestion I.support u)).card : ℚ) /
+          (Fintype.card (Fin J → I.RowId) : ℚ) := hgood.symm
+
 end

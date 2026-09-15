@@ -1,0 +1,1 @@
+Exact #check and #print axioms transcript is preserved verbatim in checks.stdout.

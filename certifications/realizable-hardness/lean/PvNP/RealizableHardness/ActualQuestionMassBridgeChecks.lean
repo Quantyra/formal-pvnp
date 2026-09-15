@@ -19,6 +19,8 @@ attribute [local instance] Classical.propDecidable
 #check actual_bad_ordered_question_count_le
 #check actual_bad_ordered_question_count_mul_rowCard_le
 #check actual_bad_ordered_question_uniform_mass_le
+#check ordered_good_bad_card_add_eq_total
+#check actual_good_ordered_question_uniform_mass_ge
 #print axioms rowId_incidence_card_le_four
 #print axioms rowId_incidence_card_eq_degree
 #print axioms conflict_degree_le
@@ -29,6 +31,8 @@ attribute [local instance] Classical.propDecidable
 #print axioms actual_bad_ordered_question_count_le
 #print axioms actual_bad_ordered_question_count_mul_rowCard_le
 #print axioms actual_bad_ordered_question_uniform_mass_le
+#print axioms ordered_good_bad_card_add_eq_total
+#print axioms actual_good_ordered_question_uniform_mass_ge
 
 /-! A concrete allocation with two source rows and repeated ownership.  The
 occurrence IDs remain distinct even though all six source slots use owner 0. -/
@@ -60,6 +64,14 @@ example :
 def threeRows : Bool → Finset (Fin 4)
   | false => {0, 1, 2}
   | true => {0, 2, 3}
+
+example :
+    ((Finset.univ : Finset (Fin 2 → Bool)).filter
+      (fun u => GoodOrderedQuestion threeRows u)).card +
+      ((Finset.univ : Finset (Fin 2 → Bool)).filter
+        (fun u => ¬ GoodOrderedQuestion threeRows u)).card =
+      Fintype.card (Fin 2 → Bool) := by
+  exact ordered_good_bad_card_add_eq_total threeRows
 
 example : rowConflict threeRows false false := by
   simp [rowConflict]
@@ -188,6 +200,33 @@ example :
       ((2 * (2 - 1) * 157 : Nat) : ℚ) /
         (Fintype.card repeatedOwner.RowId : ℚ) := by
   apply actual_bad_ordered_question_uniform_mass_le repeatedOwner 2
+  exact repeatedOwner_rowCard_pos
+
+example :
+    1 - ((0 * (0 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) ≤
+      (((Finset.univ : Finset (Fin 0 → repeatedOwner.RowId)).filter
+        (fun u => GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 0 → repeatedOwner.RowId) : ℚ) := by
+  apply actual_good_ordered_question_uniform_mass_ge repeatedOwner 0
+  exact repeatedOwner_rowCard_pos
+
+example :
+    1 - ((1 * (1 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) ≤
+      (((Finset.univ : Finset (Fin 1 → repeatedOwner.RowId)).filter
+        (fun u => GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 1 → repeatedOwner.RowId) : ℚ) := by
+  apply actual_good_ordered_question_uniform_mass_ge repeatedOwner 1
+  exact repeatedOwner_rowCard_pos
+
+example :
+    1 - ((2 * (2 - 1) * 157 : Nat) : ℚ) /
+        (Fintype.card repeatedOwner.RowId : ℚ) ≤
+      (((Finset.univ : Finset (Fin 2 → repeatedOwner.RowId)).filter
+        (fun u => GoodOrderedQuestion repeatedOwner.support u)).card : ℚ) /
+        (Fintype.card (Fin 2 → repeatedOwner.RowId) : ℚ) := by
+  apply actual_good_ordered_question_uniform_mass_ge repeatedOwner 2
   exact repeatedOwner_rowCard_pos
 
 /-! The same cross-only geometry used by the support checks: rows 0 and 1

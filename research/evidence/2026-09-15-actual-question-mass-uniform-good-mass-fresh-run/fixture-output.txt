@@ -1,0 +1,1 @@
+Checks compiled the generic identity and actual good-mass theorem for repeatedOwner at J=0, J=1, and J=2; exact signatures and axiom output are preserved in checks.stdout.

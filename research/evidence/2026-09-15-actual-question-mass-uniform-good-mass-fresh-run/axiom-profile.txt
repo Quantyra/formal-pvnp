@@ -1,0 +1,3 @@
+All checked declarations depend only on [propext, Classical.choice, Quot.sound].
+No user-declared axioms.
+Exact #check/#print axioms transcript: checks.stdout.
