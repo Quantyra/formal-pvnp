@@ -1,0 +1,4 @@
+﻿PvNP\RealizableHardness\ActualTaggedQuestionRetainedMass.olean=False
+PvNP\RealizableHardness\ActualTaggedQuestionRetainedMass.ilean=False
+PvNP\RealizableHardness\ActualTaggedQuestionRetainedMassChecks.olean=False
+PvNP\RealizableHardness\ActualTaggedQuestionRetainedMassChecks.ilean=False

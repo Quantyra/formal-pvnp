@@ -1,0 +1,3 @@
+﻿command=rg forbidden proof placeholders
+exit=1
+result=clean (no matches)

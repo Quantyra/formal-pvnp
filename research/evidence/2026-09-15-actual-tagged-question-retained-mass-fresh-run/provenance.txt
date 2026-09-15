@@ -1,0 +1,14 @@
+﻿date=2026-09-15
+git_head=b35cccaf8cc486868330a250c5bbe9be37520cd2
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-retained-mass-fresh-20260915\lib\lean
+seed_target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean
+dependency_seed_manifest_sha256=6B1653F72A24CBDBF501AA8B8C6F2DE19730220D217C01234FC0AE9B8A59055D
+fresh_output_inventory_sha256=41BAD1BA22ED13EDF858ADCFDB75A14AC75DA0C31FEC82FEC7902E7F5975AFE5
+main_preexisting=false
+checks_preexisting=false
+main_exit=0
+checks_exit=0
+source_stable=true
+no_lake_build=true
+4BF0B86EA74363B9F58CDB97E27D4863402D1913B209E10B30B7CCBF8AFB6AB6  C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-retained-mass-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedQuestionRetainedMass.olean
+85B12CFC079580878EEBE701705B4E573A0A89B5D9E09A2FF09457A7EA31864B  C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-retained-mass-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedQuestionRetainedMassChecks.olean

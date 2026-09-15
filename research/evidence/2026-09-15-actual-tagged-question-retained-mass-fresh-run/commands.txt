@@ -1,0 +1,4 @@
+﻿main: direct lean.exe -R lean ActualTaggedQuestionRetainedMass.lean into isolated target
+checks: direct lean.exe -R lean ActualTaggedQuestionRetainedMassChecks.lean into same isolated target after main
+LEAN_NUM_THREADS=1
+no lake build; target seeded from prior certified actual-count dependency target excluding current main/check artifacts
