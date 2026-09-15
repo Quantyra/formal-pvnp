@@ -1,0 +1,6 @@
+Fixture certification (Checks source examples):
+- singleViolated : Finite3LinSource (Fin 1) (Fin 3), identity row, RHS 1.
+- baseZero satisfies the tagged-copy setup with one violating base row: singleViolated.violations baseZero = 1.
+- repeatAssignment at K=2 proves (singleViolated.taggedCopy 2).violations (...) = 2.
+- mixedAssignment has tag 0 violating and tag 1 satisfying, proving (singleViolated.taggedCopy 2).violations mixedAssignment = 1.
+These are proposition-level examples compiled by the Checks exit-0 run; no native evaluation is used.

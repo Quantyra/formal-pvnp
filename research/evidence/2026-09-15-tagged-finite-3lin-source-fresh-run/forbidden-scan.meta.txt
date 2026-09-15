@@ -1,0 +1,3 @@
+exit=1
+pattern=sorry|admit|native_decide|^\\s*axiom\\b
+files=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\lean\PvNP\RealizableHardness\TaggedFinite3LinSource.lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\lean\PvNP\RealizableHardness\TaggedFinite3LinSourceChecks.lean
