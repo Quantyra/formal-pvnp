@@ -1,0 +1,1 @@
+﻿Lean (version 4.13.0, x86_64-w64-windows-gnu, commit 6d22e0e5cc5a, Release)

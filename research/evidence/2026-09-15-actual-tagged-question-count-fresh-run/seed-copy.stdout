@@ -1,0 +1,5698 @@
+﻿
+-------------------------------------------------------------------------------
+   ROBOCOPY     ::     Robust File Copy for Windows                              
+-------------------------------------------------------------------------------
+
+  Started : Tuesday, September 15, 2026 7:33:35 AM
+   Source : C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\
+     Dest : C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean\
+
+    Files : *.*
+	    
+Exc Files : ActualTaggedQuestionMass.olean
+	    ActualTaggedQuestionMassChecks.olean
+	    
+  Options : *.* /S /E /DCOPY:DA /COPY:DAT /R:1000000 /W:30 
+
+------------------------------------------------------------------------------
+
+	  New Dir          0	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\
+	    New File  		   37018	Asymptotics.ilean
+100%  
+	    New File  		      16	Asymptotics.ilean.hash
+100%  
+	    New File  		   26696	Asymptotics.ir
+100%  
+	    New File  		      16	Asymptotics.ir.hash
+100%  
+	    New File  		     176	Asymptotics.ir.sig
+100%  
+	    New File  		      16	Asymptotics.ir.sig.hash
+100%  
+	    New File  		   70832	Asymptotics.olean
+100%  
+	    New File  		      16	Asymptotics.olean.hash
+100%  
+	    New File  		  432784	Asymptotics.olean.private
+100%  
+	    New File  		      16	Asymptotics.olean.private.hash
+100%  
+	    New File  		   18120	Asymptotics.olean.server
+100%  
+	    New File  		      16	Asymptotics.olean.server.hash
+100%  
+	    New File  		    3911	Asymptotics.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Asymptotics\
+	    New File  		    8876	PolyBound.ilean
+100%  
+	    New File  		      16	PolyBound.ilean.hash
+100%  
+	    New File  		    1440	PolyBound.ir
+100%  
+	    New File  		      16	PolyBound.ir.hash
+100%  
+	    New File  		     176	PolyBound.ir.sig
+100%  
+	    New File  		      16	PolyBound.ir.sig.hash
+100%  
+	    New File  		   16552	PolyBound.olean
+100%  
+	    New File  		      16	PolyBound.olean.hash
+100%  
+	    New File  		   72952	PolyBound.olean.private
+100%  
+	    New File  		      16	PolyBound.olean.private.hash
+100%  
+	    New File  		    4848	PolyBound.olean.server
+100%  
+	    New File  		      16	PolyBound.olean.server.hash
+100%  
+	    New File  		    3410	PolyBound.trace
+100%  
+	    New File  		    2826	PolynomialComposition.ilean
+100%  
+	    New File  		      16	PolynomialComposition.ilean.hash
+100%  
+	    New File  		    1440	PolynomialComposition.ir
+100%  
+	    New File  		      16	PolynomialComposition.ir.hash
+100%  
+	    New File  		     176	PolynomialComposition.ir.sig
+100%  
+	    New File  		      16	PolynomialComposition.ir.sig.hash
+100%  
+	    New File  		   13360	PolynomialComposition.olean
+100%  
+	    New File  		      16	PolynomialComposition.olean.hash
+100%  
+	    New File  		   16592	PolynomialComposition.olean.private
+100%  
+	    New File  		      16	PolynomialComposition.olean.private.hash
+100%  
+	    New File  		    2328	PolynomialComposition.olean.server
+100%  
+	    New File  		      16	PolynomialComposition.olean.server.hash
+100%  
+	    New File  		    3497	PolynomialComposition.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Circuits\
+	    New File  		   30079	Basic.ilean
+100%  
+	    New File  		      16	Basic.ilean.hash
+100%  
+	    New File  		   41256	Basic.ir
+100%  
+	    New File  		      16	Basic.ir.hash
+100%  
+	    New File  		     176	Basic.ir.sig
+100%  
+	    New File  		      16	Basic.ir.sig.hash
+100%  
+	    New File  		  341464	Basic.olean
+100%  
+	    New File  		      16	Basic.olean.hash
+100%  
+	    New File  		  342080	Basic.olean.private
+100%  
+	    New File  		      16	Basic.olean.private.hash
+100%  
+	    New File  		   21160	Basic.olean.server
+100%  
+	    New File  		      16	Basic.olean.server.hash
+100%  
+	    New File  		    3361	Basic.trace
+100%  
+	    New File  		    8555	BitString.ilean
+100%  
+	    New File  		      16	BitString.ilean.hash
+100%  
+	    New File  		    5704	BitString.ir
+100%  
+	    New File  		      16	BitString.ir.hash
+100%  
+	    New File  		     176	BitString.ir.sig
+100%  
+	    New File  		      16	BitString.ir.sig.hash
+100%  
+	    New File  		   31936	BitString.olean
+100%  
+	    New File  		      16	BitString.olean.hash
+100%  
+	    New File  		   20760	BitString.olean.private
+100%  
+	    New File  		      16	BitString.olean.private.hash
+100%  
+	    New File  		    6560	BitString.olean.server
+100%  
+	    New File  		      16	BitString.olean.server.hash
+100%  
+	    New File  		    3395	BitString.trace
+100%  
+	  New Dir        169	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\
+	    New File  		   30900	Containments.ilean
+100%  
+	    New File  		      16	Containments.ilean.hash
+100%  
+	    New File  		    1936	Containments.ir
+100%  
+	    New File  		      16	Containments.ir.hash
+100%  
+	    New File  		     176	Containments.ir.sig
+100%  
+	    New File  		      16	Containments.ir.sig.hash
+100%  
+	    New File  		   39272	Containments.olean
+100%  
+	    New File  		      16	Containments.olean.hash
+100%  
+	    New File  		  538496	Containments.olean.private
+100%  
+	    New File  		      16	Containments.olean.private.hash
+100%  
+	    New File  		   15736	Containments.olean.server
+100%  
+	    New File  		      16	Containments.olean.server.hash
+100%  
+	    New File  		    4063	Containments.trace
+100%  
+	    New File  		   65229	EventProb.ilean
+100%  
+	    New File  		      16	EventProb.ilean.hash
+100%  
+	    New File  		    6240	EventProb.ir
+100%  
+	    New File  		      16	EventProb.ir.hash
+100%  
+	    New File  		     176	EventProb.ir.sig
+100%  
+	    New File  		      16	EventProb.ir.sig.hash
+100%  
+	    New File  		   91328	EventProb.olean
+100%  
+	    New File  		      16	EventProb.olean.hash
+100%  
+	    New File  		  751384	EventProb.olean.private
+100%  
+	    New File  		      16	EventProb.olean.private.hash
+100%  
+	    New File  		   19440	EventProb.olean.server
+100%  
+	    New File  		      16	EventProb.olean.server.hash
+100%  
+	    New File  		    4432	EventProb.trace
+100%  
+	    New File  		    1221	Exponential.ilean
+100%  
+	    New File  		      16	Exponential.ilean.hash
+100%  
+	    New File  		    1504	Exponential.ir
+100%  
+	    New File  		      16	Exponential.ir.hash
+100%  
+	    New File  		     176	Exponential.ir.sig
+100%  
+	    New File  		      16	Exponential.ir.sig.hash
+100%  
+	    New File  		    6064	Exponential.olean
+100%  
+	    New File  		      16	Exponential.olean.hash
+100%  
+	    New File  		    1520	Exponential.olean.private
+100%  
+	    New File  		      16	Exponential.olean.private.hash
+100%  
+	    New File  		    1984	Exponential.olean.server
+100%  
+	    New File  		      16	Exponential.olean.server.hash
+100%  
+	    New File  		    3398	Exponential.trace
+100%  
+	    New File  		   99566	FiniteCounting.ilean
+100%  
+	    New File  		      16	FiniteCounting.ilean.hash
+100%  
+	    New File  		   29968	FiniteCounting.ir
+100%  
+	    New File  		      16	FiniteCounting.ir.hash
+100%  
+	    New File  		     176	FiniteCounting.ir.sig
+100%  
+	    New File  		      16	FiniteCounting.ir.sig.hash
+100%  
+	    New File  		  156144	FiniteCounting.olean
+100%  
+	    New File  		      16	FiniteCounting.olean.hash
+100%  
+	    New File  		  703048	FiniteCounting.olean.private
+100%  
+	    New File  		      16	FiniteCounting.olean.private.hash
+100%  
+	    New File  		   29504	FiniteCounting.olean.server
+100%  
+	    New File  		      16	FiniteCounting.olean.server.hash
+100%  
+	    New File  		    4265	FiniteCounting.trace
+100%  
+	    New File  		   17843	Interactive.ilean
+100%  
+	    New File  		      16	Interactive.ilean.hash
+100%  
+	    New File  		   14696	Interactive.ir
+100%  
+	    New File  		      16	Interactive.ir.hash
+100%  
+	    New File  		     176	Interactive.ir.sig
+100%  
+	    New File  		      16	Interactive.ir.sig.hash
+100%  
+	    New File  		   85032	Interactive.olean
+100%  
+	    New File  		      16	Interactive.olean.hash
+100%  
+	    New File  		  106576	Interactive.olean.private
+100%  
+	    New File  		      16	Interactive.olean.private.hash
+100%  
+	    New File  		   14544	Interactive.olean.server
+100%  
+	    New File  		      16	Interactive.olean.server.hash
+100%  
+	    New File  		    4731	Interactive.trace
+100%  
+	    New File  		    4248	L.ilean
+100%  
+	    New File  		      16	L.ilean.hash
+100%  
+	    New File  		    1608	L.ir
+100%  
+	    New File  		      16	L.ir.hash
+100%  
+	    New File  		     176	L.ir.sig
+100%  
+	    New File  		      16	L.ir.sig.hash
+100%  
+	    New File  		   11880	L.olean
+100%  
+	    New File  		      16	L.olean.hash
+100%  
+	    New File  		    1880	L.olean.private
+100%  
+	    New File  		      16	L.olean.private.hash
+100%  
+	    New File  		    4600	L.olean.server
+100%  
+	    New File  		      16	L.olean.server.hash
+100%  
+	    New File  		    3496	L.trace
+100%  
+	    New File  		    1651	NP.ilean
+100%  
+	    New File  		      16	NP.ilean.hash
+100%  
+	    New File  		    1608	NP.ir
+100%  
+	    New File  		      16	NP.ir.hash
+100%  
+	    New File  		     176	NP.ir.sig
+100%  
+	    New File  		      16	NP.ir.sig.hash
+100%  
+	    New File  		    6632	NP.olean
+100%  
+	    New File  		      16	NP.olean.hash
+100%  
+	    New File  		    1616	NP.olean.private
+100%  
+	    New File  		      16	NP.olean.private.hash
+100%  
+	    New File  		    2424	NP.olean.server
+100%  
+	    New File  		      16	NP.olean.server.hash
+100%  
+	    New File  		    3499	NP.trace
+100%  
+	    New File  		    3410	P.ilean
+100%  
+	    New File  		      16	P.ilean.hash
+100%  
+	    New File  		    2912	P.ir
+100%  
+	    New File  		      16	P.ir.hash
+100%  
+	    New File  		     176	P.ir.sig
+100%  
+	    New File  		      16	P.ir.sig.hash
+100%  
+	    New File  		   10000	P.olean
+100%  
+	    New File  		      16	P.olean.hash
+100%  
+	    New File  		   25832	P.olean.private
+100%  
+	    New File  		      16	P.olean.private.hash
+100%  
+	    New File  		    2976	P.olean.server
+100%  
+	    New File  		      16	P.olean.server.hash
+100%  
+	    New File  		    5157	P.trace
+100%  
+	    New File  		    2795	Pairing.ilean
+100%  
+	    New File  		      16	Pairing.ilean.hash
+100%  
+	    New File  		    2096	Pairing.ir
+100%  
+	    New File  		      16	Pairing.ir.hash
+100%  
+	    New File  		     176	Pairing.ir.sig
+100%  
+	    New File  		      16	Pairing.ir.sig.hash
+100%  
+	    New File  		   11416	Pairing.olean
+100%  
+	    New File  		      16	Pairing.olean.hash
+100%  
+	    New File  		    9392	Pairing.olean.private
+100%  
+	    New File  		      16	Pairing.olean.private.hash
+100%  
+	    New File  		    2472	Pairing.olean.server
+100%  
+	    New File  		      16	Pairing.olean.server.hash
+100%  
+	    New File  		    3745	Pairing.trace
+100%  
+	    New File  		   20613	PH.ilean
+100%  
+	    New File  		      16	PH.ilean.hash
+100%  
+	    New File  		    2088	PH.ir
+100%  
+	    New File  		      16	PH.ir.hash
+100%  
+	    New File  		     176	PH.ir.sig
+100%  
+	    New File  		      16	PH.ir.sig.hash
+100%  
+	    New File  		   41976	PH.olean
+100%  
+	    New File  		      16	PH.olean.hash
+100%  
+	    New File  		   97144	PH.olean.private
+100%  
+	    New File  		      16	PH.olean.private.hash
+100%  
+	    New File  		   16280	PH.olean.server
+100%  
+	    New File  		      16	PH.olean.server.hash
+100%  
+	    New File  		    3712	PH.trace
+100%  
+	    New File  		    5537	Randomized.ilean
+100%  
+	    New File  		      16	Randomized.ilean.hash
+100%  
+	    New File  		    1504	Randomized.ir
+100%  
+	    New File  		      16	Randomized.ir.hash
+100%  
+	    New File  		     176	Randomized.ir.sig
+100%  
+	    New File  		      16	Randomized.ir.sig.hash
+100%  
+	    New File  		   19824	Randomized.olean
+100%  
+	    New File  		      16	Randomized.olean.hash
+100%  
+	    New File  		    2432	Randomized.olean.private
+100%  
+	    New File  		      16	Randomized.olean.private.hash
+100%  
+	    New File  		    6784	Randomized.olean.server
+100%  
+	    New File  		      16	Randomized.olean.server.hash
+100%  
+	    New File  		    3391	Randomized.trace
+100%  
+	    New File  		    1901	Space.ilean
+100%  
+	    New File  		      16	Space.ilean.hash
+100%  
+	    New File  		    1624	Space.ir
+100%  
+	    New File  		      16	Space.ir.hash
+100%  
+	    New File  		     176	Space.ir.sig
+100%  
+	    New File  		      16	Space.ir.sig.hash
+100%  
+	    New File  		    6776	Space.olean
+100%  
+	    New File  		      16	Space.olean.hash
+100%  
+	    New File  		    1504	Space.olean.private
+100%  
+	    New File  		      16	Space.olean.private.hash
+100%  
+	    New File  		    2392	Space.olean.server
+100%  
+	    New File  		      16	Space.olean.server.hash
+100%  
+	    New File  		    3532	Space.trace
+100%  
+	    New File  		    3446	Time.ilean
+100%  
+	    New File  		      16	Time.ilean.hash
+100%  
+	    New File  		    1624	Time.ir
+100%  
+	    New File  		      16	Time.ir.hash
+100%  
+	    New File  		     176	Time.ir.sig
+100%  
+	    New File  		      16	Time.ir.sig.hash
+100%  
+	    New File  		   14040	Time.olean
+100%  
+	    New File  		      16	Time.olean.hash
+100%  
+	    New File  		    8264	Time.olean.private
+100%  
+	    New File  		      16	Time.olean.private.hash
+100%  
+	    New File  		    3736	Time.olean.server
+100%  
+	    New File  		      16	Time.olean.server.hash
+100%  
+	    New File  		    3525	Time.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\Containments\
+	    New File  		    4707	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    3608	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   63168	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		    5568	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    5224	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3634	Defs.trace
+100%  
+	  New Dir        351	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\Containments\Internal\
+	    New File  		  108696	BinArith.ilean
+100%  
+	    New File  		      16	BinArith.ilean.hash
+100%  
+	    New File  		   63784	BinArith.ir
+100%  
+	    New File  		      16	BinArith.ir.hash
+100%  
+	    New File  		     176	BinArith.ir.sig
+100%  
+	    New File  		      16	BinArith.ir.sig.hash
+100%  
+	    New File  		  192944	BinArith.olean
+100%  
+	    New File  		      16	BinArith.olean.hash
+100%  
+	    New File  		   1.1 m	BinArith.olean.private
+ 84%  
+100%  
+	    New File  		      16	BinArith.olean.private.hash
+100%  
+	    New File  		   35752	BinArith.olean.server
+100%  
+	    New File  		      16	BinArith.olean.server.hash
+100%  
+	    New File  		    3611	BinArith.trace
+100%  
+	    New File  		   27364	BlockAccept.ilean
+100%  
+	    New File  		      16	BlockAccept.ilean.hash
+100%  
+	    New File  		    2752	BlockAccept.ir
+100%  
+	    New File  		      16	BlockAccept.ir.hash
+100%  
+	    New File  		     176	BlockAccept.ir.sig
+100%  
+	    New File  		      16	BlockAccept.ir.sig.hash
+100%  
+	    New File  		   34888	BlockAccept.olean
+100%  
+	    New File  		      16	BlockAccept.olean.hash
+100%  
+	    New File  		  217576	BlockAccept.olean.private
+100%  
+	    New File  		      16	BlockAccept.olean.private.hash
+100%  
+	    New File  		    6464	BlockAccept.olean.server
+100%  
+	    New File  		      16	BlockAccept.olean.server.hash
+100%  
+	    New File  		    3857	BlockAccept.trace
+100%  
+	    New File  		   40790	BlockMember.ilean
+100%  
+	    New File  		      16	BlockMember.ilean.hash
+100%  
+	    New File  		   13448	BlockMember.ir
+100%  
+	    New File  		      16	BlockMember.ir.hash
+100%  
+	    New File  		     176	BlockMember.ir.sig
+100%  
+	    New File  		      16	BlockMember.ir.sig.hash
+100%  
+	    New File  		   45432	BlockMember.olean
+100%  
+	    New File  		      16	BlockMember.olean.hash
+100%  
+	    New File  		  454192	BlockMember.olean.private
+100%  
+	    New File  		      16	BlockMember.olean.private.hash
+100%  
+	    New File  		    9776	BlockMember.olean.server
+100%  
+	    New File  		      16	BlockMember.olean.server.hash
+100%  
+	    New File  		    3626	BlockMember.trace
+100%  
+	    New File  		   31047	BlockSearch.ilean
+100%  
+	    New File  		      16	BlockSearch.ilean.hash
+100%  
+	    New File  		    9976	BlockSearch.ir
+100%  
+	    New File  		      16	BlockSearch.ir.hash
+100%  
+	    New File  		     176	BlockSearch.ir.sig
+100%  
+	    New File  		      16	BlockSearch.ir.sig.hash
+100%  
+	    New File  		   51528	BlockSearch.olean
+100%  
+	    New File  		      16	BlockSearch.olean.hash
+100%  
+	    New File  		  154584	BlockSearch.olean.private
+100%  
+	    New File  		      16	BlockSearch.olean.private.hash
+100%  
+	    New File  		   11104	BlockSearch.olean.server
+100%  
+	    New File  		      16	BlockSearch.olean.server.hash
+100%  
+	    New File  		    3831	BlockSearch.trace
+100%  
+	    New File  		   41790	BlockSearchCorrect.ilean
+100%  
+	    New File  		      16	BlockSearchCorrect.ilean.hash
+100%  
+	    New File  		    3712	BlockSearchCorrect.ir
+100%  
+	    New File  		      16	BlockSearchCorrect.ir.hash
+100%  
+	    New File  		     176	BlockSearchCorrect.ir.sig
+100%  
+	    New File  		      16	BlockSearchCorrect.ir.sig.hash
+100%  
+	    New File  		   78048	BlockSearchCorrect.olean
+100%  
+	    New File  		      16	BlockSearchCorrect.olean.hash
+100%  
+	    New File  		  608728	BlockSearchCorrect.olean.private
+100%  
+	    New File  		      16	BlockSearchCorrect.olean.private.hash
+100%  
+	    New File  		    9728	BlockSearchCorrect.olean.server
+100%  
+	    New File  		      16	BlockSearchCorrect.olean.server.hash
+100%  
+	    New File  		    3675	BlockSearchCorrect.trace
+100%  
+	    New File  		   17729	BoundedReach.ilean
+100%  
+	    New File  		      16	BoundedReach.ilean.hash
+100%  
+	    New File  		    2000	BoundedReach.ir
+100%  
+	    New File  		      16	BoundedReach.ir.hash
+100%  
+	    New File  		     176	BoundedReach.ir.sig
+100%  
+	    New File  		      16	BoundedReach.ir.sig.hash
+100%  
+	    New File  		   34864	BoundedReach.olean
+100%  
+	    New File  		      16	BoundedReach.olean.hash
+100%  
+	    New File  		  115976	BoundedReach.olean.private
+100%  
+	    New File  		      16	BoundedReach.olean.private.hash
+100%  
+	    New File  		    5824	BoundedReach.olean.server
+100%  
+	    New File  		      16	BoundedReach.olean.server.hash
+100%  
+	    New File  		    4245	BoundedReach.trace
+100%  
+	    New File  		   18174	CodeAccept.ilean
+100%  
+	    New File  		      16	CodeAccept.ilean.hash
+100%  
+	    New File  		    7552	CodeAccept.ir
+100%  
+	    New File  		      16	CodeAccept.ir.hash
+100%  
+	    New File  		     176	CodeAccept.ir.sig
+100%  
+	    New File  		      16	CodeAccept.ir.sig.hash
+100%  
+	    New File  		   27160	CodeAccept.olean
+100%  
+	    New File  		      16	CodeAccept.olean.hash
+100%  
+	    New File  		  140624	CodeAccept.olean.private
+100%  
+	    New File  		      16	CodeAccept.olean.private.hash
+100%  
+	    New File  		    4176	CodeAccept.olean.server
+100%  
+	    New File  		      16	CodeAccept.olean.server.hash
+100%  
+	    New File  		    3623	CodeAccept.trace
+100%  
+	    New File  		   18289	CodeRewind.ilean
+100%  
+	    New File  		      16	CodeRewind.ilean.hash
+100%  
+	    New File  		    5856	CodeRewind.ir
+100%  
+	    New File  		      16	CodeRewind.ir.hash
+100%  
+	    New File  		     176	CodeRewind.ir.sig
+100%  
+	    New File  		      16	CodeRewind.ir.sig.hash
+100%  
+	    New File  		   32400	CodeRewind.olean
+100%  
+	    New File  		      16	CodeRewind.olean.hash
+100%  
+	    New File  		   88896	CodeRewind.olean.private
+100%  
+	    New File  		      16	CodeRewind.olean.private.hash
+100%  
+	    New File  		    6808	CodeRewind.olean.server
+100%  
+	    New File  		      16	CodeRewind.olean.server.hash
+100%  
+	    New File  		    3619	CodeRewind.trace
+100%  
+	    New File  		   17585	CodeStep.ilean
+100%  
+	    New File  		      16	CodeStep.ilean.hash
+100%  
+	    New File  		    3304	CodeStep.ir
+100%  
+	    New File  		      16	CodeStep.ir.hash
+100%  
+	    New File  		     176	CodeStep.ir.sig
+100%  
+	    New File  		      16	CodeStep.ir.sig.hash
+100%  
+	    New File  		   40824	CodeStep.olean
+100%  
+	    New File  		      16	CodeStep.olean.hash
+100%  
+	    New File  		  130752	CodeStep.olean.private
+100%  
+	    New File  		      16	CodeStep.olean.private.hash
+100%  
+	    New File  		    6520	CodeStep.olean.server
+100%  
+	    New File  		      16	CodeStep.olean.server.hash
+100%  
+	    New File  		    3840	CodeStep.trace
+100%  
+	    New File  		   17830	ConfigCount.ilean
+100%  
+	    New File  		      16	ConfigCount.ilean.hash
+100%  
+	    New File  		   20424	ConfigCount.ir
+100%  
+	    New File  		      16	ConfigCount.ir.hash
+100%  
+	    New File  		     176	ConfigCount.ir.sig
+100%  
+	    New File  		      16	ConfigCount.ir.sig.hash
+100%  
+	    New File  		   83888	ConfigCount.olean
+100%  
+	    New File  		      16	ConfigCount.olean.hash
+100%  
+	    New File  		  469920	ConfigCount.olean.private
+100%  
+	    New File  		      16	ConfigCount.olean.private.hash
+100%  
+	    New File  		    7680	ConfigCount.olean.server
+100%  
+	    New File  		      16	ConfigCount.olean.server.hash
+100%  
+	    New File  		    3761	ConfigCount.trace
+100%  
+	    New File  		   18399	ConfigGraph.ilean
+100%  
+	    New File  		      16	ConfigGraph.ilean.hash
+100%  
+	    New File  		    2032	ConfigGraph.ir
+100%  
+	    New File  		      16	ConfigGraph.ir.hash
+100%  
+	    New File  		     176	ConfigGraph.ir.sig
+100%  
+	    New File  		      16	ConfigGraph.ir.sig.hash
+100%  
+	    New File  		   24600	ConfigGraph.olean
+100%  
+	    New File  		      16	ConfigGraph.olean.hash
+100%  
+	    New File  		  194432	ConfigGraph.olean.private
+100%  
+	    New File  		      16	ConfigGraph.olean.private.hash
+100%  
+	    New File  		    5272	ConfigGraph.olean.server
+100%  
+	    New File  		      16	ConfigGraph.olean.server.hash
+100%  
+	    New File  		    4026	ConfigGraph.trace
+100%  
+	    New File  		   16591	FPBridge.ilean
+100%  
+	    New File  		      16	FPBridge.ilean.hash
+100%  
+	    New File  		    1912	FPBridge.ir
+100%  
+	    New File  		      16	FPBridge.ir.hash
+100%  
+	    New File  		     176	FPBridge.ir.sig
+100%  
+	    New File  		      16	FPBridge.ir.sig.hash
+100%  
+	    New File  		   19736	FPBridge.olean
+100%  
+	    New File  		      16	FPBridge.olean.hash
+100%  
+	    New File  		   23480	FPBridge.olean.private
+100%  
+	    New File  		      16	FPBridge.olean.private.hash
+100%  
+	    New File  		    7336	FPBridge.olean.server
+100%  
+	    New File  		      16	FPBridge.olean.server.hash
+100%  
+	    New File  		    4144	FPBridge.trace
+100%  
+	    New File  		   51177	IPEnc.ilean
+100%  
+	    New File  		      16	IPEnc.ilean.hash
+100%  
+	    New File  		   12640	IPEnc.ir
+100%  
+	    New File  		      16	IPEnc.ir.hash
+100%  
+	    New File  		     176	IPEnc.ir.sig
+100%  
+	    New File  		      16	IPEnc.ir.sig.hash
+100%  
+	    New File  		  100408	IPEnc.olean
+100%  
+	    New File  		      16	IPEnc.olean.hash
+100%  
+	    New File  		  549808	IPEnc.olean.private
+100%  
+	    New File  		      16	IPEnc.olean.private.hash
+100%  
+	    New File  		   14224	IPEnc.olean.server
+100%  
+	    New File  		      16	IPEnc.olean.server.hash
+100%  
+	    New File  		    3578	IPEnc.trace
+100%  
+	    New File  		   74051	IPGameTree.ilean
+100%  
+	    New File  		      16	IPGameTree.ilean.hash
+100%  
+	    New File  		   15560	IPGameTree.ir
+100%  
+	    New File  		      16	IPGameTree.ir.hash
+100%  
+	    New File  		     176	IPGameTree.ir.sig
+100%  
+	    New File  		      16	IPGameTree.ir.sig.hash
+100%  
+	    New File  		  189440	IPGameTree.olean
+100%  
+	    New File  		      16	IPGameTree.olean.hash
+100%  
+	    New File  		  641736	IPGameTree.olean.private
+100%  
+	    New File  		      16	IPGameTree.olean.private.hash
+100%  
+	    New File  		   23104	IPGameTree.olean.server
+100%  
+	    New File  		      16	IPGameTree.olean.server.hash
+100%  
+	    New File  		    4089	IPGameTree.trace
+100%  
+	    New File  		   55308	IPLeaf.ilean
+100%  
+	    New File  		      16	IPLeaf.ilean.hash
+100%  
+	    New File  		   23000	IPLeaf.ir
+100%  
+	    New File  		      16	IPLeaf.ir.hash
+100%  
+	    New File  		     176	IPLeaf.ir.sig
+100%  
+	    New File  		      16	IPLeaf.ir.sig.hash
+100%  
+	    New File  		  111088	IPLeaf.olean
+100%  
+	    New File  		      16	IPLeaf.olean.hash
+100%  
+	    New File  		  416360	IPLeaf.olean.private
+100%  
+	    New File  		      16	IPLeaf.olean.private.hash
+100%  
+	    New File  		   12920	IPLeaf.olean.server
+100%  
+	    New File  		      16	IPLeaf.olean.server.hash
+100%  
+	    New File  		    3808	IPLeaf.trace
+100%  
+	    New File  		  109566	IPSem.ilean
+100%  
+	    New File  		      16	IPSem.ilean.hash
+100%  
+	    New File  		   60296	IPSem.ir
+100%  
+	    New File  		      16	IPSem.ir.hash
+100%  
+	    New File  		     176	IPSem.ir.sig
+100%  
+	    New File  		      16	IPSem.ir.sig.hash
+100%  
+	    New File  		  259768	IPSem.olean
+100%  
+	    New File  		      16	IPSem.olean.hash
+100%  
+	    New File  		   1.7 m	IPSem.olean.private
+ 56%  
+100%  
+	    New File  		      16	IPSem.olean.private.hash
+100%  
+	    New File  		   29488	IPSem.olean.server
+100%  
+	    New File  		      16	IPSem.olean.server.hash
+100%  
+	    New File  		    3594	IPSem.trace
+100%  
+	    New File  		   79126	IPStep.ilean
+100%  
+	    New File  		      16	IPStep.ilean.hash
+100%  
+	    New File  		   22664	IPStep.ir
+100%  
+	    New File  		      16	IPStep.ir.hash
+100%  
+	    New File  		     176	IPStep.ir.sig
+100%  
+	    New File  		      16	IPStep.ir.sig.hash
+100%  
+	    New File  		   85360	IPStep.olean
+100%  
+	    New File  		      16	IPStep.olean.hash
+100%  
+	    New File  		  378008	IPStep.olean.private
+100%  
+	    New File  		      16	IPStep.olean.private.hash
+100%  
+	    New File  		   16584	IPStep.olean.server
+100%  
+	    New File  		      16	IPStep.olean.server.hash
+100%  
+	    New File  		    3585	IPStep.trace
+100%  
+	    New File  		    5776	IPSubsetPSPACE.ilean
+100%  
+	    New File  		      16	IPSubsetPSPACE.ilean.hash
+100%  
+	    New File  		    6056	IPSubsetPSPACE.ir
+100%  
+	    New File  		      16	IPSubsetPSPACE.ir.hash
+100%  
+	    New File  		     176	IPSubsetPSPACE.ir.sig
+100%  
+	    New File  		      16	IPSubsetPSPACE.ir.sig.hash
+100%  
+	    New File  		   44056	IPSubsetPSPACE.olean
+100%  
+	    New File  		      16	IPSubsetPSPACE.olean.hash
+100%  
+	    New File  		   94264	IPSubsetPSPACE.olean.private
+100%  
+	    New File  		      16	IPSubsetPSPACE.olean.private.hash
+100%  
+	    New File  		    3760	IPSubsetPSPACE.olean.server
+100%  
+	    New File  		      16	IPSubsetPSPACE.olean.server.hash
+100%  
+	    New File  		    3602	IPSubsetPSPACE.trace
+100%  
+	    New File  		   22366	IPWalk.ilean
+100%  
+	    New File  		      16	IPWalk.ilean.hash
+100%  
+	    New File  		    1776	IPWalk.ir
+100%  
+	    New File  		      16	IPWalk.ir.hash
+100%  
+	    New File  		     176	IPWalk.ir.sig
+100%  
+	    New File  		      16	IPWalk.ir.sig.hash
+100%  
+	    New File  		   35808	IPWalk.olean
+100%  
+	    New File  		      16	IPWalk.olean.hash
+100%  
+	    New File  		   92560	IPWalk.olean.private
+100%  
+	    New File  		      16	IPWalk.olean.private.hash
+100%  
+	    New File  		    4120	IPWalk.olean.server
+100%  
+	    New File  		      16	IPWalk.olean.server.hash
+100%  
+	    New File  		    3812	IPWalk.trace
+100%  
+	    New File  		   13210	LogSpaceBound.ilean
+100%  
+	    New File  		      16	LogSpaceBound.ilean.hash
+100%  
+	    New File  		    1784	LogSpaceBound.ir
+100%  
+	    New File  		      16	LogSpaceBound.ir.hash
+100%  
+	    New File  		     176	LogSpaceBound.ir.sig
+100%  
+	    New File  		      16	LogSpaceBound.ir.sig.hash
+100%  
+	    New File  		   22296	LogSpaceBound.olean
+100%  
+	    New File  		      16	LogSpaceBound.olean.hash
+100%  
+	    New File  		  285248	LogSpaceBound.olean.private
+100%  
+	    New File  		      16	LogSpaceBound.olean.private.hash
+100%  
+	    New File  		    5312	LogSpaceBound.olean.server
+100%  
+	    New File  		      16	LogSpaceBound.olean.server.hash
+100%  
+	    New File  		    3806	LogSpaceBound.trace
+100%  
+	    New File  		   53298	NLSearchAssemble.ilean
+100%  
+	    New File  		      16	NLSearchAssemble.ilean.hash
+100%  
+	    New File  		    7120	NLSearchAssemble.ir
+100%  
+	    New File  		      16	NLSearchAssemble.ir.hash
+100%  
+	    New File  		     176	NLSearchAssemble.ir.sig
+100%  
+	    New File  		      16	NLSearchAssemble.ir.sig.hash
+100%  
+	    New File  		   73240	NLSearchAssemble.olean
+100%  
+	    New File  		      16	NLSearchAssemble.olean.hash
+100%  
+	    New File  		  541184	NLSearchAssemble.olean.private
+100%  
+	    New File  		      16	NLSearchAssemble.olean.private.hash
+100%  
+	    New File  		   10416	NLSearchAssemble.olean.server
+100%  
+	    New File  		      16	NLSearchAssemble.olean.server.hash
+100%  
+	    New File  		    4242	NLSearchAssemble.trace
+100%  
+	    New File  		    8733	PolyWindow.ilean
+100%  
+	    New File  		      16	PolyWindow.ilean.hash
+100%  
+	    New File  		    1576	PolyWindow.ir
+100%  
+	    New File  		      16	PolyWindow.ir.hash
+100%  
+	    New File  		     176	PolyWindow.ir.sig
+100%  
+	    New File  		      16	PolyWindow.ir.sig.hash
+100%  
+	    New File  		   15832	PolyWindow.olean
+100%  
+	    New File  		      16	PolyWindow.olean.hash
+100%  
+	    New File  		   77296	PolyWindow.olean.private
+100%  
+	    New File  		      16	PolyWindow.olean.private.hash
+100%  
+	    New File  		    3400	PolyWindow.olean.server
+100%  
+	    New File  		      16	PolyWindow.olean.server.hash
+100%  
+	    New File  		    3564	PolyWindow.trace
+100%  
+	    New File  		   46961	PVerdict.ilean
+100%  
+	    New File  		      16	PVerdict.ilean.hash
+100%  
+	    New File  		   14216	PVerdict.ir
+100%  
+	    New File  		      16	PVerdict.ir.hash
+100%  
+	    New File  		     176	PVerdict.ir.sig
+100%  
+	    New File  		      16	PVerdict.ir.sig.hash
+100%  
+	    New File  		   70296	PVerdict.olean
+100%  
+	    New File  		      16	PVerdict.olean.hash
+100%  
+	    New File  		  466280	PVerdict.olean.private
+100%  
+	    New File  		      16	PVerdict.olean.private.hash
+100%  
+	    New File  		   11944	PVerdict.olean.server
+100%  
+	    New File  		      16	PVerdict.olean.server.hash
+100%  
+	    New File  		    3977	PVerdict.trace
+100%  
+	    New File  		   22033	ReachSet.ilean
+100%  
+	    New File  		      16	ReachSet.ilean.hash
+100%  
+	    New File  		    6432	ReachSet.ir
+100%  
+	    New File  		      16	ReachSet.ir.hash
+100%  
+	    New File  		     176	ReachSet.ir.sig
+100%  
+	    New File  		      16	ReachSet.ir.sig.hash
+100%  
+	    New File  		   58136	ReachSet.olean
+100%  
+	    New File  		      16	ReachSet.olean.hash
+100%  
+	    New File  		  209952	ReachSet.olean.private
+100%  
+	    New File  		      16	ReachSet.olean.private.hash
+100%  
+	    New File  		    7072	ReachSet.olean.server
+100%  
+	    New File  		      16	ReachSet.olean.server.hash
+100%  
+	    New File  		    3756	ReachSet.trace
+100%  
+	    New File  		   36924	SavitchBits.ilean
+100%  
+	    New File  		      16	SavitchBits.ilean.hash
+100%  
+	    New File  		   26240	SavitchBits.ir
+100%  
+	    New File  		      16	SavitchBits.ir.hash
+100%  
+	    New File  		     176	SavitchBits.ir.sig
+100%  
+	    New File  		      16	SavitchBits.ir.sig.hash
+100%  
+	    New File  		   89800	SavitchBits.olean
+100%  
+	    New File  		      16	SavitchBits.olean.hash
+100%  
+	    New File  		  489248	SavitchBits.olean.private
+100%  
+	    New File  		      16	SavitchBits.olean.private.hash
+100%  
+	    New File  		   13520	SavitchBits.olean.server
+100%  
+	    New File  		      16	SavitchBits.olean.server.hash
+100%  
+	    New File  		    3853	SavitchBits.trace
+100%  
+	    New File  		   36804	TranscriptEnc.ilean
+100%  
+	    New File  		      16	TranscriptEnc.ilean.hash
+100%  
+	    New File  		   22072	TranscriptEnc.ir
+100%  
+	    New File  		      16	TranscriptEnc.ir.hash
+100%  
+	    New File  		     176	TranscriptEnc.ir.sig
+100%  
+	    New File  		      16	TranscriptEnc.ir.sig.hash
+100%  
+	    New File  		   65824	TranscriptEnc.olean
+100%  
+	    New File  		      16	TranscriptEnc.olean.hash
+100%  
+	    New File  		  320648	TranscriptEnc.olean.private
+100%  
+	    New File  		      16	TranscriptEnc.olean.private.hash
+100%  
+	    New File  		   12776	TranscriptEnc.olean.server
+100%  
+	    New File  		      16	TranscriptEnc.olean.server.hash
+100%  
+	    New File  		    4037	TranscriptEnc.trace
+100%  
+	    New File  		   33105	WitnessEnum.ilean
+100%  
+	    New File  		      16	WitnessEnum.ilean.hash
+100%  
+	    New File  		   24224	WitnessEnum.ir
+100%  
+	    New File  		      16	WitnessEnum.ir.hash
+100%  
+	    New File  		     176	WitnessEnum.ir.sig
+100%  
+	    New File  		      16	WitnessEnum.ir.sig.hash
+100%  
+	    New File  		  136776	WitnessEnum.olean
+100%  
+	    New File  		      16	WitnessEnum.olean.hash
+100%  
+	    New File  		  707720	WitnessEnum.olean.private
+100%  
+	    New File  		      16	WitnessEnum.olean.private.hash
+100%  
+	    New File  		   19720	WitnessEnum.olean.server
+100%  
+	    New File  		      16	WitnessEnum.olean.server.hash
+100%  
+	    New File  		    3708	WitnessEnum.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\FNP\
+	    New File  		    2014	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    1680	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		    7456	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		    1520	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    2656	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3555	Defs.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\NP\
+	    New File  		    6232	Witness.ilean
+100%  
+	    New File  		      16	Witness.ilean.hash
+100%  
+	    New File  		    1680	Witness.ir
+100%  
+	    New File  		      16	Witness.ir.hash
+100%  
+	    New File  		     176	Witness.ir.sig
+100%  
+	    New File  		      16	Witness.ir.sig.hash
+100%  
+	    New File  		   12296	Witness.olean
+100%  
+	    New File  		      16	Witness.olean.hash
+100%  
+	    New File  		   30488	Witness.olean.private
+100%  
+	    New File  		      16	Witness.olean.private.hash
+100%  
+	    New File  		    6480	Witness.olean.server
+100%  
+	    New File  		      16	Witness.olean.server.hash
+100%  
+	    New File  		    3563	Witness.trace
+100%  
+	  New Dir        143	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\
+	    New File  		    5410	Cobham.ilean
+100%  
+	    New File  		      16	Cobham.ilean.hash
+100%  
+	    New File  		    1928	Cobham.ir
+100%  
+	    New File  		      16	Cobham.ir.hash
+100%  
+	    New File  		     176	Cobham.ir.sig
+100%  
+	    New File  		      16	Cobham.ir.sig.hash
+100%  
+	    New File  		   10600	Cobham.olean
+100%  
+	    New File  		      16	Cobham.olean.hash
+100%  
+	    New File  		    4416	Cobham.olean.private
+100%  
+	    New File  		      16	Cobham.olean.private.hash
+100%  
+	    New File  		    5864	Cobham.olean.server
+100%  
+	    New File  		      16	Cobham.olean.server.hash
+100%  
+	    New File  		    3940	Cobham.trace
+100%  
+	    New File  		    1069	Composition.ilean
+100%  
+	    New File  		      16	Composition.ilean.hash
+100%  
+	    New File  		    1664	Composition.ir
+100%  
+	    New File  		      16	Composition.ir.hash
+100%  
+	    New File  		     176	Composition.ir.sig
+100%  
+	    New File  		      16	Composition.ir.sig.hash
+100%  
+	    New File  		    6080	Composition.olean
+100%  
+	    New File  		      16	Composition.olean.hash
+100%  
+	    New File  		    1344	Composition.olean.private
+100%  
+	    New File  		      16	Composition.olean.private.hash
+100%  
+	    New File  		    1520	Composition.olean.server
+100%  
+	    New File  		      16	Composition.olean.server.hash
+100%  
+	    New File  		    3461	Composition.trace
+100%  
+	    New File  		    2826	DecisionFn.ilean
+100%  
+	    New File  		      16	DecisionFn.ilean.hash
+100%  
+	    New File  		    1776	DecisionFn.ir
+100%  
+	    New File  		      16	DecisionFn.ir.hash
+100%  
+	    New File  		     176	DecisionFn.ir.sig
+100%  
+	    New File  		      16	DecisionFn.ir.sig.hash
+100%  
+	    New File  		    9592	DecisionFn.olean
+100%  
+	    New File  		      16	DecisionFn.olean.hash
+100%  
+	    New File  		   18376	DecisionFn.olean.private
+100%  
+	    New File  		      16	DecisionFn.olean.private.hash
+100%  
+	    New File  		    2688	DecisionFn.olean.server
+100%  
+	    New File  		      16	DecisionFn.olean.server.hash
+100%  
+	    New File  		    3597	DecisionFn.trace
+100%  
+	    New File  		    2111	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    1608	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		    9216	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		    2000	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    2416	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3533	Defs.trace
+100%  
+	    New File  		    1327	FinsetDomain.ilean
+100%  
+	    New File  		      16	FinsetDomain.ilean.hash
+100%  
+	    New File  		    1664	FinsetDomain.ir
+100%  
+	    New File  		      16	FinsetDomain.ir.hash
+100%  
+	    New File  		     176	FinsetDomain.ir.sig
+100%  
+	    New File  		      16	FinsetDomain.ir.sig.hash
+100%  
+	    New File  		    7568	FinsetDomain.olean
+100%  
+	    New File  		      16	FinsetDomain.olean.hash
+100%  
+	    New File  		    1264	FinsetDomain.olean.private
+100%  
+	    New File  		      16	FinsetDomain.olean.private.hash
+100%  
+	    New File  		    2408	FinsetDomain.olean.server
+100%  
+	    New File  		      16	FinsetDomain.olean.server.hash
+100%  
+	    New File  		    3470	FinsetDomain.trace
+100%  
+	    New File  		    7119	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    2000	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   11640	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  273960	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    2192	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4088	Internal.trace
+100%  
+	    New File  		    3426	NormalForm.ilean
+100%  
+	    New File  		      16	NormalForm.ilean.hash
+100%  
+	    New File  		    1664	NormalForm.ir
+100%  
+	    New File  		      16	NormalForm.ir.hash
+100%  
+	    New File  		     176	NormalForm.ir.sig
+100%  
+	    New File  		      16	NormalForm.ir.sig.hash
+100%  
+	    New File  		    9424	NormalForm.olean
+100%  
+	    New File  		      16	NormalForm.olean.hash
+100%  
+	    New File  		    2000	NormalForm.olean.private
+100%  
+	    New File  		      16	NormalForm.olean.private.hash
+100%  
+	    New File  		    2408	NormalForm.olean.server
+100%  
+	    New File  		      16	NormalForm.olean.server.hash
+100%  
+	    New File  		    3452	NormalForm.trace
+100%  
+	    New File  		    4458	Pairing.ilean
+100%  
+	    New File  		      16	Pairing.ilean.hash
+100%  
+	    New File  		    1952	Pairing.ir
+100%  
+	    New File  		      16	Pairing.ir.hash
+100%  
+	    New File  		     176	Pairing.ir.sig
+100%  
+	    New File  		      16	Pairing.ir.sig.hash
+100%  
+	    New File  		   10648	Pairing.olean
+100%  
+	    New File  		      16	Pairing.olean.hash
+100%  
+	    New File  		    3160	Pairing.olean.private
+100%  
+	    New File  		      16	Pairing.olean.private.hash
+100%  
+	    New File  		    4312	Pairing.olean.server
+100%  
+	    New File  		      16	Pairing.olean.server.hash
+100%  
+	    New File  		    3767	Pairing.trace
+100%  
+	    New File  		    1286	PairWithInput.ilean
+100%  
+	    New File  		      16	PairWithInput.ilean.hash
+100%  
+	    New File  		    1664	PairWithInput.ir
+100%  
+	    New File  		      16	PairWithInput.ir.hash
+100%  
+	    New File  		     176	PairWithInput.ir.sig
+100%  
+	    New File  		      16	PairWithInput.ir.sig.hash
+100%  
+	    New File  		    5880	PairWithInput.olean
+100%  
+	    New File  		      16	PairWithInput.olean.hash
+100%  
+	    New File  		    1088	PairWithInput.olean.private
+100%  
+	    New File  		      16	PairWithInput.olean.private.hash
+100%  
+	    New File  		    1568	PairWithInput.olean.server
+100%  
+	    New File  		      16	PairWithInput.olean.server.hash
+100%  
+	    New File  		    3479	PairWithInput.trace
+100%  
+	    New File  		    1355	Preimage.ilean
+100%  
+	    New File  		      16	Preimage.ilean.hash
+100%  
+	    New File  		    1664	Preimage.ir
+100%  
+	    New File  		      16	Preimage.ir.hash
+100%  
+	    New File  		     176	Preimage.ir.sig
+100%  
+	    New File  		      16	Preimage.ir.sig.hash
+100%  
+	    New File  		    6584	Preimage.olean
+100%  
+	    New File  		      16	Preimage.olean.hash
+100%  
+	    New File  		    1560	Preimage.olean.private
+100%  
+	    New File  		      16	Preimage.olean.private.hash
+100%  
+	    New File  		    1576	Preimage.olean.server
+100%  
+	    New File  		      16	Preimage.olean.server.hash
+100%  
+	    New File  		    3434	Preimage.trace
+100%  
+	    New File  		    1373	UnaryLength.ilean
+100%  
+	    New File  		      16	UnaryLength.ilean.hash
+100%  
+	    New File  		    1664	UnaryLength.ir
+100%  
+	    New File  		      16	UnaryLength.ir.hash
+100%  
+	    New File  		     176	UnaryLength.ir.sig
+100%  
+	    New File  		      16	UnaryLength.ir.sig.hash
+100%  
+	    New File  		    5784	UnaryLength.olean
+100%  
+	    New File  		      16	UnaryLength.olean.hash
+100%  
+	    New File  		     904	UnaryLength.olean.private
+100%  
+	    New File  		      16	UnaryLength.olean.private.hash
+100%  
+	    New File  		    1512	UnaryLength.olean.server
+100%  
+	    New File  		      16	UnaryLength.olean.server.hash
+100%  
+	    New File  		    3461	UnaryLength.trace
+100%  
+	  New Dir         39	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\Cobham\
+	    New File  		    9158	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    8184	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		  108976	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   19864	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    8760	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3428	Defs.trace
+100%  
+	    New File  		  136623	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		   36136	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		  168696	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		   1.0 m	Internal.olean.private
+ 92%  
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		   36960	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    8443	Internal.trace
+100%  
+	    New File  		   10034	Vec.ilean
+100%  
+	    New File  		      16	Vec.ilean.hash
+100%  
+	    New File  		   12088	Vec.ir
+100%  
+	    New File  		      16	Vec.ir.hash
+100%  
+	    New File  		     176	Vec.ir.sig
+100%  
+	    New File  		      16	Vec.ir.sig.hash
+100%  
+	    New File  		   55176	Vec.olean
+100%  
+	    New File  		      16	Vec.olean.hash
+100%  
+	    New File  		  194832	Vec.olean.private
+100%  
+	    New File  		      16	Vec.olean.private.hash
+100%  
+	    New File  		    5816	Vec.olean.server
+100%  
+	    New File  		      16	Vec.olean.server.hash
+100%  
+	    New File  		    3982	Vec.trace
+100%  
+	  New Dir        299	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\Cobham\Internal\
+	    New File  		   62246	Algebra.ilean
+100%  
+	    New File  		      16	Algebra.ilean.hash
+100%  
+	    New File  		    2808	Algebra.ir
+100%  
+	    New File  		      16	Algebra.ir.hash
+100%  
+	    New File  		     176	Algebra.ir.sig
+100%  
+	    New File  		      16	Algebra.ir.sig.hash
+100%  
+	    New File  		   51584	Algebra.olean
+100%  
+	    New File  		      16	Algebra.olean.hash
+100%  
+	    New File  		  447480	Algebra.olean.private
+100%  
+	    New File  		      16	Algebra.olean.private.hash
+100%  
+	    New File  		   18144	Algebra.olean.server
+100%  
+	    New File  		      16	Algebra.olean.server.hash
+100%  
+	    New File  		    4539	Algebra.trace
+100%  
+	    New File  		   84171	BlockLoop.ilean
+100%  
+	    New File  		      16	BlockLoop.ilean.hash
+100%  
+	    New File  		   14000	BlockLoop.ir
+100%  
+	    New File  		      16	BlockLoop.ir.hash
+100%  
+	    New File  		     176	BlockLoop.ir.sig
+100%  
+	    New File  		      16	BlockLoop.ir.sig.hash
+100%  
+	    New File  		  134152	BlockLoop.olean
+100%  
+	    New File  		      16	BlockLoop.olean.hash
+100%  
+	    New File  		  571032	BlockLoop.olean.private
+100%  
+	    New File  		      16	BlockLoop.olean.private.hash
+100%  
+	    New File  		   13744	BlockLoop.olean.server
+100%  
+	    New File  		      16	BlockLoop.olean.server.hash
+100%  
+	    New File  		    4010	BlockLoop.trace
+100%  
+	    New File  		   26895	Blocks.ilean
+100%  
+	    New File  		      16	Blocks.ilean.hash
+100%  
+	    New File  		   14480	Blocks.ir
+100%  
+	    New File  		      16	Blocks.ir.hash
+100%  
+	    New File  		     176	Blocks.ir.sig
+100%  
+	    New File  		      16	Blocks.ir.sig.hash
+100%  
+	    New File  		   66832	Blocks.olean
+100%  
+	    New File  		      16	Blocks.olean.hash
+100%  
+	    New File  		  324120	Blocks.olean.private
+100%  
+	    New File  		      16	Blocks.olean.private.hash
+100%  
+	    New File  		   17224	Blocks.olean.server
+100%  
+	    New File  		      16	Blocks.olean.server.hash
+100%  
+	    New File  		    3504	Blocks.trace
+100%  
+	    New File  		    4764	BlockScan.ilean
+100%  
+	    New File  		      16	BlockScan.ilean.hash
+100%  
+	    New File  		   15664	BlockScan.ir
+100%  
+	    New File  		      16	BlockScan.ir.hash
+100%  
+	    New File  		     176	BlockScan.ir.sig
+100%  
+	    New File  		      16	BlockScan.ir.sig.hash
+100%  
+	    New File  		   75472	BlockScan.olean
+100%  
+	    New File  		      16	BlockScan.olean.hash
+100%  
+	    New File  		   64256	BlockScan.olean.private
+100%  
+	    New File  		      16	BlockScan.olean.private.hash
+100%  
+	    New File  		    4496	BlockScan.olean.server
+100%  
+	    New File  		      16	BlockScan.olean.server.hash
+100%  
+	    New File  		    3572	BlockScan.trace
+100%  
+	    New File  		   99400	Cat.ilean
+100%  
+	    New File  		      16	Cat.ilean.hash
+100%  
+	    New File  		   51968	Cat.ir
+100%  
+	    New File  		      16	Cat.ir.hash
+100%  
+	    New File  		     176	Cat.ir.sig
+100%  
+	    New File  		      16	Cat.ir.sig.hash
+100%  
+	    New File  		   91448	Cat.olean
+100%  
+	    New File  		      16	Cat.olean.hash
+100%  
+	    New File  		  747288	Cat.olean.private
+100%  
+	    New File  		      16	Cat.olean.private.hash
+100%  
+	    New File  		    4920	Cat.olean.server
+100%  
+	    New File  		      16	Cat.olean.server.hash
+100%  
+	    New File  		    4144	Cat.trace
+100%  
+	    New File  		   98866	ChoiceSim.ilean
+100%  
+	    New File  		      16	ChoiceSim.ilean.hash
+100%  
+	    New File  		   12720	ChoiceSim.ir
+100%  
+	    New File  		      16	ChoiceSim.ir.hash
+100%  
+	    New File  		     176	ChoiceSim.ir.sig
+100%  
+	    New File  		      16	ChoiceSim.ir.sig.hash
+100%  
+	    New File  		   72272	ChoiceSim.olean
+100%  
+	    New File  		      16	ChoiceSim.olean.hash
+100%  
+	    New File  		   1.0 m	ChoiceSim.olean.private
+ 93%  
+100%  
+	    New File  		      16	ChoiceSim.olean.private.hash
+100%  
+	    New File  		   13856	ChoiceSim.olean.server
+100%  
+	    New File  		      16	ChoiceSim.olean.server.hash
+100%  
+	    New File  		    3789	ChoiceSim.trace
+100%  
+	    New File  		   44207	ConsBit.ilean
+100%  
+	    New File  		      16	ConsBit.ilean.hash
+100%  
+	    New File  		   29600	ConsBit.ir
+100%  
+	    New File  		      16	ConsBit.ir.hash
+100%  
+	    New File  		     176	ConsBit.ir.sig
+100%  
+	    New File  		      16	ConsBit.ir.sig.hash
+100%  
+	    New File  		   77976	ConsBit.olean
+100%  
+	    New File  		      16	ConsBit.olean.hash
+100%  
+	    New File  		  466056	ConsBit.olean.private
+100%  
+	    New File  		      16	ConsBit.olean.private.hash
+100%  
+	    New File  		    5288	ConsBit.olean.server
+100%  
+	    New File  		      16	ConsBit.olean.server.hash
+100%  
+	    New File  		    3959	ConsBit.trace
+100%  
+	    New File  		  121600	Encoding.ilean
+100%  
+	    New File  		      16	Encoding.ilean.hash
+100%  
+	    New File  		   56688	Encoding.ir
+100%  
+	    New File  		      16	Encoding.ir.hash
+100%  
+	    New File  		     176	Encoding.ir.sig
+100%  
+	    New File  		      16	Encoding.ir.sig.hash
+100%  
+	    New File  		  210344	Encoding.olean
+100%  
+	    New File  		      16	Encoding.olean.hash
+100%  
+	    New File  		   1.1 m	Encoding.olean.private
+ 86%  
+100%  
+	    New File  		      16	Encoding.olean.private.hash
+100%  
+	    New File  		   45128	Encoding.olean.server
+100%  
+	    New File  		      16	Encoding.olean.server.hash
+100%  
+	    New File  		    3952	Encoding.trace
+100%  
+	    New File  		   30278	Extract.ilean
+100%  
+	    New File  		      16	Extract.ilean.hash
+100%  
+	    New File  		   17368	Extract.ir
+100%  
+	    New File  		      16	Extract.ir.hash
+100%  
+	    New File  		     176	Extract.ir.sig
+100%  
+	    New File  		      16	Extract.ir.sig.hash
+100%  
+	    New File  		   73288	Extract.olean
+100%  
+	    New File  		      16	Extract.olean.hash
+100%  
+	    New File  		  326264	Extract.olean.private
+100%  
+	    New File  		      16	Extract.olean.private.hash
+100%  
+	    New File  		   10072	Extract.olean.server
+100%  
+	    New File  		      16	Extract.olean.server.hash
+100%  
+	    New File  		    3775	Extract.trace
+100%  
+	    New File  		  107190	FstBlock.ilean
+100%  
+	    New File  		      16	FstBlock.ilean.hash
+100%  
+	    New File  		   36568	FstBlock.ir
+100%  
+	    New File  		      16	FstBlock.ir.hash
+100%  
+	    New File  		     176	FstBlock.ir.sig
+100%  
+	    New File  		      16	FstBlock.ir.sig.hash
+100%  
+	    New File  		   53112	FstBlock.olean
+100%  
+	    New File  		      16	FstBlock.olean.hash
+100%  
+	    New File  		  485208	FstBlock.olean.private
+100%  
+	    New File  		      16	FstBlock.olean.private.hash
+100%  
+	    New File  		    2760	FstBlock.olean.server
+100%  
+	    New File  		      16	FstBlock.olean.server.hash
+100%  
+	    New File  		    4015	FstBlock.trace
+100%  
+	    New File  		   24516	HeadFlag.ilean
+100%  
+	    New File  		      16	HeadFlag.ilean.hash
+100%  
+	    New File  		   27144	HeadFlag.ir
+100%  
+	    New File  		      16	HeadFlag.ir.hash
+100%  
+	    New File  		     176	HeadFlag.ir.sig
+100%  
+	    New File  		      16	HeadFlag.ir.sig.hash
+100%  
+	    New File  		   83512	HeadFlag.olean
+100%  
+	    New File  		      16	HeadFlag.olean.hash
+100%  
+	    New File  		  279368	HeadFlag.olean.private
+100%  
+	    New File  		      16	HeadFlag.olean.private.hash
+100%  
+	    New File  		    5848	HeadFlag.olean.server
+100%  
+	    New File  		      16	HeadFlag.olean.server.hash
+100%  
+	    New File  		    3737	HeadFlag.trace
+100%  
+	    New File  		  118100	Iterate.ilean
+100%  
+	    New File  		      16	Iterate.ilean.hash
+100%  
+	    New File  		   42864	Iterate.ir
+100%  
+	    New File  		      16	Iterate.ir.hash
+100%  
+	    New File  		     176	Iterate.ir.sig
+100%  
+	    New File  		      16	Iterate.ir.sig.hash
+100%  
+	    New File  		  127168	Iterate.olean
+100%  
+	    New File  		      16	Iterate.olean.hash
+100%  
+	    New File  		   1.5 m	Iterate.olean.private
+ 64%  
+100%  
+	    New File  		      16	Iterate.olean.private.hash
+100%  
+	    New File  		   19888	Iterate.olean.server
+100%  
+	    New File  		      16	Iterate.olean.server.hash
+100%  
+	    New File  		    4605	Iterate.trace
+100%  
+	    New File  		   67229	IterateLayout.ilean
+100%  
+	    New File  		      16	IterateLayout.ilean.hash
+100%  
+	    New File  		   10376	IterateLayout.ir
+100%  
+	    New File  		      16	IterateLayout.ir.hash
+100%  
+	    New File  		     176	IterateLayout.ir.sig
+100%  
+	    New File  		      16	IterateLayout.ir.sig.hash
+100%  
+	    New File  		   79288	IterateLayout.olean
+100%  
+	    New File  		      16	IterateLayout.olean.hash
+100%  
+	    New File  		  782736	IterateLayout.olean.private
+100%  
+	    New File  		      16	IterateLayout.olean.private.hash
+100%  
+	    New File  		   16376	IterateLayout.olean.server
+100%  
+	    New File  		      16	IterateLayout.olean.server.hash
+100%  
+	    New File  		    3865	IterateLayout.trace
+100%  
+	    New File  		  145614	MulLen.ilean
+100%  
+	    New File  		      16	MulLen.ilean.hash
+100%  
+	    New File  		   70600	MulLen.ir
+100%  
+	    New File  		      16	MulLen.ir.hash
+100%  
+	    New File  		     176	MulLen.ir.sig
+100%  
+	    New File  		      16	MulLen.ir.sig.hash
+100%  
+	    New File  		  192544	MulLen.olean
+100%  
+	    New File  		      16	MulLen.olean.hash
+100%  
+	    New File  		   1.3 m	MulLen.olean.private
+ 76%  
+100%  
+	    New File  		      16	MulLen.olean.private.hash
+100%  
+	    New File  		   13136	MulLen.olean.server
+100%  
+	    New File  		      16	MulLen.olean.server.hash
+100%  
+	    New File  		    4102	MulLen.trace
+100%  
+	    New File  		   11843	PolyLen.ilean
+100%  
+	    New File  		      16	PolyLen.ilean.hash
+100%  
+	    New File  		    8560	PolyLen.ir
+100%  
+	    New File  		      16	PolyLen.ir.hash
+100%  
+	    New File  		     176	PolyLen.ir.sig
+100%  
+	    New File  		      16	PolyLen.ir.sig.hash
+100%  
+	    New File  		   67712	PolyLen.olean
+100%  
+	    New File  		      16	PolyLen.olean.hash
+100%  
+	    New File  		   96248	PolyLen.olean.private
+100%  
+	    New File  		      16	PolyLen.olean.private.hash
+100%  
+	    New File  		    4728	PolyLen.olean.server
+100%  
+	    New File  		      16	PolyLen.olean.server.hash
+100%  
+	    New File  		    3759	PolyLen.trace
+100%  
+	    New File  		  216106	Reorder.ilean
+100%  
+	    New File  		      16	Reorder.ilean.hash
+100%  
+	    New File  		   77136	Reorder.ir
+100%  
+	    New File  		      16	Reorder.ir.hash
+100%  
+	    New File  		     176	Reorder.ir.sig
+100%  
+	    New File  		      16	Reorder.ir.sig.hash
+100%  
+	    New File  		  168840	Reorder.olean
+100%  
+	    New File  		      16	Reorder.olean.hash
+100%  
+	    New File  		  859904	Reorder.olean.private
+100%  
+	    New File  		      16	Reorder.olean.private.hash
+100%  
+	    New File  		    7064	Reorder.olean.server
+100%  
+	    New File  		      16	Reorder.olean.server.hash
+100%  
+	    New File  		    4172	Reorder.trace
+100%  
+	    New File  		   60128	Reverse.ilean
+100%  
+	    New File  		      16	Reverse.ilean.hash
+100%  
+	    New File  		   39032	Reverse.ir
+100%  
+	    New File  		      16	Reverse.ir.hash
+100%  
+	    New File  		     176	Reverse.ir.sig
+100%  
+	    New File  		      16	Reverse.ir.sig.hash
+100%  
+	    New File  		   95824	Reverse.olean
+100%  
+	    New File  		      16	Reverse.olean.hash
+100%  
+	    New File  		  561840	Reverse.olean.private
+100%  
+	    New File  		      16	Reverse.olean.private.hash
+100%  
+	    New File  		    6512	Reverse.olean.server
+100%  
+	    New File  		      16	Reverse.olean.server.hash
+100%  
+	    New File  		    3943	Reverse.trace
+100%  
+	    New File  		   77235	Simulate.ilean
+100%  
+	    New File  		      16	Simulate.ilean.hash
+100%  
+	    New File  		    3648	Simulate.ir
+100%  
+	    New File  		      16	Simulate.ir.hash
+100%  
+	    New File  		     176	Simulate.ir.sig
+100%  
+	    New File  		      16	Simulate.ir.sig.hash
+100%  
+	    New File  		   57584	Simulate.olean
+100%  
+	    New File  		      16	Simulate.olean.hash
+100%  
+	    New File  		  957696	Simulate.olean.private
+100%  
+	    New File  		      16	Simulate.olean.private.hash
+100%  
+	    New File  		   15256	Simulate.olean.server
+100%  
+	    New File  		      16	Simulate.olean.server.hash
+100%  
+	    New File  		    4220	Simulate.trace
+100%  
+	    New File  		  129577	SndBlock.ilean
+100%  
+	    New File  		      16	SndBlock.ilean.hash
+100%  
+	    New File  		   43008	SndBlock.ir
+100%  
+	    New File  		      16	SndBlock.ir.hash
+100%  
+	    New File  		     176	SndBlock.ir.sig
+100%  
+	    New File  		      16	SndBlock.ir.sig.hash
+100%  
+	    New File  		   58240	SndBlock.olean
+100%  
+	    New File  		      16	SndBlock.olean.hash
+100%  
+	    New File  		  597656	SndBlock.olean.private
+100%  
+	    New File  		      16	SndBlock.olean.private.hash
+100%  
+	    New File  		    3472	SndBlock.olean.server
+100%  
+	    New File  		      16	SndBlock.olean.server.hash
+100%  
+	    New File  		    4015	SndBlock.trace
+100%  
+	    New File  		  117835	StepAlgebra.ilean
+100%  
+	    New File  		      16	StepAlgebra.ilean.hash
+100%  
+	    New File  		   30488	StepAlgebra.ir
+100%  
+	    New File  		      16	StepAlgebra.ir.hash
+100%  
+	    New File  		     176	StepAlgebra.ir.sig
+100%  
+	    New File  		      16	StepAlgebra.ir.sig.hash
+100%  
+	    New File  		  182344	StepAlgebra.olean
+100%  
+	    New File  		      16	StepAlgebra.olean.hash
+100%  
+	    New File  		  911648	StepAlgebra.olean.private
+100%  
+	    New File  		      16	StepAlgebra.olean.private.hash
+100%  
+	    New File  		   26432	StepAlgebra.olean.server
+100%  
+	    New File  		      16	StepAlgebra.olean.server.hash
+100%  
+	    New File  		    3967	StepAlgebra.trace
+100%  
+	    New File  		   59096	StringOps.ilean
+100%  
+	    New File  		      16	StringOps.ilean.hash
+100%  
+	    New File  		   22896	StringOps.ir
+100%  
+	    New File  		      16	StringOps.ir.hash
+100%  
+	    New File  		     176	StringOps.ir.sig
+100%  
+	    New File  		      16	StringOps.ir.sig.hash
+100%  
+	    New File  		   94464	StringOps.olean
+100%  
+	    New File  		      16	StringOps.olean.hash
+100%  
+	    New File  		  521144	StringOps.olean.private
+100%  
+	    New File  		      16	StringOps.olean.private.hash
+100%  
+	    New File  		   13392	StringOps.olean.server
+100%  
+	    New File  		      16	StringOps.olean.server.hash
+100%  
+	    New File  		    3580	StringOps.trace
+100%  
+	    New File  		  123323	TakeLen.ilean
+100%  
+	    New File  		      16	TakeLen.ilean.hash
+100%  
+	    New File  		   66208	TakeLen.ir
+100%  
+	    New File  		      16	TakeLen.ir.hash
+100%  
+	    New File  		     176	TakeLen.ir.sig
+100%  
+	    New File  		      16	TakeLen.ir.sig.hash
+100%  
+	    New File  		  184128	TakeLen.olean
+100%  
+	    New File  		      16	TakeLen.olean.hash
+100%  
+	    New File  		   1.0 m	TakeLen.olean.private
+ 96%  
+100%  
+	    New File  		      16	TakeLen.olean.private.hash
+100%  
+	    New File  		   11760	TakeLen.olean.server
+100%  
+	    New File  		      16	TakeLen.olean.server.hash
+100%  
+	    New File  		    4109	TakeLen.trace
+100%  
+	    New File  		    2229	Vec.ilean
+100%  
+	    New File  		      16	Vec.ilean.hash
+100%  
+	    New File  		    1872	Vec.ir
+100%  
+	    New File  		      16	Vec.ir.hash
+100%  
+	    New File  		     176	Vec.ir.sig
+100%  
+	    New File  		      16	Vec.ir.sig.hash
+100%  
+	    New File  		    6832	Vec.olean
+100%  
+	    New File  		      16	Vec.olean.hash
+100%  
+	    New File  		    6472	Vec.olean.private
+100%  
+	    New File  		      16	Vec.olean.private.hash
+100%  
+	    New File  		    2536	Vec.olean.server
+100%  
+	    New File  		      16	Vec.olean.server.hash
+100%  
+	    New File  		    3878	Vec.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\FinsetDomain\
+	    New File  		   98650	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		   87104	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		  159088	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  888408	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		   13560	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4615	Internal.trace
+100%  
+	  New Dir         39	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\Internal\
+	    New File  		    3326	Composition.ilean
+100%  
+	    New File  		      16	Composition.ilean.hash
+100%  
+	    New File  		    2128	Composition.ir
+100%  
+	    New File  		      16	Composition.ir.hash
+100%  
+	    New File  		     176	Composition.ir.sig
+100%  
+	    New File  		      16	Composition.ir.sig.hash
+100%  
+	    New File  		    6552	Composition.olean
+100%  
+	    New File  		      16	Composition.olean.hash
+100%  
+	    New File  		   22448	Composition.olean.private
+100%  
+	    New File  		      16	Composition.olean.private.hash
+100%  
+	    New File  		    1648	Composition.olean.server
+100%  
+	    New File  		      16	Composition.olean.server.hash
+100%  
+	    New File  		    3951	Composition.trace
+100%  
+	    New File  		    5346	NormalForm.ilean
+100%  
+	    New File  		      16	NormalForm.ilean.hash
+100%  
+	    New File  		    1576	NormalForm.ir
+100%  
+	    New File  		      16	NormalForm.ir.hash
+100%  
+	    New File  		     176	NormalForm.ir.sig
+100%  
+	    New File  		      16	NormalForm.ir.sig.hash
+100%  
+	    New File  		    9352	NormalForm.olean
+100%  
+	    New File  		      16	NormalForm.olean.hash
+100%  
+	    New File  		   32064	NormalForm.olean.private
+100%  
+	    New File  		      16	NormalForm.olean.private.hash
+100%  
+	    New File  		    2200	NormalForm.olean.server
+100%  
+	    New File  		      16	NormalForm.olean.server.hash
+100%  
+	    New File  		    3487	NormalForm.trace
+100%  
+	    New File  		    3466	Preimage.ilean
+100%  
+	    New File  		      16	Preimage.ilean.hash
+100%  
+	    New File  		    1928	Preimage.ir
+100%  
+	    New File  		      16	Preimage.ir.hash
+100%  
+	    New File  		     176	Preimage.ir.sig
+100%  
+	    New File  		      16	Preimage.ir.sig.hash
+100%  
+	    New File  		    6856	Preimage.olean
+100%  
+	    New File  		      16	Preimage.olean.hash
+100%  
+	    New File  		   30904	Preimage.olean.private
+100%  
+	    New File  		      16	Preimage.olean.private.hash
+100%  
+	    New File  		    1712	Preimage.olean.server
+100%  
+	    New File  		      16	Preimage.olean.server.hash
+100%  
+	    New File  		    3719	Preimage.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\PairWithInput\
+	    New File  		    3676	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    2008	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		    9864	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		   28432	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    1440	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    3782	Internal.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\P\UnaryLength\
+	    New File  		    2722	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    1920	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		    6048	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		   11344	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    1440	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    3727	Internal.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\PCP\
+	    New File  		   12159	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    7656	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   61440	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   63928	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		   10664	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    5052	Defs.trace
+100%  
+	  New Dir        533	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Classes\PCP\Internal\
+	    New File  		   41439	AlgFamily.ilean
+100%  
+	    New File  		      16	AlgFamily.ilean.hash
+100%  
+	    New File  		    1888	AlgFamily.ir
+100%  
+	    New File  		      16	AlgFamily.ir.hash
+100%  
+	    New File  		     176	AlgFamily.ir.sig
+100%  
+	    New File  		      16	AlgFamily.ir.sig.hash
+100%  
+	    New File  		   46000	AlgFamily.olean
+100%  
+	    New File  		      16	AlgFamily.olean.hash
+100%  
+	    New File  		  292776	AlgFamily.olean.private
+100%  
+	    New File  		      16	AlgFamily.olean.private.hash
+100%  
+	    New File  		    6584	AlgFamily.olean.server
+100%  
+	    New File  		      16	AlgFamily.olean.server.hash
+100%  
+	    New File  		    3943	AlgFamily.trace
+100%  
+	    New File  		   37410	AlgLevel.ilean
+100%  
+	    New File  		      16	AlgLevel.ilean.hash
+100%  
+	    New File  		   10016	AlgLevel.ir
+100%  
+	    New File  		      16	AlgLevel.ir.hash
+100%  
+	    New File  		     176	AlgLevel.ir.sig
+100%  
+	    New File  		      16	AlgLevel.ir.sig.hash
+100%  
+	    New File  		   76888	AlgLevel.olean
+100%  
+	    New File  		      16	AlgLevel.olean.hash
+100%  
+	    New File  		  494040	AlgLevel.olean.private
+100%  
+	    New File  		      16	AlgLevel.olean.private.hash
+100%  
+	    New File  		    9376	AlgLevel.olean.server
+100%  
+	    New File  		      16	AlgLevel.olean.server.hash
+100%  
+	    New File  		    3733	AlgLevel.trace
+100%  
+	    New File  		   12664	BinToUnary.ilean
+100%  
+	    New File  		      16	BinToUnary.ilean.hash
+100%  
+	    New File  		    9000	BinToUnary.ir
+100%  
+	    New File  		      16	BinToUnary.ir.hash
+100%  
+	    New File  		     176	BinToUnary.ir.sig
+100%  
+	    New File  		      16	BinToUnary.ir.sig.hash
+100%  
+	    New File  		   22520	BinToUnary.olean
+100%  
+	    New File  		      16	BinToUnary.olean.hash
+100%  
+	    New File  		  128384	BinToUnary.olean.private
+100%  
+	    New File  		      16	BinToUnary.olean.private.hash
+100%  
+	    New File  		    4824	BinToUnary.olean.server
+100%  
+	    New File  		      16	BinToUnary.olean.server.hash
+100%  
+	    New File  		    3538	BinToUnary.trace
+100%  
+	    New File  		   75314	Cheeger.ilean
+100%  
+	    New File  		      16	Cheeger.ilean.hash
+100%  
+	    New File  		    3000	Cheeger.ir
+100%  
+	    New File  		      16	Cheeger.ir.hash
+100%  
+	    New File  		     176	Cheeger.ir.sig
+100%  
+	    New File  		      16	Cheeger.ir.sig.hash
+100%  
+	    New File  		   59784	Cheeger.olean
+100%  
+	    New File  		      16	Cheeger.olean.hash
+100%  
+	    New File  		   1.4 m	Cheeger.olean.private
+ 70%  
+100%  
+	    New File  		      16	Cheeger.olean.private.hash
+100%  
+	    New File  		   12712	Cheeger.olean.server
+100%  
+	    New File  		      16	Cheeger.olean.server.hash
+100%  
+	    New File  		    3736	Cheeger.trace
+100%  
+	    New File  		   18219	CoinEnum.ilean
+100%  
+	    New File  		      16	CoinEnum.ilean.hash
+100%  
+	    New File  		    3864	CoinEnum.ir
+100%  
+	    New File  		      16	CoinEnum.ir.hash
+100%  
+	    New File  		     176	CoinEnum.ir.sig
+100%  
+	    New File  		      16	CoinEnum.ir.sig.hash
+100%  
+	    New File  		   29568	CoinEnum.olean
+100%  
+	    New File  		      16	CoinEnum.olean.hash
+100%  
+	    New File  		  119608	CoinEnum.olean.private
+100%  
+	    New File  		      16	CoinEnum.olean.private.hash
+100%  
+	    New File  		    5712	CoinEnum.olean.server
+100%  
+	    New File  		      16	CoinEnum.olean.server.hash
+100%  
+	    New File  		    4420	CoinEnum.trace
+100%  
+	    New File  		   52977	DataScan.ilean
+100%  
+	    New File  		      16	DataScan.ilean.hash
+100%  
+	    New File  		   17800	DataScan.ir
+100%  
+	    New File  		      16	DataScan.ir.hash
+100%  
+	    New File  		     176	DataScan.ir.sig
+100%  
+	    New File  		      16	DataScan.ir.sig.hash
+100%  
+	    New File  		   63144	DataScan.olean
+100%  
+	    New File  		      16	DataScan.olean.hash
+100%  
+	    New File  		  401720	DataScan.olean.private
+100%  
+	    New File  		      16	DataScan.olean.private.hash
+100%  
+	    New File  		   15664	DataScan.olean.server
+100%  
+	    New File  		      16	DataScan.olean.server.hash
+100%  
+	    New File  		    4515	DataScan.trace
+100%  
+	    New File  		   19456	DataScanSpec.ilean
+100%  
+	    New File  		      16	DataScanSpec.ilean.hash
+100%  
+	    New File  		   13008	DataScanSpec.ir
+100%  
+	    New File  		      16	DataScanSpec.ir.hash
+100%  
+	    New File  		     176	DataScanSpec.ir.sig
+100%  
+	    New File  		      16	DataScanSpec.ir.sig.hash
+100%  
+	    New File  		   36496	DataScanSpec.olean
+100%  
+	    New File  		      16	DataScanSpec.olean.hash
+100%  
+	    New File  		  324568	DataScanSpec.olean.private
+100%  
+	    New File  		      16	DataScanSpec.olean.private.hash
+100%  
+	    New File  		    6304	DataScanSpec.olean.server
+100%  
+	    New File  		      16	DataScanSpec.olean.server.hash
+100%  
+	    New File  		    3525	DataScanSpec.trace
+100%  
+	    New File  		   17662	EdgeExpansion.ilean
+100%  
+	    New File  		      16	EdgeExpansion.ilean.hash
+100%  
+	    New File  		    7056	EdgeExpansion.ir
+100%  
+	    New File  		      16	EdgeExpansion.ir.hash
+100%  
+	    New File  		     176	EdgeExpansion.ir.sig
+100%  
+	    New File  		      16	EdgeExpansion.ir.sig.hash
+100%  
+	    New File  		   33296	EdgeExpansion.olean
+100%  
+	    New File  		      16	EdgeExpansion.olean.hash
+100%  
+	    New File  		  395600	EdgeExpansion.olean.private
+100%  
+	    New File  		      16	EdgeExpansion.olean.private.hash
+100%  
+	    New File  		    4672	EdgeExpansion.olean.server
+100%  
+	    New File  		      16	EdgeExpansion.olean.server.hash
+100%  
+	    New File  		    3555	EdgeExpansion.trace
+100%  
+	    New File  		   16276	Expander.ilean
+100%  
+	    New File  		      16	Expander.ilean.hash
+100%  
+	    New File  		    4560	Expander.ir
+100%  
+	    New File  		      16	Expander.ir.hash
+100%  
+	    New File  		     176	Expander.ir.sig
+100%  
+	    New File  		      16	Expander.ir.sig.hash
+100%  
+	    New File  		   72512	Expander.olean
+100%  
+	    New File  		      16	Expander.olean.hash
+100%  
+	    New File  		   89376	Expander.olean.private
+100%  
+	    New File  		      16	Expander.olean.private.hash
+100%  
+	    New File  		    9784	Expander.olean.server
+100%  
+	    New File  		      16	Expander.olean.server.hash
+100%  
+	    New File  		    3717	Expander.trace
+100%  
+	    New File  		   13759	ExpanderExists.ilean
+100%  
+	    New File  		      16	ExpanderExists.ilean.hash
+100%  
+	    New File  		    1992	ExpanderExists.ir
+100%  
+	    New File  		      16	ExpanderExists.ir.hash
+100%  
+	    New File  		     176	ExpanderExists.ir.sig
+100%  
+	    New File  		      16	ExpanderExists.ir.sig.hash
+100%  
+	    New File  		   35304	ExpanderExists.olean
+100%  
+	    New File  		      16	ExpanderExists.olean.hash
+100%  
+	    New File  		   41488	ExpanderExists.olean.private
+100%  
+	    New File  		      16	ExpanderExists.olean.private.hash
+100%  
+	    New File  		    7264	ExpanderExists.olean.server
+100%  
+	    New File  		      16	ExpanderExists.olean.server.hash
+100%  
+	    New File  		    4187	ExpanderExists.trace
+100%  
+	    New File  		   14061	ExpanderMerge.ilean
+100%  
+	    New File  		      16	ExpanderMerge.ilean.hash
+100%  
+	    New File  		    6712	ExpanderMerge.ir
+100%  
+	    New File  		      16	ExpanderMerge.ir.hash
+100%  
+	    New File  		     176	ExpanderMerge.ir.sig
+100%  
+	    New File  		      16	ExpanderMerge.ir.sig.hash
+100%  
+	    New File  		   37008	ExpanderMerge.olean
+100%  
+	    New File  		      16	ExpanderMerge.olean.hash
+100%  
+	    New File  		  310864	ExpanderMerge.olean.private
+100%  
+	    New File  		      16	ExpanderMerge.olean.private.hash
+100%  
+	    New File  		    5360	ExpanderMerge.olean.server
+100%  
+	    New File  		      16	ExpanderMerge.olean.server.hash
+100%  
+	    New File  		    3758	ExpanderMerge.trace
+100%  
+	    New File  		   36412	ExpanderPad.ilean
+100%  
+	    New File  		      16	ExpanderPad.ilean.hash
+100%  
+	    New File  		   20032	ExpanderPad.ir
+100%  
+	    New File  		      16	ExpanderPad.ir.hash
+100%  
+	    New File  		     176	ExpanderPad.ir.sig
+100%  
+	    New File  		      16	ExpanderPad.ir.sig.hash
+100%  
+	    New File  		   83248	ExpanderPad.olean
+100%  
+	    New File  		      16	ExpanderPad.olean.hash
+100%  
+	    New File  		  446520	ExpanderPad.olean.private
+100%  
+	    New File  		      16	ExpanderPad.olean.private.hash
+100%  
+	    New File  		   10488	ExpanderPad.olean.server
+100%  
+	    New File  		      16	ExpanderPad.olean.server.hash
+100%  
+	    New File  		    3906	ExpanderPad.trace
+100%  
+	    New File  		   22031	ExpanderRandom.ilean
+100%  
+	    New File  		      16	ExpanderRandom.ilean.hash
+100%  
+	    New File  		    6024	ExpanderRandom.ir
+100%  
+	    New File  		      16	ExpanderRandom.ir.hash
+100%  
+	    New File  		     176	ExpanderRandom.ir.sig
+100%  
+	    New File  		      16	ExpanderRandom.ir.sig.hash
+100%  
+	    New File  		   27392	ExpanderRandom.olean
+100%  
+	    New File  		      16	ExpanderRandom.olean.hash
+100%  
+	    New File  		  534848	ExpanderRandom.olean.private
+100%  
+	    New File  		      16	ExpanderRandom.olean.private.hash
+100%  
+	    New File  		    5552	ExpanderRandom.olean.server
+100%  
+	    New File  		      16	ExpanderRandom.olean.server.hash
+100%  
+	    New File  		    3773	ExpanderRandom.trace
+100%  
+	    New File  		   60913	FamilyFin.ilean
+100%  
+	    New File  		      16	FamilyFin.ilean.hash
+100%  
+	    New File  		    4608	FamilyFin.ir
+100%  
+	    New File  		      16	FamilyFin.ir.hash
+100%  
+	    New File  		     176	FamilyFin.ir.sig
+100%  
+	    New File  		      16	FamilyFin.ir.sig.hash
+100%  
+	    New File  		  102880	FamilyFin.olean
+100%  
+	    New File  		      16	FamilyFin.olean.hash
+100%  
+	    New File  		  653032	FamilyFin.olean.private
+100%  
+	    New File  		      16	FamilyFin.olean.private.hash
+100%  
+	    New File  		   18856	FamilyFin.olean.server
+100%  
+	    New File  		      16	FamilyFin.olean.server.hash
+100%  
+	    New File  		    3734	FamilyFin.trace
+100%  
+	    New File  		   10074	FiniteKey.ilean
+100%  
+	    New File  		      16	FiniteKey.ilean.hash
+100%  
+	    New File  		    2184	FiniteKey.ir
+100%  
+	    New File  		      16	FiniteKey.ir.hash
+100%  
+	    New File  		     176	FiniteKey.ir.sig
+100%  
+	    New File  		      16	FiniteKey.ir.sig.hash
+100%  
+	    New File  		   17224	FiniteKey.olean
+100%  
+	    New File  		      16	FiniteKey.olean.hash
+100%  
+	    New File  		   78544	FiniteKey.olean.private
+100%  
+	    New File  		      16	FiniteKey.olean.private.hash
+100%  
+	    New File  		    3872	FiniteKey.olean.server
+100%  
+	    New File  		      16	FiniteKey.olean.server.hash
+100%  
+	    New File  		    4112	FiniteKey.trace
+100%  
+	    New File  		   22369	ListEncode.ilean
+100%  
+	    New File  		      16	ListEncode.ilean.hash
+100%  
+	    New File  		    7928	ListEncode.ir
+100%  
+	    New File  		      16	ListEncode.ir.hash
+100%  
+	    New File  		     176	ListEncode.ir.sig
+100%  
+	    New File  		      16	ListEncode.ir.sig.hash
+100%  
+	    New File  		   33672	ListEncode.olean
+100%  
+	    New File  		      16	ListEncode.olean.hash
+100%  
+	    New File  		  150640	ListEncode.olean.private
+100%  
+	    New File  		      16	ListEncode.olean.private.hash
+100%  
+	    New File  		    5640	ListEncode.olean.server
+100%  
+	    New File  		      16	ListEncode.olean.server.hash
+100%  
+	    New File  		    3540	ListEncode.trace
+100%  
+	    New File  		   38829	Materialize.ilean
+100%  
+	    New File  		      16	Materialize.ilean.hash
+100%  
+	    New File  		    1888	Materialize.ir
+100%  
+	    New File  		      16	Materialize.ir.hash
+100%  
+	    New File  		     176	Materialize.ir.sig
+100%  
+	    New File  		      16	Materialize.ir.sig.hash
+100%  
+	    New File  		   38696	Materialize.olean
+100%  
+	    New File  		      16	Materialize.olean.hash
+100%  
+	    New File  		  368504	Materialize.olean.private
+100%  
+	    New File  		      16	Materialize.olean.private.hash
+100%  
+	    New File  		    9992	Materialize.olean.server
+100%  
+	    New File  		      16	Materialize.olean.server.hash
+100%  
+	    New File  		    3963	Materialize.trace
+100%  
+	    New File  		   54970	MergeGen.ilean
+100%  
+	    New File  		      16	MergeGen.ilean.hash
+100%  
+	    New File  		   18680	MergeGen.ir
+100%  
+	    New File  		      16	MergeGen.ir.hash
+100%  
+	    New File  		     176	MergeGen.ir.sig
+100%  
+	    New File  		      16	MergeGen.ir.sig.hash
+100%  
+	    New File  		  121056	MergeGen.olean
+100%  
+	    New File  		      16	MergeGen.olean.hash
+100%  
+	    New File  		  864888	MergeGen.olean.private
+100%  
+	    New File  		      16	MergeGen.olean.private.hash
+100%  
+	    New File  		   10920	MergeGen.olean.server
+100%  
+	    New File  		      16	MergeGen.olean.server.hash
+100%  
+	    New File  		    3696	MergeGen.trace
+100%  
+	    New File  		   20307	Mixing.ilean
+100%  
+	    New File  		      16	Mixing.ilean.hash
+100%  
+	    New File  		    1664	Mixing.ir
+100%  
+	    New File  		      16	Mixing.ir.hash
+100%  
+	    New File  		     176	Mixing.ir.sig
+100%  
+	    New File  		      16	Mixing.ir.sig.hash
+100%  
+	    New File  		   29784	Mixing.olean
+100%  
+	    New File  		      16	Mixing.olean.hash
+100%  
+	    New File  		  339760	Mixing.olean.private
+100%  
+	    New File  		      16	Mixing.olean.private.hash
+100%  
+	    New File  		    6312	Mixing.olean.server
+100%  
+	    New File  		      16	Mixing.olean.server.hash
+100%  
+	    New File  		    3518	Mixing.trace
+100%  
+	    New File  		   24795	NatEncode.ilean
+100%  
+	    New File  		      16	NatEncode.ilean.hash
+100%  
+	    New File  		    8592	NatEncode.ir
+100%  
+	    New File  		      16	NatEncode.ir.hash
+100%  
+	    New File  		     176	NatEncode.ir.sig
+100%  
+	    New File  		      16	NatEncode.ir.sig.hash
+100%  
+	    New File  		   31352	NatEncode.olean
+100%  
+	    New File  		      16	NatEncode.olean.hash
+100%  
+	    New File  		  176920	NatEncode.olean.private
+100%  
+	    New File  		      16	NatEncode.olean.private.hash
+100%  
+	    New File  		    7512	NatEncode.olean.server
+100%  
+	    New File  		      16	NatEncode.olean.server.hash
+100%  
+	    New File  		    3742	NatEncode.trace
+100%  
+	    New File  		   32005	NumEnc.ilean
+100%  
+	    New File  		      16	NumEnc.ilean.hash
+100%  
+	    New File  		   31624	NumEnc.ir
+100%  
+	    New File  		      16	NumEnc.ir.hash
+100%  
+	    New File  		     176	NumEnc.ir.sig
+100%  
+	    New File  		      16	NumEnc.ir.sig.hash
+100%  
+	    New File  		  162944	NumEnc.olean
+100%  
+	    New File  		      16	NumEnc.olean.hash
+100%  
+	    New File  		  437560	NumEnc.olean.private
+100%  
+	    New File  		      16	NumEnc.olean.private.hash
+100%  
+	    New File  		    9736	NumEnc.olean.server
+100%  
+	    New File  		      16	NumEnc.olean.server.hash
+100%  
+	    New File  		    4076	NumEnc.trace
+100%  
+	    New File  		   43735	PCPtoSAT.ilean
+100%  
+	    New File  		      16	PCPtoSAT.ilean.hash
+100%  
+	    New File  		   51808	PCPtoSAT.ir
+100%  
+	    New File  		      16	PCPtoSAT.ir.hash
+100%  
+	    New File  		     176	PCPtoSAT.ir.sig
+100%  
+	    New File  		      16	PCPtoSAT.ir.sig.hash
+100%  
+	    New File  		   85544	PCPtoSAT.olean
+100%  
+	    New File  		      16	PCPtoSAT.olean.hash
+100%  
+	    New File  		  470440	PCPtoSAT.olean.private
+100%  
+	    New File  		      16	PCPtoSAT.olean.private.hash
+100%  
+	    New File  		   10136	PCPtoSAT.olean.server
+100%  
+	    New File  		      16	PCPtoSAT.olean.server.hash
+100%  
+	    New File  		    4012	PCPtoSAT.trace
+100%  
+	    New File  		   19522	PermArith.ilean
+100%  
+	    New File  		      16	PermArith.ilean.hash
+100%  
+	    New File  		    2208	PermArith.ir
+100%  
+	    New File  		      16	PermArith.ir.hash
+100%  
+	    New File  		     176	PermArith.ir.sig
+100%  
+	    New File  		      16	PermArith.ir.sig.hash
+100%  
+	    New File  		   19048	PermArith.olean
+100%  
+	    New File  		      16	PermArith.olean.hash
+100%  
+	    New File  		  744768	PermArith.olean.private
+100%  
+	    New File  		      16	PermArith.olean.private.hash
+100%  
+	    New File  		    6168	PermArith.olean.server
+100%  
+	    New File  		      16	PermArith.olean.server.hash
+100%  
+	    New File  		    4025	PermArith.trace
+100%  
+	    New File  		   20744	PermCount.ilean
+100%  
+	    New File  		      16	PermCount.ilean.hash
+100%  
+	    New File  		    2200	PermCount.ir
+100%  
+	    New File  		      16	PermCount.ir.hash
+100%  
+	    New File  		     176	PermCount.ir.sig
+100%  
+	    New File  		      16	PermCount.ir.sig.hash
+100%  
+	    New File  		   35104	PermCount.olean
+100%  
+	    New File  		      16	PermCount.olean.hash
+100%  
+	    New File  		  223784	PermCount.olean.private
+100%  
+	    New File  		      16	PermCount.olean.private.hash
+100%  
+	    New File  		    5656	PermCount.olean.server
+100%  
+	    New File  		      16	PermCount.olean.server.hash
+100%  
+	    New File  		    4020	PermCount.trace
+100%  
+	    New File  		   20115	PermGraph.ilean
+100%  
+	    New File  		      16	PermGraph.ilean.hash
+100%  
+	    New File  		   14544	PermGraph.ir
+100%  
+	    New File  		      16	PermGraph.ir.hash
+100%  
+	    New File  		     176	PermGraph.ir.sig
+100%  
+	    New File  		      16	PermGraph.ir.sig.hash
+100%  
+	    New File  		   41816	PermGraph.olean
+100%  
+	    New File  		      16	PermGraph.olean.hash
+100%  
+	    New File  		  252360	PermGraph.olean.private
+100%  
+	    New File  		      16	PermGraph.olean.private.hash
+100%  
+	    New File  		    4688	PermGraph.olean.server
+100%  
+	    New File  		      16	PermGraph.olean.server.hash
+100%  
+	    New File  		    3734	PermGraph.trace
+100%  
+	    New File  		   15217	PositionsFP.ilean
+100%  
+	    New File  		      16	PositionsFP.ilean.hash
+100%  
+	    New File  		    8776	PositionsFP.ir
+100%  
+	    New File  		      16	PositionsFP.ir.hash
+100%  
+	    New File  		     176	PositionsFP.ir.sig
+100%  
+	    New File  		      16	PositionsFP.ir.sig.hash
+100%  
+	    New File  		   90824	PositionsFP.olean
+100%  
+	    New File  		      16	PositionsFP.olean.hash
+100%  
+	    New File  		  194592	PositionsFP.olean.private
+100%  
+	    New File  		      16	PositionsFP.olean.private.hash
+100%  
+	    New File  		    3256	PositionsFP.olean.server
+100%  
+	    New File  		      16	PositionsFP.olean.server.hash
+100%  
+	    New File  		    3549	PositionsFP.trace
+100%  
+	    New File  		   16234	PosScan.ilean
+100%  
+	    New File  		      16	PosScan.ilean.hash
+100%  
+	    New File  		    4808	PosScan.ir
+100%  
+	    New File  		      16	PosScan.ir.hash
+100%  
+	    New File  		     176	PosScan.ir.sig
+100%  
+	    New File  		      16	PosScan.ir.sig.hash
+100%  
+	    New File  		   33328	PosScan.olean
+100%  
+	    New File  		      16	PosScan.olean.hash
+100%  
+	    New File  		  112680	PosScan.olean.private
+100%  
+	    New File  		      16	PosScan.olean.private.hash
+100%  
+	    New File  		    6304	PosScan.olean.server
+100%  
+	    New File  		      16	PosScan.olean.server.hash
+100%  
+	    New File  		    3923	PosScan.trace
+100%  
+	    New File  		   21282	Power.ilean
+100%  
+	    New File  		      16	Power.ilean.hash
+100%  
+	    New File  		   11232	Power.ir
+100%  
+	    New File  		      16	Power.ir.hash
+100%  
+	    New File  		     176	Power.ir.sig
+100%  
+	    New File  		      16	Power.ir.sig.hash
+100%  
+	    New File  		   37096	Power.olean
+100%  
+	    New File  		      16	Power.olean.hash
+100%  
+	    New File  		  263192	Power.olean.private
+100%  
+	    New File  		      16	Power.olean.private.hash
+100%  
+	    New File  		    8184	Power.olean.server
+100%  
+	    New File  		      16	Power.olean.server.hash
+100%  
+	    New File  		    3500	Power.trace
+100%  
+	    New File  		   29462	RegularGraph.ilean
+100%  
+	    New File  		      16	RegularGraph.ilean.hash
+100%  
+	    New File  		    6504	RegularGraph.ir
+100%  
+	    New File  		      16	RegularGraph.ir.hash
+100%  
+	    New File  		     176	RegularGraph.ir.sig
+100%  
+	    New File  		      16	RegularGraph.ir.sig.hash
+100%  
+	    New File  		   86464	RegularGraph.olean
+100%  
+	    New File  		      16	RegularGraph.olean.hash
+100%  
+	    New File  		  237376	RegularGraph.olean.private
+100%  
+	    New File  		      16	RegularGraph.olean.private.hash
+100%  
+	    New File  		   14352	RegularGraph.olean.server
+100%  
+	    New File  		      16	RegularGraph.olean.server.hash
+100%  
+	    New File  		    5191	RegularGraph.trace
+100%  
+	    New File  		   17353	StripTrailing.ilean
+100%  
+	    New File  		      16	StripTrailing.ilean.hash
+100%  
+	    New File  		    9944	StripTrailing.ir
+100%  
+	    New File  		      16	StripTrailing.ir.hash
+100%  
+	    New File  		     176	StripTrailing.ir.sig
+100%  
+	    New File  		      16	StripTrailing.ir.sig.hash
+100%  
+	    New File  		   31184	StripTrailing.olean
+100%  
+	    New File  		      16	StripTrailing.olean.hash
+100%  
+	    New File  		  138448	StripTrailing.olean.private
+100%  
+	    New File  		      16	StripTrailing.olean.private.hash
+100%  
+	    New File  		    5880	StripTrailing.olean.server
+100%  
+	    New File  		      16	StripTrailing.olean.server.hash
+100%  
+	    New File  		    3780	StripTrailing.trace
+100%  
+	    New File  		   50733	SubsetNP.ilean
+100%  
+	    New File  		      16	SubsetNP.ilean.hash
+100%  
+	    New File  		    6768	SubsetNP.ir
+100%  
+	    New File  		      16	SubsetNP.ir.hash
+100%  
+	    New File  		     176	SubsetNP.ir.sig
+100%  
+	    New File  		      16	SubsetNP.ir.sig.hash
+100%  
+	    New File  		   70264	SubsetNP.olean
+100%  
+	    New File  		      16	SubsetNP.olean.hash
+100%  
+	    New File  		  263664	SubsetNP.olean.private
+100%  
+	    New File  		      16	SubsetNP.olean.private.hash
+100%  
+	    New File  		   13496	SubsetNP.olean.server
+100%  
+	    New File  		      16	SubsetNP.olean.server.hash
+100%  
+	    New File  		    3491	SubsetNP.trace
+100%  
+	    New File  		   75602	TowerFin.ilean
+100%  
+	    New File  		      16	TowerFin.ilean.hash
+100%  
+	    New File  		   19160	TowerFin.ir
+100%  
+	    New File  		      16	TowerFin.ir.hash
+100%  
+	    New File  		     176	TowerFin.ir.sig
+100%  
+	    New File  		      16	TowerFin.ir.sig.hash
+100%  
+	    New File  		  300616	TowerFin.olean
+100%  
+	    New File  		      16	TowerFin.olean.hash
+100%  
+	    New File  		  456992	TowerFin.olean.private
+100%  
+	    New File  		      16	TowerFin.olean.private.hash
+100%  
+	    New File  		   22912	TowerFin.olean.server
+100%  
+	    New File  		      16	TowerFin.olean.server.hash
+100%  
+	    New File  		    3540	TowerFin.trace
+100%  
+	    New File  		   44324	TowerTable.ilean
+100%  
+	    New File  		      16	TowerTable.ilean.hash
+100%  
+	    New File  		    3976	TowerTable.ir
+100%  
+	    New File  		      16	TowerTable.ir.hash
+100%  
+	    New File  		     176	TowerTable.ir.sig
+100%  
+	    New File  		      16	TowerTable.ir.sig.hash
+100%  
+	    New File  		   54888	TowerTable.olean
+100%  
+	    New File  		      16	TowerTable.olean.hash
+100%  
+	    New File  		  575856	TowerTable.olean.private
+100%  
+	    New File  		      16	TowerTable.olean.private.hash
+100%  
+	    New File  		    9584	TowerTable.olean.server
+100%  
+	    New File  		      16	TowerTable.olean.server.hash
+100%  
+	    New File  		    4134	TowerTable.trace
+100%  
+	    New File  		   33277	UnaryDivMod.ilean
+100%  
+	    New File  		      16	UnaryDivMod.ilean.hash
+100%  
+	    New File  		   11464	UnaryDivMod.ir
+100%  
+	    New File  		      16	UnaryDivMod.ir.hash
+100%  
+	    New File  		     176	UnaryDivMod.ir.sig
+100%  
+	    New File  		      16	UnaryDivMod.ir.sig.hash
+100%  
+	    New File  		  110488	UnaryDivMod.olean
+100%  
+	    New File  		      16	UnaryDivMod.olean.hash
+100%  
+	    New File  		  401976	UnaryDivMod.olean.private
+100%  
+	    New File  		      16	UnaryDivMod.olean.private.hash
+100%  
+	    New File  		    9456	UnaryDivMod.olean.server
+100%  
+	    New File  		      16	UnaryDivMod.olean.server.hash
+100%  
+	    New File  		    3782	UnaryDivMod.trace
+100%  
+	    New File  		   57943	UnaryList.ilean
+100%  
+	    New File  		      16	UnaryList.ilean.hash
+100%  
+	    New File  		   14744	UnaryList.ir
+100%  
+	    New File  		      16	UnaryList.ir.hash
+100%  
+	    New File  		     176	UnaryList.ir.sig
+100%  
+	    New File  		      16	UnaryList.ir.sig.hash
+100%  
+	    New File  		  112232	UnaryList.olean
+100%  
+	    New File  		      16	UnaryList.olean.hash
+100%  
+	    New File  		  322144	UnaryList.olean.private
+100%  
+	    New File  		      16	UnaryList.olean.private.hash
+100%  
+	    New File  		   20968	UnaryList.olean.server
+100%  
+	    New File  		      16	UnaryList.olean.server.hash
+100%  
+	    New File  		    3943	UnaryList.trace
+100%  
+	    New File  		   29251	Union.ilean
+100%  
+	    New File  		      16	Union.ilean.hash
+100%  
+	    New File  		   14736	Union.ir
+100%  
+	    New File  		      16	Union.ir.hash
+100%  
+	    New File  		     176	Union.ir.sig
+100%  
+	    New File  		      16	Union.ir.sig.hash
+100%  
+	    New File  		   46080	Union.olean
+100%  
+	    New File  		      16	Union.olean.hash
+100%  
+	    New File  		  435680	Union.olean.private
+100%  
+	    New File  		      16	Union.olean.private.hash
+100%  
+	    New File  		    7104	Union.olean.server
+100%  
+	    New File  		      16	Union.olean.server.hash
+100%  
+	    New File  		    3508	Union.trace
+100%  
+	    New File  		   10526	Walk.ilean
+100%  
+	    New File  		      16	Walk.ilean.hash
+100%  
+	    New File  		    9208	Walk.ir
+100%  
+	    New File  		      16	Walk.ir.hash
+100%  
+	    New File  		     176	Walk.ir.sig
+100%  
+	    New File  		      16	Walk.ir.sig.hash
+100%  
+	    New File  		   76456	Walk.olean
+100%  
+	    New File  		      16	Walk.olean.hash
+100%  
+	    New File  		  156744	Walk.olean.private
+100%  
+	    New File  		      16	Walk.olean.private.hash
+100%  
+	    New File  		    4608	Walk.olean.server
+100%  
+	    New File  		      16	Walk.olean.server.hash
+100%  
+	    New File  		    3655	Walk.trace
+100%  
+	    New File  		   18933	WalkPath.ilean
+100%  
+	    New File  		      16	WalkPath.ilean.hash
+100%  
+	    New File  		   11304	WalkPath.ir
+100%  
+	    New File  		      16	WalkPath.ir.hash
+100%  
+	    New File  		     176	WalkPath.ir.sig
+100%  
+	    New File  		      16	WalkPath.ir.sig.hash
+100%  
+	    New File  		   99064	WalkPath.olean
+100%  
+	    New File  		      16	WalkPath.olean.hash
+100%  
+	    New File  		  213592	WalkPath.olean.private
+100%  
+	    New File  		      16	WalkPath.olean.private.hash
+100%  
+	    New File  		    9360	WalkPath.olean.server
+100%  
+	    New File  		      16	WalkPath.olean.server.hash
+100%  
+	    New File  		    3516	WalkPath.trace
+100%  
+	    New File  		  111814	ZigZag.ilean
+100%  
+	    New File  		      16	ZigZag.ilean.hash
+100%  
+	    New File  		   18904	ZigZag.ir
+100%  
+	    New File  		      16	ZigZag.ir.hash
+100%  
+	    New File  		     176	ZigZag.ir.sig
+100%  
+	    New File  		      16	ZigZag.ir.sig.hash
+100%  
+	    New File  		  109144	ZigZag.olean
+100%  
+	    New File  		      16	ZigZag.olean.hash
+100%  
+	    New File  		   1.2 m	ZigZag.olean.private
+ 78%  
+100%  
+	    New File  		      16	ZigZag.olean.private.hash
+100%  
+	    New File  		   29128	ZigZag.olean.server
+100%  
+	    New File  		      16	ZigZag.olean.server.hash
+100%  
+	    New File  		    3918	ZigZag.trace
+100%  
+	    New File  		   10846	ZigZagBaseExists.ilean
+100%  
+	    New File  		      16	ZigZagBaseExists.ilean.hash
+100%  
+	    New File  		    1776	ZigZagBaseExists.ir
+100%  
+	    New File  		      16	ZigZagBaseExists.ir.hash
+100%  
+	    New File  		     176	ZigZagBaseExists.ir.sig
+100%  
+	    New File  		      16	ZigZagBaseExists.ir.sig.hash
+100%  
+	    New File  		   23656	ZigZagBaseExists.olean
+100%  
+	    New File  		      16	ZigZagBaseExists.olean.hash
+100%  
+	    New File  		   60288	ZigZagBaseExists.olean.private
+100%  
+	    New File  		      16	ZigZagBaseExists.olean.private.hash
+100%  
+	    New File  		    4568	ZigZagBaseExists.olean.server
+100%  
+	    New File  		      16	ZigZagBaseExists.olean.server.hash
+100%  
+	    New File  		    3801	ZigZagBaseExists.trace
+100%  
+	    New File  		   16533	ZigZagTower.ilean
+100%  
+	    New File  		      16	ZigZagTower.ilean.hash
+100%  
+	    New File  		    1872	ZigZagTower.ir
+100%  
+	    New File  		      16	ZigZagTower.ir.hash
+100%  
+	    New File  		     176	ZigZagTower.ir.sig
+100%  
+	    New File  		      16	ZigZagTower.ir.sig.hash
+100%  
+	    New File  		   86264	ZigZagTower.olean
+100%  
+	    New File  		      16	ZigZagTower.olean.hash
+100%  
+	    New File  		  265056	ZigZagTower.olean.private
+100%  
+	    New File  		      16	ZigZagTower.olean.private.hash
+100%  
+	    New File  		    9072	ZigZagTower.olean.server
+100%  
+	    New File  		      16	ZigZagTower.olean.server.hash
+100%  
+	    New File  		    3947	ZigZagTower.trace
+100%  
+	  New Dir         52	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Encoding\
+	    New File  		   21427	Data.ilean
+100%  
+	    New File  		      16	Data.ilean.hash
+100%  
+	    New File  		   54696	Data.ir
+100%  
+	    New File  		      16	Data.ir.hash
+100%  
+	    New File  		     176	Data.ir.sig
+100%  
+	    New File  		      16	Data.ir.sig.hash
+100%  
+	    New File  		  129608	Data.olean
+100%  
+	    New File  		      16	Data.olean.hash
+100%  
+	    New File  		  375536	Data.olean.private
+100%  
+	    New File  		      16	Data.olean.private.hash
+100%  
+	    New File  		   11408	Data.olean.server
+100%  
+	    New File  		      16	Data.olean.server.hash
+100%  
+	    New File  		    4265	Data.trace
+100%  
+	    New File  		   12122	DataEncode.ilean
+100%  
+	    New File  		      16	DataEncode.ilean.hash
+100%  
+	    New File  		   16288	DataEncode.ir
+100%  
+	    New File  		      16	DataEncode.ir.hash
+100%  
+	    New File  		     176	DataEncode.ir.sig
+100%  
+	    New File  		      16	DataEncode.ir.sig.hash
+100%  
+	    New File  		   87120	DataEncode.olean
+100%  
+	    New File  		      16	DataEncode.olean.hash
+100%  
+	    New File  		   88288	DataEncode.olean.private
+100%  
+	    New File  		      16	DataEncode.olean.private.hash
+100%  
+	    New File  		    6576	DataEncode.olean.server
+100%  
+	    New File  		      16	DataEncode.olean.server.hash
+100%  
+	    New File  		    3701	DataEncode.trace
+100%  
+	    New File  		   21270	Delimit.ilean
+100%  
+	    New File  		      16	Delimit.ilean.hash
+100%  
+	    New File  		   46624	Delimit.ir
+100%  
+	    New File  		      16	Delimit.ir.hash
+100%  
+	    New File  		     176	Delimit.ir.sig
+100%  
+	    New File  		      16	Delimit.ir.sig.hash
+100%  
+	    New File  		  284488	Delimit.olean
+100%  
+	    New File  		      16	Delimit.olean.hash
+100%  
+	    New File  		  239672	Delimit.olean.private
+100%  
+	    New File  		      16	Delimit.olean.private.hash
+100%  
+	    New File  		    9872	Delimit.olean.server
+100%  
+	    New File  		      16	Delimit.olean.server.hash
+100%  
+	    New File  		    4259	Delimit.trace
+100%  
+	    New File  		   24435	Pairing.ilean
+100%  
+	    New File  		      16	Pairing.ilean.hash
+100%  
+	    New File  		   16600	Pairing.ir
+100%  
+	    New File  		      16	Pairing.ir.hash
+100%  
+	    New File  		     176	Pairing.ir.sig
+100%  
+	    New File  		      16	Pairing.ir.sig.hash
+100%  
+	    New File  		  147376	Pairing.olean
+100%  
+	    New File  		      16	Pairing.olean.hash
+100%  
+	    New File  		  364608	Pairing.olean.private
+100%  
+	    New File  		      16	Pairing.olean.private.hash
+100%  
+	    New File  		    9520	Pairing.olean.server
+100%  
+	    New File  		      16	Pairing.olean.server.hash
+100%  
+	    New File  		    4273	Pairing.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Languages\
+	    New File  		   13345	Contains.ilean
+100%  
+	    New File  		      16	Contains.ilean.hash
+100%  
+	    New File  		   20480	Contains.ir
+100%  
+	    New File  		      16	Contains.ir.hash
+100%  
+	    New File  		     176	Contains.ir.sig
+100%  
+	    New File  		      16	Contains.ir.sig.hash
+100%  
+	    New File  		   16480	Contains.olean
+100%  
+	    New File  		      16	Contains.olean.hash
+100%  
+	    New File  		  107200	Contains.olean.private
+100%  
+	    New File  		      16	Contains.olean.private.hash
+100%  
+	    New File  		    5944	Contains.olean.server
+100%  
+	    New File  		      16	Contains.olean.server.hash
+100%  
+	    New File  		    3859	Contains.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Mathlib\
+	    New File  		    6159	FinsetPrefixes.ilean
+100%  
+	    New File  		      16	FinsetPrefixes.ilean.hash
+100%  
+	    New File  		    4984	FinsetPrefixes.ir
+100%  
+	    New File  		      16	FinsetPrefixes.ir.hash
+100%  
+	    New File  		     176	FinsetPrefixes.ir.sig
+100%  
+	    New File  		      16	FinsetPrefixes.ir.sig.hash
+100%  
+	    New File  		   27896	FinsetPrefixes.olean
+100%  
+	    New File  		      16	FinsetPrefixes.olean.hash
+100%  
+	    New File  		   38112	FinsetPrefixes.olean.private
+100%  
+	    New File  		      16	FinsetPrefixes.olean.private.hash
+100%  
+	    New File  		    4472	FinsetPrefixes.olean.server
+100%  
+	    New File  		      16	FinsetPrefixes.olean.server.hash
+100%  
+	    New File  		    3573	FinsetPrefixes.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\
+	    New File  		   83169	TuringMachine.ilean
+100%  
+	    New File  		      16	TuringMachine.ilean.hash
+100%  
+	    New File  		   89088	TuringMachine.ir
+100%  
+	    New File  		      16	TuringMachine.ir.hash
+100%  
+	    New File  		     176	TuringMachine.ir.sig
+100%  
+	    New File  		      16	TuringMachine.ir.sig.hash
+100%  
+	    New File  		  594224	TuringMachine.olean
+100%  
+	    New File  		      16	TuringMachine.olean.hash
+100%  
+	    New File  		  668784	TuringMachine.olean.private
+100%  
+	    New File  		      16	TuringMachine.olean.private.hash
+100%  
+	    New File  		   55864	TuringMachine.olean.server
+100%  
+	    New File  		      16	TuringMachine.olean.server.hash
+100%  
+	    New File  		    3544	TuringMachine.trace
+100%  
+	  New Dir        169	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\
+	    New File  		    8324	Branch.ilean
+100%  
+	    New File  		      16	Branch.ilean.hash
+100%  
+	    New File  		    5712	Branch.ir
+100%  
+	    New File  		      16	Branch.ir.hash
+100%  
+	    New File  		     176	Branch.ir.sig
+100%  
+	    New File  		      16	Branch.ir.sig.hash
+100%  
+	    New File  		   23800	Branch.olean
+100%  
+	    New File  		      16	Branch.olean.hash
+100%  
+	    New File  		   22976	Branch.olean.private
+100%  
+	    New File  		      16	Branch.olean.private.hash
+100%  
+	    New File  		    4440	Branch.olean.server
+100%  
+	    New File  		      16	Branch.olean.server.hash
+100%  
+	    New File  		    3508	Branch.trace
+100%  
+	    New File  		   20148	ChoiceTape.ilean
+100%  
+	    New File  		      16	ChoiceTape.ilean.hash
+100%  
+	    New File  		   34912	ChoiceTape.ir
+100%  
+	    New File  		      16	ChoiceTape.ir.hash
+100%  
+	    New File  		     176	ChoiceTape.ir.sig
+100%  
+	    New File  		      16	ChoiceTape.ir.sig.hash
+100%  
+	    New File  		   80104	ChoiceTape.olean
+100%  
+	    New File  		      16	ChoiceTape.olean.hash
+100%  
+	    New File  		  258456	ChoiceTape.olean.private
+100%  
+	    New File  		      16	ChoiceTape.olean.private.hash
+100%  
+	    New File  		    5672	ChoiceTape.olean.server
+100%  
+	    New File  		      16	ChoiceTape.olean.server.hash
+100%  
+	    New File  		    3538	ChoiceTape.trace
+100%  
+	    New File  		   59505	Combinators.ilean
+100%  
+	    New File  		      16	Combinators.ilean.hash
+100%  
+	    New File  		  195936	Combinators.ir
+100%  
+	    New File  		      16	Combinators.ir.hash
+100%  
+	    New File  		     176	Combinators.ir.sig
+100%  
+	    New File  		      16	Combinators.ir.sig.hash
+100%  
+	    New File  		  452712	Combinators.olean
+100%  
+	    New File  		      16	Combinators.olean.hash
+100%  
+	    New File  		 1021904	Combinators.olean.private
+100%  
+	    New File  		      16	Combinators.olean.private.hash
+100%  
+	    New File  		   25664	Combinators.olean.server
+100%  
+	    New File  		      16	Combinators.olean.server.hash
+100%  
+	    New File  		    3672	Combinators.trace
+100%  
+	    New File  		    3749	Composition.ilean
+100%  
+	    New File  		      16	Composition.ilean.hash
+100%  
+	    New File  		    1776	Composition.ir
+100%  
+	    New File  		      16	Composition.ir.hash
+100%  
+	    New File  		     176	Composition.ir.sig
+100%  
+	    New File  		      16	Composition.ir.sig.hash
+100%  
+	    New File  		   12240	Composition.olean
+100%  
+	    New File  		      16	Composition.olean.hash
+100%  
+	    New File  		    3344	Composition.olean.private
+100%  
+	    New File  		      16	Composition.olean.private.hash
+100%  
+	    New File  		    2560	Composition.olean.server
+100%  
+	    New File  		      16	Composition.olean.server.hash
+100%  
+	    New File  		    3782	Composition.trace
+100%  
+	    New File  		   22529	Frame.ilean
+100%  
+	    New File  		      16	Frame.ilean.hash
+100%  
+	    New File  		    3728	Frame.ir
+100%  
+	    New File  		      16	Frame.ir.hash
+100%  
+	    New File  		     176	Frame.ir.sig
+100%  
+	    New File  		      16	Frame.ir.sig.hash
+100%  
+	    New File  		   39544	Frame.olean
+100%  
+	    New File  		      16	Frame.olean.hash
+100%  
+	    New File  		  259656	Frame.olean.private
+100%  
+	    New File  		      16	Frame.olean.private.hash
+100%  
+	    New File  		    7952	Frame.olean.server
+100%  
+	    New File  		      16	Frame.olean.server.hash
+100%  
+	    New File  		    4328	Frame.trace
+100%  
+	    New File  		   33074	Hoare.ilean
+100%  
+	    New File  		      16	Hoare.ilean.hash
+100%  
+	    New File  		    2136	Hoare.ir
+100%  
+	    New File  		      16	Hoare.ir.hash
+100%  
+	    New File  		     176	Hoare.ir.sig
+100%  
+	    New File  		      16	Hoare.ir.sig.hash
+100%  
+	    New File  		   42248	Hoare.olean
+100%  
+	    New File  		      16	Hoare.olean.hash
+100%  
+	    New File  		  667528	Hoare.olean.private
+100%  
+	    New File  		      16	Hoare.olean.private.hash
+100%  
+	    New File  		    6104	Hoare.olean.server
+100%  
+	    New File  		      16	Hoare.olean.server.hash
+100%  
+	    New File  		    4215	Hoare.trace
+100%  
+	    New File  		   90410	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    6488	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   77032	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		 1023120	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		   19112	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    3667	Internal.trace
+100%  
+	    New File  		   91985	Lift.ilean
+100%  
+	    New File  		      16	Lift.ilean.hash
+100%  
+	    New File  		   35896	Lift.ir
+100%  
+	    New File  		      16	Lift.ir.hash
+100%  
+	    New File  		     176	Lift.ir.sig
+100%  
+	    New File  		      16	Lift.ir.sig.hash
+100%  
+	    New File  		   82336	Lift.olean
+100%  
+	    New File  		      16	Lift.olean.hash
+100%  
+	    New File  		  668824	Lift.olean.private
+100%  
+	    New File  		      16	Lift.olean.private.hash
+100%  
+	    New File  		   20392	Lift.olean.server
+100%  
+	    New File  		      16	Lift.olean.server.hash
+100%  
+	    New File  		    3493	Lift.trace
+100%  
+	    New File  		    5208	OutputBounds.ilean
+100%  
+	    New File  		      16	OutputBounds.ilean.hash
+100%  
+	    New File  		    1672	OutputBounds.ir
+100%  
+	    New File  		      16	OutputBounds.ir.hash
+100%  
+	    New File  		     176	OutputBounds.ir.sig
+100%  
+	    New File  		      16	OutputBounds.ir.sig.hash
+100%  
+	    New File  		   13712	OutputBounds.olean
+100%  
+	    New File  		      16	OutputBounds.olean.hash
+100%  
+	    New File  		    3536	OutputBounds.olean.private
+100%  
+	    New File  		      16	OutputBounds.olean.private.hash
+100%  
+	    New File  		    2664	OutputBounds.olean.server
+100%  
+	    New File  		      16	OutputBounds.olean.server.hash
+100%  
+	    New File  		    3572	OutputBounds.trace
+100%  
+	    New File  		   29630	OutputSemantics.ilean
+100%  
+	    New File  		      16	OutputSemantics.ilean.hash
+100%  
+	    New File  		   11000	OutputSemantics.ir
+100%  
+	    New File  		      16	OutputSemantics.ir.hash
+100%  
+	    New File  		     176	OutputSemantics.ir.sig
+100%  
+	    New File  		      16	OutputSemantics.ir.sig.hash
+100%  
+	    New File  		   64256	OutputSemantics.olean
+100%  
+	    New File  		      16	OutputSemantics.olean.hash
+100%  
+	    New File  		   31048	OutputSemantics.olean.private
+100%  
+	    New File  		      16	OutputSemantics.olean.private.hash
+100%  
+	    New File  		   13384	OutputSemantics.olean.server
+100%  
+	    New File  		      16	OutputSemantics.olean.server.hash
+100%  
+	    New File  		    3599	OutputSemantics.trace
+100%  
+	    New File  		   17974	Placement.ilean
+100%  
+	    New File  		      16	Placement.ilean.hash
+100%  
+	    New File  		    1776	Placement.ir
+100%  
+	    New File  		      16	Placement.ir.hash
+100%  
+	    New File  		     176	Placement.ir.sig
+100%  
+	    New File  		      16	Placement.ir.sig.hash
+100%  
+	    New File  		   35064	Placement.olean
+100%  
+	    New File  		      16	Placement.olean.hash
+100%  
+	    New File  		   12312	Placement.olean.private
+100%  
+	    New File  		      16	Placement.olean.private.hash
+100%  
+	    New File  		    5864	Placement.olean.server
+100%  
+	    New File  		      16	Placement.olean.server.hash
+100%  
+	    New File  		    3760	Placement.trace
+100%  
+	    New File  		   21331	Registers.ilean
+100%  
+	    New File  		      16	Registers.ilean.hash
+100%  
+	    New File  		    4640	Registers.ir
+100%  
+	    New File  		      16	Registers.ir.hash
+100%  
+	    New File  		     176	Registers.ir.sig
+100%  
+	    New File  		      16	Registers.ir.sig.hash
+100%  
+	    New File  		   36184	Registers.olean
+100%  
+	    New File  		      16	Registers.olean.hash
+100%  
+	    New File  		  185432	Registers.olean.private
+100%  
+	    New File  		      16	Registers.olean.private.hash
+100%  
+	    New File  		   13016	Registers.olean.server
+100%  
+	    New File  		      16	Registers.olean.server.hash
+100%  
+	    New File  		    3547	Registers.trace
+100%  
+	    New File  		   32524	Subroutines.ilean
+100%  
+	    New File  		      16	Subroutines.ilean.hash
+100%  
+	    New File  		   89256	Subroutines.ir
+100%  
+	    New File  		      16	Subroutines.ir.hash
+100%  
+	    New File  		     176	Subroutines.ir.sig
+100%  
+	    New File  		      16	Subroutines.ir.sig.hash
+100%  
+	    New File  		  245488	Subroutines.olean
+100%  
+	    New File  		      16	Subroutines.olean.hash
+100%  
+	    New File  		  446240	Subroutines.olean.private
+100%  
+	    New File  		      16	Subroutines.olean.private.hash
+100%  
+	    New File  		   14664	Subroutines.olean.server
+100%  
+	    New File  		      16	Subroutines.olean.server.hash
+100%  
+	    New File  		    3545	Subroutines.trace
+100%  
+	  New Dir         39	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Combinators\
+	    New File  		   19937	Apply.ilean
+100%  
+	    New File  		      16	Apply.ilean.hash
+100%  
+	    New File  		    4592	Apply.ir
+100%  
+	    New File  		      16	Apply.ir.hash
+100%  
+	    New File  		     176	Apply.ir.sig
+100%  
+	    New File  		      16	Apply.ir.sig.hash
+100%  
+	    New File  		   29776	Apply.olean
+100%  
+	    New File  		      16	Apply.olean.hash
+100%  
+	    New File  		  205896	Apply.olean.private
+100%  
+	    New File  		      16	Apply.olean.private.hash
+100%  
+	    New File  		    5864	Apply.olean.server
+100%  
+	    New File  		      16	Apply.olean.server.hash
+100%  
+	    New File  		    4049	Apply.trace
+100%  
+	    New File  		     803	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    2488	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		    2624	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		      96	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    1088	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    5329	Internal.trace
+100%  
+	    New File  		   23603	RetargetCompute.ilean
+100%  
+	    New File  		      16	RetargetCompute.ilean.hash
+100%  
+	    New File  		    1856	RetargetCompute.ir
+100%  
+	    New File  		      16	RetargetCompute.ir.hash
+100%  
+	    New File  		     176	RetargetCompute.ir.sig
+100%  
+	    New File  		      16	RetargetCompute.ir.sig.hash
+100%  
+	    New File  		   37776	RetargetCompute.olean
+100%  
+	    New File  		      16	RetargetCompute.olean.hash
+100%  
+	    New File  		    8768	RetargetCompute.olean.private
+100%  
+	    New File  		      16	RetargetCompute.olean.private.hash
+100%  
+	    New File  		    5880	RetargetCompute.olean.server
+100%  
+	    New File  		      16	RetargetCompute.olean.server.hash
+100%  
+	    New File  		    3964	RetargetCompute.trace
+100%  
+	  New Dir        104	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Combinators\Internal\
+	    New File  		   40568	Complement.ilean
+100%  
+	    New File  		      16	Complement.ilean.hash
+100%  
+	    New File  		   19544	Complement.ir
+100%  
+	    New File  		      16	Complement.ir.hash
+100%  
+	    New File  		     176	Complement.ir.sig
+100%  
+	    New File  		      16	Complement.ir.sig.hash
+100%  
+	    New File  		   68664	Complement.olean
+100%  
+	    New File  		      16	Complement.olean.hash
+100%  
+	    New File  		  483088	Complement.olean.private
+100%  
+	    New File  		      16	Complement.olean.private.hash
+100%  
+	    New File  		    5512	Complement.olean.server
+100%  
+	    New File  		      16	Complement.olean.server.hash
+100%  
+	    New File  		    4143	Complement.trace
+100%  
+	    New File  		   37212	Generic.ilean
+100%  
+	    New File  		      16	Generic.ilean.hash
+100%  
+	    New File  		    8088	Generic.ir
+100%  
+	    New File  		      16	Generic.ir.hash
+100%  
+	    New File  		     176	Generic.ir.sig
+100%  
+	    New File  		      16	Generic.ir.sig.hash
+100%  
+	    New File  		   61976	Generic.olean
+100%  
+	    New File  		      16	Generic.olean.hash
+100%  
+	    New File  		  310520	Generic.olean.private
+100%  
+	    New File  		      16	Generic.olean.private.hash
+100%  
+	    New File  		    9856	Generic.olean.server
+100%  
+	    New File  		      16	Generic.olean.server.hash
+100%  
+	    New File  		    3676	Generic.trace
+100%  
+	    New File  		   58470	If.ilean
+100%  
+	    New File  		      16	If.ilean.hash
+100%  
+	    New File  		   19000	If.ir
+100%  
+	    New File  		      16	If.ir.hash
+100%  
+	    New File  		     176	If.ir.sig
+100%  
+	    New File  		      16	If.ir.sig.hash
+100%  
+	    New File  		  101800	If.olean
+100%  
+	    New File  		      16	If.olean.hash
+100%  
+	    New File  		  496208	If.olean.private
+100%  
+	    New File  		      16	If.olean.private.hash
+100%  
+	    New File  		    9368	If.olean.server
+100%  
+	    New File  		      16	If.olean.server.hash
+100%  
+	    New File  		    3675	If.trace
+100%  
+	    New File  		   45741	Loop.ilean
+100%  
+	    New File  		      16	Loop.ilean.hash
+100%  
+	    New File  		   15056	Loop.ir
+100%  
+	    New File  		      16	Loop.ir.hash
+100%  
+	    New File  		     176	Loop.ir.sig
+100%  
+	    New File  		      16	Loop.ir.sig.hash
+100%  
+	    New File  		   79408	Loop.olean
+100%  
+	    New File  		      16	Loop.olean.hash
+100%  
+	    New File  		  431256	Loop.olean.private
+100%  
+	    New File  		      16	Loop.olean.private.hash
+100%  
+	    New File  		    8344	Loop.olean.server
+100%  
+	    New File  		      16	Loop.olean.server.hash
+100%  
+	    New File  		    3689	Loop.trace
+100%  
+	    New File  		   85749	Retarget.ilean
+100%  
+	    New File  		      16	Retarget.ilean.hash
+100%  
+	    New File  		   15928	Retarget.ir
+100%  
+	    New File  		      16	Retarget.ir.hash
+100%  
+	    New File  		     176	Retarget.ir.sig
+100%  
+	    New File  		      16	Retarget.ir.sig.hash
+100%  
+	    New File  		   82688	Retarget.olean
+100%  
+	    New File  		      16	Retarget.olean.hash
+100%  
+	    New File  		  644280	Retarget.olean.private
+100%  
+	    New File  		      16	Retarget.olean.private.hash
+100%  
+	    New File  		   16136	Retarget.olean.server
+100%  
+	    New File  		      16	Retarget.olean.server.hash
+100%  
+	    New File  		    3926	Retarget.trace
+100%  
+	    New File  		   43188	Scanner.ilean
+100%  
+	    New File  		      16	Scanner.ilean.hash
+100%  
+	    New File  		    9200	Scanner.ir
+100%  
+	    New File  		      16	Scanner.ir.hash
+100%  
+	    New File  		     176	Scanner.ir.sig
+100%  
+	    New File  		      16	Scanner.ir.sig.hash
+100%  
+	    New File  		   38248	Scanner.olean
+100%  
+	    New File  		      16	Scanner.olean.hash
+100%  
+	    New File  		  363048	Scanner.olean.private
+100%  
+	    New File  		      16	Scanner.olean.private.hash
+100%  
+	    New File  		    4904	Scanner.olean.server
+100%  
+	    New File  		      16	Scanner.olean.server.hash
+100%  
+	    New File  		    3919	Scanner.trace
+100%  
+	    New File  		   15746	Seq.ilean
+100%  
+	    New File  		      16	Seq.ilean.hash
+100%  
+	    New File  		    9328	Seq.ir
+100%  
+	    New File  		      16	Seq.ir.hash
+100%  
+	    New File  		     176	Seq.ir.sig
+100%  
+	    New File  		      16	Seq.ir.sig.hash
+100%  
+	    New File  		   53080	Seq.olean
+100%  
+	    New File  		      16	Seq.olean.hash
+100%  
+	    New File  		  135976	Seq.olean.private
+100%  
+	    New File  		      16	Seq.olean.private.hash
+100%  
+	    New File  		    5184	Seq.olean.server
+100%  
+	    New File  		      16	Seq.olean.server.hash
+100%  
+	    New File  		    3682	Seq.trace
+100%  
+	    New File  		  291702	Union.ilean
+100%  
+	    New File  		      16	Union.ilean.hash
+100%  
+	    New File  		   20192	Union.ir
+100%  
+	    New File  		      16	Union.ir.hash
+100%  
+	    New File  		     176	Union.ir.sig
+100%  
+	    New File  		      16	Union.ir.sig.hash
+100%  
+	    New File  		  114000	Union.olean
+100%  
+	    New File  		      16	Union.olean.hash
+100%  
+	    New File  		   1.7 m	Union.olean.private
+ 57%  
+100%  
+	    New File  		      16	Union.olean.private.hash
+100%  
+	    New File  		   26056	Union.olean.server
+100%  
+	    New File  		      16	Union.olean.server.hash
+100%  
+	    New File  		    3865	Union.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Combinators\RetargetCompute\
+	    New File  		   10723	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   14528	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   33440	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   45224	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    4448	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3704	Defs.trace
+100%  
+	    New File  		   45455	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    6680	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   50824	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  356296	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    6016	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4242	Internal.trace
+100%  
+	  New Dir         39	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Composition\
+	    New File  		   11515	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   10880	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   37256	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   64984	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    7424	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    4247	Defs.trace
+100%  
+	    New File  		   12145	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    1968	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   14520	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  269096	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    2088	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4102	Internal.trace
+100%  
+	    New File  		    2460	PairWithInput.ilean
+100%  
+	    New File  		      16	PairWithInput.ilean.hash
+100%  
+	    New File  		    1856	PairWithInput.ir
+100%  
+	    New File  		      16	PairWithInput.ir.hash
+100%  
+	    New File  		     176	PairWithInput.ir.sig
+100%  
+	    New File  		      16	PairWithInput.ir.sig.hash
+100%  
+	    New File  		    6992	PairWithInput.olean
+100%  
+	    New File  		      16	PairWithInput.olean.hash
+100%  
+	    New File  		    1488	PairWithInput.olean.private
+100%  
+	    New File  		      16	PairWithInput.olean.private.hash
+100%  
+	    New File  		    1808	PairWithInput.olean.server
+100%  
+	    New File  		      16	PairWithInput.olean.server.hash
+100%  
+	    New File  		    3942	PairWithInput.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Composition\Internal\
+	    New File  		   31128	FirstPhase.ilean
+100%  
+	    New File  		      16	FirstPhase.ilean.hash
+100%  
+	    New File  		    2136	FirstPhase.ir
+100%  
+	    New File  		      16	FirstPhase.ir.hash
+100%  
+	    New File  		     176	FirstPhase.ir.sig
+100%  
+	    New File  		      16	FirstPhase.ir.sig.hash
+100%  
+	    New File  		   21672	FirstPhase.olean
+100%  
+	    New File  		      16	FirstPhase.olean.hash
+100%  
+	    New File  		  238888	FirstPhase.olean.private
+100%  
+	    New File  		      16	FirstPhase.olean.private.hash
+100%  
+	    New File  		    4088	FirstPhase.olean.server
+100%  
+	    New File  		      16	FirstPhase.olean.server.hash
+100%  
+	    New File  		    4376	FirstPhase.trace
+100%  
+	    New File  		  109993	Tail.ilean
+100%  
+	    New File  		      16	Tail.ilean.hash
+100%  
+	    New File  		    2048	Tail.ir
+100%  
+	    New File  		      16	Tail.ir.hash
+100%  
+	    New File  		     176	Tail.ir.sig
+100%  
+	    New File  		      16	Tail.ir.sig.hash
+100%  
+	    New File  		   19048	Tail.olean
+100%  
+	    New File  		      16	Tail.olean.hash
+100%  
+	    New File  		  687512	Tail.olean.private
+100%  
+	    New File  		      16	Tail.olean.private.hash
+100%  
+	    New File  		    4800	Tail.olean.server
+100%  
+	    New File  		      16	Tail.olean.server.hash
+100%  
+	    New File  		    4145	Tail.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Composition\PairWithInput\
+	    New File  		    4461	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    6760	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   15856	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		    6288	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    3880	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3937	Defs.trace
+100%  
+	    New File  		   32796	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    2304	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   21008	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  376736	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    3280	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4670	Internal.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Hoare\
+	    New File  		   26868	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    1624	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   48248	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		  158000	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		   10488	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3716	Defs.trace
+100%  
+	    New File  		    6881	RetargetOutput.ilean
+100%  
+	    New File  		      16	RetargetOutput.ilean.hash
+100%  
+	    New File  		    1760	RetargetOutput.ir
+100%  
+	    New File  		      16	RetargetOutput.ir.hash
+100%  
+	    New File  		     176	RetargetOutput.ir.sig
+100%  
+	    New File  		      16	RetargetOutput.ir.sig.hash
+100%  
+	    New File  		   11192	RetargetOutput.olean
+100%  
+	    New File  		      16	RetargetOutput.olean.hash
+100%  
+	    New File  		   76224	RetargetOutput.olean.private
+100%  
+	    New File  		      16	RetargetOutput.olean.private.hash
+100%  
+	    New File  		    1640	RetargetOutput.olean.server
+100%  
+	    New File  		      16	RetargetOutput.olean.server.hash
+100%  
+	    New File  		    3807	RetargetOutput.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Internal\
+	    New File  		   12927	OutputBounds.ilean
+100%  
+	    New File  		      16	OutputBounds.ilean.hash
+100%  
+	    New File  		    1592	OutputBounds.ir
+100%  
+	    New File  		      16	OutputBounds.ir.hash
+100%  
+	    New File  		     176	OutputBounds.ir.sig
+100%  
+	    New File  		      16	OutputBounds.ir.sig.hash
+100%  
+	    New File  		   13312	OutputBounds.olean
+100%  
+	    New File  		      16	OutputBounds.olean.hash
+100%  
+	    New File  		  161752	OutputBounds.olean.private
+100%  
+	    New File  		      16	OutputBounds.olean.private.hash
+100%  
+	    New File  		    3328	OutputBounds.olean.server
+100%  
+	    New File  		      16	OutputBounds.olean.server.hash
+100%  
+	    New File  		    3615	OutputBounds.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\OutputSemantics\
+	    New File  		    4269	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		    5824	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   28336	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		    5088	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    3976	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3583	Defs.trace
+100%  
+	    New File  		   55843	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    6160	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   62992	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  381184	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    9504	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    3863	Internal.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Placement\
+	    New File  		   19246	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   28592	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   79048	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		  193000	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    7768	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3572	Defs.trace
+100%  
+	    New File  		   33497	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		    6280	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   46952	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  257624	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    5720	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    3606	Internal.trace
+100%  
+	  New Dir         91	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Registers\
+	    New File  		   22096	Arith.ilean
+100%  
+	    New File  		      16	Arith.ilean.hash
+100%  
+	    New File  		    9488	Arith.ir
+100%  
+	    New File  		      16	Arith.ir.hash
+100%  
+	    New File  		     176	Arith.ir.sig
+100%  
+	    New File  		      16	Arith.ir.sig.hash
+100%  
+	    New File  		   45552	Arith.olean
+100%  
+	    New File  		      16	Arith.olean.hash
+100%  
+	    New File  		  335584	Arith.olean.private
+100%  
+	    New File  		      16	Arith.olean.private.hash
+100%  
+	    New File  		    4816	Arith.olean.server
+100%  
+	    New File  		      16	Arith.olean.server.hash
+100%  
+	    New File  		    3818	Arith.trace
+100%  
+	    New File  		  137902	Emit.ilean
+100%  
+	    New File  		      16	Emit.ilean.hash
+100%  
+	    New File  		   50520	Emit.ir
+100%  
+	    New File  		      16	Emit.ir.hash
+100%  
+	    New File  		     176	Emit.ir.sig
+100%  
+	    New File  		      16	Emit.ir.sig.hash
+100%  
+	    New File  		  167472	Emit.olean
+100%  
+	    New File  		      16	Emit.olean.hash
+100%  
+	    New File  		   1.3 m	Emit.olean.private
+ 76%  
+100%  
+	    New File  		      16	Emit.olean.private.hash
+100%  
+	    New File  		   21136	Emit.olean.server
+100%  
+	    New File  		      16	Emit.olean.server.hash
+100%  
+	    New File  		    3765	Emit.trace
+100%  
+	    New File  		    5303	EmitSeq.ilean
+100%  
+	    New File  		      16	EmitSeq.ilean.hash
+100%  
+	    New File  		    3896	EmitSeq.ir
+100%  
+	    New File  		      16	EmitSeq.ir.hash
+100%  
+	    New File  		     176	EmitSeq.ir.sig
+100%  
+	    New File  		      16	EmitSeq.ir.sig.hash
+100%  
+	    New File  		   27008	EmitSeq.olean
+100%  
+	    New File  		      16	EmitSeq.olean.hash
+100%  
+	    New File  		   63336	EmitSeq.olean.private
+100%  
+	    New File  		      16	EmitSeq.olean.private.hash
+100%  
+	    New File  		    2272	EmitSeq.olean.server
+100%  
+	    New File  		      16	EmitSeq.olean.server.hash
+100%  
+	    New File  		    3613	EmitSeq.trace
+100%  
+	    New File  		   96555	ForReg.ilean
+100%  
+	    New File  		      16	ForReg.ilean.hash
+100%  
+	    New File  		   46992	ForReg.ir
+100%  
+	    New File  		      16	ForReg.ir.hash
+100%  
+	    New File  		     176	ForReg.ir.sig
+100%  
+	    New File  		      16	ForReg.ir.sig.hash
+100%  
+	    New File  		   98392	ForReg.olean
+100%  
+	    New File  		      16	ForReg.olean.hash
+100%  
+	    New File  		  961464	ForReg.olean.private
+100%  
+	    New File  		      16	ForReg.olean.private.hash
+100%  
+	    New File  		    8912	ForReg.olean.server
+100%  
+	    New File  		      16	ForReg.olean.server.hash
+100%  
+	    New File  		    3592	ForReg.trace
+100%  
+	    New File  		   51194	Horner.ilean
+100%  
+	    New File  		      16	Horner.ilean.hash
+100%  
+	    New File  		   26136	Horner.ir
+100%  
+	    New File  		      16	Horner.ir.hash
+100%  
+	    New File  		     176	Horner.ir.sig
+100%  
+	    New File  		      16	Horner.ir.sig.hash
+100%  
+	    New File  		   86296	Horner.olean
+100%  
+	    New File  		      16	Horner.olean.hash
+100%  
+	    New File  		   1.1 m	Horner.olean.private
+ 85%  
+100%  
+	    New File  		      16	Horner.olean.private.hash
+100%  
+	    New File  		   14392	Horner.olean.server
+100%  
+	    New File  		      16	Horner.olean.server.hash
+100%  
+	    New File  		    4183	Horner.trace
+100%  
+	    New File  		  100323	InputLen.ilean
+100%  
+	    New File  		      16	InputLen.ilean.hash
+100%  
+	    New File  		   26416	InputLen.ir
+100%  
+	    New File  		      16	InputLen.ir.hash
+100%  
+	    New File  		     176	InputLen.ir.sig
+100%  
+	    New File  		      16	InputLen.ir.sig.hash
+100%  
+	    New File  		   26424	InputLen.olean
+100%  
+	    New File  		      16	InputLen.olean.hash
+100%  
+	    New File  		  849136	InputLen.olean.private
+100%  
+	    New File  		      16	InputLen.olean.private.hash
+100%  
+	    New File  		    5856	InputLen.olean.server
+100%  
+	    New File  		      16	InputLen.olean.server.hash
+100%  
+	    New File  		    3620	InputLen.trace
+100%  
+	    New File  		  167079	RegisterOps.ilean
+100%  
+	    New File  		      16	RegisterOps.ilean.hash
+100%  
+	    New File  		   39544	RegisterOps.ir
+100%  
+	    New File  		      16	RegisterOps.ir.hash
+100%  
+	    New File  		     176	RegisterOps.ir.sig
+100%  
+	    New File  		      16	RegisterOps.ir.sig.hash
+100%  
+	    New File  		  108632	RegisterOps.olean
+100%  
+	    New File  		      16	RegisterOps.olean.hash
+100%  
+	    New File  		   1.2 m	RegisterOps.olean.private
+ 78%  
+100%  
+	    New File  		      16	RegisterOps.olean.private.hash
+100%  
+	    New File  		   15056	RegisterOps.olean.server
+100%  
+	    New File  		      16	RegisterOps.olean.server.hash
+100%  
+	    New File  		    3627	RegisterOps.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\SpaceTime\
+	    New File  		    6984	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   13480	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   36632	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   55416	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    5424	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3717	Defs.trace
+100%  
+	  New Dir        169	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Subroutines\
+	    New File  		    1478	CopyOutput.ilean
+100%  
+	    New File  		      16	CopyOutput.ilean.hash
+100%  
+	    New File  		    1784	CopyOutput.ir
+100%  
+	    New File  		      16	CopyOutput.ir.hash
+100%  
+	    New File  		     176	CopyOutput.ir.sig
+100%  
+	    New File  		      16	CopyOutput.ir.sig.hash
+100%  
+	    New File  		    6456	CopyOutput.olean
+100%  
+	    New File  		      16	CopyOutput.olean.hash
+100%  
+	    New File  		    1376	CopyOutput.olean.private
+100%  
+	    New File  		      16	CopyOutput.olean.private.hash
+100%  
+	    New File  		    1784	CopyOutput.olean.server
+100%  
+	    New File  		      16	CopyOutput.olean.server.hash
+100%  
+	    New File  		    3877	CopyOutput.trace
+100%  
+	    New File  		   20704	CopyToVirtualInput.ilean
+100%  
+	    New File  		      16	CopyToVirtualInput.ilean.hash
+100%  
+	    New File  		    3720	CopyToVirtualInput.ir
+100%  
+	    New File  		      16	CopyToVirtualInput.ir.hash
+100%  
+	    New File  		     176	CopyToVirtualInput.ir.sig
+100%  
+	    New File  		      16	CopyToVirtualInput.ir.sig.hash
+100%  
+	    New File  		   23904	CopyToVirtualInput.olean
+100%  
+	    New File  		      16	CopyToVirtualInput.olean.hash
+100%  
+	    New File  		  433576	CopyToVirtualInput.olean.private
+100%  
+	    New File  		      16	CopyToVirtualInput.olean.private.hash
+100%  
+	    New File  		    2976	CopyToVirtualInput.olean.server
+100%  
+	    New File  		      16	CopyToVirtualInput.olean.server.hash
+100%  
+	    New File  		    3945	CopyToVirtualInput.trace
+100%  
+	    New File  		   11872	CopyWorkOutput.ilean
+100%  
+	    New File  		      16	CopyWorkOutput.ilean.hash
+100%  
+	    New File  		    1752	CopyWorkOutput.ir
+100%  
+	    New File  		      16	CopyWorkOutput.ir.hash
+100%  
+	    New File  		     176	CopyWorkOutput.ir.sig
+100%  
+	    New File  		      16	CopyWorkOutput.ir.sig.hash
+100%  
+	    New File  		   25912	CopyWorkOutput.olean
+100%  
+	    New File  		      16	CopyWorkOutput.olean.hash
+100%  
+	    New File  		    4256	CopyWorkOutput.olean.private
+100%  
+	    New File  		      16	CopyWorkOutput.olean.private.hash
+100%  
+	    New File  		    2864	CopyWorkOutput.olean.server
+100%  
+	    New File  		      16	CopyWorkOutput.olean.server.hash
+100%  
+	    New File  		    3704	CopyWorkOutput.trace
+100%  
+	    New File  		  239836	Counter.ilean
+100%  
+	    New File  		      16	Counter.ilean.hash
+100%  
+	    New File  		   39504	Counter.ir
+100%  
+	    New File  		      16	Counter.ir.hash
+100%  
+	    New File  		     176	Counter.ir.sig
+100%  
+	    New File  		      16	Counter.ir.sig.hash
+100%  
+	    New File  		  162776	Counter.olean
+100%  
+	    New File  		      16	Counter.olean.hash
+100%  
+	    New File  		   2.0 m	Counter.olean.private
+ 48%  
+ 97%  
+100%  
+	    New File  		      16	Counter.olean.private.hash
+100%  
+	    New File  		   27136	Counter.olean.server
+100%  
+	    New File  		      16	Counter.olean.server.hash
+100%  
+	    New File  		    3848	Counter.trace
+100%  
+	    New File  		  304871	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		   17512	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		  110800	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		   2.9 m	Internal.olean.private
+ 33%  
+ 67%  
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		   14912	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4231	Internal.trace
+100%  
+	    New File  		   11140	MoveLeftStep.ilean
+100%  
+	    New File  		      16	MoveLeftStep.ilean.hash
+100%  
+	    New File  		   12832	MoveLeftStep.ir
+100%  
+	    New File  		      16	MoveLeftStep.ir.hash
+100%  
+	    New File  		     176	MoveLeftStep.ir.sig
+100%  
+	    New File  		      16	MoveLeftStep.ir.sig.hash
+100%  
+	    New File  		   26384	MoveLeftStep.olean
+100%  
+	    New File  		      16	MoveLeftStep.olean.hash
+100%  
+	    New File  		  152984	MoveLeftStep.olean.private
+100%  
+	    New File  		      16	MoveLeftStep.olean.private.hash
+100%  
+	    New File  		    3152	MoveLeftStep.olean.server
+100%  
+	    New File  		      16	MoveLeftStep.olean.server.hash
+100%  
+	    New File  		    3660	MoveLeftStep.trace
+100%  
+	    New File  		    8137	PairEmit.ilean
+100%  
+	    New File  		      16	PairEmit.ilean.hash
+100%  
+	    New File  		    1856	PairEmit.ir
+100%  
+	    New File  		      16	PairEmit.ir.hash
+100%  
+	    New File  		     176	PairEmit.ir.sig
+100%  
+	    New File  		      16	PairEmit.ir.sig.hash
+100%  
+	    New File  		   19376	PairEmit.olean
+100%  
+	    New File  		      16	PairEmit.olean.hash
+100%  
+	    New File  		    3160	PairEmit.olean.private
+100%  
+	    New File  		      16	PairEmit.olean.private.hash
+100%  
+	    New File  		    2288	PairEmit.olean.server
+100%  
+	    New File  		      16	PairEmit.olean.server.hash
+100%  
+	    New File  		    3887	PairEmit.trace
+100%  
+	    New File  		    9880	ParkAll.ilean
+100%  
+	    New File  		      16	ParkAll.ilean.hash
+100%  
+	    New File  		    1864	ParkAll.ir
+100%  
+	    New File  		      16	ParkAll.ir.hash
+100%  
+	    New File  		     176	ParkAll.ir.sig
+100%  
+	    New File  		      16	ParkAll.ir.sig.hash
+100%  
+	    New File  		   13088	ParkAll.olean
+100%  
+	    New File  		      16	ParkAll.olean.hash
+100%  
+	    New File  		  124272	ParkAll.olean.private
+100%  
+	    New File  		      16	ParkAll.olean.private.hash
+100%  
+	    New File  		    2776	ParkAll.olean.server
+100%  
+	    New File  		      16	ParkAll.olean.server.hash
+100%  
+	    New File  		    3862	ParkAll.trace
+100%  
+	    New File  		   26683	ResetTapes.ilean
+100%  
+	    New File  		      16	ResetTapes.ilean.hash
+100%  
+	    New File  		    7696	ResetTapes.ir
+100%  
+	    New File  		      16	ResetTapes.ir.hash
+100%  
+	    New File  		     176	ResetTapes.ir.sig
+100%  
+	    New File  		      16	ResetTapes.ir.sig.hash
+100%  
+	    New File  		   33728	ResetTapes.olean
+100%  
+	    New File  		      16	ResetTapes.olean.hash
+100%  
+	    New File  		  517472	ResetTapes.olean.private
+100%  
+	    New File  		      16	ResetTapes.olean.private.hash
+100%  
+	    New File  		    3800	ResetTapes.olean.server
+100%  
+	    New File  		      16	ResetTapes.olean.server.hash
+100%  
+	    New File  		    3877	ResetTapes.trace
+100%  
+	    New File  		   13685	RewindList.ilean
+100%  
+	    New File  		      16	RewindList.ilean.hash
+100%  
+	    New File  		    5936	RewindList.ir
+100%  
+	    New File  		      16	RewindList.ir.hash
+100%  
+	    New File  		     176	RewindList.ir.sig
+100%  
+	    New File  		      16	RewindList.ir.sig.hash
+100%  
+	    New File  		   43464	RewindList.olean
+100%  
+	    New File  		      16	RewindList.olean.hash
+100%  
+	    New File  		  277072	RewindList.olean.private
+100%  
+	    New File  		      16	RewindList.olean.private.hash
+100%  
+	    New File  		    2128	RewindList.olean.server
+100%  
+	    New File  		      16	RewindList.olean.server.hash
+100%  
+	    New File  		    4215	RewindList.trace
+100%  
+	    New File  		    1774	UnaryLength.ilean
+100%  
+	    New File  		      16	UnaryLength.ilean.hash
+100%  
+	    New File  		    1856	UnaryLength.ir
+100%  
+	    New File  		      16	UnaryLength.ir.hash
+100%  
+	    New File  		     176	UnaryLength.ir.sig
+100%  
+	    New File  		      16	UnaryLength.ir.sig.hash
+100%  
+	    New File  		    6976	UnaryLength.olean
+100%  
+	    New File  		      16	UnaryLength.olean.hash
+100%  
+	    New File  		    1368	UnaryLength.olean.private
+100%  
+	    New File  		      16	UnaryLength.olean.private.hash
+100%  
+	    New File  		    1704	UnaryLength.olean.server
+100%  
+	    New File  		      16	UnaryLength.olean.server.hash
+100%  
+	    New File  		    3920	UnaryLength.trace
+100%  
+	    New File  		   24393	WipeLoop.ilean
+100%  
+	    New File  		      16	WipeLoop.ilean.hash
+100%  
+	    New File  		    4192	WipeLoop.ir
+100%  
+	    New File  		      16	WipeLoop.ir.hash
+100%  
+	    New File  		     176	WipeLoop.ir.sig
+100%  
+	    New File  		      16	WipeLoop.ir.sig.hash
+100%  
+	    New File  		   33552	WipeLoop.olean
+100%  
+	    New File  		      16	WipeLoop.olean.hash
+100%  
+	    New File  		  450128	WipeLoop.olean.private
+100%  
+	    New File  		      16	WipeLoop.olean.private.hash
+100%  
+	    New File  		    6512	WipeLoop.olean.server
+100%  
+	    New File  		      16	WipeLoop.olean.server.hash
+100%  
+	    New File  		    3851	WipeLoop.trace
+100%  
+	    New File  		    9704	WipeStep.ilean
+100%  
+	    New File  		      16	WipeStep.ilean.hash
+100%  
+	    New File  		   19248	WipeStep.ir
+100%  
+	    New File  		      16	WipeStep.ir.hash
+100%  
+	    New File  		     176	WipeStep.ir.sig
+100%  
+	    New File  		      16	WipeStep.ir.sig.hash
+100%  
+	    New File  		   65760	WipeStep.olean
+100%  
+	    New File  		      16	WipeStep.olean.hash
+100%  
+	    New File  		  143336	WipeStep.olean.private
+100%  
+	    New File  		      16	WipeStep.olean.private.hash
+100%  
+	    New File  		    4296	WipeStep.olean.server
+100%  
+	    New File  		      16	WipeStep.olean.server.hash
+100%  
+	    New File  		    3602	WipeStep.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Subroutines\Internal\
+	    New File  		   41340	CopyOutput.ilean
+100%  
+	    New File  		      16	CopyOutput.ilean.hash
+100%  
+	    New File  		   12688	CopyOutput.ir
+100%  
+	    New File  		      16	CopyOutput.ir.hash
+100%  
+	    New File  		     176	CopyOutput.ir.sig
+100%  
+	    New File  		      16	CopyOutput.ir.sig.hash
+100%  
+	    New File  		   30432	CopyOutput.olean
+100%  
+	    New File  		      16	CopyOutput.olean.hash
+100%  
+	    New File  		  376424	CopyOutput.olean.private
+100%  
+	    New File  		      16	CopyOutput.olean.private.hash
+100%  
+	    New File  		    2736	CopyOutput.olean.server
+100%  
+	    New File  		      16	CopyOutput.olean.server.hash
+100%  
+	    New File  		    4153	CopyOutput.trace
+100%  
+	    New File  		   72416	CopyWorkOutput.ilean
+100%  
+	    New File  		      16	CopyWorkOutput.ilean.hash
+100%  
+	    New File  		   14784	CopyWorkOutput.ir
+100%  
+	    New File  		      16	CopyWorkOutput.ir.hash
+100%  
+	    New File  		     176	CopyWorkOutput.ir.sig
+100%  
+	    New File  		      16	CopyWorkOutput.ir.sig.hash
+100%  
+	    New File  		   62440	CopyWorkOutput.olean
+100%  
+	    New File  		      16	CopyWorkOutput.olean.hash
+100%  
+	    New File  		  599920	CopyWorkOutput.olean.private
+100%  
+	    New File  		      16	CopyWorkOutput.olean.private.hash
+100%  
+	    New File  		    5560	CopyWorkOutput.olean.server
+100%  
+	    New File  		      16	CopyWorkOutput.olean.server.hash
+100%  
+	    New File  		    4388	CopyWorkOutput.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Subroutines\PairEmit\
+	    New File  		   12157	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   33424	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		  121800	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		  156448	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    4840	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3655	Defs.trace
+100%  
+	    New File  		   75928	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		   23496	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   64664	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  531616	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    3488	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4544	Internal.trace
+100%  
+	  New Dir         26	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Subroutines\UnaryLength\
+	    New File  		    5480	Defs.ilean
+100%  
+	    New File  		      16	Defs.ilean.hash
+100%  
+	    New File  		   17208	Defs.ir
+100%  
+	    New File  		      16	Defs.ir.hash
+100%  
+	    New File  		     176	Defs.ir.sig
+100%  
+	    New File  		      16	Defs.ir.sig.hash
+100%  
+	    New File  		   61096	Defs.olean
+100%  
+	    New File  		      16	Defs.olean.hash
+100%  
+	    New File  		   65056	Defs.olean.private
+100%  
+	    New File  		      16	Defs.olean.private.hash
+100%  
+	    New File  		    3056	Defs.olean.server
+100%  
+	    New File  		      16	Defs.olean.server.hash
+100%  
+	    New File  		    3676	Defs.trace
+100%  
+	    New File  		   34610	Internal.ilean
+100%  
+	    New File  		      16	Internal.ilean.hash
+100%  
+	    New File  		   12752	Internal.ir
+100%  
+	    New File  		      16	Internal.ir.hash
+100%  
+	    New File  		     176	Internal.ir.sig
+100%  
+	    New File  		      16	Internal.ir.sig.hash
+100%  
+	    New File  		   30752	Internal.olean
+100%  
+	    New File  		      16	Internal.olean.hash
+100%  
+	    New File  		  347184	Internal.olean.private
+100%  
+	    New File  		      16	Internal.olean.private.hash
+100%  
+	    New File  		    2288	Internal.olean.server
+100%  
+	    New File  		      16	Internal.olean.server.hash
+100%  
+	    New File  		    4194	Internal.trace
+100%  
+	  New Dir         13	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\Models\TuringMachine\Tape\
+	    New File  		   42258	Encoding.ilean
+100%  
+	    New File  		      16	Encoding.ilean.hash
+100%  
+	    New File  		    1512	Encoding.ir
+100%  
+	    New File  		      16	Encoding.ir.hash
+100%  
+	    New File  		     176	Encoding.ir.sig
+100%  
+	    New File  		      16	Encoding.ir.sig.hash
+100%  
+	    New File  		   41680	Encoding.olean
+100%  
+	    New File  		      16	Encoding.olean.hash
+100%  
+	    New File  		  329792	Encoding.olean.private
+100%  
+	    New File  		      16	Encoding.olean.private.hash
+100%  
+	    New File  		   14480	Encoding.olean.server
+100%  
+	    New File  		      16	Encoding.olean.server.hash
+100%  
+	    New File  		    3534	Encoding.trace
+100%  
+	  New Dir         52	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\Complexitylib\SAT\
+	    New File  		   21116	Encoding.ilean
+100%  
+	    New File  		      16	Encoding.ilean.hash
+100%  
+	    New File  		   11816	Encoding.ir
+100%  
+	    New File  		      16	Encoding.ir.hash
+100%  
+	    New File  		     176	Encoding.ir.sig
+100%  
+	    New File  		      16	Encoding.ir.sig.hash
+100%  
+	    New File  		   51968	Encoding.olean
+100%  
+	    New File  		      16	Encoding.olean.hash
+100%  
+	    New File  		  234064	Encoding.olean.private
+100%  
+	    New File  		      16	Encoding.olean.private.hash
+100%  
+	    New File  		   13192	Encoding.olean.server
+100%  
+	    New File  		      16	Encoding.olean.server.hash
+100%  
+	    New File  		    3513	Encoding.trace
+100%  
+	    New File  		    7678	Language.ilean
+100%  
+	    New File  		      16	Language.ilean.hash
+100%  
+	    New File  		    1760	Language.ir
+100%  
+	    New File  		      16	Language.ir.hash
+100%  
+	    New File  		     176	Language.ir.sig
+100%  
+	    New File  		      16	Language.ir.sig.hash
+100%  
+	    New File  		   13920	Language.olean
+100%  
+	    New File  		      16	Language.olean.hash
+100%  
+	    New File  		   46816	Language.olean.private
+100%  
+	    New File  		      16	Language.olean.private.hash
+100%  
+	    New File  		    5800	Language.olean.server
+100%  
+	    New File  		      16	Language.olean.server.hash
+100%  
+	    New File  		    3523	Language.trace
+100%  
+	    New File  		   31492	Semantics.ilean
+100%  
+	    New File  		      16	Semantics.ilean.hash
+100%  
+	    New File  		   16376	Semantics.ir
+100%  
+	    New File  		      16	Semantics.ir.hash
+100%  
+	    New File  		     176	Semantics.ir.sig
+100%  
+	    New File  		      16	Semantics.ir.sig.hash
+100%  
+	    New File  		  122136	Semantics.olean
+100%  
+	    New File  		      16	Semantics.olean.hash
+100%  
+	    New File  		  254440	Semantics.olean.private
+100%  
+	    New File  		      16	Semantics.olean.private.hash
+100%  
+	    New File  		   17192	Semantics.olean.server
+100%  
+	    New File  		      16	Semantics.olean.server.hash
+100%  
+	    New File  		    4186	Semantics.trace
+100%  
+	    New File  		   44459	Verifier.ilean
+100%  
+	    New File  		      16	Verifier.ilean.hash
+100%  
+	    New File  		   79320	Verifier.ir
+100%  
+	    New File  		      16	Verifier.ir.hash
+100%  
+	    New File  		     176	Verifier.ir.sig
+100%  
+	    New File  		      16	Verifier.ir.sig.hash
+100%  
+	    New File  		  260288	Verifier.olean
+100%  
+	    New File  		      16	Verifier.olean.hash
+100%  
+	    New File  		  395400	Verifier.olean.private
+100%  
+	    New File  		      16	Verifier.olean.private.hash
+100%  
+	    New File  		   16120	Verifier.olean.server
+100%  
+	    New File  		      16	Verifier.olean.server.hash
+100%  
+	    New File  		    3349	Verifier.trace
+100%  
+	  New Dir          0	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\PvNP\
+	  New Dir         46	C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\PvNP\RealizableHardness\
+	    New File  		  237704	ActualCloudSoundness.olean
+100%  
+	    New File  		  353728	ActualCompactSourceLookup.olean
+100%  
+	    New File  		   1.0 m	ActualEqualityCloud.olean
+ 98%  
+100%  
+	    New File  		  442952	ActualEqualityCloudDegree.olean
+100%  
+	    New File  		  199768	ActualFinite3LinSource.olean
+100%  
+	    New File  		   47736	ActualFinite3LinSourceChecks.olean
+100%  
+	    New File  		   86536	ActualGadgetRowProducer.olean
+100%  
+	    New File  		    2672	ActualGadgetRowProducerChecks.olean
+100%  
+	    New File  		  324424	ActualGadgetRowProducerGeometry.olean
+100%  
+	    New File  		  181408	ActualGadgetRowProducerMachine.olean
+100%  
+	    New File  		  623744	ActualGadgetRowProducerRows.olean
+100%  
+	    New File  		  315776	ActualGraphEdges.olean
+100%  
+	    New File  		   59816	ActualGraphIncidence.olean
+100%  
+	    New File  		  746544	ActualOccurrenceAllocation.olean
+100%  
+	    New File  		  458416	ActualOccurrenceCode.olean
+100%  
+	    New File  		  125576	ActualOccurrenceCompleteness.olean
+100%  
+	    New File  		  168600	ActualOccurrenceCountFP.olean
+100%  
+	    New File  		  421040	ActualOccurrenceCounts.olean
+100%  
+	    New File  		  244464	ActualOccurrenceDegree.olean
+100%  
+	    New File  		  348192	ActualOccurrenceLookup.olean
+100%  
+	    New File  		  235192	ActualOccurrenceOrdinals.olean
+100%  
+	    New File  		  306048	ActualOccurrencePrefix.olean
+100%  
+	    New File  		  311128	ActualOccurrenceSoundness.olean
+100%  
+	    New File  		  795288	ActualQuestionMassBridge.olean
+100%  
+	    New File  		  121504	ActualQuestionMassBridgeChecks.olean
+100%  
+	    New File  		  372304	ActualRegularization.olean
+100%  
+	    New File  		  408136	ActualSourceFirstOccurrence.olean
+100%  
+	    New File  		  260760	ActualSourceNormalization.olean
+100%  
+	    New File  		  289720	ActualSourceNormalizedTable.olean
+100%  
+	    New File  		    6363	ActualStarQuestionSupport.ilean
+100%  
+	    New File  		   62128	ActualStarQuestionSupport.olean
+100%  
+	    New File  		  283920	EqualityGadget.olean
+100%  
+	    New File  		  619648	ExceptionRepair.olean
+100%  
+	    New File  		  323880	ExecutablePortRotation.olean
+100%  
+	    New File  		  377160	ExpanderCutInstantiation.olean
+100%  
+	    New File  		    3232	ExpanderCutInstantiationChecks.olean
+100%  
+	    New File  		  112736	FixedPortCycleFamily.olean
+100%  
+	    New File  		    2904	FixedPortCycleFamilyChecks.olean
+100%  
+	    New File  		  423552	Formula.olean
+100%  
+	    New File  		  807864	PortCycleReplacement.olean
+100%  
+	    New File  		    4160	PortCycleReplacementChecks.olean
+100%  
+	    New File  		  886064	StarListDecoding.olean
+100%  
+	    New File  		  114392	TaggedFinite3LinSource.olean
+100%  
+	    New File  		   68920	TaggedFinite3LinSourceChecks.olean
+100%  
+	    New File  		  590064	TaggedQuestionMassBridge.olean
+100%  
+	    New File  		   40496	TaggedQuestionMassBridgeChecks.olean
+100%  
+
+------------------------------------------------------------------------------
+
+               Total    Copied   Skipped  Mismatch    FAILED    Extras
+    Dirs :        43        43         0         0         0         0
+   Files :      2802      2802         0         0         0         0
+   Bytes :  116.50 m  116.50 m         0         0         0         0
+   Times :   0:00:13   0:00:11                       0:00:00   0:00:02
+
+
+   Speed :           10,772,710 Bytes/sec.
+   Speed :              616.419 MegaBytes/min.
+   Ended : Tuesday, September 15, 2026 7:33:48 AM
+

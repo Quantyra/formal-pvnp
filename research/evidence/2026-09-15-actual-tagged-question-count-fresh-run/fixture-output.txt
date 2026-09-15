@@ -1,0 +1,4 @@
+﻿smallActual : ActualOccurrenceAllocation.Instance 1 1 (m > 0)
+raw count applications: K=2 at J=0, J=1, J=2
+row-card rewrite: Fintype.card (Fin 2 × smallActual.RowId) = 2 * smallActual.rows.length
+padding positivity: ∀ J, 0 < actualPaddingCopies J 4

@@ -1,0 +1,2 @@
+﻿Exact #check/#print axioms transcript is preserved verbatim in checks.stdout.
+All five public declarations are checked and profiled.

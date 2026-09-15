@@ -1,0 +1,9 @@
+﻿target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean
+file_count=2804
+main_object=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedQuestionMass.olean
+main_object_hash=1741C3CE78523148933F3E186C2604A26E4692DEFBF34D28DF20725DB35D16B2
+checks_object=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean\PvNP\RealizableHardness\ActualTaggedQuestionMassChecks.olean
+checks_object_hash=13975746469228B4C2C14A7259F2301681C928EE724217E5127A9CBED5A1A8BB
+main_precedes_checks=true
+main_stderr_empty=true
+checks_stderr_empty=true

@@ -1,0 +1,4 @@
+﻿The actual carrier is occurrence-indexed: `I.RowId` is the sampled row universe, and repeated row values remain separate occurrences.
+The decisive support diagnostic was that the target predicate uses `(Finite3LinSource.ofActual I).support`, while the actual conflict input is `I.support`; the frozen proof therefore records `ofActual_support` and aligns the filtered predicates explicitly with `convert`, avoiding proof-instance/decider identity failures.
+The Checks route uses one concrete `ActualOccurrenceAllocation.Instance 1 1` only to elaborate the semantic theorem applications. Exact event enumeration is intentionally absent; raw count applications cover K=2 at J=0,1,2, and the row-card rewrite uses `rowId_card_eq_rows_length`.
+The padding fixture checks the public positivity theorem in the requested shape `∀ J, 0 < actualPaddingCopies J 4`.

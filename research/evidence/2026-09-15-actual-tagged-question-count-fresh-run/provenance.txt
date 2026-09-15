@@ -1,0 +1,20 @@
+﻿Date: 2026-09-15
+cwd=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+toolchain=leanprover/lean4:v4.34.0-rc2
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-count-fresh-20260915\lib\lean
+seed_source=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean
+seed_mode=robocopy /E excluding current main and Checks objects
+seeded_dependency_count=2802
+dependency_seed_manifest_sha256=5EC4F26671D071702111D3890101CBA687937795A9E9D064B8F0F3D73D85683A
+fresh_output_inventory_sha256=32770A47C5AFBD9B968A527E4BC2E53EA3E62D4A2986CFF8F8D1C5EF1A864319
+main_object_preexisting_before_compile=false
+checks_object_preexisting_before_compile=false
+main_compiled_before_checks=true
+main_exit=0
+checks_exit=0
+main_object_sha256=1741C3CE78523148933F3E186C2604A26E4692DEFBF34D28DF20725DB35D16B2
+checks_object_sha256=13975746469228B4C2C14A7259F2301681C928EE724217E5127A9CBED5A1A8BB
+temp_or_probe_roots_in_lean_path=false
+no_lake_build=true
+source_main_sha256=7BC31AAB2765EB0E0463751DCF2447230D40FC520F2A2D3948DBF40142C139F7
+source_checks_sha256=9A39682BB023B6A47D3FDD5C432B492671CB0AA4DA24A6857AC2BB6C199DF82B

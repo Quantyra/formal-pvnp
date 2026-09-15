@@ -1,0 +1,57 @@
+﻿{
+    "date":  "2026-09-15",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "toolchain":  "leanprover/lean4:v4.34.0-rc2",
+    "leanExe":  "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-question-count-fresh-20260915\\lib\\lean",
+    "seedSource":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-question-mass-bridge-fresh-20260915\\lib\\lean",
+    "seededDependencyCount":  2802,
+    "excluded":  [
+                     "ActualTaggedQuestionMass.olean",
+                     "ActualTaggedQuestionMassChecks.olean"
+                 ],
+    "LEAN_NUM_THREADS":  1,
+    "LEAN_PATH":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-question-count-fresh-20260915\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\mathlib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\batteries\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\proofwidgets\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\aesop\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\Qq\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\plausible\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\importGraph\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\LeanSearchClient\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\packages\\complexitylib\\.lake\\build\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "noLakeBuild":  true,
+    "sourceHashesStable":  true,
+    "forbiddenScan":  "clean",
+    "sequence":  [
+                     {
+                         "module":  "ActualTaggedQuestionMass",
+                         "exitCode":  0,
+                         "sourceSha256":  "7BC31AAB2765EB0E0463751DCF2447230D40FC520F2A2D3948DBF40142C139F7",
+                         "objectSha256":  "1741C3CE78523148933F3E186C2604A26E4692DEFBF34D28DF20725DB35D16B2",
+                         "objectBytes":  198544,
+                         "objectPreexistingBeforeCompile":  false,
+                         "stdout":  "main.stdout",
+                         "stderr":  "main.stderr",
+                         "warnings":  3
+                     },
+                     {
+                         "module":  "ActualTaggedQuestionMassChecks",
+                         "exitCode":  0,
+                         "sourceSha256":  "9A39682BB023B6A47D3FDD5C432B492671CB0AA4DA24A6857AC2BB6C199DF82B",
+                         "objectSha256":  "13975746469228B4C2C14A7259F2301681C928EE724217E5127A9CBED5A1A8BB",
+                         "objectBytes":  31432,
+                         "objectPreexistingBeforeCompile":  false,
+                         "stdout":  "checks.stdout",
+                         "stderr":  "checks.stderr",
+                         "warnings":  0
+                     }
+                 ],
+    "fixtures":  [
+                     "smallActual Instance 1 1, hence m \u003e 0",
+                     "raw count K=2 at J=0,1,2",
+                     "row-card rewrite at K=2",
+                     "actualPaddingCopies J 4 positivity"
+                 ],
+    "axioms":  [
+                   "actual_conflict_degree_le: propext, Classical.choice, Quot.sound",
+                   "actual_tagged_row_card: propext, Classical.choice, Quot.sound",
+                   "actual_tagged_bad_ordered_question_count_le: propext, Classical.choice, Quot.sound",
+                   "actualPaddingCopies: none",
+                   "actualPaddingCopies_pos: propext, Classical.choice, Quot.sound"
+               ],
+    "packageManifestSha256":  "0CEEDB45B57EC8BA3692562AD015AD2820FDFE0962EC3A408DDCEEDBCADC7090",
+    "rootLakeManifestSha256":  "825D2E1A20005A259FDF5B181528B391DD6BA18A52C86127CAF4C3BE990E04F0"
+}

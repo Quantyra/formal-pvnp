@@ -1,0 +1,7 @@
+﻿#print axioms output is preserved verbatim in checks.stdout
+actual_conflict_degree_le: [propext, Classical.choice, Quot.sound]
+actual_tagged_row_card: [propext, Classical.choice, Quot.sound]
+actual_tagged_bad_ordered_question_count_le: [propext, Classical.choice, Quot.sound]
+actualPaddingCopies: no axioms
+actualPaddingCopies_pos: [propext, Classical.choice, Quot.sound]
+No user-declared axioms.
