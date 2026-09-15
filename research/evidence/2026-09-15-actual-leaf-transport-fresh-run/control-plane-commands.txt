@@ -1,0 +1,8 @@
+git bundle create temp/formal-pvnp-bba6dbb.bundle --all
+git bundle verify temp/formal-pvnp-bba6dbb.bundle
+gcloud compute instances start quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a
+gcloud compute scp ... --tunnel-through-iap
+gcloud compute ssh ... --tunnel-through-iap --command ./gate.sh
+gcloud compute ssh ... --tunnel-through-iap --command ./certify.sh
+gcloud compute scp .../leaf-transport-certification.tar.gz ... --tunnel-through-iap
+gcloud compute instances stop quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a

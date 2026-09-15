@@ -1,0 +1,26 @@
+{
+  "disks": [
+    {
+      "deviceName": "quantyra-lean-builder-01",
+      "diskSizeGb": "200",
+      "type": "PERSISTENT"
+    }
+  ],
+  "id": "8337954477286097405",
+  "labels": {
+    "entity": "quantyra",
+    "environment": "research",
+    "workload": "lean-certification"
+  },
+  "lastStartTimestamp": "2026-09-15T16:44:59.757-07:00",
+  "lastStopTimestamp": "2026-09-15T16:53:43.266-07:00",
+  "machineType": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/machineTypes/c3-highmem-8",
+  "name": "quantyra-lean-builder-01",
+  "networkInterfaces": [
+    {
+      "name": "nic0",
+      "networkIP": "10.128.0.2"
+    }
+  ],
+  "status": "TERMINATED"
+}

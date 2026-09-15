@@ -1,0 +1,36 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.rightDomain_le_common {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) : Q.domain ≤ P.domain ⊔ Q.H
+PvNP.RealizableHardness.ActualPresentedLeafGluing.TransportCompatible {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (g : RawLeafLabel I Q.domain) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  RawLeafLabel I Q.domain
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_respectsAt {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  RespectsAt Q ⋯ (transportedLabel P Q hPQ f hf)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_compatible {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  TransportCompatible P Q hPQ f (transportedLabel P Q hPQ f hf)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_unique {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f)
+  (g : RawLeafLabel I Q.domain) (hg : TransportCompatible P Q hPQ f g) : g = transportedLabel P Q hPQ f hf
+PvNP.RealizableHardness.ActualPresentedLeafGluing.existsUnique_compatibleTransport {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  ∃! g, RespectsAt Q ⋯ g ∧ TransportCompatible P Q hPQ f g
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.rightDomain_le_common' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_respectsAt' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_compatible' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_unique' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.existsUnique_compatibleTransport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,12 @@
+{
+    "cloudFresh":  {
+                       "main":  "1CEE9647728163F2BBC71D6AA429BEFD78AA1883BB24CDE9A307A060B6465AE2",
+                       "checks":  "C015F98C7F2172C704216A87A7E415AD832964FD899D3D4FFB5EB92D511C7FF2"
+                   },
+    "localCachedInformational":  {
+                                     "main":  "51CB1E182F9621902F792AADB708904F96D76DD1A10831ABB5424418F37A3933",
+                                     "checks":  "5882D7A034C22E4B65059A74D7B132990A85037F90BA84D2D506C8BA760F4023"
+                                 },
+    "equalAcrossPlatforms":  false,
+    "note":  "Object byte equality across Linux fresh-target and Windows cached builds is not a certification invariant."
+}

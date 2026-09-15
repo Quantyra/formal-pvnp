@@ -1,0 +1,1 @@
+coarse token scan matched the English word admit inside a documentation comment; all 18 Lean stages had exited 0; no stage was repeated
