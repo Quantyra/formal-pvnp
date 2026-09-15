@@ -1,0 +1,20 @@
+﻿{
+    "run_id":  "new-row-private-coordinate-fresh-20260914b",
+    "commit_before":  "310572ec8e0d8c80db0a29dbf5f0a424782cf298",
+    "main":  {
+                 "command":  "lake env lean lean/PvNP/RealizableHardness/ActualStarQuestionSupport.lean -o \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarQuestionSupport.olean -i \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarQuestionSupport.ilean",
+                 "exit_code":  0,
+                 "source_before":  "39E6F608A3735BCFB5BBD0F8B5E3A3E875151EAF3A4B74298B2A6063411DAE35",
+                 "source_after":  "39E6F608A3735BCFB5BBD0F8B5E3A3E875151EAF3A4B74298B2A6063411DAE35",
+                 "stdout":  "main.stdout.txt",
+                 "stderr":  "main.stderr.txt"
+             },
+    "checks":  {
+                   "command":  "lean.exe lean/PvNP/RealizableHardness/ActualStarQuestionSupportChecks.lean -o \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarQuestionSupportChecks.olean -i \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarQuestionSupportChecks.ilean",
+                   "exit_code":  0,
+                   "source_before":  "06D8E39AD2A3FA9FA707E03B3D08B13A0793C93ACEAA5A6C3D165585F200FE8C",
+                   "source_after":  "06D8E39AD2A3FA9FA707E03B3D08B13A0793C93ACEAA5A6C3D165585F200FE8C",
+                   "stdout":  "checks.stdout.txt",
+                   "stderr":  "checks.stderr.txt"
+               }
+}

@@ -11,6 +11,50 @@ def disjointRows : Bool → Finset (Fin 4)
   | false => {0, 1}
   | true => {2, 3}
 
+inductive PrivateVar
+  | a | b | c | d
+  deriving DecidableEq
+
+instance : Fintype PrivateVar where
+  elems := {PrivateVar.a, PrivateVar.b, PrivateVar.c, PrivateVar.d}
+  complete := by
+    intro x
+    cases x <;> simp
+
+instance : Fintype Unit where
+  elems := {()}
+  complete := by
+    intro x
+    simp
+
+def privateRows : Unit → Finset PrivateVar
+  | () => {PrivateVar.a, PrivateVar.b, PrivateVar.c}
+
+inductive TwoPrivateVar
+  | a | b | c | d | e | f
+  deriving DecidableEq
+
+instance : Fintype TwoPrivateVar where
+  elems := {TwoPrivateVar.a, TwoPrivateVar.b, TwoPrivateVar.c,
+    TwoPrivateVar.d, TwoPrivateVar.e, TwoPrivateVar.f}
+  complete := by
+    intro x
+    cases x <;> simp
+
+inductive TwoPrivateRowId
+  | left | right
+  deriving DecidableEq
+
+instance : Fintype TwoPrivateRowId where
+  elems := {TwoPrivateRowId.left, TwoPrivateRowId.right}
+  complete := by
+    intro x
+    cases x <;> simp
+
+def twoPrivateRows : TwoPrivateRowId → Finset TwoPrivateVar
+  | .left => {TwoPrivateVar.a, TwoPrivateVar.b, TwoPrivateVar.c}
+  | .right => {TwoPrivateVar.d, TwoPrivateVar.e, TwoPrivateVar.f}
+
 def badRows (e : Fin 3) : Finset (Fin 3) :=
   if e = 0 then {0} else if e = 1 then {1} else {0, 1}
 
@@ -81,9 +125,59 @@ example :
       (by simp [badRows]) (by simp [badRows])
   · simp [badRows, questionSupport]
 
+example :
+    ∃ x ∈ privateRows (),
+      x ∉ questionSupport privateRows (∅ : Finset Unit) ∧
+      x ∉ questionSupport privateRows (({()} : Finset Unit).erase ()) := by
+  have h := new_row_private_coordinate privateRows (by decide) (by decide)
+    (∅ : Finset Unit) ({()} : Finset Unit) (by simp [GoodQuestion])
+    (by simp [GoodQuestion])
+    () (by decide) (by decide)
+  simpa [questionSupport] using h
+
+example :
+    ∃ x ∈ twoPrivateRows .left,
+      x ∉ questionSupport twoPrivateRows (∅ : Finset TwoPrivateRowId) ∧
+      x ∉ questionSupport twoPrivateRows
+        (({TwoPrivateRowId.left, TwoPrivateRowId.right} : Finset TwoPrivateRowId).erase
+          TwoPrivateRowId.left) := by
+  have h := new_row_private_coordinate twoPrivateRows
+    (by intro i; cases i <;> decide)
+    (by intro i j hij; cases i <;> cases j <;> simp_all [twoPrivateRows])
+    (∅ : Finset TwoPrivateRowId)
+    ({TwoPrivateRowId.left, TwoPrivateRowId.right} : Finset TwoPrivateRowId)
+    (by simp [GoodQuestion])
+    (by
+      have hdis : Disjoint (twoPrivateRows .left) (twoPrivateRows .right) := by
+        simp [twoPrivateRows, Finset.disjoint_left]
+      unfold GoodQuestion
+      constructor
+      · intro i hi j hj hij
+        simp only [Finset.mem_coe] at hi hj
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hi hj
+        rcases hi with rfl | rfl <;> rcases hj with rfl | rfl <;>
+          simp_all [twoPrivateRows, Finset.disjoint_left]
+      · intro i hi j hj hij g x hx y hy hxi hyi
+        simp only [Finset.mem_insert, Finset.mem_singleton] at hi hj
+        rcases hi with rfl | rfl
+        · rcases hj with rfl | rfl
+          · exact (hij rfl).elim
+          · cases g
+            · exact (Finset.disjoint_left.mp hdis) hyi hy
+            · exact (Finset.disjoint_left.mp hdis) hx hxi
+        · rcases hj with rfl | rfl
+          · cases g
+            · exact (Finset.disjoint_left.mp hdis.symm) hx hxi
+            · exact (Finset.disjoint_left.mp hdis) hy hyi
+          · exact (hij rfl).elim)
+    TwoPrivateRowId.left (by simp) (by simp)
+  simpa [questionSupport, twoPrivateRows] using h
+
 #print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq
 #print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_overlap_le_one
+#print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.new_row_private_coordinate
 #check PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq
 #check PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_overlap_le_one
+#check PvNP.RealizableHardness.ActualStarQuestionSupport.new_row_private_coordinate
 
 end PvNP.RealizableHardness.ActualStarQuestionSupportChecks

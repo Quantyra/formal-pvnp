@@ -48,6 +48,40 @@ theorem excluded_row_overlap_le_one
   rcases Finset.mem_inter.mp hy with ⟨hye, hyU⟩
   exact excluded_row_points_eq row hlinear U hU e he x y hxe hye hxU hyU
 
+theorem new_row_private_coordinate
+    (row : E → Finset X)
+    (hthree : ∀ e, (row e).card = 3)
+    (hlinear : ∀ e f, e ≠ f → ((row e) ∩ (row f)).card ≤ 1)
+    (U U' : Finset E)
+    (hU : GoodQuestion row U) (hU' : GoodQuestion row U')
+    (e : E) (he : e ∈ U') (hnew : e ∉ U) :
+    ∃ x ∈ row e,
+      x ∉ questionSupport row U ∧
+      x ∉ questionSupport row (U'.erase e) := by
+  classical
+  have hoverlap : ((row e) ∩ questionSupport row U).card ≤ 1 :=
+    excluded_row_overlap_le_one row hlinear U hU e hnew
+  have hex : ∃ x ∈ row e, x ∉ questionSupport row U := by
+    by_contra h
+    push Not at h
+    have hsub : row e ⊆ (row e) ∩ questionSupport row U := by
+      intro x hx
+      exact Finset.mem_inter.mpr ⟨hx, h x hx⟩
+    have hcard : (row e).card ≤ ((row e) ∩ questionSupport row U).card :=
+      Finset.card_le_card hsub
+    rw [hthree e] at hcard
+    omega
+  obtain ⟨x, hxrow, hxnotU⟩ := hex
+  refine ⟨x, hxrow, hxnotU, ?_⟩
+  intro hxerase
+  rw [questionSupport, Finset.mem_biUnion] at hxerase
+  obtain ⟨f, hf, hxf⟩ := hxerase
+  have hfe : f ≠ e := (Finset.mem_erase.mp hf).1
+  have hfU' : f ∈ U' := (Finset.mem_erase.mp hf).2
+  have hdis : Disjoint (row e) (row f) := hU'.1 he hfU' (Ne.symm hfe)
+  exact (Finset.disjoint_left.mp hdis) hxrow hxf
+
 #print axioms excluded_row_points_eq
 #print axioms excluded_row_overlap_le_one
+#print axioms new_row_private_coordinate
 end PvNP.RealizableHardness.ActualStarQuestionSupport
