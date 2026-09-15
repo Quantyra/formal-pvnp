@@ -1,5 +1,6 @@
 import PvNP.RealizableHardness.ActualOccurrenceCounts
 import PvNP.RealizableHardness.ActualOccurrenceDegree
+import PvNP.RealizableHardness.ActualStarQuestionSupport
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
 /-! The occurrence-sensitive degree input for the ordered-question mass bridge. -/
@@ -48,6 +49,255 @@ def rowConflict
   ¬ Disjoint (row e) (row f) ∨
   ∃ g : E, ∃ x ∈ row e, ∃ y ∈ row f,
     x ∈ row g ∧ y ∈ row g
+
+def GoodOrderedQuestion
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    {J : Nat} (row : E → Finset X) (u : Fin J → E) : Prop :=
+  Function.Injective u ∧
+    ActualStarQuestionSupport.GoodQuestion row (Finset.univ.image u)
+
+theorem not_goodOrderedQuestion_iff_conflicting_pair
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    {J : Nat} (row : E → Finset X) (u : Fin J → E) :
+    ¬ GoodOrderedQuestion row u ↔
+      ∃ i j : Fin J, i ≠ j ∧ rowConflict row (u i) (u j) := by
+  classical
+  constructor
+  · intro hbad
+    by_contra hnone
+    push_neg at hnone
+    apply hbad
+    refine ⟨?_, ?_⟩
+    · intro i j heq
+      by_contra hij
+      exact hnone i j hij (Or.inl heq)
+    · constructor
+      · intro e he f hf hef
+        rcases Finset.mem_image.mp he with ⟨i, hi, rfl⟩
+        rcases Finset.mem_image.mp hf with ⟨j, hj, rfl⟩
+        have hij : i ≠ j := by
+          intro hij
+          apply hef
+          exact congrArg u hij
+        by_contra hdis
+        exact hnone i j hij (Or.inr (Or.inl hdis))
+      · intro e he f hf hef g x hx y hy hxg hyg
+        rcases Finset.mem_image.mp he with ⟨i, hi, rfl⟩
+        rcases Finset.mem_image.mp hf with ⟨j, hj, rfl⟩
+        have hij : i ≠ j := by
+          intro hij
+          apply hef
+          exact congrArg u hij
+        exact hnone i j hij
+          (Or.inr (Or.inr ⟨g, x, hx, y, hy, hxg, hyg⟩))
+  · rintro ⟨i, j, hij, hconflict⟩ hgood
+    rcases hgood with ⟨hinj, hquestion⟩
+    rcases hconflict with heq | hdis | ⟨g, x, hx, y, hy, hxg, hyg⟩
+    · exact hij (hinj heq)
+    · have hi : u i ∈ Finset.univ.image u := Finset.mem_image.mpr ⟨i, by simp, rfl⟩
+      have hj : u j ∈ Finset.univ.image u := Finset.mem_image.mpr ⟨j, by simp, rfl⟩
+      have hne : u i ≠ u j := by
+        intro heq'
+        exact hij (hinj heq')
+      exact hdis (hquestion.1 hi hj hne)
+    · have hi : u i ∈ Finset.univ.image u := Finset.mem_image.mpr ⟨i, by simp, rfl⟩
+      have hj : u j ∈ Finset.univ.image u := Finset.mem_image.mpr ⟨j, by simp, rfl⟩
+      have hne : u i ≠ u j := by
+        intro heq'
+        exact hij (hinj heq')
+      exact hquestion.2 (u i) hi (u j) hj hne g x hx y hy hxg hyg
+
+def pairConflictSet
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    {J : Nat} (row : E → Finset X) (i j : Fin J) :
+    Finset (Fin J → E) :=
+  Finset.univ.filter (fun u => rowConflict row (u i) (u j))
+
+theorem pairConflictSet_card_le
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    {J : Nat} (row : E → Finset X) (C : Nat)
+    (hconflict : ∀ e,
+      ((Finset.univ : Finset E).filter
+        (rowConflict row e)).card ≤ C)
+    (i j : Fin J) (hij : i ≠ j) :
+    (pairConflictSet row i j).card ≤
+      C * (Fintype.card E) ^ (J - 1) := by
+  classical
+  let K : Type := {k : Fin J // k ≠ i ∧ k ≠ j}
+  let encode : (Fin J → E) → E × E × (K → E) :=
+    fun u => (u i, u j, fun k => u k.1)
+  have hencode : Function.Injective encode := by
+    intro u v huv
+    funext k
+    by_cases hki : k = i
+    · simpa [hki] using congrArg Prod.fst huv
+    · by_cases hkj : k = j
+      · simpa [hkj] using congrArg (fun z => z.2.1) huv
+      · have htail := congrArg (fun z => z.2.2 ⟨k, hki, hkj⟩) huv
+        exact htail
+  let target : Finset (E × E × (K → E)) :=
+    (Finset.univ : Finset E).biUnion (fun e =>
+      ((Finset.univ : Finset E).filter (rowConflict row e)).biUnion (fun f =>
+        (Finset.univ : Finset (K → E)).image (fun t => (e, f, t))))
+  have himage : (pairConflictSet row i j).image encode ⊆ target := by
+    intro z hz
+    rcases Finset.mem_image.mp hz with ⟨u, hu, rfl⟩
+    rcases Finset.mem_filter.mp hu with ⟨_, hconflict⟩
+    apply Finset.mem_biUnion.mpr
+    refine ⟨u i, Finset.mem_univ _, ?_⟩
+    apply Finset.mem_biUnion.mpr
+    refine ⟨u j, Finset.mem_filter.mpr ⟨Finset.mem_univ _, hconflict⟩, ?_⟩
+    apply Finset.mem_image.mpr
+    exact ⟨fun k => u k.1, Finset.mem_univ _, rfl⟩
+  have hKcard : Fintype.card K = J - 2 := by
+    rw [Fintype.card_subtype]
+    have hfilter :
+        ({k : Fin J | k ≠ i ∧ k ≠ j} : Finset (Fin J)) =
+          (Finset.univ.erase i).erase j := by
+      ext k
+      simp [and_comm]
+    rw [hfilter]
+    rw [Finset.card_erase_of_mem
+      (Finset.mem_erase.mpr ⟨Ne.symm hij, Finset.mem_univ j⟩),
+      Finset.card_erase_of_mem (Finset.mem_univ i),
+      Finset.card_univ, Fintype.card_fin]
+    omega
+  have htailcard : (Finset.univ : Finset (K → E)).card =
+      (Fintype.card E) ^ (J - 2) := by
+    simp [Fintype.card_fun, hKcard]
+  have hinner (e : E) :
+      (((Finset.univ : Finset E).filter (rowConflict row e)).biUnion (fun f =>
+        (Finset.univ : Finset (K → E)).image (fun t => (e, f, t)))).card ≤
+      C * (Fintype.card E) ^ (J - 2) := by
+    calc
+      _ ≤ ((Finset.univ : Finset E).filter (rowConflict row e)).card *
+          (Finset.univ : Finset (K → E)).card := by
+        apply Finset.card_biUnion_le_card_mul
+        intro f hf
+        have hinj_t : Function.Injective (fun t : K → E => (e, f, t)) := by
+          intro a b hab
+          exact congrArg Prod.snd (congrArg Prod.snd hab)
+        rw [Finset.card_image_of_injective _ hinj_t]
+      _ ≤ C * (Fintype.card E) ^ (J - 2) := by
+        rw [htailcard]
+        exact Nat.mul_le_mul_right _ (hconflict e)
+  have htarget : target.card ≤
+      (Fintype.card E) * (C * (Fintype.card E) ^ (J - 2)) := by
+    dsimp [target]
+    calc
+      _ ≤ (Finset.univ : Finset E).card *
+          (C * (Fintype.card E) ^ (J - 2)) := by
+        apply Finset.card_biUnion_le_card_mul
+        intro e he
+        exact hinner e
+      _ = (Fintype.card E) * (C * (Fintype.card E) ^ (J - 2)) := by
+        simp
+  have hcard := Finset.card_le_card himage
+  calc
+    (pairConflictSet row i j).card =
+        ((pairConflictSet row i j).image encode).card := by
+      symm
+      exact Finset.card_image_of_injective _ hencode
+    _ ≤ target.card := hcard
+    _ ≤ (Fintype.card E) * (C * (Fintype.card E) ^ (J - 2)) := htarget
+    _ = C * (Fintype.card E) ^ (J - 1) := by
+      have hJ : J - 1 = (J - 2) + 1 := by omega
+      rw [hJ, pow_succ]
+      ring
+
+def distinctOrderedPairs (J : Nat) : Finset (Fin J × Fin J) :=
+  Finset.univ.filter (fun p => p.1 ≠ p.2)
+
+theorem distinctOrderedPairs_card (J : Nat) :
+    (distinctOrderedPairs J).card = J * (J - 1) := by
+  classical
+  let fibers : Finset (Fin J) → Finset (Fin J × Fin J) := fun s =>
+    s.biUnion (fun i => (Finset.univ.erase i).image (fun j => (i, j)))
+  have hfibers :
+      distinctOrderedPairs J = fibers Finset.univ := by
+    ext p
+    rcases p with ⟨i, j⟩
+    simp [distinctOrderedPairs, fibers, Finset.mem_biUnion, ne_comm]
+  have hdisj : ((Finset.univ : Finset (Fin J)) : Set (Fin J)).PairwiseDisjoint
+      (fun i => (Finset.univ.erase i).image (fun j => (i, j))) := by
+    intro i hi j hj hij
+    apply Finset.disjoint_left.mpr
+    intro p hpi hpj
+    rcases Finset.mem_image.mp hpi with ⟨a, ha, rfl⟩
+    rcases Finset.mem_image.mp hpj with ⟨b, hb, hab⟩
+    exact hij (congrArg Prod.fst hab).symm
+  have hfiber_card (i : Fin J) :
+      ((Finset.univ.erase i).image (fun j => (i, j))).card = J - 1 := by
+    rw [Finset.card_image_of_injective _ (by
+      intro a b hab
+      exact congrArg Prod.snd hab)]
+    rw [Finset.card_erase_of_mem (Finset.mem_univ i), Finset.card_univ,
+      Fintype.card_fin]
+  rw [hfibers, Finset.card_biUnion hdisj]
+  simp_rw [hfiber_card]
+  simp [Fintype.card_fin]
+
+theorem bad_ordered_question_count_le_of_conflict
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    (row : E → Finset X) (J C : Nat)
+    (hconflict : ∀ e,
+      ((Finset.univ : Finset E).filter
+        (rowConflict row e)).card ≤ C) :
+    ((Finset.univ : Finset (Fin J → E)).filter
+      (fun u => ¬ GoodOrderedQuestion row u)).card ≤
+      J * (J - 1) * C * (Fintype.card E) ^ (J - 1) := by
+  classical
+  by_cases hJ : J < 2
+  · have hgood (u : Fin J → E) : GoodOrderedQuestion row u := by
+      apply not_not.mp
+      intro hbad
+      rcases (not_goodOrderedQuestion_iff_conflicting_pair row u).mp hbad with
+        ⟨i, j, hij, _⟩
+      have hij_eq : ∀ i j : Fin J, i = j := by
+        intro i j
+        omega
+      exact hij (hij_eq i j)
+    have hbad_empty :
+        (Finset.univ : Finset (Fin J → E)).filter
+          (fun u => ¬ GoodOrderedQuestion row u) = ∅ := by
+      ext u
+      simp [hgood u]
+    rw [hbad_empty]
+    simp
+  · have hJ2 : 2 ≤ J := by omega
+    let pairs : Finset (Fin J × Fin J) := distinctOrderedPairs J
+    let bad : Finset (Fin J → E) :=
+      Finset.univ.filter (fun u => ¬ GoodOrderedQuestion row u)
+    have hbad_subset : bad ⊆ pairs.biUnion (fun p => pairConflictSet row p.1 p.2) := by
+      intro u hu
+      rcases (not_goodOrderedQuestion_iff_conflicting_pair row u).mp
+          (Finset.mem_filter.mp hu).2 with ⟨i, j, hij, hconflict⟩
+      apply Finset.mem_biUnion.mpr
+      refine ⟨(i, j), ?_, ?_⟩
+      · exact Finset.mem_filter.mpr ⟨Finset.mem_univ _, hij⟩
+      · exact Finset.mem_filter.mpr ⟨Finset.mem_univ _, hconflict⟩
+    have hpair (p : Fin J × Fin J) (hp : p ∈ pairs) :
+        (pairConflictSet row p.1 p.2).card ≤
+          C * (Fintype.card E) ^ (J - 1) := by
+      exact pairConflictSet_card_le row C hconflict p.1 p.2
+        (Finset.mem_filter.mp hp).2
+    have hcard := Finset.card_le_card hbad_subset
+    dsimp [bad] at hcard
+    calc
+      (Finset.univ.filter (fun u => ¬ GoodOrderedQuestion row u)).card ≤
+          (pairs.biUnion (fun p => pairConflictSet row p.1 p.2)).card := hcard
+      _ ≤ pairs.card * (C * (Fintype.card E) ^ (J - 1)) := by
+        exact Finset.card_biUnion_le_card_mul pairs
+          (fun p => pairConflictSet row p.1 p.2)
+          (C * (Fintype.card E) ^ (J - 1)) hpair
+      _ = J * (J - 1) * C * (Fintype.card E) ^ (J - 1) := by
+        rw [show pairs = distinctOrderedPairs J from rfl, distinctOrderedPairs_card]
+        ring
 
 def incidenceRows (row : E → Finset X) (x : X) : Finset E :=
   (Finset.univ : Finset E).filter (fun e => x ∈ row e)
@@ -139,5 +389,22 @@ theorem conflict_degree_le
       omega
 
 #print axioms conflict_degree_le
+
+theorem bad_ordered_question_count_le
+    {X E : Type*} [Fintype X] [Fintype E]
+    [DecidableEq X] [DecidableEq E]
+    (row : E → Finset X) (D J : Nat)
+    (hthree : ∀ e, (row e).card = 3)
+    (hdegree : ∀ x,
+      ((Finset.univ : Finset E).filter
+        (fun e => x ∈ row e)).card ≤ D) :
+    ((Finset.univ : Finset (Fin J → E)).filter
+      (fun u => ¬ GoodOrderedQuestion row u)).card ≤
+      J * (J - 1) * (1 + 3 * D + 9 * D^2) *
+        (Fintype.card E) ^ (J - 1) := by
+  apply bad_ordered_question_count_le_of_conflict row J
+    (1 + 3 * D + 9 * D^2)
+  intro e
+  exact conflict_degree_le row D hthree hdegree e
 
 end

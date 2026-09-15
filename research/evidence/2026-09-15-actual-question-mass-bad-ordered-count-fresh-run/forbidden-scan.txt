@@ -1,0 +1,1 @@
+SCAN_EXIT=1 (exit 1 means no matches)
