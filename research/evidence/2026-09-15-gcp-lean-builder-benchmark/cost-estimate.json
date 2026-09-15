@@ -1,0 +1,33 @@
+﻿{
+    "asOf":  "2026-09-15T15:28:01.1124755-07:00",
+    "currency":  "USD",
+    "pricingModel":  "on-demand list-price upper estimate; no discount/free-tier credit assumed",
+    "compute":  {
+                    "machineType":  "c3-highmem-8",
+                    "ratePerHour":  0.529232,
+                    "billableSeconds":  940.418,
+                    "estimate":  0.13825
+                },
+    "disk":  {
+                 "type":  "pd-balanced",
+                 "sizeGiB":  200,
+                 "ratePerGiBHour":  0.000136986,
+                 "hoursThroughAsOf":  0.523871,
+                 "estimateThroughAsOf":  0.014353,
+                 "dailyRunRate":  0.657533,
+                 "monthly730HourRunRate":  19.999956
+             },
+    "temporaryExternalIPv4":  {
+                                  "ratePerHourAssumption":  0.005,
+                                  "seconds":  457.671,
+                                  "estimate":  0.000636
+                              },
+    "networkAndMinorAncillaryAllowance":  0.01,
+    "estimatedTotalThroughAsOf":  0.163238,
+    "conservativeCeilingThroughAsOf":  0.2,
+    "pricingSources":  [
+                           "https://cloud.google.com/products/compute/pricing/general-purpose",
+                           "https://cloud.google.com/compute/disks-image-pricing",
+                           "https://cloud.google.com/vpc/network-pricing"
+                       ]
+}

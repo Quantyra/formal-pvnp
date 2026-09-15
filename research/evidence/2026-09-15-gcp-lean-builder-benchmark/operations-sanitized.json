@@ -1,0 +1,158 @@
+﻿[
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T14:46:24.136-07:00",
+        "startTime":  "2026-09-15T14:46:24.394-07:00",
+        "endTime":  "2026-09-15T14:46:36.922-07:00",
+        "status":  "DONE",
+        "targetId":  "1889888198554026561",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T14:46:59.041-07:00",
+        "startTime":  "2026-09-15T14:46:59.073-07:00",
+        "endTime":  "2026-09-15T14:47:05.480-07:00",
+        "status":  "DONE",
+        "targetId":  "2317773254561104445",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-b",
+        "insertTime":  "2026-09-15T14:53:19.297-07:00",
+        "startTime":  "2026-09-15T14:53:19.344-07:00",
+        "endTime":  "2026-09-15T14:53:29.600-07:00",
+        "status":  "DONE",
+        "targetId":  "5033929835479826593",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-c",
+        "insertTime":  "2026-09-15T14:53:45.479-07:00",
+        "startTime":  "2026-09-15T14:53:45.526-07:00",
+        "endTime":  "2026-09-15T14:53:52.379-07:00",
+        "status":  "DONE",
+        "targetId":  "3103043007419777158",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-f",
+        "insertTime":  "2026-09-15T14:54:09.152-07:00",
+        "startTime":  "2026-09-15T14:54:09.211-07:00",
+        "endTime":  "2026-09-15T14:54:15.564-07:00",
+        "status":  "DONE",
+        "targetId":  "3775283776691896431",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T14:54:48.595-07:00",
+        "startTime":  "2026-09-15T14:54:48.618-07:00",
+        "endTime":  "2026-09-15T14:54:54.858-07:00",
+        "status":  "DONE",
+        "targetId":  "5569626503421100103",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-b",
+        "insertTime":  "2026-09-15T14:55:10.653-07:00",
+        "startTime":  "2026-09-15T14:55:10.703-07:00",
+        "endTime":  "2026-09-15T14:55:16.447-07:00",
+        "status":  "DONE",
+        "targetId":  "3572370542168375377",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-c",
+        "insertTime":  "2026-09-15T14:55:32.114-07:00",
+        "startTime":  "2026-09-15T14:55:32.138-07:00",
+        "endTime":  "2026-09-15T14:55:39.170-07:00",
+        "status":  "DONE",
+        "targetId":  "4591705966730543164",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-f",
+        "insertTime":  "2026-09-15T14:55:56.033-07:00",
+        "startTime":  "2026-09-15T14:55:56.068-07:00",
+        "endTime":  "2026-09-15T14:56:02.042-07:00",
+        "status":  "DONE",
+        "targetId":  "6592478187643731972",
+        "errorCodes":  [
+                           "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS"
+                       ]
+    },
+    {
+        "operationType":  "insert",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T14:56:35.271-07:00",
+        "startTime":  "2026-09-15T14:56:35.315-07:00",
+        "endTime":  "2026-09-15T14:56:46.330-07:00",
+        "status":  "DONE",
+        "targetId":  "8337954477286097405",
+        "errorCodes":  [
+                           null
+                       ]
+    },
+    {
+        "operationType":  "addAccessConfig",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T15:02:17.713-07:00",
+        "startTime":  "2026-09-15T15:02:17.792-07:00",
+        "endTime":  "2026-09-15T15:02:23.430-07:00",
+        "status":  "DONE",
+        "targetId":  "8337954477286097405",
+        "errorCodes":  [
+                           null
+                       ]
+    },
+    {
+        "operationType":  "deleteAccessConfig",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T15:10:01.086-07:00",
+        "startTime":  "2026-09-15T15:10:01.101-07:00",
+        "endTime":  "2026-09-15T15:10:07.603-07:00",
+        "status":  "DONE",
+        "targetId":  "8337954477286097405",
+        "errorCodes":  [
+                           null
+                       ]
+    },
+    {
+        "operationType":  "stop",
+        "zone":  "us-central1-a",
+        "insertTime":  "2026-09-15T15:10:13.356-07:00",
+        "startTime":  "2026-09-15T15:10:13.383-07:00",
+        "endTime":  "2026-09-15T15:12:27.275-07:00",
+        "status":  "DONE",
+        "targetId":  "8337954477286097405",
+        "errorCodes":  [
+                           null
+                       ]
+    }
+]

@@ -1,0 +1,24 @@
+﻿{
+    "capturedAt":  "2026-09-15T15:24:54.8866896-07:00",
+    "platform":  "Microsoft Windows NT 10.0.28120.0",
+    "toolchain":  "Lean (version 4.34.0-rc2, x86_64-w64-windows-gnu, commit 6a10ac8c22beadecabdbb0919c2b50214762f91d, Release)",
+    "leanNumThreads":  1,
+    "main":  {
+                 "source":  "lean/PvNP/RealizableHardness/SubmoduleFunctionalGluing.lean",
+                 "exitCode":  null,
+                 "wallSeconds":  86.575632,
+                 "peakWorkingSetBytes":  1024806912,
+                 "outputSha256":  "77D109A27663844EB3D553C7F23FBB4C064A34AFE9B0F977A5156B14DCC415E7",
+                 "stdoutSha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855",
+                 "stderrSha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+             },
+    "checks":  {
+                   "source":  "lean/PvNP/RealizableHardness/SubmoduleFunctionalGluingChecks.lean",
+                   "exitCode":  null,
+                   "wallSeconds":  16.782215,
+                   "peakWorkingSetBytes":  1003507712,
+                   "outputSha256":  "D40CF30A445FF7DFC18F927BAF4FED5657A8D5EBE8CE723AA7CE64F0D9D7518E",
+                   "stdoutSha256":  "CDF490961238759A047EF850190D802CE4A103C7BF4096B518B206520E1881A5",
+                   "stderrSha256":  "E3B0C44298FC1C149AFBF4C8996FB92427AE41E4649B934CA495991B7852B855"
+               }
+}

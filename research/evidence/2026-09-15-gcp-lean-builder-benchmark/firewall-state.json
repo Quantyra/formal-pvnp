@@ -1,0 +1,80 @@
+﻿[
+    {
+        "name":  "default-allow-icmp",
+        "network":  "default",
+        "direction":  "INGRESS",
+        "disabled":  false,
+        "sourceRanges":  [
+                             "0.0.0.0/0"
+                         ],
+        "allowed":  [
+                        {
+                            "IPProtocol":  "icmp"
+                        }
+                    ],
+        "targetTags":  null
+    },
+    {
+        "name":  "default-allow-internal",
+        "network":  "default",
+        "direction":  "INGRESS",
+        "disabled":  false,
+        "sourceRanges":  [
+                             "10.128.0.0/9"
+                         ],
+        "allowed":  [
+                        {
+                            "IPProtocol":  "tcp",
+                            "ports":  [
+                                          "0-65535"
+                                      ]
+                        },
+                        {
+                            "IPProtocol":  "udp",
+                            "ports":  [
+                                          "0-65535"
+                                      ]
+                        },
+                        {
+                            "IPProtocol":  "icmp"
+                        }
+                    ],
+        "targetTags":  null
+    },
+    {
+        "name":  "default-allow-rdp",
+        "network":  "default",
+        "direction":  "INGRESS",
+        "disabled":  false,
+        "sourceRanges":  [
+                             "0.0.0.0/0"
+                         ],
+        "allowed":  [
+                        {
+                            "IPProtocol":  "tcp",
+                            "ports":  [
+                                          "3389"
+                                      ]
+                        }
+                    ],
+        "targetTags":  null
+    },
+    {
+        "name":  "default-allow-ssh",
+        "network":  "default",
+        "direction":  "INGRESS",
+        "disabled":  false,
+        "sourceRanges":  [
+                             "0.0.0.0/0"
+                         ],
+        "allowed":  [
+                        {
+                            "IPProtocol":  "tcp",
+                            "ports":  [
+                                          "22"
+                                      ]
+                        }
+                    ],
+        "targetTags":  null
+    }
+]

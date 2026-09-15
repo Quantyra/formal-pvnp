@@ -1,0 +1,66 @@
+﻿{
+    "capturedAt":  "2026-09-15T15:27:50.6062099-07:00",
+    "project":  "quantyra-lean-cert-20260915",
+    "zone":  "us-central1-a",
+    "name":  "quantyra-lean-builder-01",
+    "id":  "8337954477286097405",
+    "status":  "TERMINATED",
+    "creationTimestamp":  "2026-09-15T14:56:35.165-07:00",
+    "lastStartTimestamp":  "2026-09-15T14:56:46.283-07:00",
+    "lastStopTimestamp":  "2026-09-15T15:12:26.701-07:00",
+    "machineType":  "c3-highmem-8",
+    "labels":  {
+                   "entity":  "quantyra",
+                   "environment":  "research",
+                   "workload":  "lean-certification"
+               },
+    "cpuPlatform":  "Unknown CPU Platform",
+    "scheduling":  {
+                       "automaticRestart":  true,
+                       "onHostMaintenance":  "MIGRATE",
+                       "preemptible":  false,
+                       "provisioningModel":  "STANDARD"
+                   },
+    "shieldedInstanceConfig":  {
+                                   "enableIntegrityMonitoring":  true,
+                                   "enableSecureBoot":  true,
+                                   "enableVtpm":  true
+                               },
+    "serviceAccounts":  [
+                            {
+                                "email":  "1013064480488-compute@developer.gserviceaccount.com",
+                                "scopes":  [
+                                               "https://www.googleapis.com/auth/devstorage.read_only",
+                                               "https://www.googleapis.com/auth/logging.write",
+                                               "https://www.googleapis.com/auth/monitoring.write",
+                                               "https://www.googleapis.com/auth/pubsub",
+                                               "https://www.googleapis.com/auth/service.management.readonly",
+                                               "https://www.googleapis.com/auth/servicecontrol",
+                                               "https://www.googleapis.com/auth/trace.append"
+                                           ]
+                            }
+                        ],
+    "enableOsLogin":  "TRUE",
+    "blockProjectSshKeys":  "TRUE",
+    "startupScriptSha256":  "EFFCAEF9716F3FDAF12944FC7D83980904939CFD19F68606887E89BA550DE0CD",
+    "networkInterfaces":  [
+                              {
+                                  "networkIP":  "10.128.0.2",
+                                  "network":  "default",
+                                  "subnetwork":  "default",
+                                  "accessConfigs":  [
+                                                        null
+                                                    ]
+                              }
+                          ],
+    "disks":  [
+                  {
+                      "boot":  true,
+                      "autoDelete":  true,
+                      "diskSizeGb":  "200",
+                      "interface":  "NVME",
+                      "architecture":  "X86_64",
+                      "source":  "quantyra-lean-builder-01"
+                  }
+              ]
+}

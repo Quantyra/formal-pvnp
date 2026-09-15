@@ -1,0 +1,14 @@
+﻿{
+    "capturedAt":  "2026-09-15T15:27:53.3703525-07:00",
+    "name":  "quantyra-lean-builder-01",
+    "id":  "7293290647031906812",
+    "status":  "READY",
+    "creationTimestamp":  "2026-09-15T14:56:35.177-07:00",
+    "sizeGb":  "200",
+    "type":  "pd-balanced",
+    "architecture":  "X86_64",
+    "sourceImage":  "ubuntu-2404-noble-amd64-v20260906",
+    "users":  [
+                  "quantyra-lean-builder-01"
+              ]
+}

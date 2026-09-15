@@ -1,0 +1,11 @@
+gcloud compute instances describe quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a --format=json
+gcloud compute disks describe quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a --format=json
+gcloud compute operations list --project quantyra-lean-cert-20260915 --filter="targetLink~quantyra-lean-builder-01" --sort-by=insertTime --format=json
+gcloud compute firewall-rules list --project quantyra-lean-cert-20260915 --format=json
+tar -xzf gcp-benchmark-result.tar.gz
+sha256sum <benchmark source files before and after>
+/usr/bin/time -v lean -R lean -o <isolated-main-object> SubmoduleFunctionalGluing.lean
+/usr/bin/time -v lean -R lean -o <isolated-checks-object> SubmoduleFunctionalGluingChecks.lean
+sha256sum <isolated objects>
+
+No access token, SSH key, credential, external IP address, or account-payment detail is stored in this evidence directory.
