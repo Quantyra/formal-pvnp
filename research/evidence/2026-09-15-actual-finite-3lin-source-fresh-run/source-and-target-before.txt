@@ -1,0 +1,5 @@
+main_source_sha256 3109F8B0078B7F6253110ED2C39FC85935268768AB0A0A6B9CDA2F029B8B761F
+checks_source_sha256 469AC0A70E0339B21706A7696E173C2C6E19CB211C6AAEF6135F0ECAE3AB8A0F
+main_object_before_compile false
+checks_object_before_compile false
+target_seeded_from prior canonical actual-question-mass-d4-count-fresh-20260915

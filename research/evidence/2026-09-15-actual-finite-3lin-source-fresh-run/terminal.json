@@ -1,0 +1,18 @@
+{
+    "run":  "20260915-actual-finite-3lin-source-fresh",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "toolchain":  "leanprover/lean4:v4.34.0-rc2",
+    "lean_exe":  "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\bin\\lean.exe",
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-finite-3lin-source-fresh-20260915\\lib\\lean",
+    "main_exit":  0,
+    "checks_exit":  0,
+    "main_source_sha256":  "3109F8B0078B7F6253110ED2C39FC85935268768AB0A0A6B9CDA2F029B8B761F",
+    "checks_source_sha256":  "469AC0A70E0339B21706A7696E173C2C6E19CB211C6AAEF6135F0ECAE3AB8A0F",
+    "main_object_sha256":  "72FE7300086DFB3B13844319C75725AC16032C3413699F20810B2282C6235F48",
+    "checks_object_sha256":  "69793BC0944858BF5846E32D23956F29A20D852AA3C18FF30FDBE1E9D7D4E008",
+    "seed_olean_manifest_sha256":  "83E6928E14575E5679022C0CA5716E6C53092B8EB176D1F85BF9CD95554F1ADB",
+    "fresh_output_inventory_sha256":  "E8F8D35A6C7DD5DACDD33B61E57766782F2943AD95B1761C4BDAADF107102E6A",
+    "seed_caveat":  "immutable cached dependency objects copied from prior canonical d4-count target; current source objects absent before compile",
+    "signature_axioms_source":  "Checks stdout",
+    "forbidden_scan":  "clean; no forbidden matches"
+}

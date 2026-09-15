@@ -1,0 +1,10 @@
+target_directory_created_for_run=true
+main_object_absent_before_compile=true
+checks_object_absent_before_compile=true
+seeded_before_compile=true
+seed_root=
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+\.lake\build\actual-question-mass-d4-count-fresh-20260915\lib\lean
+target_root=
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+\.lake\build\actual-finite-3lin-source-fresh-20260915\lib\lean

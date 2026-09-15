@@ -1,0 +1,12 @@
+cwd=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness toolchain=C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\bin\lean.exe sysroot=C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\lib\lean lake_manifest_sha256=825D2E1A20005A259FDF5B181528B391DD6BA18A52C86127CAF4C3BE990E04F0 seed_manifest_source=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-d4-count-fresh-20260915\lib\lean target_population=full recursive copy of immutable prior canonical lib/lean seed; current module objects absent before compile
+cslib rev=d9be64196bf145edd019f1ccfeaee0c11166ba6b inputRev=d9be64196bf145edd019f1ccfeaee0c11166ba6b
+mathlib rev=e06eff5f95374108acfaf19f1ff7473aa7771df2 inputRev=e06eff5f95374108acfaf19f1ff7473aa7771df2
+complexitylib rev=6c248df7859f2f245e731c1e07057bf69d165fe2 inputRev=6c248df7859f2f245e731c1e07057bf69d165fe2
+plausible rev=d9598f07b1bc701f1e3aae163d2681c1fd978793 inputRev=main
+LeanSearchClient rev=ba67e212be1197b84c1f1f6299488a10a3002713 inputRev=main
+importGraph rev=d8823026ac7ef130c253089d95685f9877b95323 inputRev=main
+proofwidgets rev=a8acbfd87375ff4abe14ce09db5b7664d383bc7f inputRev=main
+aesop rev=18889deb9e83ea7420ef51c160d6f88552e744e3 inputRev=master
+Qq rev=507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3 inputRev=master
+batteries rev=7e23602c91bc04586b2b06de2708a041853e4681 inputRev=main
+Cli rev=ab3a82db9fea14cf0fd7f5a2de650f4b534640af inputRev=v4.34.0-rc2
