@@ -1,0 +1,8 @@
+﻿method=independent post-run rehash of every artifact-hashes.txt row
+artifact_rows=25
+row_mismatches=0
+artifact_manifest_sha256=4AEDC064895353B3ADF044A15F62F00F91346BBAF752774E9EC167FDCAB3F398
+pointer_sha256=4AEDC064895353B3ADF044A15F62F00F91346BBAF752774E9EC167FDCAB3F398
+pointer_matches=True
+source_before_after_equal=True
+result=PASS

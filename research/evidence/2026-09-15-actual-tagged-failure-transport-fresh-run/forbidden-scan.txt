@@ -1,0 +1,2 @@
+﻿pattern=(?i)\bsorry\b|\badmit\b|\bnative_decide\b|^\s*axiom\b
+result=clean (no matches)
