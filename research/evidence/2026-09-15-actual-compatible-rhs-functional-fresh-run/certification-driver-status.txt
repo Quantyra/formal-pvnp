@@ -1,0 +1,8 @@
+﻿phase=compile complete; evidence postprocessing recovery
+compile_exits=support:0,span:0,finite:0,rhs:0,side:0,main:0,checks:0
+source_hash_assertions=passed after every compile stage
+postprocess_initial_exit=1
+postprocess_issue=PowerShell pipeline emitted no content and therefore did not create finite.combined.log
+impact=no Lean compile or object impact
+recovery=create empty combined logs where both raw logs are empty, then run postprocessing against frozen sources and existing fresh objects
+rerun_compile=false

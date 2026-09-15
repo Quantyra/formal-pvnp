@@ -1,0 +1,7 @@
+﻿support_preexisting=False
+span_preexisting=False
+finite_preexisting=False
+rhs_preexisting=False
+side_preexisting=False
+main_preexisting=False
+checks_preexisting=False
