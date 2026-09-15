@@ -1,0 +1,30 @@
+{
+  "asOf": "2026-09-15T16:11:32.298-07:00",
+  "currency": "USD",
+  "pricingModel": "on-demand list-price estimate; no discounts, credits, or free-tier treatment assumed",
+  "priorCumulativeEstimate": 0.165505,
+  "compute": {
+    "machineType": "c3-highmem-8",
+    "ratePerHour": 0.529232,
+    "start": "2026-09-15T15:53:39.841-07:00",
+    "stop": "2026-09-15T16:11:32.298-07:00",
+    "billableSeconds": 1072.457,
+    "incrementEstimate": 0.157661
+  },
+  "disk": {
+    "type": "pd-balanced",
+    "sizeGiB": 200,
+    "ratePerGiBHour": 0.000136986,
+    "baselineTime": "2026-09-15T15:32:58.8978322-07:00",
+    "elapsedHours": 0.642611,
+    "incrementEstimate": 0.017606,
+    "continuingDailyRunRate": 0.657533
+  },
+  "externalIPv4Increment": 0.0,
+  "networkAndIapIncrementAssumption": 0.0,
+  "incrementEstimate": 0.175266,
+  "cumulativeEstimate": 0.340771,
+  "hardOperationalCeiling": 250.0,
+  "ceilingRemaining": 249.659229,
+  "notes": "Estimate, not an invoice. Ingress is free; the returned evidence archive was about 20 KiB. Billing export latency and discounts can change the final charge. The stopped 200 GiB disk continues to accrue storage charges."
+}

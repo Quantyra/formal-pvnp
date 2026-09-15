@@ -1,0 +1,6 @@
+gcloud compute instances start quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a
+gcloud compute firewall-rules create allow-iap-ssh-lean-builder --project=quantyra-lean-cert-20260915 --network=default --direction=INGRESS --priority=1000 --action=ALLOW --rules=tcp:22 --source-ranges=35.235.240.0/20 --target-service-accounts=1013064480488-compute@developer.gserviceaccount.com
+gcloud compute scp <bundle> quantyra-lean-builder-01:<private-path> --project=quantyra-lean-cert-20260915 --zone=us-central1-a --tunnel-through-iap
+gcloud compute ssh quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a --tunnel-through-iap --command=<gate-or-certification-script>
+gcloud compute scp quantyra-lean-builder-01:<result-archive> <local-path> --project=quantyra-lean-cert-20260915 --zone=us-central1-a --tunnel-through-iap
+gcloud compute instances stop quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a

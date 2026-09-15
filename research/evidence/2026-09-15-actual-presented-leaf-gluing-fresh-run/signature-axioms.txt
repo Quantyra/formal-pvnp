@@ -1,0 +1,36 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf {N m : ℕ} (I : Instance N m) (J h : ℕ) : Type
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.H {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.domain {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.H_le_coordinateSpace {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : P.H ≤ coordinateSpace I.support P.U
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.H_le_domain {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : P.H ≤ P.domain
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.domain_le_coordinateSpace {N m J h : ℕ}
+  {I : Instance N m} (P : PresentedLeaf I J h) : P.domain ≤ coordinateSpace I.support P.U
+PvNP.RealizableHardness.ActualPresentedLeafGluing.RawLeafLabel {N m : ℕ} (I : Instance N m)
+  (D : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)) : Type
+PvNP.RealizableHardness.ActualPresentedLeafGluing.RespectsAt {N m J h : ℕ} {I : Instance N m} (P : PresentedLeaf I J h)
+  {D : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)} (hD : P.domain = D) (f : RawLeafLabel I D) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex {N m : ℕ} (I : Instance N m) (J h : ℕ) : Type
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafLabel {N m J h : ℕ} {I : Instance N m} (v : LeafVertex I J h) :
+  Type
+PvNP.RealizableHardness.ActualPresentedLeafGluing.H_eq_of_domain_eq {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hD : P.domain = Q.domain) : P.H = Q.H
+PvNP.RealizableHardness.ActualPresentedLeafGluing.respectsAt_iff_of_domain_eq {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) {D : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)} (hP : P.domain = D) (hQ : Q.domain = D)
+  (f : RawLeafLabel I D) : RespectsAt P hP f ↔ RespectsAt Q hQ f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_gluedLeafRhsFunctional {N m J h : ℕ}
+  (I : Instance N m) (P : PresentedLeaf I J h) (U' : Finset I.RowId) (hU' : GoodQuestion I.support U')
+  (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  ∃! F, F ∘ₗ Submodule.inclusion ⋯ = f ∧ ∀ (e : I.RowId) (he : e ∈ U'), F ⟨equationVector I.support e, ⋯⟩ = I.rowRhs e
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.H_eq_of_domain_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.respectsAt_iff_of_domain_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_gluedLeafRhsFunctional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

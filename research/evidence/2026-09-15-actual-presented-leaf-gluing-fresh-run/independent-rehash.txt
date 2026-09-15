@@ -1,0 +1,5 @@
+﻿method=independent local rehash of every canonical artifact-hashes.txt row
+artifact_rows=139
+row_mismatches=0
+artifact_manifest_sha256=3EADD48379297AAD61EF5ADF24D73498770D1529A32969D008FE6D742E502BED
+result=PASS

@@ -1,0 +1,494 @@
+﻿[
+  {
+    "endTime": "2026-09-15T14:46:36.922-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2d-highmem-8 VM instance is currently unavailable in the us-central1-a zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2d-highmem-8",
+                  "zone": "us-central1-a",
+                  "zonesAvailable": ""
+                },
+                "reason": "resource_availability"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-a' does not have enough resources available to fulfill the request.  Try a different zone, or try again later."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:46:24.136-07:00",
+    "name": "operation-1789508781588-65b8c7b3fbed1-99b92dab-3ac5789e",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:46:24.394-07:00",
+    "status": "DONE",
+    "targetId": "1889888198554026561",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:47:05.480-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2d-highmem-8 VM instance is currently unavailable in the us-central1-a zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2d-highmem-8",
+                  "zone": "us-central1-a",
+                  "zonesAvailable": ""
+                },
+                "reason": "resource_availability"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-a' does not have enough resources available to fulfill the request.  Try a different zone, or try again later."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:46:59.041-07:00",
+    "name": "operation-1789508818305-65b8c7d700328-7d42f946-2f65fc7d",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:46:59.073-07:00",
+    "status": "DONE",
+    "targetId": "2317773254561104445",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:53:29.600-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2d-highmem-8 VM instance is currently unavailable in the us-central1-b zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2d-highmem-8",
+                  "zone": "us-central1-b",
+                  "zonesAvailable": ""
+                },
+                "reason": "resource_availability"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-b' does not have enough resources available to fulfill the request.  Try a different zone, or try again later."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:53:19.297-07:00",
+    "name": "operation-1789509198388-65b8c94179e80-e3027126-a487ab33",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:53:19.344-07:00",
+    "status": "DONE",
+    "targetId": "5033929835479826593",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-b/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:53:52.379-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2d-highmem-8 VM instance is currently unavailable in the us-central1-c zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2d-highmem-8",
+                  "zone": "us-central1-c",
+                  "zonesAvailable": ""
+                },
+                "reason": "resource_availability"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-c' does not have enough resources available to fulfill the request.  Try a different zone, or try again later."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:53:45.479-07:00",
+    "name": "operation-1789509224629-65b8c95a8036c-e40a57ee-81a136f8",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:53:45.526-07:00",
+    "status": "DONE",
+    "targetId": "3103043007419777158",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-c/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:54:15.564-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2d-highmem-8 VM instance is currently unavailable in the us-central1-f zone. Alternatively, you can try your request again with a different VM hardware configuration or at a later time. For more information, see the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2d-highmem-8",
+                  "zone": "us-central1-f",
+                  "zonesAvailable": ""
+                },
+                "reason": "resource_availability"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-f' does not have enough resources available to fulfill the request.  Try a different zone, or try again later."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:54:09.152-07:00",
+    "name": "operation-1789509248103-65b8c970e34f0-b8e8abba-30285e11",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:54:09.211-07:00",
+    "status": "DONE",
+    "targetId": "3775283776691896431",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-f/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:54:54.858-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2-highmem-8 VM instance is currently unavailable in the us-central1-a zone. Try requesting the VM in another zone. For more information, view the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2-highmem-8",
+                  "zone": "us-central1-a",
+                  "zonesAvailable": ""
+                },
+                "reason": "stockout"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-a' does not have enough resources available to fulfill the request.  '(resource type:compute)'."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:54:48.595-07:00",
+    "name": "operation-1789509287874-65b8c996d0ee8-2c0fb68a-471c1a96",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:54:48.618-07:00",
+    "status": "DONE",
+    "targetId": "5569626503421100103",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:55:16.447-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2-highmem-8 VM instance is currently unavailable in the us-central1-b zone. Try requesting the VM in another zone. For more information, view the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2-highmem-8",
+                  "zone": "us-central1-b",
+                  "zonesAvailable": ""
+                },
+                "reason": "stockout"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-b' does not have enough resources available to fulfill the request.  '(resource type:compute)'."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:55:10.653-07:00",
+    "name": "operation-1789509309752-65b8c9abae588-804ea9f2-527753c6",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:55:10.703-07:00",
+    "status": "DONE",
+    "targetId": "3572370542168375377",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-b/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:55:39.170-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2-highmem-8 VM instance is currently unavailable in the us-central1-c zone. Try requesting the VM in another zone. For more information, view the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2-highmem-8",
+                  "zone": "us-central1-c",
+                  "zonesAvailable": ""
+                },
+                "reason": "stockout"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-c' does not have enough resources available to fulfill the request.  '(resource type:compute)'."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:55:32.114-07:00",
+    "name": "operation-1789509331395-65b8c9c0524cc-2a12c2e2-7132df41",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:55:32.138-07:00",
+    "status": "DONE",
+    "targetId": "4591705966730543164",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-c/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:56:02.042-07:00",
+    "error": {
+      "errors": [
+        {
+          "code": "ZONE_RESOURCE_POOL_EXHAUSTED_WITH_DETAILS",
+          "errorDetails": [
+            {
+              "help": {
+                "links": [
+                  {
+                    "description": "Troubleshooting documentation",
+                    "url": "https://cloud.google.com/compute/docs/resource-error"
+                  }
+                ]
+              }
+            },
+            {
+              "localizedMessage": {
+                "locale": "en-US",
+                "message": "A n2-highmem-8 VM instance is currently unavailable in the us-central1-f zone. Try requesting the VM in another zone. For more information, view the troubleshooting documentation."
+              }
+            },
+            {
+              "errorInfo": {
+                "domain": "compute.googleapis.com",
+                "metadatas": {
+                  "attachment": "",
+                  "vmType": "n2-highmem-8",
+                  "zone": "us-central1-f",
+                  "zonesAvailable": ""
+                },
+                "reason": "stockout"
+              }
+            }
+          ],
+          "message": "The zone 'projects/quantyra-lean-cert-20260915/zones/us-central1-f' does not have enough resources available to fulfill the request.  '(resource type:compute)'."
+        }
+      ]
+    },
+    "insertTime": "2026-09-15T14:55:56.033-07:00",
+    "name": "operation-1789509355284-65b8c9d71a80e-5aa890b5-fb46ab13",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:55:56.068-07:00",
+    "status": "DONE",
+    "targetId": "6592478187643731972",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-f/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T14:56:46.330-07:00",
+    "insertTime": "2026-09-15T14:56:35.271-07:00",
+    "name": "operation-1789509394478-65b8c9fc7b66d-a5dd1e9f-0b1be245",
+    "operationType": "insert",
+    "startTime": "2026-09-15T14:56:35.315-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T15:02:23.430-07:00",
+    "insertTime": "2026-09-15T15:02:17.713-07:00",
+    "name": "operation-1789509737167-65b8cb434b964-00f5c322-d9629835",
+    "operationType": "addAccessConfig",
+    "startTime": "2026-09-15T15:02:17.792-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T15:10:07.603-07:00",
+    "insertTime": "2026-09-15T15:10:01.086-07:00",
+    "name": "operation-1789510200873-65b8ccfd8539c-2954044c-e28240ac",
+    "operationType": "deleteAccessConfig",
+    "startTime": "2026-09-15T15:10:01.101-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T15:12:27.275-07:00",
+    "insertTime": "2026-09-15T15:10:13.356-07:00",
+    "name": "operation-1789510213183-65b8cd0942621-fb544558-afefe32e",
+    "operationType": "stop",
+    "startTime": "2026-09-15T15:10:13.383-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T15:53:39.919-07:00",
+    "insertTime": "2026-09-15T15:53:32.101-07:00",
+    "name": "operation-1789512811678-65b8d6b760c1f-2654a866-7a96eaf2",
+    "operationType": "start",
+    "startTime": "2026-09-15T15:53:32.127-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  },
+  {
+    "endTime": "2026-09-15T16:11:37.898-07:00",
+    "insertTime": "2026-09-15T16:09:16.271-07:00",
+    "name": "operation-1789513756144-65b8da3c174b2-85eadf72-25f7e330",
+    "operationType": "stop",
+    "startTime": "2026-09-15T16:09:16.277-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01"
+  }
+]

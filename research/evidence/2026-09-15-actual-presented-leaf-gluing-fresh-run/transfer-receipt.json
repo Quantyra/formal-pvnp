@@ -1,0 +1,24 @@
+{
+  "sourceCommit": "e599567a629f6e4eb960b4b2543960095293d1d3",
+  "bundle": {
+    "name": "formal-pvnp-e599567.bundle",
+    "bytes": 25590096,
+    "localSha256": "FD98C5DB3B89F6C04552916E9E6315D806F26B8A596694278DA2E9EBBFC27A21",
+    "remoteSha256": "FD98C5DB3B89F6C04552916E9E6315D806F26B8A596694278DA2E9EBBFC27A21",
+    "gitBundleVerify": "PASS; complete history",
+    "detachedHead": "e599567a629f6e4eb960b4b2543960095293d1d3",
+    "checkoutStatus": "clean"
+  },
+  "frozenSources": {
+    "ActualPresentedLeafGluing.lean": "D19126D4962A13AF182462F56548FE74252100108D5BC1C9EF1C51EAEEBD1452",
+    "ActualPresentedLeafGluingChecks.lean": "E76DB5B1AF64E31131E785CAB057F194DF3428CE67E159693C61EE3B4AB0564E",
+    "remoteMatches": true,
+    "assertionsBeforeBetweenAfterStages": 36
+  },
+  "resultArchive": {
+    "name": "presented-leaf-certification.tar.gz",
+    "remoteSha256": "426C9E53F64D969FB3BD9DF36E9549A940F7E886269DDBB9FACA7CDCB17135DE",
+    "localSha256": "426C9E53F64D969FB3BD9DF36E9549A940F7E886269DDBB9FACA7CDCB17135DE"
+  },
+  "result": "PASS"
+}
