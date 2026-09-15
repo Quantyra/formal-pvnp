@@ -1,0 +1,7 @@
+﻿seed_source=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-bridge-refactored-fresh-20260914\lib\lean
+seeded_destination=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-conflict-degree-fresh-20260914\lib\lean
+seed_rule=all dependency files copied recursively except ActualQuestionMassBridge.olean and ActualQuestionMassBridgeChecks.olean
+seeded_file_count=2794
+main_compiled_after_seeding=true
+checks_compiled_after_main=true
+temp_probe_roots_excluded=true

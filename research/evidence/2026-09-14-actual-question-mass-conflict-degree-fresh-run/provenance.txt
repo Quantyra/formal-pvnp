@@ -1,0 +1,17 @@
+﻿toolchain_file=C:\Users\Dan\Desktop\Projects\formal-pvnp\lean-toolchain
+lean_toolchain_sha256=6D0D484EEAE522E854238A3EA3012246C0104D0544E58DF340DAAD3676CC0F78
+lake_manifest=C:\Users\Dan\Desktop\Projects\formal-pvnp\lake-manifest.json
+lake_manifest_sha256=4C6593556F2E5B1803D53C8108B39036BACFD47F76C9FC08AE132145C0A1A7B9
+v4_toolchain=leanprover/lean4:v4.34.0-rc2
+source_dependency_root=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-bridge-refactored-fresh-20260914\lib\lean
+package_roots:
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\mathlib\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\batteries\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\proofwidgets\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\aesop\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\Qq\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\plausible\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\importGraph\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\LeanSearchClient\.lake\build\lib\lean
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\complexitylib\.lake\build\lib\lean
+sysroot=C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\lib\lean

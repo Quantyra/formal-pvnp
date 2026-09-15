@@ -1,0 +1,13 @@
+﻿canonical_evidence=C:\Users\Dan\Desktop\Projects\formal-pvnp\research\evidence\2026-09-14-actual-question-mass-conflict-degree-fresh-run
+cwd=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+toolchain=leanprover/lean4:v4.34.0-rc2
+main_command=elan run leanprover/lean4:v4.34.0-rc2 lean.exe -R lean lean/PvNP/RealizableHardness/ActualQuestionMassBridge.lean -o C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-conflict-degree-fresh-20260914\lib\lean\PvNP\RealizableHardness\ActualQuestionMassBridge.olean
+checks_command=elan run leanprover/lean4:v4.34.0-rc2 lean.exe -R lean lean/PvNP/RealizableHardness/ActualQuestionMassBridgeChecks.lean -o C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-conflict-degree-fresh-20260914\lib\lean\PvNP\RealizableHardness\ActualQuestionMassBridgeChecks.olean
+main_precedes_checks=true
+main_exit=0
+checks_exit=0
+main_object_preexisting_before_run=false
+checks_object_preexisting_before_run=false
+target_seed=dependencies copied from prior canonical fresh output root, excluding both bridge objects; fresh main then Checks outputs written here
+temp_or_probe_in_lean_path=false
+LEAN_PATH=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-conflict-degree-fresh-20260914\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-question-mass-bridge-refactored-fresh-20260914\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\mathlib\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\batteries\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\proofwidgets\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\aesop\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\Qq\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\plausible\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\importGraph\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\LeanSearchClient\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\complexitylib\.lake\build\lib\lean;C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\lib\lean
