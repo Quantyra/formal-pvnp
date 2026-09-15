@@ -1,0 +1,8 @@
+target=C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-d4-count-fresh-20260915/lib/lean
+target_file_count=
+2796
+main_object_preexisting_before=false
+checks_object_preexisting_before=false
+main_exit=0
+checks_exit=0
+main_precedes_checks=true

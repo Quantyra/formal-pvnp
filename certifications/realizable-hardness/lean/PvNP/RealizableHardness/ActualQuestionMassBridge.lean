@@ -407,4 +407,29 @@ theorem bad_ordered_question_count_le
   intro e
   exact conflict_degree_le row D hthree hdegree e
 
+theorem actual_bad_ordered_question_count_le
+    {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m)
+    (J : Nat) :
+    ((Finset.univ : Finset (Fin J → I.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion I.support u)).card ≤
+      J * (J - 1) * 157 * (Fintype.card I.RowId) ^ (J - 1) := by
+  classical
+  have h := bad_ordered_question_count_le I.support 4 J I.support_card
+    (fun x => by
+      have hx := rowId_incidence_card_le_four I x
+      convert hx using 1
+      congr 1
+      letI : DecidablePred (fun q : I.RowId => x ∈ I.support q) :=
+        fun q => Finset.decidableMem x (I.support q)
+      have hfilter :
+          @Finset.filter I.RowId (fun q : I.RowId => x ∈ I.support q)
+              (fun q => Classical.propDecidable _) (Finset.univ : Finset I.RowId) =
+            (Finset.univ : Finset I.RowId).filter
+              (fun q : I.RowId => x ∈ I.support q) :=
+        Finset.filter_congr_decidable _ _ _
+      symm
+      exact hfilter)
+  simpa only [show (1 + 3 * 4 + 9 * 4 ^ 2 : Nat) = 157 by norm_num] using h
+
 end

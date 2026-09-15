@@ -1,0 +1,13 @@
+date=2026-09-15
+cwd=C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness
+toolchain=leanprover/lean4:v4.34.0-rc2
+lean_exe=C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe
+seed_source=C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bad-ordered-count-fresh-20260915/lib/lean
+seed_copy=robocopy C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-bad-ordered-count-fresh-20260915/lib/lean C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-d4-count-fresh-20260915/lib/lean /E /XF ActualQuestionMassBridge.olean ActualQuestionMassBridgeChecks.olean
+seed_target=C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-d4-count-fresh-20260915/lib/lean
+seed_file_count=2794
+seed_manifest=dependency-seed-manifest.tsv
+seed_manifest_sha256=F0F21A072ABCDE307931BB39F91DDF46C577A279B3000A1C0BFD1E2AB4515099
+current_bridge_objects_preexisting_before_compile=false
+temp_or_probe_roots_in_lean_path=false
+LEAN_PATH=C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/build/actual-question-mass-d4-count-fresh-20260915/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/mathlib/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/batteries/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/proofwidgets/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/aesop/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/Qq/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/plausible/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/importGraph/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/LeanSearchClient/.lake/build/lib/lean;C:/Users/Dan/Desktop/Projects/formal-pvnp/certifications/realizable-hardness/.lake/packages/complexitylib/.lake/build/lib/lean;C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/lib/lean

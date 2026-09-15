@@ -16,6 +16,7 @@ attribute [local instance] Classical.propDecidable
 #check not_goodOrderedQuestion_iff_conflicting_pair
 #check bad_ordered_question_count_le_of_conflict
 #check bad_ordered_question_count_le
+#check actual_bad_ordered_question_count_le
 #print axioms rowId_incidence_card_le_four
 #print axioms rowId_incidence_card_eq_degree
 #print axioms conflict_degree_le
@@ -23,6 +24,7 @@ attribute [local instance] Classical.propDecidable
 #print axioms not_goodOrderedQuestion_iff_conflicting_pair
 #print axioms bad_ordered_question_count_le_of_conflict
 #print axioms bad_ordered_question_count_le
+#print axioms actual_bad_ordered_question_count_le
 
 /-! A concrete allocation with two source rows and repeated ownership.  The
 occurrence IDs remain distinct even though all six source slots use owner 0. -/
@@ -122,6 +124,13 @@ example :
   apply bad_ordered_question_count_le mixedRows 3 2
   · decide
   · decide
+
+example :
+    ((Finset.univ : Finset (Fin 2 → repeatedOwner.RowId)).filter
+      (fun u => ¬ GoodOrderedQuestion repeatedOwner.support u)).card ≤
+      2 * (2 - 1) * 157 *
+        (Fintype.card repeatedOwner.RowId) ^ (2 - 1) := by
+  exact actual_bad_ordered_question_count_le repeatedOwner 2
 
 /-! The same cross-only geometry used by the support checks: rows 0 and 1
 are disjoint, while row 2 contains one point from each. -/
