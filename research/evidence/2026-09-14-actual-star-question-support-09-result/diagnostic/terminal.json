@@ -1,0 +1,30 @@
+{
+  "module": "PvNP.RealizableHardness.ActualStarQuestionSupportChecks",
+  "source_sha256": "8a79467f322e86f43a144397d9f7ac4f21d821623a97c492abd64d73b76d4203",
+  "command": [
+    "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+    "-Dprofiler=true",
+    "-Dprofiler.threshold=0",
+    "-DstderrAsMessages=false",
+    "-DElab.async=false",
+    "-R",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-09-checks\\source",
+    "-o",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks04-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\ActualStarQuestionSupportChecks.olean",
+    "-i",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks04-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\ActualStarQuestionSupportChecks.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-09-checks\\source\\PvNP\\RealizableHardness\\ActualStarQuestionSupportChecks.lean"
+  ],
+  "pre": 4083212288,
+  "minimum": 2510098432,
+  "pid": 20112,
+  "launched": true,
+  "exit_code": 0,
+  "guard_stopped": false,
+  "source_unchanged": true,
+  "runner_sha256": "df01be1856ead5d93f1d72c80eb902b033c139a5f5a896be060e3a008738726a",
+  "plan_sha256": "b0c4db8450df86ae5dce78fae2f2960469280344a40beb51659c2bfdcf0f4b27",
+  "log_sha256": "882f91afc6e3245167a74347b593037080a7135accca1934d8889effce37c492",
+  "telemetry_sha256": "110481b4e7705cea6cd7df5e2881b650ac9b6b7b7e6f1a07239f34d8e32b22c0",
+  "diagnostic_only": true
+}

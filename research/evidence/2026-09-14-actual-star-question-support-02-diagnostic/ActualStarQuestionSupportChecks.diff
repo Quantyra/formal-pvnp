@@ -1,0 +1,32 @@
+--- attempt01
++++ attempt02
+@@ -26,7 +26,7 @@
+     true ∉ ({false} : Finset Bool) ∧
+     oneRows true ∩ questionSupport oneRows {false} = {2} ∧
+     (oneRows true ∩ questionSupport oneRows {false}).card = 1 := by
+-  unfold GoodQuestion questionSupport oneRows
++  unfold GoodQuestion questionSupport oneRows Set.Pairwise
+   decide
+ 
+ example :
+@@ -35,17 +35,17 @@
+     true ∉ ({false} : Finset Bool) ∧
+     disjointRows true ∩ questionSupport disjointRows {false} = ∅ ∧
+     (disjointRows true ∩ questionSupport disjointRows {false}).card = 0 := by
+-  unfold GoodQuestion questionSupport disjointRows
++  unfold GoodQuestion questionSupport disjointRows Set.Pairwise
+   decide
+ 
+ example :
+     (∀ e f, e ≠ f → ((badRows e) ∩ (badRows f)).card ≤ 1) ∧
+-    ({0, 1} : Finset (Fin 3)).Pairwise
++    (({0, 1} : Finset (Fin 3)) : Set (Fin 3)).Pairwise
+       (fun e f => Disjoint (badRows e) (badRows f)) ∧
+     (2 : Fin 3) ∉ ({0, 1} : Finset (Fin 3)) ∧
+     ¬ GoodQuestion badRows {0, 1} ∧
+     (badRows 2 ∩ questionSupport badRows {0, 1}).card = 2 := by
+-  unfold GoodQuestion questionSupport badRows
++  unfold GoodQuestion questionSupport badRows Set.Pairwise
+   decide
+ 
+ #print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq

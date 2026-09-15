@@ -1,0 +1,27 @@
+--- Checks04
++++ FreshPair
+@@ -9,7 +9,8 @@
+ p=json.loads((B/'plan.json').read_bytes())
+ assert p['compiler_authorized'] is True, 'DISABLED: fresh explicit root clearance required; no child launched'
+ assert len(sys.argv)==1,'This runner accepts no alternate command or target'
+-assert p['sources']==[], 'One target only; no dependency reconstruction'
++assert len(p['sources'])==1 and p['sources'][0]['module']=='PvNP.RealizableHardness.StarFormulaInterface'
++assert p['sources'][0]['sha256']=='93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc'
+ assert p['partial']['module']=='PvNP.RealizableHardness.StarFormulaInterfaceChecks'
+ assert p['partial']['sha256']=='d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac'
+ assert p['partial_only'] and p['reconstruction_is_new_current_provenance'] and p['do_not_run_lake']
+@@ -31,7 +32,7 @@
+  for ext in ['.olean','.olean.private','.olean.server','.ir.sig','.ir']:
+   assert not pathlib.Path(str(outroot/rel)+ext).exists(), 'No automatic retry or overwrite; preserve prior outputs and get a new reviewed plan'
+ env=os.environ.copy();env['LEAN_NUM_THREADS']='1';env['LEAN_PATH']=';'.join([str(outroot),str(pathlib.Path(p['lean_exe']).parent.parent/'lib/lean')]);env.pop('LEAN_SRC_PATH',None)
+-diag=w/'guarded-runs-checks-04';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
++diag=w/'guarded-runs-fresh-pair';diag.mkdir(exist_ok=True);assert not list(diag.iterdir()), 'A prior attempt exists; no automatic restart'
+ for index,r in enumerate(p['sources']+[p['partial']]):
+  name=r['module'];d=diag/(str(index).zfill(2)+'-'+name);d.mkdir();source=pathlib.Path(r['path']);before=sha(source);(d/'source.lean').write_bytes(source.read_bytes());(d/'runner.py').write_bytes(pathlib.Path(__file__).read_bytes());(d/'plan.json').write_bytes((B/'plan.json').read_bytes())
+  out=outroot/pathlib.Path(*name.split('.'));out.parent.mkdir(parents=True,exist_ok=True)
+@@ -57,4 +58,4 @@
+  record={**meta,'launched':True,'pid':child.pid,'exit_code':rc,'guard_stopped':stopped,'minimum':low,'elapsed':time.time()-start,'source_unchanged':sha(source)==before,'outputs':outputs,'required_outputs_complete':complete,'log_sha256':sha(log),'telemetry_sha256':sha(tele),'diagnostic_only':True}
+  save(d/'terminal.json',record);print('TERMINAL',name,rc,'complete',complete,flush=True)
+  if rc!=0 or stopped or not complete or not record['source_unchanged']:raise SystemExit(1)
+-print('AUTHOR DIAGNOSTIC ONLY: Checks and independent review remain required',flush=True)
++print('FRESH TARGET PAIR ONLY: no full dependency or manuscript acceptance',flush=True)

@@ -1,0 +1,46 @@
+{
+  "compiler_authorized": false,
+  "partial_only": true,
+  "reconstruction_is_new_current_provenance": true,
+  "workspace": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks03-20260914",
+  "companion": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+  "pins": {
+    "cslib": "d9be64196bf145edd019f1ccfeaee0c11166ba6b",
+    "mathlib": "e06eff5f95374108acfaf19f1ff7473aa7771df2",
+    "complexitylib": "6c248df7859f2f245e731c1e07057bf69d165fe2",
+    "plausible": "d9598f07b1bc701f1e3aae163d2681c1fd978793",
+    "LeanSearchClient": "ba67e212be1197b84c1f1f6299488a10a3002713",
+    "importGraph": "d8823026ac7ef130c253089d95685f9877b95323",
+    "proofwidgets": "a8acbfd87375ff4abe14ce09db5b7664d383bc7f",
+    "aesop": "18889deb9e83ea7420ef51c160d6f88552e744e3",
+    "Qq": "507746ab8f4b643ccdacb2ec4cdb5853fa9f8ab3",
+    "batteries": "7e23602c91bc04586b2b06de2708a041853e4681",
+    "Cli": "ab3a82db9fea14cf0fd7f5a2de650f4b534640af"
+  },
+  "lake_manifest_sha256": "825d2e1a20005a259fdf5b181528b391dd6ba18a52c86127caf4c3be990e04f0",
+  "copies_sha256": "7d0713987d7c890452c0d80196c0b94a4a5e7b1517c4e07e04bab32e34f84b25",
+  "sources": [
+    {
+      "module": "PvNP.RealizableHardness.ActualStarQuestionSupportChecks",
+      "sha256": "2bfe2ebd856cbb3d4f38cb37dabe8d241509bc0586ebc279a656176f5d25ebd8",
+      "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-03-checks\\source\\PvNP\\RealizableHardness\\ActualStarQuestionSupportChecks.lean",
+      "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-03-checks\\source"
+    }
+  ],
+  "lean_exe": "C:/Users/Dan/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean.exe",
+  "start_bytes": 3758096384,
+  "stop_bytes": 671088640,
+  "threads": 1,
+  "do_not_run_lake": true,
+  "lean_sha256": "37dfe799f69b990251f3b6bcff8a1c10c1afe2adcdecc5c580cc6726ffb63433",
+  "root_clearance": "NOT GRANTED: preparation only",
+  "task_status": "Checks only; reuse unchanged successful main02",
+  "main02_source": {
+    "module": "PvNP.RealizableHardness.ActualStarQuestionSupport",
+    "sha256": "d61e78cc98be9bff83e9f779b950dfed48aa8fa629efde5f6fd147e97442b8a5",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-02-diagnostic\\source\\PvNP\\RealizableHardness\\ActualStarQuestionSupport.lean",
+    "root": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\research\\evidence\\2026-09-14-actual-star-question-support-02-diagnostic\\source"
+  },
+  "main02_terminal": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\guarded-runs-question-support-02\\00-PvNP.RealizableHardness.ActualStarQuestionSupport\\terminal.json",
+  "main02_terminal_sha256": "5fbb6bb045e7268f0b0e9ee9b1ea6ef7993d54557afe42f14f03a8c6a0ddaa1a"
+}

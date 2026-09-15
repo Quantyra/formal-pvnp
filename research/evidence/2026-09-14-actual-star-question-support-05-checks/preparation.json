@@ -1,0 +1,13 @@
+{
+  "compiler_launched": false,
+  "workspace_reused": true,
+  "lower_files_validated": 10185,
+  "copies": 10187,
+  "inventory_sha256": "17d4cc6caa1be5b63b41f73c76a453e73f695f56ea3295f2486d84c1734132dd",
+  "runner_sha256": "411d5f68ee995a885782861fabde4d90e7cb5c65e4feefa3bee75cc933c40259",
+  "plan_sha256": "715800fcd59aac9044609767fb64654ffcdeb8875555960aafbec09817fb31a0",
+  "source_sha256": "2bfe2ebd856cbb3d4f38cb37dabe8d241509bc0586ebc279a656176f5d25ebd8",
+  "main02_olean_sha256": "7b725fa38638b7c39d63dce1f83b558a21e0de05f30cb336f698d5a672cf307c",
+  "main02_ilean_sha256": "b8cb2ed95f1aac873150be248889dbbe181eae318e872e583a13d2184010741f",
+  "attempt03_inventory_sha256": "7d0713987d7c890452c0d80196c0b94a4a5e7b1517c4e07e04bab32e34f84b25"
+}

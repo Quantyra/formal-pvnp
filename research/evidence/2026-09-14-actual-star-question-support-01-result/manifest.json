@@ -1,0 +1,45 @@
+{
+  "records": [
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": "parse.json",
+      "sha256": "8fc9d4e254ff5da6db4a4828b5ed6cc0560833dc54f678feda0c718cfed8f2e1",
+      "bytes": 852
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/plan.json",
+      "sha256": "583a3596a1d1bedd5b69000fd6969a671cd790f255b002c54ab74f564b62428d",
+      "bytes": 2787
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/raw.log",
+      "sha256": "dd5021b7f34883a7be6515542bf52d43a8fd0a9b0b23ba0457858bd76d92a34b",
+      "bytes": 367683
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/runner.py",
+      "sha256": "912540b31962f254d4549d1c2e585ecac00e461131e7f375cdac6a11878e748e",
+      "bytes": 5668
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/source.lean",
+      "sha256": "566dd69a2fb1e836e930599af73ef0b089383c2fe80e0a64dd18c5a15c141f23",
+      "bytes": 1987
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/telemetry.jsonl",
+      "sha256": "c39f6ffd846e05312c3ab6b4e4cf4d5c1c884a67061fa7b168c7edefcd75c377",
+      "bytes": 4952
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.ActualStarQuestionSupport/terminal.json",
+      "sha256": "bd997957135815b25bb7f7a1533c4586349fb845849cace5394b6c987a4aa319",
+      "bytes": 2259
+    }
+  ],
+  "acceptance": false
+}

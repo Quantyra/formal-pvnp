@@ -1,0 +1,61 @@
+{
+  "command": "$names=@(\"ms-teams\",\"M365Copilot\",\"PhoneExperienceHost\",\"SearchHost\",\"msedgewebview2\",\"explorer\",\"StartMenuExperienceHost\",\"OneDrive\",\"OneDrive.Sync.Service\",\"Adobe Desktop Service\",\"AdobeCollabSync\",\"acrotray\",\"logioptionsplus_agent\",\"CrossDeviceService\"); $stopped=@(); $errors=@(); foreach($n in $names){try{$ps=@(Get-Process -Name $n -ErrorAction SilentlyContinue); foreach($x in $ps){try{Stop-Process -Id $x.Id -Force -ErrorAction Stop; $stopped+=[pscustomobject]@{name=$x.ProcessName;id=$x.Id}}catch{$errors+=[pscustomobject]@{name=$n;error=$_.Exception.Message}}}}catch{$errors+=[pscustomobject]@{name=$n;error=$_.Exception.Message}}}; $live=@(Get-Process | Where-Object {$_.ProcessName -in $names} | Select-Object -ExpandProperty ProcessName); [pscustomobject]@{targeted=$names;stopped=$stopped;errors=$errors;live_after=$live}|ConvertTo-Json -Compress",
+  "targeted": [
+    "ms-teams",
+    "M365Copilot",
+    "PhoneExperienceHost",
+    "SearchHost",
+    "msedgewebview2",
+    "explorer",
+    "StartMenuExperienceHost",
+    "OneDrive",
+    "OneDrive.Sync.Service",
+    "Adobe Desktop Service",
+    "AdobeCollabSync",
+    "acrotray",
+    "logioptionsplus_agent",
+    "CrossDeviceService"
+  ],
+  "stopped": [
+    {
+      "name": "SearchHost",
+      "id": 19088
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 5340
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 10300
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 12324
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 17928
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 18628
+    },
+    {
+      "name": "msedgewebview2",
+      "id": 39824
+    },
+    {
+      "name": "explorer",
+      "id": 21604
+    },
+    {
+      "name": "StartMenuExperienceHost",
+      "id": 30216
+    }
+  ],
+  "errors": [],
+  "live_after": [
+    "explorer"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "session": 95769,
+  "exact_terminal": 0,
+  "targets": [
+    {
+      "path": "receipts\\00-PvNP.RealizableHardness.StarFormulaInterface\\terminal.json",
+      "sha256": "fcbda55a44b2ac46cc8ddbb5101c17f86b332d47a6ec6bcdd4adc34296d1f751",
+      "module": "PvNP.RealizableHardness.StarFormulaInterface",
+      "exit_code": 0,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ilean",
+          "sha256": "c3c4c5578b3cd2289de99667f4b43bceaa8c0048e2fd5b2afa8912491fdff681",
+          "bytes": 38103
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean",
+          "sha256": "f32a3044ffc66a433957ea80207b630611a0f539094000eedee2ab90e555e974",
+          "bytes": 420264
+        }
+      ],
+      "warning_headers": 7
+    },
+    {
+      "path": "receipts\\01-PvNP.RealizableHardness.StarFormulaInterfaceChecks\\terminal.json",
+      "sha256": "64b4e9d7d2ccfe1a8406a15e6d610ab68603e74738ffc66e6747be41c96813ec",
+      "module": "PvNP.RealizableHardness.StarFormulaInterfaceChecks",
+      "exit_code": 0,
+      "outputs": [
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ilean",
+          "sha256": "e552cee1254153c5be1c588e740aef35406fe27403b3e65d64373c07c7621be3",
+          "bytes": 34791
+        },
+        {
+          "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean",
+          "sha256": "83d2327790b256072b1a91635fc1220bd6a9f827d5be41a7ef33c9ceefd04928",
+          "bytes": 71256
+        }
+      ],
+      "warning_headers": 1
+    }
+  ],
+  "copied_lower_files_unchanged": 10185,
+  "input_inventory_sha256": "8ead3638f923a1c6c4db7b182eece42b7fe0e539a95e18eab017f1923f01608e",
+  "profile_parse_sha256": "39ccb32521d2d8d0fbfe8254f4241246c350bd1e6c7f9e3e3362b861c208679c",
+  "fresh_target_pair_green": true,
+  "full_dependency_acceptance": false,
+  "full_manuscript_proof": false
+}

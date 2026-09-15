@@ -1,0 +1,12 @@
+{
+  "compiler_launched": false,
+  "copies": 10187,
+  "runner_sha256": "65b948120470b405d7dda65d8c61084b9e7f3a16b5bfb345362d6d7e2f9f45c5",
+  "plan_sha256": "0328c5bbb3e47f3864db75279ccb8f15d670b624a988fa9a1a97b52fed91f9ee",
+  "inventory_sha256": "7d0713987d7c890452c0d80196c0b94a4a5e7b1517c4e07e04bab32e34f84b25",
+  "prior_runner_sha256": "e6131470973cb6f7cea2ca89d7a459d876f4247eebab14d4c767b4d8330b6519",
+  "checks_target_absent": true,
+  "main02_source_verified": true,
+  "source_sha256": "2bfe2ebd856cbb3d4f38cb37dabe8d241509bc0586ebc279a656176f5d25ebd8",
+  "hardlinks_readonly_import_policy": true
+}

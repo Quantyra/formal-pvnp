@@ -1,0 +1,11 @@
+--- attempt01
++++ attempt02
+@@ -8,7 +8,7 @@
+ def questionSupport (row : E → Finset X) (U : Finset E) : Finset X := U.biUnion row
+ 
+ def GoodQuestion (row : E → Finset X) (U : Finset E) : Prop :=
+-  U.Pairwise (fun e f => Disjoint (row e) (row f)) ∧
++  (U : Set E).Pairwise (fun e f => Disjoint (row e) (row f)) ∧
+   ∀ e ∈ U, ∀ f ∈ U, e ≠ f →
+     ∀ g : E, ∀ x ∈ row e, ∀ y ∈ row f,
+       x ∈ row g → y ∈ row g → False

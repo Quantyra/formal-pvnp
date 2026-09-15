@@ -1,0 +1,89 @@
+import PvNP.RealizableHardness.ActualStarQuestionSupport
+
+namespace PvNP.RealizableHardness.ActualStarQuestionSupportChecks
+open PvNP.RealizableHardness.ActualStarQuestionSupport
+
+def oneRows : Bool → Finset (Fin 4)
+  | false => {0, 1, 2}
+  | true => {2, 3}
+
+def disjointRows : Bool → Finset (Fin 4)
+  | false => {0, 1}
+  | true => {2, 3}
+
+def badRows (e : Fin 3) : Finset (Fin 3) :=
+  if e = 0 then {0} else if e = 1 then {1} else {0, 1}
+
+example (row : Bool → Finset (Fin 4)) :
+    questionSupport row ∅ = ∅ ∧ GoodQuestion row ∅ ∧
+    ∀ e, ((row e) ∩ questionSupport row ∅).card = 0 := by
+  simp [questionSupport, GoodQuestion]
+
+example :
+    (∀ e f, e ≠ f → ((oneRows e) ∩ (oneRows f)).card ≤ 1) ∧
+    GoodQuestion oneRows {false} ∧
+    true ∉ ({false} : Finset Bool) ∧
+    oneRows true ∩ questionSupport oneRows {false} = {2} ∧
+    (oneRows true ∩ questionSupport oneRows {false}).card = 1 := by
+  unfold GoodQuestion questionSupport oneRows Set.Pairwise
+  simp only [Finset.disjoint_left]
+  constructor
+  · decide
+  constructor
+  · constructor
+    · simp [oneRows, Finset.disjoint_left]
+    · simp [oneRows, Finset.disjoint_left]
+  constructor
+  · simp
+  constructor
+  · simp [oneRows, questionSupport]
+  · simp [oneRows, questionSupport]
+
+example :
+    (∀ e f, e ≠ f → ((disjointRows e) ∩ (disjointRows f)).card ≤ 1) ∧
+    GoodQuestion disjointRows {false} ∧
+    true ∉ ({false} : Finset Bool) ∧
+    disjointRows true ∩ questionSupport disjointRows {false} = ∅ ∧
+    (disjointRows true ∩ questionSupport disjointRows {false}).card = 0 := by
+  unfold GoodQuestion questionSupport disjointRows Set.Pairwise
+  simp only [Finset.disjoint_left]
+  constructor
+  · decide
+  constructor
+  · constructor
+    · simp [disjointRows, Finset.disjoint_left]
+    · simp [disjointRows, Finset.disjoint_left]
+  constructor
+  · simp
+  constructor
+  · simp [disjointRows, questionSupport]
+  · simp [disjointRows, questionSupport]
+
+example :
+    (∀ e f, e ≠ f → ((badRows e) ∩ (badRows f)).card ≤ 1) ∧
+    (({0, 1} : Finset (Fin 3)) : Set (Fin 3)).Pairwise
+      (fun e f => Disjoint (badRows e) (badRows f)) ∧
+    (2 : Fin 3) ∉ ({0, 1} : Finset (Fin 3)) ∧
+    ¬ GoodQuestion badRows {0, 1} ∧
+    (badRows 2 ∩ questionSupport badRows {0, 1}).card = 2 := by
+  unfold GoodQuestion questionSupport badRows Set.Pairwise
+  simp only [Finset.disjoint_left]
+  constructor
+  · decide
+  constructor
+  · simp [badRows, Set.Pairwise, Finset.disjoint_left]
+  constructor
+  · simp
+  constructor
+  · intro h
+    exact h.2 (0 : Fin 3) (by simp) (1 : Fin 3) (by simp) (by decide)
+      (2 : Fin 3) (0 : Fin 3) (by simp [badRows]) (1 : Fin 3) (by simp [badRows])
+      (by simp [badRows]) (by simp [badRows])
+  · simp [badRows, questionSupport]
+
+#print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq
+#print axioms PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_overlap_le_one
+#check PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq
+#check PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_overlap_le_one
+
+end PvNP.RealizableHardness.ActualStarQuestionSupportChecks

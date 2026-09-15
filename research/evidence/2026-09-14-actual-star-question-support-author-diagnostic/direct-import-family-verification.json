@@ -1,0 +1,52 @@
+[
+  {
+    "module": "Mathlib.Data.Finset.Card",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Card.olean",
+    "sha256": "ba7ef07deed777b6e67dfb62c4529aee5f68822ddf7eb5c117397bee5f654614"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Card",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Card.olean.private",
+    "sha256": "127cc97e4a12fcdbf1dcf9f86c78c6951fe33ace831255170d49ad00f7d9b502"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Card",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Card.olean.server",
+    "sha256": "05e4589c2336bf1b98642fb49e113ba145a5cecd548ed5696f17fc3a9bc1651d"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Card",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Card.ir.sig",
+    "sha256": "3e097c00dd2a0ba2583310fc30dbe5f300b8bf7feef99ae9bf9a537640f29bd3"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Card",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Card.ir",
+    "sha256": "6508637b018f4582aa4f2d48038d02ed90141c36c9a5ad3bfec36f6d8b2976f4"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Union",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Union.olean",
+    "sha256": "b6186f3c2ec4d3a766a3c023fb5648ea76612c47462d05034fcbe9acf93c3223"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Union",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Union.olean.private",
+    "sha256": "8e6b89159dac651f8b1018a3aeebdba6dafb61487e7d0bbb169d4bed09e5598d"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Union",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Union.olean.server",
+    "sha256": "676498c8163c4ff3466caee822ecc8f19d57c18de7ded7ce585b1636ccf95eb6"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Union",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Union.ir.sig",
+    "sha256": "3efb3fc8c735b613406cabc89011c1d860651fa8d7bb03b95717ab7187c672d4"
+  },
+  {
+    "module": "Mathlib.Data.Finset.Union",
+    "path": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\Mathlib\\Data\\Finset\\Union.ir",
+    "sha256": "72bff648d10d44a83c71ff932b283b64fbc35dd9f609d415859546f9430888ae"
+  }
+]

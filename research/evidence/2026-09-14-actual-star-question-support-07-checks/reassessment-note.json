@@ -1,0 +1,17 @@
+{
+  "status": "bounded threshold reassessment; wrapper only; no compiler launched",
+  "prior_attempts": ["checks05", "checks06"],
+  "prior_main02_observed_minimum_bytes": 4259434496,
+  "prior_main02_observed_pre_bytes": 5296406528,
+  "prior_main02_observed_consumption_bytes": 1036972032,
+  "prior_main02_observed_consumption_gib": 0.966,
+  "new_start_threshold_bytes": 3489660928,
+  "new_start_threshold_gib": 3.25,
+  "stop_threshold_bytes": 671088640,
+  "projected_same_consumption_available_bytes": 2452688896,
+  "projected_same_consumption_available_gib": 2.284,
+  "projected_margin_over_stop": 3.654,
+  "scope": "Checks is smaller/same import closure and target only; threshold change does not alter theorem/checks",
+  "inputs_unchanged": true,
+  "compiler_authorized": false
+}

@@ -1,0 +1,127 @@
+{
+  "records": [
+    {
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+      "bytes": 8
+    },
+    {
+      "path": "isolated-copy-inventory.json",
+      "sha256": "8ead3638f923a1c6c4db7b182eece42b7fe0e539a95e18eab017f1923f01608e",
+      "bytes": 5933105
+    },
+    {
+      "path": "plan.json",
+      "sha256": "29bb71459520660e4514744024634b1a010b06e97a67917825d85e1c5d989b3e",
+      "bytes": 2754
+    },
+    {
+      "path": "postflight.json",
+      "sha256": "378e92de4c6c68c3db706f95ddc132efb8ad51cdcec8c2ef553be0a661606f6c",
+      "bytes": 2611
+    },
+    {
+      "path": "pregrant-plan.json",
+      "sha256": "d19e47df4ef35d93c082682d15c0c5abaf94ffad5ae7e5651551b0436299a2fa",
+      "bytes": 2755
+    },
+    {
+      "path": "preparation-verification.json",
+      "sha256": "eb5e1bb45c3032bfb4b4c57e865025782a2a2d5254a340b770e1ee5e16ec9e31",
+      "bytes": 4693
+    },
+    {
+      "path": "profile-signature-parse.json",
+      "sha256": "39ccb32521d2d8d0fbfe8254f4241246c350bd1e6c7f9e3e3362b861c208679c",
+      "bytes": 4890
+    },
+    {
+      "path": "README.md",
+      "sha256": "1c5ec53473052ba3b3d3603b9108f658b885b43b6bc51544921e44e6bfcff2cc",
+      "bytes": 4265
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/plan.json",
+      "sha256": "29bb71459520660e4514744024634b1a010b06e97a67917825d85e1c5d989b3e",
+      "bytes": 2754
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/raw.log",
+      "sha256": "e524d67003e5b2a99196b309969ba03c09e586ed2cf25f79423acabd54d8ea4f",
+      "bytes": 904924
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/runner.py",
+      "sha256": "b67e6af68ce6ecc52569b4553be3e37450aa9f888cfb84def59b97f24ca07fbf",
+      "bytes": 5646
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/source.lean",
+      "sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "bytes": 7620
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/telemetry.jsonl",
+      "sha256": "160da2a846658ddef36ad2342d2bfcd542e525492bfffb7f63f70bd9b9e8172c",
+      "bytes": 24248
+    },
+    {
+      "path": "receipts/00-PvNP.RealizableHardness.StarFormulaInterface/terminal.json",
+      "sha256": "fcbda55a44b2ac46cc8ddbb5101c17f86b332d47a6ec6bcdd4adc34296d1f751",
+      "bytes": 2929
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/plan.json",
+      "sha256": "29bb71459520660e4514744024634b1a010b06e97a67917825d85e1c5d989b3e",
+      "bytes": 2754
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/raw.log",
+      "sha256": "aa71ef42ca513b197351ae25a817f02440e26171afc3348dedc965f6571c55cd",
+      "bytes": 885099
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/runner.py",
+      "sha256": "b67e6af68ce6ecc52569b4553be3e37450aa9f888cfb84def59b97f24ca07fbf",
+      "bytes": 5646
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/source.lean",
+      "sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "bytes": 7861
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/telemetry.jsonl",
+      "sha256": "6da1536b6dbf78d1628493fb1451c6666571891dd91955d61966aaffee8877cc",
+      "bytes": 6435
+    },
+    {
+      "path": "receipts/01-PvNP.RealizableHardness.StarFormulaInterfaceChecks/terminal.json",
+      "sha256": "64b4e9d7d2ccfe1a8406a15e6d610ab68603e74738ffc66e6747be41c96813ec",
+      "bytes": 2963
+    },
+    {
+      "path": "runner.diff",
+      "sha256": "909aa4e67c64b9168588609404000f329f9e91e75e198671c60207860e5bb9e8",
+      "bytes": 2685
+    },
+    {
+      "path": "runner.py",
+      "sha256": "b67e6af68ce6ecc52569b4553be3e37450aa9f888cfb84def59b97f24ca07fbf",
+      "bytes": 5646
+    },
+    {
+      "path": "source/PvNP/RealizableHardness/StarFormulaInterface.lean",
+      "sha256": "93253b01c7ef7e440807f3e2257f2456bc0fe136ffc8d2dcdfc34a16880d15fc",
+      "bytes": 7620
+    },
+    {
+      "path": "source/PvNP/RealizableHardness/StarFormulaInterfaceChecks.lean",
+      "sha256": "d77e2117e59ebeac18adb13e6cbe04471cdbdc146072adf397079022aaadffac",
+      "bytes": 7861
+    }
+  ],
+  "fresh_pair_green": true,
+  "full_dependency_acceptance": false,
+  "full_manuscript_proof": false
+}

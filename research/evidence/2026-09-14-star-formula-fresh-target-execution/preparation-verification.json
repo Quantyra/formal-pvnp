@@ -1,0 +1,33 @@
+{
+  "five_family_files_checked": 10170,
+  "package_modules": 2034,
+  "target_paths_absent": [
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean.private",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean.server",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ir.sig",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ir",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ilean",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean.private",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.olean.server",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ir.sig",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ir",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterface.ilean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean.private",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean.server",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ir.sig",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ir",
+    "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\star-formula-fresh-target-execution-20260914\\deps\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ilean",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean.private",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.olean.server",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ir.sig",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ir",
+    "C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean\\PvNP\\RealizableHardness\\StarFormulaInterfaceChecks.ilean"
+  ],
+  "frozen_source_LF_equal": true,
+  "author_target_exports_reused": false,
+  "compiler_authorized": false
+}

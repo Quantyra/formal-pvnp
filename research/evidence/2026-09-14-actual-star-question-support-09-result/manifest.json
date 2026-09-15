@@ -1,0 +1,25 @@
+{
+  "artifact": "actual-star-question-support-09-result",
+  "status": "checks-only successful compilation of repaired checks source",
+  "full_theorem_claim": false,
+  "payload_count": 10,
+  "workspace": "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks04-20260914",
+  "payload": [
+    {"path": "plan.json", "sha256": "b0c4db8450df86ae5dce78fae2f2960469280344a40beb51659c2bfdcf0f4b27", "bytes": 6239, "provenance": "authorized checks09 plan"},
+    {"path": "runner.py", "sha256": "df01be1856ead5d93f1d72c80eb902b033c139a5f5a896be060e3a008738726a", "bytes": 7050, "provenance": "checks09 runner"},
+    {"path": "prelaunch-app-suspension09.json", "sha256": "69f4220851cca682daf27a1c2d025410601713a77bd8c98008b57b97894d2b87", "bytes": 1941, "provenance": "runner prelaunch app record"},
+    {"path": "diagnostic/terminal.json", "sha256": "d88975f8785112590e1cd6ec33720ebfa52cea47edd35adec5b518727676c7eb", "bytes": 1730, "provenance": "runner terminal receipt"},
+    {"path": "diagnostic/raw.log", "sha256": "882f91afc6e3245167a74347b593037080a7135accca1934d8889effce37c492", "bytes": 534671, "provenance": "complete compiler stdout/stderr"},
+    {"path": "diagnostic/telemetry.jsonl", "sha256": "110481b4e7705cea6cd7df5e2881b650ac9b6b7b7e6f1a07239f34d8e32b22c0", "bytes": 9154, "provenance": "runner memory telemetry"},
+    {"path": "diagnostic/source.lean", "sha256": "8a79467f322e86f43a144397d9f7ac4f21d821623a97c492abd64d73b76d4203", "bytes": 3233, "provenance": "source copied by runner before compilation"},
+    {"path": "source/ActualStarQuestionSupportChecks.lean", "sha256": "8a79467f322e86f43a144397d9f7ac4f21d821623a97c492abd64d73b76d4203", "bytes": 3233, "provenance": "repaired canonical source snapshot"},
+    {"path": "outputs/ActualStarQuestionSupportChecks.olean", "sha256": "163275ca284bd9f29269de01e2705fe6ad0f416d9ca965518eea923c22006d5a", "bytes": 73560, "provenance": "checks output; accepted label .olean"},
+    {"path": "outputs/ActualStarQuestionSupportChecks.ilean", "sha256": "b65c2275ce82a9255610aebc3f43bcc3113178ab04c3b399270ddcf0bc00c489", "bytes": 13544, "provenance": "checks output; accepted label .ilean"}
+  ],
+  "review_references": [
+    {"path": "three-lens review file (root reference)", "sha256_prefix": "69b469..."},
+    {"path": "three-lens review file (root reference)", "sha256_prefix": "9f432a..."},
+    {"path": "three-lens review file (root reference)", "sha256_prefix": "ab6603..."}
+  ],
+  "verifier_note": "verifier-result from the disabled pre-run wrapper is historical preparation evidence, not a compile certificate"
+}

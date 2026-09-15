@@ -1,0 +1,10 @@
+{
+  "launched": false,
+  "reason": "below3.5GiB",
+  "available": 2834255872,
+  "processes": "",
+  "target_outputs_absent": true,
+  "source_sha256": "2bfe2ebd856cbb3d4f38cb37dabe8d241509bc0586ebc279a656176f5d25ebd8",
+  "runner_sha256": "411d5f68ee995a885782861fabde4d90e7cb5c65e4feefa3bee75cc933c40259",
+  "plan_sha256": "715800fcd59aac9044609767fb64654ffcdeb8875555960aafbec09817fb31a0"
+}
