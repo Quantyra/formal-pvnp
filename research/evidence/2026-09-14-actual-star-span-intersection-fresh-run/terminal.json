@@ -1,0 +1,20 @@
+﻿{
+    "run_id":  "actual-star-span-intersection-fresh-20260914",
+    "command_main":  "lean.exe -R lean -o \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarSpanIntersection.olean lean/PvNP/RealizableHardness/ActualStarSpanIntersection.lean",
+    "command_checks":  "lean.exe -R lean -o \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarSpanIntersectionChecks.olean lean/PvNP/RealizableHardness/ActualStarSpanIntersectionChecks.lean",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "main_exit_code":  0,
+    "checks_exit_code":  0,
+    "main_source_sha256_before":  "F3CE6ED0BF8FB9164F16EB846A3378FD2F3471016ECE35F5DB8C091E967042A5",
+    "main_source_sha256_after":  "F3CE6ED0BF8FB9164F16EB846A3378FD2F3471016ECE35F5DB8C091E967042A5",
+    "checks_source_sha256_before":  "C8BBF17E461F519DECCDAFBB7F2795F0F7A267111308AB054B3F74CF16287C6B",
+    "checks_source_sha256_after":  "C8BBF17E461F519DECCDAFBB7F2795F0F7A267111308AB054B3F74CF16287C6B",
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-span-intersection-fresh-20260914\\lib\\lean",
+    "dependency_root":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks05-20260914\\deps\\lib\\lean",
+    "lean_path_main":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\new-row-private-coordinate-fresh-20260914b\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks05-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "lean_path_checks":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-span-intersection-fresh-20260914\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks05-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "main_stdout":  "main.stdout.txt",
+    "main_stderr":  "main.stderr.txt",
+    "checks_stdout":  "checks.stdout.txt",
+    "checks_stderr":  "checks.stderr.txt"
+}

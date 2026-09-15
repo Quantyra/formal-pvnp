@@ -1,0 +1,14 @@
+﻿{
+    "run_id":  "actual-star-span-intersection-checks-strengthened-fresh-20260914",
+    "command":  "lean.exe -R lean -o \u003cfresh\u003e/PvNP/RealizableHardness/ActualStarSpanIntersectionChecks.olean lean/PvNP/RealizableHardness/ActualStarSpanIntersectionChecks.lean",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "exit_code":  0,
+    "source_sha256_before":  "D2FECC62DF0AB53DE600E70EA89FFC0B1974A36D854B0211FD851185288DCBEB",
+    "source_sha256_after":  "D2FECC62DF0AB53DE600E70EA89FFC0B1974A36D854B0211FD851185288DCBEB",
+    "main_olean_sha256":  "DECC2EAA887AC7C8C1DB4F121FC0B5A9BA03369FA191E1DE6B7CCA3FCE748DBD",
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-span-intersection-checks-strengthened-fresh-20260914\\lib\\lean",
+    "dependency_root":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks05-20260914\\deps\\lib\\lean",
+    "lean_path":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-span-intersection-checks-strengthened-fresh-20260914\\lib\\lean;C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-star-question-support-checks05-20260914\\deps\\lib\\lean;C:\\Users\\Dan\\.elan\\toolchains\\leanprover--lean4---v4.34.0-rc2\\lib\\lean",
+    "stdout":  "checks.stdout.txt",
+    "stderr":  "checks.stderr.txt"
+}

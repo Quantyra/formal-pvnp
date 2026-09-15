@@ -1,0 +1,3 @@
+﻿COMMAND: rg -n -i \b(sorry|admit|native_decide|axiom)\b lean/PvNP/RealizableHardness/ActualStarSpanIntersection.lean lean/PvNP/RealizableHardness/ActualStarSpanIntersectionChecks.lean
+EXIT_CODE: 1
+
