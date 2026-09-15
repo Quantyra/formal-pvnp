@@ -1,0 +1,13 @@
+{
+  "networkInterfaces": [
+    {
+      "fingerprint": "AeFWItDM7cc=",
+      "kind": "compute#networkInterface",
+      "name": "nic0",
+      "network": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/global/networks/default",
+      "networkIP": "10.128.0.2",
+      "stackType": "IPV4_ONLY",
+      "subnetwork": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/regions/us-central1/subnetworks/default"
+    }
+  ]
+}

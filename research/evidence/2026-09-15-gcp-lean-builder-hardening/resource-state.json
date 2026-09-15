@@ -1,0 +1,52 @@
+{
+  "capturedAt": "2026-09-15T15:32:58.8978322-07:00",
+  "activeIdentity": "dfredriksen@quantyra.org",
+  "project": "quantyra-lean-cert-20260915",
+  "instance": {
+    "id": "8337954477286097405",
+    "name": "quantyra-lean-builder-01",
+    "zone": "us-central1-a",
+    "machineType": "c3-highmem-8",
+    "status": "TERMINATED",
+    "lastStartTimestamp": "2026-09-15T14:56:46.283-07:00",
+    "lastStopTimestamp": "2026-09-15T15:12:26.701-07:00"
+  },
+  "firewalls": [
+    {
+      "name": "default-allow-internal",
+      "direction": "INGRESS",
+      "disabled": false,
+      "priority": 65534,
+      "network": "default",
+      "sourceRanges": ["10.128.0.0/9"],
+      "allowed": [
+        {"IPProtocol": "tcp", "ports": ["0-65535"]},
+        {"IPProtocol": "udp", "ports": ["0-65535"]},
+        {"IPProtocol": "icmp"}
+      ]
+    }
+  ],
+  "reservedAddresses": [],
+  "disk": {
+    "id": "7293290647031906812",
+    "name": "quantyra-lean-builder-01",
+    "zone": "us-central1-a",
+    "type": "pd-balanced",
+    "sizeGiB": 200,
+    "status": "READY",
+    "creationTimestamp": "2026-09-15T14:56:35.177-07:00",
+    "lastAttachTimestamp": "2026-09-15T14:56:35.827-07:00"
+  },
+  "costEstimate": {
+    "currency": "USD",
+    "pricingModel": "same on-demand list-price upper-estimate assumptions as the benchmark receipt",
+    "computeThroughAsOf": 0.138250,
+    "diskThroughAsOf": 0.016619,
+    "temporaryExternalIPv4ThroughAsOf": 0.000636,
+    "networkAndMinorAncillaryAllowance": 0.010000,
+    "estimatedTotalThroughAsOf": 0.165505,
+    "conservativeCeilingThroughAsOf": 0.20,
+    "retainedDiskDailyRunRate": 0.657533,
+    "retainedDiskMonthly730HourRunRate": 19.999956
+  }
+}

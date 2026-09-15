@@ -1,0 +1,9 @@
+{
+  "id": "8337954477286097405",
+  "lastStartTimestamp": "2026-09-15T14:56:46.283-07:00",
+  "lastStopTimestamp": "2026-09-15T15:12:26.701-07:00",
+  "machineType": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/machineTypes/c3-highmem-8",
+  "name": "quantyra-lean-builder-01",
+  "status": "TERMINATED",
+  "zone": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a"
+}

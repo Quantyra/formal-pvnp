@@ -1,0 +1,15 @@
+Capture time: 2026-09-15T15:32:58.8978322-07:00
+Active identity: dfredriksen@quantyra.org
+
+Read-only commands:
+
+gcloud config get-value account
+gcloud config get-value project
+gcloud compute instances describe quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a --format=json
+gcloud compute firewall-rules list --project=quantyra-lean-cert-20260915 --format=json
+gcloud compute addresses list --project=quantyra-lean-cert-20260915 --format=json
+gcloud compute disks describe quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a --format=json
+
+The committed JSON is reduced to the fields needed for the hardening and cost
+claims. network-interfaces.json preserves the direct interface-shaped output;
+the absence of accessConfigs records that no external IP configuration exists.
