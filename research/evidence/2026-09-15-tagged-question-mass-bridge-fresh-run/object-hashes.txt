@@ -1,0 +1,2 @@
+﻿C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\PvNP\RealizableHardness\TaggedQuestionMassBridge.olean	590064	93670709D4269EAD91230A4CB7A89351E75D89DECBC6D5061E254B2F19027EA2
+C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean\PvNP\RealizableHardness\TaggedQuestionMassBridgeChecks.olean	40496	FE510A8CA3F46FA4D76EA9D695081EE743B957EC3FE6D8DC9571352E862B3649

@@ -1,0 +1,7 @@
+﻿Checks exit=0 certifies these proposition-level examples:
+- singleton base-event fibre: card = 4
+- total tagged space: Fintype.card = 36
+- one-row source: bad ordered-question count = 2
+- normalized one-row uniform mass theorem: elaborates successfully
+Optional nonuniform conditioned fixture: absent
+No native_decide used.

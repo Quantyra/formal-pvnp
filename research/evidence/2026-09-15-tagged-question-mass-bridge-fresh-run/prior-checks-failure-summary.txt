@@ -1,0 +1,6 @@
+﻿Earlier Checks-only route-changing diagnostic (pre-certification): exit=1 against the existing main target.
+- Initial exact-count fixture failed while reconstructing Fin 2 × Unit pairs from tag equality (dependent elimination and missing pair equalities at the one-row hset proof).
+- The final card goal also required an explicit u0 ≠ u1 proof.
+- Checks-only repairs used Fin.eq_zero_or_eq_succ, Prod.ext with Subsingleton.elim for Unit, and congrFun for u0 ≠ u1.
+- No main statement or source was changed.
+- Optional nonuniform conditioned fixture was not present.

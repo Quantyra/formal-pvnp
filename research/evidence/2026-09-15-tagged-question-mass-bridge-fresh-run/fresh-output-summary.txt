@@ -1,0 +1,6 @@
+﻿seed_source=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-finite-3lin-source-fresh-20260915\lib\lean
+seed_manifest_excludes=TaggedQuestionMassBridge.olean,TaggedQuestionMassBridgeChecks.olean
+seed_copied_dependency_count=2800
+fresh_output_count=2802
+fresh_target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean
+fresh_outputs=TaggedQuestionMassBridge.olean,TaggedQuestionMassBridgeChecks.olean

@@ -1,0 +1,48 @@
+﻿{
+    "main":  {
+                 "object_sha256":  "93670709D4269EAD91230A4CB7A89351E75D89DECBC6D5061E254B2F19027EA2",
+                 "object_bytes":  590064,
+                 "exit":  0
+             },
+    "forbidden_scan":  {
+                           "exit":  1,
+                           "clean":  true
+                       },
+    "source_unchanged":  true,
+    "checks":  {
+                   "object_sha256":  "FE510A8CA3F46FA4D76EA9D695081EE743B957EC3FE6D8DC9571352E862B3649",
+                   "object_bytes":  40496,
+                   "exit":  0
+               },
+    "warnings":  [
+                     "main: four pre-existing unused simp-argument linter warnings",
+                     "checks: none"
+                 ],
+    "package_manifest_sha256":  "825D2E1A20005A259FDF5B181528B391DD6BA18A52C86127CAF4C3BE990E04F0",
+    "seed_dependency_count":  2800,
+    "target":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-question-mass-bridge-fresh-20260915\\lib\\lean",
+    "fixtures":  [
+                     "singleton base-event fibre = 4",
+                     "total tagged space = 36",
+                     "one-row bad count = 2/4",
+                     "normalized uniform mass theorem = pass"
+                 ],
+    "source_hashes_before":  {
+                                 "checks":  "35CFE1C0AE7B8C9C9309973D86E21BCC514BFDBFDFA01AD43CE2593B0CA655A6",
+                                 "main":  "B258BB7FE60CFC4D7AA17F45427B94060B3F896D9A5565DE2EA07B2D7C349CBE"
+                             },
+    "certification":  "tagged-question-mass-bridge-fresh-20260915",
+    "cwd":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness",
+    "source_hashes_after":  {
+                                "checks":  "35CFE1C0AE7B8C9C9309973D86E21BCC514BFDBFDFA01AD43CE2593B0CA655A6",
+                                "main":  "B258BB7FE60CFC4D7AA17F45427B94060B3F896D9A5565DE2EA07B2D7C349CBE"
+                            },
+    "seed_source":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp\\certifications\\realizable-hardness\\.lake\\build\\actual-tagged-finite-3lin-source-fresh-20260915\\lib\\lean",
+    "seed_excluded":  [
+                          "TaggedQuestionMassBridge.olean",
+                          "TaggedQuestionMassBridgeChecks.olean"
+                      ],
+    "fresh_output_count":  2802,
+    "repository":  "C:\\Users\\Dan\\Desktop\\Projects\\formal-pvnp",
+    "toolchain":  "Lean 4.34.0-rc2 x86_64-w64-windows-gnu"
+}

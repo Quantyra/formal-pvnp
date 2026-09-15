@@ -1,0 +1,4 @@
+﻿pattern=sorry|admit|native_decide|^\\s*axiom\\b
+files=lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean;lean/PvNP/RealizableHardness/TaggedQuestionMassBridgeChecks.lean
+exit=1
+clean=True

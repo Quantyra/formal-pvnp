@@ -1,0 +1,5 @@
+﻿#print axioms output is preserved verbatim in checks.stdout.txt
+taggedTupleEquiv, taggedTupleEquiv_apply, taggedTupleEquiv_symm_apply: [propext, Quot.sound]
+tagProjection, baseProjection: no axioms
+taggedTuple_card, baseProjectionEventEquiv, baseProjection_event_card, taggedCopy_rowConflict_iff, taggedCopy_not_good_iff, taggedConflictFibreEquiv, tagged_bad_ordered_question_count_le, tagged_bad_ordered_question_count_mul_rowCard_le, tagged_bad_ordered_question_uniform_mass_le: [propext, Classical.choice, Quot.sound]
+No user-declared axioms.

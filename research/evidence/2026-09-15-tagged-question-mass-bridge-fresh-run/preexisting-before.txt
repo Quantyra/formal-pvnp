@@ -1,0 +1,5 @@
+﻿main_object=False
+checks_object=False
+target_seeded_without_current_outputs=True
+main_compile_exit=0
+checks_compile_exit=0

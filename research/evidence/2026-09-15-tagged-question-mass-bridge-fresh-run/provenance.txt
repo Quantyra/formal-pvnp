@@ -1,0 +1,16 @@
+﻿cwd=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness
+date=2026-09-15
+toolchain=Lean 4.34.0-rc2 x86_64-w64-windows-gnu
+lean_exe=C:\Users\Dan\.elan\toolchains\leanprover--lean4---v4.34.0-rc2\bin\lean.exe
+seed=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-finite-3lin-source-fresh-20260915\lib\lean
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean
+seeded_dependency_file_count=2800
+main_exit=0
+checks_exit=0
+main_object_preexisting_before_compile=False
+checks_object_preexisting_before_compile=False
+main_compiled_before_checks=True
+source_hashes_match_before_after=True
+forbidden_scan_exit=1
+package_manifest_sha256=825D2E1A20005A259FDF5B181528B391DD6BA18A52C86127CAF4C3BE990E04F0
+sequence=main,checks

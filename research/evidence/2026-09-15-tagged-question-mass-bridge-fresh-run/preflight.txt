@@ -1,0 +1,8 @@
+﻿main_source_sha256=B258BB7FE60CFC4D7AA17F45427B94060B3F896D9A5565DE2EA07B2D7C349CBE
+checks_source_sha256=35CFE1C0AE7B8C9C9309973D86E21BCC514BFDBFDFA01AD43CE2593B0CA655A6
+main_object_before_compile=False
+checks_object_before_compile=False
+seed_source=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-finite-3lin-source-fresh-20260915\lib\lean
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean
+target_seeded=True
+seed_excluded=TaggedQuestionMassBridge.olean,TaggedQuestionMassBridgeChecks.olean

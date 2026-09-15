@@ -1,0 +1,6 @@
+﻿source_seed=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-finite-3lin-source-fresh-20260915\lib\lean
+target=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean
+copy=robocopy C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-finite-3lin-source-fresh-20260915\lib\lean C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\build\actual-tagged-question-mass-bridge-fresh-20260915\lib\lean /E /XF TaggedQuestionMassBridge.olean TaggedQuestionMassBridgeChecks.olean
+seeded_file_count=2800
+excluded_current_outputs=True
+robocopy_exit=1 (files copied)

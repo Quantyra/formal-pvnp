@@ -1,0 +1,10 @@
+﻿?? ApiCheck.lean
+?? api-loop.ps1
+?? encoding-probe.txt
+?? lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean
+?? lean/PvNP/RealizableHardness/TaggedQuestionMassBridgeChecks.lean
+?? ../../research/evidence/2026-09-14-actual-question-mass-bridge-final-fresh-run/
+?? ../../research/evidence/2026-09-14-actual-question-mass-bridge-fresh-run/
+?? ../../research/evidence/2026-09-15-tagged-question-mass-bridge-fresh-run/
+?? ../../research/p-equals-np/2026-09-13-realizable-hardness-original-row-producer-independent-proof-review.json
+?? ../../temp/
