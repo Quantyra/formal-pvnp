@@ -1,0 +1,63 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.vertexH {N m J h : ℕ} {I : Instance N m} (v : LeafVertex I J h) :
+  Submodule (ZMod 2) (I.GlobalVar → ZMod 2)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.vertexH_eq_of_presentation {N m J h : ℕ} {I : Instance N m}
+  (v : LeafVertex I J h) (P : PresentedLeaf I J h) (hD : P.domain = ↑v) : vertexH v = P.H
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel {N m J h : ℕ} {I : Instance N m}
+  (v w : LeafVertex I J h) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel_iff_presented {N m J h : ℕ} {I : Instance N m}
+  (v w : LeafVertex I J h) (P Q : PresentedLeaf I J h) (hP : P.domain = ↑v) (hQ : Q.domain = ↑w) : v.Rel w ↔ P.Rel Q
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.refl {N m J h : ℕ} {I : Instance N m}
+  (v : LeafVertex I J h) : v.Rel v
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.symm {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} (hvw : v.Rel w) : w.Rel v
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.trans {N m J h : ℕ} {I : Instance N m}
+  {u v w : LeafVertex I J h} (huv : u.Rel v) (hvw : v.Rel w) : u.Rel w
+PvNP.RealizableHardness.ActualPresentedLeafGluing.packagedLabel {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) : LeafLabel ⟨P.domain, ⋯⟩
+PvNP.RealizableHardness.ActualPresentedLeafGluing.packagedLabel_toFun {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) : ↑(packagedLabel P f hf) = f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafLabel.eq_of_toFun {N m J h : ℕ} {I : Instance N m}
+  {v : LeafVertex I J h} {φ ψ : LeafLabel v} : ↑φ = ↑ψ → φ = ψ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLeafLabel {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} (hvw : v.Rel w) (φ : LeafLabel v) : LeafLabel w
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLeafLabel_agrees_presented {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  let v := ⟨P.domain, ⋯⟩;
+  let w := ⟨Q.domain, ⋯⟩;
+  ↑(transportedLeafLabel ⋯ (packagedLabel P f hf)) = transportedLabel P Q hPQ f hf
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLeafLabel_coherence {N m J h : ℕ} {I : Instance N m}
+  {u v w : LeafVertex I J h} (huv : u.Rel v) (hvw : v.Rel w) (φ : LeafLabel u) :
+  transportedLeafLabel hvw (transportedLeafLabel huv φ) = transportedLeafLabel ⋯ φ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.repeated_address_rowRhs {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) (e : I.RowId)
+  (heP : e ∈ P.U) (heQ : e ∈ Q.U) : (transportedLabel P Q hPQ f hf).toFun ⟨equationVector I.support e, ⋯⟩ = I.rowRhs e
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.vertexH_eq_of_presentation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel_iff_presented' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.refl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.symm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafVertex.Rel.trans' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.packagedLabel_toFun' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.LeafLabel.eq_of_toFun' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLeafLabel_agrees_presented' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLeafLabel_coherence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.repeated_address_rowRhs' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

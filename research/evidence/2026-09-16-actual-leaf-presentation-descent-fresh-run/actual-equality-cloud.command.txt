@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualEqualityCloud
+source=/home/dfredriksen_quantyra_org/presentation-descent-2018a4d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualEqualityCloud.lean
+object=/home/dfredriksen_quantyra_org/presentation-descent-2018a4d-fresh-target/lib/lean/PvNP/RealizableHardness/ActualEqualityCloud.olean

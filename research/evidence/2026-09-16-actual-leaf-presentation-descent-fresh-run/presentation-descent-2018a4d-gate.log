@@ -1,0 +1,30 @@
+expected_bundle_sha256=475CFA697D143B8E2C70FB3DBD2AEA23FC52B06855812F338EB663AA21AED96E
+actual_bundle_sha256=475CFA697D143B8E2C70FB3DBD2AEA23FC52B06855812F338EB663AA21AED96E
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/presentation-descent-2018a4d-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-2018a4d.bundle is okay
+The bundle contains this ref:
+2018a4d380f2b04af805501dc9a85b8996624441 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/presentation-descent-2018a4d-src'...
+HEAD is now at 2018a4d prove actual leaf presentation descent
+expected_head=2018a4d380f2b04af805501dc9a85b8996624441
+actual_head=2018a4d380f2b04af805501dc9a85b8996624441
+status_begin
+
+status_end
+expected_main_sha256=F47A412556F00C2B06E026A2D4A58F8B1C9E74FA9BEFFE2480D1623E31848A6F
+actual_main_sha256=F47A412556F00C2B06E026A2D4A58F8B1C9E74FA9BEFFE2480D1623E31848A6F
+expected_checks_sha256=510C82D88BF505A23C9A06A788C8EA040155979E19BD1BB8AF33403DD8F49D19
+actual_checks_sha256=510C82D88BF505A23C9A06A788C8EA040155979E19BD1BB8AF33403DD8F49D19
+transfer_gate=PASS
