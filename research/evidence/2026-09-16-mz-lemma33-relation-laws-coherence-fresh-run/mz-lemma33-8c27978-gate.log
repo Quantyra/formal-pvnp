@@ -1,0 +1,34 @@
+expected_bundle_sha256=E9357667F5A2382B9DA2A5DB3DE2A9DA46955BA039E2C7B6A8C6244781D5780E
+actual_bundle_sha256=E9357667F5A2382B9DA2A5DB3DE2A9DA46955BA039E2C7B6A8C6244781D5780E
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/mz-lemma33-8c27978-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-8c27978.bundle is okay
+The bundle contains this ref:
+8c2797867e81bd4f69c35893e3574a3f042d1132 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/mz-lemma33-8c27978-src'...
+HEAD is now at 8c27978 prove actual leaf transport coherence
+expected_head=8c2797867e81bd4f69c35893e3574a3f042d1132
+actual_head=8c2797867e81bd4f69c35893e3574a3f042d1132
+status_begin
+
+status_end
+expected_rl_main_sha256=87BE216E92B19AD2044BF5DB1551A3D36BE3993ABBD456FDCF16FA379274610C
+actual_rl_main_sha256=87BE216E92B19AD2044BF5DB1551A3D36BE3993ABBD456FDCF16FA379274610C
+expected_rl_checks_sha256=55301CD33DFCE8764A7E65564995A0E2DBC17E280558AFF5DE80FF11395C7F46
+actual_rl_checks_sha256=55301CD33DFCE8764A7E65564995A0E2DBC17E280558AFF5DE80FF11395C7F46
+expected_co_main_sha256=109346364F8886DA18F31EFD170F8D991AEF21ECD92D591408766815E1F7EF5F
+actual_co_main_sha256=109346364F8886DA18F31EFD170F8D991AEF21ECD92D591408766815E1F7EF5F
+expected_co_checks_sha256=A68C99D77565BBE9468F412891DFB95EF0BF97C1D8A9282596317800D18079BD
+actual_co_checks_sha256=A68C99D77565BBE9468F412891DFB95EF0BF97C1D8A9282596317800D18079BD
+transfer_gate=PASS

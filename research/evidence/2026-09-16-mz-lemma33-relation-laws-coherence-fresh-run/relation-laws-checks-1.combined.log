@@ -1,0 +1,68 @@
+PvNP.RealizableHardness.ActualStarSpanIntersection.row_private_outside_two_questions.{u_1, u_2} {X : Type u_1}
+  {E : Type u_2} [Fintype X] [Fintype E] [DecidableEq X] [DecidableEq E] (row : E → Finset X)
+  (hthree : ∀ (e : E), (row e).card = 3) (hlinear : ∀ (e f : E), e ≠ f → (row e ∩ row f).card ≤ 1) (U₁ U₂ U₃ : Finset E)
+  (hU₁ : GoodQuestion row U₁) (hU₂ : GoodQuestion row U₂) (hU₃ : GoodQuestion row U₃) (e : E) (he₂ : e ∈ U₂)
+  (he₁ : e ∉ U₁) (he₃ : e ∉ U₃) :
+  ∃ x ∈ row e, x ∉ questionSupport row U₁ ∧ x ∉ questionSupport row U₃ ∧ x ∉ questionSupport row (U₂.erase e)
+PvNP.RealizableHardness.ActualStarSpanIntersection.equationSpan_inf_sup_coordinateSpace_le.{u_1, u_2} {X : Type u_1}
+  {E : Type u_2} [Fintype X] [Fintype E] [DecidableEq X] [DecidableEq E] (row : E → Finset X)
+  (hthree : ∀ (e : E), (row e).card = 3) (hlinear : ∀ (e f : E), e ≠ f → (row e ∩ row f).card ≤ 1) (U₁ U₂ U₃ : Finset E)
+  (hU₁ : GoodQuestion row U₁) (hU₂ : GoodQuestion row U₂) (hU₃ : GoodQuestion row U₃) :
+  equationSpan row U₂ ⊓ (coordinateSpace row U₁ ⊔ coordinateSpace row U₃) ≤ equationSpan row U₁ ⊔ equationSpan row U₃
+PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_equationSpan_inf_sup_coordinateSpace_le {N m : ℕ}
+  (I : Instance N m) (U₁ U₂ U₃ : Finset I.RowId) (hU₁ : GoodQuestion I.support U₁) (hU₂ : GoodQuestion I.support U₂)
+  (hU₃ : GoodQuestion I.support U₃) :
+  equationSpan I.support U₂ ⊓ (coordinateSpace I.support U₁ ⊔ coordinateSpace I.support U₃) ≤
+    equationSpan I.support U₁ ⊔ equationSpan I.support U₃
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.refl {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : P.Rel P
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.symm {N m J h : ℕ} {I : Instance N m}
+  {P Q : PresentedLeaf I J h} (hPQ : P.Rel Q) : Q.Rel P
+PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.trans {N m J h : ℕ} {I : Instance N m}
+  (P Q R : PresentedLeaf I J h) : P.Rel Q → Q.Rel R → P.Rel R
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportCompatible_refl {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) : TransportCompatible P P ⋯ f f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_identity_canonical {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) : transportedLabel P P ⋯ f hf = f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportCompatible_symm {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f)
+  (g : RawLeafLabel I Q.domain) (hfg : TransportCompatible P Q hPQ f g) : TransportCompatible Q P ⋯ g f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_inverse_canonical {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  transportedLabel Q P ⋯ (transportedLabel P Q hPQ f hf) ⋯ = f
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_proof_irrel {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ₁ hPQ₂ : P.Rel Q) (f : RawLeafLabel I P.domain) (hf₁ hf₂ : RespectsAt P ⋯ f) :
+  transportedLabel P Q hPQ₁ f hf₁ = transportedLabel P Q hPQ₂ f hf₂
+'PvNP.RealizableHardness.ActualStarSpanIntersection.row_private_outside_two_questions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualStarSpanIntersection.equationSpan_inf_sup_coordinateSpace_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_equationSpan_inf_sup_coordinateSpace_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.refl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.symm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.PresentedLeaf.Rel.trans' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportCompatible_refl' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_identity_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportCompatible_symm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_inverse_canonical' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_proof_irrel' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
