@@ -14,7 +14,9 @@ Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 `gcdBits` and `readRatTag` are in `FP`. Canonical odd-pair GCD is
 `gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`.
 `readSignedTag` packs the sign tag plus `readRatOnEncode`. `readListTag` packs
-the signed-element list spine. This module does
+the signed-element list spine. `readFormulaTag` packs var/and/or tags plus
+`readNatTag` on `pair n.bits (encode t)`. The formula bit-step agrees with
+the semantic stepper (`formStep_encode`). This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -4444,5 +4446,1636 @@ theorem readListTag_of_tree (t : CMMSACodec.Tree) :
   simp [readListTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
     pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
   exact readListOnEncode_of_tree t
+
+/-! ## Packed `readFormula`: var/and/or tags plus `readNatTag`.
+Input is `pair n.bits (encode t)`. Empty = none; nonempty =
+`true :: encode (formulaTree f)`. -/
+
+private def wrapVarEnc (natEnc : List Bool) : List Bool :=
+  [true, false] ++ natEnc
+
+private def wrapAndEnc (p q : List Bool) : List Bool :=
+  [true, true, false, false, true] ++ p ++ q
+
+private def wrapOrEnc (p q : List Bool) : List Bool :=
+  [true, true, false, true, false, false, true] ++ p ++ q
+
+private theorem wrapVarEnc_eq {n : Nat} (v : Fin n) :
+    wrapVarEnc (CMMSACodec.Tree.encode (natTree v.val)) =
+      CMMSACodec.Tree.encode (formulaTree (.var v)) := by
+  simp [wrapVarEnc, formulaTree, CMMSACodec.Tree.encode]
+
+private theorem wrapAndEnc_eq {N : Nat} (p q : Formula (Fin N)) :
+    wrapAndEnc (CMMSACodec.Tree.encode (formulaTree p))
+      (CMMSACodec.Tree.encode (formulaTree q)) =
+      CMMSACodec.Tree.encode (formulaTree (.and p q)) := by
+  simp [wrapAndEnc, formulaTree, CMMSACodec.Tree.encode, List.append_assoc]
+
+private theorem wrapOrEnc_eq {N : Nat} (p q : Formula (Fin N)) :
+    wrapOrEnc (CMMSACodec.Tree.encode (formulaTree p))
+      (CMMSACodec.Tree.encode (formulaTree q)) =
+      CMMSACodec.Tree.encode (formulaTree (.or p q)) := by
+  simp [wrapOrEnc, formulaTree, CMMSACodec.Tree.encode, List.append_assoc]
+
+private theorem encode_andTag :
+    CMMSACodec.Tree.encode (.node .leaf .leaf) = [true, false, false] := rfl
+
+private theorem encode_orTag :
+    CMMSACodec.Tree.encode (.node .leaf (.node .leaf .leaf)) =
+      [true, false, true, false, false] := by
+  simp [CMMSACodec.Tree.encode]
+
+private theorem readDigits_length :
+    ∀ t : CMMSACodec.Tree, ∀ bs, readDigits t = some bs →
+      bs.length ≤ (CMMSACodec.Tree.encode t).length
+  | .leaf, bs, h => by
+      simp [readDigits] at h; subst h
+      simp [CMMSACodec.Tree.encode]
+  | .node .leaf t, bs, h => by
+      simp only [readDigits] at h
+      cases ht : readDigits t with
+      | none => simp [ht] at h
+      | some rest =>
+          simp [ht] at h
+          subst h
+          have ih := readDigits_length t rest ht
+          simp [CMMSACodec.Tree.encode]
+          omega
+  | .node (.node .leaf .leaf) t, bs, h => by
+      simp only [readDigits] at h
+      cases ht : readDigits t with
+      | none => simp [ht] at h
+      | some rest =>
+          simp [ht] at h
+          subst h
+          have ih := readDigits_length t rest ht
+          simp [CMMSACodec.Tree.encode]
+          omega
+  | .node (.node .leaf (.node _ _)) _, bs, h => by simp [readDigits] at h
+  | .node (.node (.node _ _) _) _, bs, h => by simp [readDigits] at h
+
+private theorem formula_encode_le {n : Nat} (f : Formula (Fin n)) :
+    ∀ t : CMMSACodec.Tree,
+      readFormula n t = some f →
+        (CMMSACodec.Tree.encode (formulaTree f)).length ≤
+          8 * (CMMSACodec.Tree.encode t).length + 8 := by
+  induction f with
+  | var v =>
+      intro t h
+      cases t with
+      | leaf => simp [readFormula] at h
+      | node a b =>
+          cases a with
+          | leaf =>
+              rw [readFormula] at h
+              cases hn : readNat b with
+              | none => simp [hn] at h
+              | some k =>
+                  simp only [hn, Option.bind] at h
+                  by_cases hlt : k < n
+                  · simp [hlt] at h
+                    have hk : k = v.val := congrArg Fin.val h
+                    simp only [formulaTree, CMMSACodec.Tree.encode, List.length_cons,
+                      List.length_append, List.length_nil]
+                    simp only [readNat] at hn
+                    cases hbs : readDigits b with
+                    | none => simp [hbs] at hn
+                    | some bs =>
+                        simp [hbs] at hn
+                        have hblen := readDigits_length b bs hbs
+                        have hnat := natTree_length v.val
+                        have hsize : v.val.size = v.val.bits.length :=
+                          (Nat.size_eq_bits_len v.val).symm
+                        have hbits : v.val.bits.length ≤ bs.length := by
+                          subst hn
+                          simpa [hk, stripTrailing_eq_bits] using length_stripTrailing bs
+                        simp [CMMSACodec.Tree.encode] at hblen ⊢
+                        omega
+                  · simp [hlt] at h
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf => simp [readFormula] at h
+                      | node p q =>
+                          rw [readFormula] at h
+                          cases hp : readFormula n p with
+                          | none => simp [hp] at h
+                          | some fp =>
+                              cases hq : readFormula n q with
+                              | none => simp [hp, hq, Option.bind] at h
+                              | some fq => simp [hp, hq, Option.bind] at h
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf => simp [readFormula] at h
+                              | node p q =>
+                                  rw [readFormula] at h
+                                  cases hp : readFormula n p with
+                                  | none => simp [hp] at h
+                                  | some fp =>
+                                      cases hq : readFormula n q with
+                                      | none => simp [hp, hq, Option.bind] at h
+                                      | some fq => simp [hp, hq, Option.bind] at h
+                          | node _ _ => simp [readFormula] at h
+                      | node _ _ => simp [readFormula] at h
+              | node _ _ => simp [readFormula] at h
+  | and fp fq ihp ihq =>
+      intro t h
+      cases t with
+      | leaf => simp [readFormula] at h
+      | node a b =>
+          cases a with
+          | leaf =>
+              rw [readFormula] at h
+              cases hn : readNat b with
+              | none => simp [hn] at h
+              | some k =>
+                  simp only [hn, Option.bind] at h
+                  by_cases hlt : k < n
+                  · simp [hlt] at h
+                  · simp [hlt] at h
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf => simp [readFormula] at h
+                      | node p q =>
+                          rw [readFormula] at h
+                          cases hp : readFormula n p with
+                          | none => simp [hp] at h
+                          | some fp' =>
+                              cases hq : readFormula n q with
+                              | none => simp [hp, hq, Option.bind] at h
+                              | some fq' =>
+                                  simp only [hp, hq, Option.bind] at h
+                                  obtain ⟨rfl, rfl⟩ := Formula.and.inj (Option.some.inj h)
+                                  have hlp := ihp p hp
+                                  have hlq := ihq q hq
+                                  simp [formulaTree, CMMSACodec.Tree.encode, List.length_cons,
+                                    List.length_append, List.length_nil]
+                                  omega
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf => simp [readFormula] at h
+                              | node p q =>
+                                  rw [readFormula] at h
+                                  cases hp : readFormula n p with
+                                  | none => simp [hp] at h
+                                  | some fp' =>
+                                      cases hq : readFormula n q with
+                                      | none => simp [hp, hq, Option.bind] at h
+                                      | some fq' => simp [hp, hq, Option.bind] at h
+                          | node _ _ => simp [readFormula] at h
+                      | node _ _ => simp [readFormula] at h
+              | node _ _ => simp [readFormula] at h
+  | or fp fq ihp ihq =>
+      intro t h
+      cases t with
+      | leaf => simp [readFormula] at h
+      | node a b =>
+          cases a with
+          | leaf =>
+              rw [readFormula] at h
+              cases hn : readNat b with
+              | none => simp [hn] at h
+              | some k =>
+                  simp only [hn, Option.bind] at h
+                  by_cases hlt : k < n
+                  · simp [hlt] at h
+                  · simp [hlt] at h
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf => simp [readFormula] at h
+                      | node p q =>
+                          rw [readFormula] at h
+                          cases hp : readFormula n p with
+                          | none => simp [hp] at h
+                          | some fp' =>
+                              cases hq : readFormula n q with
+                              | none => simp [hp, hq, Option.bind] at h
+                              | some fq' => simp [hp, hq, Option.bind] at h
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf => simp [readFormula] at h
+                              | node p q =>
+                                  rw [readFormula] at h
+                                  cases hp : readFormula n p with
+                                  | none => simp [hp] at h
+                                  | some fp' =>
+                                      cases hq : readFormula n q with
+                                      | none => simp [hp, hq, Option.bind] at h
+                                      | some fq' =>
+                                          simp only [hp, hq, Option.bind] at h
+                                          obtain ⟨rfl, rfl⟩ :=
+                                            Formula.or.inj (Option.some.inj h)
+                                          have hlp := ihp p hp
+                                          have hlq := ihq q hq
+                                          simp [formulaTree, CMMSACodec.Tree.encode,
+                                            List.length_cons, List.length_append,
+                                            List.length_nil]
+                                          omega
+                          | node _ _ => simp [readFormula] at h
+                      | node _ _ => simp [readFormula] at h
+              | node _ _ => simp [readFormula] at h
+
+private inductive FormFrame where
+  | waitRight (isOr : Bool) (right parent : CMMSACodec.Tree)
+  | combine (isOr : Bool) (leftEnc : List Bool) (parent : CMMSACodec.Tree)
+
+private inductive FormMode where
+  | fail
+  | expand : CMMSACodec.Tree → FormMode
+  | reduce : CMMSACodec.Tree → List Bool → FormMode
+  | success : List Bool → FormMode
+
+private structure FormSem where
+  bound : List Bool
+  mode : FormMode
+  stack : List FormFrame
+
+private def formSemStep (s : FormSem) : FormSem :=
+  match s.mode with
+  | .fail | .success _ => s
+  | .expand t =>
+      match t with
+      | .node .leaf v =>
+          match readNat v with
+          | none => { s with mode := .fail, stack := [] }
+          | some k =>
+              if hlt : k < bitValue s.bound then
+                { s with mode := .reduce t (wrapVarEnc (natTree k).encode) }
+              else { s with mode := .fail, stack := [] }
+      | .node (.node .leaf .leaf) (.node p q) =>
+          { s with mode := .expand p, stack := .waitRight false q t :: s.stack }
+      | .node (.node .leaf (.node .leaf .leaf)) (.node p q) =>
+          { s with mode := .expand p, stack := .waitRight true q t :: s.stack }
+      | _ => { s with mode := .fail, stack := [] }
+  | .reduce _ enc =>
+      match s.stack with
+      | [] => { s with mode := .success enc, stack := [] }
+      | .waitRight isOr right parent :: fs =>
+          { bound := s.bound, mode := .expand right,
+            stack := .combine isOr enc parent :: fs }
+      | .combine isOr leftEnc parent :: fs =>
+          { bound := s.bound,
+            mode := .reduce parent
+              (if isOr then wrapOrEnc leftEnc enc else wrapAndEnc leftEnc enc),
+            stack := fs }
+
+private def applyFormCont (n : Nat) :
+    List FormFrame → List Bool → Option (List Bool)
+  | [], enc => some enc
+  | .waitRight isOr right _ :: fs, leftEnc =>
+      match readFormula n right with
+      | none => none
+      | some fq =>
+          applyFormCont n fs
+            (if isOr then wrapOrEnc leftEnc (formulaTree fq).encode
+              else wrapAndEnc leftEnc (formulaTree fq).encode)
+  | .combine isOr leftEnc _ :: fs, rightEnc =>
+      applyFormCont n fs
+        (if isOr then wrapOrEnc leftEnc rightEnc else wrapAndEnc leftEnc rightEnc)
+
+private def evalForm (s : FormSem) : Option (List Bool) :=
+  match s.mode with
+  | .fail => none
+  | .success enc => some enc
+  | .reduce _ enc => applyFormCont (bitValue s.bound) s.stack enc
+  | .expand t =>
+      match readFormula (bitValue s.bound) t with
+      | none => none
+      | some f => applyFormCont (bitValue s.bound) s.stack (formulaTree f).encode
+
+private theorem evalForm_step (s : FormSem) :
+    evalForm (formSemStep s) = evalForm s := by
+  rcases s with ⟨bound, mode, stack⟩
+  cases mode with
+  | fail | success _ => simp [formSemStep, evalForm]
+  | reduce src enc =>
+      cases stack with
+      | nil => simp [formSemStep, evalForm, applyFormCont]
+      | cons f fs =>
+          cases f with
+          | waitRight isOr right parent =>
+              simp [formSemStep, evalForm, applyFormCont]
+              cases hr : readFormula (bitValue bound) right <;> simp [hr]
+          | combine isOr leftEnc parent =>
+              simp [formSemStep, evalForm, applyFormCont]
+  | expand t =>
+      cases t with
+      | leaf => simp [formSemStep, evalForm, readFormula]
+      | node a b =>
+          cases a with
+          | leaf =>
+              simp [formSemStep, evalForm, readFormula]
+              cases hn : readNat b with
+              | none => simp [hn]
+              | some k =>
+                  simp [hn]
+                  by_cases hlt : k < bitValue bound
+                  · simp [hlt, applyFormCont, wrapVarEnc_eq ⟨k, hlt⟩]
+                  · simp [hlt]
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf => simp [formSemStep, evalForm, readFormula]
+                      | node p q =>
+                          simp [formSemStep, evalForm, readFormula, applyFormCont]
+                          cases hp : readFormula (bitValue bound) p with
+                          | none => simp [hp]
+                          | some fp =>
+                              cases hq : readFormula (bitValue bound) q with
+                              | none => simp [hp, hq]
+                              | some fq => simp [hp, hq, wrapAndEnc_eq]
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf => simp [formSemStep, evalForm, readFormula]
+                              | node p q =>
+                                  simp [formSemStep, evalForm, readFormula, applyFormCont]
+                                  cases hp : readFormula (bitValue bound) p with
+                                  | none => simp [hp]
+                                  | some fp =>
+                                      cases hq : readFormula (bitValue bound) q with
+                                      | none => simp [hp, hq]
+                                      | some fq => simp [hp, hq, wrapOrEnc_eq]
+                          | node _ _ => simp [formSemStep, evalForm, readFormula]
+                      | node _ _ => simp [formSemStep, evalForm, readFormula]
+              | node _ _ => simp [formSemStep, evalForm, readFormula]
+
+private theorem evalForm_iterate (s : FormSem) (n : Nat) :
+    evalForm (formSemStep^[n] s) = evalForm s := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', evalForm_step, ih]
+
+private def frameWork : FormFrame → Nat
+  | .waitRight _ r _ => 2 * (CMMSACodec.Tree.encode r).length + 4
+  | .combine _ _ _ => 1
+
+private def stackWork : List FormFrame → Nat
+  | [] => 0
+  | f :: fs => frameWork f + stackWork fs
+
+private def formMeasure (s : FormSem) : Nat :=
+  match s.mode with
+  | .fail | .success _ => 0
+  | .expand t => 2 * (CMMSACodec.Tree.encode t).length + 2 + stackWork s.stack
+  | .reduce _ _ => stackWork s.stack + 1
+
+private theorem formMeasure_lt (s : FormSem) (h : formMeasure s ≠ 0) :
+    formMeasure (formSemStep s) < formMeasure s := by
+  rcases s with ⟨bound, mode, stack⟩
+  cases mode with
+  | fail | success _ => simp [formMeasure] at h
+  | reduce src enc =>
+      cases stack with
+      | nil => simp [formSemStep, formMeasure, stackWork]
+      | cons f fs =>
+          cases f with
+          | waitRight isOr right parent =>
+              simp [formSemStep, formMeasure, stackWork, frameWork]
+              omega
+          | combine isOr leftEnc parent =>
+              simp [formSemStep, formMeasure, stackWork, frameWork]
+  | expand t =>
+      cases t with
+      | leaf => simp [formSemStep, formMeasure, CMMSACodec.Tree.encode, stackWork]
+      | node a b =>
+          cases a with
+          | leaf =>
+              simp [formSemStep, formMeasure]
+              cases readNat b with
+              | none => simp [stackWork]
+              | some k =>
+                  by_cases hlt : k < bitValue bound
+                  · simp [hlt, stackWork]
+                    have : 1 ≤ (CMMSACodec.Tree.encode (.node .leaf b)).length := by
+                      simp [CMMSACodec.Tree.encode]
+                    omega
+                  · simp [hlt, stackWork]
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf =>
+                          simp [formSemStep, formMeasure, CMMSACodec.Tree.encode, stackWork]
+                      | node p q =>
+                          simp [formSemStep, formMeasure, stackWork, frameWork,
+                            encode_node_length, encode_andTag, CMMSACodec.Tree.encode]
+                          omega
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf =>
+                                  simp [formSemStep, formMeasure, CMMSACodec.Tree.encode,
+                                    stackWork]
+                              | node p q =>
+                                  simp [formSemStep, formMeasure, stackWork, frameWork,
+                                    encode_node_length, encode_orTag, CMMSACodec.Tree.encode]
+                                  omega
+                          | node _ _ =>
+                              simp [formSemStep, formMeasure, CMMSACodec.Tree.encode, stackWork]
+                      | node _ _ =>
+                          simp [formSemStep, formMeasure, CMMSACodec.Tree.encode, stackWork]
+              | node _ _ =>
+                  simp [formSemStep, formMeasure, CMMSACodec.Tree.encode, stackWork]
+
+private theorem formStuck (s : FormSem) (h : formMeasure s = 0) :
+    formSemStep s = s := by
+  rcases s with ⟨bound, mode, stack⟩
+  cases mode <;> simp [formMeasure] at h ⊢ <;> simp [formSemStep]
+
+private theorem iterate_formStuck (s : FormSem) (h : formMeasure s = 0) :
+    ∀ n, formSemStep^[n] s = s := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', ih, formStuck s h]
+
+private theorem formReaches : ∀ (n : Nat) (s : FormSem),
+    formMeasure s ≤ n → formMeasure (formSemStep^[formMeasure s] s) = 0 := by
+  intro n
+  induction n with
+  | zero =>
+      intro s hs
+      have hz : formMeasure s = 0 := Nat.eq_zero_of_le_zero hs
+      simp [hz]
+  | succ n ih =>
+      intro s hs
+      cases hmz : formMeasure s with
+      | zero => simp [hmz]
+      | succ m =>
+          have hne : formMeasure s ≠ 0 := by simp [hmz]
+          have hlt := formMeasure_lt s hne
+          have hle : formMeasure (formSemStep s) ≤ n := by omega
+          have hinter := ih (formSemStep s) hle
+          rw [Function.iterate_succ_apply]
+          have hsplit : m = (m - formMeasure (formSemStep s)) +
+              formMeasure (formSemStep s) := by omega
+          rw [hsplit, Function.iterate_add_apply, iterate_formStuck _ hinter]
+          exact hinter
+
+private theorem iterate_ge_formStuck (s : FormSem) {n : Nat}
+    (hn : formMeasure s ≤ n) : formMeasure (formSemStep^[n] s) = 0 := by
+  have hsplit : n = (n - formMeasure s) + formMeasure s := by omega
+  have hs := formReaches n s hn
+  rw [hsplit, Function.iterate_add_apply, iterate_formStuck _ hs]
+  exact hs
+
+private def encodeFormFrame : FormFrame → List Bool
+  | .waitRight isOr right parent =>
+      pair [] (pair (if isOr then [true] else [false])
+        (pair (CMMSACodec.Tree.encode right) (CMMSACodec.Tree.encode parent)))
+  | .combine isOr leftEnc parent =>
+      pair [true] (pair (if isOr then [true] else [false])
+        (pair leftEnc (CMMSACodec.Tree.encode parent)))
+
+private def encodeFormStack : List FormFrame → List Bool
+  | [] => []
+  | f :: fs => pair (encodeFormFrame f) (encodeFormStack fs)
+
+private def encodeFormMode : FormMode → List Bool
+  | .fail => pair [] []
+  | .expand t => pair [false] (CMMSACodec.Tree.encode t)
+  | .reduce _ enc => pair [true] enc
+  | .success enc => pair [true, true] enc
+
+private def encodeFormSem (s : FormSem) : List Bool :=
+  pair s.bound (pair (encodeFormMode s.mode) (encodeFormStack s.stack))
+
+private def formBound (st : List Bool) : List Bool := pairFst st
+private def formModeBits (st : List Bool) : List Bool := pairFst (pairSnd st)
+private def formStackBits (st : List Bool) : List Bool := pairSnd (pairSnd st)
+private def formFlag (st : List Bool) : List Bool := pairFst (formModeBits st)
+private def formPayload (st : List Bool) : List Bool := pairSnd (formModeBits st)
+
+private theorem formBound_mem_FP : formBound ∈ FP := Cobham.fstBlock_mem_FP
+private theorem formModeBits_mem_FP : formModeBits ∈ FP :=
+  mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+private theorem formStackBits_mem_FP : formStackBits ∈ FP :=
+  mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP
+private theorem formFlag_mem_FP : formFlag ∈ FP :=
+  mem_FP_comp formModeBits_mem_FP Cobham.fstBlock_mem_FP
+private theorem formPayload_mem_FP : formPayload ∈ FP :=
+  mem_FP_comp formModeBits_mem_FP Cobham.sndBlock_mem_FP
+
+private def formFailSt (bound : List Bool) : List Bool :=
+  pair bound (pair (pair [] []) [])
+private def formExpandMode (payload : List Bool) : List Bool := pair [false] payload
+private def formReduceMode (payload : List Bool) : List Bool := pair [true] payload
+private def formSuccessMode (payload : List Bool) : List Bool := pair [true, true] payload
+private def waitRightFrame (orFlag rightEnc parentEnc : List Bool) : List Bool :=
+  pair [] (pair orFlag (pair rightEnc parentEnc))
+private def combineFrame (orFlag leftEnc parentEnc : List Bool) : List Bool :=
+  pair [true] (pair orFlag (pair leftEnc parentEnc))
+private def formMk (bound mode stack : List Bool) : List Bool :=
+  pair bound (pair mode stack)
+
+private def formExpandVar (st : List Bool) : List Bool :=
+  let bound := formBound st
+  let cur := formPayload st
+  let stack := formStackBits st
+  let failSt := formFailSt bound
+  let packed := readNatTag (nodeRight cur)
+  Cobham.selectHead (emptyFlag packed) failSt
+    (Cobham.selectHead
+      (ltCanon (stripTrailing (dropOne (readDigitsTag (nodeRight cur)))) bound)
+      (formMk bound (formReduceMode (wrapVarEnc (dropOne packed))) stack)
+      failSt)
+
+private def formExpandBin (orFlag : List Bool) (st : List Bool) : List Bool :=
+  let bound := formBound st
+  let cur := formPayload st
+  let stack := formStackBits st
+  let failSt := formFailSt bound
+  Cobham.selectHead (emptyFlag (splitNode (nodeRight cur))) failSt
+    (formMk bound (formExpandMode (nodeLeft (nodeRight cur)))
+      (pair (waitRightFrame orFlag (nodeRight (nodeRight cur)) cur) stack))
+
+private def formExpand (st : List Bool) : List Bool :=
+  let bound := formBound st
+  let cur := formPayload st
+  let failSt := formFailSt bound
+  Cobham.selectHead (emptyFlag (splitNode cur)) failSt
+    (Cobham.selectHead (Cobham.eqFlag (nodeLeft cur) [false])
+      (formExpandVar st)
+      (Cobham.selectHead (Cobham.eqFlag (nodeLeft cur) [true, false, false])
+        (formExpandBin [false] st)
+        (Cobham.selectHead (Cobham.eqFlag (nodeLeft cur)
+            [true, false, true, false, false])
+          (formExpandBin [true] st)
+          failSt)))
+
+private def formReduce (st : List Bool) : List Bool :=
+  let bound := formBound st
+  let payload := formPayload st
+  let stack := formStackBits st
+  Cobham.selectHead (emptyFlag stack)
+    (formMk bound (formSuccessMode payload) [])
+    (let frame := pairFst stack
+     let rest := pairSnd stack
+     Cobham.selectHead (emptyFlag (pairFst frame))
+       (formMk bound
+         (formExpandMode (pairFst (pairSnd (pairSnd frame))))
+         (pair (combineFrame (pairFst (pairSnd frame)) payload
+           (pairSnd (pairSnd (pairSnd frame)))) rest))
+       (formMk bound
+         (formReduceMode
+           (Cobham.selectHead (pairFst (pairSnd frame))
+             (wrapOrEnc (pairFst (pairSnd (pairSnd frame))) payload)
+             (wrapAndEnc (pairFst (pairSnd (pairSnd frame))) payload)))
+         rest))
+
+private def formStep (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (formFlag st)) st
+    (Cobham.selectHead (formFlag st)
+      (Cobham.selectHead (emptyFlag (dropOne (formFlag st)))
+        (formReduce st) st)
+      (formExpand st))
+
+private def formPack (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (formFlag st)) []
+    (Cobham.selectHead (formFlag st)
+      (Cobham.selectHead (emptyFlag (dropOne (formFlag st))) []
+        (true :: formPayload st))
+      [])
+
+private def formInit (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (treeParseTag (pairSnd z)))
+    (formFailSt (pairFst z))
+    (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag (pairSnd z)))))
+      (formMk (pairFst z)
+        (formExpandMode (pairFst (dropOne (treeParseTag (pairSnd z))))) [])
+      (formFailSt (pairFst z)))
+
+private def initForm (z : List Bool) : FormSem :=
+  match CMMSACodec.Tree.parse ((pairSnd z).length + 1) (pairSnd z) with
+  | none => ⟨pairFst z, .fail, []⟩
+  | some (t, rest) =>
+      if rest = [] then ⟨pairFst z, .expand t, []⟩
+      else ⟨pairFst z, .fail, []⟩
+
+private def formRuler (z : List Bool) : List Bool := z ++ z ++ [false, false]
+
+private def formArg (z : List Bool) : List Bool :=
+  z ++ z ++ List.replicate 32 false
+
+private def formWidth (z : List Bool) : List Bool :=
+  List.replicate
+    ((formArg z).length * (formArg z).length * (formArg z).length) false
+
+/-- Pack `readFormula (bitValue (pairFst z))` on the complete tree encoding
+`pairSnd z`. Empty = none; nonempty = `true :: encode (formulaTree f)`. -/
+def readFormulaTag (z : List Bool) : List Bool :=
+  formPack (formStep^[(formRuler z).length] (formInit z))
+
+private theorem formBound_encode (s : FormSem) :
+    formBound (encodeFormSem s) = s.bound := by
+  simp [formBound, encodeFormSem]
+
+private theorem formModeBits_encode (s : FormSem) :
+    formModeBits (encodeFormSem s) = encodeFormMode s.mode := by
+  simp [formModeBits, encodeFormSem]
+
+private theorem formStackBits_encode (s : FormSem) :
+    formStackBits (encodeFormSem s) = encodeFormStack s.stack := by
+  simp [formStackBits, encodeFormSem]
+
+private theorem formFlag_encode (s : FormSem) :
+    formFlag (encodeFormSem s) = pairFst (encodeFormMode s.mode) := by
+  simp [formFlag, formModeBits, encodeFormSem]
+
+private theorem formPayload_encode (s : FormSem) :
+    formPayload (encodeFormSem s) = pairSnd (encodeFormMode s.mode) := by
+  simp [formPayload, formModeBits, encodeFormSem]
+
+private theorem flag_form_fail : pairFst (encodeFormMode .fail) = [] := by
+  simp [encodeFormMode]
+private theorem flag_form_expand (t : CMMSACodec.Tree) :
+    pairFst (encodeFormMode (.expand t)) = [false] := by
+  simp [encodeFormMode]
+private theorem flag_form_reduce (src : CMMSACodec.Tree) (enc : List Bool) :
+    pairFst (encodeFormMode (.reduce src enc)) = [true] := by
+  simp [encodeFormMode]
+private theorem flag_form_success (enc : List Bool) :
+    pairFst (encodeFormMode (.success enc)) = [true, true] := by
+  simp [encodeFormMode]
+
+private theorem wrapVarEnc_mem_FP {f : List Bool → List Bool} (hf : f ∈ FP) :
+    (fun z => wrapVarEnc (f z)) ∈ FP :=
+  Cobham.appendFn_mem_FP (constFn_mem_FP [true, false]) hf
+
+private theorem wrapAndEnc_mem_FP {p q : List Bool → List Bool}
+    (hp : p ∈ FP) (hq : q ∈ FP) :
+    (fun z => wrapAndEnc (p z) (q z)) ∈ FP :=
+  Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP (constFn_mem_FP [true, true, false, false, true]) hp) hq
+
+private theorem wrapOrEnc_mem_FP {p q : List Bool → List Bool}
+    (hp : p ∈ FP) (hq : q ∈ FP) :
+    (fun z => wrapOrEnc (p z) (q z)) ∈ FP :=
+  Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP
+      (constFn_mem_FP [true, true, false, true, false, false, true]) hp) hq
+
+private theorem formFailSt_mem_FP {b : List Bool → List Bool} (hb : b ∈ FP) :
+    (fun z => formFailSt (b z)) ∈ FP :=
+  Cobham.pairFn_mem_FP hb (constFn_mem_FP (pair (pair [] []) []))
+
+private theorem formMk_mem_FP {b m k : List Bool → List Bool}
+    (hb : b ∈ FP) (hm : m ∈ FP) (hk : k ∈ FP) :
+    (fun z => formMk (b z) (m z) (k z)) ∈ FP :=
+  Cobham.pairFn_mem_FP hb (Cobham.pairFn_mem_FP hm hk)
+
+private theorem formExpandVar_mem_FP : formExpandVar ∈ FP := by
+  have hbound := formBound_mem_FP
+  have hcur := formPayload_mem_FP
+  have hstack := formStackBits_mem_FP
+  have hright := mem_FP_comp hcur nodeRight_mem_FP
+  have hpacked := mem_FP_comp hright readNatTag_mem_FP
+  have hdig := mem_FP_comp hright readDigitsTag_mem_FP
+  have hk := mem_FP_comp (dropOneFn_mem_FP hdig) stripTrailing_mem_FP
+  have hlt := ltCanon_mem_FP hk hbound
+  have hwrap := wrapVarEnc_mem_FP (dropOneFn_mem_FP hpacked)
+  have hfail := formFailSt_mem_FP hbound
+  have hred : (fun st =>
+      formMk (formBound st)
+        (formReduceMode (wrapVarEnc (dropOne (readNatTag (nodeRight (formPayload st))))))
+        (formStackBits st)) ∈ FP :=
+    formMk_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [true]) hwrap) hstack
+  have hinner := Cobham.selectHeadFn_mem_FP hlt hred hfail
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hpacked) hfail hinner
+
+private theorem formExpandBin_mem_FP (orFlag : List Bool) :
+    (fun st => formExpandBin orFlag st) ∈ FP := by
+  have hbound := formBound_mem_FP
+  have hcur := formPayload_mem_FP
+  have hstack := formStackBits_mem_FP
+  have hright := mem_FP_comp hcur nodeRight_mem_FP
+  have hsplit := mem_FP_comp hright splitNode_mem_FP
+  have hleft := mem_FP_comp hright nodeLeft_mem_FP
+  have hrr := mem_FP_comp hright nodeRight_mem_FP
+  have hfail := formFailSt_mem_FP hbound
+  have hframe : (fun st =>
+      waitRightFrame orFlag (nodeRight (nodeRight (formPayload st)))
+        (formPayload st)) ∈ FP :=
+    Cobham.pairFn_mem_FP (constFn_mem_FP [])
+      (Cobham.pairFn_mem_FP (constFn_mem_FP orFlag)
+        (Cobham.pairFn_mem_FP hrr hcur))
+  have hok : (fun st =>
+      formMk (formBound st) (formExpandMode (nodeLeft (nodeRight (formPayload st))))
+        (pair (waitRightFrame orFlag (nodeRight (nodeRight (formPayload st)))
+          (formPayload st)) (formStackBits st))) ∈ FP :=
+    formMk_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [false]) hleft)
+      (Cobham.pairFn_mem_FP hframe hstack)
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit) hfail hok
+
+private theorem formExpand_mem_FP : formExpand ∈ FP := by
+  have hbound := formBound_mem_FP
+  have hcur := formPayload_mem_FP
+  have hfail := formFailSt_mem_FP hbound
+  have hsplit := mem_FP_comp hcur splitNode_mem_FP
+  have hleft := mem_FP_comp hcur nodeLeft_mem_FP
+  have hvar := formExpandVar_mem_FP
+  have hand := formExpandBin_mem_FP [false]
+  have hor := formExpandBin_mem_FP [true]
+  have hvarTag := eqFlagFn_mem_FP hleft (constFn_mem_FP [false])
+  have handTag := eqFlagFn_mem_FP hleft (constFn_mem_FP [true, false, false])
+  have horTag := eqFlagFn_mem_FP hleft
+    (constFn_mem_FP [true, false, true, false, false])
+  have hor? := Cobham.selectHeadFn_mem_FP horTag hor hfail
+  have hand? := Cobham.selectHeadFn_mem_FP handTag hand hor?
+  have hvar? := Cobham.selectHeadFn_mem_FP hvarTag hvar hand?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit) hfail hvar?
+
+private theorem formReduce_mem_FP : formReduce ∈ FP := by
+  have hbound := formBound_mem_FP
+  have hpay := formPayload_mem_FP
+  have hstack := formStackBits_mem_FP
+  have hframe := mem_FP_comp hstack Cobham.fstBlock_mem_FP
+  have hrest := mem_FP_comp hstack Cobham.sndBlock_mem_FP
+  have hftag := mem_FP_comp hframe Cobham.fstBlock_mem_FP
+  have hfsnd := mem_FP_comp hframe Cobham.sndBlock_mem_FP
+  have horFlag := mem_FP_comp hfsnd Cobham.fstBlock_mem_FP
+  have hfpair := mem_FP_comp hfsnd Cobham.sndBlock_mem_FP
+  have hright := mem_FP_comp hfpair Cobham.fstBlock_mem_FP
+  have hparent := mem_FP_comp hfpair Cobham.sndBlock_mem_FP
+  have hsucc : (fun st =>
+      formMk (formBound st) (formSuccessMode (formPayload st)) []) ∈ FP :=
+    formMk_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [true, true]) hpay)
+      (constFn_mem_FP [])
+  have hcombFrame : (fun st =>
+      combineFrame (pairFst (pairSnd (pairFst (formStackBits st))))
+        (formPayload st)
+        (pairSnd (pairSnd (pairSnd (pairFst (formStackBits st)))))) ∈ FP :=
+    Cobham.pairFn_mem_FP (constFn_mem_FP [true])
+      (Cobham.pairFn_mem_FP horFlag (Cobham.pairFn_mem_FP hpay hparent))
+  have hwait : (fun st =>
+      formMk (formBound st)
+        (formExpandMode (pairFst (pairSnd (pairSnd (pairFst (formStackBits st))))))
+        (pair (combineFrame (pairFst (pairSnd (pairFst (formStackBits st))))
+          (formPayload st)
+          (pairSnd (pairSnd (pairSnd (pairFst (formStackBits st))))))
+          (pairSnd (formStackBits st)))) ∈ FP :=
+    formMk_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [false]) hright)
+      (Cobham.pairFn_mem_FP hcombFrame hrest)
+  have hwrap := wrapOrEnc_mem_FP hright hpay
+  have hwrapA := wrapAndEnc_mem_FP hright hpay
+  have hsel := Cobham.selectHeadFn_mem_FP horFlag hwrap hwrapA
+  have hcomb : (fun st =>
+      formMk (formBound st)
+        (formReduceMode
+          (Cobham.selectHead (pairFst (pairSnd (pairFst (formStackBits st))))
+            (wrapOrEnc (pairFst (pairSnd (pairSnd (pairFst (formStackBits st)))))
+              (formPayload st))
+            (wrapAndEnc (pairFst (pairSnd (pairSnd (pairFst (formStackBits st)))))
+              (formPayload st))))
+        (pairSnd (formStackBits st))) ∈ FP :=
+    formMk_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [true]) hsel) hrest
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hftag) hwait hcomb
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hstack) hsucc hinner
+
+private theorem formStep_mem_FP : formStep ∈ FP := by
+  have hdrop := dropOneFn_mem_FP formFlag_mem_FP
+  have hred := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hdrop)
+    formReduce_mem_FP id_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP formFlag_mem_FP hred formExpand_mem_FP
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP formFlag_mem_FP)
+    id_mem_FP hinner
+
+private theorem formPack_mem_FP : formPack ∈ FP := by
+  have hdrop := dropOneFn_mem_FP formFlag_mem_FP
+  have hcons := mem_FP_comp formPayload_mem_FP (Cobham.cons_mem_FP true)
+  have hsucc := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hdrop)
+    (constFn_mem_FP []) hcons
+  have hinner := Cobham.selectHeadFn_mem_FP formFlag_mem_FP hsucc (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP formFlag_mem_FP)
+    (constFn_mem_FP []) hinner
+
+private theorem formInit_mem_FP : formInit ∈ FP := by
+  have hsnd := Cobham.sndBlock_mem_FP
+  have hfst := Cobham.fstBlock_mem_FP
+  have htag := mem_FP_comp hsnd treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have htfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have htsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hfail := formFailSt_mem_FP hfst
+  have hok := formMk_mem_FP hfst
+    (Cobham.pairFn_mem_FP (constFn_mem_FP [false]) htfst)
+    (constFn_mem_FP [])
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htsnd) hok hfail
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag) hfail hinner
+
+private theorem formRuler_mem_FP : formRuler ∈ FP :=
+  Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+    (constFn_mem_FP [false, false])
+
+private theorem formArg_mem_FP : formArg ∈ FP :=
+  Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+    (Cobham.const_replicate_mem_FP 32)
+
+private theorem formWidth_mem_FP : formWidth ∈ FP := by
+  have harg := formArg_mem_FP
+  have hsq := Cobham.mulLenFn_mem_FP harg harg
+  have hcube := Cobham.mulLenFn_mem_FP hsq harg
+  refine mem_FP_of_eq hcube fun z => ?_
+  simp [formWidth, List.length_replicate]
+
+private theorem formInit_eq (z : List Bool) :
+    formInit z = encodeFormSem (initForm z) := by
+  simp only [formInit, initForm, treeParseTag]
+  cases hp : CMMSACodec.Tree.parse ((pairSnd z).length + 1) (pairSnd z) with
+  | none =>
+      simp [emptyFlag_nil, selectHead_true, formFailSt, encodeFormSem,
+        encodeFormMode, encodeFormStack]
+  | some pr =>
+      obtain ⟨t, rest⟩ := pr
+      simp [emptyFlag_cons, selectHead_false, dropOne_cons, pairFst_pair,
+        pairSnd_pair]
+      cases rest with
+      | nil =>
+          simp [emptyFlag_nil, selectHead_true, formMk, formExpandMode,
+            encodeFormSem, encodeFormMode, encodeFormStack]
+      | cons _ _ =>
+          simp [emptyFlag_cons, selectHead_false, formFailSt, encodeFormSem,
+            encodeFormMode, encodeFormStack]
+
+private theorem formStep_encode (s : FormSem) :
+    formStep (encodeFormSem s) = encodeFormSem (formSemStep s) := by
+  unfold formStep
+  rw [formFlag_encode]
+  rcases s with ⟨bound, mode, stack⟩
+  cases mode with
+  | fail =>
+      rw [flag_form_fail, emptyFlag_nil, selectHead_true]
+      simp [formSemStep, encodeFormSem]
+  | success enc =>
+      rw [flag_form_success, emptyFlag_cons, selectHead_false, selectHead_cons_true',
+        dropOne_cons, emptyFlag_cons, selectHead_false]
+      simp [formSemStep, encodeFormSem]
+  | reduce src enc =>
+      rw [flag_form_reduce, emptyFlag_cons, selectHead_false, selectHead_true,
+        dropOne_cons, emptyFlag_nil, selectHead_true]
+      unfold formReduce
+      rw [formBound_encode, formPayload_encode, formStackBits_encode]
+      simp [encodeFormSem, encodeFormMode]
+      cases stack with
+      | nil =>
+          simp [encodeFormStack, emptyFlag_nil, selectHead_true, formMk,
+            formSuccessMode, formSemStep, encodeFormSem, encodeFormMode,
+            encodeFormStack]
+      | cons f fs =>
+          cases f with
+          | waitRight isOr right parent =>
+              simp only [encodeFormStack, encodeFormFrame, pairFst_pair, pairSnd_pair]
+              cases hpair : pair
+                  (pair [] (pair (if isOr then [true] else [false])
+                    (pair (CMMSACodec.Tree.encode right)
+                      (CMMSACodec.Tree.encode parent))))
+                  (encodeFormStack fs) with
+              | nil =>
+                  have hlen := congrArg List.length hpair
+                  simp [pair_length] at hlen
+              | cons _ _ =>
+                  rw [emptyFlag_cons, selectHead_false, emptyFlag_nil, selectHead_true]
+                  simp [formMk, formExpandMode, combineFrame, formSemStep,
+                    encodeFormSem, encodeFormMode, encodeFormStack, encodeFormFrame]
+          | combine isOr leftEnc parent =>
+              simp only [encodeFormStack, encodeFormFrame, pairFst_pair, pairSnd_pair]
+              cases hpair : pair
+                  (pair [true] (pair (if isOr then [true] else [false])
+                    (pair leftEnc (CMMSACodec.Tree.encode parent))))
+                  (encodeFormStack fs) with
+              | nil =>
+                  have hlen := congrArg List.length hpair
+                  simp [pair_length] at hlen
+              | cons _ _ =>
+                  rw [emptyFlag_cons, selectHead_false, emptyFlag_cons, selectHead_false]
+                  cases isOr <;> simp [formMk, formReduceMode, formSemStep,
+                    encodeFormSem, encodeFormMode, encodeFormStack, encodeFormFrame,
+                    selectHead_true, selectHead_false]
+  | expand t =>
+      rw [flag_form_expand, emptyFlag_cons, selectHead_false, selectHead_false]
+      unfold formExpand
+      rw [formBound_encode, formPayload_encode]
+      simp [encodeFormMode]
+      cases t with
+      | leaf =>
+          simp [CMMSACodec.Tree.encode, splitNode_leaf, emptyFlag_nil,
+            selectHead_true, formFailSt, formSemStep, encodeFormSem,
+            encodeFormMode, encodeFormStack]
+      | node a b =>
+          rw [splitNode_node, emptyFlag_cons, selectHead_false, nodeLeft_node]
+          cases a with
+          | leaf =>
+              have hpos : Cobham.eqFlag (CMMSACodec.Tree.encode .leaf) [false] = [true] :=
+                (Cobham.eqFlag_eq_true_iff _ _).mpr (by simp [CMMSACodec.Tree.encode])
+              rw [hpos, selectHead_true]
+              unfold formExpandVar
+              rw [formBound_encode, formPayload_encode, formStackBits_encode]
+              simp [encodeFormMode, nodeRight_node, readNatTag_of_tree]
+              cases hn : readNat b with
+              | none =>
+                  simp [hn, emptyFlag_nil, selectHead_true, formFailSt, formSemStep,
+                    encodeFormSem, encodeFormMode, encodeFormStack]
+              | some k =>
+                  simp [hn, emptyFlag_cons, selectHead_false, dropOne_cons,
+                    readDigitsTag_of_tree]
+                  cases hd : readDigits b with
+                  | none =>
+                      simp [readNat, hd] at hn
+                  | some bs =>
+                      have hval : bitValue bs = k := by
+                        simpa [readNat, hd] using hn
+                      simp [dropOne_cons, stripTrailing_eq_bits, hval]
+                      have hltiff := ltCanon_true_iff k.bits bound
+                      by_cases hlt : k < bitValue bound
+                      · have ht : ltCanon k.bits bound = [true] := by
+                          have : bitValue k.bits < bitValue bound := by
+                            simpa [bitValue_bits] using hlt
+                          exact hltiff.mpr this
+                        simp [hn, ht, selectHead_true, formMk, formReduceMode,
+                          wrapVarEnc, formSemStep, hlt, encodeFormSem, encodeFormMode,
+                          encodeFormStack]
+                      · have hf := ltCanon_flag k.bits bound
+                        have hne : ltCanon k.bits bound ≠ [true] := by
+                          intro ht
+                          exact absurd (by simpa [bitValue_bits] using hltiff.mp ht) hlt
+                        have hfalse : ltCanon k.bits bound = [false] :=
+                          hf.resolve_left hne
+                        simp [hn, hfalse, selectHead_false, formFailSt, formSemStep,
+                          hlt, encodeFormSem, encodeFormMode, encodeFormStack]
+          | node a1 a2 =>
+              have hnotvar := eqFlag_eq_false_of_ne
+                (show CMMSACodec.Tree.encode (.node a1 a2) ≠ [false] by
+                  simp [CMMSACodec.Tree.encode])
+              rw [hnotvar, selectHead_false]
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      have hand : Cobham.eqFlag
+                          (CMMSACodec.Tree.encode (.node .leaf .leaf))
+                          [true, false, false] = [true] :=
+                        (Cobham.eqFlag_eq_true_iff _ _).mpr encode_andTag
+                      rw [hand, selectHead_true]
+                      unfold formExpandBin
+                      rw [formBound_encode, formPayload_encode, formStackBits_encode]
+                      simp [encodeFormMode, nodeRight_node]
+                      cases b with
+                      | leaf =>
+                          simp [CMMSACodec.Tree.encode, splitNode_leaf, emptyFlag_nil,
+                            selectHead_true, formFailSt, formSemStep, encodeFormSem,
+                            encodeFormMode, encodeFormStack]
+                      | node p q =>
+                          simp [splitNode_node, emptyFlag_cons, selectHead_false,
+                            nodeLeft_node, nodeRight_node, formMk, formExpandMode,
+                            waitRightFrame, formSemStep, encodeFormSem, encodeFormMode,
+                            encodeFormStack, encodeFormFrame]
+                  | node a2l a2r =>
+                      have hnotand := eqFlag_eq_false_of_ne
+                        (show CMMSACodec.Tree.encode
+                            (.node .leaf (.node a2l a2r)) ≠ [true, false, false] by
+                          simp [CMMSACodec.Tree.encode])
+                      rw [hnotand, selectHead_false]
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              have hor : Cobham.eqFlag
+                                  (CMMSACodec.Tree.encode
+                                    (.node .leaf (.node .leaf .leaf)))
+                                  [true, false, true, false, false] = [true] :=
+                                (Cobham.eqFlag_eq_true_iff _ _).mpr encode_orTag
+                              rw [hor, selectHead_true]
+                              unfold formExpandBin
+                              rw [formBound_encode, formPayload_encode,
+                                formStackBits_encode]
+                              simp [encodeFormMode, nodeRight_node]
+                              cases b with
+                              | leaf =>
+                                  simp [CMMSACodec.Tree.encode, splitNode_leaf,
+                                    emptyFlag_nil, selectHead_true, formFailSt,
+                                    formSemStep, encodeFormSem, encodeFormMode,
+                                    encodeFormStack]
+                              | node p q =>
+                                  simp [splitNode_node, emptyFlag_cons, selectHead_false,
+                                    nodeLeft_node, nodeRight_node, formMk,
+                                    formExpandMode, waitRightFrame, formSemStep,
+                                    encodeFormSem, encodeFormMode, encodeFormStack,
+                                    encodeFormFrame]
+                          | node x y =>
+                              have hor := eqFlag_eq_false_of_ne
+                                (show CMMSACodec.Tree.encode
+                                    (.node .leaf (.node .leaf (.node x y))) ≠
+                                  [true, false, true, false, false] by
+                                  simp [CMMSACodec.Tree.encode])
+                              rw [hor, selectHead_false]
+                              simp [formFailSt, formSemStep, encodeFormSem,
+                                encodeFormMode, encodeFormStack]
+                      | node x y =>
+                          have hor := eqFlag_eq_false_of_ne
+                            (show CMMSACodec.Tree.encode
+                                (.node .leaf (.node (.node x y) a2r)) ≠
+                              [true, false, true, false, false] by
+                              simp [CMMSACodec.Tree.encode])
+                          rw [hor, selectHead_false]
+                          simp [formFailSt, formSemStep, encodeFormSem,
+                            encodeFormMode, encodeFormStack]
+              | node x y =>
+                  have hnotand := eqFlag_eq_false_of_ne
+                    (show CMMSACodec.Tree.encode (.node (.node x y) a2) ≠
+                      [true, false, false] by
+                      simp [CMMSACodec.Tree.encode])
+                  rw [hnotand, selectHead_false]
+                  have hor := eqFlag_eq_false_of_ne
+                    (show CMMSACodec.Tree.encode (.node (.node x y) a2) ≠
+                      [true, false, true, false, false] by
+                      simp [CMMSACodec.Tree.encode])
+                  rw [hor, selectHead_false]
+                  simp [formFailSt, formSemStep, encodeFormSem, encodeFormMode,
+                    encodeFormStack]
+
+private theorem formStep_iterate_encode (s : FormSem) (n : Nat) :
+    formStep^[n] (encodeFormSem s) = encodeFormSem (formSemStep^[n] s) := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', Function.iterate_succ_apply', ih,
+        formStep_encode]
+
+private theorem pack_evalForm (s : FormSem) (h : formMeasure s = 0) :
+    formPack (encodeFormSem s) =
+      match evalForm s with
+      | none => []
+      | some enc => true :: enc := by
+  unfold formPack
+  rw [formFlag_encode]
+  cases hm : s.mode with
+  | fail =>
+      rw [flag_form_fail, emptyFlag_nil, selectHead_true]
+      simp [evalForm, hm]
+  | success enc =>
+      rw [flag_form_success, emptyFlag_cons, selectHead_false, selectHead_cons_true',
+        dropOne_cons, emptyFlag_cons, selectHead_false, formPayload_encode]
+      simp [encodeFormMode, evalForm, hm]
+  | expand _ | reduce _ _ => simp [formMeasure, hm] at h
+
+private theorem formRuler_length (z : List Bool) :
+    (formRuler z).length = 2 * z.length + 2 := by
+  simp [formRuler, List.length_append]; omega
+
+private theorem formWidth_length (z : List Bool) :
+    (formWidth z).length =
+      (z.length + z.length + 32) * (z.length + z.length + 32) *
+        (z.length + z.length + 32) := by
+  simp [formWidth, formArg, List.length_append, List.length_replicate]
+  ac_rfl
+
+/- Reach and `readFormulaTag_mem_FP` deferred until `formReach_step` uses
+`formula_encode_le` on the parent formula, not `|left|+|right|`.
+
+private theorem encodeFormMode_len (m : FormMode) :
+    (encodeFormMode m).length ≤
+      6 + match m with
+        | .fail => 0
+        | .expand t => (CMMSACodec.Tree.encode t).length
+        | .reduce _ enc | .success enc => enc.length := by
+  cases m <;> simp [encodeFormMode, pair_length]
+
+private theorem encodeFormFrame_len (f : FormFrame) :
+    (encodeFormFrame f).length ≤
+      12 + 2 * (match f with
+        | .waitRight _ r p =>
+            (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
+        | .combine _ left p =>
+            left.length + (CMMSACodec.Tree.encode p).length) := by
+  cases f with
+  | waitRight isOr r p =>
+      cases isOr <;> (simp [encodeFormFrame, pair_length]; omega)
+  | combine isOr left p =>
+      cases isOr <;> (simp [encodeFormFrame, pair_length]; omega)
+
+private theorem encodeFormStack_len :
+    ∀ fs : List FormFrame,
+      (encodeFormStack fs).length ≤
+        26 * fs.length + 4 * (List.foldl (fun acc f =>
+          acc + match f with
+            | .waitRight _ r p =>
+                (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
+            | .combine _ left p =>
+                left.length + (CMMSACodec.Tree.encode p).length) 0 fs)
+  | [] => by simp [encodeFormStack]
+  | f :: fs => by
+      have ih := encodeFormStack_len fs
+      have hf := encodeFormFrame_len f
+      simp only [encodeFormStack, pair_length, List.length_cons]
+      have hstep :
+          2 * (encodeFormFrame f).length + 2 + (encodeFormStack fs).length ≤
+            26 * (fs.length + 1) +
+              4 * ((match f with
+                | .waitRight _ r p =>
+                    (CMMSACodec.Tree.encode r).length +
+                      (CMMSACodec.Tree.encode p).length
+                | .combine _ left p =>
+                    left.length + (CMMSACodec.Tree.encode p).length) +
+                List.foldl (fun acc f =>
+                  acc + match f with
+                    | .waitRight _ r p =>
+                        (CMMSACodec.Tree.encode r).length +
+                          (CMMSACodec.Tree.encode p).length
+                    | .combine _ left p =>
+                        left.length + (CMMSACodec.Tree.encode p).length) 0 fs) := by
+        have hfold :
+            List.foldl (fun acc f =>
+              acc + match f with
+                | .waitRight _ r p =>
+                    (CMMSACodec.Tree.encode r).length +
+                      (CMMSACodec.Tree.encode p).length
+                | .combine _ left p =>
+                    left.length + (CMMSACodec.Tree.encode p).length)
+              (match f with
+                | .waitRight _ r p =>
+                    (CMMSACodec.Tree.encode r).length +
+                      (CMMSACodec.Tree.encode p).length
+                | .combine _ left p =>
+                    left.length + (CMMSACodec.Tree.encode p).length) fs =
+            (match f with
+              | .waitRight _ r p =>
+                  (CMMSACodec.Tree.encode r).length +
+                    (CMMSACodec.Tree.encode p).length
+              | .combine _ left p =>
+                  left.length + (CMMSACodec.Tree.encode p).length) +
+              List.foldl (fun acc f =>
+                acc + match f with
+                  | .waitRight _ r p =>
+                      (CMMSACodec.Tree.encode r).length +
+                        (CMMSACodec.Tree.encode p).length
+                  | .combine _ left p =>
+                      left.length + (CMMSACodec.Tree.encode p).length) 0 fs := by
+          cases f <;> simp [List.foldl]
+        omega
+      simpa [List.foldl] using hstep
+
+private theorem encodeFormSem_len (s : FormSem) :
+    (encodeFormSem s).length =
+      2 * s.bound.length + 2 * (encodeFormMode s.mode).length +
+        (encodeFormStack s.stack).length + 4 := by
+  simp [encodeFormSem, pair_length]; omega
+
+private theorem cube32_bound (n : Nat) :
+    80 * n * n + 300 * n + 300 ≤
+      (n + n + 32) * (n + n + 32) * (n + n + 32) := by
+  have hR : (n + n + 32) * (n + n + 32) * (n + n + 32) =
+      8 * n * n * n + 384 * n * n + 6144 * n + 32768 := by ring
+  nlinarith
+
+private def stackOk (z : List Bool) : List FormFrame → Prop
+  | [] => True
+  | .waitRight _ r p :: fs =>
+      (CMMSACodec.Tree.encode r).length ≤ z.length ∧
+      (CMMSACodec.Tree.encode p).length ≤ z.length ∧ stackOk z fs
+  | .combine _ left p :: fs =>
+      left.length ≤ 8 * z.length + 8 ∧
+      (CMMSACodec.Tree.encode p).length ≤ z.length ∧ stackOk z fs
+
+private def andParent (p q : CMMSACodec.Tree) : CMMSACodec.Tree :=
+  .node (.node .leaf .leaf) (.node p q)
+
+private def orParent (p q : CMMSACodec.Tree) : CMMSACodec.Tree :=
+  .node (.node .leaf (.node .leaf .leaf)) (.node p q)
+
+private def ctxOk (n : Nat) : CMMSACodec.Tree → List FormFrame → Prop
+  | _, [] => True
+  | cur, .waitRight isOr r p :: fs =>
+      p = (if isOr then orParent cur r else andParent cur r) ∧ ctxOk n p fs
+  | cur, .combine isOr left p :: fs =>
+      (∃ L fl, p = (if isOr then orParent L cur else andParent L cur) ∧
+        left = (formulaTree fl).encode ∧ readFormula n L = some fl) ∧
+      ctxOk n p fs
+
+private theorem stackOk_payload (z : List Bool) :
+    ∀ fs, stackOk z fs →
+      List.foldl (fun acc f =>
+        acc + match f with
+          | .waitRight _ r p =>
+              (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
+          | .combine _ left p =>
+              left.length + (CMMSACodec.Tree.encode p).length) 0 fs ≤
+        fs.length * (9 * z.length + 8) := by
+  intro fs
+  induction fs with
+  | nil => intro _; simp
+  | cons f fs ih =>
+      intro h
+      cases f with
+      | waitRight isOr r p =>
+          obtain ⟨hr, hp, ht⟩ := h
+          have := ih ht
+          simp [List.foldl]
+          omega
+      | combine isOr left p =>
+          obtain ⟨hl, hp, ht⟩ := h
+          have := ih ht
+          simp [List.foldl]
+          omega
+
+private structure FormReach (z : List Bool) (s : FormSem) : Prop where
+  bound_le : s.bound.length ≤ z.length
+  depth_le : s.stack.length ≤ 2 * z.length + 2
+  stack_ok : stackOk z s.stack
+  expand_le : ∀ t, s.mode = .expand t →
+    (CMMSACodec.Tree.encode t).length ≤ z.length
+  reduce_le : ∀ src enc, s.mode = .reduce src enc →
+    (CMMSACodec.Tree.encode src).length ≤ z.length ∧
+      enc.length ≤ 8 * z.length + 8
+  success_le : ∀ enc, s.mode = .success enc → enc.length ≤ 8 * z.length + 8
+  reduce_ok : ∀ src enc, s.mode = .reduce src enc →
+    ∃ f, readFormula (bitValue s.bound) src = some f ∧
+      enc = (formulaTree f).encode
+  ctx_ok : match s.mode with
+    | .expand t => ctxOk (bitValue s.bound) t s.stack
+    | .reduce src _ => ctxOk (bitValue s.bound) src s.stack
+    | .fail | .success _ => True
+
+private theorem encodeFormSem_length_le (z : List Bool) (s : FormSem)
+    (h : FormReach z s) :
+    (encodeFormSem s).length ≤ (formWidth z).length := by
+  have hb := h.bound_le
+  have hd := h.depth_le
+  have hm := encodeFormMode_len s.mode
+  have hs := encodeFormStack_len s.stack
+  have hp := stackOk_payload z s.stack h.stack_ok
+  have hpay : (match s.mode with
+      | .fail => 0
+      | .expand t => (CMMSACodec.Tree.encode t).length
+      | .reduce _ enc | .success enc => enc.length) ≤ 8 * z.length + 8 := by
+    cases hm' : s.mode with
+    | fail => simp
+    | expand t =>
+        have := h.expand_le t hm'
+        omega
+    | reduce src enc =>
+        have := h.reduce_le src enc hm'
+        omega
+    | success enc =>
+        have := h.success_le enc hm'
+        omega
+  have hz := encodeFormSem_len s
+  have hlin :
+      2 * s.bound.length + 2 * (encodeFormMode s.mode).length +
+        (encodeFormStack s.stack).length + 4 ≤
+        80 * z.length * z.length + 300 * z.length + 300 := by
+    have hmode : (encodeFormMode s.mode).length ≤ 8 * z.length + 14 := by omega
+    have hstack :
+        (encodeFormStack s.stack).length ≤
+          26 * (2 * z.length + 2) + 4 * ((2 * z.length + 2) * (9 * z.length + 8)) := by
+      have hmul : s.stack.length * (9 * z.length + 8) ≤
+          (2 * z.length + 2) * (9 * z.length + 8) :=
+        Nat.mul_le_mul_right _ hd
+      omega
+    have : 4 * (2 * z.length + 2) * (9 * z.length + 8) =
+        72 * z.length * z.length + 136 * z.length + 64 := by ring
+    omega
+  rw [hz, formWidth_length]
+  exact hlin.trans (cube32_bound z.length)
+
+private theorem formReach_init (z : List Bool) : FormReach z (initForm z) := by
+  simp only [initForm]
+  cases hp : CMMSACodec.Tree.parse ((pairSnd z).length + 1) (pairSnd z) with
+  | none =>
+      refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+      · intro t ht; simp at ht
+      · intro src enc ht; simp at ht
+      · intro enc ht; simp at ht
+      · intro src enc ht; simp at ht
+      · trivial
+  | some pr =>
+      obtain ⟨t, rest⟩ := pr
+      by_cases hr : rest = []
+      · subst hr
+        have hpre := parse_consumed hp
+        have hlen := congrArg List.length hpre
+        simp [List.length_append] at hlen
+        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+        · intro t' ht'
+          simp at ht'
+          subst ht'
+          have := pairSnd_length_le z
+          omega
+        · intro src enc ht; simp at ht
+        · intro enc ht; simp at ht
+        · intro src enc ht; simp at ht
+        · simp [ctxOk]
+      · simp [hr]
+        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+        · intro t ht; simp at ht
+        · intro src enc ht; simp at ht
+        · intro enc ht; simp at ht
+        · intro src enc ht; simp at ht
+        · trivial
+
+private theorem wrapAndEnc_length (p q : List Bool) :
+    (wrapAndEnc p q).length = p.length + q.length + 5 := by
+  simp [wrapAndEnc, List.length_append]
+
+private theorem wrapOrEnc_length (p q : List Bool) :
+    (wrapOrEnc p q).length = p.length + q.length + 7 := by
+  simp [wrapOrEnc, List.length_append]
+
+private theorem wrapVarEnc_length (natEnc : List Bool) :
+    (wrapVarEnc natEnc).length = natEnc.length + 2 := by
+  simp [wrapVarEnc]
+
+private theorem formReach_step (z : List Bool) (s : FormSem)
+    (h : FormReach z s) : FormReach z (formSemStep s) := by
+  rcases s with ⟨bound, mode, stack⟩
+  rcases h with ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx⟩
+  cases mode with
+  | fail | success _ =>
+      exact ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx⟩
+  | reduce src enc =>
+      cases stack with
+      | nil =>
+          simp [formSemStep]
+          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+          · intro t ht; simp at ht
+          · intro src' enc' ht; simp at ht
+          · intro enc' ht
+            simp at ht
+            subst ht
+            exact (hred src enc rfl).2
+          · intro src' enc' ht; simp at ht
+      | cons f fs =>
+          cases f with
+          | waitRight isOr right parent =>
+              have hctx' : ctxOk (bitValue bound) src
+                  (.waitRight isOr right parent :: fs) := by simpa using hctx
+              obtain ⟨hp, htail⟩ := hctx'
+              simp [formSemStep]
+              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+              · simp at hdepth ⊢; omega
+              · simp [stackOk] at hok ⊢
+                exact ⟨(hred src enc rfl).2, hok.2.1, hok.2.2⟩
+              · intro t ht
+                simp at ht
+                subst ht
+                exact hok.1
+              · intro src' enc' ht; simp at ht
+              · intro enc' ht; simp at ht
+              · intro src' enc' ht; simp at ht
+              · simp only [ctxOk]
+                obtain ⟨fml, hf, heq⟩ := hrok src enc rfl
+                refine ⟨?_, htail⟩
+                exact ⟨src, fml, hp, heq, hf⟩
+          | combine isOr leftEnc parent =>
+              have hctx' : ctxOk (bitValue bound) src
+                  (.combine isOr leftEnc parent :: fs) := by simpa using hctx
+              obtain ⟨⟨L, fl, hp, hleft, hreadL⟩, htail⟩ := hctx'
+              obtain ⟨fq, hreadR, henc⟩ := hrok src enc rfl
+              have hwrap :
+                  (if isOr then wrapOrEnc leftEnc enc else wrapAndEnc leftEnc enc) =
+                    (formulaTree (if isOr then .or fl fq else .and fl fq)).encode := by
+                cases isOr <;> simp [hleft, henc, wrapAndEnc_eq, wrapOrEnc_eq]
+              have hreadP :
+                  readFormula (bitValue bound) parent =
+                    some (if isOr then .or fl fq else .and fl fq) := by
+                cases isOr <;> simp [hp, andParent, orParent, readFormula,
+                  hreadL, hreadR]
+              have hlen := formula_encode_le (if isOr then .or fl fq else .and fl fq)
+                parent hreadP
+              simp [formSemStep]
+              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+              · simp at hdepth ⊢; omega
+              · simp at hok ⊢
+                exact hok.2.2
+              · intro t ht; simp at ht
+              · intro src' enc' ht
+                simp at ht
+                obtain ⟨rfl, rfl⟩ := ht
+                refine ⟨hok.2.1, ?_⟩
+                simpa [hwrap] using hlen.trans (by
+                  have := hok.2.1
+                  omega)
+              · intro enc' ht; simp at ht
+              · intro src' enc' ht
+                simp at ht
+                obtain ⟨rfl, rfl⟩ := ht
+                refine ⟨if isOr then .or fl fq else .and fl fq, hreadP, hwrap⟩
+              · exact htail
+  | expand t =>
+      cases t with
+      | leaf =>
+          simp [formSemStep]
+          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+          · intro t' ht; simp at ht
+          · intro src enc ht; simp at ht
+          · intro enc ht; simp at ht
+          · intro src enc ht; simp at ht
+      | node a b =>
+          cases a with
+          | leaf =>
+              cases hn : readNat b with
+              | none =>
+                  simp [formSemStep, hn]
+                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                  · intro t' ht; simp at ht
+                  · intro src enc ht; simp at ht
+                  · intro enc ht; simp at ht
+                  · intro src enc ht; simp at ht
+              | some k =>
+                  by_cases hlt : k < bitValue bound
+                  · have hf : readFormula (bitValue bound) (.node .leaf b) =
+                        some (.var ⟨k, hlt⟩) := by
+                      simp [readFormula, hn, hlt]
+                    have he := wrapVarEnc_eq ⟨k, hlt⟩
+                    have hlen := formula_encode_le (.var ⟨k, hlt⟩) (.node .leaf b) hf
+                    have ht0 := hexp (.node .leaf b) rfl
+                    have hctx' : ctxOk (bitValue bound) (.node .leaf b) stack := by
+                      simpa using hctx
+                    simp [formSemStep, hn, hlt]
+                    refine ⟨hbound, hdepth, hok, ?_, ?_, ?_, ?_, ?_⟩
+                    · intro t' ht; simp at ht
+                    · intro src enc ht
+                      simp at ht
+                      obtain ⟨rfl, rfl⟩ := ht
+                      refine ⟨ht0, ?_⟩
+                      simpa [he] using hlen.trans (by omega)
+                    · intro enc ht; simp at ht
+                    · intro src enc ht
+                      simp at ht
+                      obtain ⟨rfl, rfl⟩ := ht
+                      exact ⟨.var ⟨k, hlt⟩, hf, he⟩
+                    · exact hctx'
+                  · simp [formSemStep, hn, hlt]
+                    refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                    · intro t' ht; simp at ht
+                    · intro src enc ht; simp at ht
+                    · intro enc ht; simp at ht
+                    · intro src enc ht; simp at ht
+          | node a1 a2 =>
+              cases a1 with
+              | leaf =>
+                  cases a2 with
+                  | leaf =>
+                      cases b with
+                      | leaf =>
+                          simp [formSemStep]
+                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                          · intro t' ht; simp at ht
+                          · intro src enc ht; simp at ht
+                          · intro enc ht; simp at ht
+                          · intro src enc ht; simp at ht
+                      | node p q =>
+                          have ht0 := hexp (.node (.node .leaf .leaf) (.node p q)) rfl
+                          have hctx' : ctxOk (bitValue bound)
+                              (.node (.node .leaf .leaf) (.node p q)) stack := by
+                            simpa using hctx
+                          simp [formSemStep]
+                          refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+                          · simp at hdepth ⊢; omega
+                          · simp [stackOk]
+                            have hq : (CMMSACodec.Tree.encode q).length ≤ z.length := by
+                              simp [encode_node_length, encode_andTag,
+                                CMMSACodec.Tree.encode] at ht0 ⊢
+                              omega
+                            exact ⟨hq, ht0, hok⟩
+                          · intro t' ht
+                            simp at ht
+                            subst ht
+                            simp [encode_node_length, encode_andTag,
+                              CMMSACodec.Tree.encode] at ht0 ⊢
+                            omega
+                          · intro src enc ht; simp at ht
+                          · intro enc ht; simp at ht
+                          · intro src enc ht; simp at ht
+                          · simp only [ctxOk, andParent]
+                            exact And.intro rfl hctx'
+                  | node a2l a2r =>
+                      cases a2l with
+                      | leaf =>
+                          cases a2r with
+                          | leaf =>
+                              cases b with
+                              | leaf =>
+                                  simp [formSemStep]
+                                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                                  · intro t' ht; simp at ht
+                                  · intro src enc ht; simp at ht
+                                  · intro enc ht; simp at ht
+                                  · intro src enc ht; simp at ht
+                              | node p q =>
+                                  have ht0 :=
+                                    hexp (.node (.node .leaf (.node .leaf .leaf))
+                                      (.node p q)) rfl
+                                  have hctx' : ctxOk (bitValue bound)
+                                      (.node (.node .leaf (.node .leaf .leaf))
+                                        (.node p q)) stack := by
+                                    simpa using hctx
+                                  simp [formSemStep]
+                                  refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+                                  · simp at hdepth ⊢; omega
+                                  · simp [stackOk]
+                                    have hq : (CMMSACodec.Tree.encode q).length ≤
+                                        z.length := by
+                                      simp [encode_node_length, encode_orTag,
+                                        CMMSACodec.Tree.encode] at ht0 ⊢
+                                      omega
+                                    exact ⟨hq, ht0, hok⟩
+                                  · intro t' ht
+                                    simp at ht
+                                    subst ht
+                                    simp [encode_node_length, encode_orTag,
+                                      CMMSACodec.Tree.encode] at ht0 ⊢
+                                    omega
+                                  · intro src enc ht; simp at ht
+                                  · intro enc ht; simp at ht
+                                  · intro src enc ht; simp at ht
+                                  · simp only [ctxOk, orParent]
+                                    exact And.intro rfl hctx'
+                          | node _ _ =>
+                              simp [formSemStep]
+                              refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                              · intro t' ht; simp at ht
+                              · intro src enc ht; simp at ht
+                              · intro enc ht; simp at ht
+                              · intro src enc ht; simp at ht
+                      | node _ _ =>
+                          simp [formSemStep]
+                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                          · intro t' ht; simp at ht
+                          · intro src enc ht; simp at ht
+                          · intro enc ht; simp at ht
+                          · intro src enc ht; simp at ht
+              | node _ _ =>
+                  simp [formSemStep]
+                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                  · intro t' ht; simp at ht
+                  · intro src enc ht; simp at ht
+                  · intro enc ht; simp at ht
+                  · intro src enc ht; simp at ht
+
+private theorem formReach_iterate (z : List Bool) :
+    ∀ n, FormReach z (formSemStep^[n] (initForm z)) := by
+  intro n
+  induction n with
+  | zero => exact formReach_init z
+  | succ n ih =>
+      rw [Function.iterate_succ_apply']
+      exact formReach_step z _ ih
+
+private theorem formStep_iterate_length (z : List Bool) (n : Nat) :
+    (formStep^[n] (formInit z)).length ≤ (formWidth z).length := by
+  rw [formInit_eq, formStep_iterate_encode]
+  exact encodeFormSem_length_le z _ (formReach_iterate z n)
+
+theorem readFormulaTag_mem_FP : readFormulaTag ∈ Complexity.FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (formRuler z).length,
+      (formStep^[n] (formInit z)).length ≤ (formWidth z).length := by
+    intro z n _
+    exact formStep_iterate_length z n
+  have hiter := Cobham.iterate_mem_FP formStep_mem_FP formInit_mem_FP
+    formRuler_mem_FP formWidth_mem_FP hbound
+  exact mem_FP_comp hiter formPack_mem_FP
+-/
 
 end PvNP.RealizableHardness.ActualDecodeInputFP

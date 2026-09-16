@@ -6,6 +6,7 @@ Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP`,
 `gcdBits_odd_pair`, `readRatTag_mem_FP`, `readRatTag_of_tree`,
 `readSignedTag_mem_FP`, `readSignedTag_of_tree`, `readListTag_mem_FP`, and
 `readListTag_of_tree` are on the Cobham/semantic surface.
+`readFormulaTag` is defined; `readFormulaTag_mem_FP` remains.
 `decodeInputTag_mem_FP` remains. This file does
 not inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1,
 Corollary 2, or P vs NP.
@@ -31,6 +32,7 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readListTag
 #check readListTag_mem_FP
 #check readListTag_of_tree
+#check readFormulaTag
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
