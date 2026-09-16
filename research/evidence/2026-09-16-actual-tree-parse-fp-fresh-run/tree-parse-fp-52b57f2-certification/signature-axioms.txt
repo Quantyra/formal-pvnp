@@ -1,0 +1,15 @@
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_empty : treeParseTag [] = []
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_none (z : List Bool) (h : Tree.parse (z.length + 1) z = none) :
+  treeParseTag z = []
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_some (z : List Bool) (t : CMMSACodec.Tree) (rest : List Bool)
+  (h : Tree.parse (z.length + 1) z = some (t, rest)) : treeParseTag z = true :: pair t.encode rest
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_leaf : treeParseTag [false] = true :: pair [false] []
+PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_mem_FP : treeParseTag ∈ FP
+'PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_empty' does not depend on any axioms
+'PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_none' depends on axioms: [propext]
+'PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_some' depends on axioms: [propext]
+'PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_leaf' does not depend on any axioms
+'PvNP.RealizableHardness.ActualTreeParseFP.treeParseTag_mem_FP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
