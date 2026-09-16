@@ -1,0 +1,23 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.leafVertexFinite {N m J h : ℕ} {I : Instance N m} :
+  Finite (LeafVertex I J h)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.leafVertexFintype {N m J h : ℕ} {I : Instance N m} :
+  Fintype (LeafVertex I J h)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.relClass {N m J h : ℕ} {I : Instance N m} (v : LeafVertex I J h) :
+  Finset (LeafVertex I J h)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.mem_relClass_iff {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} : w ∈ relClass v ↔ v.Rel w
+PvNP.RealizableHardness.ActualPresentedLeafGluing.relClass_nonempty {N m J h : ℕ} {I : Instance N m}
+  (v : LeafVertex I J h) : (relClass v).Nonempty
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_class_invariant {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φ : LeafLabel v) :
+  restrictToCenter Cw (transportedLeafLabel hvw φ) = restrictToCenter Cv φ ∘ₗ Submodule.inclusion ⋯
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.mem_relClass_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.relClass_nonempty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_class_invariant' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
