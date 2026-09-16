@@ -1,0 +1,34 @@
+﻿[
+  {
+    "endTime": "2026-09-15T17:38:20.108-07:00",
+    "id": "6004534947648658056",
+    "insertTime": "2026-09-15T17:35:51.354-07:00",
+    "kind": "compute#operation",
+    "name": "operation-1789518951201-65b8ed967b90c-d09b4715-c0823ebd",
+    "operationType": "stop",
+    "progress": 100,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/operations/operation-1789518951201-65b8ed967b90c-d09b4715-c0823ebd",
+    "startTime": "2026-09-15T17:35:51.360-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01",
+    "user": "dfredriksen@quantyra.org",
+    "zone": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a"
+  },
+  {
+    "endTime": "2026-09-15T17:31:44.456-07:00",
+    "id": "4879442258434481543",
+    "insertTime": "2026-09-15T17:31:36.953-07:00",
+    "kind": "compute#operation",
+    "name": "operation-1789518696623-65b8eca3b2c6e-e8ac0f6a-fe0456a7",
+    "operationType": "start",
+    "progress": 100,
+    "selfLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/operations/operation-1789518696623-65b8eca3b2c6e-e8ac0f6a-fe0456a7",
+    "startTime": "2026-09-15T17:31:36.974-07:00",
+    "status": "DONE",
+    "targetId": "8337954477286097405",
+    "targetLink": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a/instances/quantyra-lean-builder-01",
+    "user": "dfredriksen@quantyra.org",
+    "zone": "https://www.googleapis.com/compute/v1/projects/quantyra-lean-cert-20260915/zones/us-central1-a"
+  }
+]

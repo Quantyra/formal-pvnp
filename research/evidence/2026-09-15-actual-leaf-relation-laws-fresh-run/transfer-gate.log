@@ -1,0 +1,33 @@
+expected_bundle_sha256=2738FFBE05550A5858D9CB1F4474D1DB1A14DDA736E2723BCFF62DA9188A9313
+actual_bundle_sha256=2738FFBE05550A5858D9CB1F4474D1DB1A14DDA736E2723BCFF62DA9188A9313
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/leaf-transport-bba6dbb-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-bba6dbb.bundle is okay
+The bundle contains these 4 refs:
+bba6dbb380fa5dde490c45fd7806ccb05aa1e8a8 refs/heads/main
+93917012916fda54d07359e7e5d7881dcd621560 refs/remotes/origin/main
+39b3a628ac005250df8df7f5c9dd7a5e0fb1df95 refs/tags/v0.1.0
+bba6dbb380fa5dde490c45fd7806ccb05aa1e8a8 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/leaf-transport-bba6dbb-src'...
+HEAD is now at bba6dbb prove actual one way leaf transport
+expected_head=bba6dbb380fa5dde490c45fd7806ccb05aa1e8a8
+actual_head=bba6dbb380fa5dde490c45fd7806ccb05aa1e8a8
+status_begin
+
+status_end
+expected_main_sha256=F1548559AE3135E8F75F2E8C255B530582DDEFA2E6D58AE02FC53C02460EE3E8
+actual_main_sha256=F1548559AE3135E8F75F2E8C255B530582DDEFA2E6D58AE02FC53C02460EE3E8
+expected_checks_sha256=D9BF5ED9B8CDCA2431584B4577C4C8BEE3011A82DC23FD819B02C22F96FBC3D9
+actual_checks_sha256=D9BF5ED9B8CDCA2431584B4577C4C8BEE3011A82DC23FD819B02C22F96FBC3D9
+transfer_gate=PASS

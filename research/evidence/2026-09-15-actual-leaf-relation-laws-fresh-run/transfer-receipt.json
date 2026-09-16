@@ -1,0 +1,24 @@
+{
+  "sourceCommit": "e77fda3102152ca111daf3464af4a45931178f81",
+  "bundle": {
+    "name": "formal-pvnp-e77fda3.bundle",
+    "bytes": 25642728,
+    "localSha256": "5C86BC88686EBA1376AE06FB3EDC8AF93A92EEF4CFF1C38E69EDEC90A0BB8C25",
+    "remoteSha256": "5C86BC88686EBA1376AE06FB3EDC8AF93A92EEF4CFF1C38E69EDEC90A0BB8C25",
+    "gitBundleVerify": "PASS; complete history locally and remotely",
+    "detachedHead": "e77fda3102152ca111daf3464af4a45931178f81",
+    "checkoutStatus": "clean"
+  },
+  "frozenSources": {
+    "ActualLeafRelationLaws.lean": "87BE216E92B19AD2044BF5DB1551A3D36BE3993ABBD456FDCF16FA379274610C",
+    "ActualLeafRelationLawsChecks.lean": "EBCFCE831F66382614D9D0EF9FBD30D566E0B019BC9C955F943FD61658C90626",
+    "remoteMatches": true,
+    "assertionsBeforeBetweenAfterStages": 42
+  },
+  "resultArchive": {
+    "name": "relation-laws-certification.tar.gz",
+    "remoteSha256": "ED5C90A89C9FD4548A4456937F5A0BB506C6BF4D4776630DC30B98CAB98CDAA4",
+    "localSha256": "ED5C90A89C9FD4548A4456937F5A0BB506C6BF4D4776630DC30B98CAB98CDAA4"
+  },
+  "result": "PASS"
+}

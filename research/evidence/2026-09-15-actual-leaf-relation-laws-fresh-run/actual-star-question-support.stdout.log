@@ -1,0 +1,16 @@
+/home/dfredriksen_quantyra_org/relation-laws-e77fda3-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualStarQuestionSupport.lean:16:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq`:
+  [Fintype X]
+  [Fintype E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [Fintype E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_points_eq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualStarQuestionSupport.excluded_row_overlap_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualStarQuestionSupport.new_row_private_coordinate' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
