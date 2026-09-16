@@ -6,7 +6,7 @@ Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP`,
 `gcdBits_odd_pair`, `readRatTag_mem_FP`, `readRatTag_of_tree`,
 `readSignedTag_mem_FP`, `readSignedTag_of_tree`, `readListTag_mem_FP`, and
 `readListTag_of_tree` are on the Cobham/semantic surface.
-`readFormulaTag` is defined; `readFormulaTag_mem_FP` remains.
+`readFormulaTag` and `readFormulaTag_mem_FP` are on the Cobham surface.
 `decodeInputTag_mem_FP` remains. This file does
 not inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1,
 Corollary 2, or P vs NP.
@@ -33,6 +33,7 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readListTag_mem_FP
 #check readListTag_of_tree
 #check readFormulaTag
+#check readFormulaTag_mem_FP
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -45,6 +46,7 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readSignedTag_of_tree
 #print axioms readListTag_mem_FP
 #print axioms readListTag_of_tree
+#print axioms readFormulaTag_mem_FP
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -53,6 +55,8 @@ example : readRatTag ∈ Complexity.FP := readRatTag_mem_FP
 example : readSignedTag ∈ Complexity.FP := readSignedTag_mem_FP
 
 example : readListTag ∈ Complexity.FP := readListTag_mem_FP
+
+example : readFormulaTag ∈ Complexity.FP := readFormulaTag_mem_FP
 
 example : readRatTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) = [] := by
   simp [readRatTag_of_tree, CMMSACodec.readRat]

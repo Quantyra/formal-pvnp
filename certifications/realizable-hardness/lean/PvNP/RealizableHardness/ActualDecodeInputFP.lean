@@ -5571,90 +5571,42 @@ private theorem formWidth_length (z : List Bool) :
   simp [formWidth, formArg, List.length_append, List.length_replicate]
   ac_rfl
 
-/- Reach and `readFormulaTag_mem_FP` deferred until `formReach_step` uses
-`formula_encode_le` on the parent formula, not `|left|+|right|`.
+private def framePayload : FormFrame → Nat
+  | .waitRight _ r p =>
+      (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
+  | .combine _ left p =>
+      left.length + (CMMSACodec.Tree.encode p).length
 
-private theorem encodeFormMode_len (m : FormMode) :
-    (encodeFormMode m).length ≤
-      6 + match m with
-        | .fail => 0
-        | .expand t => (CMMSACodec.Tree.encode t).length
-        | .reduce _ enc | .success enc => enc.length := by
+private def stackPayload : List FormFrame → Nat
+  | [] => 0
+  | f :: fs => framePayload f + stackPayload fs
+
+private theorem encodeFormMode_len_exact (m : FormMode) :
+    (encodeFormMode m).length =
+      match m with
+      | .fail => 2
+      | .expand t => 4 + (CMMSACodec.Tree.encode t).length
+      | .reduce _ enc => 4 + enc.length
+      | .success enc => 6 + enc.length := by
   cases m <;> simp [encodeFormMode, pair_length]
 
 private theorem encodeFormFrame_len (f : FormFrame) :
-    (encodeFormFrame f).length ≤
-      12 + 2 * (match f with
-        | .waitRight _ r p =>
-            (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
-        | .combine _ left p =>
-            left.length + (CMMSACodec.Tree.encode p).length) := by
+    (encodeFormFrame f).length ≤ 12 + 2 * framePayload f := by
   cases f with
   | waitRight isOr r p =>
-      cases isOr <;> (simp [encodeFormFrame, pair_length]; omega)
+      cases isOr <;> (simp [encodeFormFrame, pair_length, framePayload]; omega)
   | combine isOr left p =>
-      cases isOr <;> (simp [encodeFormFrame, pair_length]; omega)
+      cases isOr <;> (simp [encodeFormFrame, pair_length, framePayload]; omega)
 
 private theorem encodeFormStack_len :
     ∀ fs : List FormFrame,
-      (encodeFormStack fs).length ≤
-        26 * fs.length + 4 * (List.foldl (fun acc f =>
-          acc + match f with
-            | .waitRight _ r p =>
-                (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
-            | .combine _ left p =>
-                left.length + (CMMSACodec.Tree.encode p).length) 0 fs)
-  | [] => by simp [encodeFormStack]
+      (encodeFormStack fs).length ≤ 26 * fs.length + 4 * stackPayload fs
+  | [] => by simp [encodeFormStack, stackPayload]
   | f :: fs => by
       have ih := encodeFormStack_len fs
       have hf := encodeFormFrame_len f
-      simp only [encodeFormStack, pair_length, List.length_cons]
-      have hstep :
-          2 * (encodeFormFrame f).length + 2 + (encodeFormStack fs).length ≤
-            26 * (fs.length + 1) +
-              4 * ((match f with
-                | .waitRight _ r p =>
-                    (CMMSACodec.Tree.encode r).length +
-                      (CMMSACodec.Tree.encode p).length
-                | .combine _ left p =>
-                    left.length + (CMMSACodec.Tree.encode p).length) +
-                List.foldl (fun acc f =>
-                  acc + match f with
-                    | .waitRight _ r p =>
-                        (CMMSACodec.Tree.encode r).length +
-                          (CMMSACodec.Tree.encode p).length
-                    | .combine _ left p =>
-                        left.length + (CMMSACodec.Tree.encode p).length) 0 fs) := by
-        have hfold :
-            List.foldl (fun acc f =>
-              acc + match f with
-                | .waitRight _ r p =>
-                    (CMMSACodec.Tree.encode r).length +
-                      (CMMSACodec.Tree.encode p).length
-                | .combine _ left p =>
-                    left.length + (CMMSACodec.Tree.encode p).length)
-              (match f with
-                | .waitRight _ r p =>
-                    (CMMSACodec.Tree.encode r).length +
-                      (CMMSACodec.Tree.encode p).length
-                | .combine _ left p =>
-                    left.length + (CMMSACodec.Tree.encode p).length) fs =
-            (match f with
-              | .waitRight _ r p =>
-                  (CMMSACodec.Tree.encode r).length +
-                    (CMMSACodec.Tree.encode p).length
-              | .combine _ left p =>
-                  left.length + (CMMSACodec.Tree.encode p).length) +
-              List.foldl (fun acc f =>
-                acc + match f with
-                  | .waitRight _ r p =>
-                      (CMMSACodec.Tree.encode r).length +
-                        (CMMSACodec.Tree.encode p).length
-                  | .combine _ left p =>
-                      left.length + (CMMSACodec.Tree.encode p).length) 0 fs := by
-          cases f <;> simp [List.foldl]
-        omega
-      simpa [List.foldl] using hstep
+      simp [encodeFormStack, pair_length, stackPayload, List.length_cons]
+      omega
 
 private theorem encodeFormSem_len (s : FormSem) :
     (encodeFormSem s).length =
@@ -5694,30 +5646,37 @@ private def ctxOk (n : Nat) : CMMSACodec.Tree → List FormFrame → Prop
       ctxOk n p fs
 
 private theorem stackOk_payload (z : List Bool) :
-    ∀ fs, stackOk z fs →
-      List.foldl (fun acc f =>
-        acc + match f with
-          | .waitRight _ r p =>
-              (CMMSACodec.Tree.encode r).length + (CMMSACodec.Tree.encode p).length
-          | .combine _ left p =>
-              left.length + (CMMSACodec.Tree.encode p).length) 0 fs ≤
-        fs.length * (9 * z.length + 8) := by
-  intro fs
-  induction fs with
-  | nil => intro _; simp
-  | cons f fs ih =>
+    ∀ fs, stackOk z fs → stackPayload fs ≤ fs.length * (9 * z.length + 8)
+  | [] => by intro _; simp [stackPayload]
+  | .waitRight _ r p :: fs => by
       intro h
-      cases f with
-      | waitRight isOr r p =>
-          obtain ⟨hr, hp, ht⟩ := h
-          have := ih ht
-          simp [List.foldl]
-          omega
-      | combine isOr left p =>
-          obtain ⟨hl, hp, ht⟩ := h
-          have := ih ht
-          simp [List.foldl]
-          omega
+      obtain ⟨hr, hp, ht⟩ := h
+      have ih := stackOk_payload z fs ht
+      have hmul : (fs.length + 1) * (9 * z.length + 8) =
+          fs.length * (9 * z.length + 8) + (9 * z.length + 8) := by ring
+      simp [stackPayload, framePayload]
+      omega
+  | .combine _ left p :: fs => by
+      intro h
+      obtain ⟨hl, hp, ht⟩ := h
+      have ih := stackOk_payload z fs ht
+      have hmul : (fs.length + 1) * (9 * z.length + 8) =
+          fs.length * (9 * z.length + 8) + (9 * z.length + 8) := by ring
+      simp [stackPayload, framePayload]
+      omega
+
+private theorem stack_length_le_stackWork :
+    ∀ fs : List FormFrame, fs.length ≤ stackWork fs
+  | [] => by simp [stackWork]
+  | f :: fs => by
+      have ih := stack_length_le_stackWork fs
+      cases f <;> simp [stackWork, frameWork] <;> omega
+
+private theorem formMeasure_step_le (s : FormSem) {M : Nat}
+    (h : formMeasure s ≤ M) : formMeasure (formSemStep s) ≤ M := by
+  by_cases hz : formMeasure s = 0
+  · rwa [formStuck s hz]
+  · exact (Nat.le_of_lt (formMeasure_lt s hz)).trans h
 
 private structure FormReach (z : List Bool) (s : FormSem) : Prop where
   bound_le : s.bound.length ≤ z.length
@@ -5736,46 +5695,68 @@ private structure FormReach (z : List Bool) (s : FormSem) : Prop where
     | .expand t => ctxOk (bitValue s.bound) t s.stack
     | .reduce src _ => ctxOk (bitValue s.bound) src s.stack
     | .fail | .success _ => True
+  measure_le : formMeasure s ≤ 2 * z.length + 2
 
 private theorem encodeFormSem_length_le (z : List Bool) (s : FormSem)
     (h : FormReach z s) :
     (encodeFormSem s).length ≤ (formWidth z).length := by
   have hb := h.bound_le
   have hd := h.depth_le
-  have hm := encodeFormMode_len s.mode
-  have hs := encodeFormStack_len s.stack
   have hp := stackOk_payload z s.stack h.stack_ok
-  have hpay : (match s.mode with
-      | .fail => 0
-      | .expand t => (CMMSACodec.Tree.encode t).length
-      | .reduce _ enc | .success enc => enc.length) ≤ 8 * z.length + 8 := by
-    cases hm' : s.mode with
+  have hmode : (encodeFormMode s.mode).length ≤ 8 * z.length + 14 := by
+    rw [encodeFormMode_len_exact]
+    cases hs : s.mode with
     | fail => simp
     | expand t =>
-        have := h.expand_le t hm'
+        have := h.expand_le t hs
+        simp
         omega
     | reduce src enc =>
-        have := h.reduce_le src enc hm'
+        have := (h.reduce_le src enc hs).2
+        simp
         omega
     | success enc =>
-        have := h.success_le enc hm'
+        have := h.success_le enc hs
+        simp
         omega
+  have hstack :
+      (encodeFormStack s.stack).length ≤
+        72 * z.length * z.length + 188 * z.length + 116 := by
+    have hs := encodeFormStack_len s.stack
+    have hmul : stackPayload s.stack ≤
+        (2 * z.length + 2) * (9 * z.length + 8) :=
+      hp.trans (Nat.mul_le_mul_right _ hd)
+    have hconst : 26 * (2 * z.length + 2) +
+        4 * ((2 * z.length + 2) * (9 * z.length + 8)) =
+          72 * z.length * z.length + 188 * z.length + 116 := by ring
+    have hle : (encodeFormStack s.stack).length ≤
+        26 * (2 * z.length + 2) +
+          4 * ((2 * z.length + 2) * (9 * z.length + 8)) := by omega
+    exact hle.trans (le_of_eq hconst)
   have hz := encodeFormSem_len s
   have hlin :
       2 * s.bound.length + 2 * (encodeFormMode s.mode).length +
         (encodeFormStack s.stack).length + 4 ≤
         80 * z.length * z.length + 300 * z.length + 300 := by
-    have hmode : (encodeFormMode s.mode).length ≤ 8 * z.length + 14 := by omega
-    have hstack :
-        (encodeFormStack s.stack).length ≤
-          26 * (2 * z.length + 2) + 4 * ((2 * z.length + 2) * (9 * z.length + 8)) := by
-      have hmul : s.stack.length * (9 * z.length + 8) ≤
-          (2 * z.length + 2) * (9 * z.length + 8) :=
-        Nat.mul_le_mul_right _ hd
+    have hmode2 : 2 * (encodeFormMode s.mode).length ≤ 16 * z.length + 28 := by omega
+    have hsum :
+        2 * z.length + (16 * z.length + 28) +
+          (72 * z.length * z.length + 188 * z.length + 116) + 4 =
+          72 * z.length * z.length + 206 * z.length + 148 := by ring
+    have hleft :
+        2 * s.bound.length + 2 * (encodeFormMode s.mode).length +
+          (encodeFormStack s.stack).length + 4 ≤
+          72 * z.length * z.length + 206 * z.length + 148 := by
+      have hb2 : 2 * s.bound.length ≤ 2 * z.length := Nat.mul_le_mul_left 2 hb
       omega
-    have : 4 * (2 * z.length + 2) * (9 * z.length + 8) =
-        72 * z.length * z.length + 136 * z.length + 64 := by ring
-    omega
+    have hsq : 72 * (z.length * z.length) ≤ 80 * (z.length * z.length) :=
+      Nat.mul_le_mul_right (z.length * z.length) (by omega)
+    have hlin' : 72 * z.length * z.length + 206 * z.length + 148 ≤
+        80 * z.length * z.length + 300 * z.length + 300 := by
+      have h72 : 72 * z.length * z.length = 72 * (z.length * z.length) := by ring
+      have h80 : 80 * z.length * z.length = 80 * (z.length * z.length) := by ring
+      omega
+    exact hleft.trans hlin'
   rw [hz, formWidth_length]
   exact hlin.trans (cube32_bound z.length)
 
@@ -5783,20 +5764,22 @@ private theorem formReach_init (z : List Bool) : FormReach z (initForm z) := by
   simp only [initForm]
   cases hp : CMMSACodec.Tree.parse ((pairSnd z).length + 1) (pairSnd z) with
   | none =>
-      refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+      refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_, ?_⟩
       · intro t ht; simp at ht
       · intro src enc ht; simp at ht
       · intro enc ht; simp at ht
       · intro src enc ht; simp at ht
       · trivial
+      · simp [formMeasure]
   | some pr =>
       obtain ⟨t, rest⟩ := pr
       by_cases hr : rest = []
       · subst hr
         have hpre := parse_consumed hp
-        have hlen := congrArg List.length hpre
-        simp [List.length_append] at hlen
-        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+        simp [List.append_nil] at hpre
+        have hlen : (CMMSACodec.Tree.encode t).length = (pairSnd z).length :=
+          congrArg List.length hpre.symm
+        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_, ?_⟩
         · intro t' ht'
           simp at ht'
           subst ht'
@@ -5806,13 +5789,17 @@ private theorem formReach_init (z : List Bool) : FormReach z (initForm z) := by
         · intro enc ht; simp at ht
         · intro src enc ht; simp at ht
         · simp [ctxOk]
+        · simp [formMeasure, stackWork]
+          have := pairSnd_length_le z
+          omega
       · simp [hr]
-        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_⟩
+        refine ⟨pairFst_length_le z, by simp, by simp [stackOk], ?_, ?_, ?_, ?_, ?_, ?_⟩
         · intro t ht; simp at ht
         · intro src enc ht; simp at ht
         · intro enc ht; simp at ht
         · intro src enc ht; simp at ht
         · trivial
+        · simp [formMeasure]
 
 private theorem wrapAndEnc_length (p q : List Bool) :
     (wrapAndEnc p q).length = p.length + q.length + 5 := by
@@ -5828,16 +5815,18 @@ private theorem wrapVarEnc_length (natEnc : List Bool) :
 
 private theorem formReach_step (z : List Bool) (s : FormSem)
     (h : FormReach z s) : FormReach z (formSemStep s) := by
+  have hmeas' : formMeasure (formSemStep s) ≤ 2 * z.length + 2 :=
+    formMeasure_step_le s h.measure_le
   rcases s with ⟨bound, mode, stack⟩
-  rcases h with ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx⟩
+  rcases h with ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx, hmeas⟩
   cases mode with
   | fail | success _ =>
-      exact ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx⟩
+      exact ⟨hbound, hdepth, hok, hexp, hred, hsucc, hrok, hctx, by simpa [formSemStep] using hmeas'⟩
   | reduce src enc =>
       cases stack with
       | nil =>
           simp [formSemStep]
-          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
           · intro t ht; simp at ht
           · intro src' enc' ht; simp at ht
           · intro enc' ht
@@ -5852,7 +5841,7 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                   (.waitRight isOr right parent :: fs) := by simpa using hctx
               obtain ⟨hp, htail⟩ := hctx'
               simp [formSemStep]
-              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by simpa [formSemStep] using hmeas'⟩
               · simp at hdepth ⊢; omega
               · simp [stackOk] at hok ⊢
                 exact ⟨(hred src enc rfl).2, hok.2.1, hok.2.2⟩
@@ -5884,9 +5873,9 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
               have hlen := formula_encode_le (if isOr then .or fl fq else .and fl fq)
                 parent hreadP
               simp [formSemStep]
-              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+              refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by simpa [formSemStep] using hmeas'⟩
               · simp at hdepth ⊢; omega
-              · simp at hok ⊢
+              · simp [stackOk] at hok ⊢
                 exact hok.2.2
               · intro t ht; simp at ht
               · intro src' enc' ht
@@ -5906,7 +5895,7 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
       cases t with
       | leaf =>
           simp [formSemStep]
-          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
           · intro t' ht; simp at ht
           · intro src enc ht; simp at ht
           · intro enc ht; simp at ht
@@ -5917,7 +5906,8 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
               cases hn : readNat b with
               | none =>
                   simp [formSemStep, hn]
-                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial,
+                    by simpa [formSemStep, hn] using hmeas'⟩
                   · intro t' ht; simp at ht
                   · intro src enc ht; simp at ht
                   · intro enc ht; simp at ht
@@ -5933,7 +5923,8 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                     have hctx' : ctxOk (bitValue bound) (.node .leaf b) stack := by
                       simpa using hctx
                     simp [formSemStep, hn, hlt]
-                    refine ⟨hbound, hdepth, hok, ?_, ?_, ?_, ?_, ?_⟩
+                    refine ⟨hbound, hdepth, hok, ?_, ?_, ?_, ?_, ?_,
+                      by simpa [formSemStep, hn, hlt] using hmeas'⟩
                     · intro t' ht; simp at ht
                     · intro src enc ht
                       simp at ht
@@ -5947,7 +5938,8 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                       exact ⟨.var ⟨k, hlt⟩, hf, he⟩
                     · exact hctx'
                   · simp [formSemStep, hn, hlt]
-                    refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                    refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial,
+                      by simpa [formSemStep, hn, hlt] using hmeas'⟩
                     · intro t' ht; simp at ht
                     · intro src enc ht; simp at ht
                     · intro enc ht; simp at ht
@@ -5960,7 +5952,7 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                       cases b with
                       | leaf =>
                           simp [formSemStep]
-                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
                           · intro t' ht; simp at ht
                           · intro src enc ht; simp at ht
                           · intro enc ht; simp at ht
@@ -5971,8 +5963,20 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                               (.node (.node .leaf .leaf) (.node p q)) stack := by
                             simpa using hctx
                           simp [formSemStep]
-                          refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
-                          · simp at hdepth ⊢; omega
+                          refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by simpa [formSemStep] using hmeas'⟩
+                          · have hsw := stack_length_le_stackWork stack
+                            have hm : 2 * (CMMSACodec.Tree.encode
+                                (.node (.node .leaf .leaf) (.node p q))).length + 2 +
+                                stackWork stack ≤ 2 * z.length + 2 := by
+                              simpa [formMeasure] using hmeas
+                            have hm' : 2 * (CMMSACodec.Tree.encode
+                                (.node (.node .leaf .leaf) (.node p q))).length +
+                                (2 + stackWork stack) ≤ 2 * z.length + 2 := by
+                              simpa [Nat.add_assoc] using hm
+                            have hw : 2 + stackWork stack ≤ 2 * z.length + 2 :=
+                              (Nat.le_add_left _ _).trans hm'
+                            have hgoal : stack.length + 1 ≤ 2 * z.length + 2 := by omega
+                            simpa [List.length_cons] using hgoal
                           · simp [stackOk]
                             have hq : (CMMSACodec.Tree.encode q).length ≤ z.length := by
                               simp [encode_node_length, encode_andTag,
@@ -5998,7 +6002,7 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                               cases b with
                               | leaf =>
                                   simp [formSemStep]
-                                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
                                   · intro t' ht; simp at ht
                                   · intro src enc ht; simp at ht
                                   · intro enc ht; simp at ht
@@ -6012,8 +6016,22 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                                         (.node p q)) stack := by
                                     simpa using hctx
                                   simp [formSemStep]
-                                  refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
-                                  · simp at hdepth ⊢; omega
+                                  refine ⟨hbound, ?_, ?_, ?_, ?_, ?_, ?_, ?_, by simpa [formSemStep] using hmeas'⟩
+                                  · have hsw := stack_length_le_stackWork stack
+                                    have hm : 2 * (CMMSACodec.Tree.encode
+                                        (.node (.node .leaf (.node .leaf .leaf))
+                                          (.node p q))).length + 2 +
+                                        stackWork stack ≤ 2 * z.length + 2 := by
+                                      simpa [formMeasure] using hmeas
+                                    have hm' : 2 * (CMMSACodec.Tree.encode
+                                        (.node (.node .leaf (.node .leaf .leaf))
+                                          (.node p q))).length +
+                                        (2 + stackWork stack) ≤ 2 * z.length + 2 := by
+                                      simpa [Nat.add_assoc] using hm
+                                    have hw : 2 + stackWork stack ≤ 2 * z.length + 2 :=
+                                      (Nat.le_add_left _ _).trans hm'
+                                    have hgoal : stack.length + 1 ≤ 2 * z.length + 2 := by omega
+                                    simpa [List.length_cons] using hgoal
                                   · simp [stackOk]
                                     have hq : (CMMSACodec.Tree.encode q).length ≤
                                         z.length := by
@@ -6034,21 +6052,21 @@ private theorem formReach_step (z : List Bool) (s : FormSem)
                                     exact And.intro rfl hctx'
                           | node _ _ =>
                               simp [formSemStep]
-                              refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                              refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
                               · intro t' ht; simp at ht
                               · intro src enc ht; simp at ht
                               · intro enc ht; simp at ht
                               · intro src enc ht; simp at ht
                       | node _ _ =>
                           simp [formSemStep]
-                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                          refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
                           · intro t' ht; simp at ht
                           · intro src enc ht; simp at ht
                           · intro enc ht; simp at ht
                           · intro src enc ht; simp at ht
               | node _ _ =>
                   simp [formSemStep]
-                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial⟩
+                  refine ⟨hbound, by simp, trivial, ?_, ?_, ?_, ?_, trivial, by simpa [formSemStep] using hmeas'⟩
                   · intro t' ht; simp at ht
                   · intro src enc ht; simp at ht
                   · intro enc ht; simp at ht
@@ -6076,6 +6094,5 @@ theorem readFormulaTag_mem_FP : readFormulaTag ∈ Complexity.FP := by
   have hiter := Cobham.iterate_mem_FP formStep_mem_FP formInit_mem_FP
     formRuler_mem_FP formWidth_mem_FP hbound
   exact mem_FP_comp hiter formPack_mem_FP
--/
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
