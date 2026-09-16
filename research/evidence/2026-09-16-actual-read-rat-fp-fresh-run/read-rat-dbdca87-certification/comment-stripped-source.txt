@@ -1,0 +1,2334 @@
+-- stripped-source-boundary: ActualDecodeInputFP.lean
+import PvNP.RealizableHardness.ActualTreeParseFP
+import PvNP.RealizableHardness.ExecutablePipelineInput
+import Complexitylib.Classes.P
+import Complexitylib.Classes.P.Cobham
+import Complexitylib.Classes.P.Cobham.Internal
+import Complexitylib.Classes.P.Pairing
+import Complexitylib.Classes.P.Composition
+import Complexitylib.Classes.P.NormalForm
+import Complexitylib.Classes.Containments.Internal.FPBridge
+import Complexitylib.Classes.Containments.Internal.BinArith
+
+
+
+
+
+
+
+
+namespace PvNP.RealizableHardness.ActualDecodeInputFP
+open Complexity
+open CMMSACodec hiding Tree
+open CMMSAEncoding
+open ActualTreeParseFP
+open ExecutablePipelineInput
+set_option autoImplicit false
+
+
+def decodeInputTag (bs : List Bool) : List Bool :=
+  match ExecutablePipelineInput.decodeInput bs with
+  | none => []
+  | some x => true :: ExecutablePipelineInput.encodeInput x
+
+theorem decodeInputTag_empty : decodeInputTag [] = [] := rfl
+
+theorem decodeInputTag_none (bs : List Bool)
+    (h : ExecutablePipelineInput.decodeInput bs = none) :
+    decodeInputTag bs = [] := by
+  simp [decodeInputTag, h]
+
+theorem decodeInputTag_some (bs : List Bool) (x : ExecutablePipelineInput.Input)
+    (h : ExecutablePipelineInput.decodeInput bs = some x) :
+    decodeInputTag bs = true :: ExecutablePipelineInput.encodeInput x := by
+  simp [decodeInputTag, h]
+
+private theorem selectHead_true (x y : List Bool) :
+    Cobham.selectHead [true] x y = x := rfl
+
+private theorem selectHead_false (x y : List Bool) :
+    Cobham.selectHead [false] x y = y := rfl
+
+private theorem selectHead_cons_true' (t x y : List Bool) :
+    Cobham.selectHead (true :: t) x y = x := rfl
+
+private theorem selectHead_cons_false' (t x y : List Bool) :
+    Cobham.selectHead (false :: t) x y = y := rfl
+
+private theorem dropOne_cons (b : Bool) (t : List Bool) : dropOne (b :: t) = t := rfl
+
+private theorem treeParseTag_encode_append (t : CMMSACodec.Tree) (rest : List Bool) :
+    treeParseTag (CMMSACodec.Tree.encode t ++ rest) =
+      true :: pair (CMMSACodec.Tree.encode t) rest := by
+  have hp := CMMSACodec.Tree.parse_encode t rest
+    ((CMMSACodec.Tree.encode t ++ rest).length + 1)
+    (Nat.le_trans (CMMSACodec.Tree.depth_le_length t) (by
+      simp [List.length_append]; omega))
+  simp [treeParseTag, List.length_append] at hp ⊢
+  rw [hp]
+
+private theorem parse_true_eq (fuel : Nat) (bs : Bits) :
+    CMMSACodec.Tree.parse (fuel + 1) (true :: bs) =
+      (CMMSACodec.Tree.parse fuel bs).bind fun pr =>
+        (CMMSACodec.Tree.parse fuel pr.2).bind fun qr =>
+          some (CMMSACodec.Tree.node pr.1 qr.1, qr.2) :=
+  rfl
+
+private theorem parse_consumed {fuel : Nat} {bs : Bits} {t : CMMSACodec.Tree} {rest : Bits}
+    (h : CMMSACodec.Tree.parse fuel bs = some (t, rest)) :
+    bs = CMMSACodec.Tree.encode t ++ rest := by
+  induction fuel generalizing bs t rest with
+  | zero => simp [CMMSACodec.Tree.parse] at h
+  | succ fuel ih =>
+      cases bs with
+      | nil => simp [CMMSACodec.Tree.parse] at h
+      | cons b bs =>
+          cases b with
+          | false =>
+              simp [CMMSACodec.Tree.parse] at h
+              obtain ⟨rfl, rfl⟩ := h
+              simp [CMMSACodec.Tree.encode]
+          | true =>
+              rw [parse_true_eq] at h
+              cases hp : CMMSACodec.Tree.parse fuel bs with
+              | none => simp [Option.bind, hp] at h
+              | some pr =>
+                  obtain ⟨p, mid⟩ := pr
+                  simp [Option.bind, hp] at h
+                  cases hq : CMMSACodec.Tree.parse fuel mid with
+                  | none => simp [hq] at h
+                  | some qr =>
+                      obtain ⟨q, tail⟩ := qr
+                      simp [hq] at h
+                      obtain ⟨rfl, rfl⟩ := h
+                      simp [CMMSACodec.Tree.encode, ih hp, ih hq, List.append_assoc]
+
+
+private def splitNode (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag z) []
+    (Cobham.selectHead z (treeParseTag (dropOne z)) [])
+
+private theorem splitNode_nil : splitNode [] = [] := by
+  simp [splitNode, emptyFlag_nil, selectHead_true]
+
+private theorem splitNode_leaf : splitNode [false] = [] := by
+  simp [splitNode, emptyFlag_cons, selectHead_false, selectHead_false]
+
+private theorem splitNode_node (p q : CMMSACodec.Tree) :
+    splitNode (CMMSACodec.Tree.encode (CMMSACodec.Tree.node p q)) =
+      true :: pair (CMMSACodec.Tree.encode p) (CMMSACodec.Tree.encode q) := by
+  simp [splitNode, CMMSACodec.Tree.encode, emptyFlag_cons, selectHead_false,
+    selectHead_cons_true', dropOne_cons, treeParseTag_encode_append]
+
+private theorem splitNode_mem_FP : splitNode ∈ FP := by
+  have hdrop := dropOneFn_mem_FP id_mem_FP
+  have hparse := mem_FP_comp hdrop treeParseTag_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP id_mem_FP hparse (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP id_mem_FP)
+    (constFn_mem_FP []) hinner
+
+private def nodeLeft (z : List Bool) : List Bool := pairFst (dropOne (splitNode z))
+private def nodeRight (z : List Bool) : List Bool := pairSnd (dropOne (splitNode z))
+
+private theorem nodeLeft_mem_FP : nodeLeft ∈ FP :=
+  mem_FP_comp (dropOneFn_mem_FP splitNode_mem_FP) Cobham.fstBlock_mem_FP
+
+private theorem nodeRight_mem_FP : nodeRight ∈ FP :=
+  mem_FP_comp (dropOneFn_mem_FP splitNode_mem_FP) Cobham.sndBlock_mem_FP
+
+private theorem nodeLeft_node (p q : CMMSACodec.Tree) :
+    nodeLeft (CMMSACodec.Tree.encode (CMMSACodec.Tree.node p q)) =
+      CMMSACodec.Tree.encode p := by
+  simp [nodeLeft, splitNode_node, dropOne_cons]
+
+private theorem nodeRight_node (p q : CMMSACodec.Tree) :
+    nodeRight (CMMSACodec.Tree.encode (CMMSACodec.Tree.node p q)) =
+      CMMSACodec.Tree.encode q := by
+  simp [nodeRight, splitNode_node, dropOne_cons]
+
+private theorem pairSnd_nil : pairSnd [] = [] := rfl
+
+private theorem nodeRight_length_le (z : List Bool) :
+    (nodeRight z).length ≤ z.length := by
+  unfold nodeRight splitNode
+  cases z with
+  | nil =>
+      rw [emptyFlag_nil, selectHead_true]
+      simp [dropOne, pairSnd_nil]
+  | cons b t =>
+      rw [emptyFlag_cons, selectHead_false]
+      cases b with
+      | false =>
+          rw [selectHead_cons_false']
+          simp [dropOne, pairSnd_nil]
+      | true =>
+          rw [selectHead_cons_true', dropOne_cons]
+          cases hp : CMMSACodec.Tree.parse (t.length + 1) t with
+          | none =>
+              simp [treeParseTag, hp, dropOne, pairSnd_nil]
+          | some pr =>
+              obtain ⟨u, rest⟩ := pr
+              have hpre := parse_consumed hp
+              simp [treeParseTag, hp, dropOne_cons]
+              have := congrArg List.length hpre
+              simp [List.length_append] at this
+              omega
+
+
+
+private def readInputTag (z : List Bool) : List Bool :=
+  match CMMSACodec.Tree.parse (z.length + 1) z with
+  | none => []
+  | some (t, rest) =>
+      if rest = [] then
+        match ExecutablePipelineInput.readInput t with
+        | none => []
+        | some x => true :: ExecutablePipelineInput.encodeInput x
+      else []
+
+private theorem decodeInputTag_eq_guard (bs : List Bool) :
+    decodeInputTag bs =
+      Cobham.selectHead (emptyFlag (treeParseTag bs)) []
+        (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag bs))))
+          (readInputTag (pairFst (dropOne (treeParseTag bs))))
+          []) := by
+  simp only [decodeInputTag, readInputTag, decodeInput]
+  cases hp : CMMSACodec.Tree.parse (bs.length + 1) bs with
+  | none =>
+      simp [treeParseTag, hp, emptyFlag_nil, selectHead_true]
+  | some pr =>
+      obtain ⟨t, rest⟩ := pr
+      simp [treeParseTag, hp, emptyFlag_cons, selectHead_false, dropOne_cons,
+        pairFst_pair, pairSnd_pair]
+      cases rest with
+      | nil =>
+          have hparse := CMMSACodec.Tree.parse_encode t []
+            ((CMMSACodec.Tree.encode t).length + 1)
+            (Nat.le_trans (CMMSACodec.Tree.depth_le_length t) (Nat.le_succ _))
+          simp [List.append_nil] at hparse
+          rw [emptyFlag_nil, selectHead_true, hparse]
+          simp
+      | cons _ _ =>
+          simp [emptyFlag_cons, selectHead_false]
+
+private theorem decodeInputTag_mem_FP_of_read
+    (hread : readInputTag ∈ Complexity.FP) :
+    decodeInputTag ∈ Complexity.FP := by
+  have htag := treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have hfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have hsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hread' := mem_FP_comp hfst hread
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsnd)
+    hread' (constFn_mem_FP [])
+  have hpack := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
+    (constFn_mem_FP []) hinner
+  exact mem_FP_of_eq hpack fun bs => (decodeInputTag_eq_guard bs).symm
+
+
+
+private def stripTrailing : List Bool → List Bool
+  | [] => []
+  | false :: t => if stripTrailing t = [] then [] else false :: stripTrailing t
+  | true :: t => true :: stripTrailing t
+
+private theorem length_stripTrailing (l : List Bool) :
+    (stripTrailing l).length ≤ l.length := by
+  induction l with
+  | nil => simp [stripTrailing]
+  | cons b t ih =>
+      cases b
+      · change (if stripTrailing t = [] then [] else false :: stripTrailing t).length ≤ _
+        split <;> simp [ih] <;> omega
+      · simp [stripTrailing, ih]
+
+private theorem bits_eq_nil {n : Nat} (h : n.bits = []) : n = 0 := by
+  have hlen := congrArg List.length h
+  have hsize : n.size = 0 := by
+    simpa [Nat.size_eq_bits_len] using hlen
+  exact Nat.size_eq_zero.mp hsize
+
+private theorem bitValue_false (t : List Bool) : bitValue (false :: t) = 2 * bitValue t := by
+  simp [bitValue]
+
+private theorem bitValue_true (t : List Bool) : bitValue (true :: t) = 2 * bitValue t + 1 := by
+  simp [bitValue]; omega
+
+private theorem stripTrailing_eq_bits (l : List Bool) :
+    stripTrailing l = (bitValue l).bits := by
+  induction l with
+  | nil => simp [stripTrailing, bitValue]
+  | cons b t ih =>
+      cases b
+      · rw [show stripTrailing (false :: t) =
+            if stripTrailing t = [] then [] else false :: stripTrailing t from rfl,
+          bitValue_false, ih]
+        by_cases h : (bitValue t).bits = []
+        · rw [ite_eq_left h]
+          have h0 := bits_eq_nil h
+          simp [h0]
+        · rw [ite_eq_right h]
+          have hne : bitValue t ≠ 0 := by
+            intro h0; apply h; simp [h0]
+          rw [Nat.bit0_bits _ hne]
+      · rw [show stripTrailing (true :: t) = true :: stripTrailing t from rfl,
+          bitValue_true, ih, Nat.bit1_bits]
+
+private def stripZero (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairSnd (pairFst z))) []
+    (false :: pairSnd (pairFst z))
+
+private def stripOne (z : List Bool) : List Bool :=
+  true :: pairSnd (pairFst z)
+
+private theorem stripZero_mem_FP : stripZero ∈ FP := by
+  have h : (fun z : List Bool => pairSnd (pairFst z)) ∈ FP :=
+    mem_FP_comp Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP h) (constFn_mem_FP [])
+    (mem_FP_comp h (Cobham.cons_mem_FP false))
+
+private theorem stripOne_mem_FP : stripOne ∈ FP := by
+  have h : (fun z : List Bool => pairSnd (pairFst z)) ∈ FP :=
+    mem_FP_comp Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  exact mem_FP_comp h (Cobham.cons_mem_FP true)
+
+private theorem recFoldClamp_stripTrailing (bound : Nat) (W : List Bool) :
+    ∀ l : List Bool, l.length ≤ bound →
+      Cobham.recFoldClamp stripZero stripOne bound [] W l = stripTrailing l := by
+  intro l
+  induction l with
+  | nil =>
+      intro _
+      simp [Cobham.recFoldClamp, stripTrailing]
+  | cons b t ih =>
+      intro hb
+      have hb' : t.length ≤ bound := by simp at hb; omega
+      rw [Cobham.recFoldClamp, ih hb']
+      cases b <;> simp [cond, stripZero, stripOne, pairFst_pair, pairSnd_pair]
+      · cases hs : stripTrailing t with
+        | nil =>
+            rw [emptyFlag_nil, selectHead_true]
+            simp [stripTrailing, hs]
+        | cons c s =>
+            rw [emptyFlag_cons, selectHead_false]
+            simp [stripTrailing, hs]
+            have hlt := length_stripTrailing t
+            simp [hs] at hlt
+            simp at hb
+            omega
+      · refine List.take_of_length_le ?_
+        simp [stripTrailing] at hb ⊢
+        have hlt := length_stripTrailing t
+        omega
+
+private def stripFn (z : List Bool) : List Bool :=
+  Cobham.recFoldClamp stripZero stripOne z.length [] (pairFst z) (pairSnd z)
+
+private theorem stripFn_mem_FP : stripFn ∈ FP := by
+  have := Cobham.recFoldClamp_mem_FP stripZero_mem_FP stripOne_mem_FP
+    (constFn_mem_FP []) (Polynomial.X)
+  refine mem_FP_of_eq this fun z => ?_
+  simp [stripFn, Polynomial.eval_X]
+
+private theorem stripFn_eq (z : List Bool) :
+    stripFn z = stripTrailing (pairSnd z) :=
+  recFoldClamp_stripTrailing _ _ _ (pairSnd_length_le z)
+
+private theorem stripTrailing_mem_FP :
+    (fun z : List Bool => stripTrailing z) ∈ FP := by
+  have h := mem_FP_comp (Cobham.pairFn_mem_FP (constFn_mem_FP []) id_mem_FP)
+    stripFn_mem_FP
+  refine mem_FP_of_eq h fun z => ?_
+  simp [stripFn_eq]
+
+private def encFalse (z : List Bool) : List Bool :=
+  [true, false] ++ pairSnd (pairFst z)
+
+private def encTrue (z : List Bool) : List Bool :=
+  [true, true, false, false] ++ pairSnd (pairFst z)
+
+private theorem encFalse_mem_FP : encFalse ∈ FP := by
+  have h : (fun z : List Bool => pairSnd (pairFst z)) ∈ FP :=
+    mem_FP_comp Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  exact Cobham.appendFn_mem_FP (constFn_mem_FP [true, false]) h
+
+private theorem encTrue_mem_FP : encTrue ∈ FP := by
+  have h : (fun z : List Bool => pairSnd (pairFst z)) ∈ FP :=
+    mem_FP_comp Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  exact Cobham.appendFn_mem_FP (constFn_mem_FP [true, true, false, false]) h
+
+private def encodeDigits : List Bool → List Bool
+  | [] => [false]
+  | false :: t => [true, false] ++ encodeDigits t
+  | true :: t => [true, true, false, false] ++ encodeDigits t
+
+private theorem encodeDigits_eq (bs : List Bool) :
+    encodeDigits bs = CMMSACodec.Tree.encode (digitTree bs) := by
+  induction bs with
+  | nil => simp [encodeDigits, digitTree, CMMSACodec.Tree.encode]
+  | cons b t ih =>
+      cases b <;> simp [encodeDigits, digitTree, CMMSACodec.Tree.encode, ih]
+
+private theorem encodeDigits_length (bs : List Bool) :
+    (encodeDigits bs).length ≤ 4 * bs.length + 1 := by
+  rw [encodeDigits_eq]
+  simpa using digitTree_length bs
+
+private theorem recFold_encodeDigits (W : List Bool) :
+    ∀ bs : List Bool,
+      Cobham.recFold encFalse encTrue [false] W bs = encodeDigits bs := by
+  intro bs
+  induction bs with
+  | nil => simp [Cobham.recFold, encodeDigits]
+  | cons b t ih =>
+      cases b <;> simp [Cobham.recFold, encFalse, encTrue, encodeDigits, ih]
+
+private theorem recFoldClamp_encodeDigits (bound : Nat) (W : List Bool) :
+    ∀ bs : List Bool, 4 * bs.length + 1 ≤ bound →
+      Cobham.recFoldClamp encFalse encTrue bound [false] W bs = encodeDigits bs := by
+  intro bs hb
+  have hle : ∀ t : List Bool, t.length ≤ bs.length →
+      (Cobham.recFold encFalse encTrue [false] W t).length ≤ bound := by
+    intro t ht
+    rw [recFold_encodeDigits]
+    have := encodeDigits_length t
+    omega
+  rw [Cobham.recFoldClamp_eq_recFold bs hle, recFold_encodeDigits]
+
+private def encodeDigitsFn (z : List Bool) : List Bool :=
+  Cobham.recFoldClamp encFalse encTrue (4 * z.length + 1) [false] [] z
+
+private theorem encodeDigitsFn_eq (z : List Bool) :
+    encodeDigitsFn z = encodeDigits z :=
+  recFoldClamp_encodeDigits _ _ z (Nat.le_refl _)
+
+private theorem encodeDigits_mem_FP :
+    (fun z : List Bool => encodeDigits z) ∈ FP := by
+  have hE : (fun _ : List Bool => ([false] : List Bool)) ∈ FP :=
+    constFn_mem_FP [false]
+  have hpoly := Cobham.recFoldClamp_mem_FP encFalse_mem_FP encTrue_mem_FP hE
+    (Polynomial.C 4 * Polynomial.X + Polynomial.C 1)
+  have harg : (fun z : List Bool => pair [] z) ∈ FP :=
+    Cobham.pairFn_mem_FP (constFn_mem_FP []) id_mem_FP
+  have hcomp := mem_FP_comp harg hpoly
+  refine mem_FP_of_eq hcomp fun z => ?_
+  change Cobham.recFoldClamp encFalse encTrue
+      ((Polynomial.C 4 * Polynomial.X + Polynomial.C 1 : Polynomial Nat).eval
+        (pair [] z).length)
+      [false] (pairFst (pair [] z)) (pairSnd (pair [] z)) =
+    encodeDigits z
+  simp [pairFst_pair, pairSnd_pair, pair_length, Polynomial.eval_add,
+    Polynomial.eval_mul, Polynomial.eval_C, Polynomial.eval_X]
+  refine recFoldClamp_encodeDigits _ _ z ?_
+  omega
+
+
+
+private def digPack (rem flag acc : List Bool) : List Bool :=
+  pair rem (pair flag acc)
+
+private theorem digPack_length (rem flag acc : List Bool) :
+    (digPack rem flag acc).length =
+      2 * rem.length + 2 * flag.length + acc.length + 4 := by
+  simp [digPack, pair_length]; omega
+
+private def digStep (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst (pairSnd st)))
+    (Cobham.selectHead (Cobham.eqFlag (pairFst st) [false])
+      (digPack (pairFst st) [false] (pairSnd (pairSnd st)))
+      (Cobham.selectHead (emptyFlag (splitNode (pairFst st)))
+        (digPack [] [true] [])
+        (Cobham.selectHead (Cobham.eqFlag (nodeLeft (pairFst st)) [false])
+          (digPack (nodeRight (pairFst st)) (pairFst (pairSnd st))
+            (pairSnd (pairSnd st) ++ [false]))
+          (Cobham.selectHead (Cobham.eqFlag (nodeLeft (pairFst st))
+              [true, false, false])
+            (digPack (nodeRight (pairFst st)) (pairFst (pairSnd st))
+              (pairSnd (pairSnd st) ++ [true]))
+            (digPack [] [true] [])))))
+    st
+
+private theorem digStep_mem_FP : digStep ∈ FP := by
+  have hrem : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hflag : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hsplit := mem_FP_comp hrem splitNode_mem_FP
+  have hleft := mem_FP_comp hrem nodeLeft_mem_FP
+  have hright := mem_FP_comp hrem nodeRight_mem_FP
+  have hleaf := eqFlagFn_mem_FP hrem (constFn_mem_FP [false])
+  have hfalse := eqFlagFn_mem_FP hleft (constFn_mem_FP [false])
+  have htrue := eqFlagFn_mem_FP hleft (constFn_mem_FP [true, false, false])
+  have hsucc : (fun st : List Bool =>
+      digPack (pairFst st) [false] (pairSnd (pairSnd st))) ∈ FP :=
+    Cobham.pairFn_mem_FP hrem
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [false]) hacc)
+  have hfail : (fun _ : List Bool => digPack [] [true] []) ∈ FP :=
+    constFn_mem_FP (digPack [] [true] [])
+  have hcons0 : (fun st : List Bool =>
+      digPack (nodeRight (pairFst st)) (pairFst (pairSnd st))
+        (pairSnd (pairSnd st) ++ [false])) ∈ FP :=
+    Cobham.pairFn_mem_FP hright
+      (Cobham.pairFn_mem_FP hflag
+        (Cobham.appendFn_mem_FP hacc (constFn_mem_FP [false])))
+  have hcons1 : (fun st : List Bool =>
+      digPack (nodeRight (pairFst st)) (pairFst (pairSnd st))
+        (pairSnd (pairSnd st) ++ [true])) ∈ FP :=
+    Cobham.pairFn_mem_FP hright
+      (Cobham.pairFn_mem_FP hflag
+        (Cobham.appendFn_mem_FP hacc (constFn_mem_FP [true])))
+  have hbit := Cobham.selectHeadFn_mem_FP htrue hcons1 hfail
+  have hbit' := Cobham.selectHeadFn_mem_FP hfalse hcons0 hbit
+  have hsplit? := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit) hfail hbit'
+  have hleaf? := Cobham.selectHeadFn_mem_FP hleaf hsucc hsplit?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hflag) hleaf? id_mem_FP
+
+private inductive DigSem where
+  | run (rem : CMMSACodec.Tree) (acc : List Bool)
+  | done (acc : List Bool)
+  | fail
+
+private def digSemStep : DigSem → DigSem
+  | .done acc => .done acc
+  | .fail => .fail
+  | .run .leaf acc => .done acc
+  | .run (.node .leaf t) acc => .run t (acc ++ [false])
+  | .run (.node (.node .leaf .leaf) t) acc => .run t (acc ++ [true])
+  | .run _ _ => .fail
+
+private def encodeDigSem : DigSem → List Bool
+  | .fail => digPack [] [true] []
+  | .done acc => digPack [false] [false] acc
+  | .run t acc => digPack (CMMSACodec.Tree.encode t) [] acc
+
+private theorem eqFlag_eq_false_of_ne {a b : List Bool} (h : a ≠ b) :
+    Cobham.eqFlag a b = [false] := by
+  have hf := Cobham.eqFlag_flag a b
+  cases hf with
+  | inl ht => exact absurd ((Cobham.eqFlag_eq_true_iff a b).mp ht) h
+  | inr hf => exact hf
+
+private theorem digStep_encode (s : DigSem) :
+    digStep (encodeDigSem s) = encodeDigSem (digSemStep s) := by
+  cases s with
+  | fail =>
+      simp [encodeDigSem, digSemStep, digStep, digPack, emptyFlag_cons,
+        selectHead_false]
+  | done acc =>
+      simp [encodeDigSem, digSemStep, digStep, digPack, emptyFlag_cons,
+        selectHead_false]
+  | run t acc =>
+      simp only [encodeDigSem, digStep, digPack, pairFst_pair, pairSnd_pair,
+        emptyFlag_nil, selectHead_true]
+      cases t with
+      | leaf =>
+          have hleaf : Cobham.eqFlag [false] [false] = [true] :=
+            (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+          simp [CMMSACodec.Tree.encode, hleaf, selectHead_true, digSemStep,
+            encodeDigSem, digPack]
+      | node p q =>
+          have hnotleaf := eqFlag_eq_false_of_ne
+            (show CMMSACodec.Tree.encode (.node p q) ≠ [false] by
+              simp [CMMSACodec.Tree.encode])
+          rw [hnotleaf, selectHead_false, splitNode_node, emptyFlag_cons,
+            selectHead_false, nodeLeft_node, nodeRight_node]
+          cases p with
+          | leaf =>
+              have hp : Cobham.eqFlag (CMMSACodec.Tree.encode .leaf) [false] = [true] :=
+                (Cobham.eqFlag_eq_true_iff _ _).mpr (by simp [CMMSACodec.Tree.encode])
+              simp [hp, selectHead_true, digSemStep, encodeDigSem, digPack]
+          | node a b =>
+              have hp := eqFlag_eq_false_of_ne
+                (show CMMSACodec.Tree.encode (.node a b) ≠ [false] by
+                  simp [CMMSACodec.Tree.encode])
+              rw [hp, selectHead_false]
+              cases a with
+              | leaf =>
+                  cases b with
+                  | leaf =>
+                      have ht : Cobham.eqFlag
+                          (CMMSACodec.Tree.encode (.node .leaf .leaf))
+                          [true, false, false] = [true] :=
+                        (Cobham.eqFlag_eq_true_iff _ _).mpr
+                          (by simp [CMMSACodec.Tree.encode])
+                      simp [ht, selectHead_true, digSemStep, encodeDigSem, digPack]
+                  | node a' b' =>
+                      have ht := eqFlag_eq_false_of_ne
+                        (show CMMSACodec.Tree.encode
+                            (.node .leaf (.node a' b')) ≠ [true, false, false] by
+                          simp [CMMSACodec.Tree.encode])
+                      rw [ht, selectHead_false]
+                      simp [digSemStep, encodeDigSem, digPack]
+              | node a' b' =>
+                  have ht := eqFlag_eq_false_of_ne
+                    (show CMMSACodec.Tree.encode
+                        (.node (.node a' b') b) ≠ [true, false, false] by
+                      simp [CMMSACodec.Tree.encode])
+                  rw [ht, selectHead_false]
+                  simp [digSemStep, encodeDigSem, digPack]
+
+private theorem digStep_iterate_encode (s : DigSem) (n : Nat) :
+    digStep^[n] (encodeDigSem s) = encodeDigSem (digSemStep^[n] s) := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', Function.iterate_succ_apply', ih,
+        digStep_encode]
+
+private def evalDig : DigSem → Option (List Bool)
+  | .fail => none
+  | .done acc => some acc
+  | .run t acc => (acc ++ ·) <$> readDigits t
+
+private theorem evalDig_step (s : DigSem) : evalDig (digSemStep s) = evalDig s := by
+  cases s with
+  | fail | done _ => simp [digSemStep, evalDig]
+  | run t acc =>
+      cases t with
+      | leaf => simp [digSemStep, evalDig, readDigits]
+      | node p q =>
+          cases p with
+          | leaf =>
+              simp [digSemStep, evalDig, readDigits]
+              cases readDigits q <;> simp [List.append_assoc]
+          | node a b =>
+              cases a with
+              | leaf =>
+                  cases b with
+                  | leaf =>
+                      simp [digSemStep, evalDig, readDigits]
+                      cases readDigits q <;> simp [List.append_assoc]
+                  | node _ _ => simp [digSemStep, evalDig, readDigits]
+              | node _ _ => simp [digSemStep, evalDig, readDigits]
+
+private theorem evalDig_iterate (s : DigSem) (n : Nat) :
+    evalDig (digSemStep^[n] s) = evalDig s := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', evalDig_step, ih]
+
+private def digMeasure : DigSem → Nat
+  | .done _ | .fail => 0
+  | .run t _ => (CMMSACodec.Tree.encode t).length + 1
+
+private theorem encode_node_length (p q : CMMSACodec.Tree) :
+    (CMMSACodec.Tree.encode (CMMSACodec.Tree.node p q)).length =
+      (CMMSACodec.Tree.encode p).length + (CMMSACodec.Tree.encode q).length + 1 := by
+  simp [CMMSACodec.Tree.encode, List.length_cons, List.length_append]
+
+private theorem digMeasure_lt (s : DigSem) (h : digMeasure s ≠ 0) :
+    digMeasure (digSemStep s) < digMeasure s := by
+  cases s with
+  | fail | done _ => simp [digMeasure] at h
+  | run t acc =>
+      cases t with
+      | leaf => simp [digSemStep, digMeasure]
+      | node p q =>
+          have hlen := encode_node_length p q
+          cases p with
+          | leaf =>
+              simp [digSemStep, digMeasure, CMMSACodec.Tree.encode]
+          | node a b =>
+              cases a with
+              | leaf =>
+                  cases b with
+                  | leaf =>
+                      simp [digSemStep, digMeasure, CMMSACodec.Tree.encode]
+                  | node _ _ => simp [digSemStep, digMeasure]
+              | node _ _ => simp [digSemStep, digMeasure]
+
+private theorem digStuck (s : DigSem) (h : digMeasure s = 0) :
+    digSemStep s = s := by
+  cases s <;> simp [digMeasure] at h ⊢ <;> simp [digSemStep]
+
+private theorem iterate_digStuck (s : DigSem) (h : digMeasure s = 0) :
+    ∀ n, digSemStep^[n] s = s := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', ih, digStuck s h]
+
+private theorem digReaches : ∀ (n : Nat) (s : DigSem),
+    digMeasure s ≤ n → digMeasure (digSemStep^[digMeasure s] s) = 0 := by
+  intro n
+  induction n with
+  | zero =>
+      intro s hs
+      have hz : digMeasure s = 0 := Nat.eq_zero_of_le_zero hs
+      simp [hz]
+  | succ n ih =>
+      intro s hs
+      cases hmz : digMeasure s with
+      | zero => simp [hmz]
+      | succ m =>
+          have hne : digMeasure s ≠ 0 := by simp [hmz]
+          have hlt := digMeasure_lt s hne
+          have hle : digMeasure (digSemStep s) ≤ n := by omega
+          have hinter := ih (digSemStep s) hle
+          rw [Function.iterate_succ_apply]
+          have hsplit : m = (m - digMeasure (digSemStep s)) +
+              digMeasure (digSemStep s) := by omega
+          rw [hsplit, Function.iterate_add_apply, iterate_digStuck _ hinter]
+          exact hinter
+
+private theorem iterate_ge_digStuck (s : DigSem) {n : Nat}
+    (hn : digMeasure s ≤ n) : digMeasure (digSemStep^[n] s) = 0 := by
+  have hsplit : n = (n - digMeasure s) + digMeasure s := by omega
+  have hs := digReaches n s hn
+  rw [hsplit, Function.iterate_add_apply, iterate_digStuck _ hs]
+  exact hs
+
+private theorem pack_evalDig (s : DigSem) (h : digMeasure s = 0) :
+    (let st := encodeDigSem s
+     Cobham.selectHead (emptyFlag (pairFst (pairSnd st))) []
+       (Cobham.selectHead (Cobham.eqFlag (pairFst (pairSnd st)) [false])
+         (true :: pairSnd (pairSnd st)) [])) =
+      match evalDig s with
+      | none => []
+      | some acc => true :: acc := by
+  cases s with
+  | fail =>
+      simp only [encodeDigSem, digPack, evalDig, pairFst_pair, pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [true] [false] = [false] :=
+        eqFlag_eq_false_of_ne (by simp)
+      rw [hf, selectHead_false]
+  | done acc =>
+      simp only [encodeDigSem, digPack, evalDig, pairFst_pair, pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [false] [false] = [true] :=
+        (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+      rw [hf, selectHead_true]
+  | run _ _ => simp [digMeasure] at h
+
+private def packDigits (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst (pairSnd st))) []
+    (Cobham.selectHead (Cobham.eqFlag (pairFst (pairSnd st)) [false])
+      (true :: pairSnd (pairSnd st)) [])
+
+private theorem packDigits_mem_FP : packDigits ∈ FP := by
+  have hflag : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hcons := mem_FP_comp hacc (Cobham.cons_mem_FP true)
+  have hok := eqFlagFn_mem_FP hflag (constFn_mem_FP [false])
+  have hinner := Cobham.selectHeadFn_mem_FP hok hcons (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hflag)
+    (constFn_mem_FP []) hinner
+
+private def digInit (z : List Bool) : List Bool := digPack z [] []
+
+private def digRuler (z : List Bool) : List Bool := z ++ [false]
+
+private def digWidth (z : List Bool) : List Bool :=
+  List.replicate ((List.replicate 8 false).length * (z ++ [false]).length) false
+
+private theorem digInit_mem_FP : digInit ∈ FP :=
+  Cobham.pairFn_mem_FP id_mem_FP (constFn_mem_FP (pair [] []))
+
+private theorem digRuler_mem_FP : digRuler ∈ FP :=
+  Cobham.appendFn_mem_FP id_mem_FP (constFn_mem_FP [false])
+
+private theorem digWidth_mem_FP : digWidth ∈ FP :=
+  Cobham.mulLenFn_mem_FP (Cobham.const_replicate_mem_FP 8)
+    (Cobham.appendFn_mem_FP id_mem_FP (constFn_mem_FP [false]))
+
+private theorem digRuler_length (z : List Bool) :
+    (digRuler z).length = z.length + 1 := by
+  simp [digRuler]
+
+private theorem digWidth_length (z : List Bool) :
+    (digWidth z).length = 8 * (z.length + 1) := by
+  simp [digWidth, List.length_replicate, List.length_append]
+
+private theorem flag_length_le_one (flag : List Bool)
+    (h : flag = [] ∨ flag = [false] ∨ flag = [true]) :
+    flag.length ≤ 1 := by
+  rcases h with rfl | rfl | rfl <;> simp
+
+
+private structure DigReach (z : List Bool) (n : Nat) (st : List Bool) : Prop where
+  rem_le : (pairFst st).length ≤ z.length
+  acc_le : (pairSnd (pairSnd st)).length ≤ n
+  flag_le : (pairFst (pairSnd st)).length ≤ 1
+  st_le : st.length ≤ 8 * (z.length + 1)
+
+private theorem digReach_init (z : List Bool) : DigReach z 0 (digInit z) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · simp [digInit, digPack]
+  · simp [digInit, digPack]
+  · simp [digInit, digPack]
+  · simp [digInit, digPack, pair_length]; omega
+
+private theorem digReach_selectHead (z : List Bool) (n : Nat) (s x y : List Bool)
+    (hx : DigReach z n x) (hy : DigReach z n y) :
+    DigReach z n (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil]
+
+private theorem digReach_pack (z : List Bool) (n : Nat) (rem flag acc : List Bool)
+    (hrem : rem.length ≤ z.length) (hacc : acc.length ≤ n)
+    (hflag : flag.length ≤ 1) (hn : n ≤ z.length + 1) :
+    DigReach z n (digPack rem flag acc) := by
+  constructor
+  · simpa [digPack] using hrem
+  · simpa [digPack] using hacc
+  · simpa [digPack] using hflag
+  · simp [digPack, pair_length]; omega
+
+private theorem digStep_reach (z : List Bool) (n : Nat) (st : List Bool)
+    (hn : n ≤ z.length) (h : DigReach z n st) :
+    DigReach z (n + 1) (digStep st) := by
+  unfold digStep
+  have hstay : DigReach z (n + 1) st :=
+    ⟨h.rem_le, Nat.le_succ_of_le h.acc_le, h.flag_le, h.st_le⟩
+  have hsucc : DigReach z (n + 1)
+      (digPack (pairFst st) [false] (pairSnd (pairSnd st))) :=
+    digReach_pack z (n + 1) _ _ _ h.rem_le (Nat.le_succ_of_le h.acc_le) (by simp)
+      (Nat.succ_le_succ hn)
+  have hfail : DigReach z (n + 1) (digPack [] [true] []) :=
+    digReach_pack z (n + 1) _ _ _ (by simp) (by simp) (by simp) (Nat.succ_le_succ hn)
+  have hcons (b : Bool) : DigReach z (n + 1)
+      (digPack (nodeRight (pairFst st)) (pairFst (pairSnd st))
+        (pairSnd (pairSnd st) ++ [b])) := by
+    refine digReach_pack z (n + 1) _ _ _ ?_ ?_ h.flag_le (Nat.succ_le_succ hn)
+    · have := nodeRight_length_le (pairFst st)
+      have := h.rem_le
+      omega
+    · have := h.acc_le
+      simp
+      omega
+  exact digReach_selectHead z (n + 1) (emptyFlag (pairFst (pairSnd st))) _ st
+    (digReach_selectHead z (n + 1) (Cobham.eqFlag (pairFst st) [false]) _ _
+      hsucc
+      (digReach_selectHead z (n + 1) (emptyFlag (splitNode (pairFst st))) _ _
+        hfail
+        (digReach_selectHead z (n + 1)
+          (Cobham.eqFlag (nodeLeft (pairFst st)) [false]) _ _
+          (hcons false)
+          (digReach_selectHead z (n + 1)
+            (Cobham.eqFlag (nodeLeft (pairFst st)) [true, false, false]) _ _
+            (hcons true) hfail))))
+    hstay
+
+private theorem digReach_iterate (z : List Bool) :
+    ∀ n, n ≤ z.length + 1 → DigReach z n (digStep^[n] (digInit z)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact digReach_init z
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact digStep_reach z n _ (by omega) (ih (by omega))
+
+private theorem digStep_iterate_length (z : List Bool) (n : Nat)
+    (hn : n ≤ (digRuler z).length) :
+    (digStep^[n] (digInit z)).length ≤ (digWidth z).length := by
+  have hr := digReach_iterate z n (by simpa [digRuler_length] using hn)
+  simpa [digWidth_length] using hr.st_le
+
+private def readDigitsTag (z : List Bool) : List Bool :=
+  packDigits (digStep^[(digRuler z).length] (digInit z))
+
+private theorem readDigitsTag_of_tree (t : CMMSACodec.Tree) :
+    readDigitsTag (CMMSACodec.Tree.encode t) =
+      match readDigits t with
+      | none => []
+      | some bs => true :: bs := by
+  have henc : digInit (CMMSACodec.Tree.encode t) = encodeDigSem (.run t []) := rfl
+  have hiter := digStep_iterate_encode (.run t []) (digRuler (CMMSACodec.Tree.encode t)).length
+  rw [readDigitsTag, henc, hiter]
+  have hstuck : digMeasure (digSemStep^[(digRuler (CMMSACodec.Tree.encode t)).length]
+      (.run t [])) = 0 := by
+    apply iterate_ge_digStuck
+    simp [digMeasure, digRuler_length]
+  have heval := evalDig_iterate (.run t []) (digRuler (CMMSACodec.Tree.encode t)).length
+  have hpack := pack_evalDig _ hstuck
+  simp only [packDigits]
+  rw [hpack, heval]
+  simp [evalDig]
+  rfl
+
+private theorem readDigitsTag_mem_FP : readDigitsTag ∈ FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (digRuler z).length,
+      (digStep^[n] (digInit z)).length ≤ (digWidth z).length := by
+    intro z n hn
+    exact digStep_iterate_length z n hn
+  have hiter := Cobham.iterate_mem_FP digStep_mem_FP digInit_mem_FP
+    digRuler_mem_FP digWidth_mem_FP hbound
+  exact mem_FP_comp hiter packDigits_mem_FP
+
+
+private def readNatTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (readDigitsTag z)) []
+    (true :: encodeDigits (stripTrailing (dropOne (readDigitsTag z))))
+
+private theorem readNatTag_mem_FP : readNatTag ∈ FP := by
+  have hdig := readDigitsTag_mem_FP
+  have hdrop := dropOneFn_mem_FP hdig
+  have hstrip := mem_FP_comp hdrop stripTrailing_mem_FP
+  have henc := mem_FP_comp hstrip encodeDigits_mem_FP
+  have hcons := mem_FP_comp henc (Cobham.cons_mem_FP true)
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hdig)
+    (constFn_mem_FP []) hcons
+
+private theorem readNatTag_of_tree (t : CMMSACodec.Tree) :
+    readNatTag (CMMSACodec.Tree.encode t) =
+      match readNat t with
+      | none => []
+      | some n => true :: CMMSACodec.Tree.encode (natTree n) := by
+  rw [readNatTag, readDigitsTag_of_tree]
+  cases hd : readDigits t with
+  | none =>
+      simp [readNat, hd, emptyFlag_nil]
+  | some bs =>
+      simp [readNat, hd, emptyFlag_cons, dropOne_cons, stripTrailing_eq_bits,
+        encodeDigits_eq, natTree]
+
+
+
+private theorem bitValue_eq_binValLE : ∀ l : List Bool, bitValue l = binValLE l
+  | [] => rfl
+  | false :: t => by simp [bitValue, binValLE, bitValue_eq_binValLE t]
+  | true :: t => by
+      have h := bitValue_eq_binValLE t
+      simp [bitValue, binValLE, h]
+
+private theorem bitValue_snoc_false (l : List Bool) :
+    bitValue (l ++ [false]) = bitValue l := by
+  induction l with
+  | nil => simp [bitValue]
+  | cons b t ih =>
+      cases b <;> simp [bitValue, ih]
+
+private theorem bitValue_append_false (l : List Bool) :
+    ∀ n, bitValue (l ++ List.replicate n false) = bitValue l
+  | 0 => by simp
+  | n + 1 => by
+      have h := bitValue_append_false (l ++ [false]) n
+      simpa [List.append_assoc, List.replicate_succ] using
+        (h.trans (bitValue_snoc_false l))
+
+private theorem bitValue_padTo (r x : List Bool) (h : x.length ≤ r.length) :
+    bitValue (padTo r x) = bitValue x := by
+  rw [padTo_eq_append r x h, bitValue_append_false]
+
+private def wide (a b : List Bool) : List Bool := a ++ b ++ [false]
+
+private theorem wide_length (a b : List Bool) :
+    (wide a b).length = a.length + b.length + 1 := by
+  simp [wide, List.length_append]; omega
+
+private theorem le_wide_left (a b : List Bool) : a.length ≤ (wide a b).length := by
+  simp [wide_length]; omega
+
+private theorem le_wide_right (a b : List Bool) : b.length ≤ (wide a b).length := by
+  simp [wide_length]; omega
+
+private def addCanon (a b : List Bool) : List Bool :=
+  stripTrailing
+    (addBits (padTo (wide a b) a) (padTo (wide a b) b) ++
+      Cobham.selectHead (addCarry (padTo (wide a b) a) (padTo (wide a b) b)) [true] [])
+
+private theorem xorSuffixFn_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => Cobham.xorSuffix (a z) (b z)) ∈ FP :=
+  binFn_mem_FP (g := Cobham.xorSuffix)
+    (Cobham.xorSuffix_mem (Cobham.proj 0) (Cobham.proj 1)) ha hb
+
+private theorem wideFn_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => wide (a z) (b z)) ∈ FP :=
+  Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP ha hb) (constFn_mem_FP [false])
+
+private theorem addCanon_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => addCanon (a z) (b z)) ∈ FP := by
+  have hw := wideFn_mem_FP ha hb
+  have hpa := padToFn_mem_FP hw ha
+  have hpb := padToFn_mem_FP hw hb
+  have hs := addBitsFn_mem_FP hpa hpb
+  have hc := addCarryFn_mem_FP hpa hpb
+  have hbit := Cobham.selectHeadFn_mem_FP hc (constFn_mem_FP [true]) (constFn_mem_FP [])
+  have happ := Cobham.appendFn_mem_FP hs hbit
+  exact mem_FP_comp happ stripTrailing_mem_FP
+
+private def ltCanon (a b : List Bool) : List Bool :=
+  ltFlag (padTo (wide a b) a) (padTo (wide a b) b)
+
+private theorem ltCanon_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => ltCanon (a z) (b z)) ∈ FP :=
+  ltFlagFn_mem_FP (padToFn_mem_FP (wideFn_mem_FP ha hb) ha)
+    (padToFn_mem_FP (wideFn_mem_FP ha hb) hb)
+
+private theorem ltCanon_true_iff (a b : List Bool) :
+    ltCanon a b = [true] ↔ bitValue a < bitValue b := by
+  have hlen : (padTo (wide a b) b).length = (padTo (wide a b) a).length := by
+    simp [padTo_length]
+  have hlt := ltFlag_eq_true_iff (padTo (wide a b) a) (padTo (wide a b) b) hlen
+  have ha := bitValue_padTo (wide a b) a (le_wide_left a b)
+  have hb := bitValue_padTo (wide a b) b (le_wide_right a b)
+  rw [ltCanon, hlt, ← bitValue_eq_binValLE, ← bitValue_eq_binValLE, ha, hb]
+
+private def subCanon (a b : List Bool) : List Bool :=
+  let w := wide a b
+  let pa := padTo w a
+  let pb := padTo w b
+  let binv := Cobham.xorSuffix pb (List.replicate w.length true)
+  let bneg := addBits binv (padTo w [true])
+  stripTrailing (addBits pa bneg)
+
+private theorem subCanon_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => subCanon (a z) (b z)) ∈ FP := by
+  have hw := wideFn_mem_FP ha hb
+  have hpa := padToFn_mem_FP hw ha
+  have hpb := padToFn_mem_FP hw hb
+  have hones : (fun z => List.replicate (wide (a z) (b z)).length true) ∈ FP :=
+    mem_FP_comp hw unaryLength_mem_FP
+  have hinv := xorSuffixFn_mem_FP hpb hones
+  have hone := padToFn_mem_FP hw (constFn_mem_FP [true])
+  have hbneg := addBitsFn_mem_FP hinv hone
+  have hsum := addBitsFn_mem_FP hpa hbneg
+  exact mem_FP_comp hsum stripTrailing_mem_FP
+
+private def shl1 (x : List Bool) : List Bool := stripTrailing (false :: x)
+
+private theorem shl1_mem_FP {a : List Bool → List Bool} (ha : a ∈ FP) :
+    (fun z => shl1 (a z)) ∈ FP :=
+  mem_FP_comp (mem_FP_comp ha (Cobham.cons_mem_FP false)) stripTrailing_mem_FP
+
+private theorem shl1_bitValue (x : List Bool) :
+    bitValue (shl1 x) = 2 * bitValue x := by
+  simp [shl1, stripTrailing_eq_bits, bitValue_false, bitValue_bits]
+
+private theorem shl1_length (x : List Bool) : (shl1 x).length ≤ x.length + 1 := by
+  simpa [shl1] using length_stripTrailing (false :: x)
+
+private theorem addCanon_length (a b : List Bool) :
+    (addCanon a b).length ≤ a.length + b.length + 2 := by
+  have hlen :
+      (addBits (padTo (wide a b) a) (padTo (wide a b) b)).length =
+        (wide a b).length := by
+    have hw : (padTo (wide a b) b).length = (padTo (wide a b) a).length := by
+      simp [padTo_length]
+    rw [addBits_length _ _ hw, padTo_length]
+  have hcarry :
+      (Cobham.selectHead (addCarry (padTo (wide a b) a) (padTo (wide a b) b))
+        [true] []).length ≤ 1 :=
+    (Cobham.selectHead_length_le _ _ _).trans (by simp)
+  have happ :
+      (addBits (padTo (wide a b) a) (padTo (wide a b) b) ++
+        Cobham.selectHead (addCarry (padTo (wide a b) a) (padTo (wide a b) b))
+          [true] []).length ≤ (wide a b).length + 1 := by
+    simp only [List.length_append, hlen]
+    omega
+  have hst := length_stripTrailing
+    (addBits (padTo (wide a b) a) (padTo (wide a b) b) ++
+      Cobham.selectHead (addCarry (padTo (wide a b) a) (padTo (wide a b) b))
+        [true] [])
+  change (stripTrailing
+      (addBits (padTo (wide a b) a) (padTo (wide a b) b) ++
+        Cobham.selectHead (addCarry (padTo (wide a b) a) (padTo (wide a b) b))
+          [true] [])).length ≤ _
+  exact hst.trans (happ.trans (by have := wide_length a b; omega))
+
+private theorem subCanon_length (a b : List Bool) :
+    (subCanon a b).length ≤ a.length + b.length + 1 := by
+  have hlen :
+      (addBits (padTo (wide a b) a)
+        (addBits (Cobham.xorSuffix (padTo (wide a b) b)
+          (List.replicate (wide a b).length true))
+          (padTo (wide a b) [true]))).length =
+        (wide a b).length := by
+    have hw : (padTo (wide a b) [true]).length = (padTo (wide a b) b).length := by
+      simp [padTo_length]
+    
+    have h1 :
+        (addBits (Cobham.xorSuffix (padTo (wide a b) b)
+          (List.replicate (wide a b).length true))
+          (padTo (wide a b) [true])).length = (wide a b).length := by
+      have hx : (Cobham.xorSuffix (padTo (wide a b) b)
+          (List.replicate (wide a b).length true)).length =
+          (padTo (wide a b) b).length := Cobham.xorSuffix_length _ _
+      have hy : (padTo (wide a b) [true]).length = (padTo (wide a b) b).length := by
+        simp [padTo_length]
+      have : (padTo (wide a b) [true]).length =
+          (Cobham.xorSuffix (padTo (wide a b) b)
+            (List.replicate (wide a b).length true)).length := by
+        simp [padTo_length, Cobham.xorSuffix_length]
+      rw [addBits_length _ _ this, hx, padTo_length]
+    have hpa : (padTo (wide a b) a).length = (wide a b).length := padTo_length _ _
+    have : (addBits (Cobham.xorSuffix (padTo (wide a b) b)
+          (List.replicate (wide a b).length true))
+          (padTo (wide a b) [true])).length = (padTo (wide a b) a).length := by
+      rw [h1, hpa]
+    rw [addBits_length _ _ this, hpa]
+  have hst := length_stripTrailing
+    (addBits (padTo (wide a b) a)
+      (addBits (Cobham.xorSuffix (padTo (wide a b) b)
+        (List.replicate (wide a b).length true))
+        (padTo (wide a b) [true])))
+  simp [subCanon] at hst ⊢
+  have := wide_length a b
+  omega
+
+private def addBit (x : List Bool) : List Bool := addCanon x [true]
+
+private theorem addBit_mem_FP {a : List Bool → List Bool} (ha : a ∈ FP) :
+    (fun z => addBit (a z)) ∈ FP :=
+  addCanon_mem_FP ha (constFn_mem_FP [true])
+
+
+private def divPack (rem q r b : List Bool) : List Bool :=
+  pair rem (pair q (pair r b))
+
+private def divStep (st : List Bool) : List Bool :=
+  let rem := pairFst st
+  let q := pairFst (pairSnd st)
+  let r := pairFst (pairSnd (pairSnd st))
+  let b := pairSnd (pairSnd (pairSnd st))
+  Cobham.selectHead (emptyFlag rem) st
+    (let r2 := Cobham.selectHead rem (addBit (shl1 r)) (shl1 r)
+     let take := Cobham.selectHead (ltCanon r2 b)
+       (divPack (dropOne rem) (q ++ [false]) r2 b)
+       (divPack (dropOne rem) (q ++ [true]) (subCanon r2 b) b)
+     take)
+
+private theorem divStep_mem_FP : divStep ∈ FP := by
+  have hrem : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hq : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hr : (fun st : List Bool => pairFst (pairSnd (pairSnd st))) ∈ FP :=
+    mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+      Cobham.fstBlock_mem_FP
+  have hb : (fun st : List Bool => pairSnd (pairSnd (pairSnd st))) ∈ FP :=
+    mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+      Cobham.sndBlock_mem_FP
+  have hdrem := dropOneFn_mem_FP hrem
+  have hr2 := Cobham.selectHeadFn_mem_FP hrem (addBit_mem_FP (shl1_mem_FP hr))
+    (shl1_mem_FP hr)
+  have hlt := ltCanon_mem_FP hr2 hb
+  have hsub := subCanon_mem_FP hr2 hb
+  have hq0 := Cobham.appendFn_mem_FP hq (constFn_mem_FP [false])
+  have hq1 := Cobham.appendFn_mem_FP hq (constFn_mem_FP [true])
+  have hpack0 : (fun st : List Bool =>
+      divPack (dropOne (pairFst st))
+        (pairFst (pairSnd st) ++ [false])
+        (Cobham.selectHead (pairFst st)
+          (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+          (shl1 (pairFst (pairSnd (pairSnd st)))))
+        (pairSnd (pairSnd (pairSnd st)))) ∈ FP :=
+    Cobham.pairFn_mem_FP hdrem
+      (Cobham.pairFn_mem_FP hq0 (Cobham.pairFn_mem_FP hr2 hb))
+  have hpack1 : (fun st : List Bool =>
+      divPack (dropOne (pairFst st))
+        (pairFst (pairSnd st) ++ [true])
+        (subCanon
+          (Cobham.selectHead (pairFst st)
+            (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+            (shl1 (pairFst (pairSnd (pairSnd st)))))
+          (pairSnd (pairSnd (pairSnd st))))
+        (pairSnd (pairSnd (pairSnd st)))) ∈ FP :=
+    Cobham.pairFn_mem_FP hdrem
+      (Cobham.pairFn_mem_FP hq1 (Cobham.pairFn_mem_FP hsub hb))
+  have htake := Cobham.selectHeadFn_mem_FP hlt hpack0 hpack1
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hrem) id_mem_FP htake
+
+private def divInit (a b : List Bool) : List Bool :=
+  divPack a.reverse [] [] b
+
+private def divRuler (a b : List Bool) : List Bool := a ++ [false]
+
+private def divWidth (a b : List Bool) : List Bool :=
+  List.replicate
+    ((a ++ b ++ List.replicate 16 false).length *
+      (a ++ b ++ List.replicate 16 false).length) false
+
+private theorem divInit_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => divInit (a z) (b z)) ∈ FP :=
+  Cobham.pairFn_mem_FP (mem_FP_comp ha reverse_mem_FP)
+    (Cobham.pairFn_mem_FP (constFn_mem_FP [])
+      (Cobham.pairFn_mem_FP (constFn_mem_FP []) hb))
+
+private theorem divRuler_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (_hb : b ∈ FP) :
+    (fun z => divRuler (a z) (b z)) ∈ FP :=
+  Cobham.appendFn_mem_FP ha (constFn_mem_FP [false])
+
+private theorem divWidth_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => divWidth (a z) (b z)) ∈ FP := by
+  have harg : (fun z => a z ++ b z ++ List.replicate 16 false) ∈ FP :=
+    Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP ha hb)
+      (Cobham.const_replicate_mem_FP 16)
+  exact Cobham.mulLenFn_mem_FP harg harg
+
+private theorem divRuler_length (a b : List Bool) :
+    (divRuler a b).length = a.length + 1 := by
+  simp [divRuler]
+
+private theorem divWidth_length (a b : List Bool) :
+    (divWidth a b).length =
+      (a.length + b.length + 16) * (a.length + b.length + 16) := by
+  simp [divWidth, List.length_append, List.length_replicate]
+  ac_rfl
+
+private theorem divPack_length (rem q r b : List Bool) :
+    (divPack rem q r b).length =
+      2 * rem.length + 2 * q.length + 2 * r.length + b.length + 6 := by
+  simp [divPack, pair_length]; omega
+
+private theorem sq16_bound (x y : Nat) :
+    2 * x + y + 6 ≤ (x + y + 16) * (x + y + 16) := by
+  have h1 : 2 * x + y + 6 ≤ 2 * (x + y + 16) := by omega
+  have h2 : 2 ≤ x + y + 16 := by omega
+  have h3 : 2 * (x + y + 16) ≤ (x + y + 16) * (x + y + 16) := by
+    simpa [Nat.mul_comm (x + y + 16) 2] using
+      Nat.mul_le_mul_left (x + y + 16) h2
+  exact h1.trans h3
+
+private structure DivReach (a b : List Bool) (n : Nat) (st : List Bool) : Prop where
+  rem_le : (pairFst st).length ≤ a.length
+  q_le : (pairFst (pairSnd st)).length ≤ n
+  r_le : (pairFst (pairSnd (pairSnd st))).length ≤ 5 * n + n * b.length + 32
+  b_le : (pairSnd (pairSnd (pairSnd st))).length ≤ b.length
+  st_le : st.length ≤ (a.length + b.length + 16) * (a.length + b.length + 16)
+
+private theorem divReach_init (a b : List Bool) : DivReach a b 0 (divInit a b) := by
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · simp [divInit, divPack, List.length_reverse]
+  · simp [divInit, divPack]
+  · simp [divInit, divPack]
+  · simp [divInit, divPack]
+  · simp [divInit, divPack, pair_length, List.length_reverse]
+    have := sq16_bound a.length b.length
+    omega
+
+private theorem divReach_selectHead (a b : List Bool) (n : Nat) (s x y : List Bool)
+    (hx : DivReach a b n x) (hy : DivReach a b n y) :
+    DivReach a b n (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil]
+
+private theorem r2_length (r rem : List Bool) :
+    (Cobham.selectHead rem (addBit (shl1 r)) (shl1 r)).length ≤ r.length + 4 := by
+  have hsel := Cobham.selectHead_length_le rem (addBit (shl1 r)) (shl1 r)
+  have h1 := shl1_length r
+  have h2 : (addBit (shl1 r)).length ≤ r.length + 4 := by
+    have hcan := addCanon_length (shl1 r) [true]
+    have hshl := shl1_length r
+    have heq : addBit (shl1 r) = addCanon (shl1 r) [true] := rfl
+    rw [heq]
+    have : (shl1 r).length + [true].length + 2 ≤ r.length + 4 := by
+      simp; omega
+    exact hcan.trans this
+  have hmax : max (addBit (shl1 r)).length (shl1 r).length ≤ r.length + 4 :=
+    Nat.max_le.mpr ⟨h2, h1.trans (Nat.le_add_right _ 3)⟩
+  exact hsel.trans hmax
+
+private theorem divReach_pack (a b : List Bool) (n : Nat)
+    (rem q r bb : List Bool)
+    (hrem : rem.length ≤ a.length) (hq : q.length ≤ n)
+    (hr : r.length ≤ 5 * n + n * b.length + 32) (hb : bb.length ≤ b.length)
+    (hn : n ≤ a.length + 1) :
+    DivReach a b n (divPack rem q r bb) := by
+  refine ⟨?_, ?_, ?_, ?_, ?_⟩
+  · simpa [divPack] using hrem
+  · simpa [divPack] using hq
+  · simpa [divPack] using hr
+  · simpa [divPack] using hb
+  · simp [divPack, pair_length]
+    have hlin :
+        2 * rem.length + 2 * q.length + 2 * r.length + bb.length + 6 ≤
+          2 * a.length + 2 * n + 2 * (5 * n + n * b.length + 32) + b.length + 6 := by
+      omega
+    have hn12 : 12 * n ≤ 12 * (a.length + 1) := Nat.mul_le_mul_left _ hn
+    have hnb : 2 * (n * b.length) ≤ 2 * ((a.length + 1) * b.length) :=
+      Nat.mul_le_mul_left _ (Nat.mul_le_mul_right _ hn)
+    have hsq := sq16_bound a.length b.length
+    have hex :
+        2 * a.length + 2 * n + 2 * (5 * n + n * b.length + 32) + b.length + 6 =
+          2 * a.length + 12 * n + 2 * (n * b.length) + b.length + 70 := by
+      ring
+    have hfin : 2 * a.length + 12 * (a.length + 1) +
+        2 * ((a.length + 1) * b.length) + b.length + 70 ≤
+          (a.length + b.length + 16) * (a.length + b.length + 16) := by
+      have := sq16_bound a.length b.length
+      ring_nf
+      nlinarith
+    omega
+
+private theorem divStep_reach (a b : List Bool) (n : Nat) (st : List Bool)
+    (hn : n ≤ a.length) (h : DivReach a b n st) :
+    DivReach a b (n + 1) (divStep st) := by
+  unfold divStep
+  have hnb : n * b.length ≤ (n + 1) * b.length :=
+    Nat.mul_le_mul_right _ (Nat.le_succ n)
+  have hstay : DivReach a b (n + 1) st :=
+    ⟨h.rem_le, Nat.le_succ_of_le h.q_le,
+      by have := h.r_le; omega, h.b_le, h.st_le⟩
+  have hr2 := r2_length (pairFst (pairSnd (pairSnd st))) (pairFst st)
+  have hrem' : (dropOne (pairFst st)).length ≤ a.length := by
+    have := h.rem_le
+    simp [dropOne]; omega
+  have hq0 : (pairFst (pairSnd st) ++ [false]).length ≤ n + 1 := by
+    have := h.q_le; simp; omega
+  have hq1 : (pairFst (pairSnd st) ++ [true]).length ≤ n + 1 := by
+    have := h.q_le; simp; omega
+  have hr' : (Cobham.selectHead (pairFst st)
+      (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+      (shl1 (pairFst (pairSnd (pairSnd st))))).length ≤
+        5 * (n + 1) + (n + 1) * b.length + 32 := by
+    have := h.r_le
+    have := r2_length (pairFst (pairSnd (pairSnd st))) (pairFst st)
+    have := hnb
+    omega
+  have hsub : (subCanon
+      (Cobham.selectHead (pairFst st)
+        (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+        (shl1 (pairFst (pairSnd (pairSnd st)))))
+      (pairSnd (pairSnd (pairSnd st)))).length ≤
+        5 * (n + 1) + (n + 1) * b.length + 32 := by
+    have hs := subCanon_length
+      (Cobham.selectHead (pairFst st)
+        (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+        (shl1 (pairFst (pairSnd (pairSnd st)))))
+      (pairSnd (pairSnd (pairSnd st)))
+    have h1 := r2_length (pairFst (pairSnd (pairSnd st))) (pairFst st)
+    have h2 := h.r_le
+    have h3 := h.b_le
+    have h4 := hnb
+    have h5 :
+        (Cobham.selectHead (pairFst st)
+            (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+            (shl1 (pairFst (pairSnd (pairSnd st))))).length +
+          (pairSnd (pairSnd (pairSnd st))).length + 1 ≤
+            5 * (n + 1) + (n + 1) * b.length + 32 := by
+      have hr2 := h1
+      have hr := h2
+      have hb := h3
+      have hmul := h4
+      have : 5 * n + n * b.length + b.length + 37 =
+          5 * (n + 1) + (n + 1) * b.length + 32 := by
+        ring
+      omega
+    exact hs.trans h5
+  have hpack0 := divReach_pack a b (n + 1)
+    (dropOne (pairFst st)) (pairFst (pairSnd st) ++ [false])
+    (Cobham.selectHead (pairFst st)
+      (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+      (shl1 (pairFst (pairSnd (pairSnd st)))))
+    (pairSnd (pairSnd (pairSnd st)))
+    hrem' hq0 hr' h.b_le (Nat.succ_le_succ hn)
+  have hpack1 := divReach_pack a b (n + 1)
+    (dropOne (pairFst st)) (pairFst (pairSnd st) ++ [true])
+    (subCanon
+      (Cobham.selectHead (pairFst st)
+        (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+        (shl1 (pairFst (pairSnd (pairSnd st)))))
+      (pairSnd (pairSnd (pairSnd st))))
+    (pairSnd (pairSnd (pairSnd st)))
+    hrem' hq1 hsub h.b_le (Nat.succ_le_succ hn)
+  exact divReach_selectHead a b (n + 1) (emptyFlag (pairFst st)) st _
+    hstay
+    (divReach_selectHead a b (n + 1)
+      (ltCanon
+        (Cobham.selectHead (pairFst st)
+          (addBit (shl1 (pairFst (pairSnd (pairSnd st)))))
+          (shl1 (pairFst (pairSnd (pairSnd st)))))
+        (pairSnd (pairSnd (pairSnd st))))
+      _ _ hpack0 hpack1)
+
+private theorem divReach_iterate (a b : List Bool) :
+    ∀ n, n ≤ a.length + 1 → DivReach a b n (divStep^[n] (divInit a b)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact divReach_init a b
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact divStep_reach a b n _ (by omega) (ih (by omega))
+
+private theorem divIterate_length (a b : List Bool) :
+    ∀ n, n ≤ a.length + 1 →
+      (divStep^[n] (divInit a b)).length ≤ (divWidth a b).length := by
+  intro n hn
+  have hr := divReach_iterate a b n hn
+  simpa [divWidth_length] using hr.st_le
+
+private def divRunPair (z : List Bool) : List Bool :=
+  divStep^[(divRuler (pairFst z) (pairSnd z)).length]
+    (divInit (pairFst z) (pairSnd z))
+
+private theorem divRunPair_mem_FP : divRunPair ∈ FP := by
+  have hinit : (fun z => divInit (pairFst z) (pairSnd z)) ∈ FP :=
+    divInit_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hruler := divRuler_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hwidth := divWidth_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hbound : ∀ z : List Bool, ∀ n ≤ (divRuler (pairFst z) (pairSnd z)).length,
+      (divStep^[n] (divInit (pairFst z) (pairSnd z))).length ≤
+        (divWidth (pairFst z) (pairSnd z)).length := by
+    intro z n hn
+    have : n ≤ (pairFst z).length + 1 := by
+      simpa [divRuler_length] using hn
+    exact divIterate_length (pairFst z) (pairSnd z) n this
+  exact Cobham.iterate_mem_FP divStep_mem_FP hinit hruler hwidth hbound
+
+private def quotBits (a b : List Bool) : List Bool :=
+  stripTrailing (pairFst (pairSnd (divRunPair (pair a b)))).reverse
+
+private theorem quotBits_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => quotBits (a z) (b z)) ∈ FP := by
+  have hrun := mem_FP_comp (Cobham.pairFn_mem_FP ha hb) divRunPair_mem_FP
+  have hq := mem_FP_comp hrun
+    (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP)
+  exact mem_FP_comp (mem_FP_comp hq reverse_mem_FP) stripTrailing_mem_FP
+
+private def drop2Step (x : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag x) x (Cobham.selectHead x x (dropOne x))
+
+private theorem drop2Step_mem_FP : drop2Step ∈ FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP id_mem_FP) id_mem_FP
+    (Cobham.selectHeadFn_mem_FP id_mem_FP id_mem_FP (dropOneFn_mem_FP id_mem_FP))
+
+private theorem drop2Step_length (x : List Bool) :
+    (drop2Step x).length ≤ x.length := by
+  unfold drop2Step
+  have hsel := Cobham.selectHead_length_le (emptyFlag x) x
+    (Cobham.selectHead x x (dropOne x))
+  have h1 : (Cobham.selectHead x x (dropOne x)).length ≤ x.length := by
+    have := Cobham.selectHead_length_le x x (dropOne x)
+    have : (dropOne x).length ≤ x.length := by simp [dropOne]
+    omega
+  omega
+
+private def dropTwos (x : List Bool) : List Bool := drop2Step^[x.length] x
+
+private theorem dropTwos_mem_FP {a : List Bool → List Bool} (ha : a ∈ FP) :
+    (fun z => dropTwos (a z)) ∈ FP := by
+  have hbound : ∀ z : List Bool, ∀ n, (drop2Step^[n] (a z)).length ≤ (a z).length := by
+    intro z n
+    induction n with
+    | zero => simp
+    | succ n ih =>
+        rw [Function.iterate_succ_apply']
+        exact (drop2Step_length _).trans ih
+  exact Cobham.iterate_mem_FP drop2Step_mem_FP ha ha ha
+    (fun z n _ => hbound z n)
+
+private def gcdStep (st : List Bool) : List Bool :=
+  let a := pairFst st
+  let b := pairSnd st
+  Cobham.selectHead (emptyFlag a) st
+    (Cobham.selectHead (emptyFlag b) st
+      (Cobham.selectHead (Cobham.eqFlag a b) st
+        (Cobham.selectHead (ltCanon a b)
+          (pair a (dropTwos (subCanon b a)))
+          (pair (dropTwos (subCanon a b)) b))))
+
+private theorem gcdStep_mem_FP : gcdStep ∈ FP := by
+  have ha : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hb : (fun st : List Bool => pairSnd st) ∈ FP := Cobham.sndBlock_mem_FP
+  have hsubba := subCanon_mem_FP hb ha
+  have hsubab := subCanon_mem_FP ha hb
+  have hdropba := dropTwos_mem_FP hsubba
+  have hdropab := dropTwos_mem_FP hsubab
+  have hlt := ltCanon_mem_FP ha hb
+  have heq := eqFlagFn_mem_FP ha hb
+  have hpack1 := Cobham.pairFn_mem_FP ha hdropba
+  have hpack0 := Cobham.pairFn_mem_FP hdropab hb
+  have hcmp := Cobham.selectHeadFn_mem_FP hlt hpack1 hpack0
+  have heqc := Cobham.selectHeadFn_mem_FP heq id_mem_FP hcmp
+  have hb0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hb) id_mem_FP heqc
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP ha) id_mem_FP hb0
+
+private theorem bitValue_lt_two_pow : ∀ l : List Bool, bitValue l < 2 ^ l.length
+  | [] => by simp [bitValue]
+  | false :: t => by
+      have h := bitValue_lt_two_pow t
+      simp [bitValue, Nat.pow_succ]; omega
+  | true :: t => by
+      have h := bitValue_lt_two_pow t
+      simp [bitValue, Nat.pow_succ]; omega
+
+private theorem bitValue_zipWith_xor_ones :
+    ∀ l : List Bool,
+      bitValue (List.zipWith Bool.xor l (List.replicate l.length true))
+        = 2 ^ l.length - 1 - bitValue l
+  | [] => by simp [bitValue]
+  | false :: t => by
+      have ih := bitValue_zipWith_xor_ones t
+      have ht := bitValue_lt_two_pow t
+      simp [List.replicate_succ, List.zipWith, bitValue, Nat.pow_succ, ih] at *
+      omega
+  | true :: t => by
+      have ih := bitValue_zipWith_xor_ones t
+      have ht := bitValue_lt_two_pow t
+      simp [List.replicate_succ, List.zipWith, bitValue, Nat.pow_succ, ih] at *
+      omega
+
+private theorem xorSuffix_ones (l : List Bool) :
+    Cobham.xorSuffix l (List.replicate l.length true)
+      = List.zipWith Bool.xor l (List.replicate l.length true) :=
+  Cobham.xorSuffix_eq_zipWith_of_length l _ (by simp [List.length_replicate])
+
+private theorem addBits_val (u v : List Bool) (h : v.length = u.length) :
+    binValLE (addBits u v) + (addBitsLE false u v).1.toNat * 2 ^ u.length
+      = binValLE u + binValLE v := by
+  simpa [addBits_eq u v h] using addBitsLE_binValLE false u v h
+
+private theorem padTo_true_bitValue (w : List Bool) (hw : 1 ≤ w.length) :
+    bitValue (padTo w [true]) = 1 := by
+  have hle : [true].length ≤ w.length := by simp; omega
+  rw [bitValue_padTo w [true] hle]
+  simp [bitValue]
+
+private theorem xor_ones_bitValue (l : List Bool) :
+    bitValue (Cobham.xorSuffix l (List.replicate l.length true))
+      = 2 ^ l.length - 1 - bitValue l := by
+  rw [xorSuffix_ones, bitValue_zipWith_xor_ones]
+
+private theorem bitValue_le_pow_wide (a b : List Bool) :
+    bitValue b < 2 ^ (wide a b).length :=
+  lt_of_lt_of_le (bitValue_lt_two_pow b)
+    (Nat.pow_le_pow_right Nat.zero_lt_two (by simp [wide_length]; omega))
+
+private theorem subCanon_unfold (a b : List Bool) :
+    subCanon a b =
+      stripTrailing
+        (addBits (padTo (wide a b) a)
+          (addBits (Cobham.xorSuffix (padTo (wide a b) b)
+              (List.replicate (wide a b).length true))
+            (padTo (wide a b) [true]))) :=
+  rfl
+
+private theorem subCanon_bitValue (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    bitValue (subCanon a b) = bitValue a - bitValue b := by
+  let w := wide a b
+  let pa := padTo w a
+  let pb := padTo w b
+  let binv := Cobham.xorSuffix pb (List.replicate w.length true)
+  let bneg := addBits binv (padTo w [true])
+  have hwpos : 1 ≤ w.length := by simp [w, wide_length]
+  have hpa_len : pa.length = w.length := padTo_length _ _
+  have hpb_len : pb.length = w.length := padTo_length _ _
+  have hinv_len : binv.length = w.length := by
+    simp [binv, Cobham.xorSuffix_length, pb, padTo_length]
+  have hpa_val : bitValue pa = bitValue a := bitValue_padTo w a (le_wide_left a b)
+  have hpb_val : bitValue pb = bitValue b := bitValue_padTo w b (le_wide_right a b)
+  have hone_val : bitValue (padTo w [true]) = 1 := padTo_true_bitValue w hwpos
+  have hinv_val : bitValue binv = 2 ^ w.length - 1 - bitValue b := by
+    have h1 : binv = Cobham.xorSuffix pb (List.replicate pb.length true) := by
+      simp [binv, pb, padTo_length]
+    rw [h1, xor_ones_bitValue, hpb_len, hpb_val]
+  have hneg_len : (padTo w [true]).length = binv.length := by
+    rw [padTo_length, hinv_len]
+  have hbneg_len : bneg.length = w.length := by
+    simp only [bneg]
+    rw [addBits_length _ _ hneg_len, hinv_len]
+  have hb_lt : bitValue b < 2 ^ w.length := bitValue_le_pow_wide a b
+  have hrhs :
+      binValLE binv + binValLE (padTo w [true]) = 2 ^ w.length - bitValue b := by
+    rw [← bitValue_eq_binValLE, ← bitValue_eq_binValLE, hinv_val, hone_val]
+    omega
+  have hneg_eq := addBits_val binv (padTo w [true]) hneg_len
+  have hneg_sum :
+      binValLE bneg + (addBitsLE false binv (padTo w [true])).1.toNat * 2 ^ w.length
+        = 2 ^ w.length - bitValue b := by
+    have hpow : 2 ^ binv.length = 2 ^ w.length := by rw [hinv_len]
+    simp only [bneg]
+    rw [hpow] at hneg_eq
+    rw [hneg_eq, hrhs]
+  have hsum_len : bneg.length = pa.length := by rw [hbneg_len, hpa_len]
+  have hsum := addBits_val pa bneg hsum_len
+  have hsumw :
+      binValLE (addBits pa bneg)
+        + (addBitsLE false pa bneg).1.toNat * 2 ^ w.length
+        = binValLE pa + binValLE bneg := by
+    have hpow : 2 ^ pa.length = 2 ^ w.length := by rw [hpa_len]
+    rw [← hpow]
+    exact hsum
+  have hstrip : bitValue (subCanon a b) = binValLE (addBits pa bneg) := by
+    rw [subCanon_unfold, stripTrailing_eq_bits, bitValue_bits, bitValue_eq_binValLE]
+  have hbits_lt : binValLE (addBits pa bneg) < 2 ^ w.length := by
+    have := binValLE_lt (addBits pa bneg)
+    have hlen : (addBits pa bneg).length = w.length := by
+      rw [addBits_length pa bneg hsum_len, hpa_len]
+    rwa [hlen] at this
+  have ha_lt : bitValue a < 2 ^ w.length :=
+    lt_of_lt_of_le (bitValue_lt_two_pow a)
+      (Nat.pow_le_pow_right Nat.zero_lt_two (by simp [w, wide_length]; omega))
+  cases hc : (addBitsLE false binv (padTo w [true])).1 with
+  | false =>
+      have hbneg_val : binValLE bneg = 2 ^ w.length - bitValue b := by
+        simp [hc, Bool.toNat] at hneg_sum
+        omega
+      have hsum' :
+          binValLE (addBits pa bneg)
+            + (addBitsLE false pa bneg).1.toNat * 2 ^ w.length
+            = bitValue a + (2 ^ w.length - bitValue b) := by
+        rw [hsumw, ← bitValue_eq_binValLE, hpa_val, hbneg_val]
+      cases hs : (addBitsLE false pa bneg).1 with
+      | false =>
+          simp [hs, Bool.toNat] at hsum'
+          omega
+      | true =>
+          simp [hs, Bool.toNat] at hsum'
+          have : binValLE (addBits pa bneg) = bitValue a - bitValue b := by
+            omega
+          rw [hstrip, this]
+  | true =>
+      have hb0 : bitValue b = 0 := by
+        simp [hc, Bool.toNat] at hneg_sum
+        omega
+      have hbneg0 : binValLE bneg = 0 := by
+        simp [hc, Bool.toNat] at hneg_sum
+        omega
+      have hsum' :
+          binValLE (addBits pa bneg)
+            + (addBitsLE false pa bneg).1.toNat * 2 ^ w.length
+            = bitValue a := by
+        rw [hsumw, ← bitValue_eq_binValLE, hpa_val, hbneg0]
+        simp
+      cases hs : (addBitsLE false pa bneg).1 with
+      | false =>
+          simp [hs, Bool.toNat] at hsum'
+          rw [hstrip, hsum', hb0, Nat.sub_zero]
+      | true =>
+          simp [hs, Bool.toNat] at hsum'
+          omega
+
+private theorem subCanon_length_of_le (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    (subCanon a b).length ≤ a.length := by
+  have hv := subCanon_bitValue a b h
+  have hbits : subCanon a b = (bitValue a - bitValue b).bits := by
+    have hst : subCanon a b = (bitValue (subCanon a b)).bits := by
+      rw [subCanon_unfold, stripTrailing_eq_bits, bitValue_bits]
+    simpa [hv] using hst
+  rw [hbits, Nat.size_eq_bits_len]
+  exact (Nat.size_le_size (Nat.sub_le _ _)).trans
+    (Nat.size_le.2 (bitValue_lt_two_pow a))
+
+private theorem dropTwos_length (x : List Bool) : (dropTwos x).length ≤ x.length := by
+  have hbound : ∀ n, (drop2Step^[n] x).length ≤ x.length := by
+    intro n
+    induction n with
+    | zero => simp
+    | succ n ih =>
+        rw [Function.iterate_succ_apply']
+        exact (drop2Step_length _).trans ih
+  exact hbound x.length
+
+private theorem pairFst_length_le : ∀ z : List Bool, (pairFst z).length ≤ z.length
+  | [] => by simp [pairFst]
+  | [_] => by simp [pairFst]
+  | false :: false :: z => by
+      have h := pairFst_length_le z
+      simp [pairFst]; omega
+  | true :: true :: z => by
+      have h := pairFst_length_le z
+      simp [pairFst]; omega
+  | false :: true :: _ => by simp [pairFst]
+  | true :: false :: _ => by simp [pairFst]
+
+private def gcdRuler (z : List Bool) : List Bool :=
+  z ++ z ++ List.replicate 16 false
+
+private def gcdWidth (z : List Bool) : List Bool :=
+  List.replicate
+    ((z ++ z ++ List.replicate 16 false).length *
+      (z ++ z ++ List.replicate 16 false).length) false
+
+private theorem gcdRuler_mem_FP : gcdRuler ∈ FP :=
+  Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+    (Cobham.const_replicate_mem_FP 16)
+
+private theorem gcdWidth_mem_FP : gcdWidth ∈ FP := by
+  have harg : (fun z : List Bool => z ++ z ++ List.replicate 16 false) ∈ FP :=
+    Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+      (Cobham.const_replicate_mem_FP 16)
+  exact Cobham.mulLenFn_mem_FP harg harg
+
+private theorem gcdRuler_length (z : List Bool) :
+    (gcdRuler z).length = z.length + z.length + 16 := by
+  simp [gcdRuler, List.length_append, List.length_replicate]
+  ac_rfl
+
+private theorem gcdWidth_length (z : List Bool) :
+    (gcdWidth z).length =
+      (z.length + z.length + 16) * (z.length + z.length + 16) := by
+  simp [gcdWidth, List.length_append, List.length_replicate]
+  ac_rfl
+
+private theorem gcd_sq_bound (n : Nat) :
+    3 * n + 2 ≤ (n + n + 16) * (n + n + 16) := by
+  have h1 : 3 * n + 2 ≤ 3 * (n + n + 16) := by omega
+  have h2 : 3 ≤ n + n + 16 := by omega
+  have h3 : 3 * (n + n + 16) ≤ (n + n + 16) * (n + n + 16) := by
+    simpa [Nat.mul_comm (n + n + 16) 3] using Nat.mul_le_mul_left (n + n + 16) h2
+  exact h1.trans h3
+
+private theorem gcdPair_le (z a b : List Bool)
+    (ha : a.length ≤ z.length) (hb : b.length ≤ z.length) :
+    (pair a b).length ≤ (gcdWidth z).length := by
+  simp [pair_length, gcdWidth_length]
+  have hlin : 2 * a.length + 2 + b.length ≤ 3 * z.length + 2 := by omega
+  exact hlin.trans (gcd_sq_bound z.length)
+
+private theorem ltCanon_flag (a b : List Bool) :
+    ltCanon a b = [true] ∨ ltCanon a b = [false] := by
+  unfold ltCanon
+  exact ltFlag_flag _ _ (by simp [padTo_length])
+
+private theorem gcdStep_eq (st : List Bool) :
+    gcdStep st =
+      Cobham.selectHead (emptyFlag (pairFst st)) st
+        (Cobham.selectHead (emptyFlag (pairSnd st)) st
+          (Cobham.selectHead (Cobham.eqFlag (pairFst st) (pairSnd st)) st
+            (Cobham.selectHead (ltCanon (pairFst st) (pairSnd st))
+              (pair (pairFst st) (dropTwos (subCanon (pairSnd st) (pairFst st))))
+              (pair (dropTwos (subCanon (pairFst st) (pairSnd st)))
+                (pairSnd st))))) :=
+  rfl
+
+private structure GcdReach (z st : List Bool) : Prop where
+  fst_le : (pairFst st).length ≤ z.length
+  snd_le : (pairSnd st).length ≤ z.length
+  st_le : st.length ≤ (gcdWidth z).length
+
+private theorem gcdReach_init (z : List Bool) : GcdReach z z := by
+  refine ⟨pairFst_length_le z, pairSnd_length_le z, ?_⟩
+  have : z.length ≤ 3 * z.length + 2 := by omega
+  simpa [gcdWidth_length] using this.trans (gcd_sq_bound z.length)
+
+private theorem gcdReach_step (z st : List Bool) (h : GcdReach z st) :
+    GcdReach z (gcdStep st) := by
+  rw [gcdStep_eq]
+  by_cases hza : pairFst st = []
+  · simp [hza, emptyFlag_nil, selectHead_true]
+    exact h
+  · have hfa : emptyFlag (pairFst st) = [false] := by
+      cases hf : pairFst st with
+      | nil => exact absurd hf hza
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hzb : pairSnd st = []
+    · simp [hzb, emptyFlag_nil, selectHead_true]
+      exact h
+    · have hfb : emptyFlag (pairSnd st) = [false] := by
+        cases hf : pairSnd st with
+        | nil => exact absurd hf hzb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      rcases Cobham.eqFlag_flag (pairFst st) (pairSnd st) with heq | hne
+      · rw [heq, selectHead_true]
+        exact h
+      · rw [hne, selectHead_false]
+        rcases ltCanon_flag (pairFst st) (pairSnd st) with hlt | hge
+        · rw [hlt, selectHead_true]
+          have hcmp : bitValue (pairFst st) < bitValue (pairSnd st) :=
+            (ltCanon_true_iff _ _).mp hlt
+          have hsub :=
+            subCanon_length_of_le (pairSnd st) (pairFst st) (le_of_lt hcmp)
+          have hdrop := dropTwos_length (subCanon (pairSnd st) (pairFst st))
+          have hb' : (dropTwos (subCanon (pairSnd st) (pairFst st))).length
+              ≤ z.length := hdrop.trans (hsub.trans h.snd_le)
+          refine ⟨?_, ?_, ?_⟩
+          · simpa using h.fst_le
+          · simpa using hb'
+          · exact gcdPair_le z (pairFst st)
+              (dropTwos (subCanon (pairSnd st) (pairFst st))) h.fst_le hb'
+        · rw [hge, selectHead_false]
+          have hcmp : bitValue (pairSnd st) ≤ bitValue (pairFst st) := by
+            have : ¬ bitValue (pairFst st) < bitValue (pairSnd st) := by
+              intro hlt'
+              have ht := (ltCanon_true_iff _ _).mpr hlt'
+              rw [ht] at hge
+              cases hge
+            omega
+          have hsub := subCanon_length_of_le (pairFst st) (pairSnd st) hcmp
+          have hdrop := dropTwos_length (subCanon (pairFst st) (pairSnd st))
+          have ha' : (dropTwos (subCanon (pairFst st) (pairSnd st))).length
+              ≤ z.length := hdrop.trans (hsub.trans h.fst_le)
+          refine ⟨?_, ?_, ?_⟩
+          · simpa using ha'
+          · simpa using h.snd_le
+          · exact gcdPair_le z
+              (dropTwos (subCanon (pairFst st) (pairSnd st))) (pairSnd st)
+              ha' h.snd_le
+
+private theorem gcdReach_iterate (z : List Bool) :
+    ∀ n, GcdReach z (gcdStep^[n] z) := by
+  intro n
+  induction n with
+  | zero => exact gcdReach_init z
+  | succ n ih =>
+      rw [Function.iterate_succ_apply']
+      exact gcdReach_step z _ ih
+
+
+def gcdBits (z : List Bool) : List Bool :=
+  pairFst (gcdStep^[(gcdRuler z).length] z)
+
+theorem gcdBits_mem_FP : gcdBits ∈ Complexity.FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (gcdRuler z).length,
+      (gcdStep^[n] z).length ≤ (gcdWidth z).length := by
+    intro z n _
+    exact (gcdReach_iterate z n).st_le
+  have hiter := Cobham.iterate_mem_FP gcdStep_mem_FP id_mem_FP gcdRuler_mem_FP
+    gcdWidth_mem_FP hbound
+  exact mem_FP_comp hiter Cobham.fstBlock_mem_FP
+
+
+
+private def oddPartFuel : Nat → Nat → Nat
+  | 0, n => n
+  | fuel + 1, n => if n % 2 = 0 then oddPartFuel fuel (n / 2) else n
+
+private def oddPart (n : Nat) : Nat := oddPartFuel (n + 1) n
+
+private theorem oddPartFuel_zero (fuel : Nat) : oddPartFuel fuel 0 = 0 := by
+  induction fuel with
+  | zero => rfl
+  | succ fuel ih => simp [oddPartFuel, ih]
+
+private theorem oddPartFuel_of_odd (fuel n : Nat) (h : n % 2 = 1) :
+    oddPartFuel fuel n = n := by
+  cases fuel with
+  | zero => rfl
+  | succ fuel => simp [oddPartFuel, h]
+
+private theorem oddPartFuel_succ (fuel n : Nat) :
+    oddPartFuel (fuel + 1) n =
+      if n % 2 = 0 then oddPartFuel fuel (n / 2) else n :=
+  rfl
+
+private theorem oddPart_zero : oddPart 0 = 0 := by
+  simp [oddPart, oddPartFuel_zero]
+
+private theorem oddPart_of_odd {n : Nat} (h : n % 2 = 1) : oddPart n = n :=
+  oddPartFuel_of_odd _ _ h
+
+private theorem oddPartFuel_enough (fuel n : Nat) (h : n < 2 ^ fuel) :
+    oddPartFuel fuel n % 2 = 1 ∨ oddPartFuel fuel n = 0 := by
+  induction fuel generalizing n with
+  | zero =>
+      have : n = 0 := by omega
+      simp [oddPartFuel, this]
+  | succ fuel ih =>
+      simp only [oddPartFuel]
+      split_ifs with he
+      · refine ih (n / 2) ?_
+        have : n < 2 * 2 ^ fuel := by simpa [Nat.pow_succ, Nat.mul_comm] using h
+        omega
+      · omega
+
+private theorem oddPartFuel_mul (fuel n : Nat) :
+    ∃ e ≤ fuel, n = oddPartFuel fuel n * 2 ^ e := by
+  induction fuel generalizing n with
+  | zero => exact ⟨0, le_rfl, by simp [oddPartFuel]⟩
+  | succ fuel ih =>
+      simp only [oddPartFuel]
+      split_ifs with he
+      · obtain ⟨e, hele, heq⟩ := ih (n / 2)
+        refine ⟨e + 1, Nat.add_le_add_right hele 1, ?_⟩
+        have hmul := Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero he)
+        have hhalf : 2 * (n / 2) = 2 * (oddPartFuel fuel (n / 2) * 2 ^ e) :=
+          congrArg (fun t => 2 * t) heq
+        have hpow : 2 * (oddPartFuel fuel (n / 2) * 2 ^ e) =
+            oddPartFuel fuel (n / 2) * 2 ^ (e + 1) := by
+          rw [Nat.pow_succ]; ring
+        exact (hmul.symm.trans hhalf).trans hpow
+      · exact ⟨0, Nat.zero_le _, by simp⟩
+
+private theorem oddPart_mul (n : Nat) : ∃ e, n = oddPart n * 2 ^ e := by
+  obtain ⟨e, _, he⟩ := oddPartFuel_mul (n + 1) n
+  exact ⟨e, he⟩
+
+private theorem lt_two_pow_succ (n : Nat) : n < 2 ^ (n + 1) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      simp only [Nat.pow_succ] at ih ⊢
+      omega
+
+private theorem oddPart_odd_or_zero (n : Nat) :
+    oddPart n % 2 = 1 ∨ oddPart n = 0 :=
+  oddPartFuel_enough (n + 1) n (lt_two_pow_succ n)
+
+private theorem oddPart_dvd (n : Nat) : oddPart n ∣ n := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  exact ⟨2 ^ e, he⟩
+
+private theorem coprime_two_of_odd {k : Nat} (h : k % 2 = 1) : Nat.Coprime 2 k := by
+  unfold Nat.Coprime
+  rw [Nat.gcd_rec, h]
+  simp
+
+private theorem gcd_odd_mul_pow {k n e : Nat} (hk : k % 2 = 1) :
+    Nat.gcd k (n * 2 ^ e) = Nat.gcd k n := by
+  induction e with
+  | zero => simp
+  | succ e ih =>
+      have hcop := coprime_two_of_odd hk
+      have hmul : n * 2 ^ (e + 1) = 2 * (n * 2 ^ e) := by
+        rw [Nat.pow_succ]; ring
+      rw [hmul, hcop.gcd_mul_left_cancel_right, ih]
+
+private theorem gcd_odd_oddPart {k n : Nat} (hk : k % 2 = 1) :
+    Nat.gcd k (oddPart n) = Nat.gcd k n := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  calc
+    Nat.gcd k (oddPart n) = Nat.gcd k (oddPart n * 2 ^ e) := (gcd_odd_mul_pow hk).symm
+    _ = Nat.gcd k n := by rw [← he]
+
+private theorem oddPart_eq_zero {n : Nat} (h : oddPart n = 0) : n = 0 := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  simpa [h] using he
+
+private theorem gcd_oddPart_sub {a b : Nat} (h : a ≤ b) :
+    Nat.gcd (oddPart a) (oddPart (b - a)) = Nat.gcd (oddPart a) (oddPart b) := by
+  rcases oddPart_odd_or_zero a with ho | hz
+  · have hdiv : oddPart a ∣ a := oddPart_dvd a
+    have hsum : a + (b - a) = b := Nat.add_sub_of_le h
+    have hba : Nat.gcd (oddPart a) b = Nat.gcd (oddPart a) (b - a) := by
+      conv_lhs => rw [← hsum]
+      exact Nat.gcd_add_left_right_of_dvd (b - a) hdiv
+    rw [gcd_odd_oddPart ho, gcd_odd_oddPart ho, hba]
+  · have ha0 : a = 0 := oddPart_eq_zero hz
+    simp [hz, ha0]
+
+private theorem gcd_oddPart_sub' {a b : Nat} (h : b ≤ a) :
+    Nat.gcd (oddPart (a - b)) (oddPart b) = Nat.gcd (oddPart a) (oddPart b) := by
+  rw [Nat.gcd_comm, gcd_oddPart_sub h, Nat.gcd_comm]
+
+private theorem drop2Step_nil : drop2Step [] = [] := by
+  simp [drop2Step, emptyFlag_nil, selectHead_true]
+
+private theorem drop2Step_true (t : List Bool) :
+    drop2Step (true :: t) = true :: t := by
+  simp [drop2Step, emptyFlag_cons, selectHead_false, selectHead_cons_true']
+
+private theorem drop2Step_false (t : List Bool) : drop2Step (false :: t) = t := by
+  simp [drop2Step, emptyFlag_cons, selectHead_false, selectHead_cons_false', dropOne]
+
+private theorem drop2Step_bitValue (x : List Bool) :
+    bitValue (drop2Step x) =
+      if bitValue x % 2 = 0 then bitValue x / 2 else bitValue x := by
+  cases x with
+  | nil => simp [drop2Step_nil, bitValue]
+  | cons b t =>
+      cases b with
+      | false => simp [drop2Step_false, bitValue]
+      | true => simp [drop2Step_true, bitValue]
+
+private theorem oddPartFuel_succ_drop (fuel n : Nat) :
+    (if oddPartFuel fuel n % 2 = 0 then oddPartFuel fuel n / 2 else oddPartFuel fuel n) =
+      oddPartFuel (fuel + 1) n := by
+  induction fuel generalizing n with
+  | zero =>
+      simp [oddPartFuel]
+      rfl
+  | succ fuel ih =>
+      by_cases he : n % 2 = 0
+      · have hfuel : oddPartFuel (fuel + 1) n = oddPartFuel fuel (n / 2) := by
+          simp [oddPartFuel, he]
+        have hfuel' : oddPartFuel (fuel + 2) n = oddPartFuel (fuel + 1) (n / 2) := by
+          simp [oddPartFuel, he]
+        rw [show fuel + 1 + 1 = fuel + 2 from rfl, hfuel, hfuel']
+        exact ih (n / 2)
+      · have ho : n % 2 = 1 := by omega
+        rw [oddPartFuel_of_odd (fuel + 1) n ho, oddPartFuel_of_odd (fuel + 2) n ho]
+        simp [he]
+
+private theorem drop2Iterate_bitValue (x : List Bool) :
+    ∀ n, bitValue (drop2Step^[n] x) = oddPartFuel n (bitValue x) := by
+  intro n
+  induction n generalizing x with
+  | zero => simp [oddPartFuel]
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', drop2Step_bitValue, ih]
+      exact oddPartFuel_succ_drop n (bitValue x)
+
+private theorem dropTwos_bitValue (x : List Bool) :
+    bitValue (dropTwos x) = oddPartFuel x.length (bitValue x) :=
+  drop2Iterate_bitValue x x.length
+
+private theorem oddPartFuel_eq_of_enough (fuel fuel' n : Nat)
+    (h : n < 2 ^ fuel) (h' : n < 2 ^ fuel') :
+    oddPartFuel fuel n = oddPartFuel fuel' n := by
+  induction n using Nat.strongRecOn generalizing fuel fuel' with
+  | ind n ih =>
+      cases fuel with
+      | zero =>
+          have : n = 0 := by omega
+          simp [oddPartFuel_zero, this]
+      | succ fuel =>
+          cases fuel' with
+          | zero =>
+              have : n = 0 := by omega
+              simp [oddPartFuel_zero, this]
+          | succ fuel' =>
+              simp only [oddPartFuel]
+              split_ifs with he
+              · cases n with
+                | zero => simp [oddPartFuel_zero]
+                | succ n =>
+                    exact ih (n.succ / 2)
+                      (Nat.div_lt_self (Nat.succ_pos _) (by decide)) fuel fuel'
+                      (by
+                        have : n.succ < 2 * 2 ^ fuel := by
+                          simpa [Nat.pow_succ, Nat.mul_comm] using h
+                        omega)
+                      (by
+                        have : n.succ < 2 * 2 ^ fuel' := by
+                          simpa [Nat.pow_succ, Nat.mul_comm] using h'
+                        omega)
+              · rfl
+
+private theorem dropTwos_oddPart (x : List Bool) :
+    bitValue (dropTwos x) = oddPart (bitValue x) := by
+  have h1 := dropTwos_bitValue x
+  have hlt := bitValue_lt_two_pow x
+  have h2 := oddPartFuel_eq_of_enough x.length (bitValue x + 1) (bitValue x)
+    hlt (lt_two_pow_succ _)
+  exact h1.trans h2
+
+private theorem oddPart_idem (n : Nat) : oddPart (oddPart n) = oddPart n := by
+  rcases oddPart_odd_or_zero n with ho | hz
+  · exact oddPart_of_odd ho
+  · rw [hz, oddPart_zero]
+
+private theorem dropTwos_sub_oddPart (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    bitValue (dropTwos (subCanon a b)) = oddPart (bitValue a - bitValue b) := by
+  rw [dropTwos_oddPart, subCanon_bitValue a b h]
+
+private theorem gcdStep_oddPart (st : List Bool) :
+    Nat.gcd (oddPart (bitValue (pairFst (gcdStep st))))
+      (oddPart (bitValue (pairSnd (gcdStep st)))) =
+    Nat.gcd (oddPart (bitValue (pairFst st)))
+      (oddPart (bitValue (pairSnd st))) := by
+  rw [gcdStep_eq]
+  by_cases hza : pairFst st = []
+  · simp [hza, emptyFlag_nil, selectHead_true]
+  · have hfa : emptyFlag (pairFst st) = [false] := by
+      cases hf : pairFst st with
+      | nil => exact absurd hf hza
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hzb : pairSnd st = []
+    · simp [hzb, emptyFlag_nil, selectHead_true]
+    · have hfb : emptyFlag (pairSnd st) = [false] := by
+        cases hf : pairSnd st with
+        | nil => exact absurd hf hzb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      rcases Cobham.eqFlag_flag (pairFst st) (pairSnd st) with heq | hne
+      · rw [heq, selectHead_true]
+      · rw [hne, selectHead_false]
+        rcases ltCanon_flag (pairFst st) (pairSnd st) with hlt | hge
+        · rw [hlt, selectHead_true]
+          have hcmp : bitValue (pairFst st) < bitValue (pairSnd st) :=
+            (ltCanon_true_iff _ _).mp hlt
+          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ (le_of_lt hcmp),
+            oddPart_idem, gcd_oddPart_sub (le_of_lt hcmp)]
+        · rw [hge, selectHead_false]
+          have hcmp : bitValue (pairSnd st) ≤ bitValue (pairFst st) := by
+            have : ¬ bitValue (pairFst st) < bitValue (pairSnd st) := by
+              intro hlt'
+              have ht := (ltCanon_true_iff _ _).mpr hlt'
+              rw [ht] at hge
+              cases hge
+            omega
+          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ hcmp,
+            oddPart_idem, gcd_oddPart_sub' hcmp]
+
+private theorem gcdStep_iterate_oddPart (z : List Bool) :
+    ∀ n, Nat.gcd (oddPart (bitValue (pairFst (gcdStep^[n] z))))
+        (oddPart (bitValue (pairSnd (gcdStep^[n] z)))) =
+      Nat.gcd (oddPart (bitValue (pairFst z)))
+        (oddPart (bitValue (pairSnd z))) := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', gcdStep_oddPart, ih]
+
+private def share2Step (st : List Bool) : List Bool :=
+  let a := pairFst st
+  let b := pairSnd st
+  Cobham.selectHead (emptyFlag a) st
+    (Cobham.selectHead (emptyFlag b) st
+      (Cobham.selectHead a st
+        (Cobham.selectHead b st
+          (pair (dropOne a) (dropOne b)))))
+
+private theorem share2Step_mem_FP : share2Step ∈ FP := by
+  have ha : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hb : (fun st : List Bool => pairSnd st) ∈ FP := Cobham.sndBlock_mem_FP
+  have hdropa := dropOneFn_mem_FP ha
+  have hdropb := dropOneFn_mem_FP hb
+  have hpair := Cobham.pairFn_mem_FP hdropa hdropb
+  have hboth := Cobham.selectHeadFn_mem_FP hb id_mem_FP hpair
+  have haodd := Cobham.selectHeadFn_mem_FP ha id_mem_FP hboth
+  have hb0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hb) id_mem_FP haodd
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP ha) id_mem_FP hb0
+
+private theorem share2Step_eq (st : List Bool) :
+    share2Step st =
+      Cobham.selectHead (emptyFlag (pairFst st)) st
+        (Cobham.selectHead (emptyFlag (pairSnd st)) st
+          (Cobham.selectHead (pairFst st) st
+            (Cobham.selectHead (pairSnd st) st
+              (pair (dropOne (pairFst st)) (dropOne (pairSnd st)))))) :=
+  rfl
+
+private theorem pair_dropOne_length (a b : List Bool) :
+    (pair (dropOne a) (dropOne b)).length ≤ (pair a b).length := by
+  simp [pair_length, dropOne]
+  omega
+
+private theorem share2Step_pair_length (a b : List Bool) :
+    (share2Step (pair a b)).length ≤ (pair a b).length := by
+  rw [share2Step_eq, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · simp [ha, emptyFlag_nil, selectHead_true]
+  · have hfa : emptyFlag a = [false] := by
+      cases hf : a with
+      | nil => exact absurd hf ha
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hb : b = []
+    · simp [hb, emptyFlag_nil, selectHead_true]
+    · have hfb : emptyFlag b = [false] := by
+        cases hf : b with
+        | nil => exact absurd hf hb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      cases a with
+      | nil => exact absurd rfl ha
+      | cons ba ta =>
+          cases ba with
+          | true => simp [selectHead_cons_true']
+          | false =>
+              rw [selectHead_cons_false']
+              cases b with
+              | nil => exact absurd rfl hb
+              | cons bb tb =>
+                  cases bb with
+                  | true => simp [selectHead_cons_true']
+                  | false =>
+                      rw [selectHead_cons_false']
+                      simpa [dropOne] using pair_dropOne_length (false :: ta) (false :: tb)
+
+private theorem share2Step_is_pair (a b : List Bool) :
+    ∃ a' b', share2Step (pair a b) = pair a' b' ∧
+      a'.length ≤ a.length ∧ b'.length ≤ b.length := by
+  rw [share2Step_eq, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · exact ⟨a, b, by simp [ha, emptyFlag_nil, selectHead_true], le_rfl, le_rfl⟩
+  · have hfa : emptyFlag a = [false] := by
+      cases hf : a with
+      | nil => exact absurd hf ha
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hb : b = []
+    · exact ⟨a, b, by simp [hb, emptyFlag_nil, selectHead_true], le_rfl, le_rfl⟩
+    · have hfb : emptyFlag b = [false] := by
+        cases hf : b with
+        | nil => exact absurd hf hb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      cases a with
+      | nil => exact absurd rfl ha
+      | cons ba ta =>
+          cases ba with
+          | true => exact ⟨true :: ta, b, by simp [selectHead_cons_true'], le_rfl, le_rfl⟩
+          | false =>
+              rw [selectHead_cons_false']
+              cases b with
+              | nil => exact absurd rfl hb
+              | cons bb tb =>
+                  cases bb with
+                  | true =>
+                      exact ⟨false :: ta, true :: tb, by simp [selectHead_cons_true'],
+                        le_rfl, le_rfl⟩
+                  | false =>
+                      rw [selectHead_cons_false']
+                      refine ⟨ta, tb, by simp [dropOne], by simp, by simp⟩
+
+private theorem shareIterate_is_pair (a b : List Bool) :
+    ∀ n, ∃ a' b', share2Step^[n] (pair a b) = pair a' b' ∧
+      a'.length ≤ a.length ∧ b'.length ≤ b.length := by
+  intro n
+  induction n with
+  | zero => exact ⟨a, b, rfl, le_rfl, le_rfl⟩
+  | succ n ih =>
+      obtain ⟨a', b', hs, ha, hb⟩ := ih
+      rw [Function.iterate_succ_apply', hs]
+      obtain ⟨a'', b'', hs', ha', hb'⟩ := share2Step_is_pair a' b'
+      exact ⟨a'', b'', hs', ha'.trans ha, hb'.trans hb⟩
+
+private theorem shareIterate_length (a b : List Bool) :
+    ∀ n, (share2Step^[n] (pair a b)).length ≤ (pair a b).length := by
+  intro n
+  obtain ⟨a', b', hs, ha, hb⟩ := shareIterate_is_pair a b n
+  rw [hs]
+  simp [pair_length]
+  omega
+
+private def shareTwos (a b : List Bool) : List Bool :=
+  share2Step^[(a ++ b).length] (pair a b)
+
+private theorem shareTwos_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => shareTwos (a z) (b z)) ∈ FP := by
+  have hinit := Cobham.pairFn_mem_FP ha hb
+  have hruler := Cobham.appendFn_mem_FP ha hb
+  have hbound : ∀ z : List Bool, ∀ n ≤ (a z ++ b z).length,
+      (share2Step^[n] (pair (a z) (b z))).length ≤ (pair (a z) (b z)).length :=
+    fun z n _ => shareIterate_length (a z) (b z) n
+  exact Cobham.iterate_mem_FP share2Step_mem_FP hinit hruler hinit hbound
+
+private def gcdPrep (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst z)) (pair (pairSnd z) (pairFst z)) z
+
+private theorem gcdPrep_mem_FP : gcdPrep ∈ FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP Cobham.fstBlock_mem_FP)
+    (Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP) id_mem_FP
+
+private def gcdShared (a b : List Bool) : List Bool :=
+  gcdBits (gcdPrep (shareTwos a b))
+
+private theorem gcdShared_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => gcdShared (a z) (b z)) ∈ FP :=
+  mem_FP_comp (mem_FP_comp (shareTwos_mem_FP ha hb) gcdPrep_mem_FP) gcdBits_mem_FP
+
+private def packReduced (a b : List Bool) : List Bool :=
+  [true, true] ++
+    encodeDigits (quotBits
+      (pairFst (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b))) ++
+    encodeDigits (quotBits
+      (pairSnd (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b)))
+
+set_option maxHeartbeats 1000000 in
+private theorem packReduced_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => packReduced (a z) (b z)) ∈ FP := by
+  have hsa := mem_FP_comp ha stripTrailing_mem_FP
+  have hsb := mem_FP_comp hb stripTrailing_mem_FP
+  have hsh := shareTwos_mem_FP hsa hsb
+  have hg := gcdShared_mem_FP hsa hsb
+  have hqa := quotBits_mem_FP (mem_FP_comp hsh Cobham.fstBlock_mem_FP) hg
+  have hqb := quotBits_mem_FP (mem_FP_comp hsh Cobham.sndBlock_mem_FP) hg
+  have hea := mem_FP_comp hqa encodeDigits_mem_FP
+  have heb := mem_FP_comp hqb encodeDigits_mem_FP
+  exact Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP (constFn_mem_FP [true, true]) hea) heb
+
+private def readRatOnEncode (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (readDigitsTag (nodeLeft z))) []
+    (Cobham.selectHead (emptyFlag (readDigitsTag (nodeRight z))) []
+      (Cobham.selectHead
+        (emptyFlag (stripTrailing (dropOne (readDigitsTag (nodeRight z))))) []
+        (packReduced (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+          (stripTrailing (dropOne (readDigitsTag (nodeRight z)))))))
+
+private theorem readRatOnEncode_mem_FP : readRatOnEncode ∈ FP := by
+  have hnl := mem_FP_comp nodeLeft_mem_FP readDigitsTag_mem_FP
+  have hnr := mem_FP_comp nodeRight_mem_FP readDigitsTag_mem_FP
+  have hnb := mem_FP_comp (dropOneFn_mem_FP hnl) stripTrailing_mem_FP
+  have hdb := mem_FP_comp (dropOneFn_mem_FP hnr) stripTrailing_mem_FP
+  have hpack := packReduced_mem_FP hnb hdb
+  have hden0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hdb)
+    (constFn_mem_FP []) hpack
+  have hdd := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hnr)
+    (constFn_mem_FP []) hden0
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hnl)
+    (constFn_mem_FP []) hdd
+
+
+
+def readRatTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (treeParseTag z)) []
+    (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag z))))
+      (readRatOnEncode (pairFst (dropOne (treeParseTag z))))
+      [])
+
+theorem readRatTag_mem_FP : readRatTag ∈ Complexity.FP := by
+  have htag := treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have hfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have hsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hread := mem_FP_comp hfst readRatOnEncode_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsnd)
+    hread (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
+    (constFn_mem_FP []) hinner
+
+end PvNP.RealizableHardness.ActualDecodeInputFP
+
+-- stripped-source-boundary: ActualDecodeInputFPChecks.lean
+import PvNP.RealizableHardness.ActualDecodeInputFP
+
+
+
+
+
+
+
+namespace PvNP.RealizableHardness.ActualDecodeInputFPChecks
+open Complexity
+open PvNP.RealizableHardness.ActualDecodeInputFP
+open PvNP.RealizableHardness.ExecutablePipelineInput
+
+#check decodeInputTag
+#check decodeInputTag_empty
+#check decodeInputTag_none
+#check decodeInputTag_some
+#check gcdBits
+#check gcdBits_mem_FP
+#check readRatTag
+#check readRatTag_mem_FP
+
+#print axioms decodeInputTag_empty
+#print axioms decodeInputTag_none
+#print axioms decodeInputTag_some
+#print axioms gcdBits_mem_FP
+#print axioms readRatTag_mem_FP
+
+example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
+
+example : readRatTag ∈ Complexity.FP := readRatTag_mem_FP
+
+example : decodeInputTag [] = [] := decodeInputTag_empty
+
+example : decodeInputTag [true] = [] := by
+  have h : decodeInput [true] = none := by
+    simp [decodeInput, CMMSACodec.Tree.parse]
+  exact decodeInputTag_none [true] h
+
+end PvNP.RealizableHardness.ActualDecodeInputFPChecks
+

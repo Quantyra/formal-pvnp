@@ -1,0 +1,23 @@
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag (bs : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_empty : decodeInputTag [] = []
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_none (bs : List Bool) (h : decodeInput bs = none) :
+  decodeInputTag bs = []
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some (bs : List Bool) (x : Input)
+  (h : decodeInput bs = some x) : decodeInputTag bs = true :: encodeInput x
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP : gcdBits ∈ FP
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP : readRatTag ∈ FP
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
