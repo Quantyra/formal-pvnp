@@ -1,10 +1,10 @@
 import PvNP.RealizableHardness.ActualDecodeInputFP
 
 /-!
-Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP` is on the
-Cobham surface; `readRatTag_mem_FP` / `decodeInputTag_mem_FP` remain. This file
-does not inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1,
-Corollary 2, or P vs NP.
+Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP` and
+`readRatTag_mem_FP` are on the Cobham surface; `decodeInputTag_mem_FP` remains.
+This file does not inhabit `hSrcCmmsa` and does not assert unconditional
+Theorem 1, Corollary 2, or P vs NP.
 -/
 namespace PvNP.RealizableHardness.ActualDecodeInputFPChecks
 open Complexity
@@ -17,13 +17,18 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check decodeInputTag_some
 #check gcdBits
 #check gcdBits_mem_FP
+#check readRatTag
+#check readRatTag_mem_FP
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
 #print axioms decodeInputTag_some
 #print axioms gcdBits_mem_FP
+#print axioms readRatTag_mem_FP
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
+
+example : readRatTag ∈ Complexity.FP := readRatTag_mem_FP
 
 example : decodeInputTag [] = [] := decodeInputTag_empty
 

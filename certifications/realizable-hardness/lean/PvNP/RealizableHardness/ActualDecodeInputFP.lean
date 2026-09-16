@@ -1796,4 +1796,495 @@ theorem gcdBits_mem_FP : gcdBits ∈ Complexity.FP := by
     gcdWidth_mem_FP hbound
   exact mem_FP_comp hiter Cobham.fstBlock_mem_FP
 
+/-! ## Semantic GCD of the subtractive/`dropTwos` iterate. -/
+
+private def oddPartFuel : Nat → Nat → Nat
+  | 0, n => n
+  | fuel + 1, n => if n % 2 = 0 then oddPartFuel fuel (n / 2) else n
+
+private def oddPart (n : Nat) : Nat := oddPartFuel (n + 1) n
+
+private theorem oddPartFuel_zero (fuel : Nat) : oddPartFuel fuel 0 = 0 := by
+  induction fuel with
+  | zero => rfl
+  | succ fuel ih => simp [oddPartFuel, ih]
+
+private theorem oddPartFuel_of_odd (fuel n : Nat) (h : n % 2 = 1) :
+    oddPartFuel fuel n = n := by
+  cases fuel with
+  | zero => rfl
+  | succ fuel => simp [oddPartFuel, h]
+
+private theorem oddPartFuel_succ (fuel n : Nat) :
+    oddPartFuel (fuel + 1) n =
+      if n % 2 = 0 then oddPartFuel fuel (n / 2) else n :=
+  rfl
+
+private theorem oddPart_zero : oddPart 0 = 0 := by
+  simp [oddPart, oddPartFuel_zero]
+
+private theorem oddPart_of_odd {n : Nat} (h : n % 2 = 1) : oddPart n = n :=
+  oddPartFuel_of_odd _ _ h
+
+private theorem oddPartFuel_enough (fuel n : Nat) (h : n < 2 ^ fuel) :
+    oddPartFuel fuel n % 2 = 1 ∨ oddPartFuel fuel n = 0 := by
+  induction fuel generalizing n with
+  | zero =>
+      have : n = 0 := by omega
+      simp [oddPartFuel, this]
+  | succ fuel ih =>
+      simp only [oddPartFuel]
+      split_ifs with he
+      · refine ih (n / 2) ?_
+        have : n < 2 * 2 ^ fuel := by simpa [Nat.pow_succ, Nat.mul_comm] using h
+        omega
+      · omega
+
+private theorem oddPartFuel_mul (fuel n : Nat) :
+    ∃ e ≤ fuel, n = oddPartFuel fuel n * 2 ^ e := by
+  induction fuel generalizing n with
+  | zero => exact ⟨0, le_rfl, by simp [oddPartFuel]⟩
+  | succ fuel ih =>
+      simp only [oddPartFuel]
+      split_ifs with he
+      · obtain ⟨e, hele, heq⟩ := ih (n / 2)
+        refine ⟨e + 1, Nat.add_le_add_right hele 1, ?_⟩
+        have hmul := Nat.mul_div_cancel' (Nat.dvd_of_mod_eq_zero he)
+        have hhalf : 2 * (n / 2) = 2 * (oddPartFuel fuel (n / 2) * 2 ^ e) :=
+          congrArg (fun t => 2 * t) heq
+        have hpow : 2 * (oddPartFuel fuel (n / 2) * 2 ^ e) =
+            oddPartFuel fuel (n / 2) * 2 ^ (e + 1) := by
+          rw [Nat.pow_succ]; ring
+        exact (hmul.symm.trans hhalf).trans hpow
+      · exact ⟨0, Nat.zero_le _, by simp⟩
+
+private theorem oddPart_mul (n : Nat) : ∃ e, n = oddPart n * 2 ^ e := by
+  obtain ⟨e, _, he⟩ := oddPartFuel_mul (n + 1) n
+  exact ⟨e, he⟩
+
+private theorem lt_two_pow_succ (n : Nat) : n < 2 ^ (n + 1) := by
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      simp only [Nat.pow_succ] at ih ⊢
+      omega
+
+private theorem oddPart_odd_or_zero (n : Nat) :
+    oddPart n % 2 = 1 ∨ oddPart n = 0 :=
+  oddPartFuel_enough (n + 1) n (lt_two_pow_succ n)
+
+private theorem oddPart_dvd (n : Nat) : oddPart n ∣ n := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  exact ⟨2 ^ e, he⟩
+
+private theorem coprime_two_of_odd {k : Nat} (h : k % 2 = 1) : Nat.Coprime 2 k := by
+  unfold Nat.Coprime
+  rw [Nat.gcd_rec, h]
+  simp
+
+private theorem gcd_odd_mul_pow {k n e : Nat} (hk : k % 2 = 1) :
+    Nat.gcd k (n * 2 ^ e) = Nat.gcd k n := by
+  induction e with
+  | zero => simp
+  | succ e ih =>
+      have hcop := coprime_two_of_odd hk
+      have hmul : n * 2 ^ (e + 1) = 2 * (n * 2 ^ e) := by
+        rw [Nat.pow_succ]; ring
+      rw [hmul, hcop.gcd_mul_left_cancel_right, ih]
+
+private theorem gcd_odd_oddPart {k n : Nat} (hk : k % 2 = 1) :
+    Nat.gcd k (oddPart n) = Nat.gcd k n := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  calc
+    Nat.gcd k (oddPart n) = Nat.gcd k (oddPart n * 2 ^ e) := (gcd_odd_mul_pow hk).symm
+    _ = Nat.gcd k n := by rw [← he]
+
+private theorem oddPart_eq_zero {n : Nat} (h : oddPart n = 0) : n = 0 := by
+  obtain ⟨e, he⟩ := oddPart_mul n
+  simpa [h] using he
+
+private theorem gcd_oddPart_sub {a b : Nat} (h : a ≤ b) :
+    Nat.gcd (oddPart a) (oddPart (b - a)) = Nat.gcd (oddPart a) (oddPart b) := by
+  rcases oddPart_odd_or_zero a with ho | hz
+  · have hdiv : oddPart a ∣ a := oddPart_dvd a
+    have hsum : a + (b - a) = b := Nat.add_sub_of_le h
+    have hba : Nat.gcd (oddPart a) b = Nat.gcd (oddPart a) (b - a) := by
+      conv_lhs => rw [← hsum]
+      exact Nat.gcd_add_left_right_of_dvd (b - a) hdiv
+    rw [gcd_odd_oddPart ho, gcd_odd_oddPart ho, hba]
+  · have ha0 : a = 0 := oddPart_eq_zero hz
+    simp [hz, ha0]
+
+private theorem gcd_oddPart_sub' {a b : Nat} (h : b ≤ a) :
+    Nat.gcd (oddPart (a - b)) (oddPart b) = Nat.gcd (oddPart a) (oddPart b) := by
+  rw [Nat.gcd_comm, gcd_oddPart_sub h, Nat.gcd_comm]
+
+private theorem drop2Step_nil : drop2Step [] = [] := by
+  simp [drop2Step, emptyFlag_nil, selectHead_true]
+
+private theorem drop2Step_true (t : List Bool) :
+    drop2Step (true :: t) = true :: t := by
+  simp [drop2Step, emptyFlag_cons, selectHead_false, selectHead_cons_true']
+
+private theorem drop2Step_false (t : List Bool) : drop2Step (false :: t) = t := by
+  simp [drop2Step, emptyFlag_cons, selectHead_false, selectHead_cons_false', dropOne]
+
+private theorem drop2Step_bitValue (x : List Bool) :
+    bitValue (drop2Step x) =
+      if bitValue x % 2 = 0 then bitValue x / 2 else bitValue x := by
+  cases x with
+  | nil => simp [drop2Step_nil, bitValue]
+  | cons b t =>
+      cases b with
+      | false => simp [drop2Step_false, bitValue]
+      | true => simp [drop2Step_true, bitValue]
+
+private theorem oddPartFuel_succ_drop (fuel n : Nat) :
+    (if oddPartFuel fuel n % 2 = 0 then oddPartFuel fuel n / 2 else oddPartFuel fuel n) =
+      oddPartFuel (fuel + 1) n := by
+  induction fuel generalizing n with
+  | zero =>
+      simp [oddPartFuel]
+      rfl
+  | succ fuel ih =>
+      by_cases he : n % 2 = 0
+      · have hfuel : oddPartFuel (fuel + 1) n = oddPartFuel fuel (n / 2) := by
+          simp [oddPartFuel, he]
+        have hfuel' : oddPartFuel (fuel + 2) n = oddPartFuel (fuel + 1) (n / 2) := by
+          simp [oddPartFuel, he]
+        rw [show fuel + 1 + 1 = fuel + 2 from rfl, hfuel, hfuel']
+        exact ih (n / 2)
+      · have ho : n % 2 = 1 := by omega
+        rw [oddPartFuel_of_odd (fuel + 1) n ho, oddPartFuel_of_odd (fuel + 2) n ho]
+        simp [he]
+
+private theorem drop2Iterate_bitValue (x : List Bool) :
+    ∀ n, bitValue (drop2Step^[n] x) = oddPartFuel n (bitValue x) := by
+  intro n
+  induction n generalizing x with
+  | zero => simp [oddPartFuel]
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', drop2Step_bitValue, ih]
+      exact oddPartFuel_succ_drop n (bitValue x)
+
+private theorem dropTwos_bitValue (x : List Bool) :
+    bitValue (dropTwos x) = oddPartFuel x.length (bitValue x) :=
+  drop2Iterate_bitValue x x.length
+
+private theorem oddPartFuel_eq_of_enough (fuel fuel' n : Nat)
+    (h : n < 2 ^ fuel) (h' : n < 2 ^ fuel') :
+    oddPartFuel fuel n = oddPartFuel fuel' n := by
+  induction n using Nat.strongRecOn generalizing fuel fuel' with
+  | ind n ih =>
+      cases fuel with
+      | zero =>
+          have : n = 0 := by omega
+          simp [oddPartFuel_zero, this]
+      | succ fuel =>
+          cases fuel' with
+          | zero =>
+              have : n = 0 := by omega
+              simp [oddPartFuel_zero, this]
+          | succ fuel' =>
+              simp only [oddPartFuel]
+              split_ifs with he
+              · cases n with
+                | zero => simp [oddPartFuel_zero]
+                | succ n =>
+                    exact ih (n.succ / 2)
+                      (Nat.div_lt_self (Nat.succ_pos _) (by decide)) fuel fuel'
+                      (by
+                        have : n.succ < 2 * 2 ^ fuel := by
+                          simpa [Nat.pow_succ, Nat.mul_comm] using h
+                        omega)
+                      (by
+                        have : n.succ < 2 * 2 ^ fuel' := by
+                          simpa [Nat.pow_succ, Nat.mul_comm] using h'
+                        omega)
+              · rfl
+
+private theorem dropTwos_oddPart (x : List Bool) :
+    bitValue (dropTwos x) = oddPart (bitValue x) := by
+  have h1 := dropTwos_bitValue x
+  have hlt := bitValue_lt_two_pow x
+  have h2 := oddPartFuel_eq_of_enough x.length (bitValue x + 1) (bitValue x)
+    hlt (lt_two_pow_succ _)
+  exact h1.trans h2
+
+private theorem oddPart_idem (n : Nat) : oddPart (oddPart n) = oddPart n := by
+  rcases oddPart_odd_or_zero n with ho | hz
+  · exact oddPart_of_odd ho
+  · rw [hz, oddPart_zero]
+
+private theorem dropTwos_sub_oddPart (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    bitValue (dropTwos (subCanon a b)) = oddPart (bitValue a - bitValue b) := by
+  rw [dropTwos_oddPart, subCanon_bitValue a b h]
+
+private theorem gcdStep_oddPart (st : List Bool) :
+    Nat.gcd (oddPart (bitValue (pairFst (gcdStep st))))
+      (oddPart (bitValue (pairSnd (gcdStep st)))) =
+    Nat.gcd (oddPart (bitValue (pairFst st)))
+      (oddPart (bitValue (pairSnd st))) := by
+  rw [gcdStep_eq]
+  by_cases hza : pairFst st = []
+  · simp [hza, emptyFlag_nil, selectHead_true]
+  · have hfa : emptyFlag (pairFst st) = [false] := by
+      cases hf : pairFst st with
+      | nil => exact absurd hf hza
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hzb : pairSnd st = []
+    · simp [hzb, emptyFlag_nil, selectHead_true]
+    · have hfb : emptyFlag (pairSnd st) = [false] := by
+        cases hf : pairSnd st with
+        | nil => exact absurd hf hzb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      rcases Cobham.eqFlag_flag (pairFst st) (pairSnd st) with heq | hne
+      · rw [heq, selectHead_true]
+      · rw [hne, selectHead_false]
+        rcases ltCanon_flag (pairFst st) (pairSnd st) with hlt | hge
+        · rw [hlt, selectHead_true]
+          have hcmp : bitValue (pairFst st) < bitValue (pairSnd st) :=
+            (ltCanon_true_iff _ _).mp hlt
+          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ (le_of_lt hcmp),
+            oddPart_idem, gcd_oddPart_sub (le_of_lt hcmp)]
+        · rw [hge, selectHead_false]
+          have hcmp : bitValue (pairSnd st) ≤ bitValue (pairFst st) := by
+            have : ¬ bitValue (pairFst st) < bitValue (pairSnd st) := by
+              intro hlt'
+              have ht := (ltCanon_true_iff _ _).mpr hlt'
+              rw [ht] at hge
+              cases hge
+            omega
+          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ hcmp,
+            oddPart_idem, gcd_oddPart_sub' hcmp]
+
+private theorem gcdStep_iterate_oddPart (z : List Bool) :
+    ∀ n, Nat.gcd (oddPart (bitValue (pairFst (gcdStep^[n] z))))
+        (oddPart (bitValue (pairSnd (gcdStep^[n] z)))) =
+      Nat.gcd (oddPart (bitValue (pairFst z)))
+        (oddPart (bitValue (pairSnd z))) := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', gcdStep_oddPart, ih]
+
+private def share2Step (st : List Bool) : List Bool :=
+  let a := pairFst st
+  let b := pairSnd st
+  Cobham.selectHead (emptyFlag a) st
+    (Cobham.selectHead (emptyFlag b) st
+      (Cobham.selectHead a st
+        (Cobham.selectHead b st
+          (pair (dropOne a) (dropOne b)))))
+
+private theorem share2Step_mem_FP : share2Step ∈ FP := by
+  have ha : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hb : (fun st : List Bool => pairSnd st) ∈ FP := Cobham.sndBlock_mem_FP
+  have hdropa := dropOneFn_mem_FP ha
+  have hdropb := dropOneFn_mem_FP hb
+  have hpair := Cobham.pairFn_mem_FP hdropa hdropb
+  have hboth := Cobham.selectHeadFn_mem_FP hb id_mem_FP hpair
+  have haodd := Cobham.selectHeadFn_mem_FP ha id_mem_FP hboth
+  have hb0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hb) id_mem_FP haodd
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP ha) id_mem_FP hb0
+
+private theorem share2Step_eq (st : List Bool) :
+    share2Step st =
+      Cobham.selectHead (emptyFlag (pairFst st)) st
+        (Cobham.selectHead (emptyFlag (pairSnd st)) st
+          (Cobham.selectHead (pairFst st) st
+            (Cobham.selectHead (pairSnd st) st
+              (pair (dropOne (pairFst st)) (dropOne (pairSnd st)))))) :=
+  rfl
+
+private theorem pair_dropOne_length (a b : List Bool) :
+    (pair (dropOne a) (dropOne b)).length ≤ (pair a b).length := by
+  simp [pair_length, dropOne]
+  omega
+
+private theorem share2Step_pair_length (a b : List Bool) :
+    (share2Step (pair a b)).length ≤ (pair a b).length := by
+  rw [share2Step_eq, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · simp [ha, emptyFlag_nil, selectHead_true]
+  · have hfa : emptyFlag a = [false] := by
+      cases hf : a with
+      | nil => exact absurd hf ha
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hb : b = []
+    · simp [hb, emptyFlag_nil, selectHead_true]
+    · have hfb : emptyFlag b = [false] := by
+        cases hf : b with
+        | nil => exact absurd hf hb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      cases a with
+      | nil => exact absurd rfl ha
+      | cons ba ta =>
+          cases ba with
+          | true => simp [selectHead_cons_true']
+          | false =>
+              rw [selectHead_cons_false']
+              cases b with
+              | nil => exact absurd rfl hb
+              | cons bb tb =>
+                  cases bb with
+                  | true => simp [selectHead_cons_true']
+                  | false =>
+                      rw [selectHead_cons_false']
+                      simpa [dropOne] using pair_dropOne_length (false :: ta) (false :: tb)
+
+private theorem share2Step_is_pair (a b : List Bool) :
+    ∃ a' b', share2Step (pair a b) = pair a' b' ∧
+      a'.length ≤ a.length ∧ b'.length ≤ b.length := by
+  rw [share2Step_eq, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · exact ⟨a, b, by simp [ha, emptyFlag_nil, selectHead_true], le_rfl, le_rfl⟩
+  · have hfa : emptyFlag a = [false] := by
+      cases hf : a with
+      | nil => exact absurd hf ha
+      | cons _ _ => simp [emptyFlag_cons]
+    rw [hfa, selectHead_false]
+    by_cases hb : b = []
+    · exact ⟨a, b, by simp [hb, emptyFlag_nil, selectHead_true], le_rfl, le_rfl⟩
+    · have hfb : emptyFlag b = [false] := by
+        cases hf : b with
+        | nil => exact absurd hf hb
+        | cons _ _ => simp [emptyFlag_cons]
+      rw [hfb, selectHead_false]
+      cases a with
+      | nil => exact absurd rfl ha
+      | cons ba ta =>
+          cases ba with
+          | true => exact ⟨true :: ta, b, by simp [selectHead_cons_true'], le_rfl, le_rfl⟩
+          | false =>
+              rw [selectHead_cons_false']
+              cases b with
+              | nil => exact absurd rfl hb
+              | cons bb tb =>
+                  cases bb with
+                  | true =>
+                      exact ⟨false :: ta, true :: tb, by simp [selectHead_cons_true'],
+                        le_rfl, le_rfl⟩
+                  | false =>
+                      rw [selectHead_cons_false']
+                      refine ⟨ta, tb, by simp [dropOne], by simp, by simp⟩
+
+private theorem shareIterate_is_pair (a b : List Bool) :
+    ∀ n, ∃ a' b', share2Step^[n] (pair a b) = pair a' b' ∧
+      a'.length ≤ a.length ∧ b'.length ≤ b.length := by
+  intro n
+  induction n with
+  | zero => exact ⟨a, b, rfl, le_rfl, le_rfl⟩
+  | succ n ih =>
+      obtain ⟨a', b', hs, ha, hb⟩ := ih
+      rw [Function.iterate_succ_apply', hs]
+      obtain ⟨a'', b'', hs', ha', hb'⟩ := share2Step_is_pair a' b'
+      exact ⟨a'', b'', hs', ha'.trans ha, hb'.trans hb⟩
+
+private theorem shareIterate_length (a b : List Bool) :
+    ∀ n, (share2Step^[n] (pair a b)).length ≤ (pair a b).length := by
+  intro n
+  obtain ⟨a', b', hs, ha, hb⟩ := shareIterate_is_pair a b n
+  rw [hs]
+  simp [pair_length]
+  omega
+
+private def shareTwos (a b : List Bool) : List Bool :=
+  share2Step^[(a ++ b).length] (pair a b)
+
+private theorem shareTwos_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => shareTwos (a z) (b z)) ∈ FP := by
+  have hinit := Cobham.pairFn_mem_FP ha hb
+  have hruler := Cobham.appendFn_mem_FP ha hb
+  have hbound : ∀ z : List Bool, ∀ n ≤ (a z ++ b z).length,
+      (share2Step^[n] (pair (a z) (b z))).length ≤ (pair (a z) (b z)).length :=
+    fun z n _ => shareIterate_length (a z) (b z) n
+  exact Cobham.iterate_mem_FP share2Step_mem_FP hinit hruler hinit hbound
+
+private def gcdPrep (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst z)) (pair (pairSnd z) (pairFst z)) z
+
+private theorem gcdPrep_mem_FP : gcdPrep ∈ FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP Cobham.fstBlock_mem_FP)
+    (Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP) id_mem_FP
+
+private def gcdShared (a b : List Bool) : List Bool :=
+  gcdBits (gcdPrep (shareTwos a b))
+
+private theorem gcdShared_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => gcdShared (a z) (b z)) ∈ FP :=
+  mem_FP_comp (mem_FP_comp (shareTwos_mem_FP ha hb) gcdPrep_mem_FP) gcdBits_mem_FP
+
+private def packReduced (a b : List Bool) : List Bool :=
+  [true, true] ++
+    encodeDigits (quotBits
+      (pairFst (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b))) ++
+    encodeDigits (quotBits
+      (pairSnd (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b)))
+
+set_option maxHeartbeats 1000000 in
+private theorem packReduced_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => packReduced (a z) (b z)) ∈ FP := by
+  have hsa := mem_FP_comp ha stripTrailing_mem_FP
+  have hsb := mem_FP_comp hb stripTrailing_mem_FP
+  have hsh := shareTwos_mem_FP hsa hsb
+  have hg := gcdShared_mem_FP hsa hsb
+  have hqa := quotBits_mem_FP (mem_FP_comp hsh Cobham.fstBlock_mem_FP) hg
+  have hqb := quotBits_mem_FP (mem_FP_comp hsh Cobham.sndBlock_mem_FP) hg
+  have hea := mem_FP_comp hqa encodeDigits_mem_FP
+  have heb := mem_FP_comp hqb encodeDigits_mem_FP
+  exact Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP (constFn_mem_FP [true, true]) hea) heb
+
+private def readRatOnEncode (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (readDigitsTag (nodeLeft z))) []
+    (Cobham.selectHead (emptyFlag (readDigitsTag (nodeRight z))) []
+      (Cobham.selectHead
+        (emptyFlag (stripTrailing (dropOne (readDigitsTag (nodeRight z))))) []
+        (packReduced (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+          (stripTrailing (dropOne (readDigitsTag (nodeRight z)))))))
+
+private theorem readRatOnEncode_mem_FP : readRatOnEncode ∈ FP := by
+  have hnl := mem_FP_comp nodeLeft_mem_FP readDigitsTag_mem_FP
+  have hnr := mem_FP_comp nodeRight_mem_FP readDigitsTag_mem_FP
+  have hnb := mem_FP_comp (dropOneFn_mem_FP hnl) stripTrailing_mem_FP
+  have hdb := mem_FP_comp (dropOneFn_mem_FP hnr) stripTrailing_mem_FP
+  have hpack := packReduced_mem_FP hnb hdb
+  have hden0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hdb)
+    (constFn_mem_FP []) hpack
+  have hdd := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hnr)
+    (constFn_mem_FP []) hden0
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hnl)
+    (constFn_mem_FP []) hdd
+
+/-- Pack `readRat` on a complete tree encoding. Empty = none; nonempty =
+`true :: encode (ratTree q)`. Malformed / den=0 → `[]`. -/
+def readRatTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (treeParseTag z)) []
+    (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag z))))
+      (readRatOnEncode (pairFst (dropOne (treeParseTag z))))
+      [])
+
+theorem readRatTag_mem_FP : readRatTag ∈ Complexity.FP := by
+  have htag := treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have hfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have hsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hread := mem_FP_comp hfst readRatOnEncode_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsnd)
+    hread (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
+    (constFn_mem_FP []) hinner
+
 end PvNP.RealizableHardness.ActualDecodeInputFP
