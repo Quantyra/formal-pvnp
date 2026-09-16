@@ -1,0 +1,34 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.honestRawLabel {N m : ℕ} {I : Instance N m}
+  {D : Submodule (ZMod 2) (I.GlobalVar → ZMod 2)} (x : I.GlobalVar → ZMod 2) : RawLeafLabel I D
+PvNP.RealizableHardness.ActualPresentedLeafGluing.honestRawLabel_eval_equation {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) (e : I.RowId) (he : e ∈ P.U) :
+  (honestRawLabel x).toFun ⟨equationVector I.support e, ⋯⟩ = x (I.row e 0) + x (I.row e 1) + x (I.row e 2)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.honestRawLabel_respects_iff {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  RespectsAt P ⋯ (honestRawLabel x) ↔ ∀ e ∈ P.U, (Finite3LinSource.ofActual I).badRow x e = false
+PvNP.RealizableHardness.ActualPresentedLeafGluing.honestPackaged {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) (hx : RespectsAt P ⋯ (honestRawLabel x)) :
+  LeafLabel ⟨P.domain, ⋯⟩
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictionAgreesOnCenter_honest {N m J h : ℕ} {I : Instance N m}
+  (P Q : PresentedLeaf I J h) (hPQ : P.Rel Q) (x : I.GlobalVar → ZMod 2) (hxP : RespectsAt P ⋯ (honestRawLabel x))
+  (hxQ : RespectsAt Q ⋯ (honestRawLabel x)) {k : ℕ} (Cv : CenterSubspace ⟨P.domain, ⋯⟩ k)
+  (Cw : CenterSubspace ⟨Q.domain, ⋯⟩ k) (hK : Cv.K = Cw.K) :
+  restrictionAgreesOnCenter ⋯ Cv Cw hK (honestPackaged P x hxP) (honestPackaged Q x hxQ)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_honest {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (Ps : Fin n → PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2)
+  (hx : ∀ (i : Fin n), RespectsAt (Ps i) ⋯ (honestRawLabel x)) (Cs : (i : Fin n) → CenterSubspace ⟨(Ps i).domain, ⋯⟩ k)
+  (hK : ∀ (i j : Fin n), (Cs i).K = (Cs j).K) :
+  starAccepts (fun i => ⟨(Ps i).domain, ⋯⟩) (fun i => ⟨(Ps i).domain, ⋯⟩) ⋯ Cs Cs ⋯ (fun i => honestPackaged (Ps i) x ⋯)
+    fun i => honestPackaged (Ps i) x ⋯
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.honestRawLabel_eval_equation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.honestRawLabel_respects_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictionAgreesOnCenter_honest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_honest' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
