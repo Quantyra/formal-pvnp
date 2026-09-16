@@ -1,0 +1,4 @@
+artifact_rows=79
+row_mismatches=0
+artifact_manifest_sha256=D093F0722A5F52012F85CC0B93187F37E6043297BC981D9E3A50E14D048A8F8F
+result=PASS

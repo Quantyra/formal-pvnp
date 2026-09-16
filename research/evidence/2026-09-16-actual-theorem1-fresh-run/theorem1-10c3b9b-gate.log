@@ -1,0 +1,30 @@
+expected_bundle_sha256=5F9D372836FA9B04D14AE9229789007DE977D91806287955E4687497A7454775
+actual_bundle_sha256=5F9D372836FA9B04D14AE9229789007DE977D91806287955E4687497A7454775
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/theorem1-10c3b9b-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-10c3b9b.bundle is okay
+The bundle contains this ref:
+10c3b9b9653852f56e300fc2b8cc202ece2dbf71 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/theorem1-10c3b9b-src'...
+HEAD is now at 10c3b9b prove actual theorem1 from two-stage Preserves
+expected_head=10c3b9b9653852f56e300fc2b8cc202ece2dbf71
+actual_head=10c3b9b9653852f56e300fc2b8cc202ece2dbf71
+status_begin
+
+status_end
+expected_main_sha256=C62AAE87A1A4319198D648A431206750C3F48F8562590DAB56DDBA962678ABAF
+actual_main_sha256=C62AAE87A1A4319198D648A431206750C3F48F8562590DAB56DDBA962678ABAF
+expected_checks_sha256=CE241ECFC419AC0D93E7A703B7980BBE92BFDD4613F6EDB6452A1E5524FF2029
+actual_checks_sha256=CE241ECFC419AC0D93E7A703B7980BBE92BFDD4613F6EDB6452A1E5524FF2029
+transfer_gate=PASS

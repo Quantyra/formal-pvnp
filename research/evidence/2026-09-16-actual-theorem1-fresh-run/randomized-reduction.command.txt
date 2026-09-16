@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.RandomizedReduction
+source=/home/dfredriksen_quantyra_org/theorem1-10c3b9b-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/RandomizedReduction.lean
+object=/home/dfredriksen_quantyra_org/theorem1-10c3b9b-fresh-target/lib/lean/PvNP/RealizableHardness/RandomizedReduction.olean

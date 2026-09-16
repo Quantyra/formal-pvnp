@@ -1,0 +1,25 @@
+PvNP.RealizableHardness.ActualTheorem1.fpSeededMap (f : List Bool → List Bool) (hf : f ∈ FP) : SeededMap
+PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_apply (f : List Bool → List Bool) (hf : f ∈ FP)
+  (x seed : List Bool) : (fpSeededMap f hf).apply x seed = f x
+PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_coinCount (f : List Bool → List Bool) (hf : f ∈ FP) (n : ℕ) :
+  (fpSeededMap f hf).coinCount n = 0
+PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_preserves (f : List Bool → List Bool) (hf : f ∈ FP)
+  (source target : PromiseProblem) (h : source.MapReducesVia target f) : Preserves (fpSeededMap f hf) source target 0 0
+PvNP.RealizableHardness.ActualTheorem1.np_to_sat_seeded {A : Language} (hA : A ∈ NP) :
+  ∃ R, Preserves R (PromiseProblem.ofLanguage A) (PromiseProblem.ofLanguage SAT.language) 0 0
+PvNP.RealizableHardness.ActualTheorem1.theorem1_realizable_cmmsa {L sig : ℕ} {gam : ℚ} (hsig : 1 ≤ sig) (hgam : 0 < gam)
+  (hgam1 : gam < 1) (source : PromiseProblem)
+  (hSatSrc : ∃ R, Preserves R (PromiseProblem.ofLanguage SAT.language) source (1 / 6) (1 / 6))
+  (hSrcCmmsa : ∃ S, Preserves S source (cmmsaPromise L sig gam hsig hgam hgam1) (1 / 6) (1 / 6)) :
+  RandomizedPromiseNPHard (cmmsaPromise L sig gam hsig hgam hgam1)
+'PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_apply' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_coinCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualTheorem1.fpSeededMap_preserves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualTheorem1.np_to_sat_seeded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ActualTheorem1.theorem1_realizable_cmmsa' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
