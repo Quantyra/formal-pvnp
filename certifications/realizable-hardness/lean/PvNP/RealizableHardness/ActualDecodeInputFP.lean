@@ -13,9 +13,9 @@ import Complexitylib.Classes.Containments.Internal.BinArith
 Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 `gcdBits` and `readRatTag` are in `FP`. Canonical odd-pair GCD is
 `gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`.
-This module does not claim `decodeInputTag ∈ FP` until
-`decodeInputTag_mem_FP`. Empty tape = none
-(malformed, truncated, trailing bits, or field/source validation failure).
+`readSignedTag` packs the sign tag plus `readRatOnEncode`. This module does
+not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
+none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
 This module does not define `selectedSeededMap`, inhabit `hSrcCmmsa`, or assert
 unconditional Theorem 1, Corollary 2, or P vs NP.
@@ -3537,5 +3537,246 @@ theorem readRatTag_of_tree (t : CMMSACodec.Tree) :
   simp [readRatTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
     pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
   exact readRatOnEncode_of_tree t
+
+/-! ## Packed `readSigned`: sign tag plus unsigned `readRatOnEncode`. -/
+
+private def wrapPos (ratPacked : List Bool) : List Bool :=
+  true :: ([true, false] ++ dropOne ratPacked)
+
+private def wrapNeg (ratPacked : List Bool) : List Bool :=
+  true :: ([true, true, false, false] ++ dropOne ratPacked)
+
+private theorem wrapPosFn_mem_FP {f : List Bool → List Bool} (hf : f ∈ FP) :
+    (fun z => wrapPos (f z)) ∈ FP := by
+  have hdrop := dropOneFn_mem_FP hf
+  have happ := Cobham.appendFn_mem_FP (constFn_mem_FP [true, false]) hdrop
+  exact mem_FP_comp happ (Cobham.cons_mem_FP true)
+
+private theorem wrapNegFn_mem_FP {f : List Bool → List Bool} (hf : f ∈ FP) :
+    (fun z => wrapNeg (f z)) ∈ FP := by
+  have hdrop := dropOneFn_mem_FP hf
+  have happ := Cobham.appendFn_mem_FP (constFn_mem_FP [true, true, false, false]) hdrop
+  exact mem_FP_comp happ (Cobham.cons_mem_FP true)
+
+private theorem encode_node_leaf (t : CMMSACodec.Tree) :
+    CMMSACodec.Tree.encode (.node .leaf t) =
+      [true, false] ++ CMMSACodec.Tree.encode t := by
+  simp [CMMSACodec.Tree.encode]
+
+private theorem encode_node_neg (t : CMMSACodec.Tree) :
+    CMMSACodec.Tree.encode (.node (.node .leaf .leaf) t) =
+      [true, true, false, false] ++ CMMSACodec.Tree.encode t := by
+  simp [CMMSACodec.Tree.encode]
+
+private theorem wrapPos_succ (q : Rat) :
+    wrapPos (true :: CMMSACodec.Tree.encode (ratTree q)) =
+      true :: CMMSACodec.Tree.encode (.node .leaf (ratTree q)) := by
+  simp [wrapPos, dropOne_cons, encode_node_leaf]
+
+private theorem wrapNeg_succ (q : Rat) :
+    wrapNeg (true :: CMMSACodec.Tree.encode (ratTree q)) =
+      true :: CMMSACodec.Tree.encode (.node (.node .leaf .leaf) (ratTree q)) := by
+  simp [wrapNeg, dropOne_cons, encode_node_neg]
+
+private theorem encode_natTree_eq_leaf {n : Nat} :
+    CMMSACodec.Tree.encode (natTree n) = [false] ↔ n = 0 := by
+  constructor
+  · intro h
+    cases hn : n.bits with
+    | nil => exact bits_eq_nil hn
+    | cons b t =>
+        cases b <;> simp [natTree, digitTree, CMMSACodec.Tree.encode, hn] at h
+  · rintro rfl
+    simp [natTree, digitTree, CMMSACodec.Tree.encode]
+
+private theorem rat_num_natAbs_eq_zero {q : Rat} :
+    q.num.natAbs = 0 ↔ q = 0 := by
+  simp [Int.natAbs_eq_zero, Rat.num_eq_zero]
+
+private theorem nodeLeft_ratTree (q : Rat) :
+    nodeLeft (CMMSACodec.Tree.encode (ratTree q)) =
+      CMMSACodec.Tree.encode (natTree q.num.natAbs) := by
+  simp [ratTree, nodeLeft_node]
+
+private theorem ratTree_neg (q : Rat) : ratTree (-q) = ratTree q := by
+  simp [ratTree, Rat.num_neg_eq_neg_num, Rat.den_neg_eq_den, Int.natAbs_neg]
+
+private theorem signedTree_of_nonneg {q : Rat} (hq : ¬ q < 0) :
+    signedTree q = .node .leaf (ratTree q) := by
+  simp [signedTree, hq]
+
+private theorem signedTree_of_lt {q : Rat} (hq : q < 0) :
+    signedTree q = .node (.node .leaf .leaf) (ratTree q) := by
+  simp [signedTree, hq]
+
+private theorem signedTree_neg_of_pos {q : Rat} (hq : 0 < q) :
+    signedTree (-q) = .node (.node .leaf .leaf) (ratTree q) := by
+  have hlt : -q < 0 := neg_lt_zero.mpr hq
+  simp [signedTree, hlt, ratTree_neg]
+
+private theorem readRat_nonneg {t : CMMSACodec.Tree} {q : Rat}
+    (h : readRat t = some q) : 0 ≤ q := by
+  cases t with
+  | leaf => simp [readRat] at h
+  | node n d =>
+      simp only [readRat] at h
+      cases hn : readNat n with
+      | none => simp [hn] at h
+      | some num =>
+          simp [hn] at h
+          cases hd : readNat d with
+          | none => simp [hd] at h
+          | some den =>
+              simp [hd] at h
+              obtain ⟨_, rfl⟩ := h
+              exact div_nonneg (Nat.cast_nonneg _) (Nat.cast_nonneg _)
+
+private def readSignedOnEncode (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (splitNode z)) []
+    (Cobham.selectHead (Cobham.eqFlag (nodeLeft z) [false])
+      (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+        (wrapPos (readRatOnEncode (nodeRight z))))
+      (Cobham.selectHead (Cobham.eqFlag (nodeLeft z) [true, false, false])
+        (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+          (Cobham.selectHead
+            (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z))))
+              [false])
+            (wrapPos (readRatOnEncode (nodeRight z)))
+            (wrapNeg (readRatOnEncode (nodeRight z)))))
+        []))
+
+private theorem readSignedOnEncode_mem_FP : readSignedOnEncode ∈ FP := by
+  have hsplit := splitNode_mem_FP
+  have hleft := nodeLeft_mem_FP
+  have hright := nodeRight_mem_FP
+  have hrat := mem_FP_comp hright readRatOnEncode_mem_FP
+  have hpos := wrapPosFn_mem_FP hrat
+  have hneg := wrapNegFn_mem_FP hrat
+  have hzero := eqFlagFn_mem_FP
+    (mem_FP_comp (dropOneFn_mem_FP hrat) nodeLeft_mem_FP)
+    (constFn_mem_FP [false])
+  have hposTag := eqFlagFn_mem_FP hleft (constFn_mem_FP [false])
+  have hnegTag := eqFlagFn_mem_FP hleft (constFn_mem_FP [true, false, false])
+  have hposBody := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hrat)
+    (constFn_mem_FP []) hpos
+  have hnegInner := Cobham.selectHeadFn_mem_FP hzero hpos hneg
+  have hnegBody := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hrat)
+    (constFn_mem_FP []) hnegInner
+  have hneg? := Cobham.selectHeadFn_mem_FP hnegTag hnegBody (constFn_mem_FP [])
+  have hpos? := Cobham.selectHeadFn_mem_FP hposTag hposBody hneg?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    (constFn_mem_FP []) hpos?
+
+/-- Pack `readSigned` on a complete tree encoding. Empty = none; nonempty =
+`true :: encode (signedTree q)`. Malformed sign tag or rat → `[]`. -/
+def readSignedTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (treeParseTag z)) []
+    (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag z))))
+      (readSignedOnEncode (pairFst (dropOne (treeParseTag z))))
+      [])
+
+theorem readSignedTag_mem_FP : readSignedTag ∈ Complexity.FP := by
+  have htag := treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have hfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have hsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hread := mem_FP_comp hfst readSignedOnEncode_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsnd)
+    hread (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
+    (constFn_mem_FP []) hinner
+
+private theorem readSignedOnEncode_of_tree (t : CMMSACodec.Tree) :
+    readSignedOnEncode (CMMSACodec.Tree.encode t) =
+      match readSigned t with
+      | none => []
+      | some q => true :: CMMSACodec.Tree.encode (signedTree q) := by
+  cases t with
+  | leaf =>
+      simp [readSignedOnEncode, CMMSACodec.Tree.encode, splitNode_leaf,
+        emptyFlag_nil, selectHead_true, readSigned]
+  | node p q =>
+      rw [readSignedOnEncode, splitNode_node, emptyFlag_cons, selectHead_false,
+        nodeLeft_node, nodeRight_node]
+      cases p with
+      | leaf =>
+          have hpos : Cobham.eqFlag (CMMSACodec.Tree.encode .leaf) [false] = [true] :=
+            (Cobham.eqFlag_eq_true_iff _ _).mpr (by simp [CMMSACodec.Tree.encode])
+          rw [hpos, selectHead_true, readRatOnEncode_of_tree]
+          cases hr : readRat q with
+          | none =>
+              simp [readSigned, hr, emptyFlag_nil, selectHead_true]
+          | some r =>
+              rw [emptyFlag_cons, selectHead_false, wrapPos_succ]
+              have hr0 : 0 ≤ r := readRat_nonneg hr
+              simp [readSigned, hr, signedTree_of_nonneg (not_lt.mpr hr0)]
+      | node a b =>
+          have hnotpos := eqFlag_eq_false_of_ne
+            (show CMMSACodec.Tree.encode (.node a b) ≠ [false] by
+              simp [CMMSACodec.Tree.encode])
+          rw [hnotpos, selectHead_false]
+          cases a with
+          | leaf =>
+              cases b with
+              | leaf =>
+                  have hneg : Cobham.eqFlag
+                      (CMMSACodec.Tree.encode (.node .leaf .leaf))
+                      [true, false, false] = [true] :=
+                    (Cobham.eqFlag_eq_true_iff _ _).mpr
+                      (by simp [CMMSACodec.Tree.encode])
+                  rw [hneg, selectHead_true, readRatOnEncode_of_tree]
+                  cases hr : readRat q with
+                  | none =>
+                      simp [readSigned, hr, emptyFlag_nil, selectHead_true]
+                  | some r =>
+                      rw [emptyFlag_cons, selectHead_false, dropOne_cons,
+                        nodeLeft_ratTree]
+                      have hr0 : 0 ≤ r := readRat_nonneg hr
+                      by_cases hz : r = 0
+                      · subst hz
+                        have hleaf : Cobham.eqFlag
+                            (CMMSACodec.Tree.encode (natTree (0 : Rat).num.natAbs))
+                            [false] = [true] :=
+                          (Cobham.eqFlag_eq_true_iff _ _).mpr
+                            (by simp [encode_natTree_eq_leaf])
+                        rw [hleaf, selectHead_true, wrapPos_succ]
+                        simp [readSigned, hr, signedTree_of_nonneg]
+                      · have hne :
+                            CMMSACodec.Tree.encode (natTree r.num.natAbs) ≠ [false] := by
+                          intro henc
+                          exact hz (rat_num_natAbs_eq_zero.mp
+                            (encode_natTree_eq_leaf.mp henc))
+                        rw [eqFlag_eq_false_of_ne hne, selectHead_false,
+                          wrapNeg_succ]
+                        have hrpos : 0 < r := lt_of_le_of_ne hr0 (Ne.symm hz)
+                        simp [readSigned, hr, signedTree_neg_of_pos hrpos]
+              | node a' b' =>
+                  have ht := eqFlag_eq_false_of_ne
+                    (show CMMSACodec.Tree.encode
+                        (.node .leaf (.node a' b')) ≠ [true, false, false] by
+                      simp [CMMSACodec.Tree.encode])
+                  rw [ht, selectHead_false]
+                  simp [readSigned]
+          | node a' b' =>
+              have ht := eqFlag_eq_false_of_ne
+                (show CMMSACodec.Tree.encode
+                    (.node (.node a' b') b) ≠ [true, false, false] by
+                  simp [CMMSACodec.Tree.encode])
+              rw [ht, selectHead_false]
+              simp [readSigned]
+
+/-- Packed `readSigned` agrees with `readSigned` / `signedTree` on a complete tree. -/
+theorem readSignedTag_of_tree (t : CMMSACodec.Tree) :
+    readSignedTag (CMMSACodec.Tree.encode t) =
+      match ExecutablePipelineInput.readSigned t with
+      | none => []
+      | some q =>
+          true :: CMMSACodec.Tree.encode
+            (ExecutablePipelineInput.signedTree q) := by
+  have hparse := treeParseTag_encode_append t []
+  simp [List.append_nil] at hparse
+  simp [readSignedTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
+    pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
+  exact readSignedOnEncode_of_tree t
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
