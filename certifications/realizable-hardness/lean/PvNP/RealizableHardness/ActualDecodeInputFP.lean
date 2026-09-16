@@ -17,7 +17,8 @@ Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 the signed-element list spine. `readFormulaTag` packs var/and/or tags plus
 `readNatTag` on `pair n.bits (encode t)`. Tree agreement for `readFormulaTag`
 is `readFormulaTag_of_pair`. `readRowTag` packs `readSignedTag` plus
-`readFormulaTag`. This module does
+`readFormulaTag`. `readRowListTag` packs `readList (readRow n)` on
+`pair n.bits (encode t)`. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -6231,5 +6232,622 @@ theorem readRowTag_of_pair (n : Nat) (t : CMMSACodec.Tree) :
           | some fm =>
               have hw := wrapRowEnc_eq (N := n) (q, fm)
               simp [hf, emptyFlag_cons, selectHead_false, dropOne_cons, hw]
+
+/-! ## Packed `readList (readRow n)` on `pair n.bits (encode t)`. -/
+
+private theorem formPayload_length_le (st : List Bool) :
+    (formPayload st).length ≤ st.length :=
+  (pairSnd_length_le _).trans <|
+    (pairFst_length_le _).trans (pairSnd_length_le _)
+
+private theorem formPack_length (st : List Bool) :
+    (formPack st).length ≤ st.length + 1 := by
+  unfold formPack
+  have hp := formPayload_length_le st
+  have htrue : (true :: formPayload st).length ≤ st.length + 1 := by
+    simp; omega
+  have hinner := selectHead_length_le_of
+    (emptyFlag (dropOne (formFlag st))) [] (true :: formPayload st)
+    (by simp) htrue
+  have hmid := selectHead_length_le_of (formFlag st)
+    (Cobham.selectHead (emptyFlag (dropOne (formFlag st))) []
+      (true :: formPayload st)) []
+    hinner (by simp)
+  exact selectHead_length_le_of (emptyFlag (formFlag st)) [] _ (by simp) hmid
+
+private theorem readFormulaTag_length (z : List Bool) :
+    (readFormulaTag z).length ≤ (formWidth z).length + 1 :=
+  (formPack_length _).trans
+    (Nat.succ_le_succ (formStep_iterate_length z (formRuler z).length))
+
+private theorem cube_mono {a b : Nat} (h : a ≤ b) : a * a * a ≤ b * b * b :=
+  Nat.mul_le_mul (Nat.mul_le_mul h h) h
+
+private theorem readSignedTag_length (z : List Bool) :
+    (readSignedTag z).length ≤ 8 * z.length + 40 := by
+  unfold readSignedTag
+  have harg : (pairFst (dropOne (treeParseTag z))).length ≤ z.length := by
+    unfold treeParseTag
+    cases hp : CMMSACodec.Tree.parse (z.length + 1) z with
+    | none => simp [dropOne_nil, pairFst_nil]
+    | some pr =>
+        obtain ⟨t, rest⟩ := pr
+        have hpre := parse_consumed hp
+        simp [dropOne_cons, pairFst_pair]
+        have := congrArg List.length hpre
+        simp [List.length_append] at this
+        omega
+  have hsig := readSignedOnEncode_length (pairFst (dropOne (treeParseTag z)))
+  have hbound : (readSignedOnEncode (pairFst (dropOne (treeParseTag z)))).length ≤
+      8 * z.length + 40 := by omega
+  have hinner := selectHead_length_le_of
+    (emptyFlag (pairSnd (dropOne (treeParseTag z))))
+    (readSignedOnEncode (pairFst (dropOne (treeParseTag z)))) []
+    hbound (by simp)
+  exact selectHead_length_le_of (emptyFlag (treeParseTag z)) [] _
+    (by simp) hinner
+
+private theorem wrapRowEnc_length (pEnc fEnc : List Bool) :
+    (wrapRowEnc pEnc fEnc).length = pEnc.length + fEnc.length + 2 := by
+  simp [wrapRowEnc]
+
+private theorem readRowTag_length (z : List Bool) :
+    (readRowTag z).length ≤
+      (readSignedTag (nodeLeft (pairSnd z))).length +
+        (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z)))).length + 2 := by
+  unfold readRowTag
+  have hw : (wrapRowEnc
+      (dropOne (readSignedTag (nodeLeft (pairSnd z))))
+      (dropOne (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z)))))).length ≤
+      (readSignedTag (nodeLeft (pairSnd z))).length +
+        (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z)))).length + 2 := by
+    have hs := dropOne_length (readSignedTag (nodeLeft (pairSnd z)))
+    have hf := dropOne_length
+      (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z))))
+    simp [wrapRowEnc_length]
+    omega
+  have hform := selectHead_length_le_of
+    (emptyFlag (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z))))) []
+    (wrapRowEnc (dropOne (readSignedTag (nodeLeft (pairSnd z))))
+      (dropOne (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z))))))
+    (by simp) hw
+  have hsigned := selectHead_length_le_of
+    (emptyFlag (readSignedTag (nodeLeft (pairSnd z)))) [] _
+    (by simp) hform
+  exact selectHead_length_le_of (emptyFlag (splitNode (pairSnd z))) [] _
+    (by simp) hsigned
+
+private theorem readRowTag_pair_length (bound enc : List Bool) {n : Nat}
+    (hb : bound.length ≤ n) (he : enc.length ≤ n + 1) :
+    (readRowTag (pair bound enc)).length ≤
+      (6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 51 := by
+  have hlen := readRowTag_length (pair bound enc)
+  simp only [pairFst_pair, pairSnd_pair] at hlen
+  have hnl := nodeLeft_length_le enc
+  have hnr := nodeRight_length_le enc
+  have hs : (readSignedTag (nodeLeft enc)).length ≤ 8 * n + 48 := by
+    have hsig := readSignedTag_length (nodeLeft enc)
+    have : 8 * (nodeLeft enc).length + 40 ≤ 8 * n + 48 := by
+      have : (nodeLeft enc).length ≤ n + 1 := (hnl.trans he)
+      omega
+    exact hsig.trans this
+  have hmul : 2 * (pair bound (nodeRight enc)).length + 32 ≤ 6 * n + 48 := by
+    rw [pair_length]
+    have : (nodeRight enc).length ≤ n + 1 := hnr.trans he
+    omega
+  have hcube := cube_mono hmul
+  have hfw : (formWidth (pair bound (nodeRight enc))).length ≤
+      (6 * n + 48) * (6 * n + 48) * (6 * n + 48) := by
+    rw [formWidth_length]
+    have h2 : (pair bound (nodeRight enc)).length +
+        (pair bound (nodeRight enc)).length + 32 =
+        2 * (pair bound (nodeRight enc)).length + 32 := by omega
+    rw [h2]
+    exact hcube
+  have hf : (readFormulaTag (pair bound (nodeRight enc))).length ≤
+      (6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 1 :=
+    (readFormulaTag_length _).trans (Nat.succ_le_succ hfw)
+  have hsum :
+      (readSignedTag (nodeLeft enc)).length +
+        (readFormulaTag (pair bound (nodeRight enc))).length + 2 ≤
+      (6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 51 := by
+    have hadd := Nat.add_le_add_right (Nat.add_le_add hs hf) 2
+    have heq : 8 * n + 48 +
+        ((6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 1) + 2 =
+      (6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 51 := by
+      ring
+    exact hadd.trans (Nat.le_of_eq heq)
+  exact hlen.trans hsum
+
+private def rowSt (bound rem flag acc : List Bool) : List Bool :=
+  pair bound (digPack rem flag acc)
+
+private theorem rowSt_length (bound rem flag acc : List Bool) :
+    (rowSt bound rem flag acc).length =
+      2 * bound.length + 2 * rem.length + 2 * flag.length + acc.length + 6 := by
+  simp [rowSt, digPack, pair_length]; omega
+
+private def rowInit (z : List Bool) : List Bool :=
+  rowSt (pairFst z) (pairSnd z) [] []
+
+private def rowRuler (z : List Bool) : List Bool := z ++ [false]
+
+private def rowArg (z : List Bool) : List Bool :=
+  z ++ z ++ z ++ z ++ z ++ z ++ List.replicate 64 false
+
+private def rowWidth (z : List Bool) : List Bool :=
+  List.replicate
+    ((rowArg z).length * (rowArg z).length *
+      (rowArg z).length * (rowArg z).length) false
+
+private def rowStep (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst (pairSnd (pairSnd st))))
+    (Cobham.selectHead (Cobham.eqFlag (pairFst (pairSnd st)) [false])
+      (rowSt (pairFst st) [false] [false]
+        (pairSnd (pairSnd (pairSnd st)) ++ [false]))
+      (Cobham.selectHead (emptyFlag (splitNode (pairFst (pairSnd st))))
+        (rowSt (pairFst st) [] [true] [])
+        (Cobham.selectHead
+          (emptyFlag (readRowTag
+            (pair (pairFst st) (nodeLeft (pairFst (pairSnd st))))))
+          (rowSt (pairFst st) [] [true] [])
+          (rowSt (pairFst st) (nodeRight (pairFst (pairSnd st))) []
+            (pairSnd (pairSnd (pairSnd st)) ++
+              readRowTag
+                (pair (pairFst st) (nodeLeft (pairFst (pairSnd st)))))))))
+    st
+
+private theorem rowInit_mem_FP : rowInit ∈ FP :=
+  Cobham.pairFn_mem_FP Cobham.fstBlock_mem_FP
+    (Cobham.pairFn_mem_FP Cobham.sndBlock_mem_FP
+      (constFn_mem_FP (pair [] [])))
+
+private theorem rowRuler_mem_FP : rowRuler ∈ FP :=
+  Cobham.appendFn_mem_FP id_mem_FP (constFn_mem_FP [false])
+
+private theorem rowArg_mem_FP : rowArg ∈ FP :=
+  Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP
+      (Cobham.appendFn_mem_FP
+        (Cobham.appendFn_mem_FP
+          (Cobham.appendFn_mem_FP
+            (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+            id_mem_FP)
+          id_mem_FP)
+        id_mem_FP)
+      id_mem_FP)
+    (Cobham.const_replicate_mem_FP 64)
+
+private theorem rowWidth_mem_FP : rowWidth ∈ FP := by
+  have harg := rowArg_mem_FP
+  have hsq := Cobham.mulLenFn_mem_FP harg harg
+  have hcube := Cobham.mulLenFn_mem_FP hsq harg
+  have hquart := Cobham.mulLenFn_mem_FP hcube harg
+  refine mem_FP_of_eq hquart fun z => ?_
+  simp [rowWidth, List.length_replicate]
+
+private theorem rowRuler_length (z : List Bool) :
+    (rowRuler z).length = z.length + 1 := by
+  simp [rowRuler]
+
+private theorem rowWidth_length (z : List Bool) :
+    (rowWidth z).length =
+      (6 * z.length + 64) * (6 * z.length + 64) *
+        (6 * z.length + 64) * (6 * z.length + 64) := by
+  simp [rowWidth, rowArg, List.length_append, List.length_replicate]
+  ring
+
+private theorem row_poly_bound (n : Nat) :
+    4 * n + 10 +
+      (n + 1) * ((6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 52) ≤
+      (6 * n + 64) * (6 * n + 64) * (6 * n + 64) * (6 * n + 64) := by
+  have hR : (6 * n + 64) * (6 * n + 64) * (6 * n + 64) * (6 * n + 64) =
+      1296 * n * n * n * n + 55296 * n * n * n + 884736 * n * n +
+        6291456 * n + 16777216 := by ring
+  have hL : 4 * n + 10 +
+      (n + 1) * ((6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 52) =
+      216 * n * n * n * n + 5400 * n * n * n + 46664 * n * n +
+        152128 * n + 110654 := by ring
+  nlinarith
+
+private theorem rowStep_mem_FP : rowStep ∈ FP := by
+  have hbound : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hrem : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hflag : (fun st : List Bool => pairFst (pairSnd (pairSnd st))) ∈ FP :=
+    mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+      Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd (pairSnd (pairSnd st))) ∈ FP :=
+    mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+      Cobham.sndBlock_mem_FP
+  have hleft := mem_FP_comp hrem nodeLeft_mem_FP
+  have hright := mem_FP_comp hrem nodeRight_mem_FP
+  have hsplit := mem_FP_comp hrem splitNode_mem_FP
+  have harg := Cobham.pairFn_mem_FP hbound hleft
+  have hread := mem_FP_comp harg readRowTag_mem_FP
+  have hleaf := eqFlagFn_mem_FP hrem (constFn_mem_FP [false])
+  have hsucc : (fun st : List Bool =>
+      rowSt (pairFst st) [false] [false]
+        (pairSnd (pairSnd (pairSnd st)) ++ [false])) ∈ FP :=
+    Cobham.pairFn_mem_FP hbound
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [false])
+        (Cobham.pairFn_mem_FP (constFn_mem_FP [false])
+          (Cobham.appendFn_mem_FP hacc (constFn_mem_FP [false]))))
+  have hfail : (fun st : List Bool => rowSt (pairFst st) [] [true] []) ∈ FP :=
+    Cobham.pairFn_mem_FP hbound (constFn_mem_FP (digPack [] [true] []))
+  have hcons : (fun st : List Bool =>
+      rowSt (pairFst st) (nodeRight (pairFst (pairSnd st))) []
+        (pairSnd (pairSnd (pairSnd st)) ++
+          readRowTag (pair (pairFst st) (nodeLeft (pairFst (pairSnd st)))))) ∈ FP :=
+    Cobham.pairFn_mem_FP hbound
+      (Cobham.pairFn_mem_FP hright
+        (Cobham.pairFn_mem_FP (constFn_mem_FP [])
+          (Cobham.appendFn_mem_FP hacc hread)))
+  have hrow := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hread) hfail hcons
+  have hsplit? := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    hfail hrow
+  have hleaf? := Cobham.selectHeadFn_mem_FP hleaf hsucc hsplit?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hflag) hleaf? id_mem_FP
+
+private inductive RowListSem where
+  | run (n : Nat) (rem : CMMSACodec.Tree) (acc : List Bool)
+  | done (n : Nat) (acc : List Bool)
+  | fail (n : Nat)
+
+private def rowListSemStep : RowListSem → RowListSem
+  | .done n acc => .done n acc
+  | .fail n => .fail n
+  | .run n .leaf acc => .done n (acc ++ [false])
+  | .run n (.node p q) acc =>
+      match readRow n p with
+      | none => .fail n
+      | some row =>
+          .run n q (acc ++ (true :: CMMSACodec.Tree.encode (rowTree row)))
+
+private def encodeRowListSem : RowListSem → List Bool
+  | .fail n => rowSt n.bits [] [true] []
+  | .done n acc => rowSt n.bits [false] [false] acc
+  | .run n t acc => rowSt n.bits (CMMSACodec.Tree.encode t) [] acc
+
+private theorem rowStep_encode (s : RowListSem) :
+    rowStep (encodeRowListSem s) = encodeRowListSem (rowListSemStep s) := by
+  cases s with
+  | fail n =>
+      simp [encodeRowListSem, rowListSemStep, rowStep, rowSt, digPack,
+        emptyFlag_cons, selectHead_false]
+  | done n acc =>
+      simp [encodeRowListSem, rowListSemStep, rowStep, rowSt, digPack,
+        emptyFlag_cons, selectHead_false]
+  | run n t acc =>
+      simp only [encodeRowListSem, rowStep, rowSt, digPack, pairFst_pair,
+        pairSnd_pair, emptyFlag_nil, selectHead_true]
+      cases t with
+      | leaf =>
+          have hleaf : Cobham.eqFlag [false] [false] = [true] :=
+            (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+          simp [CMMSACodec.Tree.encode, hleaf, selectHead_true, rowListSemStep,
+            encodeRowListSem, rowSt, digPack]
+      | node p q =>
+          have hnotleaf := eqFlag_eq_false_of_ne
+            (show CMMSACodec.Tree.encode (.node p q) ≠ [false] by
+              simp [CMMSACodec.Tree.encode])
+          rw [hnotleaf, selectHead_false, splitNode_node, emptyFlag_cons,
+            selectHead_false, nodeLeft_node, nodeRight_node,
+            readRowTag_of_pair]
+          cases hr : readRow n p with
+          | none =>
+              simp [rowListSemStep, hr, emptyFlag_nil, selectHead_true,
+                encodeRowListSem, rowSt, digPack]
+          | some row =>
+              simp [rowListSemStep, hr, emptyFlag_cons, selectHead_false,
+                encodeRowListSem, rowSt, digPack]
+
+private theorem rowStep_iterate_encode (s : RowListSem) (k : Nat) :
+    rowStep^[k] (encodeRowListSem s) = encodeRowListSem (rowListSemStep^[k] s) := by
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+      rw [Function.iterate_succ_apply', Function.iterate_succ_apply', ih,
+        rowStep_encode]
+
+private theorem encode_row_list_cons {N : Nat} (row : FiniteSourceSampler.Row N)
+    (rows : List (FiniteSourceSampler.Row N)) :
+    (listTree ((row :: rows).map rowTree)).encode =
+      true :: ((rowTree row).encode ++
+        (listTree (rows.map rowTree)).encode) := by
+  simp [listTree, CMMSACodec.Tree.encode]
+
+private def evalRowList : RowListSem → Option (List Bool)
+  | .fail _ => none
+  | .done _ acc => some acc
+  | .run n t acc =>
+      match readList (readRow n) t with
+      | none => none
+      | some rows =>
+          some (acc ++ CMMSACodec.Tree.encode (listTree (rows.map rowTree)))
+
+private theorem evalRowList_step (s : RowListSem) :
+    evalRowList (rowListSemStep s) = evalRowList s := by
+  cases s with
+  | fail _ | done _ _ => simp [rowListSemStep, evalRowList]
+  | run n t acc =>
+      cases t with
+      | leaf =>
+          simp [rowListSemStep, evalRowList, readList, listTree,
+            CMMSACodec.Tree.encode]
+      | node p q =>
+          simp only [rowListSemStep, evalRowList, readList]
+          cases hp : readRow n p with
+          | none => simp [hp]
+          | some row =>
+              simp [hp]
+              cases hq : readList (readRow n) q with
+              | none => simp [hq]
+              | some rs =>
+                  simp [hq]
+                  simpa using (encode_row_list_cons row rs).symm
+
+private theorem evalRowList_iterate (s : RowListSem) (k : Nat) :
+    evalRowList (rowListSemStep^[k] s) = evalRowList s := by
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+      rw [Function.iterate_succ_apply', evalRowList_step, ih]
+
+private def rowListMeasure : RowListSem → Nat
+  | .done _ _ | .fail _ => 0
+  | .run _ t _ => (CMMSACodec.Tree.encode t).length + 1
+
+private theorem rowListMeasure_lt (s : RowListSem) (h : rowListMeasure s ≠ 0) :
+    rowListMeasure (rowListSemStep s) < rowListMeasure s := by
+  cases s with
+  | fail _ | done _ _ => simp [rowListMeasure] at h
+  | run n t acc =>
+      cases t with
+      | leaf => simp [rowListSemStep, rowListMeasure]
+      | node p q =>
+          have hlen := encode_node_length p q
+          simp only [rowListSemStep]
+          cases readRow n p with
+          | none => simp [rowListMeasure]
+          | some _ => simp [rowListMeasure, hlen]
+
+private theorem rowListStuck (s : RowListSem) (h : rowListMeasure s = 0) :
+    rowListSemStep s = s := by
+  cases s <;> simp [rowListMeasure] at h ⊢ <;> simp [rowListSemStep]
+
+private theorem iterate_rowListStuck (s : RowListSem) (h : rowListMeasure s = 0) :
+    ∀ k, rowListSemStep^[k] s = s := by
+  intro k
+  induction k with
+  | zero => rfl
+  | succ k ih =>
+      rw [Function.iterate_succ_apply', ih, rowListStuck s h]
+
+private theorem rowListReaches : ∀ (k : Nat) (s : RowListSem),
+    rowListMeasure s ≤ k →
+      rowListMeasure (rowListSemStep^[rowListMeasure s] s) = 0 := by
+  intro k
+  induction k with
+  | zero =>
+      intro s hs
+      have hz : rowListMeasure s = 0 := Nat.eq_zero_of_le_zero hs
+      simp [hz]
+  | succ k ih =>
+      intro s hs
+      cases hmz : rowListMeasure s with
+      | zero => simp [hmz]
+      | succ m =>
+          have hne : rowListMeasure s ≠ 0 := by simp [hmz]
+          have hlt := rowListMeasure_lt s hne
+          have hle : rowListMeasure (rowListSemStep s) ≤ k := by omega
+          have hinter := ih (rowListSemStep s) hle
+          rw [Function.iterate_succ_apply]
+          have hsplit : m = (m - rowListMeasure (rowListSemStep s)) +
+              rowListMeasure (rowListSemStep s) := by omega
+          rw [hsplit, Function.iterate_add_apply, iterate_rowListStuck _ hinter]
+          exact hinter
+
+private theorem iterate_ge_rowListStuck (s : RowListSem) {k : Nat}
+    (hk : rowListMeasure s ≤ k) :
+    rowListMeasure (rowListSemStep^[k] s) = 0 := by
+  have hsplit : k = (k - rowListMeasure s) + rowListMeasure s := by omega
+  have hs := rowListReaches k s hk
+  rw [hsplit, Function.iterate_add_apply, iterate_rowListStuck _ hs]
+  exact hs
+
+private theorem pack_evalRowList (s : RowListSem) (h : rowListMeasure s = 0) :
+    packDigits (pairSnd (encodeRowListSem s)) =
+      match evalRowList s with
+      | none => []
+      | some acc => true :: acc := by
+  cases s with
+  | fail n =>
+      simp only [encodeRowListSem, rowSt, digPack, evalRowList, packDigits,
+        pairFst_pair, pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [true] [false] = [false] :=
+        eqFlag_eq_false_of_ne (by simp)
+      rw [hf, selectHead_false]
+  | done n acc =>
+      simp only [encodeRowListSem, rowSt, digPack, evalRowList, packDigits,
+        pairFst_pair, pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [false] [false] = [true] :=
+        (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+      rw [hf, selectHead_true]
+  | run _ _ _ => simp [rowListMeasure] at h
+
+private def rowAccBound (n : Nat) : Nat :=
+  (6 * n + 48) * (6 * n + 48) * (6 * n + 48) + 8 * n + 52
+
+private structure RowListReach (z : List Bool) (k : Nat) (st : List Bool) : Prop where
+  bound_le : (pairFst st).length ≤ z.length
+  rem_le : (pairFst (pairSnd st)).length ≤ z.length + 1
+  acc_le : (pairSnd (pairSnd (pairSnd st))).length ≤ k * rowAccBound z.length
+  flag_le : (pairFst (pairSnd (pairSnd st))).length ≤ 1
+  st_le : st.length ≤ (rowWidth z).length
+
+private theorem rowReach_selectHead (z : List Bool) (k : Nat) (s x y : List Bool)
+    (hx : RowListReach z k x) (hy : RowListReach z k y) :
+    RowListReach z k (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil, rowWidth_length]
+
+private theorem rowReach_pack (z : List Bool) (k : Nat)
+    (bound rem flag acc : List Bool)
+    (hb : bound.length ≤ z.length)
+    (hrem : rem.length ≤ z.length + 1)
+    (hacc : acc.length ≤ k * rowAccBound z.length)
+    (hflag : flag.length ≤ 1) (hk : k ≤ z.length + 1) :
+    RowListReach z k (rowSt bound rem flag acc) := by
+  constructor
+  · simpa [rowSt, digPack] using hb
+  · simpa [rowSt, digPack] using hrem
+  · simpa [rowSt, digPack] using hacc
+  · simpa [rowSt, digPack] using hflag
+  · simp [rowSt_length, rowWidth_length]
+    have hacc' : acc.length ≤ (z.length + 1) * rowAccBound z.length :=
+      hacc.trans (Nat.mul_le_mul_right _ hk)
+    have hlin : 2 * bound.length + 2 * rem.length + 2 * flag.length + acc.length + 6 ≤
+        4 * z.length + 10 + (z.length + 1) * rowAccBound z.length := by omega
+    exact hlin.trans (row_poly_bound z.length)
+
+private theorem rowReach_init (z : List Bool) : RowListReach z 0 (rowInit z) := by
+  refine rowReach_pack z 0 (pairFst z) (pairSnd z) [] [] ?_ ?_ ?_ (by simp)
+    (by simp)
+  · exact pairFst_length_le z
+  · have := pairSnd_length_le z; omega
+  · simp
+
+private theorem rowStep_reach (z : List Bool) (k : Nat) (st : List Bool)
+    (hk : k ≤ z.length) (h : RowListReach z k st) :
+    RowListReach z (k + 1) (rowStep st) := by
+  unfold rowStep
+  have hstay : RowListReach z (k + 1) st :=
+    ⟨h.bound_le,
+      h.rem_le,
+      h.acc_le.trans (Nat.mul_le_mul_right _ (Nat.le_succ k)),
+      h.flag_le, h.st_le⟩
+  have hsucc : RowListReach z (k + 1)
+      (rowSt (pairFst st) [false] [false]
+        (pairSnd (pairSnd (pairSnd st)) ++ [false])) := by
+    refine rowReach_pack z (k + 1) _ _ _ _ h.bound_le (by simp) ?_ (by simp)
+      (Nat.succ_le_succ hk)
+    have hlen : (pairSnd (pairSnd (pairSnd st)) ++ [false]).length =
+        (pairSnd (pairSnd (pairSnd st))).length + 1 := by simp
+    have hB : 1 ≤ rowAccBound z.length := by
+      unfold rowAccBound; omega
+    have hacc := h.acc_le
+    have hmul : k * rowAccBound z.length + rowAccBound z.length =
+        (k + 1) * rowAccBound z.length := (Nat.succ_mul k _).symm
+    omega
+  have hfail : RowListReach z (k + 1) (rowSt (pairFst st) [] [true] []) :=
+    rowReach_pack z (k + 1) _ _ _ _ h.bound_le (by simp) (by simp) (by simp)
+      (Nat.succ_le_succ hk)
+  have hcons : RowListReach z (k + 1)
+      (rowSt (pairFst st) (nodeRight (pairFst (pairSnd st))) []
+        (pairSnd (pairSnd (pairSnd st)) ++
+          readRowTag (pair (pairFst st)
+            (nodeLeft (pairFst (pairSnd st)))))) := by
+    refine rowReach_pack z (k + 1) _ _ _ _ h.bound_le ?_ ?_ (by simp)
+      (Nat.succ_le_succ hk)
+    · have := nodeRight_length_le (pairFst (pairSnd st))
+      have := h.rem_le
+      omega
+    · have hacc := h.acc_le
+      have hrow := readRowTag_pair_length (pairFst st)
+        (nodeLeft (pairFst (pairSnd st))) h.bound_le (by
+          have := nodeLeft_length_le (pairFst (pairSnd st))
+          have := h.rem_le
+          omega)
+      have hrow' : (readRowTag (pair (pairFst st)
+          (nodeLeft (pairFst (pairSnd st))))).length ≤
+          rowAccBound z.length := by
+        simp [rowAccBound]
+        omega
+      have hlen : (pairSnd (pairSnd (pairSnd st)) ++
+          readRowTag (pair (pairFst st)
+            (nodeLeft (pairFst (pairSnd st))))).length =
+          (pairSnd (pairSnd (pairSnd st))).length +
+            (readRowTag (pair (pairFst st)
+              (nodeLeft (pairFst (pairSnd st))))).length := by
+        simp [List.length_append]
+      have hmul : k * rowAccBound z.length + rowAccBound z.length =
+          (k + 1) * rowAccBound z.length := (Nat.succ_mul k _).symm
+      omega
+  exact rowReach_selectHead z (k + 1)
+    (emptyFlag (pairFst (pairSnd (pairSnd st)))) _ st
+    (rowReach_selectHead z (k + 1)
+      (Cobham.eqFlag (pairFst (pairSnd st)) [false]) _ _
+      hsucc
+      (rowReach_selectHead z (k + 1)
+        (emptyFlag (splitNode (pairFst (pairSnd st)))) _ _
+        hfail
+        (rowReach_selectHead z (k + 1)
+          (emptyFlag (readRowTag (pair (pairFst st)
+            (nodeLeft (pairFst (pairSnd st)))))) _ _
+          hfail hcons)))
+    hstay
+
+private theorem rowReach_iterate (z : List Bool) :
+    ∀ k, k ≤ z.length + 1 → RowListReach z k (rowStep^[k] (rowInit z)) := by
+  intro k
+  induction k with
+  | zero => intro _; exact rowReach_init z
+  | succ k ih =>
+      intro hk
+      rw [Function.iterate_succ_apply']
+      exact rowStep_reach z k _ (by omega) (ih (by omega))
+
+private theorem rowStep_iterate_length (z : List Bool) (k : Nat)
+    (hk : k ≤ (rowRuler z).length) :
+    (rowStep^[k] (rowInit z)).length ≤ (rowWidth z).length := by
+  have hr := rowReach_iterate z k (by simpa [rowRuler_length] using hk)
+  exact hr.st_le
+
+/-- Pack `readList (readRow n)` on `pair n.bits (encode t)`. Empty = none;
+nonempty = `true :: encode (listTree (rows.map rowTree))`. -/
+def readRowListTag (z : List Bool) : List Bool :=
+  packDigits (pairSnd (rowStep^[(rowRuler z).length] (rowInit z)))
+
+theorem readRowListTag_mem_FP : readRowListTag ∈ Complexity.FP := by
+  have hbound : ∀ z : List Bool, ∀ k ≤ (rowRuler z).length,
+      (rowStep^[k] (rowInit z)).length ≤ (rowWidth z).length := by
+    intro z k hk
+    exact rowStep_iterate_length z k hk
+  have hiter := Cobham.iterate_mem_FP rowStep_mem_FP rowInit_mem_FP
+    rowRuler_mem_FP rowWidth_mem_FP hbound
+  exact mem_FP_comp (mem_FP_comp hiter Cobham.sndBlock_mem_FP) packDigits_mem_FP
+
+private theorem rowInit_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    rowInit (pair n.bits (CMMSACodec.Tree.encode t)) =
+      encodeRowListSem (.run n t []) := by
+  simp [rowInit, rowSt, encodeRowListSem, digPack, pairFst_pair, pairSnd_pair]
+
+theorem readRowListTag_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    readRowListTag (pair n.bits (CMMSACodec.Tree.encode t)) =
+      match readList (readRow n) t with
+      | none => []
+      | some rows =>
+          true :: CMMSACodec.Tree.encode (listTree (rows.map rowTree)) := by
+  set z := pair n.bits (CMMSACodec.Tree.encode t)
+  have henc : rowInit z = encodeRowListSem (.run n t []) := rowInit_of_pair n t
+  have hiter := rowStep_iterate_encode (.run n t []) (rowRuler z).length
+  rw [readRowListTag, henc, hiter]
+  have hstuck : rowListMeasure (rowListSemStep^[(rowRuler z).length]
+      (.run n t [])) = 0 := by
+    apply iterate_ge_rowListStuck
+    simp [rowListMeasure, rowRuler_length, z, pair_length]
+  have heval := evalRowList_iterate (.run n t []) (rowRuler z).length
+  have hpack := pack_evalRowList _ hstuck
+  rw [hpack, heval]
+  cases hread : readList (readRow n) t with
+  | none => simp [evalRowList, hread]
+  | some rows => simp [evalRowList, hread]
 
 end PvNP.RealizableHardness.ActualDecodeInputFP

@@ -8,7 +8,9 @@ Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP`,
 `readListTag_of_tree` are on the Cobham/semantic surface.
 `readFormulaTag`, `readFormulaTag_mem_FP`, and `readFormulaTag_of_pair`
 are on the Cobham/semantic surface. `readRowTag`, `readRowTag_mem_FP`, and
-`readRowTag_of_pair` pack signed-plus-formula rows. `decodeInputTag_mem_FP`
+`readRowTag_of_pair` pack signed-plus-formula rows. `readRowListTag`,
+`readRowListTag_mem_FP`, and `readRowListTag_of_pair` pack
+`readList (readRow n)` on `pair n.bits (encode t)`. `decodeInputTag_mem_FP`
 remains. This file does not inhabit `hSrcCmmsa` and does not assert
 unconditional Theorem 1, Corollary 2, or P vs NP.
 -/
@@ -39,6 +41,9 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readRowTag
 #check readRowTag_mem_FP
 #check readRowTag_of_pair
+#check readRowListTag
+#check readRowListTag_mem_FP
+#check readRowListTag_of_pair
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -55,6 +60,8 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readFormulaTag_of_pair
 #print axioms readRowTag_mem_FP
 #print axioms readRowTag_of_pair
+#print axioms readRowListTag_mem_FP
+#print axioms readRowListTag_of_pair
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -67,6 +74,8 @@ example : readListTag ∈ Complexity.FP := readListTag_mem_FP
 example : readFormulaTag ∈ Complexity.FP := readFormulaTag_mem_FP
 
 example : readRowTag ∈ Complexity.FP := readRowTag_mem_FP
+
+example : readRowListTag ∈ Complexity.FP := readRowListTag_mem_FP
 
 example (n : Nat) :
     readFormulaTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
@@ -87,6 +96,11 @@ example : readSignedTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) = [] := by
 example : readListTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) =
     true :: CMMSACodec.Tree.encode (CMMSACodec.listTree []) := by
   simp [readListTag_of_tree, CMMSACodec.readList, CMMSACodec.listTree]
+
+example (n : Nat) :
+    readRowListTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
+      true :: CMMSACodec.Tree.encode (CMMSACodec.listTree []) := by
+  simp [readRowListTag_of_pair, CMMSACodec.readList, CMMSACodec.listTree]
 
 example : decodeInputTag [] = [] := decodeInputTag_empty
 
