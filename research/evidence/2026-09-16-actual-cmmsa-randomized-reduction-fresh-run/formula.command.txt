@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.Formula
+source=/home/dfredriksen_quantyra_org/cmmsa-randomized-reduction-c058348-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/Formula.lean
+object=/home/dfredriksen_quantyra_org/cmmsa-randomized-reduction-c058348-fresh-target/lib/lean/PvNP/RealizableHardness/Formula.olean

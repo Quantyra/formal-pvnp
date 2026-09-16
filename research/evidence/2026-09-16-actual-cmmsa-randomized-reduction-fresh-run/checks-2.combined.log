@@ -1,0 +1,63 @@
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.cmmsaPromise (L sig : ℕ) (gam : ℚ) (hsig : 1 ≤ sig)
+  (hgam : 0 < gam) (hgam1 : gam < 1) : PromiseProblem
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.cmmsaPromise_yes_of_encode {L sig : ℕ} {gam : ℚ} (hsig : 1 ≤ sig)
+  (hgam : 0 < gam) (hgam1 : gam < 1) (i : Instance L) (hY : Yes 0 i) :
+  encode i ∈ (cmmsaPromise L sig gam hsig hgam hgam1).yesInstances
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.cmmsaPromise_no_of_encode {L sig : ℕ} {gam : ℚ} (hsig : 1 ≤ sig)
+  (hgam : 0 < gam) (hgam1 : gam < 1) (i : Instance L) (hN : No (↑sig) gam i) :
+  encode i ∈ (cmmsaPromise L sig gam hsig hgam hgam1).noInstances
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.RandomizedMapReduces (source target : PromiseProblem) : Prop
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.RandomizedPromiseNPHard (target : PromiseProblem) : Prop
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.two_stage_seededMap (R S : SeededMap)
+  (source middle target : PromiseProblem) (hR : Preserves R source middle (1 / 6) (1 / 6))
+  (hS : Preserves S middle target (1 / 6) (1 / 6)) :
+  ∃ C,
+    Preserves C source target (1 / 3) (1 / 3) ∧
+      (∃ p, ∀ (n : ℕ), C.coinCount n ≤ Polynomial.eval n p) ∧
+        ∃ k tm rawClock inputClock,
+          (tm.ComputesInTime C.run fun x => Polynomial.eval x rawClock) ∧
+            ∀ (x seed : List Bool),
+              seed.length = C.coinCount x.length →
+                Polynomial.eval (pair x seed).length rawClock ≤ Polynomial.eval x.length inputClock
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.two_stage_randomized_map (R S : SeededMap)
+  (source middle target : PromiseProblem) (hR : Preserves R source middle (1 / 6) (1 / 6))
+  (hS : Preserves S middle target (1 / 6) (1 / 6)) : RandomizedMapReduces source target
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap : SeededMap
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_preserves (P : PromiseProblem) :
+  Preserves identitySeededMap P P 0 0
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_coinCount (n : ℕ) :
+  identitySeededMap.coinCount n = 0
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_apply (x seed : List Bool) :
+  identitySeededMap.apply x seed = x
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_success (x : List Bool) (S : Set (List Bool))
+  (hx : x ∈ S) : successProbability identitySeededMap x S = 1
+PvNP.RealizableHardness.ActualCMMSARandomizedReduction.preserves_mono {R : SeededMap} {P Q : PromiseProblem}
+  {e1 e2 e1' e2' : ℚ} (h : Preserves R P Q e1 e2) (hle1 : e1 ≤ e1') (hle2 : e2 ≤ e2') (_he1' : e1' ≤ 1)
+  (_he2' : e2' ≤ 1) : Preserves R P Q e1' e2'
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.cmmsaPromise_yes_of_encode' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.cmmsaPromise_no_of_encode' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.two_stage_seededMap' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.two_stage_randomized_map' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_preserves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_coinCount' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.identitySeededMap_success' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualCMMSARandomizedReduction.preserves_mono' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

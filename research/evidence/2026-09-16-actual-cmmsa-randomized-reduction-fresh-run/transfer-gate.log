@@ -1,0 +1,30 @@
+expected_bundle_sha256=84B92F831B892BB537BF5EB4DB62CA3C9ACF82192852E9958005B338CE859CAF
+actual_bundle_sha256=84B92F831B892BB537BF5EB4DB62CA3C9ACF82192852E9958005B338CE859CAF
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/cmmsa-randomized-reduction-c058348-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-c058348.bundle is okay
+The bundle contains this ref:
+c0583486d30e65fa3c672a21b163be6f5c1c5b0e refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/cmmsa-randomized-reduction-c058348-src'...
+HEAD is now at c058348 prove actual CMMSA randomized-reduction interface
+expected_head=c0583486d30e65fa3c672a21b163be6f5c1c5b0e
+actual_head=c0583486d30e65fa3c672a21b163be6f5c1c5b0e
+status_begin
+
+status_end
+expected_main_sha256=9CDDC139FCF64A07A4E759AD8F5AA78337123FB0EA131E77924421FC4F776283
+actual_main_sha256=9CDDC139FCF64A07A4E759AD8F5AA78337123FB0EA131E77924421FC4F776283
+expected_checks_sha256=BF1C7E8BAA430A75CDC94F6E5DE8A68406000C8E23CE0D4955B18546B7390850
+actual_checks_sha256=BF1C7E8BAA430A75CDC94F6E5DE8A68406000C8E23CE0D4955B18546B7390850
+transfer_gate=PASS
