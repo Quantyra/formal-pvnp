@@ -6,10 +6,11 @@ Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP`,
 `gcdBits_odd_pair`, `readRatTag_mem_FP`, `readRatTag_of_tree`,
 `readSignedTag_mem_FP`, `readSignedTag_of_tree`, `readListTag_mem_FP`, and
 `readListTag_of_tree` are on the Cobham/semantic surface.
-`readFormulaTag` and `readFormulaTag_mem_FP` are on the Cobham surface.
-`decodeInputTag_mem_FP` remains. This file does
-not inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1,
-Corollary 2, or P vs NP.
+`readFormulaTag`, `readFormulaTag_mem_FP`, and `readFormulaTag_of_pair`
+are on the Cobham/semantic surface. `readRowTag`, `readRowTag_mem_FP`, and
+`readRowTag_of_pair` pack signed-plus-formula rows. `decodeInputTag_mem_FP`
+remains. This file does not inhabit `hSrcCmmsa` and does not assert
+unconditional Theorem 1, Corollary 2, or P vs NP.
 -/
 namespace PvNP.RealizableHardness.ActualDecodeInputFPChecks
 open Complexity
@@ -34,6 +35,10 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readListTag_of_tree
 #check readFormulaTag
 #check readFormulaTag_mem_FP
+#check readFormulaTag_of_pair
+#check readRowTag
+#check readRowTag_mem_FP
+#check readRowTag_of_pair
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -47,6 +52,9 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readListTag_mem_FP
 #print axioms readListTag_of_tree
 #print axioms readFormulaTag_mem_FP
+#print axioms readFormulaTag_of_pair
+#print axioms readRowTag_mem_FP
+#print axioms readRowTag_of_pair
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -57,6 +65,18 @@ example : readSignedTag ∈ Complexity.FP := readSignedTag_mem_FP
 example : readListTag ∈ Complexity.FP := readListTag_mem_FP
 
 example : readFormulaTag ∈ Complexity.FP := readFormulaTag_mem_FP
+
+example : readRowTag ∈ Complexity.FP := readRowTag_mem_FP
+
+example (n : Nat) :
+    readFormulaTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
+      [] := by
+  simp [readFormulaTag_of_pair, CMMSACodec.readFormula]
+
+example (n : Nat) :
+    readRowTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
+      [] := by
+  simp [readRowTag_of_pair, ExecutablePipelineInput.readRow]
 
 example : readRatTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) = [] := by
   simp [readRatTag_of_tree, CMMSACodec.readRat]

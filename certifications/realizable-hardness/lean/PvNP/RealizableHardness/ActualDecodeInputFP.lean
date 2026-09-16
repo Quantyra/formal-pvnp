@@ -15,8 +15,9 @@ Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 `gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`.
 `readSignedTag` packs the sign tag plus `readRatOnEncode`. `readListTag` packs
 the signed-element list spine. `readFormulaTag` packs var/and/or tags plus
-`readNatTag` on `pair n.bits (encode t)`. The formula bit-step agrees with
-the semantic stepper (`formStep_encode`). This module does
+`readNatTag` on `pair n.bits (encode t)`. Tree agreement for `readFormulaTag`
+is `readFormulaTag_of_pair`. `readRowTag` packs `readSignedTag` plus
+`readFormulaTag`. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -6094,5 +6095,141 @@ theorem readFormulaTag_mem_FP : readFormulaTag ∈ Complexity.FP := by
   have hiter := Cobham.iterate_mem_FP formStep_mem_FP formInit_mem_FP
     formRuler_mem_FP formWidth_mem_FP hbound
   exact mem_FP_comp hiter formPack_mem_FP
+
+private theorem initForm_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    initForm (pair n.bits (CMMSACodec.Tree.encode t)) =
+      { bound := n.bits, mode := .expand t, stack := [] } := by
+  have hp := CMMSACodec.Tree.parse_encode t []
+    ((CMMSACodec.Tree.encode t).length + 1)
+    (Nat.le_trans (CMMSACodec.Tree.depth_le_length t) (Nat.le_succ _))
+  simp [List.append_nil] at hp
+  simp [initForm, pairSnd_pair, pairFst_pair, hp]
+
+private def packReadFormula (n : Nat) (t : CMMSACodec.Tree) : List Bool :=
+  match readFormula n t with
+  | none => []
+  | some f => true :: CMMSACodec.Tree.encode (formulaTree f)
+
+private theorem packReadFormula_bits (n : Nat) (t : CMMSACodec.Tree) :
+    packReadFormula (bitValue n.bits) t = packReadFormula n t :=
+  congrArg (fun m => packReadFormula m t) (bitValue_bits n)
+
+private theorem evalForm_init_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    evalForm (initForm (pair n.bits (CMMSACodec.Tree.encode t))) =
+      match readFormula (bitValue n.bits) t with
+      | none => none
+      | some f => some (CMMSACodec.Tree.encode (formulaTree f)) := by
+  rw [initForm_of_pair]
+  simp only [evalForm]
+  cases readFormula (bitValue n.bits) t with
+  | none => rfl
+  | some f => simp [applyFormCont]
+
+private theorem pack_evalForm_init_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    (match evalForm (initForm (pair n.bits (CMMSACodec.Tree.encode t))) with
+     | none => []
+     | some enc => true :: enc) =
+      packReadFormula (bitValue n.bits) t := by
+  rw [evalForm_init_of_pair]
+  cases h : readFormula (bitValue n.bits) t with
+  | none => simp [packReadFormula, h]
+  | some f => simp [packReadFormula, h]
+
+/-- Packed `readFormula` agrees with `readFormula` / `formulaTree` on
+`pair n.bits (encode t)`. -/
+theorem readFormulaTag_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    readFormulaTag (pair n.bits (CMMSACodec.Tree.encode t)) =
+      match readFormula n t with
+      | none => []
+      | some f => true :: CMMSACodec.Tree.encode (formulaTree f) := by
+  set z := pair n.bits (CMMSACodec.Tree.encode t)
+  have henc : formInit z = encodeFormSem (initForm z) := formInit_eq z
+  have hiter := formStep_iterate_encode (initForm z) (formRuler z).length
+  rw [readFormulaTag, henc, hiter]
+  have hstuck : formMeasure (formSemStep^[(formRuler z).length] (initForm z)) = 0 := by
+    apply iterate_ge_formStuck
+    simpa [formRuler_length] using (formReach_init z).measure_le
+  have heval := evalForm_iterate (initForm z) (formRuler z).length
+  have hpack := pack_evalForm _ hstuck
+  rw [hpack, heval]
+  change (match evalForm (initForm (pair n.bits (CMMSACodec.Tree.encode t))) with
+    | none => []
+    | some enc => true :: enc) =
+      packReadFormula n t
+  rw [pack_evalForm_init_of_pair, packReadFormula_bits]
+
+/-! ## Packed `readRow`: signed tag plus `readFormulaTag` on `pair n.bits`. -/
+
+private def wrapRowEnc (pEnc fEnc : List Bool) : List Bool :=
+  true :: ([true] ++ pEnc ++ fEnc)
+
+private theorem wrapRowEnc_eq {N : Nat} (row : FiniteSourceSampler.Row N) :
+    wrapRowEnc (CMMSACodec.Tree.encode (signedTree row.1))
+      (CMMSACodec.Tree.encode (formulaTree row.2)) =
+      true :: CMMSACodec.Tree.encode (rowTree row) := by
+  rcases row with ⟨p, f⟩
+  simp [wrapRowEnc, rowTree, CMMSACodec.Tree.encode, List.append_assoc]
+
+private theorem wrapRowEnc_mem_FP {p q : List Bool → List Bool}
+    (hp : p ∈ FP) (hq : q ∈ FP) :
+    (fun z => wrapRowEnc (p z) (q z)) ∈ FP :=
+  mem_FP_comp
+    (Cobham.appendFn_mem_FP
+      (Cobham.appendFn_mem_FP (constFn_mem_FP [true]) hp) hq)
+    (Cobham.cons_mem_FP true)
+
+/-- Pack `readRow n` on `pair n.bits (encode t)`. Empty = none; nonempty =
+`true :: encode (rowTree row)`. -/
+def readRowTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (splitNode (pairSnd z))) []
+    (Cobham.selectHead (emptyFlag (readSignedTag (nodeLeft (pairSnd z)))) []
+      (Cobham.selectHead
+        (emptyFlag (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z))))) []
+        (wrapRowEnc (dropOne (readSignedTag (nodeLeft (pairSnd z))))
+          (dropOne (readFormulaTag (pair (pairFst z) (nodeRight (pairSnd z))))))))
+
+theorem readRowTag_mem_FP : readRowTag ∈ Complexity.FP := by
+  have htree := Cobham.sndBlock_mem_FP
+  have hbound := Cobham.fstBlock_mem_FP
+  have hsplit := mem_FP_comp htree splitNode_mem_FP
+  have hleft := mem_FP_comp htree nodeLeft_mem_FP
+  have hright := mem_FP_comp htree nodeRight_mem_FP
+  have hsigned := mem_FP_comp hleft readSignedTag_mem_FP
+  have hformArg := Cobham.pairFn_mem_FP hbound hright
+  have hform := mem_FP_comp hformArg readFormulaTag_mem_FP
+  have hwrap := wrapRowEnc_mem_FP
+    (dropOneFn_mem_FP hsigned) (dropOneFn_mem_FP hform)
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hform)
+    (constFn_mem_FP []) hwrap
+  have hmid := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsigned)
+    (constFn_mem_FP []) hinner
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    (constFn_mem_FP []) hmid
+
+theorem readRowTag_of_pair (n : Nat) (t : CMMSACodec.Tree) :
+    readRowTag (pair n.bits (CMMSACodec.Tree.encode t)) =
+      match readRow n t with
+      | none => []
+      | some row => true :: CMMSACodec.Tree.encode (rowTree row) := by
+  simp only [readRowTag, pairFst_pair, pairSnd_pair]
+  cases t with
+  | leaf =>
+      simp [CMMSACodec.Tree.encode, splitNode_leaf, emptyFlag_nil,
+        selectHead_true, readRow]
+  | node p f =>
+      simp [splitNode_node, emptyFlag_cons, selectHead_false, dropOne_cons,
+        nodeLeft_node, nodeRight_node, readSignedTag_of_tree]
+      cases hs : readSigned p with
+      | none =>
+          simp [readRow, hs, emptyFlag_nil, selectHead_true]
+      | some q =>
+          simp [readRow, hs, emptyFlag_cons, selectHead_false, dropOne_cons,
+            readFormulaTag_of_pair]
+          cases hf : readFormula n f with
+          | none =>
+              simp [hf, emptyFlag_nil, selectHead_true]
+          | some fm =>
+              have hw := wrapRowEnc_eq (N := n) (q, fm)
+              simp [hf, emptyFlag_cons, selectHead_false, dropOne_cons, hw]
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
