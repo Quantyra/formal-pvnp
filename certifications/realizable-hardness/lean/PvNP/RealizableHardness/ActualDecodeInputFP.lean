@@ -11,9 +11,10 @@ import Complexitylib.Classes.Containments.Internal.BinArith
 
 /-!
 Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
-`gcdBits` and `readRatTag` are in `FP`. Tree agreement for `readRatTag` is
-`readRatTag_of_tree` when present. This module does not claim
-`decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape = none
+`gcdBits` and `readRatTag` are in `FP`. Canonical odd-pair GCD is
+`gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`
+when present. This module does not claim `decodeInputTag ∈ FP` until
+`decodeInputTag_mem_FP`. Empty tape = none
 (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
 This module does not define `selectedSeededMap`, inhabit `hSrcCmmsa`, or assert
@@ -1440,9 +1441,13 @@ private def gcdStep (st : List Bool) : List Bool :=
   Cobham.selectHead (emptyFlag a) st
     (Cobham.selectHead (emptyFlag b) st
       (Cobham.selectHead (Cobham.eqFlag a b) st
-        (Cobham.selectHead (ltCanon a b)
-          (pair a (dropTwos (subCanon b a)))
-          (pair (dropTwos (subCanon a b)) b))))
+        (Cobham.selectHead a
+          (Cobham.selectHead b
+            (Cobham.selectHead (ltCanon a b)
+              (pair a (dropTwos (subCanon b a)))
+              (pair (dropTwos (subCanon a b)) b))
+            (pair a (dropTwos b)))
+          (pair (dropTwos a) b))))
 
 private theorem gcdStep_mem_FP : gcdStep ∈ FP := by
   have ha : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
@@ -1451,12 +1456,18 @@ private theorem gcdStep_mem_FP : gcdStep ∈ FP := by
   have hsubab := subCanon_mem_FP ha hb
   have hdropba := dropTwos_mem_FP hsubba
   have hdropab := dropTwos_mem_FP hsubab
+  have hdropa := dropTwos_mem_FP ha
+  have hdropb := dropTwos_mem_FP hb
   have hlt := ltCanon_mem_FP ha hb
   have heq := eqFlagFn_mem_FP ha hb
   have hpack1 := Cobham.pairFn_mem_FP ha hdropba
   have hpack0 := Cobham.pairFn_mem_FP hdropab hb
+  have hpackEvenA := Cobham.pairFn_mem_FP hdropa hb
+  have hpackEvenB := Cobham.pairFn_mem_FP ha hdropb
   have hcmp := Cobham.selectHeadFn_mem_FP hlt hpack1 hpack0
-  have heqc := Cobham.selectHeadFn_mem_FP heq id_mem_FP hcmp
+  have hoddB := Cobham.selectHeadFn_mem_FP hb hcmp hpackEvenB
+  have hoddA := Cobham.selectHeadFn_mem_FP ha hoddB hpackEvenA
+  have heqc := Cobham.selectHeadFn_mem_FP heq id_mem_FP hoddA
   have hb0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hb) id_mem_FP heqc
   exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP ha) id_mem_FP hb0
 
@@ -1705,10 +1716,14 @@ private theorem gcdStep_eq (st : List Bool) :
       Cobham.selectHead (emptyFlag (pairFst st)) st
         (Cobham.selectHead (emptyFlag (pairSnd st)) st
           (Cobham.selectHead (Cobham.eqFlag (pairFst st) (pairSnd st)) st
-            (Cobham.selectHead (ltCanon (pairFst st) (pairSnd st))
-              (pair (pairFst st) (dropTwos (subCanon (pairSnd st) (pairFst st))))
-              (pair (dropTwos (subCanon (pairFst st) (pairSnd st)))
-                (pairSnd st))))) :=
+            (Cobham.selectHead (pairFst st)
+              (Cobham.selectHead (pairSnd st)
+                (Cobham.selectHead (ltCanon (pairFst st) (pairSnd st))
+                  (pair (pairFst st) (dropTwos (subCanon (pairSnd st) (pairFst st))))
+                  (pair (dropTwos (subCanon (pairFst st) (pairSnd st)))
+                    (pairSnd st)))
+                (pair (pairFst st) (dropTwos (pairSnd st))))
+              (pair (dropTwos (pairFst st)) (pairSnd st))))) :=
   rfl
 
 private structure GcdReach (z st : List Bool) : Prop where
@@ -1744,38 +1759,78 @@ private theorem gcdReach_step (z st : List Bool) (h : GcdReach z st) :
       · rw [heq, selectHead_true]
         exact h
       · rw [hne, selectHead_false]
-        rcases ltCanon_flag (pairFst st) (pairSnd st) with hlt | hge
-        · rw [hlt, selectHead_true]
-          have hcmp : bitValue (pairFst st) < bitValue (pairSnd st) :=
-            (ltCanon_true_iff _ _).mp hlt
-          have hsub :=
-            subCanon_length_of_le (pairSnd st) (pairFst st) (le_of_lt hcmp)
-          have hdrop := dropTwos_length (subCanon (pairSnd st) (pairFst st))
-          have hb' : (dropTwos (subCanon (pairSnd st) (pairFst st))).length
-              ≤ z.length := hdrop.trans (hsub.trans h.snd_le)
-          refine ⟨?_, ?_, ?_⟩
-          · simpa using h.fst_le
-          · simpa using hb'
-          · exact gcdPair_le z (pairFst st)
-              (dropTwos (subCanon (pairSnd st) (pairFst st))) h.fst_le hb'
-        · rw [hge, selectHead_false]
-          have hcmp : bitValue (pairSnd st) ≤ bitValue (pairFst st) := by
-            have : ¬ bitValue (pairFst st) < bitValue (pairSnd st) := by
-              intro hlt'
-              have ht := (ltCanon_true_iff _ _).mpr hlt'
-              rw [ht] at hge
-              cases hge
-            omega
-          have hsub := subCanon_length_of_le (pairFst st) (pairSnd st) hcmp
-          have hdrop := dropTwos_length (subCanon (pairFst st) (pairSnd st))
-          have ha' : (dropTwos (subCanon (pairFst st) (pairSnd st))).length
-              ≤ z.length := hdrop.trans (hsub.trans h.fst_le)
-          refine ⟨?_, ?_, ?_⟩
-          · simpa using ha'
-          · simpa using h.snd_le
-          · exact gcdPair_le z
-              (dropTwos (subCanon (pairFst st) (pairSnd st))) (pairSnd st)
-              ha' h.snd_le
+        cases hfa' : pairFst st with
+        | nil => exact absurd hfa' hza
+        | cons ba ta =>
+            cases ba with
+            | false =>
+                rw [selectHead_cons_false']
+                have hdrop := dropTwos_length (false :: ta)
+                have ha' : (dropTwos (false :: ta)).length ≤ z.length :=
+                  hdrop.trans (by simpa [hfa'] using h.fst_le)
+                refine ⟨?_, ?_, ?_⟩
+                · simpa using ha'
+                · simpa [hfa'] using h.snd_le
+                · exact gcdPair_le z (dropTwos (false :: ta)) (pairSnd st)
+                    ha' (by simpa [hfa'] using h.snd_le)
+            | true =>
+                rw [selectHead_cons_true']
+                cases hfb' : pairSnd st with
+                | nil => exact absurd hfb' hzb
+                | cons bb tb =>
+                    cases bb with
+                    | false =>
+                        rw [selectHead_cons_false']
+                        have hdrop := dropTwos_length (false :: tb)
+                        have hb' : (dropTwos (false :: tb)).length ≤ z.length :=
+                          hdrop.trans (by simpa [hfb'] using h.snd_le)
+                        refine ⟨?_, ?_, ?_⟩
+                        · simpa [hfa'] using h.fst_le
+                        · simpa using hb'
+                        · exact gcdPair_le z (true :: ta)
+                            (dropTwos (false :: tb))
+                            (by simpa [hfa'] using h.fst_le) hb'
+                    | true =>
+                        rw [selectHead_cons_true']
+                        rcases ltCanon_flag (true :: ta) (true :: tb) with hlt | hge
+                        · rw [hlt, selectHead_true]
+                          have hcmp : bitValue (true :: ta) < bitValue (true :: tb) :=
+                            (ltCanon_true_iff _ _).mp hlt
+                          have hsub :=
+                            subCanon_length_of_le (true :: tb) (true :: ta)
+                              (le_of_lt hcmp)
+                          have hdrop :=
+                            dropTwos_length (subCanon (true :: tb) (true :: ta))
+                          have hb' : (dropTwos (subCanon (true :: tb) (true :: ta))).length
+                              ≤ z.length :=
+                            hdrop.trans (hsub.trans (by simpa [hfb'] using h.snd_le))
+                          refine ⟨?_, ?_, ?_⟩
+                          · simpa [hfa'] using h.fst_le
+                          · simpa using hb'
+                          · exact gcdPair_le z (true :: ta)
+                              (dropTwos (subCanon (true :: tb) (true :: ta)))
+                              (by simpa [hfa'] using h.fst_le) hb'
+                        · rw [hge, selectHead_false]
+                          have hcmp : bitValue (true :: tb) ≤ bitValue (true :: ta) := by
+                            have : ¬ bitValue (true :: ta) < bitValue (true :: tb) := by
+                              intro hlt'
+                              have ht := (ltCanon_true_iff _ _).mpr hlt'
+                              rw [ht] at hge
+                              cases hge
+                            omega
+                          have hsub :=
+                            subCanon_length_of_le (true :: ta) (true :: tb) hcmp
+                          have hdrop :=
+                            dropTwos_length (subCanon (true :: ta) (true :: tb))
+                          have ha' : (dropTwos (subCanon (true :: ta) (true :: tb))).length
+                              ≤ z.length :=
+                            hdrop.trans (hsub.trans (by simpa [hfa'] using h.fst_le))
+                          refine ⟨?_, ?_, ?_⟩
+                          · simpa using ha'
+                          · simpa [hfb'] using h.snd_le
+                          · exact gcdPair_le z
+                              (dropTwos (subCanon (true :: ta) (true :: tb)))
+                              (true :: tb) ha' (by simpa [hfb'] using h.snd_le)
 
 private theorem gcdReach_iterate (z : List Bool) :
     ∀ n, GcdReach z (gcdStep^[n] z) := by
@@ -2047,22 +2102,42 @@ private theorem gcdStep_oddPart (st : List Bool) :
       rcases Cobham.eqFlag_flag (pairFst st) (pairSnd st) with heq | hne
       · rw [heq, selectHead_true]
       · rw [hne, selectHead_false]
-        rcases ltCanon_flag (pairFst st) (pairSnd st) with hlt | hge
-        · rw [hlt, selectHead_true]
-          have hcmp : bitValue (pairFst st) < bitValue (pairSnd st) :=
-            (ltCanon_true_iff _ _).mp hlt
-          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ (le_of_lt hcmp),
-            oddPart_idem, gcd_oddPart_sub (le_of_lt hcmp)]
-        · rw [hge, selectHead_false]
-          have hcmp : bitValue (pairSnd st) ≤ bitValue (pairFst st) := by
-            have : ¬ bitValue (pairFst st) < bitValue (pairSnd st) := by
-              intro hlt'
-              have ht := (ltCanon_true_iff _ _).mpr hlt'
-              rw [ht] at hge
-              cases hge
-            omega
-          rw [pairFst_pair, pairSnd_pair, dropTwos_sub_oddPart _ _ hcmp,
-            oddPart_idem, gcd_oddPart_sub' hcmp]
+        cases hfa' : pairFst st with
+        | nil => exact absurd hfa' hza
+        | cons ba ta =>
+            cases ba with
+            | false =>
+                rw [selectHead_cons_false']
+                rw [pairFst_pair, pairSnd_pair, dropTwos_oddPart, oddPart_idem]
+            | true =>
+                rw [selectHead_cons_true']
+                cases hfb' : pairSnd st with
+                | nil => exact absurd hfb' hzb
+                | cons bb tb =>
+                    cases bb with
+                    | false =>
+                        rw [selectHead_cons_false']
+                        rw [pairFst_pair, pairSnd_pair, dropTwos_oddPart, oddPart_idem]
+                    | true =>
+                        rw [selectHead_cons_true']
+                        rcases ltCanon_flag (true :: ta) (true :: tb) with hlt | hge
+                        · rw [hlt, selectHead_true]
+                          have hcmp : bitValue (true :: ta) < bitValue (true :: tb) :=
+                            (ltCanon_true_iff _ _).mp hlt
+                          rw [pairFst_pair, pairSnd_pair,
+                            dropTwos_sub_oddPart _ _ (le_of_lt hcmp),
+                            oddPart_idem, gcd_oddPart_sub (le_of_lt hcmp)]
+                        · rw [hge, selectHead_false]
+                          have hcmp : bitValue (true :: tb) ≤ bitValue (true :: ta) := by
+                            have : ¬ bitValue (true :: ta) < bitValue (true :: tb) := by
+                              intro hlt'
+                              have ht := (ltCanon_true_iff _ _).mpr hlt'
+                              rw [ht] at hge
+                              cases hge
+                            omega
+                          rw [pairFst_pair, pairSnd_pair,
+                            dropTwos_sub_oddPart _ _ hcmp,
+                            oddPart_idem, gcd_oddPart_sub' hcmp]
 
 private theorem gcdStep_iterate_oddPart (z : List Bool) :
     ∀ n, Nat.gcd (oddPart (bitValue (pairFst (gcdStep^[n] z))))
@@ -2669,6 +2744,8 @@ private theorem gcdPrep_pair (a b : List Bool) :
 private theorem gcdStep_pair (a b : List Bool) :
     gcdStep (pair a b) =
       if a = [] ∨ b = [] ∨ a = b then pair a b
+      else if bitValue a % 2 = 0 then pair (dropTwos a) b
+      else if bitValue b % 2 = 0 then pair a (dropTwos b)
       else if bitValue a < bitValue b then pair a (dropTwos (subCanon b a))
       else pair (dropTwos (subCanon a b)) b := by
   rw [gcdStep_eq, pairFst_pair, pairSnd_pair]
@@ -2686,15 +2763,38 @@ private theorem gcdStep_pair (a b : List Bool) :
           intro h; exact absurd ((Cobham.eqFlag_eq_true_iff a b).mpr h)
             (by cases (Cobham.eqFlag_flag a b) <;> simp_all)
         rw [hne, selectHead_false, if_neg (by simp [ha, hb, hne'])]
-        rcases ltCanon_flag a b with hlt | hge
-        · have hcmp : bitValue a < bitValue b := (ltCanon_true_iff _ _).mp hlt
-          simp [hlt, selectHead_true, hcmp]
-        · have hcmp : ¬ bitValue a < bitValue b := by
-            intro hlt'
-            have ht := (ltCanon_true_iff _ _).mpr hlt'
-            rw [ht] at hge
-            cases hge
-          simp [hge, selectHead_false, hcmp]
+        cases a with
+        | nil => exact absurd rfl ha
+        | cons ba ta =>
+            cases ba with
+            | false =>
+                have hev : bitValue (false :: ta) % 2 = 0 := by simp [bitValue]
+                simp [selectHead_cons_false', hev]
+            | true =>
+                have ho : ¬ bitValue (true :: ta) % 2 = 0 := by simp [bitValue]
+                rw [selectHead_cons_true', if_neg ho]
+                cases b with
+                | nil => exact absurd rfl hb
+                | cons bb tb =>
+                    cases bb with
+                    | false =>
+                        have hev : bitValue (false :: tb) % 2 = 0 := by
+                          simp [bitValue]
+                        simp [selectHead_cons_false', hev]
+                    | true =>
+                        have ho' : ¬ bitValue (true :: tb) % 2 = 0 := by
+                          simp [bitValue]
+                        rw [selectHead_cons_true', if_neg ho']
+                        rcases ltCanon_flag (true :: ta) (true :: tb) with hlt | hge
+                        · have hcmp : bitValue (true :: ta) < bitValue (true :: tb) :=
+                            (ltCanon_true_iff _ _).mp hlt
+                          simp [hlt, selectHead_true, hcmp]
+                        · have hcmp : ¬ bitValue (true :: ta) < bitValue (true :: tb) := by
+                            intro hlt'
+                            have ht := (ltCanon_true_iff _ _).mpr hlt'
+                            rw [ht] at hge
+                            cases hge
+                          simp [hge, selectHead_false, hcmp]
 
 private def mixedBit (x y : Nat) : Nat :=
   if (x % 2 = 0 ∧ y % 2 = 1) ∨ (x % 2 = 1 ∧ y % 2 = 0) then 1 else 0
@@ -2811,6 +2911,362 @@ private theorem gcdBits_of_fixed (a b : List Bool)
     gcdBits (pair a b) = a := by
   have hf := gcdStep_fixed a b h
   simp [gcdBits, iterate_id_of_fixed (f := gcdStep) hf]
+
+private theorem oddPart_ne_zero {n : Nat} (hn : n ≠ 0) : oddPart n ≠ 0 :=
+  fun h => hn (oddPart_eq_zero h)
+
+private theorem oddPart_even_le_half {n : Nat} (he : n % 2 = 0) (hn : n ≠ 0) :
+    oddPart n ≤ n / 2 := by
+  obtain ⟨e, heq⟩ := oddPart_mul n
+  have hepos : 1 ≤ e := by
+    cases e with
+    | zero =>
+        have hn' : n = oddPart n := by simpa using heq
+        rcases oddPart_odd_or_zero n with ho | hz
+        · omega
+        · exact absurd (oddPart_eq_zero hz) hn
+    | succ e => simp
+  have h2 : 2 ≤ 2 ^ e := by
+    have : 2 ^ 1 ≤ 2 ^ e := Nat.pow_le_pow_right (by decide) hepos
+    simpa using this
+  have : oddPart n * 2 ≤ oddPart n * 2 ^ e := Nat.mul_le_mul_left _ h2
+  have : oddPart n * 2 ≤ n := by simpa [heq.symm] using this
+  exact (Nat.le_div_iff_mul_le (by decide : 0 < 2)).2
+    (by simpa [Nat.mul_comm] using this)
+
+private theorem size_oddPart_even {n : Nat} (he : n % 2 = 0) (hn : n ≠ 0) :
+    (oddPart n).size < n.size := by
+  have h2 : 2 ≤ n := by omega
+  exact Nat.lt_of_le_of_lt (Nat.size_le_size (oddPart_even_le_half he hn))
+    (size_half_lt h2)
+
+private theorem oddPart_odd {n : Nat} (hn : n ≠ 0) : oddPart n % 2 = 1 := by
+  rcases oddPart_odd_or_zero n with ho | hz
+  · exact ho
+  · exact absurd hz (oddPart_ne_zero hn)
+
+private theorem subCanon_eq_bits (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    subCanon a b = (bitValue a - bitValue b).bits := by
+  have hst : subCanon a b = (bitValue (subCanon a b)).bits := by
+    rw [subCanon_unfold, stripTrailing_eq_bits, bitValue_bits]
+  simpa [subCanon_bitValue a b h] using hst
+
+private theorem subCanon_canon (a b : List Bool)
+    (h : bitValue b ≤ bitValue a) :
+    subCanon a b = (bitValue (subCanon a b)).bits :=
+  (subCanon_eq_bits a b h).trans (by rw [subCanon_bitValue a b h])
+
+private theorem dropTwos_canon {x : List Bool} (hx : x = (bitValue x).bits) :
+    dropTwos x = (bitValue (dropTwos x)).bits := by
+  rw [dropTwos_oddPart, dropTwos_eq_bits hx]
+
+private theorem canon_inj {a b : List Bool}
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits)
+    (h : bitValue a = bitValue b) : a = b :=
+  ha.trans (by rw [h]; exact hb.symm)
+
+private theorem bits_ne_nil {n : Nat} (hn : n ≠ 0) : n.bits ≠ [] := by
+  intro h
+  exact hn (bits_eq_nil h)
+
+private theorem mixedBit_comm (x y : Nat) : mixedBit x y = mixedBit y x := by
+  unfold mixedBit
+  by_cases hx : x % 2 = 0 <;> by_cases hy : y % 2 = 0 <;> simp [hx, hy]
+
+private theorem gcdPhi_comm (a b : List Bool) : gcdPhi a b = gcdPhi b a := by
+  simp [gcdPhi, mixedBit_comm (bitValue a) (bitValue b)]
+  omega
+
+private theorem gcdPhi_drop_lt (a b : List Bool)
+    (he : bitValue a % 2 = 0) (hn : bitValue a ≠ 0) :
+    gcdPhi (dropTwos a) b < gcdPhi a b := by
+  have hsz := size_oddPart_even he hn
+  have hmix := mixedBit_le (oddPart (bitValue a)) (bitValue b)
+  simp only [gcdPhi, dropTwos_oddPart]
+  omega
+
+private theorem gcdPhi_sub_lt (a b : List Bool)
+    (ha : bitValue a % 2 = 1) (hb : bitValue b % 2 = 1)
+    (hlt : bitValue a < bitValue b) :
+    gcdPhi a (dropTwos (subCanon b a)) < gcdPhi a b := by
+  have hsz := size_oddPart_sub hlt hb ha
+  have hpos : bitValue b - bitValue a ≠ 0 := by omega
+  have ho := oddPart_odd hpos
+  have hmix0 : mixedBit (bitValue a) (bitValue b) = 0 := by
+    simp [mixedBit, ha, hb]
+  have hmix1 : mixedBit (bitValue a) (oddPart (bitValue b - bitValue a)) = 0 := by
+    simp [mixedBit, ha, ho]
+  simp only [gcdPhi, dropTwos_sub_oddPart _ _ (le_of_lt hlt), hmix0, hmix1]
+  omega
+
+private theorem gcdPhi_sub_lt' (a b : List Bool)
+    (ha : bitValue a % 2 = 1) (hb : bitValue b % 2 = 1)
+    (hge : bitValue b ≤ bitValue a) (hne : bitValue a ≠ bitValue b) :
+    gcdPhi (dropTwos (subCanon a b)) b < gcdPhi a b := by
+  have hlt : bitValue b < bitValue a := by omega
+  have hsz := size_oddPart_sub hlt ha hb
+  have hpos : bitValue a - bitValue b ≠ 0 := by omega
+  have ho := oddPart_odd hpos
+  have hmix0 : mixedBit (bitValue a) (bitValue b) = 0 := by
+    simp [mixedBit, ha, hb]
+  have hmix1 : mixedBit (oddPart (bitValue a - bitValue b)) (bitValue b) = 0 := by
+    simp [mixedBit, hb, ho]
+  simp only [gcdPhi, dropTwos_sub_oddPart _ _ hge, hmix0, hmix1]
+  omega
+
+set_option maxHeartbeats 400000 in
+private theorem gcdPhi_step_lt (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits)
+    (h : ¬ (a = [] ∨ b = [] ∨ a = b)) :
+    gcdPhi (pairFst (gcdStep (pair a b))) (pairSnd (gcdStep (pair a b)))
+      < gcdPhi a b := by
+  have ha0 : a ≠ [] := by intro h'; exact h (Or.inl h')
+  have hb0 : b ≠ [] := by intro h'; exact h (Or.inr (Or.inl h'))
+  have hne : a ≠ b := by intro h'; exact h (Or.inr (Or.inr h'))
+  have hva0 : bitValue a ≠ 0 := fun h0 => ha0 ((canon_zero ha).mpr h0)
+  have hvb0 : bitValue b ≠ 0 := fun h0 => hb0 ((canon_zero hb).mpr h0)
+  rw [gcdStep_pair, if_neg h]
+  by_cases hea : bitValue a % 2 = 0
+  · rw [if_pos hea, pairFst_pair, pairSnd_pair]
+    exact gcdPhi_drop_lt a b hea hva0
+  · rw [if_neg hea]
+    by_cases heb : bitValue b % 2 = 0
+    · rw [if_pos heb, pairFst_pair, pairSnd_pair]
+      have hdrop := gcdPhi_drop_lt b a heb hvb0
+      simpa [gcdPhi_comm a (dropTwos b), gcdPhi_comm a b] using hdrop
+    · rw [if_neg heb]
+      have hoa : bitValue a % 2 = 1 := by omega
+      have hob : bitValue b % 2 = 1 := by omega
+      by_cases hlt : bitValue a < bitValue b
+      · rw [if_pos hlt, pairFst_pair, pairSnd_pair]
+        exact gcdPhi_sub_lt a b hoa hob hlt
+      · rw [if_neg hlt, pairFst_pair, pairSnd_pair]
+        have hge : bitValue b ≤ bitValue a := by omega
+        have hvne : bitValue a ≠ bitValue b := fun hv => hne (canon_inj ha hb hv)
+        exact gcdPhi_sub_lt' a b hoa hob hge hvne
+
+set_option maxHeartbeats 400000 in
+private theorem gcdStep_canon (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) :
+    pairFst (gcdStep (pair a b)) = (bitValue (pairFst (gcdStep (pair a b)))).bits ∧
+      pairSnd (gcdStep (pair a b)) = (bitValue (pairSnd (gcdStep (pair a b)))).bits := by
+  rw [gcdStep_pair]
+  by_cases hf : a = [] ∨ b = [] ∨ a = b
+  · rw [if_pos hf, pairFst_pair, pairSnd_pair]
+    exact ⟨ha, hb⟩
+  · rw [if_neg hf]
+    by_cases hea : bitValue a % 2 = 0
+    · rw [if_pos hea, pairFst_pair, pairSnd_pair]
+      exact ⟨dropTwos_canon ha, hb⟩
+    · rw [if_neg hea]
+      by_cases heb : bitValue b % 2 = 0
+      · rw [if_pos heb, pairFst_pair, pairSnd_pair]
+        exact ⟨ha, dropTwos_canon hb⟩
+      · rw [if_neg heb]
+        by_cases hlt : bitValue a < bitValue b
+        · rw [if_pos hlt, pairFst_pair, pairSnd_pair]
+          exact ⟨ha, dropTwos_canon (subCanon_canon b a (le_of_lt hlt))⟩
+        · rw [if_neg hlt, pairFst_pair, pairSnd_pair]
+          have hge : bitValue b ≤ bitValue a := by omega
+          exact ⟨dropTwos_canon (subCanon_canon a b hge), hb⟩
+
+set_option maxHeartbeats 400000 in
+private theorem gcdStep_fst_ne (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) (hne : a ≠ []) :
+    pairFst (gcdStep (pair a b)) ≠ [] := by
+  have hva0 : bitValue a ≠ 0 := fun h0 => hne ((canon_zero ha).mpr h0)
+  rw [gcdStep_pair]
+  by_cases hf : a = [] ∨ b = [] ∨ a = b
+  · rw [if_pos hf, pairFst_pair]
+    exact hne
+  · rw [if_neg hf]
+    by_cases hea : bitValue a % 2 = 0
+    · rw [if_pos hea, pairFst_pair]
+      simpa [dropTwos_eq_bits ha] using bits_ne_nil (oddPart_ne_zero hva0)
+    · rw [if_neg hea]
+      by_cases heb : bitValue b % 2 = 0
+      · rw [if_pos heb, pairFst_pair]
+        exact hne
+      · rw [if_neg heb]
+        by_cases hlt : bitValue a < bitValue b
+        · rw [if_pos hlt, pairFst_pair]
+          exact hne
+        · rw [if_neg hlt, pairFst_pair]
+          have hge : bitValue b ≤ bitValue a := by omega
+          have hvne : bitValue a ≠ bitValue b := fun hv =>
+            hf (Or.inr (Or.inr (canon_inj ha hb hv)))
+          have hpos : bitValue a - bitValue b ≠ 0 := by omega
+          have hdrop := dropTwos_eq_bits (subCanon_canon a b hge)
+          have hsub := subCanon_bitValue a b hge
+          rw [hdrop, hsub]
+          exact bits_ne_nil (oddPart_ne_zero hpos)
+
+private theorem gcdStep_snd_ne (a b : List Bool)
+    (_ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) (hne : b ≠ []) :
+    pairSnd (gcdStep (pair a b)) ≠ [] := by
+  have hvb0 : bitValue b ≠ 0 := fun h0 => hne ((canon_zero hb).mpr h0)
+  rw [gcdStep_pair]
+  by_cases hf : a = [] ∨ b = [] ∨ a = b
+  · rw [if_pos hf, pairSnd_pair]
+    exact hne
+  · rw [if_neg hf]
+    by_cases hea : bitValue a % 2 = 0
+    · rw [if_pos hea, pairSnd_pair]
+      exact hne
+    · rw [if_neg hea]
+      by_cases heb : bitValue b % 2 = 0
+      · rw [if_pos heb, pairSnd_pair]
+        simpa [dropTwos_eq_bits hb] using bits_ne_nil (oddPart_ne_zero hvb0)
+      · rw [if_neg heb]
+        by_cases hlt : bitValue a < bitValue b
+        · rw [if_pos hlt, pairSnd_pair]
+          have hpos : bitValue b - bitValue a ≠ 0 := by omega
+          have hdrop := dropTwos_eq_bits (subCanon_canon b a (le_of_lt hlt))
+          have hsub := subCanon_bitValue b a (le_of_lt hlt)
+          rw [hdrop, hsub]
+          exact bits_ne_nil (oddPart_ne_zero hpos)
+        · rw [if_neg hlt, pairSnd_pair]
+          exact hne
+
+private theorem gcdStep_odd_inv (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hne : a ≠ [])
+    (h : bitValue a % 2 = 1 ∨ bitValue b % 2 = 1 ∨ b = []) :
+    bitValue (pairFst (gcdStep (pair a b))) % 2 = 1 ∨
+      bitValue (pairSnd (gcdStep (pair a b))) % 2 = 1 ∨
+      pairSnd (gcdStep (pair a b)) = [] := by
+  have hva0 : bitValue a ≠ 0 := fun h0 => hne ((canon_zero ha).mpr h0)
+  rw [gcdStep_pair]
+  by_cases hf : a = [] ∨ b = [] ∨ a = b
+  · rw [if_pos hf, pairFst_pair, pairSnd_pair]
+    exact h
+  · rw [if_neg hf]
+    by_cases hea : bitValue a % 2 = 0
+    · rw [if_pos hea, pairFst_pair, pairSnd_pair]
+      have ho := oddPart_odd hva0
+      simpa [dropTwos_oddPart] using Or.inl ho
+    · rw [if_neg hea]
+      have hoa : bitValue a % 2 = 1 := by omega
+      by_cases heb : bitValue b % 2 = 0
+      · rw [if_pos heb, pairFst_pair, pairSnd_pair]
+        exact Or.inl hoa
+      · rw [if_neg heb]
+        have hob : bitValue b % 2 = 1 := by omega
+        by_cases hlt : bitValue a < bitValue b
+        · rw [if_pos hlt, pairFst_pair, pairSnd_pair]
+          exact Or.inl hoa
+        · rw [if_neg hlt, pairFst_pair, pairSnd_pair]
+          exact Or.inr (Or.inl hob)
+
+set_option maxHeartbeats 800000 in
+private theorem gcd_iterate_spec (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) (hne : a ≠ [])
+    (hodd : bitValue a % 2 = 1 ∨ bitValue b % 2 = 1 ∨ b = []) :
+    ∀ n, ∃ a' b',
+      gcdStep^[n] (pair a b) = pair a' b' ∧
+        a' = (bitValue a').bits ∧
+        b' = (bitValue b').bits ∧
+        a' ≠ [] ∧
+        Nat.gcd (oddPart (bitValue a')) (oddPart (bitValue b')) =
+          Nat.gcd (oddPart (bitValue a)) (oddPart (bitValue b)) ∧
+        (bitValue a' % 2 = 1 ∨ bitValue b' % 2 = 1 ∨ b' = []) ∧
+        (b = [] → b' = []) ∧
+        (b ≠ [] → b' ≠ []) ∧
+        (b' = [] ∨ a' = b' ∨ gcdPhi a' b' + n ≤ gcdPhi a b) := by
+  intro n
+  induction n with
+  | zero =>
+      refine ⟨a, b, rfl, ha, hb, hne, rfl, hodd, id, id, ?_⟩
+      exact Or.inr (Or.inr (by simp))
+  | succ n ih =>
+      obtain ⟨a', b', hs, ha', hb', hne', hgcd, hodd', hbnil, hbnn, hfix⟩ := ih
+      rw [Function.iterate_succ_apply', hs]
+      refine ⟨pairFst (gcdStep (pair a' b')), pairSnd (gcdStep (pair a' b')), ?_⟩
+      have hpack : gcdStep (pair a' b') =
+          pair (pairFst (gcdStep (pair a' b'))) (pairSnd (gcdStep (pair a' b'))) := by
+        rw [gcdStep_pair]; split_ifs <;> simp
+      have hcan := gcdStep_canon a' b' ha' hb'
+      have hne'' := gcdStep_fst_ne a' b' ha' hb' hne'
+      have hgcd' : Nat.gcd (oddPart (bitValue (pairFst (gcdStep (pair a' b')))))
+          (oddPart (bitValue (pairSnd (gcdStep (pair a' b'))))) =
+          Nat.gcd (oddPart (bitValue a)) (oddPart (bitValue b)) := by
+        have hstep := gcdStep_oddPart (pair a' b')
+        simp [pairFst_pair, pairSnd_pair] at hstep
+        exact hstep.trans hgcd
+      have hodd'' := gcdStep_odd_inv a' b' ha' hne' hodd'
+      refine ⟨hpack, hcan.1, hcan.2, hne'', hgcd', hodd'', ?_, ?_, ?_⟩
+      · intro hb0
+        have hb'0 : b' = [] := hbnil hb0
+        simpa [gcdStep_pair, hb'0, pairSnd_pair] using hb'0
+      · intro hbn
+        exact gcdStep_snd_ne a' b' ha' hb' (hbnn hbn)
+      · rcases hfix with hb'0 | heq | hphi
+        · exact Or.inl (by simpa [gcdStep_pair, hb'0, pairSnd_pair] using hb'0)
+        · exact Or.inr (Or.inl (by simpa [gcdStep_pair, heq, pairFst_pair, pairSnd_pair]
+            using heq))
+        · by_cases hf : a' = [] ∨ b' = [] ∨ a' = b'
+          · rcases hf with ha0 | hb0 | heq
+            · exact absurd ha0 hne'
+            · exact Or.inl (by simpa [gcdStep_pair, hb0, pairSnd_pair] using hb0)
+            · exact Or.inr (Or.inl (by
+                simpa [gcdStep_pair, heq, pairFst_pair, pairSnd_pair] using heq))
+          · have hlt := gcdPhi_step_lt a' b' ha' hb' hf
+            exact Or.inr (Or.inr (by
+              have := Nat.add_le_add_right (Nat.succ_le_of_lt hlt) n
+              omega))
+
+set_option maxHeartbeats 800000
+/-- Packed GCD of a canonical pair with a nonempty first component and at
+least one odd argument (or a zero second component) agrees with `Nat.gcd`. -/
+theorem gcdBits_odd_pair (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits)
+    (hne : a ≠ [])
+    (hodd : b = [] ∨ bitValue a % 2 = 1 ∨ bitValue b % 2 = 1) :
+    gcdBits (pair a b) = (Nat.gcd (bitValue a) (bitValue b)).bits := by
+  by_cases hf0 : b = [] ∨ a = b
+  · have hfix : a = [] ∨ b = [] ∨ a = b := by
+      rcases hf0 with h | h <;> exact Or.inr (by simp [h])
+    rw [gcdBits_of_fixed a b hfix]
+    rcases hf0 with hb0 | heq
+    · simpa [hb0, bitValue] using ha
+    · simpa [heq, Nat.gcd_self] using ha
+  · have hbn : b ≠ [] := fun h => hf0 (Or.inl h)
+    have hneab : a ≠ b := fun h => hf0 (Or.inr h)
+    have hodd' : bitValue a % 2 = 1 ∨ bitValue b % 2 = 1 ∨ b = [] := by
+      rcases hodd with h | h | h <;> simp [h]
+    obtain ⟨a', b', hs, ha', hb', hne', hgcd, hodd'', hbnil, hbnn, hfix⟩ :=
+      gcd_iterate_spec a b ha hb hne hodd' (gcdRuler (pair a b)).length
+    have hphi_le := gcdPhi_le_ruler a b
+    have heq : a' = b' := by
+      rcases hfix with hb'0 | heq | hphi
+      · exact absurd hb'0 (hbnn hbn)
+      · exact heq
+      · have h0 : gcdPhi a' b' = 0 := by omega
+        have ha00 : (bitValue a').size = 0 := by
+          simp [gcdPhi] at h0
+          omega
+        exact absurd ((canon_zero ha').mpr (Nat.size_eq_zero.mp ha00)) hne'
+    have ho : bitValue a' % 2 = 1 := by
+      rcases hodd'' with h | h | hb'0
+      · exact h
+      · simpa [heq] using h
+      · exact absurd (heq.trans hb'0) hne'
+    have hodd0 : bitValue a % 2 = 1 ∨ bitValue b % 2 = 1 := by
+      rcases hodd' with h | h | hb0
+      · exact Or.inl h
+      · exact Or.inr h
+      · exact absurd hb0 hbn
+    have hv := gcd_eq_oddPart_of_odd hodd0
+    have hval : bitValue a' = Nat.gcd (bitValue a) (bitValue b) := by
+      calc
+        bitValue a' = oddPart (bitValue a') := (oddPart_of_odd ho).symm
+        _ = Nat.gcd (oddPart (bitValue a')) (oddPart (bitValue a')) := by
+            simp [Nat.gcd_self]
+        _ = Nat.gcd (oddPart (bitValue a')) (oddPart (bitValue b')) := by rw [heq]
+        _ = Nat.gcd (oddPart (bitValue a)) (oddPart (bitValue b)) := hgcd
+        _ = Nat.gcd (bitValue a) (bitValue b) := hv.symm
+    simp only [gcdBits, hs, pairFst_pair]
+    exact ha'.trans (congrArg Nat.bits hval)
 
 private theorem rat_num_den_of_nat (n d : Nat) (hd : d ≠ 0) :
     ((n : Rat) / d).num.natAbs = n / n.gcd d ∧
