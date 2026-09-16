@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.EqualityGadget
+source=/home/dfredriksen_quantyra_org/mz-lemma33-8c27978-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/EqualityGadget.lean
+object=/home/dfredriksen_quantyra_org/mz-lemma33-8c27978-fresh-target/lib/lean/PvNP/RealizableHardness/EqualityGadget.olean

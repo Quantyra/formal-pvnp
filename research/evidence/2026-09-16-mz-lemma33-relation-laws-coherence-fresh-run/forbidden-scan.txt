@@ -1,0 +1,3 @@
+pattern=\bsorry\b|\badmit\b|\bnative_decide\b|^[[:space:]]*axiom\b
+input=relation-laws and coherence main/Checks after nested Lean block comments and line comments were removed
+result=clean (no matches)

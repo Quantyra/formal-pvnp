@@ -1,0 +1,34 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.equationVectors_threeGoodQuestions_linearIndependent.{u_1, u_2}
+  {X : Type u_1} {E : Type u_2} [Fintype X] [Fintype E] [DecidableEq X] [DecidableEq E] (row : E → Finset X)
+  (hthree : ∀ (e : E), (row e).card = 3) (hlinear : ∀ (e f : E), e ≠ f → (row e ∩ row f).card ≤ 1) (U₁ U₂ U₃ : Finset E)
+  (hU₁ : GoodQuestion row U₁) (hU₂ : GoodQuestion row U₂) (hU₃ : GoodQuestion row U₃) :
+  LinearIndependent (ZMod 2) fun e => equationVector row ↑e
+PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_rhsFunctional_threeGoodQuestions {N m J h : ℕ}
+  (I : Instance N m) (P Q R : PresentedLeaf I J h) :
+  ∃! psi, ∀ (e : I.RowId) (he : e ∈ P.U ∪ Q.U ∪ R.U), psi ⟨equationVector I.support e, ⋯⟩ = I.rowRhs e
+PvNP.RealizableHardness.ActualPresentedLeafGluing.domain_inf_twoEquationSpans_le {N m J h : ℕ} {I : Instance N m}
+  (P Q R : PresentedLeaf I J h) : P.domain ⊓ (Q.H ⊔ R.H) ≤ P.H
+PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_threeWayGluedLeafRhsFunctional {N m J h : ℕ}
+  (I : Instance N m) (P Q R : PresentedLeaf I J h) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  ∃! F,
+    F ∘ₗ Submodule.inclusion ⋯ = f ∧
+      (∀ (e : I.RowId) (he : e ∈ Q.U), F ⟨equationVector I.support e, ⋯⟩ = I.rowRhs e) ∧
+        ∀ (e : I.RowId) (he : e ∈ R.U), F ⟨equationVector I.support e, ⋯⟩ = I.rowRhs e
+PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_coherence {N m J h : ℕ} {I : Instance N m}
+  (P Q R : PresentedLeaf I J h) (hPQ : P.Rel Q) (hQR : Q.Rel R) (f : RawLeafLabel I P.domain) (hf : RespectsAt P ⋯ f) :
+  transportedLabel Q R hQR (transportedLabel P Q hPQ f hf) ⋯ = transportedLabel P R ⋯ f hf
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.equationVectors_threeGoodQuestions_linearIndependent' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_rhsFunctional_threeGoodQuestions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.domain_inf_twoEquationSpans_le' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.actual_existsUnique_threeWayGluedLeafRhsFunctional' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.transportedLabel_coherence' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

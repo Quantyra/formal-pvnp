@@ -1,0 +1,11 @@
+git bundle create formal-pvnp-8c27978.bundle main
+git bundle verify formal-pvnp-8c27978.bundle
+gcloud compute instances start quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a
+gcloud compute ssh quantyra-lean-builder-01 --project=quantyra-lean-cert-20260915 --zone=us-central1-a --tunnel-through-iap --command="echo READY"
+gcloud compute scp formal-pvnp-8c27978.bundle gate.sh certify.sh finalize.sh quantyra-lean-builder-01:/home/dfredriksen_quantyra_org/ --project=quantyra-lean-cert-20260915 --zone=us-central1-a --tunnel-through-iap
+gcloud compute ssh ... --tunnel-through-iap --command ./gate.sh
+gcloud compute ssh ... --tunnel-through-iap --command ./certify.sh
+gcloud compute ssh ... --tunnel-through-iap --command ./finalize.sh
+gcloud compute scp quantyra-lean-builder-01:/home/dfredriksen_quantyra_org/mz-lemma33-8c27978-certification.tar.gz ...
+gcloud compute scp quantyra-lean-builder-01:/home/dfredriksen_quantyra_org/mz-lemma33-8c27978-gate.log ...
+gcloud compute instances stop quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a

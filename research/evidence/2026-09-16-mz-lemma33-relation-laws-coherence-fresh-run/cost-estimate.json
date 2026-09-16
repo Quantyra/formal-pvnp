@@ -1,0 +1,30 @@
+{
+  "asOf": "2026-09-15T18:35:39.439-07:00",
+  "currency": "USD",
+  "pricingModel": "on-demand list-price estimate; no discounts, credits, or free-tier treatment assumed",
+  "priorCumulativeEstimate": 0.514970682121,
+  "compute": {
+    "machineType": "c3-highmem-8",
+    "ratePerHour": 0.529232,
+    "start": "2026-09-15T18:23:11.214-07:00",
+    "stop": "2026-09-15T18:35:39.439-07:00",
+    "billableSeconds": 748.225,
+    "incrementEstimate": 0.1099957258888889
+  },
+  "disk": {
+    "type": "pd-balanced",
+    "sizeGiB": 200,
+    "ratePerGiBHour": 0.000136986,
+    "priorAsOf": "2026-09-15T17:38:16.459-07:00",
+    "elapsedSeconds": 3442.98,
+    "incrementEstimate": 0.02620222546,
+    "continuingDailyRunRate": 0.6575328
+  },
+  "externalIPv4Increment": 0,
+  "networkAndIapIncrementAssumption": 0,
+  "incrementEstimate": 0.1361979513488889,
+  "cumulativeEstimate": 0.6511686334698888,
+  "hardOperationalCeiling": 250,
+  "ceilingRemaining": 249.3488313665301,
+  "notes": "Estimate, not invoice data. The stopped 200 GiB disk continues accruing storage charges."
+}
