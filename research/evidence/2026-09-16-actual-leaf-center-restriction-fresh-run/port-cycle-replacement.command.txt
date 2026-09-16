@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.PortCycleReplacement
+source=/home/dfredriksen_quantyra_org/center-restriction-f54f116-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/PortCycleReplacement.lean
+object=/home/dfredriksen_quantyra_org/center-restriction-f54f116-fresh-target/lib/lean/PvNP/RealizableHardness/PortCycleReplacement.olean

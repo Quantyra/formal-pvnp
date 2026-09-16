@@ -1,0 +1,19 @@
+/home/dfredriksen_quantyra_org/center-restriction-f54f116-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualStarSpanIntersection.lean:33:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.ActualStarSpanIntersection.equationVector_mem_coordinateSpace`:
+  [Fintype X]
+  [Fintype E]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [Fintype E] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+/home/dfredriksen_quantyra_org/center-restriction-f54f116-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualStarSpanIntersection.lean:43:0: warning: automatically included section variable(s) unused in theorem `PvNP.RealizableHardness.ActualStarSpanIntersection.equationVector_mem_equationSpan`:
+  [Fintype X]
+  [Fintype E]
+  [DecidableEq E]
+consider restructuring your `variable` declarations so that the variables are not in scope or explicitly omit them:
+  omit [Fintype X] [Fintype E] [DecidableEq E] in theorem ...
+
+Note: This linter can be disabled with `set_option linter.unusedSectionVars false`
+'PvNP.RealizableHardness.ActualStarSpanIntersection.equationSpan_inf_coordinateSpace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,30 @@
+expected_bundle_sha256=2430E1D05B92A0EA6C80A290B4A5FABDF72CAE16BDCEA2F1CB0A3F84DA6082F6
+actual_bundle_sha256=2430E1D05B92A0EA6C80A290B4A5FABDF72CAE16BDCEA2F1CB0A3F84DA6082F6
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/center-restriction-f54f116-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-f54f116.bundle is okay
+The bundle contains this ref:
+f54f116d18971d814ba51cbcdbcf1fc664c9fdfc refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/center-restriction-f54f116-src'...
+HEAD is now at f54f116 prove actual leaf center restriction
+expected_head=f54f116d18971d814ba51cbcdbcf1fc664c9fdfc
+actual_head=f54f116d18971d814ba51cbcdbcf1fc664c9fdfc
+status_begin
+
+status_end
+expected_main_sha256=EDCA7DE73001D70F0122203973CE4B1CB8CD06407106546C8F3ED2B4E7900621
+actual_main_sha256=EDCA7DE73001D70F0122203973CE4B1CB8CD06407106546C8F3ED2B4E7900621
+expected_checks_sha256=1FF7F87726CDE25CB228B7D917F9CAE4F6DE8E72B67FA5E20D60657CC3A2AC6D
+actual_checks_sha256=1FF7F87726CDE25CB228B7D917F9CAE4F6DE8E72B67FA5E20D60657CC3A2AC6D
+transfer_gate=PASS

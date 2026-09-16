@@ -1,0 +1,17 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.CenterSubspace {N m J h : ℕ} {I : Instance N m} (v : LeafVertex I J h)
+  (k : ℕ) : Type
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter {N m J h : ℕ} {I : Instance N m}
+  {v : LeafVertex I J h} {k : ℕ} (C : CenterSubspace v k) (φ : LeafLabel v) : ↥C.K →ₗ[ZMod 2] ZMod 2
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_eq_subtype {N m J h : ℕ} {I : Instance N m}
+  {v : LeafVertex I J h} {k : ℕ} (C : CenterSubspace v k) (φ : LeafLabel v) :
+  restrictToCenter C φ = ↑φ ∘ₗ Submodule.inclusion ⋯
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_transport {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φ : LeafLabel v) :
+  restrictToCenter Cw (transportedLeafLabel hvw φ) = restrictToCenter Cv φ ∘ₗ Submodule.inclusion ⋯
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_eq_subtype' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictToCenter_transport' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

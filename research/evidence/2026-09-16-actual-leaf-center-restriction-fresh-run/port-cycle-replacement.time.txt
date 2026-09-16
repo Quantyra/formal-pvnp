@@ -1,0 +1,23 @@
+	Command being timed: "/home/dfredriksen_quantyra_org/.elan/toolchains/leanprover--lean4---v4.34.0-rc2/bin/lean -R /home/dfredriksen_quantyra_org/center-restriction-f54f116-src/certifications/realizable-hardness/lean -o /home/dfredriksen_quantyra_org/center-restriction-f54f116-fresh-target/lib/lean/PvNP/RealizableHardness/PortCycleReplacement.olean /home/dfredriksen_quantyra_org/center-restriction-f54f116-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/PortCycleReplacement.lean"
+	User time (seconds): 4.42
+	System time (seconds): 0.35
+	Percent of CPU this job got: 143%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.34
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1996572
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 669
+	Minor (reclaiming a frame) page faults: 47505
+	Voluntary context switches: 8483
+	Involuntary context switches: 176
+	Swaps: 0
+	File system inputs: 134504
+	File system outputs: 1584
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
