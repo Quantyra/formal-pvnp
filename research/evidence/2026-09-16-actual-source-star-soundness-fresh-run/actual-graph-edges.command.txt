@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualGraphEdges
+source=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualGraphEdges.lean
+object=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-fresh-target/lib/lean/PvNP/RealizableHardness/ActualGraphEdges.olean

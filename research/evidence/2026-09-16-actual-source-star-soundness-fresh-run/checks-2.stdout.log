@@ -1,0 +1,63 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) : ℝ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_nonneg {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) : 0 ≤ questionFailIndicator P x
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_le_one {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) : questionFailIndicator P x ≤ 1
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_zero_iff {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  questionFailIndicator P x = 0 ↔ RespectsAt P ⋯ (honestRawLabel x)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_one_iff {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  questionFailIndicator P x = 1 ↔ ¬RespectsAt P ⋯ (honestRawLabel x)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.presentedEnum {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) : Fin J → I.RowId
+PvNP.RealizableHardness.ActualPresentedLeafGluing.presentedEnum_mem {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (i : Fin J) : presentedEnum P i ∈ P.U
+PvNP.RealizableHardness.ActualPresentedLeafGluing.presentedEnum_surj {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (e : I.RowId) (he : e ∈ P.U) : ∃ i, presentedEnum P i = e
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_baseFailure {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  questionFailIndicator P x = actualBaseFailureIndicator I x (presentedEnum P)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_le_sum {N m J h : ℕ} {I : Instance N m}
+  (P : PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  questionFailIndicator P x ≤ ∑ e, if e ∈ P.U ∧ (Finite3LinSource.ofActual I).badRow x e = true then 1 else 0
+PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFail_sourceExtension_original {N m J h : ℕ} (I : Instance N m)
+  (P : PresentedLeaf I J h) (hU : ∀ e ∈ P.U, ∃ r, e = Sum.inl r) (y : Fin N → ZMod 2) :
+  questionFailIndicator P (I.sourceExtension y) =
+    if ∃ e ∈ P.U, ∃ r, e = Sum.inl r ∧ I.sourceBadRow y r = true then 1 else 0
+PvNP.RealizableHardness.ActualPresentedLeafGluing.anyQuestionFailIndicator {N m J h : ℕ} {I : Instance N m} {n : ℕ}
+  (Ps : Fin n → PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) : ℝ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.anyQuestionFailIndicator_le_sum {N m J h : ℕ} {I : Instance N m}
+  {n : ℕ} (Ps : Fin n → PresentedLeaf I J h) (x : I.GlobalVar → ZMod 2) :
+  anyQuestionFailIndicator Ps x ≤ ∑ i, questionFailIndicator (Ps i) x
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_zero_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_one_iff' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.presentedEnum_mem' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.presentedEnum_surj' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_eq_baseFailure' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFailIndicator_le_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.questionFail_sourceExtension_original' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.anyQuestionFailIndicator_le_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

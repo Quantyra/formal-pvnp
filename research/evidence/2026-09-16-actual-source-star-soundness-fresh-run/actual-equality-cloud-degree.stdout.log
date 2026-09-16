@@ -1,0 +1,2 @@
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualEqualityCloudDegree.lean:56:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualEqualityCloudDegree.lean:64:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead

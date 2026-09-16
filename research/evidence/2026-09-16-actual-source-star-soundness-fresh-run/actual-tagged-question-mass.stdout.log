@@ -1,0 +1,15 @@
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedQuestionMass.lean:41:6: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedQuestionMass.lean:50:6: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedQuestionMass.lean:57:4: warning: Unused tactic linter: `change
+  rowConflict (Finite3LinSource.ofActual I).support q r ↔ rowConflict I.support q r` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

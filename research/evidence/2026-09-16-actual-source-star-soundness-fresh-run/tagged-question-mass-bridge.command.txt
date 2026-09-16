@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.TaggedQuestionMassBridge
+source=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean
+object=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-fresh-target/lib/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.olean

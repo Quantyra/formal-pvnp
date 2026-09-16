@@ -1,0 +1,10 @@
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedBaseProjectionTransport.lean:34:49: warning: This simp argument is unused:
+  baseProjection
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [taggedTupleEquiv_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedBaseProjectionTransport.lean:43:30: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`

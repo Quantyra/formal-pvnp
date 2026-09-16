@@ -1,0 +1,28 @@
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean:213:14: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_prod, hJ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean:213:32: warning: This simp argument is unused:
+  Fintype.card_prod
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_fun, hJ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean:226:14: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_prod, Fintype.card_fin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/TaggedQuestionMassBridge.lean:255:12: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_prod, Fintype.card_fin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

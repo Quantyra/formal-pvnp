@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualOccurrenceDegree
+source=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualOccurrenceDegree.lean
+object=/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-fresh-target/lib/lean/PvNP/RealizableHardness/ActualOccurrenceDegree.olean

@@ -1,0 +1,30 @@
+expected_bundle_sha256=F5B7912CCFB531F6CAED6AF98C15E2CD30C26C3CAD6E1FB9CB160F23CEF1986D
+actual_bundle_sha256=F5B7912CCFB531F6CAED6AF98C15E2CD30C26C3CAD6E1FB9CB160F23CEF1986D
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/source-star-soundness-f35269d-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-f35269d.bundle is okay
+The bundle contains this ref:
+f35269d0abecc290f2d79e25a2b1a470d738dc43 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src'...
+HEAD is now at f35269d prove actual source-star soundness
+expected_head=f35269d0abecc290f2d79e25a2b1a470d738dc43
+actual_head=f35269d0abecc290f2d79e25a2b1a470d738dc43
+status_begin
+
+status_end
+expected_main_sha256=0C42DE927035271B413CB57F25C631BE076E7140BB365125AB06208A47BF6F9B
+actual_main_sha256=0C42DE927035271B413CB57F25C631BE076E7140BB365125AB06208A47BF6F9B
+expected_checks_sha256=2870AAA586F4DF0C873983906B6D30A269CED6B2ED3CFABC42F5330CF7BA254D
+actual_checks_sha256=2870AAA586F4DF0C873983906B6D30A269CED6B2ED3CFABC42F5330CF7BA254D
+transfer_gate=PASS

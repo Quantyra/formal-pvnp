@@ -1,0 +1,14 @@
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedQuestionRetainedMass.lean:99:12: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_prod, Fintype.card_fin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/source-star-soundness-f35269d-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTaggedQuestionRetainedMass.lean:124:10: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fintype.card_prod, Fintype.card_fin]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
