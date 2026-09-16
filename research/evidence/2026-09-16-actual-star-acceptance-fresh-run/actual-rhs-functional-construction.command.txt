@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualRhsFunctionalConstruction
+source=/home/dfredriksen_quantyra_org/star-acceptance-5606cd9-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualRhsFunctionalConstruction.lean
+object=/home/dfredriksen_quantyra_org/star-acceptance-5606cd9-fresh-target/lib/lean/PvNP/RealizableHardness/ActualRhsFunctionalConstruction.olean

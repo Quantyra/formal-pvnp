@@ -1,0 +1,36 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_iff_anyFail_zero {N m J h : ℕ} {I : Instance N m}
+  {n k : ℕ} (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) :
+  starAccepts vs ws hrel Cvs Cws hK φvs φws ↔ anyFailIndicator vs ws hrel Cvs Cws hK φvs φws = 0
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_of_source_agrees {N m J h : ℕ} {I : Instance N m}
+  {n k : ℕ} (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) :
+  (∀ (i : Fin n), restrictToCenter (Cvs i) (φvs i) ∘ₗ Submodule.inclusion ⋯ = restrictToCenter (Cws i) (φws i)) →
+    starAccepts vs ws hrel Cvs Cws hK φvs φws
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAcceptsCenter {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (c : LeafVertex I J h) (Cc : CenterSubspace c k) (ψ : LeafLabel c) (ws : Fin n → LeafVertex I J h)
+  (hrel : ∀ (i : Fin n), c.Rel (ws i)) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), Cc.K = (Cws i).K) (φws : (i : Fin n) → LeafLabel (ws i)) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.starAcceptsCenter_iff_starAccepts {N m J h : ℕ} {I : Instance N m}
+  {n k : ℕ} (c : LeafVertex I J h) (Cc : CenterSubspace c k) (ψ : LeafLabel c) (ws : Fin n → LeafVertex I J h)
+  (hrel : ∀ (i : Fin n), c.Rel (ws i)) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), Cc.K = (Cws i).K) (φws : (i : Fin n) → LeafLabel (ws i)) :
+  starAcceptsCenter c Cc ψ ws hrel Cws hK φws ↔ starAccepts (fun x => c) ws hrel (fun x => Cc) Cws hK (fun x => ψ) φws
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_iff_anyFail_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.starAccepts_of_source_agrees' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.starAcceptsCenter_iff_starAccepts' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

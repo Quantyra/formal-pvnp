@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualLeafRelationLaws
+source=/home/dfredriksen_quantyra_org/star-acceptance-5606cd9-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualLeafRelationLaws.lean
+object=/home/dfredriksen_quantyra_org/star-acceptance-5606cd9-fresh-target/lib/lean/PvNP/RealizableHardness/ActualLeafRelationLaws.olean
