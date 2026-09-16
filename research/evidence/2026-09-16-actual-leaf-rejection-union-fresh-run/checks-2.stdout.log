@@ -1,0 +1,48 @@
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictionAgreesOnCenter {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φv : LeafLabel v) (φw : LeafLabel w) : Prop
+PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictionAgreesOnCenter_iff_source {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φv : LeafLabel v) (φw : LeafLabel w) :
+  restrictionAgreesOnCenter hvw Cv Cw hK φv φw ↔
+    restrictToCenter Cv φv ∘ₗ Submodule.inclusion ⋯ = restrictToCenter Cw φw
+PvNP.RealizableHardness.ActualPresentedLeafGluing.leafFailIndicator {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φv : LeafLabel v) (φw : LeafLabel w) : ℝ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.leafFailIndicator_nonneg {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φv : LeafLabel v) (φw : LeafLabel w) : 0 ≤ leafFailIndicator hvw Cv Cw hK φv φw
+PvNP.RealizableHardness.ActualPresentedLeafGluing.leafFailIndicator_le_one {N m J h : ℕ} {I : Instance N m}
+  {v w : LeafVertex I J h} {k : ℕ} (hvw : v.Rel w) (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+  (hK : Cv.K = Cw.K) (φv : LeafLabel v) (φw : LeafLabel w) : leafFailIndicator hvw Cv Cw hK φv φw ≤ 1
+PvNP.RealizableHardness.ActualPresentedLeafGluing.anyFailIndicator {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) : ℝ
+PvNP.RealizableHardness.ActualPresentedLeafGluing.anyFailIndicator_le_sum {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) :
+  anyFailIndicator vs ws hrel Cvs Cws hK φvs φws ≤ ∑ i, leafFailIndicator ⋯ (Cvs i) (Cws i) ⋯ (φvs i) (φws i)
+PvNP.RealizableHardness.ActualPresentedLeafGluing.anyFailIndicator_le_card {N m J h : ℕ} {I : Instance N m} {n k : ℕ}
+  (vs ws : Fin n → LeafVertex I J h) (hrel : ∀ (i : Fin n), (vs i).Rel (ws i))
+  (Cvs : (i : Fin n) → CenterSubspace (vs i) k) (Cws : (i : Fin n) → CenterSubspace (ws i) k)
+  (hK : ∀ (i : Fin n), (Cvs i).K = (Cws i).K) (φvs : (i : Fin n) → LeafLabel (vs i))
+  (φws : (i : Fin n) → LeafLabel (ws i)) : anyFailIndicator vs ws hrel Cvs Cws hK φvs φws ≤ ↑n
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.restrictionAgreesOnCenter_iff_source' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.leafFailIndicator_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.leafFailIndicator_le_one' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.anyFailIndicator_le_sum' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualPresentedLeafGluing.anyFailIndicator_le_card' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

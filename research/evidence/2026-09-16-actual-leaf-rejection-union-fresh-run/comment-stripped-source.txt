@@ -1,0 +1,489 @@
+-- stripped-source-boundary: ActualLeafRejectionUnion.lean
+import PvNP.RealizableHardness.ActualLeafRepresentativeSampler
+import Mathlib.Basic.Real.Basic
+import Mathlib.Algebra.Order.BigOperators.Group.Finset
+
+namespace PvNP.RealizableHardness.ActualPresentedLeafGluing
+open PvNP.RealizableHardness
+open PvNP.RealizableHardness.ActualOccurrenceAllocation
+open PvNP.RealizableHardness.ActualStarQuestionSupport
+open PvNP.RealizableHardness.ActualStarSpanIntersection
+open scoped BigOperators
+noncomputable section
+attribute [local instance] Classical.propDecidable
+set_option linter.unusedVariables false
+
+variable {N m J h : Nat} {I : ActualOccurrenceAllocation.Instance N m}
+
+
+def restrictionAgreesOnCenter
+    {v w : LeafVertex I J h} {k : Nat}
+    (hvw : LeafVertex.Rel v w)
+    (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+    (hK : Cv.K = Cw.K)
+    (φv : LeafLabel v) (φw : LeafLabel w) : Prop :=
+  restrictToCenter Cw (transportedLeafLabel hvw φv) = restrictToCenter Cw φw
+
+theorem restrictionAgreesOnCenter_iff_source
+    {v w : LeafVertex I J h} {k : Nat}
+    (hvw : LeafVertex.Rel v w)
+    (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+    (hK : Cv.K = Cw.K)
+    (φv : LeafLabel v) (φw : LeafLabel w) :
+    restrictionAgreesOnCenter hvw Cv Cw hK φv φw ↔
+      LinearMap.comp (restrictToCenter Cv φv)
+          (Submodule.inclusion (le_of_eq hK.symm)) =
+        restrictToCenter Cw φw := by
+  unfold restrictionAgreesOnCenter
+  rw [restrictToCenter_class_invariant hvw Cv Cw hK φv]
+
+
+noncomputable def leafFailIndicator
+    {v w : LeafVertex I J h} {k : Nat}
+    (hvw : LeafVertex.Rel v w)
+    (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+    (hK : Cv.K = Cw.K)
+    (φv : LeafLabel v) (φw : LeafLabel w) : ℝ :=
+  if restrictionAgreesOnCenter hvw Cv Cw hK φv φw then 0 else 1
+
+theorem leafFailIndicator_nonneg
+    {v w : LeafVertex I J h} {k : Nat}
+    (hvw : LeafVertex.Rel v w)
+    (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+    (hK : Cv.K = Cw.K)
+    (φv : LeafLabel v) (φw : LeafLabel w) :
+    0 ≤ leafFailIndicator hvw Cv Cw hK φv φw := by
+  unfold leafFailIndicator
+  split <;> norm_num
+
+theorem leafFailIndicator_le_one
+    {v w : LeafVertex I J h} {k : Nat}
+    (hvw : LeafVertex.Rel v w)
+    (Cv : CenterSubspace v k) (Cw : CenterSubspace w k)
+    (hK : Cv.K = Cw.K)
+    (φv : LeafLabel v) (φw : LeafLabel w) :
+    leafFailIndicator hvw Cv Cw hK φv φw ≤ 1 := by
+  unfold leafFailIndicator
+  split <;> norm_num
+
+
+noncomputable def anyFailIndicator
+    {n k : Nat}
+    (vs : Fin n → LeafVertex I J h)
+    (ws : Fin n → LeafVertex I J h)
+    (hrel : ∀ i, LeafVertex.Rel (vs i) (ws i))
+    (Cvs : ∀ i, CenterSubspace (vs i) k)
+    (Cws : ∀ i, CenterSubspace (ws i) k)
+    (hK : ∀ i, (Cvs i).K = (Cws i).K)
+    (φvs : ∀ i, LeafLabel (vs i))
+    (φws : ∀ i, LeafLabel (ws i)) : ℝ :=
+  if ∃ i, ¬ restrictionAgreesOnCenter (hrel i) (Cvs i) (Cws i) (hK i)
+        (φvs i) (φws i) then 1 else 0
+
+theorem anyFailIndicator_le_sum
+    {n k : Nat}
+    (vs : Fin n → LeafVertex I J h)
+    (ws : Fin n → LeafVertex I J h)
+    (hrel : ∀ i, LeafVertex.Rel (vs i) (ws i))
+    (Cvs : ∀ i, CenterSubspace (vs i) k)
+    (Cws : ∀ i, CenterSubspace (ws i) k)
+    (hK : ∀ i, (Cvs i).K = (Cws i).K)
+    (φvs : ∀ i, LeafLabel (vs i))
+    (φws : ∀ i, LeafLabel (ws i)) :
+    anyFailIndicator vs ws hrel Cvs Cws hK φvs φws ≤
+      ∑ i : Fin n, leafFailIndicator (hrel i) (Cvs i) (Cws i) (hK i)
+        (φvs i) (φws i) := by
+  unfold anyFailIndicator
+  split
+  · rename_i hex
+    obtain ⟨i, hi⟩ := hex
+    have hfail :
+        leafFailIndicator (hrel i) (Cvs i) (Cws i) (hK i) (φvs i) (φws i) = 1 := by
+      unfold leafFailIndicator
+      split
+      · rename_i hagrees
+        exact (hi hagrees).elim
+      · rfl
+    calc
+      (1 : ℝ) = leafFailIndicator (hrel i) (Cvs i) (Cws i) (hK i) (φvs i) (φws i) :=
+        hfail.symm
+      _ ≤ ∑ j : Fin n, leafFailIndicator (hrel j) (Cvs j) (Cws j) (hK j)
+            (φvs j) (φws j) :=
+        Finset.single_le_sum
+          (fun j _ =>
+            leafFailIndicator_nonneg (hrel j) (Cvs j) (Cws j) (hK j)
+              (φvs j) (φws j))
+          (Finset.mem_univ i)
+  · exact Finset.sum_nonneg fun i _ =>
+      leafFailIndicator_nonneg (hrel i) (Cvs i) (Cws i) (hK i) (φvs i) (φws i)
+
+theorem anyFailIndicator_le_card
+    {n k : Nat}
+    (vs : Fin n → LeafVertex I J h)
+    (ws : Fin n → LeafVertex I J h)
+    (hrel : ∀ i, LeafVertex.Rel (vs i) (ws i))
+    (Cvs : ∀ i, CenterSubspace (vs i) k)
+    (Cws : ∀ i, CenterSubspace (ws i) k)
+    (hK : ∀ i, (Cvs i).K = (Cws i).K)
+    (φvs : ∀ i, LeafLabel (vs i))
+    (φws : ∀ i, LeafLabel (ws i)) :
+    anyFailIndicator vs ws hrel Cvs Cws hK φvs φws ≤ (n : ℝ) := by
+  refine (anyFailIndicator_le_sum vs ws hrel Cvs Cws hK φvs φws).trans ?_
+  have hle :
+      (∑ i : Fin n, leafFailIndicator (hrel i) (Cvs i) (Cws i) (hK i)
+        (φvs i) (φws i)) ≤ ∑ _i : Fin n, (1 : ℝ) :=
+    Finset.sum_le_sum fun i _ =>
+      leafFailIndicator_le_one (hrel i) (Cvs i) (Cws i) (hK i) (φvs i) (φws i)
+  refine hle.trans ?_
+  simp [Finset.sum_const, Finset.card_univ, Fintype.card_fin]
+
+end
+end PvNP.RealizableHardness.ActualPresentedLeafGluing
+
+-- stripped-source-boundary: ActualLeafRejectionUnionChecks.lean
+import PvNP.RealizableHardness.ActualLeafRejectionUnion
+
+namespace PvNP.RealizableHardness.ActualLeafRejectionUnionChecks
+open PvNP.RealizableHardness
+open PvNP.RealizableHardness.ActualOccurrenceAllocation
+open PvNP.RealizableHardness.ActualStarQuestionSupport
+open PvNP.RealizableHardness.ActualStarSpanIntersection
+open PvNP.RealizableHardness.ActualRhsFunctionalConstruction
+open PvNP.RealizableHardness.ActualCompatibleRhsFunctional
+open PvNP.RealizableHardness.ActualPresentedLeafGluing
+open scoped BigOperators
+noncomputable section
+
+#check restrictionAgreesOnCenter
+#check restrictionAgreesOnCenter_iff_source
+#check leafFailIndicator
+#check leafFailIndicator_nonneg
+#check leafFailIndicator_le_one
+#check anyFailIndicator
+#check anyFailIndicator_le_sum
+#check anyFailIndicator_le_card
+
+#print axioms restrictionAgreesOnCenter_iff_source
+#print axioms leafFailIndicator_nonneg
+#print axioms leafFailIndicator_le_one
+#print axioms anyFailIndicator_le_sum
+#print axioms anyFailIndicator_le_card
+
+local instance representativeSamplerChecksRowIdDecidableEq {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) : DecidableEq I.RowId :=
+  Classical.decEq _
+
+
+
+
+def threeRowActual : ActualOccurrenceAllocation.Instance 1 3 where
+  vars := fun _ _ => 0
+  rhs := fun r => if r = 0 then 1 else 0
+
+def originalQuestion (r : Fin 3) : Finset threeRowActual.RowId :=
+  {Sum.inl r}
+
+theorem originalQuestion_good (r : Fin 3) :
+    GoodQuestion threeRowActual.support (originalQuestion r) := by
+  simp [GoodQuestion, originalQuestion]
+
+def originalPresented (r : Fin 3) : PresentedLeaf threeRowActual 1 0 where
+  U := originalQuestion r
+  goodU := originalQuestion_good r
+  card_U := by simp [originalQuestion]
+  L := ⊥
+  L_le := by simp
+  finrank_L := by simp
+  transverse := by simp
+
+theorem original_rel (r s : Fin 3) :
+    (originalPresented r).Rel (originalPresented s) := by
+  simp [PresentedLeaf.Rel, PresentedLeaf.domain, originalPresented, sup_comm]
+
+def sourceCoordinateFunctional :
+    coordinateSpace threeRowActual.support (originalQuestion 0) →ₗ[ZMod 2] ZMod 2 :=
+  Classical.choose
+    (actual_exists_coordinateFunctional threeRowActual (originalQuestion 0)
+      (originalQuestion_good 0))
+
+theorem sourceCoordinateFunctional_rhs :
+    ∀ e (he : e ∈ originalQuestion 0),
+      sourceCoordinateFunctional
+        ⟨equationVector threeRowActual.support e,
+          equationVector_mem_coordinateSpace threeRowActual.support
+            (originalQuestion 0) e he⟩ = threeRowActual.rowRhs e :=
+  Classical.choose_spec
+    (actual_exists_coordinateFunctional threeRowActual (originalQuestion 0)
+      (originalQuestion_good 0))
+
+def sourceLabel : RawLeafLabel threeRowActual (originalPresented 0).domain :=
+  sourceCoordinateFunctional.comp
+    (Submodule.inclusion (originalPresented 0).domain_le_coordinateSpace)
+
+theorem sourceLabel_respects :
+    RespectsAt (originalPresented 0) rfl sourceLabel := by
+  intro e he
+  change sourceCoordinateFunctional
+      ⟨equationVector threeRowActual.support e, _⟩ = threeRowActual.rowRhs e
+  exact sourceCoordinateFunctional_rhs e he
+
+def sourceVertex : LeafVertex threeRowActual 1 0 :=
+  ⟨(originalPresented 0).domain, ⟨originalPresented 0, rfl⟩⟩
+
+def midVertex : LeafVertex threeRowActual 1 0 :=
+  ⟨(originalPresented 1).domain, ⟨originalPresented 1, rfl⟩⟩
+
+def sourcePackaged : LeafLabel sourceVertex :=
+  packagedLabel (originalPresented 0) sourceLabel sourceLabel_respects
+
+theorem source_mid_vertex_rel : LeafVertex.Rel sourceVertex midVertex :=
+  (LeafVertex.Rel_iff_presented sourceVertex midVertex
+    (originalPresented 0) (originalPresented 1) rfl rfl).mpr (original_rel 0 1)
+
+theorem source_vertex_rel : LeafVertex.Rel sourceVertex sourceVertex :=
+  LeafVertex.Rel.refl sourceVertex
+
+def sourceCenter : CenterSubspace sourceVertex 0 where
+  K := ⊥
+  le_domain := bot_le
+  transverse := by simp
+  finrank := by simp
+
+def midCenter : CenterSubspace midVertex 0 where
+  K := ⊥
+  le_domain := bot_le
+  transverse := by simp
+  finrank := by simp
+
+theorem source_mid_center_eq : sourceCenter.K = midCenter.K :=
+  rfl
+
+theorem source_center_eq : sourceCenter.K = sourceCenter.K :=
+  rfl
+
+def midPackaged : LeafLabel midVertex :=
+  transportedLeafLabel source_mid_vertex_rel sourcePackaged
+
+example :
+    restrictionAgreesOnCenter source_vertex_rel sourceCenter sourceCenter
+      source_center_eq sourcePackaged sourcePackaged ↔
+      LinearMap.comp (restrictToCenter sourceCenter sourcePackaged)
+          (Submodule.inclusion (le_of_eq source_center_eq.symm)) =
+        restrictToCenter sourceCenter sourcePackaged :=
+  restrictionAgreesOnCenter_iff_source source_vertex_rel sourceCenter sourceCenter
+    source_center_eq sourcePackaged sourcePackaged
+
+example :
+    restrictionAgreesOnCenter source_mid_vertex_rel sourceCenter midCenter
+      source_mid_center_eq sourcePackaged midPackaged ↔
+      LinearMap.comp (restrictToCenter sourceCenter sourcePackaged)
+          (Submodule.inclusion (le_of_eq source_mid_center_eq.symm)) =
+        restrictToCenter midCenter midPackaged :=
+  restrictionAgreesOnCenter_iff_source source_mid_vertex_rel sourceCenter midCenter
+    source_mid_center_eq sourcePackaged midPackaged
+
+example :
+    anyFailIndicator
+      (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => sourceVertex)
+      (fun _ => source_vertex_rel)
+      (fun _ => sourceCenter) (fun _ => sourceCenter)
+      (fun _ => source_center_eq)
+      (fun _ => sourcePackaged) (fun _ => sourcePackaged) ≤
+      ∑ _i : Fin 1,
+        leafFailIndicator source_vertex_rel sourceCenter sourceCenter
+          source_center_eq sourcePackaged sourcePackaged :=
+  anyFailIndicator_le_sum
+    (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => sourceVertex)
+    (fun _ => source_vertex_rel)
+    (fun _ => sourceCenter) (fun _ => sourceCenter)
+    (fun _ => source_center_eq)
+    (fun _ => sourcePackaged) (fun _ => sourcePackaged)
+
+example :
+    anyFailIndicator
+      (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => sourceVertex)
+      (fun _ => source_vertex_rel)
+      (fun _ => sourceCenter) (fun _ => sourceCenter)
+      (fun _ => source_center_eq)
+      (fun _ => sourcePackaged) (fun _ => sourcePackaged) ≤ ((1 : Nat) : ℝ) :=
+  anyFailIndicator_le_card
+    (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => sourceVertex)
+    (fun _ => source_vertex_rel)
+    (fun _ => sourceCenter) (fun _ => sourceCenter)
+    (fun _ => source_center_eq)
+    (fun _ => sourcePackaged) (fun _ => sourcePackaged)
+
+example :
+    anyFailIndicator
+      (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => midVertex)
+      (fun _ => source_mid_vertex_rel)
+      (fun _ => sourceCenter) (fun _ => midCenter)
+      (fun _ => source_mid_center_eq)
+      (fun _ => sourcePackaged) (fun _ => midPackaged) ≤
+      ∑ _i : Fin 1,
+        leafFailIndicator source_mid_vertex_rel sourceCenter midCenter
+          source_mid_center_eq sourcePackaged midPackaged :=
+  anyFailIndicator_le_sum
+    (fun _ : Fin 1 => sourceVertex) (fun _ : Fin 1 => midVertex)
+    (fun _ => source_mid_vertex_rel)
+    (fun _ => sourceCenter) (fun _ => midCenter)
+    (fun _ => source_mid_center_eq)
+    (fun _ => sourcePackaged) (fun _ => midPackaged)
+
+example :
+    anyFailIndicator
+      (fun _ : Fin 2 => sourceVertex) (fun _ : Fin 2 => midVertex)
+      (fun _ => source_mid_vertex_rel)
+      (fun _ => sourceCenter) (fun _ => midCenter)
+      (fun _ => source_mid_center_eq)
+      (fun _ => sourcePackaged) (fun _ => midPackaged) ≤
+      ∑ _i : Fin 2,
+        leafFailIndicator source_mid_vertex_rel sourceCenter midCenter
+          source_mid_center_eq sourcePackaged midPackaged :=
+  anyFailIndicator_le_sum
+    (fun _ : Fin 2 => sourceVertex) (fun _ : Fin 2 => midVertex)
+    (fun _ => source_mid_vertex_rel)
+    (fun _ => sourceCenter) (fun _ => midCenter)
+    (fun _ => source_mid_center_eq)
+    (fun _ => sourcePackaged) (fun _ => midPackaged)
+
+example :
+    anyFailIndicator
+      (fun _ : Fin 2 => sourceVertex) (fun _ : Fin 2 => midVertex)
+      (fun _ => source_mid_vertex_rel)
+      (fun _ => sourceCenter) (fun _ => midCenter)
+      (fun _ => source_mid_center_eq)
+      (fun _ => sourcePackaged) (fun _ => midPackaged) ≤ ((2 : Nat) : ℝ) :=
+  anyFailIndicator_le_card
+    (fun _ : Fin 2 => sourceVertex) (fun _ : Fin 2 => midVertex)
+    (fun _ => source_mid_vertex_rel)
+    (fun _ => sourceCenter) (fun _ => midCenter)
+    (fun _ => source_mid_center_eq)
+    (fun _ => sourcePackaged) (fun _ => midPackaged)
+
+
+
+def emptyPresented {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) : PresentedLeaf I 0 0 where
+  U := ∅
+  goodU := by simp [GoodQuestion]
+  card_U := by simp
+  L := ⊥
+  L_le := by simp
+  finrank_L := by simp
+  transverse := by simp
+
+def zeroRawLeafLabel {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    RawLeafLabel I (emptyPresented I).domain := by
+  change (emptyPresented I).domain →ₗ[ZMod 2] ZMod 2
+  exact 0
+
+theorem zeroRawLeafLabel_respects {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    RespectsAt (emptyPresented I) rfl (zeroRawLeafLabel I) := by
+  intro e he
+  simp [emptyPresented] at he
+
+def emptyVertex {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) : LeafVertex I 0 0 :=
+  ⟨(emptyPresented I).domain, ⟨emptyPresented I, rfl⟩⟩
+
+def emptyPackaged {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    LeafLabel (emptyVertex I) :=
+  packagedLabel (emptyPresented I) (zeroRawLeafLabel I)
+    (zeroRawLeafLabel_respects I)
+
+theorem empty_vertex_rel {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    LeafVertex.Rel (emptyVertex I) (emptyVertex I) :=
+  LeafVertex.Rel.refl (emptyVertex I)
+
+def emptyCenter {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    CenterSubspace (emptyVertex I) 0 where
+  K := ⊥
+  le_domain := bot_le
+  transverse := by simp
+  finrank := by simp
+
+theorem empty_center_eq {N m : Nat}
+    (I : ActualOccurrenceAllocation.Instance N m) :
+    (emptyCenter I).K = (emptyCenter I).K :=
+  rfl
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    restrictionAgreesOnCenter (empty_vertex_rel I) (emptyCenter I) (emptyCenter I)
+      (empty_center_eq I) (emptyPackaged I) (emptyPackaged I) ↔
+      LinearMap.comp (restrictToCenter (emptyCenter I) (emptyPackaged I))
+          (Submodule.inclusion (le_of_eq (empty_center_eq I).symm)) =
+        restrictToCenter (emptyCenter I) (emptyPackaged I) :=
+  restrictionAgreesOnCenter_iff_source (empty_vertex_rel I) (emptyCenter I)
+    (emptyCenter I) (empty_center_eq I) (emptyPackaged I) (emptyPackaged I)
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    anyFailIndicator
+      (fun _ : Fin 0 => emptyVertex I) (fun _ : Fin 0 => emptyVertex I)
+      (fun _ => empty_vertex_rel I)
+      (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+      (fun _ => empty_center_eq I)
+      (fun _ => emptyPackaged I) (fun _ => emptyPackaged I) ≤
+      ∑ _i : Fin 0,
+        leafFailIndicator (empty_vertex_rel I) (emptyCenter I) (emptyCenter I)
+          (empty_center_eq I) (emptyPackaged I) (emptyPackaged I) :=
+  anyFailIndicator_le_sum
+    (fun _ : Fin 0 => emptyVertex I) (fun _ : Fin 0 => emptyVertex I)
+    (fun _ => empty_vertex_rel I)
+    (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+    (fun _ => empty_center_eq I)
+    (fun _ => emptyPackaged I) (fun _ => emptyPackaged I)
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    anyFailIndicator
+      (fun _ : Fin 0 => emptyVertex I) (fun _ : Fin 0 => emptyVertex I)
+      (fun _ => empty_vertex_rel I)
+      (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+      (fun _ => empty_center_eq I)
+      (fun _ => emptyPackaged I) (fun _ => emptyPackaged I) ≤ ((0 : Nat) : ℝ) :=
+  anyFailIndicator_le_card
+    (fun _ : Fin 0 => emptyVertex I) (fun _ : Fin 0 => emptyVertex I)
+    (fun _ => empty_vertex_rel I)
+    (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+    (fun _ => empty_center_eq I)
+    (fun _ => emptyPackaged I) (fun _ => emptyPackaged I)
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    anyFailIndicator
+      (fun _ : Fin 1 => emptyVertex I) (fun _ : Fin 1 => emptyVertex I)
+      (fun _ => empty_vertex_rel I)
+      (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+      (fun _ => empty_center_eq I)
+      (fun _ => emptyPackaged I) (fun _ => emptyPackaged I) ≤
+      ∑ _i : Fin 1,
+        leafFailIndicator (empty_vertex_rel I) (emptyCenter I) (emptyCenter I)
+          (empty_center_eq I) (emptyPackaged I) (emptyPackaged I) :=
+  anyFailIndicator_le_sum
+    (fun _ : Fin 1 => emptyVertex I) (fun _ : Fin 1 => emptyVertex I)
+    (fun _ => empty_vertex_rel I)
+    (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+    (fun _ => empty_center_eq I)
+    (fun _ => emptyPackaged I) (fun _ => emptyPackaged I)
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    anyFailIndicator
+      (fun _ : Fin 1 => emptyVertex I) (fun _ : Fin 1 => emptyVertex I)
+      (fun _ => empty_vertex_rel I)
+      (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+      (fun _ => empty_center_eq I)
+      (fun _ => emptyPackaged I) (fun _ => emptyPackaged I) ≤ ((1 : Nat) : ℝ) :=
+  anyFailIndicator_le_card
+    (fun _ : Fin 1 => emptyVertex I) (fun _ : Fin 1 => emptyVertex I)
+    (fun _ => empty_vertex_rel I)
+    (fun _ => emptyCenter I) (fun _ => emptyCenter I)
+    (fun _ => empty_center_eq I)
+    (fun _ => emptyPackaged I) (fun _ => emptyPackaged I)
+
+end
+end PvNP.RealizableHardness.ActualLeafRejectionUnionChecks
+

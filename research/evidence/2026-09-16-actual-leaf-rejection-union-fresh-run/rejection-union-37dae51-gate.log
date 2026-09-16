@@ -1,0 +1,30 @@
+expected_bundle_sha256=7CD2092D464DBCBF037CDAB2E9A6AB636CA5DD2995066A543231CE9F4949BC20
+actual_bundle_sha256=7CD2092D464DBCBF037CDAB2E9A6AB636CA5DD2995066A543231CE9F4949BC20
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/rejection-union-37dae51-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-37dae51.bundle is okay
+The bundle contains this ref:
+37dae5120b9da738216a12845c0ed9e594d8f264 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/rejection-union-37dae51-src'...
+HEAD is now at 37dae51 prove actual leaf rejection union
+expected_head=37dae5120b9da738216a12845c0ed9e594d8f264
+actual_head=37dae5120b9da738216a12845c0ed9e594d8f264
+status_begin
+
+status_end
+expected_main_sha256=999A3183F0AC58101811315DAE42A010AF0BB41B1C78286BDEF708D285033F83
+actual_main_sha256=999A3183F0AC58101811315DAE42A010AF0BB41B1C78286BDEF708D285033F83
+expected_checks_sha256=15F4924E325D863531F83414759FB7F910349159159064EE2522D07F53C1AB86
+actual_checks_sha256=15F4924E325D863531F83414759FB7F910349159159064EE2522D07F53C1AB86
+transfer_gate=PASS
