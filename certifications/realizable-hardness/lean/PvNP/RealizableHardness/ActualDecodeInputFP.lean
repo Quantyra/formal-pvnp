@@ -12,8 +12,8 @@ import Complexitylib.Classes.Containments.Internal.BinArith
 /-!
 Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 `gcdBits` and `readRatTag` are in `FP`. Canonical odd-pair GCD is
-`gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`
-when present. This module does not claim `decodeInputTag ∈ FP` until
+`gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`.
+This module does not claim `decodeInputTag ∈ FP` until
 `decodeInputTag_mem_FP`. Empty tape = none
 (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -3283,5 +3283,259 @@ private theorem rat_num_den_of_nat (n d : Nat) (hd : d ≠ 0) :
     simp [Int.natAbs_natCast]
   · rw [hmk, Rat.den_mkRat, ite_eq_right (by exact hd)]
     simp [Int.natAbs_natCast, Nat.gcd_comm]
+
+private theorem pairFst_nil : pairFst [] = [] := rfl
+
+private theorem dropOne_nil : dropOne [] = [] := rfl
+
+private theorem false_cons_canon {t : List Bool}
+    (h : false :: t = (bitValue (false :: t)).bits) :
+    t = (bitValue t).bits ∧ bitValue t ≠ 0 := by
+  have hne : bitValue t ≠ 0 := by
+    intro h0
+    have hx : false :: t = (2 * bitValue t).bits := by
+      simpa [bitValue] using h
+    simp [h0] at hx
+  have hbit : (2 * bitValue t).bits = false :: (bitValue t).bits :=
+    Nat.bit0_bits _ hne
+  have hx : false :: t = (2 * bitValue t).bits := by
+    simpa [bitValue] using h
+  rw [hbit] at hx
+  exact ⟨(List.cons_inj_right false).mp hx, hne⟩
+
+private theorem share2Step_canon (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) :
+    pairFst (share2Step (pair a b)) =
+        (bitValue (pairFst (share2Step (pair a b)))).bits ∧
+      pairSnd (share2Step (pair a b)) =
+        (bitValue (pairSnd (share2Step (pair a b)))).bits := by
+  rw [share2Step_pair]
+  cases a with
+  | nil =>
+      simp [pairFst_pair, pairSnd_pair]
+      exact ⟨ha, hb⟩
+  | cons ba ta =>
+      cases b with
+      | nil =>
+          simp [pairFst_pair, pairSnd_pair]
+          exact ⟨ha, hb⟩
+      | cons bb tb =>
+          cases ba with
+          | true =>
+              simp [pairFst_pair, pairSnd_pair]
+              exact ⟨ha, hb⟩
+          | false =>
+              cases bb with
+              | true =>
+                  simp [pairFst_pair, pairSnd_pair]
+                  exact ⟨ha, hb⟩
+              | false =>
+                  simp [pairFst_pair, pairSnd_pair]
+                  exact ⟨(false_cons_canon ha).1, (false_cons_canon hb).1⟩
+
+private theorem shareIterate_canon (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) :
+    ∀ n,
+      pairFst (share2Step^[n] (pair a b)) =
+          (bitValue (pairFst (share2Step^[n] (pair a b)))).bits ∧
+        pairSnd (share2Step^[n] (pair a b)) =
+          (bitValue (pairSnd (share2Step^[n] (pair a b)))).bits := by
+  intro n
+  induction n with
+  | zero =>
+      simp [pairFst_pair, pairSnd_pair]
+      exact ⟨ha, hb⟩
+  | succ n ih =>
+      obtain ⟨a', b', hs, _, _⟩ := shareIterate_is_pair a b n
+      have ha' : a' = (bitValue a').bits := by
+        simpa [hs, pairFst_pair] using ih.1
+      have hb' : b' = (bitValue b').bits := by
+        simpa [hs, pairSnd_pair] using ih.2
+      rw [Function.iterate_succ_apply', hs]
+      exact share2Step_canon a' b' ha' hb'
+
+private theorem shareTwos_canon (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) :
+    pairFst (shareTwos a b) = (bitValue (pairFst (shareTwos a b))).bits ∧
+      pairSnd (shareTwos a b) = (bitValue (pairSnd (shareTwos a b))).bits :=
+  shareIterate_canon a b ha hb (a ++ b).length
+
+/-- Packed GCD after `shareTwos`/`gcdPrep` is `Nat.gcd` of the remaining parts. -/
+private theorem gcdShared_eq (a b : List Bool)
+    (ha : a = (bitValue a).bits) (hb : b = (bitValue b).bits) :
+    gcdShared a b =
+      (Nat.gcd (bitValue (pairFst (shareTwos a b)))
+        (bitValue (pairSnd (shareTwos a b)))).bits := by
+  obtain ⟨a', b', _, hs, _, _, hstuck⟩ := shareTwos_spec a b
+  have hcan := shareTwos_canon a b ha hb
+  have ha' : a' = (bitValue a').bits := by
+    simpa [hs, pairFst_pair] using hcan.1
+  have hb' : b' = (bitValue b').bits := by
+    simpa [hs, pairSnd_pair] using hcan.2
+  have hgoal :
+      gcdBits (gcdPrep (pair a' b')) =
+        (Nat.gcd (bitValue a') (bitValue b')).bits := by
+    rw [gcdPrep_pair]
+    by_cases h0 : a' = []
+    · rw [if_pos h0, gcdBits_of_fixed b' [] (Or.inr (Or.inl rfl))]
+      have : bitValue a' = 0 := by simp [h0, bitValue]
+      rw [this, Nat.gcd_zero_left]
+      exact hb'
+    · rw [if_neg h0]
+      have hodd : b' = [] ∨ bitValue a' % 2 = 1 ∨ bitValue b' % 2 = 1 := by
+        rcases hstuck with h | h | h | h
+        · exact absurd h h0
+        · exact Or.inl h
+        · exact Or.inr (Or.inl h)
+        · exact Or.inr (Or.inr h)
+      exact gcdBits_odd_pair a' b' ha' hb' h0 hodd
+  simpa [gcdShared, hs, pairFst_pair, pairSnd_pair] using hgoal
+
+private theorem packReduced_strip (a b : List Bool) :
+    packReduced (stripTrailing a) (stripTrailing b) = packReduced a b := by
+  simp [packReduced, stripTrailing_idem]
+
+set_option maxHeartbeats 800000 in
+private theorem packReduced_eq (a b : List Bool) (hden : bitValue b ≠ 0) :
+    packReduced a b =
+      true :: CMMSACodec.Tree.encode
+        (ratTree ((bitValue a : Rat) / bitValue b)) := by
+  set a0 := stripTrailing a
+  set b0 := stripTrailing b
+  have ha0 : a0 = (bitValue a0).bits := by
+    simp [a0, stripTrailing_eq_bits, bitValue_bits]
+  have hb0 : b0 = (bitValue b0).bits := by
+    simp [b0, stripTrailing_eq_bits, bitValue_bits]
+  have hva0 : bitValue a0 = bitValue a := stripTrailing_bitValue a
+  have hvb0 : bitValue b0 = bitValue b := stripTrailing_bitValue b
+  obtain ⟨a', b', k, hs, haeq, hbeq, _⟩ := shareTwos_spec a0 b0
+  have hg := gcdShared_eq a0 b0 ha0 hb0
+  have hfst : pairFst (shareTwos a0 b0) = a' := by simp [hs]
+  have hsnd : pairSnd (shareTwos a0 b0) = b' := by simp [hs]
+  have hgval : bitValue (gcdShared a0 b0) =
+      Nat.gcd (bitValue a') (bitValue b') := by
+    rw [hg, hfst, hsnd, bitValue_bits]
+  have hgpos : 0 < bitValue (gcdShared a0 b0) := by
+    have hb'n : bitValue b' ≠ 0 := by
+      intro hz
+      have : bitValue b0 = 0 := by simpa [hbeq, hz] using rfl
+      exact hden (by simpa [hvb0] using this)
+    have hg0 : Nat.gcd (bitValue a') (bitValue b') ≠ 0 := by
+      intro h
+      exact hb'n (Nat.eq_zero_of_gcd_eq_zero_right h)
+    exact Nat.pos_of_ne_zero (by simpa [hgval] using hg0)
+  have hqa := quotBits_eq a' (gcdShared a0 b0) hgpos
+  have hqb := quotBits_eq b' (gcdShared a0 b0) hgpos
+  have hmul : Nat.gcd (bitValue a0) (bitValue b0) =
+      Nat.gcd (bitValue a') (bitValue b') * 2 ^ k := by
+    simpa [haeq, hbeq] using
+      Nat.gcd_mul_right (bitValue a') (2 ^ k) (bitValue b')
+  have hk : 0 < 2 ^ k := Nat.two_pow_pos k
+  have hredn : bitValue a0 / Nat.gcd (bitValue a0) (bitValue b0) =
+      bitValue a' / bitValue (gcdShared a0 b0) := by
+    rw [hmul, haeq, hgval]
+    exact Nat.mul_div_mul_right (bitValue a')
+      (Nat.gcd (bitValue a') (bitValue b')) hk
+  have hredd : bitValue b0 / Nat.gcd (bitValue a0) (bitValue b0) =
+      bitValue b' / bitValue (gcdShared a0 b0) := by
+    rw [hmul, hbeq, hgval]
+    exact Nat.mul_div_mul_right (bitValue b')
+      (Nat.gcd (bitValue a') (bitValue b')) hk
+  have hrat := rat_num_den_of_nat (bitValue a) (bitValue b) hden
+  have hnum : bitValue a' / bitValue (gcdShared a0 b0) =
+      ((bitValue a : Rat) / bitValue b).num.natAbs := by
+    calc
+      bitValue a' / bitValue (gcdShared a0 b0)
+          = bitValue a0 / Nat.gcd (bitValue a0) (bitValue b0) := hredn.symm
+      _ = bitValue a / Nat.gcd (bitValue a) (bitValue b) := by
+            rw [hva0, hvb0]
+      _ = ((bitValue a : Rat) / bitValue b).num.natAbs := hrat.1.symm
+  have hden' : bitValue b' / bitValue (gcdShared a0 b0) =
+      ((bitValue a : Rat) / bitValue b).den := by
+    calc
+      bitValue b' / bitValue (gcdShared a0 b0)
+          = bitValue b0 / Nat.gcd (bitValue a0) (bitValue b0) := hredd.symm
+      _ = bitValue b / Nat.gcd (bitValue a) (bitValue b) := by
+            rw [hva0, hvb0]
+      _ = ((bitValue a : Rat) / bitValue b).den := hrat.2.symm
+  have hencn :
+      encodeDigits (quotBits a' (gcdShared a0 b0)) =
+        CMMSACodec.Tree.encode
+          (natTree ((bitValue a : Rat) / bitValue b).num.natAbs) := by
+    rw [hqa, encodeDigits_eq, natTree, hnum]
+  have hencd :
+      encodeDigits (quotBits b' (gcdShared a0 b0)) =
+        CMMSACodec.Tree.encode
+          (natTree ((bitValue a : Rat) / bitValue b).den) := by
+    rw [hqb, encodeDigits_eq, natTree, hden']
+  simp only [packReduced, a0, b0, hfst, hsnd]
+  rw [hencn, hencd]
+  simp [ratTree, CMMSACodec.Tree.encode, List.append_assoc]
+
+private theorem readDigitsTag_nil : readDigitsTag [] = [] := by
+  have hlen : (digRuler []).length = 1 := digRuler_length []
+  have hstep : digStep (digInit []) = digPack [] [true] [] := by
+    simp only [digInit, digStep, digPack, pairFst_pair, pairSnd_pair]
+    rw [emptyFlag_nil, selectHead_true]
+    have hf : Cobham.eqFlag [] [false] = [false] :=
+      eqFlag_eq_false_of_ne (by simp)
+    rw [hf, selectHead_false, splitNode_nil, emptyFlag_nil, selectHead_true]
+  simp only [readDigitsTag, hlen]
+  change packDigits (digStep (digInit [])) = []
+  rw [hstep]
+  simp only [packDigits, digPack, pairFst_pair, pairSnd_pair]
+  rw [emptyFlag_cons, selectHead_false]
+  have hf : Cobham.eqFlag [true] [false] = [false] :=
+    eqFlag_eq_false_of_ne (by simp)
+  rw [hf, selectHead_false]
+
+private theorem readRatOnEncode_of_tree (t : CMMSACodec.Tree) :
+    readRatOnEncode (CMMSACodec.Tree.encode t) =
+      match readRat t with
+      | none => []
+      | some q => true :: CMMSACodec.Tree.encode (ratTree q) := by
+  cases t with
+  | leaf =>
+      simp [readRatOnEncode, CMMSACodec.Tree.encode, nodeLeft, splitNode_leaf,
+        dropOne_nil, pairFst_nil, readDigitsTag_nil, emptyFlag_nil,
+        selectHead_true, readRat]
+  | node n d =>
+      simp only [readRatOnEncode, nodeLeft_node, nodeRight_node,
+        readDigitsTag_of_tree]
+      cases hn : readDigits n with
+      | none =>
+          simp [readRat, readNat, hn, emptyFlag_nil, selectHead_true]
+      | some nbs =>
+          rw [emptyFlag_cons, selectHead_false]
+          cases hd : readDigits d with
+          | none =>
+              simp [readRat, readNat, hn, hd, emptyFlag_nil, selectHead_true]
+          | some dbs =>
+              rw [emptyFlag_cons, selectHead_false]
+              simp [dropOne_cons]
+              by_cases hz : stripTrailing dbs = []
+              · have h0 : bitValue dbs = 0 :=
+                  bits_eq_nil (by simpa [stripTrailing_eq_bits] using hz)
+                simp [readRat, readNat, hn, hd, hz, emptyFlag_nil,
+                  selectHead_true, h0]
+              · rw [emptyFlag_of_ne_nil hz, selectHead_false]
+                have hden : bitValue dbs ≠ 0 := by
+                  intro h0
+                  apply hz
+                  simpa [stripTrailing_eq_bits, h0]
+                rw [packReduced_strip, packReduced_eq nbs dbs hden]
+                simp [readRat, readNat, hn, hd, hden]
+
+/-- Packed `readRat` agrees with `readRat` / `ratTree` on a complete tree. -/
+theorem readRatTag_of_tree (t : CMMSACodec.Tree) :
+    readRatTag (CMMSACodec.Tree.encode t) =
+      match CMMSACodec.readRat t with
+      | none => []
+      | some q => true :: CMMSACodec.Tree.encode (CMMSAEncoding.ratTree q) := by
+  have hparse := treeParseTag_encode_append t []
+  simp [List.append_nil] at hparse
+  simp [readRatTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
+    pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
+  exact readRatOnEncode_of_tree t
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
