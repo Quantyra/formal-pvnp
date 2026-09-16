@@ -18,7 +18,8 @@ the signed-element list spine. `readFormulaTag` packs var/and/or tags plus
 `readNatTag` on `pair n.bits (encode t)`. Tree agreement for `readFormulaTag`
 is `readFormulaTag_of_pair`. `readRowTag` packs `readSignedTag` plus
 `readFormulaTag`. `readRowListTag` packs `readList (readRow n)` on
-`pair n.bits (encode t)`. This module does
+`pair n.bits (encode t)`. `readParametersTag` packs three signed tags plus
+`readNatTag`. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -6849,5 +6850,141 @@ theorem readRowListTag_of_pair (n : Nat) (t : CMMSACodec.Tree) :
   cases hread : readList (readRow n) t with
   | none => simp [evalRowList, hread]
   | some rows => simp [evalRowList, hread]
+
+/-! ## Packed `readParameters`: three signed tags plus `readNatTag`. -/
+
+private def wrapParamsEnc (sEnc eEnc gEnc kEnc : List Bool) : List Bool :=
+  true :: ([true] ++ sEnc ++ [true] ++ eEnc ++ [true] ++ gEnc ++ kEnc)
+
+private theorem wrapParamsEnc_eq (q : ExecutableRounding.InputParameters) :
+    wrapParamsEnc
+      (CMMSACodec.Tree.encode (signedTree q.s))
+      (CMMSACodec.Tree.encode (signedTree q.eps))
+      (CMMSACodec.Tree.encode (signedTree q.gam))
+      (CMMSACodec.Tree.encode (natTree q.sig)) =
+      true :: CMMSACodec.Tree.encode (parameterTree q) := by
+  cases q
+  simp [wrapParamsEnc, parameterTree, CMMSACodec.Tree.encode, List.append_assoc]
+
+private theorem wrapParamsEnc_mem_FP
+    {s e g k : List Bool → List Bool}
+    (hs : s ∈ FP) (he : e ∈ FP) (hg : g ∈ FP) (hk : k ∈ FP) :
+    (fun z => wrapParamsEnc (s z) (e z) (g z) (k z)) ∈ FP :=
+  mem_FP_comp
+    (Cobham.appendFn_mem_FP
+      (Cobham.appendFn_mem_FP
+        (Cobham.appendFn_mem_FP
+          (Cobham.appendFn_mem_FP
+            (Cobham.appendFn_mem_FP
+              (Cobham.appendFn_mem_FP (constFn_mem_FP [true]) hs)
+              (constFn_mem_FP [true]))
+            he)
+          (constFn_mem_FP [true]))
+        hg)
+      hk)
+    (Cobham.cons_mem_FP true)
+
+/-- Pack `readParameters` on a complete tree encoding. Empty = none;
+nonempty = `true :: encode (parameterTree q)`. -/
+def readParametersTag (z : List Bool) : List Bool :=
+  let sEnc := readSignedTag (nodeLeft z)
+  let eEnc := readSignedTag (nodeLeft (nodeRight z))
+  let gEnc := readSignedTag (nodeLeft (nodeRight (nodeRight z)))
+  let kEnc := readNatTag (nodeRight (nodeRight (nodeRight z)))
+  Cobham.selectHead (emptyFlag (splitNode z)) []
+    (Cobham.selectHead (emptyFlag (splitNode (nodeRight z))) []
+      (Cobham.selectHead (emptyFlag (splitNode (nodeRight (nodeRight z)))) []
+        (Cobham.selectHead (emptyFlag sEnc) []
+          (Cobham.selectHead (emptyFlag eEnc) []
+            (Cobham.selectHead (emptyFlag gEnc) []
+              (Cobham.selectHead (emptyFlag kEnc) []
+                (wrapParamsEnc (dropOne sEnc) (dropOne eEnc) (dropOne gEnc)
+                  (dropOne kEnc))))))))
+
+theorem readParametersTag_mem_FP : readParametersTag ∈ Complexity.FP := by
+  have hr1 := nodeRight_mem_FP
+  have hr2 := mem_FP_comp nodeRight_mem_FP nodeRight_mem_FP
+  have hr3 := mem_FP_comp hr2 nodeRight_mem_FP
+  have hl0 := nodeLeft_mem_FP
+  have hl1 := mem_FP_comp nodeRight_mem_FP nodeLeft_mem_FP
+  have hl2 := mem_FP_comp hr2 nodeLeft_mem_FP
+  have hs0 := mem_FP_comp hl0 readSignedTag_mem_FP
+  have hs1 := mem_FP_comp hl1 readSignedTag_mem_FP
+  have hs2 := mem_FP_comp hl2 readSignedTag_mem_FP
+  have hn := mem_FP_comp hr3 readNatTag_mem_FP
+  have hsplit0 := splitNode_mem_FP
+  have hsplit1 := mem_FP_comp hr1 splitNode_mem_FP
+  have hsplit2 := mem_FP_comp hr2 splitNode_mem_FP
+  have hwrap := wrapParamsEnc_mem_FP
+    (dropOneFn_mem_FP hs0) (dropOneFn_mem_FP hs1)
+    (dropOneFn_mem_FP hs2) (dropOneFn_mem_FP hn)
+  have hnat := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hn)
+    (constFn_mem_FP []) hwrap
+  have hg := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hs2)
+    (constFn_mem_FP []) hnat
+  have he := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hs1)
+    (constFn_mem_FP []) hg
+  have hs := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hs0)
+    (constFn_mem_FP []) he
+  have hin2 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit2)
+    (constFn_mem_FP []) hs
+  have hin1 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit1)
+    (constFn_mem_FP []) hin2
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit0)
+    (constFn_mem_FP []) hin1
+
+theorem readParametersTag_of_tree (t : CMMSACodec.Tree) :
+    readParametersTag (CMMSACodec.Tree.encode t) =
+      match readParameters t with
+      | none => []
+      | some q => true :: CMMSACodec.Tree.encode (parameterTree q) := by
+  cases t with
+  | leaf =>
+      simp [readParametersTag, CMMSACodec.Tree.encode, splitNode_leaf,
+        emptyFlag_nil, selectHead_true, readParameters]
+  | node s mid =>
+      simp [readParametersTag, splitNode_node, emptyFlag_cons, selectHead_false,
+        dropOne_cons, nodeLeft_node, nodeRight_node]
+      cases mid with
+      | leaf =>
+          simp [CMMSACodec.Tree.encode, splitNode_leaf, emptyFlag_nil,
+            selectHead_true, readParameters]
+      | node e inner =>
+          simp [splitNode_node, emptyFlag_cons, selectHead_false, dropOne_cons,
+            nodeLeft_node, nodeRight_node]
+          cases inner with
+          | leaf =>
+              simp [CMMSACodec.Tree.encode, splitNode_leaf, emptyFlag_nil,
+                selectHead_true, readParameters]
+          | node g k =>
+              simp [splitNode_node, emptyFlag_cons, selectHead_false,
+                dropOne_cons, nodeLeft_node, nodeRight_node,
+                readSignedTag_of_tree]
+              cases hs : readSigned s with
+              | none =>
+                  simp [readParameters, hs, emptyFlag_nil, selectHead_true]
+              | some sv =>
+                  simp [readParameters, hs, emptyFlag_cons, selectHead_false,
+                    dropOne_cons, readSignedTag_of_tree]
+                  cases he : readSigned e with
+                  | none =>
+                      simp [he, emptyFlag_nil, selectHead_true]
+                  | some ev =>
+                      simp [he, emptyFlag_cons, selectHead_false, dropOne_cons,
+                        readSignedTag_of_tree]
+                      cases hg : readSigned g with
+                      | none =>
+                          simp [hg, emptyFlag_nil, selectHead_true]
+                      | some gv =>
+                          simp [hg, emptyFlag_cons, selectHead_false,
+                            dropOne_cons, readNatTag_of_tree]
+                          cases hk : readNat k with
+                          | none =>
+                              simp [hk, emptyFlag_nil, selectHead_true]
+                          | some kv =>
+                              have hw := wrapParamsEnc_eq
+                                (q := ⟨sv, ev, gv, kv⟩)
+                              simp [hk, emptyFlag_cons, selectHead_false,
+                                dropOne_cons, hw]
 
 end PvNP.RealizableHardness.ActualDecodeInputFP

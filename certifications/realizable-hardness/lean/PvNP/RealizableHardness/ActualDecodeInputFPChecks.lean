@@ -10,7 +10,9 @@ Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP`,
 are on the Cobham/semantic surface. `readRowTag`, `readRowTag_mem_FP`, and
 `readRowTag_of_pair` pack signed-plus-formula rows. `readRowListTag`,
 `readRowListTag_mem_FP`, and `readRowListTag_of_pair` pack
-`readList (readRow n)` on `pair n.bits (encode t)`. `decodeInputTag_mem_FP`
+`readList (readRow n)` on `pair n.bits (encode t)`. `readParametersTag`,
+`readParametersTag_mem_FP`, and `readParametersTag_of_tree` pack three
+signed tags plus `readNat`. `decodeInputTag_mem_FP`
 remains. This file does not inhabit `hSrcCmmsa` and does not assert
 unconditional Theorem 1, Corollary 2, or P vs NP.
 -/
@@ -44,6 +46,9 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readRowListTag
 #check readRowListTag_mem_FP
 #check readRowListTag_of_pair
+#check readParametersTag
+#check readParametersTag_mem_FP
+#check readParametersTag_of_tree
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -62,6 +67,8 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readRowTag_of_pair
 #print axioms readRowListTag_mem_FP
 #print axioms readRowListTag_of_pair
+#print axioms readParametersTag_mem_FP
+#print axioms readParametersTag_of_tree
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -76,6 +83,8 @@ example : readFormulaTag ∈ Complexity.FP := readFormulaTag_mem_FP
 example : readRowTag ∈ Complexity.FP := readRowTag_mem_FP
 
 example : readRowListTag ∈ Complexity.FP := readRowListTag_mem_FP
+
+example : readParametersTag ∈ Complexity.FP := readParametersTag_mem_FP
 
 example (n : Nat) :
     readFormulaTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
@@ -101,6 +110,10 @@ example (n : Nat) :
     readRowListTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
       true :: CMMSACodec.Tree.encode (CMMSACodec.listTree []) := by
   simp [readRowListTag_of_pair, CMMSACodec.readList, CMMSACodec.listTree]
+
+example : readParametersTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) =
+    [] := by
+  simp [readParametersTag_of_tree, ExecutablePipelineInput.readParameters]
 
 example : decodeInputTag [] = [] := decodeInputTag_empty
 
