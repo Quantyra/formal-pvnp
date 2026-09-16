@@ -1,0 +1,34 @@
+PvNP.RealizableHardness.ActualSatToThreeSatSource.threeSatSource : PromiseProblem
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSatMap : SeededMap
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSatMap_apply (x seed : List Bool) :
+  satToThreeSatMap.apply x seed = SAT.ThreeSAT.reduction x
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_mapReducesVia :
+  (PromiseProblem.ofLanguage SAT.language).MapReducesVia threeSatSource SAT.ThreeSAT.reduction
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_preserves_zero :
+  Preserves satToThreeSatMap (PromiseProblem.ofLanguage SAT.language) threeSatSource 0 0
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_preserves :
+  Preserves satToThreeSatMap (PromiseProblem.ofLanguage SAT.language) threeSatSource (1 / 6) (1 / 6)
+PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_exists :
+  ∃ R, Preserves R (PromiseProblem.ofLanguage SAT.language) threeSatSource (1 / 6) (1 / 6)
+PvNP.RealizableHardness.ActualSatToThreeSatSource.theorem1_from_threeSat_to_cmmsa {L : ℕ} (hσ : 1 ≤ sigmaL L)
+  (hγ0 : 0 < gammaL L) (hγ1 : gammaL L < 1)
+  (hSrcCmmsa : ∃ S, Preserves S threeSatSource (cmmsaPromise L (sigmaL L) (gammaL L) hσ hγ0 hγ1) (1 / 6) (1 / 6)) :
+  RandomizedPromiseNPHard (cmmsaPromise L (sigmaL L) (gammaL L) hσ hγ0 hγ1)
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSatMap_apply' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_mapReducesVia' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_preserves_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_preserves' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.satToThreeSat_exists' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualSatToThreeSatSource.theorem1_from_threeSat_to_cmmsa' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

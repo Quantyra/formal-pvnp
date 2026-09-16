@@ -1,0 +1,30 @@
+expected_bundle_sha256=1AEC5D52B2DE5C9EBC32E193039BB661EA83B2CF9429E0969D57D2AAEDAD1278
+actual_bundle_sha256=1AEC5D52B2DE5C9EBC32E193039BB661EA83B2CF9429E0969D57D2AAEDAD1278
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/sat-to-threesat-1488ff8-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-1488ff8.bundle is okay
+The bundle contains this ref:
+1488ff84c6d1daad1c1174aa469aeeddedc360aa refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/sat-to-threesat-1488ff8-src'...
+HEAD is now at 1488ff8 prove actual SAT-to-3SAT source SeededMap
+expected_head=1488ff84c6d1daad1c1174aa469aeeddedc360aa
+actual_head=1488ff84c6d1daad1c1174aa469aeeddedc360aa
+status_begin
+
+status_end
+expected_main_sha256=5ADF857840ED4242C184AE248BCFC90703E8D1F250776A975C67B0A6E1A988E4
+actual_main_sha256=5ADF857840ED4242C184AE248BCFC90703E8D1F250776A975C67B0A6E1A988E4
+expected_checks_sha256=16E3EF2C31E2BF2B1BDFE16D5C324793BBDC9553631FA22E9C7683CB4143B8E9
+actual_checks_sha256=16E3EF2C31E2BF2B1BDFE16D5C324793BBDC9553631FA22E9C7683CB4143B8E9
+transfer_gate=PASS
