@@ -1,0 +1,59 @@
+PvNP.RealizableHardness.ActualHeadlineParameters.log2nat (n : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.qOf (m : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.mOf (L : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.mOf_spec (L : ℕ) : mOf L = 0 ∨ 256 ≤ mOf L ∧ mOf L ≤ (log2nat L).sqrt
+PvNP.RealizableHardness.ActualHeadlineParameters.mOf_maximal (L m : ℕ) (h : 256 ≤ m ∧ m ≤ (log2nat L).sqrt) : m ≤ mOf L
+PvNP.RealizableHardness.ActualHeadlineParameters.hOf (L m : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.ROf (L : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.GammaOf (L : ℕ) : ℚ
+PvNP.RealizableHardness.ActualHeadlineParameters.sigmaL (L : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.gammaL (L : ℕ) : ℚ
+PvNP.RealizableHardness.ActualHeadlineParameters.sigmaL_ge_one_eventual : ∃ L0, ∀ (L : ℕ), L0 ≤ L → 1 ≤ sigmaL L
+PvNP.RealizableHardness.ActualHeadlineParameters.gammaL_pos_lt_one_eventual :
+  ∃ L0, ∀ (L : ℕ), L0 ≤ L → 0 < gammaL L ∧ gammaL L < 1
+PvNP.RealizableHardness.ActualHeadlineParameters.mOf_unbounded (M : ℕ) : ∃ L0, ∀ (L : ℕ), L0 ≤ L → M ≤ mOf L
+PvNP.RealizableHardness.ActualHeadlineParameters.gammaL_small_eventual (ε : ℚ) (hε : 0 < ε) :
+  ∃ L0, ∀ (L : ℕ), L0 ≤ L → gammaL L < ε
+PvNP.RealizableHardness.ActualHeadlineParameters.hOf_le_log2 (L : ℕ) : 2 * hOf L (mOf L) ≤ log2nat L
+PvNP.RealizableHardness.ActualHeadlineParameters.sigmaL_le_ROf (L : ℕ) : sigmaL L ≤ ROf L
+PvNP.RealizableHardness.ActualHeadlineParameters.adviceLeaf (a cU : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.sigmaLearn (a cU : ℕ) : ℕ
+PvNP.RealizableHardness.ActualHeadlineParameters.gammaLearn (a cU : ℕ) : ℚ
+PvNP.RealizableHardness.ActualHeadlineParameters.theorem1_headline {L : ℕ} (hσ : 1 ≤ sigmaL L) (hγ0 : 0 < gammaL L)
+  (hγ1 : gammaL L < 1) (source : PromiseProblem)
+  (hSatSrc : ∃ R, Preserves R (PromiseProblem.ofLanguage SAT.language) source (1 / 6) (1 / 6))
+  (hSrcCmmsa : ∃ S, Preserves S source (cmmsaPromise L (sigmaL L) (gammaL L) hσ hγ0 hγ1) (1 / 6) (1 / 6)) :
+  RandomizedPromiseNPHard (cmmsaPromise L (sigmaL L) (gammaL L) hσ hγ0 hγ1)
+'PvNP.RealizableHardness.ActualHeadlineParameters.mOf_spec' does not depend on any axioms
+'PvNP.RealizableHardness.ActualHeadlineParameters.mOf_maximal' depends on axioms: [propext]
+'PvNP.RealizableHardness.ActualHeadlineParameters.sigmaL_ge_one_eventual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualHeadlineParameters.gammaL_pos_lt_one_eventual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualHeadlineParameters.mOf_unbounded' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualHeadlineParameters.gammaL_small_eventual' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualHeadlineParameters.hOf_le_log2' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualHeadlineParameters.sigmaL_le_ROf' depends on axioms: [propext]
+'PvNP.RealizableHardness.ActualHeadlineParameters.theorem1_headline' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+mOf 0 : ℕ
+sigmaL 0 : ℕ
+gammaL 0 : ℚ
+mOf (2 ^ 20) : ℕ
+sigmaL (2 ^ 20) : ℕ
+gammaL (2 ^ 20) : ℚ
+0
+0
+4
+0
+32768
+4

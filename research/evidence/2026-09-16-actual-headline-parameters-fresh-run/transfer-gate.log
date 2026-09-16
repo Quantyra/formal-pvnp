@@ -1,0 +1,30 @@
+expected_bundle_sha256=90D65643E108E45553F1444895F1DC23BAB658E2D9C8F9CD1A3BA8403B427DD5
+actual_bundle_sha256=90D65643E108E45553F1444895F1DC23BAB658E2D9C8F9CD1A3BA8403B427DD5
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/headline-params-605b07e-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-605b07e.bundle is okay
+The bundle contains this ref:
+605b07e8d192f13772bdeac9ab16e3772b491d5a refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/headline-params-605b07e-src'...
+HEAD is now at 605b07e prove actual headline sigma_L gamma_L parameters
+expected_head=605b07e8d192f13772bdeac9ab16e3772b491d5a
+actual_head=605b07e8d192f13772bdeac9ab16e3772b491d5a
+status_begin
+
+status_end
+expected_main_sha256=29767BDCE518085DB0590A260293003083858169FCC30D49A299217D913FC20C
+actual_main_sha256=29767BDCE518085DB0590A260293003083858169FCC30D49A299217D913FC20C
+expected_checks_sha256=1000E3BD838BF74C7C3EE923F5816E45421169C471FBC7BE49C3A556EE949B48
+actual_checks_sha256=1000E3BD838BF74C7C3EE923F5816E45421169C471FBC7BE49C3A556EE949B48
+transfer_gate=PASS

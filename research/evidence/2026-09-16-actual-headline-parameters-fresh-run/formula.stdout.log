@@ -1,0 +1,3 @@
+'PvNP.RealizableHardness.Formula.repair_complete' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.Formula.leaves_repair' depends on axioms: [propext]
+'PvNP.RealizableHardness.Formula.repair_sound' depends on axioms: [propext, Classical.choice, Quot.sound]

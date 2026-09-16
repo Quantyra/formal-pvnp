@@ -1,0 +1,3 @@
+module=PvNP.RealizableHardness.ActualTheorem1
+source=/home/dfredriksen_quantyra_org/headline-params-605b07e-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ActualTheorem1.lean
+object=/home/dfredriksen_quantyra_org/headline-params-605b07e-fresh-target/lib/lean/PvNP/RealizableHardness/ActualTheorem1.olean
