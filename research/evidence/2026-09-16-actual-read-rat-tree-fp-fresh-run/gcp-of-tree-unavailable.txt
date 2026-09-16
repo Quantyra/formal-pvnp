@@ -1,0 +1,5 @@
+date_utc=2026-09-16
+attempt=gcloud compute instances describe quantyra-lean-builder-01 --project quantyra-lean-cert-20260915 --zone us-central1-a
+account=dfredriksen@quantyra.org
+error=Reauthentication failed. cannot prompt during non-interactive execution.
+action=local target-fresh of frozen 93d3513 ActualDecodeInputFP main+Checks twice

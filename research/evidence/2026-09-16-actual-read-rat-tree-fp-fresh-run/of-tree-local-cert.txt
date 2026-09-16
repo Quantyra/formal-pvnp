@@ -1,0 +1,157 @@
+LEAN_PATH_PREFIX=C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-target
+lake_LEAN_PATH=C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\packages\Cli\.lake\build\lib\lean;C:\Users\Dan\Desktop\Projects\formal-pvnp\certifications\realizable-hardness\.lake\
+main-1 exit=0 time=108.4 hash=825FD451B5E459A111AAEC37238062F373E9FEE1869DA4A373341E91F6DA1BFB
+n-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3507:53: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3512:61: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, hd, emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3520:18: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, hd, hz, emptyFlag_nil, h0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3537:44: warning: This simp argument is unused:
+  selectHead_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRatTag, hparse, emptyFlag_cons, dropOne_cons, pairFst_pair, pairSnd_pair, emptyFlag_nil,
+    selectHead_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3538:47: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRatTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons, pairFst_pair, pairSnd_pair,
+    emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+main-2 exit=0 time=110.8 hash=825FD451B5E459A111AAEC37238062F373E9FEE1869DA4A373341E91F6DA1BFB
+n-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3507:53: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3512:61: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, hd, emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3520:18: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRat, readNat, hn, hd, hz, emptyFlag_nil, h0]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3537:44: warning: This simp argument is unused:
+  selectHead_false
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRatTag, hparse, emptyFlag_cons, dropOne_cons, pairFst_pair, pairSnd_pair, emptyFlag_nil,
+    selectHead_true]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+C:\Users\Dan\AppData\Local\Temp\grok-goal-9baf44ea1b34\implementer\frozen-93d3513-lean\PvNP\RealizableHardness\ActualDecodeInputFP.lean:3538:47: warning: This simp argument is unused:
+  selectHead_true
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [readRatTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons, pairFst_pair, pairSnd_pair,
+    emptyFlag_nil]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+
+checks-1 exit=0 time=22.5 hash=F6DFD04AD74F078DA70BE8F9FDECE26F07F9B4711882585EB1522F09A6AEC209
+e (bs : List Bool) (h : decodeInput bs = none) :
+  decodeInputTag bs = []
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some (bs : List Bool) (x : Input)
+  (h : decodeInput bs = some x) : decodeInputTag bs = true :: encodeInput x
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP : gcdBits ∈ FP
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_odd_pair (a b : List Bool) (ha : a = (CMMSACodec.bitValue a).bits)
+  (hb : b = (CMMSACodec.bitValue b).bits) (hne : a ≠ [])
+  (hodd : b = [] ∨ CMMSACodec.bitValue a % 2 = 1 ∨ CMMSACodec.bitValue b % 2 = 1) :
+  gcdBits (pair a b) = ((CMMSACodec.bitValue a).gcd (CMMSACodec.bitValue b)).bits
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP : readRatTag ∈ FP
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_of_tree (t : CMMSACodec.Tree) :
+  readRatTag t.encode =
+    match CMMSACodec.readRat t with
+    | none => []
+    | some q => true :: (CMMSAEncoding.ratTree q).encode
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_odd_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_of_tree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+checks-2 exit=0 time=23.4 hash=F6DFD04AD74F078DA70BE8F9FDECE26F07F9B4711882585EB1522F09A6AEC209
+e (bs : List Bool) (h : decodeInput bs = none) :
+  decodeInputTag bs = []
+PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some (bs : List Bool) (x : Input)
+  (h : decodeInput bs = some x) : decodeInputTag bs = true :: encodeInput x
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP : gcdBits ∈ FP
+PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_odd_pair (a b : List Bool) (ha : a = (CMMSACodec.bitValue a).bits)
+  (hb : b = (CMMSACodec.bitValue b).bits) (hne : a ≠ [])
+  (hodd : b = [] ∨ CMMSACodec.bitValue a % 2 = 1 ∨ CMMSACodec.bitValue b % 2 = 1) :
+  gcdBits (pair a b) = ((CMMSACodec.bitValue a).gcd (CMMSACodec.bitValue b)).bits
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag (z : List Bool) : List Bool
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP : readRatTag ∈ FP
+PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_of_tree (t : CMMSACodec.Tree) :
+  readRatTag t.encode =
+    match CMMSACodec.readRat t with
+    | none => []
+    | some q => true :: (CMMSAEncoding.ratTree q).encode
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_empty' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_none' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.decodeInputTag_some' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_mem_FP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.gcdBits_odd_pair' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_mem_FP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'PvNP.RealizableHardness.ActualDecodeInputFP.readRatTag_of_tree' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+MATCH_MAIN=True MATCH_CHECKS=True rc=0,0,0,0
