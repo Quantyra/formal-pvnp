@@ -159,6 +159,20 @@ example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
     (zeroRawLeafLabel I) (zeroRawLeafLabel_respects I)
 
 example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
+    transportedLabel (emptyPresented I) (emptyPresented I)
+        (PresentedLeaf.Rel.symm (PresentedLeaf.Rel.refl (emptyPresented I)))
+        (transportedLabel (emptyPresented I) (emptyPresented I)
+          (PresentedLeaf.Rel.refl (emptyPresented I))
+          (zeroRawLeafLabel I) (zeroRawLeafLabel_respects I))
+        (transportedLabel_respectsAt (emptyPresented I) (emptyPresented I)
+          (PresentedLeaf.Rel.refl (emptyPresented I))
+          (zeroRawLeafLabel I) (zeroRawLeafLabel_respects I)) =
+      zeroRawLeafLabel I := by
+  exact transportedLabel_inverse_canonical (emptyPresented I)
+    (emptyPresented I) (PresentedLeaf.Rel.refl (emptyPresented I))
+      (zeroRawLeafLabel I) (zeroRawLeafLabel_respects I)
+
+example {N m : Nat} (I : ActualOccurrenceAllocation.Instance N m) :
     (emptyPresented I).Rel (emptyPresented I) := by
   exact PresentedLeaf.Rel.trans (emptyPresented I) (emptyPresented I)
     (emptyPresented I) (PresentedLeaf.Rel.refl (emptyPresented I))
