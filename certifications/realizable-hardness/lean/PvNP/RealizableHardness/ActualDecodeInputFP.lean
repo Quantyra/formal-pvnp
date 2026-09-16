@@ -13,7 +13,8 @@ import Complexitylib.Classes.Containments.Internal.BinArith
 Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
 `gcdBits` and `readRatTag` are in `FP`. Canonical odd-pair GCD is
 `gcdBits_odd_pair`. Tree agreement for `readRatTag` is `readRatTag_of_tree`.
-`readSignedTag` packs the sign tag plus `readRatOnEncode`. This module does
+`readSignedTag` packs the sign tag plus `readRatOnEncode`. `readListTag` packs
+the signed-element list spine. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -3778,5 +3779,670 @@ theorem readSignedTag_of_tree (t : CMMSACodec.Tree) :
   simp [readSignedTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
     pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
   exact readSignedOnEncode_of_tree t
+
+/-! ## Packed `readList readSigned`: list spine of canonical `signedTree`s. -/
+
+private theorem nodeLeft_length_le (z : List Bool) :
+    (nodeLeft z).length ≤ z.length := by
+  unfold nodeLeft splitNode
+  cases z with
+  | nil =>
+      rw [emptyFlag_nil, selectHead_true]
+      simp [dropOne, pairFst_nil]
+  | cons b t =>
+      rw [emptyFlag_cons, selectHead_false]
+      cases b with
+      | false =>
+          rw [selectHead_cons_false']
+          simp [dropOne, pairFst_nil]
+      | true =>
+          rw [selectHead_cons_true', dropOne_cons]
+          cases hp : CMMSACodec.Tree.parse (t.length + 1) t with
+          | none =>
+              simp [treeParseTag, hp, dropOne, pairFst_nil]
+          | some pr =>
+              obtain ⟨u, rest⟩ := pr
+              have hpre := parse_consumed hp
+              simp [treeParseTag, hp, dropOne_cons]
+              have := congrArg List.length hpre
+              simp [List.length_append] at this
+              omega
+
+private theorem selectHead_length_le_of (s x y : List Bool) {n : Nat}
+    (hx : x.length ≤ n) (hy : y.length ≤ n) :
+    (Cobham.selectHead s x y).length ≤ n :=
+  (Cobham.selectHead_length_le s x y).trans (max_le hx hy)
+
+private theorem wrapPos_length (x : List Bool) :
+    (wrapPos x).length ≤ x.length + 3 := by
+  simp [wrapPos, dropOne]
+
+private theorem wrapNeg_length (x : List Bool) :
+    (wrapNeg x).length ≤ x.length + 5 := by
+  simp [wrapNeg, dropOne]
+
+private theorem packDigits_length (st : List Bool) :
+    (packDigits st).length ≤ (pairSnd (pairSnd st)).length + 1 := by
+  unfold packDigits
+  have hinner : (Cobham.selectHead
+      (Cobham.eqFlag (pairFst (pairSnd st)) [false])
+      (true :: pairSnd (pairSnd st)) []).length ≤
+      (pairSnd (pairSnd st)).length + 1 :=
+    selectHead_length_le_of _ (true :: pairSnd (pairSnd st)) []
+      (by simp) (by simp)
+  exact selectHead_length_le_of (emptyFlag (pairFst (pairSnd st))) [] _
+    (by simp) hinner
+
+private theorem readDigitsTag_length (z : List Bool) :
+    (readDigitsTag z).length ≤ z.length + 2 := by
+  have hr := digReach_iterate z (digRuler z).length (by simp [digRuler_length])
+  have hp := packDigits_length (digStep^[(digRuler z).length] (digInit z))
+  have hn : (digRuler z).length = z.length + 1 := digRuler_length z
+  have : (readDigitsTag z).length ≤
+      (pairSnd (pairSnd (digStep^[(digRuler z).length] (digInit z)))).length + 1 :=
+    hp
+  have hacc := hr.acc_le
+  simp only [readDigitsTag] at this ⊢
+  omega
+
+private theorem dropOne_length (x : List Bool) :
+    (dropOne x).length ≤ x.length := by
+  simp [dropOne]
+
+private theorem quotBits_length (a b : List Bool) :
+    (quotBits a b).length ≤ a.length + 1 := by
+  have hrun : divRunPair (pair a b) =
+      divStep^[(divRuler a b).length] (divInit a b) := by
+    simp [divRunPair]
+  have hlen : (divRuler a b).length = a.length + 1 := divRuler_length a b
+  have hr := divReach_iterate a b (a.length + 1) (Nat.le_refl _)
+  rw [quotBits, hrun, hlen]
+  exact (length_stripTrailing
+      (pairFst (pairSnd (divStep^[a.length + 1] (divInit a b)))).reverse).trans
+    (by simpa [List.length_reverse] using hr.q_le)
+
+private theorem shareTwos_fst_length (a b : List Bool) :
+    (pairFst (shareTwos a b)).length ≤ a.length := by
+  obtain ⟨a', b', hs, ha, _⟩ := shareIterate_is_pair a b (a ++ b).length
+  rw [shareTwos, hs, pairFst_pair]
+  exact ha
+
+private theorem shareTwos_snd_length (a b : List Bool) :
+    (pairSnd (shareTwos a b)).length ≤ b.length := by
+  obtain ⟨a', b', hs, _, hb⟩ := shareIterate_is_pair a b (a ++ b).length
+  rw [shareTwos, hs, pairSnd_pair]
+  exact hb
+
+private theorem packReduced_length (a b : List Bool) :
+    (packReduced a b).length ≤ 4 * a.length + 4 * b.length + 12 := by
+  have hqa := encodeDigits_length
+    (quotBits (pairFst (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b)))
+  have hqb := encodeDigits_length
+    (quotBits (pairSnd (shareTwos (stripTrailing a) (stripTrailing b)))
+      (gcdShared (stripTrailing a) (stripTrailing b)))
+  have hqal := quotBits_length
+    (pairFst (shareTwos (stripTrailing a) (stripTrailing b)))
+    (gcdShared (stripTrailing a) (stripTrailing b))
+  have hqbl := quotBits_length
+    (pairSnd (shareTwos (stripTrailing a) (stripTrailing b)))
+    (gcdShared (stripTrailing a) (stripTrailing b))
+  have hfst := shareTwos_fst_length (stripTrailing a) (stripTrailing b)
+  have hsnd := shareTwos_snd_length (stripTrailing a) (stripTrailing b)
+  have hsa := length_stripTrailing a
+  have hsb := length_stripTrailing b
+  simp [packReduced, List.length_append]
+  omega
+
+private theorem readRatOnEncode_length (z : List Bool) :
+    (readRatOnEncode z).length ≤ 8 * z.length + 28 := by
+  have hpack := packReduced_length
+    (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+    (stripTrailing (dropOne (readDigitsTag (nodeRight z))))
+  have hsa := length_stripTrailing (dropOne (readDigitsTag (nodeLeft z)))
+  have hsb := length_stripTrailing (dropOne (readDigitsTag (nodeRight z)))
+  have hda := dropOne_length (readDigitsTag (nodeLeft z))
+  have hdb := dropOne_length (readDigitsTag (nodeRight z))
+  have hla := readDigitsTag_length (nodeLeft z)
+  have hlb := readDigitsTag_length (nodeRight z)
+  have hnl := nodeLeft_length_le z
+  have hnr := nodeRight_length_le z
+  have ha : (stripTrailing (dropOne (readDigitsTag (nodeLeft z)))).length ≤
+      z.length + 2 := by omega
+  have hb : (stripTrailing (dropOne (readDigitsTag (nodeRight z)))).length ≤
+      z.length + 2 := by omega
+  have hbound : (packReduced
+      (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+      (stripTrailing (dropOne (readDigitsTag (nodeRight z))))).length ≤
+      8 * z.length + 28 := by omega
+  unfold readRatOnEncode
+  have h0 := selectHead_length_le_of
+    (emptyFlag (stripTrailing (dropOne (readDigitsTag (nodeRight z))))) []
+    (packReduced (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+      (stripTrailing (dropOne (readDigitsTag (nodeRight z)))))
+    (by simp) hbound
+  have h1 := selectHead_length_le_of
+    (emptyFlag (readDigitsTag (nodeRight z))) []
+    (Cobham.selectHead
+      (emptyFlag (stripTrailing (dropOne (readDigitsTag (nodeRight z))))) []
+      (packReduced (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+        (stripTrailing (dropOne (readDigitsTag (nodeRight z))))))
+    (by simp) h0
+  exact selectHead_length_le_of
+    (emptyFlag (readDigitsTag (nodeLeft z))) []
+    (Cobham.selectHead (emptyFlag (readDigitsTag (nodeRight z))) []
+      (Cobham.selectHead
+        (emptyFlag (stripTrailing (dropOne (readDigitsTag (nodeRight z))))) []
+        (packReduced (stripTrailing (dropOne (readDigitsTag (nodeLeft z))))
+          (stripTrailing (dropOne (readDigitsTag (nodeRight z)))))))
+    (by simp) h1
+
+private theorem readSignedOnEncode_length (z : List Bool) :
+    (readSignedOnEncode z).length ≤ 8 * z.length + 40 := by
+  have hrat := readRatOnEncode_length (nodeRight z)
+  have hnr := nodeRight_length_le z
+  have hpos := wrapPos_length (readRatOnEncode (nodeRight z))
+  have hneg := wrapNeg_length (readRatOnEncode (nodeRight z))
+  have hbound : (wrapNeg (readRatOnEncode (nodeRight z))).length ≤
+      8 * z.length + 40 := by omega
+  have hbound' : (wrapPos (readRatOnEncode (nodeRight z))).length ≤
+      8 * z.length + 40 := by omega
+  unfold readSignedOnEncode
+  have hzero := selectHead_length_le_of
+    (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z)))) [false])
+    (wrapPos (readRatOnEncode (nodeRight z)))
+    (wrapNeg (readRatOnEncode (nodeRight z)))
+    hbound' hbound
+  have hnegBody := selectHead_length_le_of
+    (emptyFlag (readRatOnEncode (nodeRight z))) []
+    (Cobham.selectHead
+      (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z)))) [false])
+      (wrapPos (readRatOnEncode (nodeRight z)))
+      (wrapNeg (readRatOnEncode (nodeRight z))))
+    (by simp) hzero
+  have hneg? := selectHead_length_le_of
+    (Cobham.eqFlag (nodeLeft z) [true, false, false])
+    (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+      (Cobham.selectHead
+        (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z))))
+          [false])
+        (wrapPos (readRatOnEncode (nodeRight z)))
+        (wrapNeg (readRatOnEncode (nodeRight z)))))
+    []
+    hnegBody (by simp)
+  have hposBody := selectHead_length_le_of
+    (emptyFlag (readRatOnEncode (nodeRight z))) []
+    (wrapPos (readRatOnEncode (nodeRight z)))
+    (by simp) hbound'
+  have hpos? := selectHead_length_le_of
+    (Cobham.eqFlag (nodeLeft z) [false])
+    (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+      (wrapPos (readRatOnEncode (nodeRight z))))
+    (Cobham.selectHead (Cobham.eqFlag (nodeLeft z) [true, false, false])
+      (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+        (Cobham.selectHead
+          (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z))))
+            [false])
+          (wrapPos (readRatOnEncode (nodeRight z)))
+          (wrapNeg (readRatOnEncode (nodeRight z)))))
+      [])
+    hposBody hneg?
+  exact selectHead_length_le_of (emptyFlag (splitNode z)) []
+    (Cobham.selectHead (Cobham.eqFlag (nodeLeft z) [false])
+      (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+        (wrapPos (readRatOnEncode (nodeRight z))))
+      (Cobham.selectHead (Cobham.eqFlag (nodeLeft z) [true, false, false])
+        (Cobham.selectHead (emptyFlag (readRatOnEncode (nodeRight z))) []
+          (Cobham.selectHead
+            (Cobham.eqFlag (nodeLeft (dropOne (readRatOnEncode (nodeRight z))))
+              [false])
+            (wrapPos (readRatOnEncode (nodeRight z)))
+            (wrapNeg (readRatOnEncode (nodeRight z)))))
+        []))
+    (by simp) hpos?
+
+private def listStep (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (pairFst (pairSnd st)))
+    (Cobham.selectHead (Cobham.eqFlag (pairFst st) [false])
+      (digPack [false] [false] (pairSnd (pairSnd st) ++ [false]))
+      (Cobham.selectHead (emptyFlag (splitNode (pairFst st)))
+        (digPack [] [true] [])
+        (Cobham.selectHead
+          (emptyFlag (readSignedOnEncode (nodeLeft (pairFst st))))
+          (digPack [] [true] [])
+          (digPack (nodeRight (pairFst st)) []
+            (pairSnd (pairSnd st) ++
+              readSignedOnEncode (nodeLeft (pairFst st)))))))
+    st
+
+private theorem listStep_mem_FP : listStep ∈ FP := by
+  have hrem : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hflag : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hleft := mem_FP_comp hrem nodeLeft_mem_FP
+  have hright := mem_FP_comp hrem nodeRight_mem_FP
+  have hsplit := mem_FP_comp hrem splitNode_mem_FP
+  have hread := mem_FP_comp hleft readSignedOnEncode_mem_FP
+  have hleaf := eqFlagFn_mem_FP hrem (constFn_mem_FP [false])
+  have hsucc : (fun st : List Bool =>
+      digPack [false] [false] (pairSnd (pairSnd st) ++ [false])) ∈ FP :=
+    Cobham.pairFn_mem_FP (constFn_mem_FP [false])
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [false])
+        (Cobham.appendFn_mem_FP hacc (constFn_mem_FP [false])))
+  have hfail : (fun _ : List Bool => digPack [] [true] []) ∈ FP :=
+    constFn_mem_FP (digPack [] [true] [])
+  have hcons : (fun st : List Bool =>
+      digPack (nodeRight (pairFst st)) []
+        (pairSnd (pairSnd st) ++
+          readSignedOnEncode (nodeLeft (pairFst st)))) ∈ FP :=
+    Cobham.pairFn_mem_FP hright
+      (Cobham.pairFn_mem_FP (constFn_mem_FP [])
+        (Cobham.appendFn_mem_FP hacc hread))
+  have hsigned := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hread)
+    hfail hcons
+  have hsplit? := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    hfail hsigned
+  have hleaf? := Cobham.selectHeadFn_mem_FP hleaf hsucc hsplit?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hflag) hleaf? id_mem_FP
+
+private inductive ListSem where
+  | run (rem : CMMSACodec.Tree) (acc : List Bool)
+  | done (acc : List Bool)
+  | fail
+
+private def listSemStep : ListSem → ListSem
+  | .done acc => .done acc
+  | .fail => .fail
+  | .run .leaf acc => .done (acc ++ [false])
+  | .run (.node p q) acc =>
+      match readSigned p with
+      | none => .fail
+      | some r =>
+          .run q (acc ++ (true :: CMMSACodec.Tree.encode (signedTree r)))
+
+private def encodeListSem : ListSem → List Bool
+  | .fail => digPack [] [true] []
+  | .done acc => digPack [false] [false] acc
+  | .run t acc => digPack (CMMSACodec.Tree.encode t) [] acc
+
+private theorem listStep_encode (s : ListSem) :
+    listStep (encodeListSem s) = encodeListSem (listSemStep s) := by
+  cases s with
+  | fail =>
+      simp [encodeListSem, listSemStep, listStep, digPack, emptyFlag_cons,
+        selectHead_false]
+  | done acc =>
+      simp [encodeListSem, listSemStep, listStep, digPack, emptyFlag_cons,
+        selectHead_false]
+  | run t acc =>
+      simp only [encodeListSem, listStep, digPack, pairFst_pair, pairSnd_pair,
+        emptyFlag_nil, selectHead_true]
+      cases t with
+      | leaf =>
+          have hleaf : Cobham.eqFlag [false] [false] = [true] :=
+            (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+          simp [CMMSACodec.Tree.encode, hleaf, selectHead_true, listSemStep,
+            encodeListSem, digPack]
+      | node p q =>
+          have hnotleaf := eqFlag_eq_false_of_ne
+            (show CMMSACodec.Tree.encode (.node p q) ≠ [false] by
+              simp [CMMSACodec.Tree.encode])
+          rw [hnotleaf, selectHead_false, splitNode_node, emptyFlag_cons,
+            selectHead_false, nodeLeft_node, nodeRight_node,
+            readSignedOnEncode_of_tree]
+          cases hr : readSigned p with
+          | none =>
+              simp [listSemStep, hr, emptyFlag_nil, selectHead_true,
+                encodeListSem, digPack]
+          | some r =>
+              simp [listSemStep, hr, emptyFlag_cons, selectHead_false,
+                encodeListSem, digPack]
+
+private theorem listStep_iterate_encode (s : ListSem) (n : Nat) :
+    listStep^[n] (encodeListSem s) = encodeListSem (listSemStep^[n] s) := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', Function.iterate_succ_apply', ih,
+        listStep_encode]
+
+private theorem encode_signed_list_cons (q : Rat) (qs : List Rat) :
+    (listTree (signedTree q :: qs.map signedTree)).encode =
+      true :: ((signedTree q).encode ++
+        (listTree (qs.map signedTree)).encode) := by
+  simp [listTree, CMMSACodec.Tree.encode]
+
+private def evalList : ListSem → Option (List Bool)
+  | .fail => none
+  | .done acc => some acc
+  | .run t acc =>
+      match readList readSigned t with
+      | none => none
+      | some qs =>
+          some (acc ++ CMMSACodec.Tree.encode (listTree (qs.map signedTree)))
+
+private theorem evalList_step (s : ListSem) :
+    evalList (listSemStep s) = evalList s := by
+  cases s with
+  | fail | done _ => simp [listSemStep, evalList]
+  | run t acc =>
+      cases t with
+      | leaf =>
+          simp [listSemStep, evalList, readList, listTree, CMMSACodec.Tree.encode]
+      | node p q =>
+          simp only [listSemStep, evalList, readList]
+          cases hp : readSigned p with
+          | none => simp [hp]
+          | some r =>
+              simp [hp]
+              cases hq : readList readSigned q with
+              | none => simp [hq]
+              | some rs =>
+                  simp [hq]
+                  rw [encode_signed_list_cons]
+
+private theorem evalList_iterate (s : ListSem) (n : Nat) :
+    evalList (listSemStep^[n] s) = evalList s := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', evalList_step, ih]
+
+private def listMeasure : ListSem → Nat
+  | .done _ | .fail => 0
+  | .run t _ => (CMMSACodec.Tree.encode t).length + 1
+
+private theorem listMeasure_lt (s : ListSem) (h : listMeasure s ≠ 0) :
+    listMeasure (listSemStep s) < listMeasure s := by
+  cases s with
+  | fail | done _ => simp [listMeasure] at h
+  | run t acc =>
+      cases t with
+      | leaf => simp [listSemStep, listMeasure]
+      | node p q =>
+          have hlen := encode_node_length p q
+          simp only [listSemStep]
+          cases readSigned p with
+          | none => simp [listMeasure]
+          | some _ =>
+              simp [listMeasure, hlen]
+
+private theorem listStuck (s : ListSem) (h : listMeasure s = 0) :
+    listSemStep s = s := by
+  cases s <;> simp [listMeasure] at h ⊢ <;> simp [listSemStep]
+
+private theorem iterate_listStuck (s : ListSem) (h : listMeasure s = 0) :
+    ∀ n, listSemStep^[n] s = s := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', ih, listStuck s h]
+
+private theorem listReaches : ∀ (n : Nat) (s : ListSem),
+    listMeasure s ≤ n → listMeasure (listSemStep^[listMeasure s] s) = 0 := by
+  intro n
+  induction n with
+  | zero =>
+      intro s hs
+      have hz : listMeasure s = 0 := Nat.eq_zero_of_le_zero hs
+      simp [hz]
+  | succ n ih =>
+      intro s hs
+      cases hmz : listMeasure s with
+      | zero => simp [hmz]
+      | succ m =>
+          have hne : listMeasure s ≠ 0 := by simp [hmz]
+          have hlt := listMeasure_lt s hne
+          have hle : listMeasure (listSemStep s) ≤ n := by omega
+          have hinter := ih (listSemStep s) hle
+          rw [Function.iterate_succ_apply]
+          have hsplit : m = (m - listMeasure (listSemStep s)) +
+              listMeasure (listSemStep s) := by omega
+          rw [hsplit, Function.iterate_add_apply, iterate_listStuck _ hinter]
+          exact hinter
+
+private theorem iterate_ge_listStuck (s : ListSem) {n : Nat}
+    (hn : listMeasure s ≤ n) : listMeasure (listSemStep^[n] s) = 0 := by
+  have hsplit : n = (n - listMeasure s) + listMeasure s := by omega
+  have hs := listReaches n s hn
+  rw [hsplit, Function.iterate_add_apply, iterate_listStuck _ hs]
+  exact hs
+
+private theorem pack_evalList (s : ListSem) (h : listMeasure s = 0) :
+    packDigits (encodeListSem s) =
+      match evalList s with
+      | none => []
+      | some acc => true :: acc := by
+  cases s with
+  | fail =>
+      simp only [encodeListSem, digPack, evalList, packDigits, pairFst_pair,
+        pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [true] [false] = [false] :=
+        eqFlag_eq_false_of_ne (by simp)
+      rw [hf, selectHead_false]
+  | done acc =>
+      simp only [encodeListSem, digPack, evalList, packDigits, pairFst_pair,
+        pairSnd_pair]
+      rw [emptyFlag_cons, selectHead_false]
+      have hf : Cobham.eqFlag [false] [false] = [true] :=
+        (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+      rw [hf, selectHead_true]
+  | run _ _ => simp [listMeasure] at h
+
+private def listWidth (z : List Bool) : List Bool :=
+  List.replicate
+    ((z ++ z ++ z ++ List.replicate 16 false).length *
+      (z ++ z ++ z ++ List.replicate 16 false).length) false
+
+private theorem listWidth_mem_FP : listWidth ∈ FP := by
+  have harg : (fun z : List Bool =>
+      z ++ z ++ z ++ List.replicate 16 false) ∈ FP :=
+    Cobham.appendFn_mem_FP
+      (Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+        id_mem_FP)
+      (Cobham.const_replicate_mem_FP 16)
+  exact Cobham.mulLenFn_mem_FP harg harg
+
+private theorem listWidth_length (z : List Bool) :
+    (listWidth z).length =
+      (z.length + z.length + z.length + 16) *
+        (z.length + z.length + z.length + 16) := by
+  simp [listWidth, List.length_append, List.length_replicate]
+  ac_rfl
+
+private theorem list_sq_bound (n : Nat) :
+    8 * n * n + 58 * n + 56 ≤
+      (n + n + n + 16) * (n + n + n + 16) := by
+  have hR : (n + n + n + 16) * (n + n + n + 16) =
+      9 * (n * n) + 96 * n + 256 := by ring
+  have hL : 8 * n * n + 58 * n + 56 = 8 * (n * n) + 58 * n + 56 := by ring
+  have hnn : 8 * (n * n) ≤ 9 * (n * n) :=
+    Nat.mul_le_mul_right (n * n) (by omega)
+  omega
+
+private structure ListReach (z : List Bool) (n : Nat) (st : List Bool) : Prop where
+  rem_le : (pairFst st).length ≤ z.length + 1
+  acc_le : (pairSnd (pairSnd st)).length ≤ n * (8 * z.length + 48)
+  flag_le : (pairFst (pairSnd st)).length ≤ 1
+  st_le : st.length ≤ (listWidth z).length
+
+private theorem listReach_init (z : List Bool) : ListReach z 0 (digInit z) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · simp [digInit, digPack]
+  · simp [digInit, digPack]
+  · simp [digInit, digPack]
+  · simp [digInit, digPack, pair_length, listWidth_length]
+    have := list_sq_bound z.length
+    omega
+
+private theorem listReach_selectHead (z : List Bool) (n : Nat) (s x y : List Bool)
+    (hx : ListReach z n x) (hy : ListReach z n y) :
+    ListReach z n (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil, listWidth_length]
+
+private theorem listReach_pack (z : List Bool) (n : Nat)
+    (rem flag acc : List Bool)
+    (hrem : rem.length ≤ z.length + 1)
+    (hacc : acc.length ≤ n * (8 * z.length + 48))
+    (hflag : flag.length ≤ 1) (hn : n ≤ z.length + 1) :
+    ListReach z n (digPack rem flag acc) := by
+  constructor
+  · simpa [digPack] using hrem
+  · simpa [digPack] using hacc
+  · simpa [digPack] using hflag
+  · simp [digPack, pair_length, listWidth_length]
+    have hacc' : acc.length ≤ (z.length + 1) * (8 * z.length + 48) :=
+      hacc.trans (Nat.mul_le_mul_right _ hn)
+    have hmul : (z.length + 1) * (8 * z.length + 48) =
+        8 * z.length * z.length + 56 * z.length + 48 := by ring
+    have hlin : 2 * rem.length + 2 + (2 * flag.length + 2 + acc.length) ≤
+        8 * z.length * z.length + 58 * z.length + 56 := by omega
+    exact hlin.trans (list_sq_bound z.length)
+
+private theorem listStep_reach (z : List Bool) (n : Nat) (st : List Bool)
+    (hn : n ≤ z.length) (h : ListReach z n st) :
+    ListReach z (n + 1) (listStep st) := by
+  unfold listStep
+  have hstay : ListReach z (n + 1) st :=
+    ⟨h.rem_le,
+      h.acc_le.trans (Nat.mul_le_mul_right _ (Nat.le_succ n)),
+      h.flag_le, h.st_le⟩
+  have hsucc : ListReach z (n + 1)
+      (digPack [false] [false] (pairSnd (pairSnd st) ++ [false])) := by
+    refine listReach_pack z (n + 1) [false] [false]
+      (pairSnd (pairSnd st) ++ [false])
+      (Nat.le_add_left _ _) ?_ (by simp) (Nat.succ_le_succ hn)
+    have : (pairSnd (pairSnd st) ++ [false]).length =
+        (pairSnd (pairSnd st)).length + 1 := by simp
+    have hB : 1 ≤ 8 * z.length + 48 := by omega
+    have hacc := h.acc_le
+    have : n * (8 * z.length + 48) + (8 * z.length + 48) =
+        (n + 1) * (8 * z.length + 48) := (Nat.succ_mul n _).symm
+    omega
+  have hfail : ListReach z (n + 1) (digPack [] [true] []) :=
+    listReach_pack z (n + 1) _ _ _ (by simp) (by simp) (by simp)
+      (Nat.succ_le_succ hn)
+  have hcons : ListReach z (n + 1)
+      (digPack (nodeRight (pairFst st)) []
+        (pairSnd (pairSnd st) ++
+          readSignedOnEncode (nodeLeft (pairFst st)))) := by
+    refine listReach_pack z (n + 1) _ _ _ ?_ ?_ (by simp) (Nat.succ_le_succ hn)
+    · have := nodeRight_length_le (pairFst st)
+      have := h.rem_le
+      omega
+    · have hacc := h.acc_le
+      have hsig := readSignedOnEncode_length (nodeLeft (pairFst st))
+      have hnl := nodeLeft_length_le (pairFst st)
+      have hrem := h.rem_le
+      have hB : (readSignedOnEncode (nodeLeft (pairFst st))).length ≤
+          8 * z.length + 48 := by omega
+      have : (pairSnd (pairSnd st) ++
+          readSignedOnEncode (nodeLeft (pairFst st))).length =
+          (pairSnd (pairSnd st)).length +
+            (readSignedOnEncode (nodeLeft (pairFst st))).length := by
+        simp [List.length_append]
+      have : n * (8 * z.length + 48) + (8 * z.length + 48) =
+          (n + 1) * (8 * z.length + 48) := (Nat.succ_mul n _).symm
+      omega
+  exact listReach_selectHead z (n + 1) (emptyFlag (pairFst (pairSnd st))) _ st
+    (listReach_selectHead z (n + 1) (Cobham.eqFlag (pairFst st) [false]) _ _
+      hsucc
+      (listReach_selectHead z (n + 1) (emptyFlag (splitNode (pairFst st))) _ _
+        hfail
+        (listReach_selectHead z (n + 1)
+          (emptyFlag (readSignedOnEncode (nodeLeft (pairFst st)))) _ _
+          hfail hcons)))
+    hstay
+
+private theorem listReach_iterate (z : List Bool) :
+    ∀ n, n ≤ z.length + 1 → ListReach z n (listStep^[n] (digInit z)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact listReach_init z
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact listStep_reach z n _ (by omega) (ih (by omega))
+
+private theorem listStep_iterate_length (z : List Bool) (n : Nat)
+    (hn : n ≤ (digRuler z).length) :
+    (listStep^[n] (digInit z)).length ≤ (listWidth z).length := by
+  have hr := listReach_iterate z n (by simpa [digRuler_length] using hn)
+  exact hr.st_le
+
+private def readListOnEncode (z : List Bool) : List Bool :=
+  packDigits (listStep^[(digRuler z).length] (digInit z))
+
+private theorem readListOnEncode_of_tree (t : CMMSACodec.Tree) :
+    readListOnEncode (CMMSACodec.Tree.encode t) =
+      match readList readSigned t with
+      | none => []
+      | some qs =>
+          true :: CMMSACodec.Tree.encode (listTree (qs.map signedTree)) := by
+  have henc : digInit (CMMSACodec.Tree.encode t) = encodeListSem (.run t []) :=
+    rfl
+  have hiter := listStep_iterate_encode (.run t [])
+    (digRuler (CMMSACodec.Tree.encode t)).length
+  rw [readListOnEncode, henc, hiter]
+  have hstuck : listMeasure (listSemStep^[(digRuler (CMMSACodec.Tree.encode t)).length]
+      (.run t [])) = 0 := by
+    apply iterate_ge_listStuck
+    simp [listMeasure, digRuler_length]
+  have heval := evalList_iterate (.run t [])
+    (digRuler (CMMSACodec.Tree.encode t)).length
+  have hpack := pack_evalList _ hstuck
+  rw [hpack, heval]
+  cases hread : readList readSigned t with
+  | none => simp [evalList, hread]
+  | some qs => simp [evalList, hread]
+
+private theorem readListOnEncode_mem_FP : readListOnEncode ∈ FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (digRuler z).length,
+      (listStep^[n] (digInit z)).length ≤ (listWidth z).length := by
+    intro z n hn
+    exact listStep_iterate_length z n hn
+  have hiter := Cobham.iterate_mem_FP listStep_mem_FP digInit_mem_FP
+    digRuler_mem_FP listWidth_mem_FP hbound
+  exact mem_FP_comp hiter packDigits_mem_FP
+
+/-- Pack `readList readSigned` on a complete tree encoding. Empty = none;
+nonempty = `true :: encode (listTree (qs.map signedTree))`. -/
+def readListTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (treeParseTag z)) []
+    (Cobham.selectHead (emptyFlag (pairSnd (dropOne (treeParseTag z))))
+      (readListOnEncode (pairFst (dropOne (treeParseTag z))))
+      [])
+
+theorem readListTag_mem_FP : readListTag ∈ Complexity.FP := by
+  have htag := treeParseTag_mem_FP
+  have hdrop := dropOneFn_mem_FP htag
+  have hfst := mem_FP_comp hdrop Cobham.fstBlock_mem_FP
+  have hsnd := mem_FP_comp hdrop Cobham.sndBlock_mem_FP
+  have hread := mem_FP_comp hfst readListOnEncode_mem_FP
+  have hinner := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsnd)
+    hread (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
+    (constFn_mem_FP []) hinner
+
+theorem readListTag_of_tree (t : CMMSACodec.Tree) :
+    readListTag (CMMSACodec.Tree.encode t) =
+      match readList readSigned t with
+      | none => []
+      | some qs =>
+          true :: CMMSACodec.Tree.encode (listTree (qs.map signedTree)) := by
+  have hparse := treeParseTag_encode_append t []
+  simp [List.append_nil] at hparse
+  simp [readListTag, hparse, emptyFlag_cons, selectHead_false, dropOne_cons,
+    pairFst_pair, pairSnd_pair, emptyFlag_nil, selectHead_true]
+  exact readListOnEncode_of_tree t
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
