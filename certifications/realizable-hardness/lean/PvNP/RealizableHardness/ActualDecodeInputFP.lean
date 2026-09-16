@@ -10,9 +10,12 @@ import Complexitylib.Classes.Containments.Internal.FPBridge
 import Complexitylib.Classes.Containments.Internal.BinArith
 
 /-!
-Packed `ExecutablePipelineInput.decodeInput` as a total `List Bool → List Bool`
-function in `FP`. Empty tape = none (malformed, truncated, trailing bits, or
-field/source validation failure). Nonempty = `true :: encodeInput x`.
+Packed decode helpers toward `ExecutablePipelineInput.decodeInput`.
+`gcdBits` and `readRatTag` are in `FP`. Tree agreement for `readRatTag` is
+`readRatTag_of_tree` when present. This module does not claim
+`decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape = none
+(malformed, truncated, trailing bits, or field/source validation failure).
+Nonempty packed input = `true :: encodeInput x`.
 This module does not define `selectedSeededMap`, inhabit `hSrcCmmsa`, or assert
 unconditional Theorem 1, Corollary 2, or P vs NP.
 -/
@@ -2286,5 +2289,543 @@ theorem readRatTag_mem_FP : readRatTag ∈ Complexity.FP := by
     hread (constFn_mem_FP [])
   exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP htag)
     (constFn_mem_FP []) hinner
+
+/-! ## Semantic agreement: `quotBits` of the shared/gcd pair is the reduced `natTree`. -/
+
+private theorem emptyFlag_of_ne_nil {l : List Bool} (h : l ≠ []) :
+    emptyFlag l = [false] := by
+  cases l with
+  | nil => exact absurd rfl h
+  | cons _ _ => simp [emptyFlag_cons]
+
+private theorem stripTrailing_idem (l : List Bool) :
+    stripTrailing (stripTrailing l) = stripTrailing l := by
+  rw [stripTrailing_eq_bits, stripTrailing_eq_bits, bitValue_bits]
+
+private theorem stripTrailing_bitValue (l : List Bool) :
+    bitValue (stripTrailing l) = bitValue l := by
+  rw [stripTrailing_eq_bits, bitValue_bits]
+
+private theorem bits_canon (n : Nat) : n.bits = (bitValue n.bits).bits := by
+  rw [bitValue_bits]
+
+private theorem canon_zero {a : List Bool} (h : a = (bitValue a).bits) :
+    a = [] ↔ bitValue a = 0 := by
+  constructor
+  · intro ha; simp [ha, bitValue]
+  · intro h0; simpa [h0] using h.symm
+
+private theorem bitValue_snoc_true (l : List Bool) :
+    bitValue (l ++ [true]) = bitValue l + 2 ^ l.length := by
+  induction l with
+  | nil => simp [bitValue]
+  | cons b t ih =>
+      cases b <;> simp [bitValue, ih, Nat.pow_succ] <;> omega
+
+private theorem bitValue_snoc (l : List Bool) (x : Bool) :
+    bitValue (l ++ [x]) = bitValue l + x.toNat * 2 ^ l.length := by
+  cases x with
+  | false => simp [bitValue_snoc_false, Bool.toNat]
+  | true => simpa [Bool.toNat] using bitValue_snoc_true l
+
+private theorem addCanon_bitValue (a b : List Bool) :
+    bitValue (addCanon a b) = bitValue a + bitValue b := by
+  let w := wide a b
+  let pa := padTo w a
+  let pb := padTo w b
+  have hlen : pb.length = pa.length := by simp [pa, pb, padTo_length]
+  have hpa_len : pa.length = w.length := padTo_length _ _
+  have hpa : bitValue pa = bitValue a := bitValue_padTo w a (le_wide_left a b)
+  have hpb : bitValue pb = bitValue b := bitValue_padTo w b (le_wide_right a b)
+  have hsum := addBits_val pa pb hlen
+  have hsum' :
+      binValLE (addBitsLE false pa pb).2 +
+          (addBitsLE false pa pb).1.toNat * 2 ^ w.length
+        = bitValue a + bitValue b := by
+    have hpow : 2 ^ pa.length = 2 ^ w.length := by rw [hpa_len]
+    have hsum0 := addBits_val pa pb hlen
+    rw [addBits_eq pa pb hlen] at hsum0
+    rw [← hpow, hsum0, ← bitValue_eq_binValLE, ← bitValue_eq_binValLE, hpa, hpb]
+  have hcarry : addCarry pa pb = [(addBitsLE false pa pb).1] := addCarry_eq pa pb hlen
+  have hbits : (addBits pa pb).length = w.length := by
+    rw [addBits_length pa pb hlen, hpa_len]
+  unfold addCanon
+  change bitValue (stripTrailing
+      (addBits pa pb ++ Cobham.selectHead (addCarry pa pb) [true] [])) =
+    bitValue a + bitValue b
+  rw [hcarry]
+  cases hc : (addBitsLE false pa pb).1 with
+  | false =>
+      have h0 : (addBitsLE false pa pb).1.toNat = 0 := by simp [hc]
+      rw [h0, Nat.zero_mul, Nat.add_zero] at hsum'
+      rw [selectHead_cons_false', List.append_nil, stripTrailing_bitValue,
+        bitValue_eq_binValLE, addBits_eq pa pb hlen]
+      exact hsum'
+  | true =>
+      have h1 : (addBitsLE false pa pb).1.toNat = 1 := by simp [hc]
+      rw [h1, Nat.one_mul] at hsum'
+      rw [selectHead_cons_true', stripTrailing_bitValue, bitValue_snoc_true, hbits,
+        bitValue_eq_binValLE, addBits_eq pa pb hlen]
+      exact hsum'
+
+private theorem addBit_bitValue (x : List Bool) :
+    bitValue (addBit x) = bitValue x + 1 := by
+  simpa [addBit, bitValue] using addCanon_bitValue x [true]
+
+private theorem r2_bitValue (b : Bool) (t r : List Bool) :
+    bitValue (Cobham.selectHead (b :: t) (addBit (shl1 r)) (shl1 r)) =
+      2 * bitValue r + b.toNat := by
+  cases b with
+  | false => simp [selectHead_cons_false', shl1_bitValue, Bool.toNat]
+  | true => simp [selectHead_cons_true', addBit_bitValue, shl1_bitValue, Bool.toNat]
+
+private theorem divPack_components (rem q r b : List Bool) :
+    pairFst (divPack rem q r b) = rem ∧
+    pairFst (pairSnd (divPack rem q r b)) = q ∧
+    pairFst (pairSnd (pairSnd (divPack rem q r b))) = r ∧
+    pairSnd (pairSnd (pairSnd (divPack rem q r b))) = b := by
+  simp [divPack]
+
+private theorem divStep_done (q r b : List Bool) :
+    divStep (divPack [] q r b) = divPack [] q r b := by
+  simp [divStep, divPack, emptyFlag_nil, selectHead_true]
+
+private theorem divInit_eq (a b : List Bool) :
+    divInit a b = divPack a.reverse [] [] b := rfl
+
+private structure DivInv (a b : List Bool) (n : Nat) (st : List Bool) : Prop where
+  unpack : st = divPack (a.reverse.drop n) (pairFst (pairSnd st))
+      (pairFst (pairSnd (pairSnd st))) b
+  q_len : (pairFst (pairSnd st)).length = n
+  r_lt : bitValue (pairFst (pairSnd (pairSnd st))) < bitValue b
+  val : bitValue a =
+      (bitValue (pairFst (pairSnd st)).reverse * bitValue b +
+        bitValue (pairFst (pairSnd (pairSnd st)))) * 2 ^ (a.reverse.drop n).length +
+      bitValue (a.reverse.drop n).reverse
+
+private theorem divInv_init (a b : List Bool) (hb : 0 < bitValue b) :
+    DivInv a b 0 (divInit a b) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · simp [divInit_eq, divPack]
+  · simp [divInit_eq, divPack]
+  · simp [divInit_eq, divPack, bitValue]; exact hb
+  · simp [divInit_eq, divPack, bitValue, List.reverse_reverse]
+
+private theorem iterate_id_of_fixed {α} (f : α → α) {x : α} (h : f x = x) :
+    ∀ n, f^[n] x = x := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      have hcomp : f^[n + 1] x = f^[n] (f x) := rfl
+      rw [hcomp, h, ih]
+
+private theorem div_shift_val (qv bv r msb remv restlen : Nat) :
+    (qv * bv + r) * 2 ^ (restlen + 1) + (remv + msb * 2 ^ restlen) =
+      (2 * qv * bv + (2 * r + msb)) * 2 ^ restlen + remv := by
+  simp [Nat.pow_succ]; ring
+
+private theorem divInv_step (a b : List Bool) (n : Nat) (st : List Bool)
+    (hb : 0 < bitValue b) (hn : n < a.length) (h : DivInv a b n st) :
+    DivInv a b (n + 1) (divStep st) := by
+  have hlt : n < a.reverse.length := by simpa [List.length_reverse] using hn
+  have hcons := List.drop_eq_getElem_cons hlt
+  set bit := a.reverse[n]
+  set rest := a.reverse.drop (n + 1)
+  have hdrop : a.reverse.drop (n + 1) = rest := rfl
+  rw [h.unpack, hcons]
+  set q := pairFst (pairSnd st)
+  set r := pairFst (pairSnd (pairSnd st))
+  have hqlen : q.length = n := h.q_len
+  have hrlt : bitValue r < bitValue b := h.r_lt
+  have hr2v := r2_bitValue bit rest r
+  set r2 := Cobham.selectHead (bit :: rest) (addBit (shl1 r)) (shl1 r)
+  have hval' :
+      bitValue a =
+        (bitValue q.reverse * bitValue b + bitValue r) * 2 ^ (bit :: rest).length +
+        bitValue (bit :: rest).reverse := by
+    simpa [hcons] using h.val
+  have hremv : bitValue (bit :: rest).reverse =
+      bitValue rest.reverse + bit.toNat * 2 ^ rest.length := by
+    simp [List.reverse_cons, bitValue_snoc]
+  have hshift := div_shift_val (bitValue q.reverse) (bitValue b) (bitValue r)
+      bit.toNat (bitValue rest.reverse) rest.length
+  unfold divStep
+  simp [divPack, pairFst_pair, pairSnd_pair, emptyFlag_cons, selectHead_false]
+  rcases ltCanon_flag r2 b with hltb | hge
+  · have hcmp : bitValue r2 < bitValue b := (ltCanon_true_iff _ _).mp hltb
+    rw [hltb, selectHead_true]
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · simp [divPack, dropOne_cons, hdrop]
+    · simp [divPack, hqlen]
+    · simpa [divPack] using hcmp
+    · simp [divPack, dropOne_cons, hdrop, bitValue]
+      have : (bit :: rest).length = rest.length + 1 := by simp
+      rw [this] at hval'
+      rw [hval', hremv, hr2v, hshift]
+  · have hcmp : bitValue b ≤ bitValue r2 := by
+      have : ¬ bitValue r2 < bitValue b := by
+        intro hlt'
+        have ht := (ltCanon_true_iff _ _).mpr hlt'
+        rw [ht] at hge
+        cases hge
+      omega
+    rw [hge, selectHead_false]
+    have hsub := subCanon_bitValue r2 b hcmp
+    refine ⟨?_, ?_, ?_, ?_⟩
+    · simp [divPack, dropOne_cons, hdrop]
+    · simp [divPack, hqlen]
+    · simp [divPack, pairFst_pair, pairSnd_pair]
+      have heq : Cobham.selectHead (bit :: rest) (addBit (shl1 r)) (shl1 r) = r2 := rfl
+      rw [heq, hsub]
+      have hbit : bit.toNat ≤ 1 := by cases bit <;> simp [Bool.toNat]
+      have hr2lt : bitValue r2 < 2 * bitValue b := by
+        have := hr2v
+        have := hrlt
+        omega
+      omega
+    · simp [divPack, pairFst_pair, pairSnd_pair, dropOne_cons, bitValue]
+      have : (bit :: rest).length = rest.length + 1 := by simp
+      rw [this] at hval'
+      have heq : Cobham.selectHead (bit :: rest) (addBit (shl1 r)) (shl1 r) = r2 := rfl
+      have hsub' : bitValue (subCanon r2 b) =
+          2 * bitValue r + bit.toNat - bitValue b := by
+        rw [hsub, hr2v]
+      have hle : bitValue b ≤ 2 * bitValue r + bit.toNat := by
+        simpa [hr2v] using hcmp
+      have hring :
+          (1 + 2 * bitValue q.reverse) * bitValue b +
+            (2 * bitValue r + bit.toNat - bitValue b) =
+          2 * bitValue q.reverse * bitValue b +
+            (2 * bitValue r + bit.toNat) := by
+        have hs := Nat.sub_add_cancel hle
+        calc
+          (1 + 2 * bitValue q.reverse) * bitValue b +
+              (2 * bitValue r + bit.toNat - bitValue b)
+            = bitValue b + 2 * bitValue q.reverse * bitValue b +
+                (2 * bitValue r + bit.toNat - bitValue b) := by ring
+          _ = 2 * bitValue q.reverse * bitValue b +
+                (bitValue b + (2 * bitValue r + bit.toNat - bitValue b)) := by
+              ring
+          _ = 2 * bitValue q.reverse * bitValue b +
+                (2 * bitValue r + bit.toNat) := by
+              rw [Nat.add_comm (bitValue b), hs]
+      rw [hval', hremv, hshift, heq, hsub', hring]
+      simp [rest]
+
+private theorem divInv_iterate (a b : List Bool) (hb : 0 < bitValue b) :
+    ∀ n, n ≤ a.length → DivInv a b n (divStep^[n] (divInit a b)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact divInv_init a b hb
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact divInv_step a b n _ hb (by omega) (ih (by omega))
+
+private theorem quotBits_eq (a b : List Bool) (hb : 0 < bitValue b) :
+    quotBits a b = (bitValue a / bitValue b).bits := by
+  have hrun : divRunPair (pair a b) =
+      divStep^[(divRuler a b).length] (divInit a b) := by
+    simp [divRunPair, pairFst_pair, pairSnd_pair]
+  have hlen : (divRuler a b).length = a.length + 1 := divRuler_length a b
+  have hdone := divInv_iterate a b hb a.length (Nat.le_refl _)
+  have hdrop : a.reverse.drop a.length = [] := by
+    simpa [List.length_reverse] using (List.drop_length (l := a.reverse))
+  have hstay : divStep (divStep^[a.length] (divInit a b)) =
+      divStep^[a.length] (divInit a b) := by
+    rw [hdone.unpack, hdrop]
+    exact divStep_done _ _ _
+  have hiter : divStep^[a.length + 1] (divInit a b) =
+      divStep^[a.length] (divInit a b) := by
+    rw [Function.iterate_succ_apply']
+    exact hstay
+  have hv := hdone.val
+  have hr := hdone.r_lt
+  simp [hdrop, bitValue] at hv hr
+  set q := pairFst (pairSnd (divStep^[a.length] (divInit a b)))
+  set r := pairFst (pairSnd (pairSnd (divStep^[a.length] (divInit a b))))
+  have hsum : bitValue a = bitValue q.reverse * bitValue b + bitValue r := hv
+  have hqv : bitValue q.reverse = bitValue a / bitValue b := by
+    have hcong := congrArg (fun n => n / bitValue b) hsum
+    have hdiv := Nat.mul_add_div hb (bitValue q.reverse) (bitValue r)
+    have h0 : bitValue r / bitValue b = 0 := Nat.div_eq_of_lt hr
+    rw [Nat.mul_comm, hdiv, h0, Nat.add_zero] at hcong
+    exact hcong.symm
+  simp only [quotBits, hrun, hlen, hiter]
+  rw [hdone.unpack, hdrop]
+  simp [divPack, stripTrailing_eq_bits, bitValue_bits]
+  simpa [q] using congrArg (fun n : Nat => n.bits) hqv
+
+private theorem share2Step_pair (a b : List Bool) :
+    share2Step (pair a b) =
+      match a, b with
+      | false :: ta, false :: tb => pair ta tb
+      | _, _ => pair a b := by
+  rw [share2Step_eq, pairFst_pair, pairSnd_pair]
+  cases a with
+  | nil => simp [emptyFlag_nil, selectHead_true]
+  | cons ba ta =>
+      rw [emptyFlag_cons, selectHead_false]
+      cases b with
+      | nil => simp [emptyFlag_nil, selectHead_true]
+      | cons bb tb =>
+          rw [emptyFlag_cons, selectHead_false]
+          cases ba with
+          | true => simp [selectHead_cons_true']
+          | false =>
+              rw [selectHead_cons_false']
+              cases bb with
+              | true => simp [selectHead_cons_true']
+              | false => simp [selectHead_cons_false', dropOne]
+
+private theorem shareIterate_val (a b : List Bool) :
+    ∀ n, ∃ a' b' k,
+      share2Step^[n] (pair a b) = pair a' b' ∧
+        bitValue a = bitValue a' * 2 ^ k ∧
+        bitValue b = bitValue b' * 2 ^ k ∧
+        a'.length + k ≤ a.length ∧
+        b'.length + k ≤ b.length ∧
+        (a' = [] ∨ b' = [] ∨ bitValue a' % 2 = 1 ∨ bitValue b' % 2 = 1 ∨ k = n) := by
+  intro n
+  induction n with
+  | zero =>
+      exact ⟨a, b, 0, rfl, by simp, by simp, by simp, by simp,
+        Or.inr (Or.inr (Or.inr (Or.inr rfl)))⟩
+  | succ n ih =>
+      obtain ⟨a', b', k, hs, ha, hb, hla, hlb, hstuck⟩ := ih
+      rw [Function.iterate_succ_apply', hs, share2Step_pair]
+      cases a' with
+      | nil =>
+          exact ⟨[], b', k, rfl, ha, hb, by omega, hlb, Or.inl rfl⟩
+      | cons ba ta =>
+          cases b' with
+          | nil =>
+              exact ⟨ba :: ta, [], k, by cases ba <;> rfl, ha, hb, hla, by omega,
+                Or.inr (Or.inl rfl)⟩
+          | cons bb tb =>
+              cases ba with
+              | true =>
+                  exact ⟨true :: ta, bb :: tb, k, rfl, ha, hb, hla, hlb,
+                    Or.inr (Or.inr (Or.inl (by simp [bitValue])))⟩
+              | false =>
+                  cases bb with
+                  | true =>
+                      exact ⟨false :: ta, true :: tb, k, rfl, ha, hb, hla, hlb,
+                        Or.inr (Or.inr (Or.inr (Or.inl (by simp [bitValue]))))⟩
+                  | false =>
+                      have hk : k = n := by
+                        rcases hstuck with h | h | h | h | hk
+                        · cases h
+                        · cases h
+                        · simp [bitValue] at h
+                        · simp [bitValue] at h
+                        · exact hk
+                      refine ⟨ta, tb, k + 1, rfl, ?_, ?_, ?_, ?_,
+                        Or.inr (Or.inr (Or.inr (Or.inr (by rw [hk]))))⟩
+                      · simp [bitValue, Nat.pow_succ] at ha ⊢
+                        convert ha using 1
+                        ac_rfl
+                      · simp [bitValue, Nat.pow_succ] at hb ⊢
+                        convert hb using 1
+                        ac_rfl
+                      · simp at hla; omega
+                      · simp at hlb; omega
+
+private theorem shareTwos_spec (a b : List Bool) :
+    ∃ a' b' k,
+      shareTwos a b = pair a' b' ∧
+        bitValue a = bitValue a' * 2 ^ k ∧
+        bitValue b = bitValue b' * 2 ^ k ∧
+        (a' = [] ∨ b' = [] ∨ bitValue a' % 2 = 1 ∨ bitValue b' % 2 = 1) := by
+  obtain ⟨a', b', k, hs, ha, hb, hla, hlb, hstuck⟩ :=
+    shareIterate_val a b (a ++ b).length
+  refine ⟨a', b', k, hs, ha, hb, ?_⟩
+  rcases hstuck with h | h | h | h | hk
+  · exact Or.inl h
+  · exact Or.inr (Or.inl h)
+  · exact Or.inr (Or.inr (Or.inl h))
+  · exact Or.inr (Or.inr (Or.inr h))
+  · by_cases ha0 : a' = []
+    · exact Or.inl ha0
+    · by_cases hb0 : b' = []
+      · exact Or.inr (Or.inl hb0)
+      · have : 1 ≤ a'.length := by
+          cases a' <;> simp at ha0 ⊢
+        have : 1 ≤ b'.length := by
+          cases b' <;> simp at hb0 ⊢
+        have : k + 1 ≤ a.length := by omega
+        have : k + 1 ≤ b.length := by omega
+        have : (a ++ b).length = a.length + b.length := by simp
+        omega
+
+private theorem gcdPrep_pair (a b : List Bool) :
+    gcdPrep (pair a b) = if a = [] then pair b [] else pair a b := by
+  simp [gcdPrep, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · simp [ha, emptyFlag_nil, selectHead_true]
+  · rw [emptyFlag_of_ne_nil ha, selectHead_false, if_neg ha]
+
+private theorem gcdStep_pair (a b : List Bool) :
+    gcdStep (pair a b) =
+      if a = [] ∨ b = [] ∨ a = b then pair a b
+      else if bitValue a < bitValue b then pair a (dropTwos (subCanon b a))
+      else pair (dropTwos (subCanon a b)) b := by
+  rw [gcdStep_eq, pairFst_pair, pairSnd_pair]
+  by_cases ha : a = []
+  · simp [ha, emptyFlag_nil, selectHead_true]
+  · rw [emptyFlag_of_ne_nil ha, selectHead_false]
+    by_cases hb : b = []
+    · simp [hb, emptyFlag_nil, selectHead_true]
+    · rw [emptyFlag_of_ne_nil hb, selectHead_false]
+      rcases Cobham.eqFlag_flag a b with heq | hne
+      · have hab : a = b := (Cobham.eqFlag_eq_true_iff a b).mp heq
+        rw [hab] at heq ⊢
+        simp [heq, selectHead_true]
+      · have hne' : a ≠ b := by
+          intro h; exact absurd ((Cobham.eqFlag_eq_true_iff a b).mpr h)
+            (by cases (Cobham.eqFlag_flag a b) <;> simp_all)
+        rw [hne, selectHead_false, if_neg (by simp [ha, hb, hne'])]
+        rcases ltCanon_flag a b with hlt | hge
+        · have hcmp : bitValue a < bitValue b := (ltCanon_true_iff _ _).mp hlt
+          simp [hlt, selectHead_true, hcmp]
+        · have hcmp : ¬ bitValue a < bitValue b := by
+            intro hlt'
+            have ht := (ltCanon_true_iff _ _).mpr hlt'
+            rw [ht] at hge
+            cases hge
+          simp [hge, selectHead_false, hcmp]
+
+private def mixedBit (x y : Nat) : Nat :=
+  if (x % 2 = 0 ∧ y % 2 = 1) ∨ (x % 2 = 1 ∧ y % 2 = 0) then 1 else 0
+
+private def gcdPhi (a b : List Bool) : Nat :=
+  2 * (bitValue a).size + 2 * (bitValue b).size + mixedBit (bitValue a) (bitValue b)
+
+private theorem mixedBit_le (x y : Nat) : mixedBit x y ≤ 1 := by
+  unfold mixedBit; split <;> simp
+
+private theorem gcdPhi_le_ruler (a b : List Bool) :
+    gcdPhi a b ≤ (gcdRuler (pair a b)).length := by
+  have hsa : (bitValue a).size ≤ a.length := Nat.size_le.2 (bitValue_lt_two_pow a)
+  have hsb : (bitValue b).size ≤ b.length := Nat.size_le.2 (bitValue_lt_two_pow b)
+  have hm := mixedBit_le (bitValue a) (bitValue b)
+  simp [gcdPhi, gcdRuler_length, pair_length]
+  omega
+
+private theorem drop2Step_canon {x : List Bool} (hx : x = (bitValue x).bits) :
+    drop2Step x = (bitValue (drop2Step x)).bits := by
+  cases x with
+  | nil => simp [drop2Step_nil, bitValue]
+  | cons b t =>
+      cases b with
+      | true => simpa [drop2Step_true] using hx
+      | false =>
+          have hne : bitValue t ≠ 0 := by
+            intro h0
+            have hx' : false :: t = (2 * bitValue t).bits := by
+              simpa [bitValue] using hx
+            simp [h0] at hx'
+          have ht : t = (bitValue t).bits := by
+            have hx' : false :: t = (2 * bitValue t).bits := by
+              simpa [bitValue] using hx
+            have hbit : (2 * bitValue t).bits = false :: (bitValue t).bits :=
+              Nat.bit0_bits _ hne
+            rw [hbit] at hx'
+            exact (List.cons_inj_right false).mp hx'
+          simpa [drop2Step_false] using ht
+
+private theorem dropTwos_eq_bits {x : List Bool} (hx : x = (bitValue x).bits) :
+    dropTwos x = (oddPart (bitValue x)).bits := by
+  have hiter : ∀ n, drop2Step^[n] x = (bitValue (drop2Step^[n] x)).bits := by
+    intro n
+    induction n with
+    | zero => simpa
+    | succ n ih =>
+        have hcomp : drop2Step^[n + 1] x = drop2Step^[n] (drop2Step x) := rfl
+        -- use succ apply'
+        rw [Function.iterate_succ_apply']
+        exact drop2Step_canon ih
+  have := hiter x.length
+  have hv := dropTwos_oddPart x
+  rw [dropTwos] at hv
+  rw [hv] at this
+  exact this
+
+private theorem gcd_eq_oddPart_of_odd {x y : Nat}
+    (h : x % 2 = 1 ∨ y % 2 = 1) :
+    Nat.gcd x y = Nat.gcd (oddPart x) (oddPart y) := by
+  rcases h with hx | hy
+  · rw [oddPart_of_odd hx, gcd_odd_oddPart hx]
+  · have hxy : Nat.gcd x y = Nat.gcd (oddPart x) y := by
+      rw [Nat.gcd_comm x y, ← gcd_odd_oddPart (k := y) (n := x) hy, Nat.gcd_comm]
+    rw [hxy, oddPart_of_odd hy]
+
+private theorem size_half_lt {n : Nat} (hn : 2 ≤ n) : (n / 2).size < n.size := by
+  have hsz : 2 ≤ n.size := by
+    have : ¬ n.size ≤ 1 := by
+      intro h
+      have : n < 2 := Nat.size_le.1 h
+      omega
+    omega
+  have hx : n < 2 ^ n.size := Nat.lt_size_self n
+  have hpow : 2 ^ n.size = 2 * 2 ^ (n.size - 1) := by
+    have : n.size = n.size - 1 + 1 := by omega
+    rw [this, Nat.pow_succ, Nat.mul_comm, Nat.add_sub_cancel]
+  have : n / 2 < 2 ^ (n.size - 1) := by omega
+  have : (n / 2).size ≤ n.size - 1 := Nat.size_le.2 this
+  omega
+
+private theorem size_oddPart_sub {x y : Nat} (hxy : y < x) (hx : x % 2 = 1)
+    (hy : y % 2 = 1) : (oddPart (x - y)).size < x.size := by
+  have hpos : 2 ≤ x := by
+    have : y ≠ 0 := by intro h; simp [h] at hy
+    omega
+  obtain ⟨e, he⟩ := oddPart_mul (x - y)
+  have hepos : 1 ≤ e := by
+    cases e with
+    | zero =>
+        have : x - y = oddPart (x - y) := by simpa using he
+        have ho := oddPart_odd_or_zero (x - y)
+        omega
+    | succ e => simp
+  have hle : oddPart (x - y) ≤ (x - y) / 2 := by
+    have h2 : 2 ≤ 2 ^ e := by
+      have : 2 ^ 1 ≤ 2 ^ e := Nat.pow_le_pow_right (by decide) hepos
+      simpa using this
+    have : oddPart (x - y) * 2 ≤ oddPart (x - y) * 2 ^ e :=
+      Nat.mul_le_mul_left _ h2
+    have : oddPart (x - y) * 2 ≤ x - y := by
+      simpa [he.symm] using this
+    exact (Nat.le_div_iff_mul_le (by decide : 0 < 2)).2 (by simpa [Nat.mul_comm] using this)
+  have : oddPart (x - y) ≤ x / 2 := by omega
+  exact Nat.lt_of_le_of_lt (Nat.size_le_size this) (size_half_lt hpos)
+
+private theorem gcdStep_fixed (a b : List Bool)
+    (h : a = [] ∨ b = [] ∨ a = b) :
+    gcdStep (pair a b) = pair a b := by
+  rw [gcdStep_pair, if_pos h]
+
+private theorem gcdBits_of_fixed (a b : List Bool)
+    (h : a = [] ∨ b = [] ∨ a = b) :
+    gcdBits (pair a b) = a := by
+  have hf := gcdStep_fixed a b h
+  simp [gcdBits, iterate_id_of_fixed (f := gcdStep) hf]
+
+private theorem rat_num_den_of_nat (n d : Nat) (hd : d ≠ 0) :
+    ((n : Rat) / d).num.natAbs = n / n.gcd d ∧
+      ((n : Rat) / d).den = d / n.gcd d := by
+  have hmk : (n : Rat) / d = mkRat (n : Int) d := by
+    rw [show (n : Rat) / d = (n : Int) / (d : Int) from rfl]
+    rw [← Rat.divInt_eq_div, Rat.divInt_ofNat]
+  constructor
+  · rw [hmk, Rat.num_mkRat, ite_eq_right (by exact hd)]
+    simp [Int.natAbs_natCast, Nat.gcd_comm]
+    have hdvd : (n.gcd d : Int) ∣ (n : Int) :=
+      Int.ofNat_dvd.mpr (Nat.gcd_dvd_left _ _)
+    rw [Int.natAbs_ediv_of_dvd hdvd, Int.natAbs_natCast]
+    simp [Int.natAbs_natCast]
+  · rw [hmk, Rat.den_mkRat, ite_eq_right (by exact hd)]
+    simp [Int.natAbs_natCast, Nat.gcd_comm]
 
 end PvNP.RealizableHardness.ActualDecodeInputFP

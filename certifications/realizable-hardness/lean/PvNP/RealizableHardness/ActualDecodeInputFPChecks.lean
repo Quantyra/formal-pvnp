@@ -2,9 +2,9 @@ import PvNP.RealizableHardness.ActualDecodeInputFP
 
 /-!
 Interface checks for the packed decodeInput FP tag. `gcdBits_mem_FP` and
-`readRatTag_mem_FP` are on the Cobham surface; `decodeInputTag_mem_FP` remains.
-This file does not inhabit `hSrcCmmsa` and does not assert unconditional
-Theorem 1, Corollary 2, or P vs NP.
+`readRatTag_mem_FP` are on the Cobham surface. `readRatTag_of_tree` and
+`decodeInputTag_mem_FP` remain. This file does not inhabit `hSrcCmmsa` and
+does not assert unconditional Theorem 1, Corollary 2, or P vs NP.
 -/
 namespace PvNP.RealizableHardness.ActualDecodeInputFPChecks
 open Complexity
