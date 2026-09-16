@@ -1,0 +1,21 @@
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/InverseCDFSampler.lean:119:10: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/InverseCDFSampler.lean:120:15: warning: This simp argument is unused:
+  he
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Bool.true_eq, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/InverseCDFSampler.lean:120:19: warning: This simp argument is unused:
+  Bool.true_eq
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [he, ↓reduceIte, mul_one]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

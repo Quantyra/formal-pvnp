@@ -1,0 +1,30 @@
+expected_bundle_sha256=B34C42046F98938828481CDCD9D8B35275FAB118C1D9E2E9BD9CFEE84C5C2A52
+actual_bundle_sha256=B34C42046F98938828481CDCD9D8B35275FAB118C1D9E2E9BD9CFEE84C5C2A52
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-bundle-verify.git/
+/home/dfredriksen_quantyra_org/formal-pvnp-38d9ad0.bundle is okay
+The bundle contains this ref:
+38d9ad0df63e42cea9190657f836822892184010 refs/heads/main
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+Cloning into '/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src'...
+HEAD is now at 38d9ad0 prove actual selected CMMSA SeededMap surface
+expected_head=38d9ad0df63e42cea9190657f836822892184010
+actual_head=38d9ad0df63e42cea9190657f836822892184010
+status_begin
+
+status_end
+expected_main_sha256=A0EFD901492C1D0DDB0012B3CDF545B06C51574812F5AC894257309E0B560786
+actual_main_sha256=A0EFD901492C1D0DDB0012B3CDF545B06C51574812F5AC894257309E0B560786
+expected_checks_sha256=3F4971152605229124AB5D1EF04D6758FF89589F8B42F4E843CC2138D5A5136C
+actual_checks_sha256=3F4971152605229124AB5D1EF04D6758FF89589F8B42F4E843CC2138D5A5136C
+transfer_gate=PASS

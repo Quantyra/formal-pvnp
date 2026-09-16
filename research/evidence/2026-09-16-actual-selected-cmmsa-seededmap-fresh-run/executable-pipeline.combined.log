@@ -1,0 +1,7 @@
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/ExecutablePipeline.lean:77:13: warning: This simp argument is unused:
+  Option.bind_some
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ExecutableRounding.read_budgetTree ws M q hd]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

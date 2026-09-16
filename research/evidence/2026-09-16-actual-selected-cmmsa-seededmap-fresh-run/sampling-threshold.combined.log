@@ -1,0 +1,6 @@
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/SamplingThreshold.lean:143:35: warning: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/SamplingThreshold.lean:143:35: warning: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

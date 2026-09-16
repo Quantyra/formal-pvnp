@@ -1,0 +1,9 @@
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/FiniteConcentration.lean:180:8: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/FiniteConcentration.lean:184:8: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/FiniteConcentration.lean:220:22: warning: This simp argument is unused:
+  Fintype.card_fun
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

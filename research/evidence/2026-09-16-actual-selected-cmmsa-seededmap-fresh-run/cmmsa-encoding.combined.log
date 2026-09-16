@@ -1,0 +1,12 @@
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/CMMSAEncoding.lean:16:47: warning: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/CMMSAEncoding.lean:153:19: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/home/dfredriksen_quantyra_org/selected-cmmsa-38d9ad0-src/certifications/realizable-hardness/lean/PvNP/RealizableHardness/CMMSAEncoding.lean:149:35: warning: Variable name `s` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _s
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`

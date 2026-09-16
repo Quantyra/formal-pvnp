@@ -1,0 +1,6 @@
+PvNP.RealizableHardness.ActualSelectedCmmsaSeededMap.selectedPairedRun (L : ℕ) (eps : ℚ) : List Bool → List Bool
+PvNP.RealizableHardness.ActualSelectedCmmsaSeededMap.selectedCoinRuler (eps : ℚ) : List Bool → List Bool
+PvNP.RealizableHardness.ActualSelectedCmmsaSeededMap.selectedCoinRuler_mem_FP (eps : ℚ) : selectedCoinRuler eps ∈ FP
+'PvNP.RealizableHardness.ActualSelectedCmmsaSeededMap.selectedCoinRuler_mem_FP' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
