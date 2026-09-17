@@ -12,9 +12,11 @@ are on the Cobham/semantic surface. `readRowTag`, `readRowTag_mem_FP`, and
 `readRowListTag_mem_FP`, and `readRowListTag_of_pair` pack
 `readList (readRow n)` on `pair n.bits (encode t)`. `readParametersTag`,
 `readParametersTag_mem_FP`, and `readParametersTag_of_tree` pack three
-signed tags plus `readNat`. `decodeInputTag_mem_FP`
-remains. This file does not inhabit `hSrcCmmsa` and does not assert
-unconditional Theorem 1, Corollary 2, or P vs NP.
+signed tags plus `readNat`. `readTableTag` and `readTableTag_mem_FP` pack
+`FiniteSourceSampler.readTable` / `ValidRows`. Tree agreement for packed rows
+is not on this increment. `decodeInputTag_mem_FP` remains. This file does not
+inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1, Corollary 2,
+or P vs NP.
 -/
 namespace PvNP.RealizableHardness.ActualDecodeInputFPChecks
 open Complexity
@@ -49,6 +51,9 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readParametersTag
 #check readParametersTag_mem_FP
 #check readParametersTag_of_tree
+#check readTableTag
+#check readTableTag_mem_FP
+#check readTableTag_empty
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -69,6 +74,8 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readRowListTag_of_pair
 #print axioms readParametersTag_mem_FP
 #print axioms readParametersTag_of_tree
+#print axioms readTableTag_mem_FP
+#print axioms readTableTag_empty
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -85,6 +92,8 @@ example : readRowTag ∈ Complexity.FP := readRowTag_mem_FP
 example : readRowListTag ∈ Complexity.FP := readRowListTag_mem_FP
 
 example : readParametersTag ∈ Complexity.FP := readParametersTag_mem_FP
+
+example : readTableTag ∈ Complexity.FP := readTableTag_mem_FP
 
 example (n : Nat) :
     readFormulaTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
@@ -114,6 +123,8 @@ example (n : Nat) :
 example : readParametersTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) =
     [] := by
   simp [readParametersTag_of_tree, ExecutablePipelineInput.readParameters]
+
+example : readTableTag [] = [] := readTableTag_empty
 
 example : decodeInputTag [] = [] := decodeInputTag_empty
 

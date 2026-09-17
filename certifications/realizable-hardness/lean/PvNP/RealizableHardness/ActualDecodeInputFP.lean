@@ -19,7 +19,9 @@ the signed-element list spine. `readFormulaTag` packs var/and/or tags plus
 is `readFormulaTag_of_pair`. `readRowTag` packs `readSignedTag` plus
 `readFormulaTag`. `readRowListTag` packs `readList (readRow n)` on
 `pair n.bits (encode t)`. `readParametersTag` packs three signed tags plus
-`readNatTag`. This module does
+`readNatTag`. `readTableTag` packs `FiniteSourceSampler.readTable`
+(`ValidRows`: nonempty, nonnegative probabilities, sum = 1). Tree agreement
+for packed rows is not on this increment. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -6986,5 +6988,691 @@ theorem readParametersTag_of_tree (t : CMMSACodec.Tree) :
                                 (q := ⟨sv, ev, gv, kv⟩)
                               simp [hk, emptyFlag_cons, selectHead_false,
                                 dropOne_cons, hw]
+
+/-! ## Packed little-endian multiplication, then `readTable` / `ValidRows`. -/
+
+private def mulPack (rem a acc : List Bool) : List Bool :=
+  pair rem (pair a acc)
+
+private theorem mulPack_length (rem a acc : List Bool) :
+    (mulPack rem a acc).length =
+      2 * rem.length + 2 * a.length + acc.length + 4 := by
+  simp [mulPack, pair_length]; omega
+
+private def mulStep (st : List Bool) : List Bool :=
+  let rem := pairFst st
+  let a := pairFst (pairSnd st)
+  let acc := pairSnd (pairSnd st)
+  Cobham.selectHead (emptyFlag rem) st
+    (mulPack (dropOne rem) (shl1 a)
+      (Cobham.selectHead rem (addCanon acc a) acc))
+
+private theorem mulStep_mem_FP : mulStep ∈ FP := by
+  have hrem : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have ha : (fun st : List Bool => pairFst (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd (pairSnd st)) ∈ FP :=
+    mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hdrem := dropOneFn_mem_FP hrem
+  have hshl := shl1_mem_FP ha
+  have hadd := addCanon_mem_FP hacc ha
+  have hsel := Cobham.selectHeadFn_mem_FP hrem hadd hacc
+  have hpack := Cobham.pairFn_mem_FP hdrem (Cobham.pairFn_mem_FP hshl hsel)
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hrem) id_mem_FP hpack
+
+private def mulInit (a b : List Bool) : List Bool := mulPack b a []
+
+private def mulRuler (a b : List Bool) : List Bool := b ++ [false]
+
+private def mulArg (a b : List Bool) : List Bool :=
+  a ++ b ++ List.replicate 16 false
+
+private def mulWidth (a b : List Bool) : List Bool :=
+  List.replicate
+    ((mulArg a b).length * (mulArg a b).length * (mulArg a b).length) false
+
+private theorem mulInit_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => mulInit (a z) (b z)) ∈ FP :=
+  Cobham.pairFn_mem_FP hb (Cobham.pairFn_mem_FP ha (constFn_mem_FP []))
+
+private theorem mulRuler_mem_FP {a b : List Bool → List Bool}
+    (_ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => mulRuler (a z) (b z)) ∈ FP :=
+  Cobham.appendFn_mem_FP hb (constFn_mem_FP [false])
+
+private theorem mulWidth_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => mulWidth (a z) (b z)) ∈ FP := by
+  have harg : (fun z => a z ++ b z ++ List.replicate 16 false) ∈ FP :=
+    Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP ha hb)
+      (Cobham.const_replicate_mem_FP 16)
+  have hsq := Cobham.mulLenFn_mem_FP harg harg
+  have hcube := Cobham.mulLenFn_mem_FP hsq harg
+  refine mem_FP_of_eq hcube fun z => ?_
+  simp [mulWidth, mulArg, List.length_replicate]
+
+private theorem mulRuler_length (a b : List Bool) :
+    (mulRuler a b).length = b.length + 1 := by
+  simp [mulRuler]
+
+private theorem mulWidth_length (a b : List Bool) :
+    (mulWidth a b).length =
+      (a.length + b.length + 16) * (a.length + b.length + 16) *
+        (a.length + b.length + 16) := by
+  simp [mulWidth, mulArg, List.length_append, List.length_replicate]
+  ring
+
+private theorem mul_poly_bound (A B n : Nat) (hn : n ≤ B + 1) :
+    2 * B + 2 * (A + n) + (n + 1) * (A + n + 2) + 4 ≤
+      (A + B + 16) * (A + B + 16) * (A + B + 16) := by
+  have h1 : 2 * B + 2 * (A + n) + (n + 1) * (A + n + 2) + 4 ≤
+      A * B + B * B + 4 * A + 9 * B + 16 := by
+    nlinarith
+  have h2 : A * B + B * B + 4 * A + 9 * B + 16 ≤
+      (A + B + 16) * (A + B + 16) * (A + B + 16) := by
+    nlinarith
+  exact h1.trans h2
+
+private structure MulReach (a0 b0 : List Bool) (n : Nat) (st : List Bool) : Prop where
+  rem_le : (pairFst st).length ≤ b0.length
+  a_le : (pairFst (pairSnd st)).length ≤ a0.length + n
+  acc_le : (pairSnd (pairSnd st)).length ≤ (n + 1) * (a0.length + n + 2)
+  st_le : st.length ≤ (mulWidth a0 b0).length
+
+private theorem mulReach_init (a b : List Bool) : MulReach a b 0 (mulInit a b) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · simp [mulInit, mulPack]
+  · simp [mulInit, mulPack]
+  · simp [mulInit, mulPack]
+  · simp [mulInit, mulPack, pair_length, mulWidth_length]
+    have := mul_poly_bound a.length b.length 0 (by omega)
+    omega
+
+private theorem mulReach_selectHead (a b : List Bool) (n : Nat) (s x y : List Bool)
+    (hx : MulReach a b n x) (hy : MulReach a b n y) :
+    MulReach a b n (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil]
+
+private theorem mulReach_pack (a0 b0 : List Bool) (n : Nat)
+    (rem a acc : List Bool)
+    (hrem : rem.length ≤ b0.length) (ha : a.length ≤ a0.length + n)
+    (hacc : acc.length ≤ (n + 1) * (a0.length + n + 2))
+    (hn : n ≤ b0.length + 1) :
+    MulReach a0 b0 n (mulPack rem a acc) := by
+  refine ⟨?_, ?_, ?_, ?_⟩
+  · simpa [mulPack] using hrem
+  · simpa [mulPack] using ha
+  · simpa [mulPack] using hacc
+  · simp [mulPack, pair_length, mulWidth_length]
+    have hlin :
+        2 * rem.length + 2 * a.length + acc.length + 4 ≤
+          2 * b0.length + 2 * (a0.length + n) +
+            (n + 1) * (a0.length + n + 2) + 4 := by omega
+    have hform :
+        2 * rem.length + 2 + (2 * a.length + 2 + acc.length) =
+          2 * rem.length + 2 * a.length + acc.length + 4 := by omega
+    rw [hform]
+    exact hlin.trans (mul_poly_bound a0.length b0.length n hn)
+
+private theorem mulStep_reach (a0 b0 : List Bool) (n : Nat) (st : List Bool)
+    (hn : n ≤ b0.length) (h : MulReach a0 b0 n st) :
+    MulReach a0 b0 (n + 1) (mulStep st) := by
+  unfold mulStep
+  have hstay : MulReach a0 b0 (n + 1) st :=
+    ⟨h.rem_le,
+      Nat.le_succ_of_le h.a_le,
+      (h.acc_le).trans (by nlinarith),
+      h.st_le⟩
+  have hrem' : (dropOne (pairFst st)).length ≤ b0.length := by
+    have := h.rem_le
+    simp [dropOne]; omega
+  have ha' : (shl1 (pairFst (pairSnd st))).length ≤ a0.length + (n + 1) := by
+    have := shl1_length (pairFst (pairSnd st))
+    have := h.a_le
+    omega
+  have hadd : (addCanon (pairSnd (pairSnd st)) (pairFst (pairSnd st))).length ≤
+      (n + 2) * (a0.length + (n + 1) + 2) := by
+    have hs := addCanon_length (pairSnd (pairSnd st)) (pairFst (pairSnd st))
+    have := h.acc_le
+    have := h.a_le
+    have : (pairSnd (pairSnd st)).length + (pairFst (pairSnd st)).length + 2 ≤
+        (n + 2) * (a0.length + (n + 1) + 2) := by nlinarith
+    exact hs.trans this
+  have hkeep : (pairSnd (pairSnd st)).length ≤
+      (n + 2) * (a0.length + (n + 1) + 2) := by
+    have := h.acc_le; nlinarith
+  have hsel : (Cobham.selectHead (pairFst st)
+      (addCanon (pairSnd (pairSnd st)) (pairFst (pairSnd st)))
+      (pairSnd (pairSnd st))).length ≤
+      (n + 2) * (a0.length + (n + 1) + 2) :=
+    selectHead_length_le_of _ _ _ hadd hkeep
+  have hpack := mulReach_pack a0 b0 (n + 1)
+    (dropOne (pairFst st)) (shl1 (pairFst (pairSnd st)))
+    (Cobham.selectHead (pairFst st)
+      (addCanon (pairSnd (pairSnd st)) (pairFst (pairSnd st)))
+      (pairSnd (pairSnd st)))
+    hrem' ha' hsel (Nat.succ_le_succ hn)
+  exact mulReach_selectHead a0 b0 (n + 1) (emptyFlag (pairFst st)) st _
+    hstay hpack
+
+private theorem mulReach_iterate (a b : List Bool) :
+    ∀ n, n ≤ b.length + 1 → MulReach a b n (mulStep^[n] (mulInit a b)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact mulReach_init a b
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact mulStep_reach a b n _ (by omega) (ih (by omega))
+
+private def mulRunPair (z : List Bool) : List Bool :=
+  mulStep^[(mulRuler (pairFst z) (pairSnd z)).length]
+    (mulInit (pairFst z) (pairSnd z))
+
+private theorem mulRunPair_mem_FP : mulRunPair ∈ FP := by
+  have hinit : (fun z => mulInit (pairFst z) (pairSnd z)) ∈ FP :=
+    mulInit_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hruler := mulRuler_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hwidth := mulWidth_mem_FP Cobham.fstBlock_mem_FP Cobham.sndBlock_mem_FP
+  have hbound : ∀ z : List Bool, ∀ n ≤ (mulRuler (pairFst z) (pairSnd z)).length,
+      (mulStep^[n] (mulInit (pairFst z) (pairSnd z))).length ≤
+        (mulWidth (pairFst z) (pairSnd z)).length := by
+    intro z n hn
+    have : n ≤ (pairSnd z).length + 1 := by
+      simpa [mulRuler_length] using hn
+    exact (mulReach_iterate (pairFst z) (pairSnd z) n this).st_le
+  exact Cobham.iterate_mem_FP mulStep_mem_FP hinit hruler hwidth hbound
+
+private def mulCanon (a b : List Bool) : List Bool :=
+  stripTrailing (pairSnd (pairSnd (mulRunPair (pair a b))))
+
+private theorem mulCanon_mem_FP {a b : List Bool → List Bool}
+    (ha : a ∈ FP) (hb : b ∈ FP) :
+    (fun z => mulCanon (a z) (b z)) ∈ FP := by
+  have hrun := mem_FP_comp (Cobham.pairFn_mem_FP ha hb) mulRunPair_mem_FP
+  have hacc := mem_FP_comp hrun
+    (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+  exact mem_FP_comp hacc stripTrailing_mem_FP
+
+/-! Packed `ValidRows` walk. Accumulators are length-clamped to a linear
+tape so the iterate width stays polynomial; tree agreement is later. -/
+
+private def validBound (src : List Bool) : List Bool :=
+  src ++ src ++ List.replicate 64 false
+
+private theorem validBound_length (src : List Bool) :
+    (validBound src).length = 2 * src.length + 64 := by
+  simp [validBound, List.length_append, List.length_replicate]
+  omega
+
+private theorem validBound_mem_FP {s : List Bool → List Bool} (hs : s ∈ FP) :
+    (fun z => validBound (s z)) ∈ FP :=
+  Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP hs hs)
+    (Cobham.const_replicate_mem_FP 64)
+
+private def validClamp (src x : List Bool) : List Bool :=
+  x.take (validBound src).length
+
+private theorem validClamp_length (src x : List Bool) :
+    (validClamp src x).length ≤ (validBound src).length :=
+  List.length_take_le _ _
+
+private theorem validClamp_mem_FP {s x : List Bool → List Bool}
+    (hs : s ∈ FP) (hx : x ∈ FP) :
+    (fun z => validClamp (s z) (x z)) ∈ FP :=
+  Cobham.takeLenFn_mem_FP (validBound_mem_FP hs) hx
+
+private def validPack (src rem num den flag seen : List Bool) : List Bool :=
+  pair src (pair rem (pair num (pair den (pair flag seen))))
+
+private theorem validPack_length (src rem num den flag seen : List Bool) :
+    (validPack src rem num den flag seen).length =
+      2 * src.length + 2 * rem.length + 2 * num.length + 2 * den.length +
+        2 * flag.length + seen.length + 10 := by
+  simp [validPack, pair_length]; omega
+
+private def vSrc (st : List Bool) : List Bool := pairFst st
+private def vRem (st : List Bool) : List Bool := pairFst (pairSnd st)
+private def vNum (st : List Bool) : List Bool :=
+  pairFst (pairSnd (pairSnd st))
+private def vDen (st : List Bool) : List Bool :=
+  pairFst (pairSnd (pairSnd (pairSnd st)))
+private def vFlag (st : List Bool) : List Bool :=
+  pairFst (pairSnd (pairSnd (pairSnd (pairSnd st))))
+private def vSeen (st : List Bool) : List Bool :=
+  pairSnd (pairSnd (pairSnd (pairSnd (pairSnd st))))
+
+private theorem vSrc_mem_FP : vSrc ∈ FP := Cobham.fstBlock_mem_FP
+private theorem vRem_mem_FP : vRem ∈ FP :=
+  mem_FP_comp Cobham.sndBlock_mem_FP Cobham.fstBlock_mem_FP
+private theorem vNum_mem_FP : vNum ∈ FP :=
+  mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+    Cobham.fstBlock_mem_FP
+private theorem vDen_mem_FP : vDen ∈ FP :=
+  mem_FP_comp
+    (mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+      Cobham.sndBlock_mem_FP)
+    Cobham.fstBlock_mem_FP
+private theorem vFlag_mem_FP : vFlag ∈ FP :=
+  mem_FP_comp
+    (mem_FP_comp
+      (mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+        Cobham.sndBlock_mem_FP)
+      Cobham.sndBlock_mem_FP)
+    Cobham.fstBlock_mem_FP
+private theorem vSeen_mem_FP : vSeen ∈ FP :=
+  mem_FP_comp
+    (mem_FP_comp
+      (mem_FP_comp (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
+        Cobham.sndBlock_mem_FP)
+      Cobham.sndBlock_mem_FP)
+    Cobham.sndBlock_mem_FP
+
+private def vRow (st : List Bool) : List Bool := nodeLeft (vRem st)
+private def vRest (st : List Bool) : List Bool := nodeRight (vRem st)
+private def vSig (st : List Bool) : List Bool := nodeLeft (vRow st)
+private def vRat (st : List Bool) : List Bool := nodeRight (vSig st)
+private def vNBits (st : List Bool) : List Bool :=
+  stripTrailing (dropOne (readDigitsTag (nodeLeft (vRat st))))
+private def vDBits (st : List Bool) : List Bool :=
+  stripTrailing (dropOne (readDigitsTag (nodeRight (vRat st))))
+
+private theorem vRow_mem_FP : vRow ∈ FP :=
+  mem_FP_comp vRem_mem_FP nodeLeft_mem_FP
+private theorem vRest_mem_FP : vRest ∈ FP :=
+  mem_FP_comp vRem_mem_FP nodeRight_mem_FP
+private theorem vSig_mem_FP : vSig ∈ FP :=
+  mem_FP_comp vRow_mem_FP nodeLeft_mem_FP
+private theorem vRat_mem_FP : vRat ∈ FP :=
+  mem_FP_comp vSig_mem_FP nodeRight_mem_FP
+
+private theorem vNBits_mem_FP : vNBits ∈ FP := by
+  have hnl := mem_FP_comp vRat_mem_FP nodeLeft_mem_FP
+  have hdig := mem_FP_comp hnl readDigitsTag_mem_FP
+  have hdrop := dropOneFn_mem_FP hdig
+  have hstrip := mem_FP_comp hdrop stripTrailing_mem_FP
+  refine mem_FP_of_eq hstrip fun st => ?_
+  simp only [vNBits, Function.comp]
+
+private theorem vDBits_mem_FP : vDBits ∈ FP := by
+  have hnr := mem_FP_comp vRat_mem_FP nodeRight_mem_FP
+  have hdig := mem_FP_comp hnr readDigitsTag_mem_FP
+  have hdrop := dropOneFn_mem_FP hdig
+  have hstrip := mem_FP_comp hdrop stripTrailing_mem_FP
+  refine mem_FP_of_eq hstrip fun st => ?_
+  simp only [vDBits, Function.comp]
+
+private def vFail (st : List Bool) : List Bool :=
+  validPack (vSrc st) (vRem st) (vNum st) (vDen st) [true] (vSeen st)
+
+private def vSucc (st : List Bool) : List Bool :=
+  validPack (vSrc st) (vRest st)
+    (validClamp (vSrc st)
+      (addCanon (mulCanon (vNum st) (vDBits st))
+        (mulCanon (vNBits st) (vDen st))))
+    (validClamp (vSrc st) (mulCanon (vDen st) (vDBits st)))
+    [] [true]
+
+private theorem vFail_mem_FP : vFail ∈ FP :=
+  Cobham.pairFn_mem_FP vSrc_mem_FP
+    (Cobham.pairFn_mem_FP vRem_mem_FP
+      (Cobham.pairFn_mem_FP vNum_mem_FP
+        (Cobham.pairFn_mem_FP vDen_mem_FP
+          (Cobham.pairFn_mem_FP (constFn_mem_FP [true]) vSeen_mem_FP))))
+
+private theorem vSucc_mem_FP : vSucc ∈ FP := by
+  have hmul1 := mulCanon_mem_FP vNum_mem_FP vDBits_mem_FP
+  have hmul2 := mulCanon_mem_FP vNBits_mem_FP vDen_mem_FP
+  have hmul3 := mulCanon_mem_FP vDen_mem_FP vDBits_mem_FP
+  have hadd := addCanon_mem_FP hmul1 hmul2
+  have hnum := validClamp_mem_FP vSrc_mem_FP hadd
+  have hden := validClamp_mem_FP vSrc_mem_FP hmul3
+  exact Cobham.pairFn_mem_FP vSrc_mem_FP
+    (Cobham.pairFn_mem_FP vRest_mem_FP
+      (Cobham.pairFn_mem_FP hnum
+        (Cobham.pairFn_mem_FP hden
+          (Cobham.pairFn_mem_FP (constFn_mem_FP []) (constFn_mem_FP [true])))))
+
+private def validDigitsOk (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (vDBits st)) (vFail st) (vSucc st)
+
+private theorem validDigitsOk_mem_FP : validDigitsOk ∈ FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP vDBits_mem_FP)
+    vFail_mem_FP vSucc_mem_FP
+
+private def validDRead (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (readDigitsTag (nodeRight (vRat st))))
+    (vFail st) (validDigitsOk st)
+
+private theorem validDRead_mem_FP : validDRead ∈ FP := by
+  have hnr := mem_FP_comp vRat_mem_FP nodeRight_mem_FP
+  have hdig := mem_FP_comp hnr readDigitsTag_mem_FP
+  have hempty := emptyFlagFn_mem_FP hdig
+  have hsel := Cobham.selectHeadFn_mem_FP hempty vFail_mem_FP validDigitsOk_mem_FP
+  refine mem_FP_of_eq hsel fun st => ?_
+  simp only [validDRead, Function.comp]
+
+private def validNRead (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (readDigitsTag (nodeLeft (vRat st))))
+    (vFail st) (validDRead st)
+
+private theorem validNRead_mem_FP : validNRead ∈ FP := by
+  have hnl := mem_FP_comp vRat_mem_FP nodeLeft_mem_FP
+  have hdig := mem_FP_comp hnl readDigitsTag_mem_FP
+  have hempty := emptyFlagFn_mem_FP hdig
+  have hsel := Cobham.selectHeadFn_mem_FP hempty vFail_mem_FP validDRead_mem_FP
+  refine mem_FP_of_eq hsel fun st => ?_
+  simp only [validNRead, Function.comp]
+
+private def validSign (st : List Bool) : List Bool :=
+  Cobham.selectHead (Cobham.eqFlag (nodeLeft (vSig st)) [false])
+    (validNRead st) (vFail st)
+
+private theorem validSign_mem_FP : validSign ∈ FP := by
+  have hleft := mem_FP_comp vSig_mem_FP nodeLeft_mem_FP
+  exact Cobham.selectHeadFn_mem_FP
+    (eqFlagFn_mem_FP hleft (constFn_mem_FP [false]))
+    validNRead_mem_FP vFail_mem_FP
+
+private def validRowNode (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (splitNode (vRow st)))
+    (vFail st) (validSign st)
+
+private theorem validRowNode_mem_FP : validRowNode ∈ FP := by
+  have hsplit := mem_FP_comp vRow_mem_FP splitNode_mem_FP
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    vFail_mem_FP validSign_mem_FP
+
+private def validRemNode (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (splitNode (vRem st)))
+    (vFail st) (validRowNode st)
+
+private theorem validRemNode_mem_FP : validRemNode ∈ FP := by
+  have hsplit := mem_FP_comp vRem_mem_FP splitNode_mem_FP
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    vFail_mem_FP validRowNode_mem_FP
+
+private def validLeaf (st : List Bool) : List Bool :=
+  Cobham.selectHead (Cobham.eqFlag (vRem st) [false]) st (validRemNode st)
+
+private theorem validLeaf_mem_FP : validLeaf ∈ FP :=
+  Cobham.selectHeadFn_mem_FP
+    (eqFlagFn_mem_FP vRem_mem_FP (constFn_mem_FP [false]))
+    id_mem_FP validRemNode_mem_FP
+
+private def validStep (st : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag (vFlag st)) (validLeaf st) st
+
+private theorem validStep_mem_FP : validStep ∈ FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP vFlag_mem_FP)
+    validLeaf_mem_FP id_mem_FP
+
+private def validInit (z : List Bool) : List Bool :=
+  validPack z z [] [true] [] []
+
+private def validRuler (z : List Bool) : List Bool := z ++ [false]
+
+private def validArg (z : List Bool) : List Bool :=
+  z ++ z ++ z ++ z ++ List.replicate 64 false
+
+private def validWidth (z : List Bool) : List Bool :=
+  List.replicate
+    ((validArg z).length * (validArg z).length *
+      (validArg z).length * (validArg z).length) false
+
+private theorem validInit_mem_FP : validInit ∈ FP :=
+  Cobham.pairFn_mem_FP id_mem_FP
+    (Cobham.pairFn_mem_FP id_mem_FP
+      (constFn_mem_FP (pair [] (pair [true] (pair [] [])))))
+
+private theorem validRuler_mem_FP : validRuler ∈ FP :=
+  Cobham.appendFn_mem_FP id_mem_FP (constFn_mem_FP [false])
+
+private theorem validArg_mem_FP : validArg ∈ FP :=
+  Cobham.appendFn_mem_FP
+    (Cobham.appendFn_mem_FP
+      (Cobham.appendFn_mem_FP
+        (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+        id_mem_FP)
+      id_mem_FP)
+    (Cobham.const_replicate_mem_FP 64)
+
+private theorem validWidth_mem_FP : validWidth ∈ FP := by
+  have harg := validArg_mem_FP
+  have hsq := Cobham.mulLenFn_mem_FP harg harg
+  have hcube := Cobham.mulLenFn_mem_FP hsq harg
+  have hquart := Cobham.mulLenFn_mem_FP hcube harg
+  refine mem_FP_of_eq hquart fun z => ?_
+  simp [validWidth, List.length_replicate]
+
+private theorem validRuler_length (z : List Bool) :
+    (validRuler z).length = z.length + 1 := by
+  simp [validRuler]
+
+private theorem validWidth_length (z : List Bool) :
+    (validWidth z).length =
+      (4 * z.length + 64) * (4 * z.length + 64) *
+        (4 * z.length + 64) * (4 * z.length + 64) := by
+  simp [validWidth, validArg, List.length_append, List.length_replicate]
+  ring
+
+private theorem valid_poly_bound (n : Nat) :
+    2 * n + 2 * n + 2 * (2 * n + 64) + 2 * (2 * n + 64) + 13 ≤
+      (4 * n + 64) * (4 * n + 64) * (4 * n + 64) * (4 * n + 64) := by
+  have heq : 2 * n + 2 * n + 2 * (2 * n + 64) + 2 * (2 * n + 64) + 13 =
+      12 * n + 269 := by ring
+  have hlin : 12 * n + 269 ≤ (4 * n + 64) * (4 * n + 64) := by nlinarith
+  have hpos : 0 < (4 * n + 64) * (4 * n + 64) := by nlinarith
+  have hsq : (4 * n + 64) * (4 * n + 64) ≤
+      (4 * n + 64) * (4 * n + 64) * (4 * n + 64) * (4 * n + 64) := by
+    have := Nat.le_mul_of_pos_left ((4 * n + 64) * (4 * n + 64)) hpos
+    simpa [Nat.mul_assoc] using this
+  rw [heq]
+  exact hlin.trans hsq
+
+private structure ValidReach (z : List Bool) (st : List Bool) : Prop where
+  src_le : (vSrc st).length ≤ z.length
+  rem_le : (vRem st).length ≤ z.length
+  num_le : (vNum st).length ≤ 2 * z.length + 64
+  den_le : (vDen st).length ≤ 2 * z.length + 64
+  flag_le : (vFlag st).length ≤ 1
+  seen_le : (vSeen st).length ≤ 1
+  st_le : st.length ≤ (validWidth z).length
+
+private theorem validReach_selectHead (z : List Bool) (s x y : List Bool)
+    (hx : ValidReach z x) (hy : ValidReach z y) :
+    ValidReach z (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [vSrc, vRem, vNum, vDen, vFlag, vSeen, pairFst,
+        pairSnd_nil]
+
+private theorem validReach_pack (z : List Bool)
+    (src rem num den flag seen : List Bool)
+    (hsrc : src.length ≤ z.length) (hrem : rem.length ≤ z.length)
+    (hnum : num.length ≤ 2 * z.length + 64)
+    (hden : den.length ≤ 2 * z.length + 64)
+    (hflag : flag.length ≤ 1) (hseen : seen.length ≤ 1) :
+    ValidReach z (validPack src rem num den flag seen) := by
+  refine ⟨?_, ?_, ?_, ?_, ?_, ?_, ?_⟩
+  · simpa [vSrc, validPack, pairFst_pair] using hsrc
+  · simpa [vRem, validPack, pairFst_pair, pairSnd_pair] using hrem
+  · simpa [vNum, validPack, pairFst_pair, pairSnd_pair] using hnum
+  · simpa [vDen, validPack, pairFst_pair, pairSnd_pair] using hden
+  · simpa [vFlag, validPack, pairFst_pair, pairSnd_pair] using hflag
+  · simpa [vSeen, validPack, pairFst_pair, pairSnd_pair] using hseen
+  · simp [validPack_length, validWidth_length]
+    have hlin :
+        2 * src.length + 2 * rem.length + 2 * num.length + 2 * den.length +
+          2 * flag.length + seen.length + 10 ≤
+          2 * z.length + 2 * z.length + 2 * (2 * z.length + 64) +
+            2 * (2 * z.length + 64) + 13 := by omega
+    exact hlin.trans (valid_poly_bound z.length)
+
+private theorem validReach_init (z : List Bool) :
+    ValidReach z (validInit z) :=
+  validReach_pack z z z [] [true] [] [] (by simp) (by simp) (by simp)
+    (by simp) (by simp) (by simp)
+
+private theorem validReach_fail (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (vFail st) :=
+  validReach_pack z (vSrc st) (vRem st) (vNum st) (vDen st) [true] (vSeen st)
+    h.src_le h.rem_le h.num_le h.den_le (by simp) h.seen_le
+
+private theorem validReach_succ (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (vSucc st) := by
+  have hrest : (vRest st).length ≤ z.length :=
+    (nodeRight_length_le (vRem st)).trans h.rem_le
+  have hnum : (validClamp (vSrc st)
+      (addCanon (mulCanon (vNum st) (vDBits st))
+        (mulCanon (vNBits st) (vDen st)))).length ≤ 2 * z.length + 64 := by
+    have := validClamp_length (vSrc st)
+      (addCanon (mulCanon (vNum st) (vDBits st))
+        (mulCanon (vNBits st) (vDen st)))
+    have hsrc := h.src_le
+    simp [validBound_length] at this
+    omega
+  have hden : (validClamp (vSrc st)
+      (mulCanon (vDen st) (vDBits st))).length ≤ 2 * z.length + 64 := by
+    have := validClamp_length (vSrc st) (mulCanon (vDen st) (vDBits st))
+    have hsrc := h.src_le
+    simp [validBound_length] at this
+    omega
+  exact validReach_pack z (vSrc st) (vRest st)
+    (validClamp (vSrc st)
+      (addCanon (mulCanon (vNum st) (vDBits st))
+        (mulCanon (vNBits st) (vDen st))))
+    (validClamp (vSrc st) (mulCanon (vDen st) (vDBits st)))
+    [] [true] h.src_le hrest hnum hden (by simp) (by simp)
+
+private theorem validDigitsOk_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validDigitsOk st) :=
+  validReach_selectHead z (emptyFlag (vDBits st)) (vFail st) (vSucc st)
+    (validReach_fail z st h) (validReach_succ z st h)
+
+private theorem validDRead_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validDRead st) :=
+  validReach_selectHead z
+    (emptyFlag (readDigitsTag (nodeRight (vRat st))))
+    (vFail st) (validDigitsOk st)
+    (validReach_fail z st h) (validDigitsOk_reach z st h)
+
+private theorem validNRead_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validNRead st) :=
+  validReach_selectHead z
+    (emptyFlag (readDigitsTag (nodeLeft (vRat st))))
+    (vFail st) (validDRead st)
+    (validReach_fail z st h) (validDRead_reach z st h)
+
+private theorem validSign_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validSign st) :=
+  validReach_selectHead z (Cobham.eqFlag (nodeLeft (vSig st)) [false])
+    (validNRead st) (vFail st)
+    (validNRead_reach z st h) (validReach_fail z st h)
+
+private theorem validRowNode_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validRowNode st) :=
+  validReach_selectHead z (emptyFlag (splitNode (vRow st)))
+    (vFail st) (validSign st)
+    (validReach_fail z st h) (validSign_reach z st h)
+
+private theorem validRemNode_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validRemNode st) :=
+  validReach_selectHead z (emptyFlag (splitNode (vRem st)))
+    (vFail st) (validRowNode st)
+    (validReach_fail z st h) (validRowNode_reach z st h)
+
+private theorem validLeaf_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validLeaf st) :=
+  validReach_selectHead z (Cobham.eqFlag (vRem st) [false])
+    st (validRemNode st) h (validRemNode_reach z st h)
+
+private theorem validStep_reach (z : List Bool) (st : List Bool)
+    (h : ValidReach z st) :
+    ValidReach z (validStep st) :=
+  validReach_selectHead z (emptyFlag (vFlag st)) (validLeaf st) st
+    (validLeaf_reach z st h) h
+
+private theorem validReach_iterate (z : List Bool) :
+    ∀ n, ValidReach z (validStep^[n] (validInit z)) := by
+  intro n
+  induction n with
+  | zero => exact validReach_init z
+  | succ n ih =>
+      rw [Function.iterate_succ_apply']
+      exact validStep_reach z _ ih
+
+private def validRun (z : List Bool) : List Bool :=
+  validStep^[(validRuler z).length] (validInit z)
+
+private theorem validRun_mem_FP : validRun ∈ FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (validRuler z).length,
+      (validStep^[n] (validInit z)).length ≤ (validWidth z).length := by
+    intro z n _
+    exact (validReach_iterate z n).st_le
+  exact Cobham.iterate_mem_FP validStep_mem_FP validInit_mem_FP
+    validRuler_mem_FP validWidth_mem_FP hbound
+
+private def validRowsFlag (enc : List Bool) : List Bool :=
+  let st := validRun enc
+  Cobham.selectHead (vSeen st)
+    (Cobham.selectHead (emptyFlag (vFlag st))
+      (Cobham.selectHead (Cobham.eqFlag (vRem st) [false])
+        (Cobham.selectHead (emptyFlag (vDen st)) []
+          (Cobham.selectHead (Cobham.eqFlag (vNum st) (vDen st)) [true] []))
+        [])
+      [])
+    []
+
+private theorem validRowsFlag_mem_FP : validRowsFlag ∈ FP := by
+  have hst := validRun_mem_FP
+  have hseen := mem_FP_comp hst vSeen_mem_FP
+  have hflag := mem_FP_comp hst vFlag_mem_FP
+  have hrem := mem_FP_comp hst vRem_mem_FP
+  have hnum := mem_FP_comp hst vNum_mem_FP
+  have hden := mem_FP_comp hst vDen_mem_FP
+  have heq := eqFlagFn_mem_FP hnum hden
+  have hleaf := eqFlagFn_mem_FP hrem (constFn_mem_FP [false])
+  have hsum := Cobham.selectHeadFn_mem_FP heq (constFn_mem_FP [true])
+    (constFn_mem_FP [])
+  have hden0 := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hden)
+    (constFn_mem_FP []) hsum
+  have hleaf? := Cobham.selectHeadFn_mem_FP hleaf hden0 (constFn_mem_FP [])
+  have hok := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hflag)
+    hleaf? (constFn_mem_FP [])
+  exact Cobham.selectHeadFn_mem_FP hseen hok (constFn_mem_FP [])
+
+/-- Pack `FiniteSourceSampler.readTable` on a packed row-list tape.
+Empty = none or `ValidRows` failure; nonempty = the same packed rows. -/
+def readTableTag (z : List Bool) : List Bool :=
+  Cobham.selectHead (emptyFlag z) []
+    (Cobham.selectHead (validRowsFlag (dropOne z)) z [])
+
+theorem readTableTag_mem_FP : readTableTag ∈ Complexity.FP :=
+  Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP id_mem_FP) (constFn_mem_FP [])
+    (Cobham.selectHeadFn_mem_FP
+      (mem_FP_comp (dropOneFn_mem_FP id_mem_FP) validRowsFlag_mem_FP)
+      id_mem_FP (constFn_mem_FP []))
+
+theorem readTableTag_empty : readTableTag [] = [] := by
+  simp [readTableTag, emptyFlag_nil, selectHead_true]
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
