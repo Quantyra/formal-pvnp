@@ -14,7 +14,9 @@ are on the Cobham/semantic surface. `readRowTag`, `readRowTag_mem_FP`, and
 `readParametersTag_mem_FP`, and `readParametersTag_of_tree` pack three
 signed tags plus `readNat`. `readTableTag` and `readTableTag_mem_FP` pack
 `FiniteSourceSampler.readTable` / `ValidRows`. Tree agreement for packed rows
-is not on this increment. `decodeInputTag_mem_FP` remains. This file does not
+is not on this increment. `listLenBits`, `listLenBits_mem_FP`, and
+`listLenBits_of_listTree` pack the cons-count of a list-tree encoding as
+`n.bits`. `decodeInputTag_mem_FP` remains. This file does not
 inhabit `hSrcCmmsa` and does not assert unconditional Theorem 1, Corollary 2,
 or P vs NP.
 -/
@@ -54,6 +56,10 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #check readTableTag
 #check readTableTag_mem_FP
 #check readTableTag_empty
+#check listLenBits
+#check listLenBits_mem_FP
+#check listLenBits_of_listTree
+#check listLenBits_leaf
 
 #print axioms decodeInputTag_empty
 #print axioms decodeInputTag_none
@@ -76,6 +82,9 @@ open PvNP.RealizableHardness.ExecutablePipelineInput
 #print axioms readParametersTag_of_tree
 #print axioms readTableTag_mem_FP
 #print axioms readTableTag_empty
+#print axioms listLenBits_mem_FP
+#print axioms listLenBits_of_listTree
+#print axioms listLenBits_leaf
 
 example : gcdBits ∈ Complexity.FP := gcdBits_mem_FP
 
@@ -94,6 +103,8 @@ example : readRowListTag ∈ Complexity.FP := readRowListTag_mem_FP
 example : readParametersTag ∈ Complexity.FP := readParametersTag_mem_FP
 
 example : readTableTag ∈ Complexity.FP := readTableTag_mem_FP
+
+example : listLenBits ∈ Complexity.FP := listLenBits_mem_FP
 
 example (n : Nat) :
     readFormulaTag (pair n.bits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf)) =
@@ -125,6 +136,12 @@ example : readParametersTag (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) =
   simp [readParametersTag_of_tree, ExecutablePipelineInput.readParameters]
 
 example : readTableTag [] = [] := readTableTag_empty
+
+example : listLenBits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) = [] :=
+  listLenBits_leaf
+
+example : listLenBits (CMMSACodec.Tree.encode (CMMSACodec.listTree [])) = [] :=
+  listLenBits_of_listTree []
 
 example : decodeInputTag [] = [] := decodeInputTag_empty
 

@@ -21,7 +21,8 @@ is `readFormulaTag_of_pair`. `readRowTag` packs `readSignedTag` plus
 `pair n.bits (encode t)`. `readParametersTag` packs three signed tags plus
 `readNatTag`. `readTableTag` packs `FiniteSourceSampler.readTable`
 (`ValidRows`: nonempty, nonnegative probabilities, sum = 1). Tree agreement
-for packed rows is not on this increment. This module does
+for packed rows is not on this increment. `listLenBits` packs the cons-count
+of a list-tree encoding as little-endian `n.bits`. This module does
 not claim `decodeInputTag ∈ FP` until `decodeInputTag_mem_FP`. Empty tape =
 none (malformed, truncated, trailing bits, or field/source validation failure).
 Nonempty packed input = `true :: encodeInput x`.
@@ -7200,6 +7201,106 @@ private theorem mulCanon_mem_FP {a b : List Bool → List Bool}
     (mem_FP_comp Cobham.sndBlock_mem_FP Cobham.sndBlock_mem_FP)
   exact mem_FP_comp hacc stripTrailing_mem_FP
 
+private def mulVal (st : List Bool) : Nat :=
+  bitValue (pairSnd (pairSnd st)) +
+    bitValue (pairFst (pairSnd st)) * bitValue (pairFst st)
+
+private theorem mulPack_val (rem a acc : List Bool) :
+    mulVal (mulPack rem a acc) =
+      bitValue acc + bitValue a * bitValue rem := by
+  simp [mulVal, mulPack]
+
+private theorem mulInit_val (a b : List Bool) :
+    mulVal (mulInit a b) = bitValue a * bitValue b := by
+  simp [mulInit, mulPack_val, bitValue]
+
+private theorem selectHead_bitValue_add (b : Bool) (t acc a : List Bool) :
+    bitValue (Cobham.selectHead (b :: t) (addCanon acc a) acc) =
+      bitValue acc + b.toNat * bitValue a := by
+  cases b with
+  | false => simp [selectHead_cons_false', Bool.toNat]
+  | true => simp [selectHead_cons_true', addCanon_bitValue, Bool.toNat]
+
+private theorem mulStep_eq (st : List Bool) :
+    mulStep st =
+      Cobham.selectHead (emptyFlag (pairFst st)) st
+        (mulPack (dropOne (pairFst st)) (shl1 (pairFst (pairSnd st)))
+          (Cobham.selectHead (pairFst st)
+            (addCanon (pairSnd (pairSnd st)) (pairFst (pairSnd st)))
+            (pairSnd (pairSnd st)))) := by
+  simp [mulStep]
+
+private theorem mulStep_val (st : List Bool) : mulVal (mulStep st) = mulVal st := by
+  rw [mulStep_eq]
+  cases hrem : pairFst st with
+  | nil =>
+      simp [emptyFlag_nil, selectHead_true, mulVal, hrem, bitValue]
+  | cons b t =>
+      rw [emptyFlag_cons, selectHead_false, dropOne_cons]
+      simp only [mulPack, mulVal, pairFst_pair, pairSnd_pair, shl1_bitValue,
+        selectHead_bitValue_add, hrem]
+      have hbit : bitValue (b :: t) = b.toNat + 2 * bitValue t := by
+        cases b <;> simp [bitValue, Bool.toNat]
+      rw [hbit]
+      ring
+
+private theorem mulStep_iterate_val (st : List Bool) :
+    ∀ n, mulVal (mulStep^[n] st) = mulVal st := by
+  intro n
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', mulStep_val, ih]
+
+private theorem mulStep_rem (st : List Bool) :
+    pairFst (mulStep st) = dropOne (pairFst st) := by
+  rw [mulStep_eq]
+  cases hrem : pairFst st with
+  | nil =>
+      simp [emptyFlag_nil, selectHead_true, dropOne_nil, hrem]
+  | cons _ _ =>
+      simp [emptyFlag_cons, selectHead_false, dropOne_cons, mulPack, hrem]
+
+private theorem mulStep_iterate_rem (st : List Bool) :
+    ∀ n, pairFst (mulStep^[n] st) = (pairFst st).drop n := by
+  intro n
+  induction n with
+  | zero => simp
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', mulStep_rem, ih]
+      simp [dropOne, List.drop_drop, Nat.add_comm]
+
+private theorem mulCanon_bitValue (a b : List Bool) :
+    bitValue (mulCanon a b) = bitValue a * bitValue b := by
+  have hrun : mulRunPair (pair a b) =
+      mulStep^[(mulRuler a b).length] (mulInit a b) := by
+    simp [mulRunPair]
+  have hn : (mulRuler a b).length = b.length + 1 := mulRuler_length a b
+  have hval := mulStep_iterate_val (mulInit a b) (b.length + 1)
+  have hrem := mulStep_iterate_rem (mulInit a b) (b.length + 1)
+  have hfst : pairFst (mulInit a b) = b := by simp [mulInit, mulPack]
+  have hempty : pairFst (mulStep^[b.length + 1] (mulInit a b)) = [] := by
+    rw [hrem, hfst]
+    exact List.drop_eq_nil_of_le (by omega)
+  rw [mulCanon, hrun, hn, stripTrailing_bitValue]
+  unfold mulVal at hval
+  rw [hempty] at hval
+  simp [mulInit, mulPack, bitValue] at hval
+  exact hval
+
+private theorem addCanon_eq_bits (a b : List Bool) :
+    addCanon a b = (bitValue a + bitValue b).bits := by
+  rw [← addCanon_bitValue a b, addCanon, stripTrailing_eq_bits, bitValue_bits]
+
+private theorem mulCanon_eq_bits (a b : List Bool) :
+    mulCanon a b = (bitValue a * bitValue b).bits := by
+  rw [← mulCanon_bitValue a b, mulCanon, stripTrailing_eq_bits, bitValue_bits]
+
+private theorem addBit_succ_bits (n : Nat) : addBit n.bits = (n + 1).bits := by
+  have hval : bitValue (addBit n.bits) = n + 1 := by
+    simpa [bitValue_bits] using addBit_bitValue n.bits
+  rw [← hval, addBit, addCanon, stripTrailing_eq_bits, bitValue_bits]
+
 /-! Packed `ValidRows` walk. Accumulators are length-clamped to a linear
 tape so the iterate width stays polynomial; tree agreement is later. -/
 
@@ -7674,5 +7775,289 @@ theorem readTableTag_mem_FP : readTableTag ∈ Complexity.FP :=
 
 theorem readTableTag_empty : readTableTag [] = [] := by
   simp [readTableTag, emptyFlag_nil, selectHead_true]
+
+/-! Packed cons-count of a list-tree encoding, then `readInput`. -/
+
+private def lenPack (rem acc : List Bool) : List Bool := pair rem acc
+
+private theorem lenPack_length (rem acc : List Bool) :
+    (lenPack rem acc).length = 2 * rem.length + acc.length + 2 := by
+  simp [lenPack, pair_length]; omega
+
+private def lenStep (st : List Bool) : List Bool :=
+  let rem := pairFst st
+  let acc := pairSnd st
+  Cobham.selectHead (emptyFlag rem) st
+    (Cobham.selectHead (Cobham.eqFlag rem [false]) st
+      (Cobham.selectHead (emptyFlag (splitNode rem))
+        (lenPack [] acc)
+        (lenPack (nodeRight rem) (addBit acc))))
+
+private theorem lenStep_mem_FP : lenStep ∈ FP := by
+  have hrem : (fun st : List Bool => pairFst st) ∈ FP := Cobham.fstBlock_mem_FP
+  have hacc : (fun st : List Bool => pairSnd st) ∈ FP := Cobham.sndBlock_mem_FP
+  have hsplit := mem_FP_comp hrem splitNode_mem_FP
+  have hright := mem_FP_comp hrem nodeRight_mem_FP
+  have hadd := addBit_mem_FP hacc
+  have hfail : (fun st : List Bool => lenPack [] (pairSnd st)) ∈ FP :=
+    Cobham.pairFn_mem_FP (constFn_mem_FP []) hacc
+  have hcons : (fun st : List Bool =>
+      lenPack (nodeRight (pairFst st)) (addBit (pairSnd st))) ∈ FP :=
+    Cobham.pairFn_mem_FP hright hadd
+  have hsplit? := Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hsplit)
+    hfail hcons
+  have hleaf := Cobham.selectHeadFn_mem_FP
+    (eqFlagFn_mem_FP hrem (constFn_mem_FP [false])) id_mem_FP hsplit?
+  exact Cobham.selectHeadFn_mem_FP (emptyFlagFn_mem_FP hrem) id_mem_FP hleaf
+
+private def lenInit (z : List Bool) : List Bool := lenPack z []
+
+private def lenRuler (z : List Bool) : List Bool := z ++ [false]
+
+private def lenArg (z : List Bool) : List Bool :=
+  z ++ z ++ List.replicate 16 false
+
+private def lenWidth (z : List Bool) : List Bool :=
+  List.replicate ((lenArg z).length * (lenArg z).length) false
+
+private theorem lenInit_mem_FP : lenInit ∈ FP :=
+  Cobham.pairFn_mem_FP id_mem_FP (constFn_mem_FP [])
+
+private theorem lenRuler_mem_FP : lenRuler ∈ FP :=
+  Cobham.appendFn_mem_FP id_mem_FP (constFn_mem_FP [false])
+
+private theorem lenWidth_mem_FP : lenWidth ∈ FP := by
+  have harg : (fun z => z ++ z ++ List.replicate 16 false) ∈ FP :=
+    Cobham.appendFn_mem_FP (Cobham.appendFn_mem_FP id_mem_FP id_mem_FP)
+      (Cobham.const_replicate_mem_FP 16)
+  have hsq := Cobham.mulLenFn_mem_FP harg harg
+  refine mem_FP_of_eq hsq fun z => ?_
+  simp [lenWidth, lenArg, List.length_replicate]
+
+private theorem lenRuler_length (z : List Bool) :
+    (lenRuler z).length = z.length + 1 := by
+  simp [lenRuler]
+
+private theorem lenWidth_length (z : List Bool) :
+    (lenWidth z).length = (2 * z.length + 16) * (2 * z.length + 16) := by
+  simp [lenWidth, lenArg, List.length_append, List.length_replicate]
+  ring
+
+private theorem addBit_length (x : List Bool) :
+    (addBit x).length ≤ x.length + 3 :=
+  (addCanon_length x [true]).trans (by simp)
+
+private theorem len_poly_bound (n k : Nat) (hk : k ≤ n + 1) :
+    2 * n + 3 * k + 2 ≤ (2 * n + 16) * (2 * n + 16) := by
+  have hlin : 2 * n + 3 * k + 2 ≤ 5 * n + 5 := by omega
+  have hsq : 5 * n + 5 ≤ (2 * n + 16) * (2 * n + 16) := by nlinarith
+  exact hlin.trans hsq
+
+private structure LenReach (z : List Bool) (n : Nat) (st : List Bool) : Prop where
+  rem_le : (pairFst st).length ≤ z.length
+  acc_le : (pairSnd st).length ≤ 3 * n
+  st_le : st.length ≤ (lenWidth z).length
+
+private theorem lenReach_selectHead (z : List Bool) (n : Nat) (s x y : List Bool)
+    (hx : LenReach z n x) (hy : LenReach z n y) :
+    LenReach z n (Cobham.selectHead s x y) := by
+  rw [Cobham.selectHead]
+  split
+  · exact hx
+  · split
+    · exact hy
+    · constructor <;> simp [pairFst, pairSnd_nil]
+
+private theorem lenReach_pack (z : List Bool) (n : Nat) (rem acc : List Bool)
+    (hrem : rem.length ≤ z.length) (hacc : acc.length ≤ 3 * n)
+    (hn : n ≤ z.length + 1) :
+    LenReach z n (lenPack rem acc) := by
+  refine ⟨?_, ?_, ?_⟩
+  · simpa [lenPack] using hrem
+  · simpa [lenPack] using hacc
+  · simp [lenPack_length, lenWidth_length]
+    have hlin : 2 * rem.length + acc.length + 2 ≤ 2 * z.length + 3 * n + 2 := by
+      omega
+    exact hlin.trans (len_poly_bound z.length n hn)
+
+private theorem lenReach_init (z : List Bool) : LenReach z 0 (lenInit z) := by
+  refine lenReach_pack z 0 z [] (by simp) (by simp) (by omega)
+
+private theorem lenStep_reach (z : List Bool) (n : Nat) (st : List Bool)
+    (hn : n ≤ z.length) (h : LenReach z n st) :
+    LenReach z (n + 1) (lenStep st) := by
+  unfold lenStep
+  have hstay : LenReach z (n + 1) st :=
+    ⟨h.rem_le, h.acc_le.trans (by omega), h.st_le⟩
+  have hfail : LenReach z (n + 1) (lenPack [] (pairSnd st)) :=
+    lenReach_pack z (n + 1) [] (pairSnd st) (by simp)
+      (h.acc_le.trans (by omega)) (Nat.succ_le_succ hn)
+  have hcons : LenReach z (n + 1)
+      (lenPack (nodeRight (pairFst st)) (addBit (pairSnd st))) := by
+    refine lenReach_pack z (n + 1) _ _ ?_ ?_ (Nat.succ_le_succ hn)
+    · exact (nodeRight_length_le (pairFst st)).trans h.rem_le
+    · have := addBit_length (pairSnd st)
+      have := h.acc_le
+      omega
+  exact lenReach_selectHead z (n + 1) (emptyFlag (pairFst st)) st _
+    hstay
+    (lenReach_selectHead z (n + 1) (Cobham.eqFlag (pairFst st) [false]) st _
+      hstay
+      (lenReach_selectHead z (n + 1) (emptyFlag (splitNode (pairFst st))) _ _
+        hfail hcons))
+
+private theorem lenReach_iterate (z : List Bool) :
+    ∀ n, n ≤ z.length + 1 → LenReach z n (lenStep^[n] (lenInit z)) := by
+  intro n
+  induction n with
+  | zero => intro _; exact lenReach_init z
+  | succ n ih =>
+      intro hn
+      rw [Function.iterate_succ_apply']
+      exact lenStep_reach z n _ (by omega) (ih (by omega))
+
+/-- Pack the right-spine cons-count of a tree encoding as little-endian bits. -/
+def listLenBits (z : List Bool) : List Bool :=
+  stripTrailing (pairSnd (lenStep^[(lenRuler z).length] (lenInit z)))
+
+theorem listLenBits_mem_FP : listLenBits ∈ Complexity.FP := by
+  have hbound : ∀ z : List Bool, ∀ n ≤ (lenRuler z).length,
+      (lenStep^[n] (lenInit z)).length ≤ (lenWidth z).length := by
+    intro z n hn
+    have : n ≤ z.length + 1 := by simpa [lenRuler_length] using hn
+    exact (lenReach_iterate z n this).st_le
+  have hiter := Cobham.iterate_mem_FP lenStep_mem_FP lenInit_mem_FP
+    lenRuler_mem_FP lenWidth_mem_FP hbound
+  exact mem_FP_comp (mem_FP_comp hiter Cobham.sndBlock_mem_FP) stripTrailing_mem_FP
+
+private inductive LenSem where
+  | run (rem : CMMSACodec.Tree) (n : Nat)
+  | done (n : Nat)
+
+private def lenSemStep : LenSem → LenSem
+  | .done n => .done n
+  | .run .leaf n => .done n
+  | .run (.node _ q) n => .run q (n + 1)
+
+private def encodeLenSem : LenSem → List Bool
+  | .done n => lenPack [false] n.bits
+  | .run t n => lenPack (CMMSACodec.Tree.encode t) n.bits
+
+private theorem lenStep_eq (st : List Bool) :
+    lenStep st =
+      Cobham.selectHead (emptyFlag (pairFst st)) st
+        (Cobham.selectHead (Cobham.eqFlag (pairFst st) [false]) st
+          (Cobham.selectHead (emptyFlag (splitNode (pairFst st)))
+            (lenPack [] (pairSnd st))
+            (lenPack (nodeRight (pairFst st)) (addBit (pairSnd st))))) := by
+  simp [lenStep]
+
+private theorem lenStep_encode (s : LenSem) :
+    lenStep (encodeLenSem s) = encodeLenSem (lenSemStep s) := by
+  cases s with
+  | done n =>
+      rw [lenStep_eq]
+      simp [encodeLenSem, lenSemStep, lenPack, emptyFlag_cons, selectHead_false]
+      have hleaf : Cobham.eqFlag [false] [false] = [true] :=
+        (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+      simp [hleaf, selectHead_true]
+  | run t n =>
+      rw [lenStep_eq]
+      simp only [encodeLenSem, lenPack, pairFst_pair, pairSnd_pair]
+      cases t with
+      | leaf =>
+          have hleaf : Cobham.eqFlag [false] [false] = [true] :=
+            (Cobham.eqFlag_eq_true_iff _ _).mpr rfl
+          simp [CMMSACodec.Tree.encode, emptyFlag_cons, selectHead_false, hleaf,
+            selectHead_true, lenSemStep, encodeLenSem, lenPack]
+      | node p q =>
+          have hnotleaf := eqFlag_eq_false_of_ne
+            (show CMMSACodec.Tree.encode (.node p q) ≠ [false] by
+              simp [CMMSACodec.Tree.encode])
+          simp [CMMSACodec.Tree.encode, emptyFlag_cons, selectHead_false]
+          rw [show true :: (p.encode ++ q.encode) =
+              CMMSACodec.Tree.encode (.node p q) from rfl]
+          rw [hnotleaf, selectHead_false, splitNode_node, emptyFlag_cons,
+            selectHead_false, nodeRight_node, addBit_succ_bits]
+          simp [lenSemStep, encodeLenSem, lenPack]
+
+private theorem lenStep_iterate_encode (s : LenSem) (n : Nat) :
+    lenStep^[n] (encodeLenSem s) = encodeLenSem (lenSemStep^[n] s) := by
+  induction n with
+  | zero => rfl
+  | succ n ih =>
+      rw [Function.iterate_succ_apply', Function.iterate_succ_apply', ih,
+        lenStep_encode]
+
+private def listSpineLen : CMMSACodec.Tree → Nat
+  | .leaf => 0
+  | .node _ q => listSpineLen q + 1
+
+private theorem listSpineLen_listTree :
+    ∀ ts : List CMMSACodec.Tree, listSpineLen (listTree ts) = ts.length
+  | [] => rfl
+  | _ :: ts => by simp [listTree, listSpineLen, listSpineLen_listTree ts]
+
+private theorem listSpineLen_le_length (t : CMMSACodec.Tree) :
+    listSpineLen t ≤ (CMMSACodec.Tree.encode t).length := by
+  induction t with
+  | leaf => simp [listSpineLen, CMMSACodec.Tree.encode]
+  | node p q ihp ihq =>
+      simp only [listSpineLen, CMMSACodec.Tree.encode, List.length_cons,
+        List.length_append]
+      omega
+
+private theorem lenSemStep_run_leaf (n : Nat) :
+    lenSemStep (.run .leaf n) = .done n := rfl
+
+private theorem lenSemStep_done_iterate (n k : Nat) :
+    lenSemStep^[k] (.done n) = .done n := by
+  induction k with
+  | zero => rfl
+  | succ k ih => simp [Function.iterate_succ_apply', lenSemStep, ih]
+
+private theorem lenSemStep_spine (t : CMMSACodec.Tree) (n : Nat) :
+    lenSemStep^[listSpineLen t + 1] (.run t n) =
+      .done (n + listSpineLen t) := by
+  induction t generalizing n with
+  | leaf => simp [listSpineLen, lenSemStep]
+  | node p q ihp ihq =>
+      simp only [listSpineLen]
+      rw [Function.iterate_add_apply (f := lenSemStep)
+        (m := listSpineLen q + 1) (n := 1), Function.iterate_one]
+      have hstep : lenSemStep (.run (.node p q) n) = .run q (n + 1) := rfl
+      rw [hstep, ihq (n + 1)]
+      ac_rfl
+
+private theorem lenSemStep_enough (t : CMMSACodec.Tree) (k : Nat)
+    (hk : listSpineLen t + 1 ≤ k) :
+    lenSemStep^[k] (.run t 0) = .done (listSpineLen t) := by
+  have hsplit : k = (k - (listSpineLen t + 1)) + (listSpineLen t + 1) := by
+    omega
+  rw [hsplit, Function.iterate_add_apply, lenSemStep_spine]
+  simp [lenSemStep_done_iterate]
+
+private theorem listLenBits_of_tree (t : CMMSACodec.Tree) :
+    listLenBits (CMMSACodec.Tree.encode t) = (listSpineLen t).bits := by
+  have henc : lenInit (CMMSACodec.Tree.encode t) = encodeLenSem (.run t 0) :=
+    rfl
+  have hiter := lenStep_iterate_encode (.run t 0)
+    (lenRuler (CMMSACodec.Tree.encode t)).length
+  rw [listLenBits, henc, hiter]
+  have hstuck := lenSemStep_enough t (lenRuler (CMMSACodec.Tree.encode t)).length
+    (by
+      simp [lenRuler_length]
+      have := listSpineLen_le_length t
+      omega)
+  rw [hstuck]
+  simp [encodeLenSem, lenPack, stripTrailing_eq_bits, bitValue_bits]
+
+theorem listLenBits_of_listTree (ts : List CMMSACodec.Tree) :
+    listLenBits (CMMSACodec.Tree.encode (listTree ts)) = ts.length.bits := by
+  rw [listLenBits_of_tree, listSpineLen_listTree]
+
+theorem listLenBits_leaf :
+    listLenBits (CMMSACodec.Tree.encode CMMSACodec.Tree.leaf) = [] :=
+  listLenBits_of_tree CMMSACodec.Tree.leaf
 
 end PvNP.RealizableHardness.ActualDecodeInputFP
