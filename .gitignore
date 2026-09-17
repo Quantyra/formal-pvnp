@@ -17,3 +17,4 @@ lean/temp.lean
 lean/PvNP/temp_inter_check*.lean
 *.corrupt-zero
 *.diff.txt
+research/p-equals-np/*-independent-proof-review.json
